@@ -28,39 +28,36 @@ export function Disclaimers({
           />
         </svg>
         <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-          Official Notice & Statutory Disclaimers
+          Official Notice &amp; Statutory Disclaimers
         </span>
       </div>
 
       <div className="space-y-2.5 text-xs text-slate-600 dark:text-slate-300">
-        {/* Core required disclaimers */}
-        <p className="flex items-start gap-2 font-medium text-slate-700 dark:text-slate-200">
-          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-400"></span>
-          <span>
-            <strong>Estimates only — not tax or legal advice.</strong> Verify final assessments directly with the Maryland Motor Vehicle Administration (MVA).
-          </span>
-        </p>
+        {disclaimers.map((item, idx) => {
+          const isEstimates = item.toLowerCase().includes('estimates only');
+          const isBookValue = item.toLowerCase().includes('book value') || item.toLowerCase().includes('book-value');
+          const isTradeIn = item.toLowerCase().includes('trade-in');
 
-        <p className={`flex items-start gap-2 ${bookValueApplies ? 'font-medium text-amber-700 dark:text-amber-400' : ''}`}>
-          <span className={`mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full ${bookValueApplies ? 'bg-amber-500' : 'bg-slate-400'}`}></span>
-          <span>
-            <strong>Maryland Book-Value Rule:</strong> Vehicles 7 years old or newer may be assessed on book value (NADA clean retail), not your purchase price, unless you present a notarized bill of sale (MVA Form VR-181).
-          </span>
-        </p>
+          let highlightClasses = '';
+          let bulletClasses = 'bg-slate-400';
 
-        <p className={`flex items-start gap-2 ${tradeInIgnored ? 'font-medium text-indigo-700 dark:text-indigo-400' : ''}`}>
-          <span className={`mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full ${tradeInIgnored ? 'bg-indigo-500' : 'bg-slate-400'}`}></span>
-          <span>
-            <strong>Trade-in Exemption Rule:</strong> Maryland taxes the full purchase price — trade-ins and rebates do not reduce excise tax on private-party vehicle transactions.
-          </span>
-        </p>
+          if (isEstimates) {
+            highlightClasses = 'font-medium text-slate-700 dark:text-slate-200';
+          } else if (isBookValue && bookValueApplies) {
+            highlightClasses = 'font-medium text-amber-700 dark:text-amber-400';
+            bulletClasses = 'bg-amber-500';
+          } else if (isTradeIn && tradeInIgnored) {
+            highlightClasses = 'font-medium text-indigo-700 dark:text-indigo-400';
+            bulletClasses = 'bg-indigo-500';
+          }
 
-        {disclaimers.map((item, idx) => (
-          <p key={idx} className="flex items-start gap-2">
-            <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-400"></span>
-            <span>{item}</span>
-          </p>
-        ))}
+          return (
+            <p key={idx} className={`flex items-start gap-2 ${highlightClasses}`}>
+              <span className={`mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full ${bulletClasses}`}></span>
+              <span>{item}</span>
+            </p>
+          );
+        })}
       </div>
     </div>
   );

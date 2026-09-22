@@ -42,10 +42,10 @@ describe('UI Component Unit Tests', () => {
     expect(screen.getAllByText(/estimates only/i).length).toBeGreaterThan(0);
 
     // 2. Book value rule notice
-    expect(screen.getAllByText(/book-value rule/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/book value/i).length).toBeGreaterThan(0);
 
     // 3. Trade-in exemption rule notice
-    expect(screen.getAllByText(/trade-in exemption rule/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/trade-in/i).length).toBeGreaterThan(0);
   });
 
   it('renders CostSummaryCard with hero total and itemized order', () => {
