@@ -2,6 +2,7 @@ export type VehicleType = 'passenger' | 'motorcycle';
 export type WeightClass = 'under3700lbs' | 'over3700lbs';
 export type FuelType = 'gasoline' | 'ev' | 'phev';
 export type RegistrationTerm = 1 | 2;
+export type TaxBaseType = 'price' | 'fairMarketValue' | 'bookValue';
 
 export interface StateRegistrationRules {
   terms: number[];
@@ -10,8 +11,8 @@ export interface StateRegistrationRules {
     over3700lbs: number | Record<string, number>;
   };
   motorcycle: number | Record<string, number>;
-  evSurchargeAnnual: number;
-  phevSurchargeAnnual: number;
+  evSurchargeAnnual?: number;
+  phevSurchargeAnnual?: number;
 }
 
 export interface FaqItem {
@@ -24,15 +25,17 @@ export interface StateRule {
   slug: string;
   exciseTaxRate: number;
   minExciseTax: number | null;
+  taxBase: TaxBaseType;
   titleFee: number;
   lienFilingFee: number;
   tradeInDeductible: boolean;
-  bookValueRule: string;
+  bookValueRule?: string;
   registration: StateRegistrationRules;
   veipFee?: number;
   notes: string[];
   disclaimers: string[];
   faqs: FaqItem[];
+  sources: string[];
 }
 
 export type StateRulesConfig = Record<string, StateRule>;
@@ -71,6 +74,7 @@ export interface CostBreakdown {
   tradeInDeducted: number;
   tradeInIgnored: boolean;
   veipFee: number;
+  taxBase: TaxBaseType;
   itemizedList: ItemizedCostItem[];
 }
 
@@ -82,4 +86,5 @@ export interface PartnerSlotConfig {
   ctaText: string;
   badge?: string;
   href: string;
+  trackingParams?: Record<string, string>;
 }

@@ -1,21 +1,29 @@
 'use client';
 
 import React from 'react';
-import { CalculatorInputs, StateRule, VehicleType, WeightClass, FuelType, RegistrationTerm } from '@/lib/types';
+import { useRouter } from 'next/navigation';
+import { CalculatorInputs, StateRule, VehicleType, WeightClass, FuelType } from '@/lib/types';
+
+interface StateOption {
+  key: string;
+  label: string;
+  slug: string;
+}
 
 interface VehicleInputFormProps {
   inputs: CalculatorInputs;
   onChange: (inputs: CalculatorInputs) => void;
   rule: StateRule;
-  allStates?: { key: string; label: string }[];
+  allStates?: StateOption[];
 }
 
 export function VehicleInputForm({
   inputs,
   onChange,
   rule,
-  allStates = [{ key: 'maryland', label: 'Maryland' }]
+  allStates = []
 }: VehicleInputFormProps) {
+  const router = useRouter();
   const currentYear = 2026;
 
   const updateField = <K extends keyof CalculatorInputs>(
@@ -28,33 +36,50 @@ export function VehicleInputForm({
     });
   };
 
+  const handleStateSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedKey = e.target.value;
+    const selected = allStates.find((s) => s.key === selectedKey);
+    if (selected) {
+      router.push(`/calculator/${selected.slug}`);
+    }
+  };
+
+  // Find the selected key matching current rule slug
+  const currentOption = allStates.find((s) => s.slug === rule.slug);
+  const selectedKey = currentOption ? currentOption.key : inputs.state;
+
   return (
     <div className="space-y-6 rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-sm backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/80 sm:p-8">
       {/* Form Header */}
       <div className="border-b border-slate-100 pb-5 dark:border-slate-800">
         <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-          Vehicle & Transaction Details
+          Vehicle &amp; Transaction Details
         </h2>
         <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-          Enter the purchase information to calculate true out-of-pocket MVA costs.
+          Enter purchase information to calculate true out-of-pocket costs in {rule.label}.
         </p>
       </div>
 
       <div className="space-y-6">
-        {/* State Selection (Disabled/Locked for MVP) */}
+        {/* State Selection Dropdown */}
         <div>
-          <label
-            htmlFor="state-select"
-            className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300"
-          >
-            State of Registration
-          </label>
+          <div className="flex items-center justify-between">
+            <label
+              htmlFor="state-select"
+              className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300"
+            >
+              State of Registration
+            </label>
+            <span className="rounded-md bg-indigo-100 px-2 py-0.5 text-[10px] font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
+              5 Regional States Active
+            </span>
+          </div>
           <div className="relative mt-2">
             <select
               id="state-select"
-              disabled
-              value={inputs.state}
-              className="block w-full appearance-none rounded-xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-800 shadow-xs cursor-not-allowed dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
+              value={selectedKey}
+              onChange={handleStateSelect}
+              className="block w-full appearance-none rounded-2xl border border-slate-300 bg-white px-4 py-3.5 pr-10 text-sm font-bold text-slate-900 shadow-xs transition-all hover:border-indigo-400 focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white cursor-pointer"
             >
               {allStates.map((st) => (
                 <option key={st.key} value={st.key}>
@@ -62,10 +87,10 @@ export function VehicleInputForm({
                 </option>
               ))}
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-              <span className="rounded-md bg-indigo-100 px-2 py-0.5 text-[10px] font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
-                49 more states coming soon
-              </span>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5">
+              <svg className="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
             </div>
           </div>
         </div>
@@ -104,7 +129,7 @@ export function VehicleInputForm({
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
               </svg>
-              <span>Motorcycle (Class D)</span>
+              <span>Motorcycle</span>
             </button>
           </div>
         </div>
@@ -118,7 +143,9 @@ export function VehicleInputForm({
             >
               Purchase Price (Agreed Sale Price)
             </label>
-            <span className="text-[11px] text-slate-400">MD 6.5% tax base</span>
+            <span className="text-[11px] text-slate-400">
+              {rule.label} {(rule.exciseTaxRate * 100).toFixed(1)}% {rule.label === 'Delaware' ? 'fee base' : 'tax base'}
+            </span>
           </div>
           <div className="relative mt-2">
             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
@@ -170,7 +197,7 @@ export function VehicleInputForm({
                   : 'text-slate-400'
               }`}
             >
-              {currentYear - inputs.vehicleYear} years old {currentYear - inputs.vehicleYear <= 7 ? '(≤ 7 yrs rule)' : '(> 7 yrs)'}
+              {currentYear - inputs.vehicleYear} years old {rule.bookValueRule ? (currentYear - inputs.vehicleYear <= 7 ? '(≤ 7 yrs rule)' : '(> 7 yrs)') : ''}
             </span>
           </div>
           <div className="mt-2 grid grid-cols-3 gap-2">
@@ -208,7 +235,7 @@ export function VehicleInputForm({
           <div>
             <div className="flex items-center justify-between">
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-                Vehicle Shipping Weight Class
+                Vehicle Weight Classification
               </label>
               <span className="text-[11px] text-slate-400">Class A Passenger</span>
             </div>
@@ -225,14 +252,14 @@ export function VehicleInputForm({
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-slate-900 dark:text-white">
-                    ≤ 3,700 lbs
+                    Standard / Light
                   </span>
                   <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                    Standard Cars
+                    ≤ 3,700 lbs
                   </span>
                 </div>
                 <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
-                  Sedans, compact SUVs, hatchbacks
+                  Sedans, compact crossovers, hatchbacks
                 </p>
               </button>
 
@@ -248,10 +275,10 @@ export function VehicleInputForm({
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-slate-900 dark:text-white">
-                    &gt; 3,700 lbs
+                    Heavy / Trucks
                   </span>
                   <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                    Heavy / Trucks
+                    &gt; 3,700 lbs
                   </span>
                 </div>
                 <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
@@ -268,7 +295,7 @@ export function VehicleInputForm({
             <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
               Registration Term
             </label>
-            <span className="text-[11px] text-slate-400">MD now offers 1 or 2 years</span>
+            <span className="text-[11px] text-slate-400">{rule.label} tag options</span>
           </div>
           <div className="mt-2 grid grid-cols-2 gap-2 rounded-2xl bg-slate-100 p-1.5 dark:bg-slate-800/80">
             <button
@@ -309,8 +336,20 @@ export function VehicleInputForm({
           <div className="mt-2 grid grid-cols-3 gap-2">
             {[
               { id: 'gasoline', label: 'Gas / Diesel', sub: '$0 surcharge' },
-              { id: 'ev', label: 'Battery EV', sub: '+$125/yr' },
-              { id: 'phev', label: 'Plug-in Hybrid', sub: '+$100/yr' }
+              {
+                id: 'ev',
+                label: 'Battery EV',
+                sub: rule.registration.evSurchargeAnnual
+                  ? `+$${rule.registration.evSurchargeAnnual}/yr`
+                  : '$0 state fee'
+              },
+              {
+                id: 'phev',
+                label: 'Plug-in Hybrid',
+                sub: rule.registration.phevSurchargeAnnual
+                  ? `+$${rule.registration.phevSurchargeAnnual}/yr`
+                  : '$0 state fee'
+              }
             ].map((f) => (
               <button
                 key={f.id}
@@ -337,7 +376,7 @@ export function VehicleInputForm({
         <div>
           <div className="flex items-center justify-between">
             <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-              Financing & Lien Filing
+              Financing &amp; Lien Filing
             </label>
             <span className="text-[11px] font-medium text-slate-400">
               Lien fee: ${rule.lienFilingFee}.00
@@ -392,7 +431,7 @@ export function VehicleInputForm({
           </div>
         </div>
 
-        {/* Optional Trade-In Input with Maryland Law Warning */}
+        {/* Trade-In Input with State-Specific Statute Notice */}
         <div className="rounded-2xl border border-slate-200/60 bg-slate-50/50 p-4 dark:border-slate-800 dark:bg-slate-800/30">
           <div className="flex items-center justify-between">
             <label
@@ -401,9 +440,15 @@ export function VehicleInputForm({
             >
               Trade-in Value (Optional)
             </label>
-            <span className="rounded-md bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-800 dark:bg-amber-950 dark:text-amber-300">
-              MD Law: Non-Deductible
-            </span>
+            {rule.tradeInDeductible ? (
+              <span className="rounded-md bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+                {rule.label}: Deductible
+              </span>
+            ) : (
+              <span className="rounded-md bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-800 dark:bg-amber-950 dark:text-amber-300">
+                {rule.label}: Non-Deductible
+              </span>
+            )}
           </div>
 
           <div className="relative mt-2">
@@ -422,7 +467,15 @@ export function VehicleInputForm({
             />
           </div>
           <p className="mt-2 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
-            <strong>Maryland Notice:</strong> Maryland taxes the full purchase price — trade-ins and rebates do not reduce excise tax on private sales.
+            {rule.tradeInDeductible ? (
+              <>
+                <strong>{rule.label} Statute:</strong> {rule.label} allows trade-in value on private sales to be deducted from the purchase price before applying the {(rule.exciseTaxRate * 100).toFixed(2)}% fee.
+              </>
+            ) : (
+              <>
+                <strong>{rule.label} Notice:</strong> {rule.label} taxes the full agreed vehicle price — trade-ins do not reduce the tax base on private-party sales.
+              </>
+            )}
           </p>
         </div>
       </div>

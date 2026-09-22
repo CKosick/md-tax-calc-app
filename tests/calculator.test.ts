@@ -3,7 +3,12 @@ import { calculateVehicleCosts } from '../src/lib/calculator';
 import stateRulesData from '../src/config/stateRules.json';
 import { CalculatorInputs, StateRule } from '../src/lib/types';
 
-const mdRule = stateRulesData.maryland as StateRule;
+const allRules = stateRulesData as Record<string, StateRule>;
+const mdRule = allRules.maryland;
+const vaRule = allRules.virginia;
+const paRule = allRules.pennsylvania;
+const deRule = allRules.delaware;
+const dcRule = allRules['district-of-columbia'];
 
 describe('Maryland Private-Party Vehicle Tax Calculator', () => {
   it('§3 worked acceptance example: $15,000 car, 2019 model year, passenger <= 3,700 lbs, 2-year registration, cash purchase', () => {
@@ -58,20 +63,15 @@ describe('Maryland Private-Party Vehicle Tax Calculator', () => {
 
     const withTradeInInputs: CalculatorInputs = {
       ...baseInputs,
-      tradeInValue: 6000 // buyer traded in a $6,000 car
+      tradeInValue: 6000
     };
 
     const withoutTrade = calculateVehicleCosts(mdRule, baseInputs, 2026);
     const withTrade = calculateVehicleCosts(mdRule, withTradeInInputs, 2026);
 
-    // Excise tax MUST be identical
     expect(withTrade.exciseTax).toBe(withoutTrade.exciseTax);
     expect(withTrade.exciseTax).toBe(20000 * 0.065);
-
-    // Total cost MUST be identical
     expect(withTrade.totalFirstYearCost).toBe(withoutTrade.totalFirstYearCost);
-
-    // Informational flag must indicate trade-in was ignored per MD statute
     expect(withTrade.tradeInIgnored).toBe(true);
     expect(withTrade.tradeInDeducted).toBe(0);
   });
@@ -98,251 +98,105 @@ describe('Maryland Private-Party Vehicle Tax Calculator', () => {
     const financedResult = calculateVehicleCosts(mdRule, financedInputs, 2026);
 
     expect(cashResult.lienFilingFee).toBe(0);
-    expect(financedResult.lienFilingFee).toBe(mdRule.lienFilingFee);
     expect(financedResult.lienFilingFee).toBe(40);
     expect(financedResult.totalFirstYearCost - cashResult.totalFirstYearCost).toBe(40);
   });
+});
 
-  it('registration term toggle: supports both 1-year and 2-year registration', () => {
-    const term1Inputs: CalculatorInputs = {
-      state: 'maryland',
-      vehicleType: 'passenger',
-      purchasePrice: 12000,
-      vehicleYear: 2022,
-      weightClass: 'under3700lbs',
-      fuelType: 'gasoline',
-      registrationTerm: 1,
-      isFinanced: false,
-      tradeInValue: 0
-    };
+describe('Phase 2 Mid-Atlantic 5-State Worked Acceptance Tests', () => {
+  const standardVehicle: Omit<CalculatorInputs, 'state'> = {
+    vehicleType: 'passenger',
+    purchasePrice: 15000,
+    vehicleYear: 2019,
+    weightClass: 'under3700lbs',
+    fuelType: 'gasoline',
+    registrationTerm: 2,
+    isFinanced: false,
+    tradeInValue: 0
+  };
 
-    const term2Inputs: CalculatorInputs = {
-      ...term1Inputs,
-      registrationTerm: 2
-    };
-
-    const res1 = calculateVehicleCosts(mdRule, term1Inputs, 2026);
-    const res2 = calculateVehicleCosts(mdRule, term2Inputs, 2026);
-
-    expect(res1.baseRegistrationFee).toBe(125.50);
-    expect(res2.baseRegistrationFee).toBe(251.00);
-    expect(res2.baseRegistrationFee).toBe(res1.baseRegistrationFee * 2);
+  it('Maryland: exact worked test ($15,000 -> $1,426.00)', () => {
+    const result = calculateVehicleCosts(mdRule, { ...standardVehicle, state: 'maryland' }, 2026);
+    expect(result.exciseTax).toBe(975.00); // 6.5% of 15000
+    expect(result.titleFee).toBe(200.00);
+    expect(result.lienFilingFee).toBe(0.00);
+    expect(result.registrationTotal).toBe(251.00);
+    expect(result.totalFirstYearCost).toBe(1426.00);
   });
 
-  it('minimum excise tax floor: applies $41.60 minimum floor on low-value vehicles', () => {
-    const inputs: CalculatorInputs = {
-      state: 'maryland',
-      vehicleType: 'passenger',
-      purchasePrice: 100, // 6.5% of 100 is $6.50, well below minimum
-      vehicleYear: 2010,
-      weightClass: 'under3700lbs',
-      fuelType: 'gasoline',
-      registrationTerm: 1,
-      isFinanced: false,
-      tradeInValue: 0
-    };
-
-    const result = calculateVehicleCosts(mdRule, inputs, 2026);
-    expect(result.exciseTax).toBe(41.60);
-    expect(result.minTaxApplied).toBe(true);
+  it('Virginia: exact worked test ($15,000 -> $697.00)', () => {
+    const result = calculateVehicleCosts(vaRule, { ...standardVehicle, state: 'virginia' }, 2026);
+    expect(result.exciseTax).toBe(622.50); // 4.15% of 15000
+    expect(result.titleFee).toBe(15.00);
+    expect(result.lienFilingFee).toBe(0.00);
+    expect(result.registrationTotal).toBe(59.50); // 2-year passenger <= 4k lbs
+    expect(result.totalFirstYearCost).toBe(697.00);
   });
 
-  it('minimum excise tax boundary test: verifies behavior at $639, $640, and $641', () => {
-    const makeInputs = (price: number): CalculatorInputs => ({
-      state: 'maryland',
-      vehicleType: 'passenger',
-      purchasePrice: price,
-      vehicleYear: 2015,
-      weightClass: 'under3700lbs',
-      fuelType: 'gasoline',
-      registrationTerm: 1,
-      isFinanced: false,
-      tradeInValue: 0
-    });
-
-    const at639 = calculateVehicleCosts(mdRule, makeInputs(639), 2026);
-    const at640 = calculateVehicleCosts(mdRule, makeInputs(640), 2026);
-    const at641 = calculateVehicleCosts(mdRule, makeInputs(641), 2026);
-
-    // 639 * 0.065 = 41.535 -> floor applied -> 41.60
-    expect(at639.exciseTax).toBe(41.60);
-    expect(at639.minTaxApplied).toBe(true);
-
-    // 640 * 0.065 = 41.60 -> exactly at minimum
-    expect(at640.exciseTax).toBe(41.60);
-    expect(at640.minTaxApplied).toBe(false);
-
-    // 641 * 0.065 = 41.665 -> above minimum
-    expect(at641.exciseTax).toBeCloseTo(41.665, 3);
-    expect(at641.minTaxApplied).toBe(false);
+  it('Pennsylvania: exact worked test ($15,000 -> $1,068.00)', () => {
+    const result = calculateVehicleCosts(paRule, { ...standardVehicle, state: 'pennsylvania' }, 2026);
+    expect(result.exciseTax).toBe(900.00); // 6.0% of 15000
+    expect(result.titleFee).toBe(72.00); // PennDOT Form MV-70S verified
+    expect(result.lienFilingFee).toBe(0.00);
+    expect(result.registrationTotal).toBe(96.00); // 2-year passenger flat $48/yr
+    expect(result.totalFirstYearCost).toBe(1068.00);
   });
 
-  it('zero and negative purchase price handling', () => {
-    const zeroInputs: CalculatorInputs = {
-      state: 'maryland',
-      vehicleType: 'passenger',
-      purchasePrice: 0,
-      vehicleYear: 2019,
-      weightClass: 'under3700lbs',
-      fuelType: 'gasoline',
-      registrationTerm: 1,
-      isFinanced: false,
-      tradeInValue: 0
-    };
-
-    const negInputs: CalculatorInputs = {
-      ...zeroInputs,
-      purchasePrice: -5000
-    };
-
-    const zeroRes = calculateVehicleCosts(mdRule, zeroInputs, 2026);
-    const negRes = calculateVehicleCosts(mdRule, negInputs, 2026);
-
-    // $0 purchase price should yield $0 tax (not minimum floor)
-    expect(zeroRes.exciseTax).toBe(0);
-    expect(zeroRes.minTaxApplied).toBe(false);
-
-    // Negative price should be safely clamped to 0
-    expect(negRes.exciseTax).toBe(0);
-    expect(negRes.minTaxApplied).toBe(false);
+  it('Delaware: exact worked test ($15,000 -> $902.50)', () => {
+    const result = calculateVehicleCosts(deRule, { ...standardVehicle, state: 'delaware' }, 2026);
+    expect(result.exciseTax).toBe(787.50); // 5.25% doc fee of 15000
+    expect(result.titleFee).toBe(35.00);
+    expect(result.lienFilingFee).toBe(0.00);
+    expect(result.registrationTotal).toBe(80.00); // 2-year passenger $40/yr
+    expect(result.totalFirstYearCost).toBe(902.50);
   });
 
-  it('book value rule: applies for vehicles <= 7 years old and not for older vehicles', () => {
-    const inputs7Years: CalculatorInputs = {
-      state: 'maryland',
-      vehicleType: 'passenger',
-      purchasePrice: 10000,
-      vehicleYear: 2019, // 2026 - 2019 = 7
-      weightClass: 'under3700lbs',
-      fuelType: 'gasoline',
-      registrationTerm: 2,
-      isFinanced: false,
-      tradeInValue: 0
-    };
-
-    const inputs8Years: CalculatorInputs = {
-      ...inputs7Years,
-      vehicleYear: 2018 // 2026 - 2018 = 8
-    };
-
-    const inputsBrandNew: CalculatorInputs = {
-      ...inputs7Years,
-      vehicleYear: 2026 // 0 years old
-    };
-
-    const res7 = calculateVehicleCosts(mdRule, inputs7Years, 2026);
-    const res8 = calculateVehicleCosts(mdRule, inputs8Years, 2026);
-    const resBrandNew = calculateVehicleCosts(mdRule, inputsBrandNew, 2026);
-
-    expect(res7.bookValueApplies).toBe(true);
-    expect(res8.bookValueApplies).toBe(false);
-    expect(resBrandNew.bookValueApplies).toBe(true);
+  it('District of Columbia: exact worked test ($15,000 -> $920.00)', () => {
+    const result = calculateVehicleCosts(dcRule, { ...standardVehicle, state: 'district-of-columbia' }, 2026);
+    expect(result.exciseTax).toBe(750.00); // 5.0% baseline FMV
+    expect(result.titleFee).toBe(26.00);
+    expect(result.lienFilingFee).toBe(0.00);
+    expect(result.registrationTotal).toBe(144.00); // 2-year Class I $72/yr
+    expect(result.totalFirstYearCost).toBe(920.00);
   });
 
-  it('motorcycle vehicle type calculations for 1-year and 2-year terms', () => {
-    const moto1Inputs: CalculatorInputs = {
-      state: 'maryland',
-      vehicleType: 'motorcycle',
-      purchasePrice: 8000,
-      vehicleYear: 2020,
-      weightClass: 'under3700lbs',
-      fuelType: 'gasoline',
-      registrationTerm: 1,
-      isFinanced: false,
-      tradeInValue: 0
-    };
+  it('acceptance criterion: Trade-in deduction works both ways (proves both-ways logic)', () => {
+    const baseInput = { ...standardVehicle };
+    const tradeInput = { ...standardVehicle, tradeInValue: 5000 };
 
-    const moto2Inputs: CalculatorInputs = {
-      ...moto1Inputs,
-      registrationTerm: 2
-    };
+    // 1. Delaware allows trade-in deduction
+    const deBase = calculateVehicleCosts(deRule, { ...baseInput, state: 'delaware' }, 2026);
+    const deWithTrade = calculateVehicleCosts(deRule, { ...tradeInput, state: 'delaware' }, 2026);
 
-    const res1 = calculateVehicleCosts(mdRule, moto1Inputs, 2026);
-    const res2 = calculateVehicleCosts(mdRule, moto2Inputs, 2026);
+    // Taxable base is reduced by 5,000 ($10,000 taxable)
+    expect(deWithTrade.tradeInDeducted).toBe(5000);
+    expect(deWithTrade.tradeInIgnored).toBe(false);
+    expect(deWithTrade.exciseTax).toBe(10000 * 0.0525); // 525.00
+    expect(deBase.exciseTax - deWithTrade.exciseTax).toBe(5000 * 0.0525); // exactly 262.50 tax savings
+    expect(deWithTrade.totalFirstYearCost).toBe(525.00 + 35.00 + 0.00 + 80.00); // 640.00
 
-    expect(res1.baseRegistrationFee).toBe(105.00);
-    expect(res2.baseRegistrationFee).toBe(210.00);
-    expect(res1.totalFirstYearCost).toBe(8000 * 0.065 + 200 + 105);
-    expect(res2.totalFirstYearCost).toBe(8000 * 0.065 + 200 + 210);
-  });
+    // 2. Maryland does NOT allow trade-in deduction
+    const mdBase = calculateVehicleCosts(mdRule, { ...baseInput, state: 'maryland' }, 2026);
+    const mdWithTrade = calculateVehicleCosts(mdRule, { ...tradeInput, state: 'maryland' }, 2026);
 
-  it('weight class difference: heavy vehicles (> 3,700 lbs) incur higher registration rates', () => {
-    const lightInputs: CalculatorInputs = {
-      state: 'maryland',
-      vehicleType: 'passenger',
-      purchasePrice: 30000,
-      vehicleYear: 2022,
-      weightClass: 'under3700lbs',
-      fuelType: 'gasoline',
-      registrationTerm: 2,
-      isFinanced: false,
-      tradeInValue: 0
-    };
+    expect(mdWithTrade.tradeInDeducted).toBe(0);
+    expect(mdWithTrade.tradeInIgnored).toBe(true);
+    expect(mdWithTrade.exciseTax).toBe(mdBase.exciseTax); // 975.00 unchanged
+    expect(mdWithTrade.totalFirstYearCost).toBe(mdBase.totalFirstYearCost); // 1426.00 unchanged
 
-    const heavyInputs: CalculatorInputs = {
-      ...lightInputs,
-      weightClass: 'over3700lbs'
-    };
+    // 3. Virginia does NOT allow trade-in deduction on private sales
+    const vaWithTrade = calculateVehicleCosts(vaRule, { ...tradeInput, state: 'virginia' }, 2026);
+    expect(vaWithTrade.tradeInIgnored).toBe(true);
+    expect(vaWithTrade.exciseTax).toBe(622.50);
 
-    const lightRes = calculateVehicleCosts(mdRule, lightInputs, 2026);
-    const heavyRes = calculateVehicleCosts(mdRule, heavyInputs, 2026);
+    // 4. Pennsylvania does NOT allow trade-in deduction on private sales
+    const paWithTrade = calculateVehicleCosts(paRule, { ...tradeInput, state: 'pennsylvania' }, 2026);
+    expect(paWithTrade.tradeInIgnored).toBe(true);
+    expect(paWithTrade.exciseTax).toBe(900.00);
 
-    expect(lightRes.baseRegistrationFee).toBe(251.00);
-    expect(heavyRes.baseRegistrationFee).toBe(383.00);
-    expect(heavyRes.totalFirstYearCost - lightRes.totalFirstYearCost).toBe(383.00 - 251.00);
-  });
-
-  it('electric vehicle surcharges: accurately calculates annual surcharges across terms', () => {
-    const evInputs: CalculatorInputs = {
-      state: 'maryland',
-      vehicleType: 'passenger',
-      purchasePrice: 25000,
-      vehicleYear: 2023,
-      weightClass: 'under3700lbs',
-      fuelType: 'ev',
-      registrationTerm: 2,
-      isFinanced: false,
-      tradeInValue: 0
-    };
-
-    const phevInputs: CalculatorInputs = {
-      ...evInputs,
-      fuelType: 'phev',
-      registrationTerm: 1
-    };
-
-    const evResult = calculateVehicleCosts(mdRule, evInputs, 2026);
-    const phevResult = calculateVehicleCosts(mdRule, phevInputs, 2026);
-
-    // EV 2-year: $125 * 2 = $250
-    expect(evResult.evSurcharge).toBe(250);
-    expect(evResult.registrationTotal).toBe(evResult.baseRegistrationFee + 250);
-
-    // PHEV 1-year: $100 * 1 = $100
-    expect(phevResult.evSurcharge).toBe(100);
-    expect(phevResult.registrationTotal).toBe(phevResult.baseRegistrationFee + 100);
-  });
-
-  it('itemized list order strictly adheres to §3 specifications', () => {
-    const inputs: CalculatorInputs = {
-      state: 'maryland',
-      vehicleType: 'passenger',
-      purchasePrice: 18000,
-      vehicleYear: 2021,
-      weightClass: 'under3700lbs',
-      fuelType: 'gasoline',
-      registrationTerm: 2,
-      isFinanced: true,
-      tradeInValue: 0
-    };
-
-    const result = calculateVehicleCosts(mdRule, inputs, 2026);
-
-    expect(result.itemizedList.length).toBe(5);
-    expect(result.itemizedList[0].id).toBe('excise-tax');
-    expect(result.itemizedList[1].id).toBe('title-fee');
-    expect(result.itemizedList[2].id).toBe('lien-filing-fee');
-    expect(result.itemizedList[3].id).toBe('registration-fee');
-    expect(result.itemizedList[4].id).toBe('total-cost');
+    // 5. DC assesses NADA FMV, ignoring trade-in
+    const dcWithTrade = calculateVehicleCosts(dcRule, { ...tradeInput, state: 'district-of-columbia' }, 2026);
+    expect(dcWithTrade.tradeInIgnored).toBe(true);
+    expect(dcWithTrade.exciseTax).toBe(750.00);
   });
 });

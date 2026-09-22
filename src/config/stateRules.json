@@ -4,6 +4,7 @@
     "slug": "maryland-private-sale-tax-calculator",
     "exciseTaxRate": 0.065,
     "minExciseTax": 41.60,
+    "taxBase": "price",
     "titleFee": 200,
     "lienFilingFee": 40,
     "tradeInDeductible": false,
@@ -59,6 +60,252 @@
         "question": "How much are Maryland vehicle registration and tag fees?",
         "answer": "Maryland offers both 1-year and 2-year registration terms. For Class A passenger vehicles weighing 3,700 lbs or less, registration is $125.50 for 1 year or $251.00 for 2 years (including the mandatory annual $40 EMS surcharge). For vehicles over 3,700 lbs, registration is $191.50 for 1 year or $383.00 for 2 years. Motorcycles are $105.00 for 1 year or $210.00 for 2 years. Zero-emission electric vehicles (ZEVs) have an additional $125/year surcharge, while plug-in hybrids (PHEVs) have a $100/year surcharge."
       }
+    ],
+    "sources": [
+      "https://mva.maryland.gov/about-mva/Pages/fees.aspx",
+      "https://mva.maryland.gov/vehicles/Pages/registration/fees.aspx"
+    ]
+  },
+  "virginia": {
+    "label": "Virginia",
+    "slug": "virginia-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0415,
+    "minExciseTax": 75.00,
+    "taxBase": "price",
+    "titleFee": 15,
+    "lienFilingFee": 15,
+    "tradeInDeductible": false,
+    "bookValueRule": "Vehicles 5 years old or newer sold below NADA trade-in value may be taxed on NADA value unless a Virginia DMV SUT-1A affidavit is submitted.",
+    "registration": {
+      "terms": [1, 2],
+      "passenger": {
+        "under3700lbs": {
+          "1": 30.75,
+          "2": 59.50
+        },
+        "over3700lbs": {
+          "1": 35.75,
+          "2": 69.50
+        }
+      },
+      "motorcycle": {
+        "1": 24.75,
+        "2": 47.50
+      },
+      "evSurchargeAnnual": 128
+    },
+    "notes": [
+      "Virginia levies a 4.15% Motor Vehicle Sales and Use Tax (SUT) with a $75.00 minimum floor.",
+      "Virginia taxes the gross purchase price; trade-ins are not deductible under VA Code § 58.1-2401.",
+      "A $2.00 discount applies when registering passenger vehicles or motorcycles for a 2-year term."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with the Virginia DMV.",
+      "Virginia taxes the full sales price — trade-ins and rebates do not reduce Motor Vehicle Sales and Use Tax.",
+      "Vehicles 5 years old or newer sold below NADA value may be assessed on NADA trade-in value unless form SUT-1A is submitted."
+    ],
+    "faqs": [
+      {
+        "question": "What is the Virginia sales tax on a private car purchase?",
+        "answer": "Virginia imposes a 4.15% Motor Vehicle Sales and Use Tax (SUT) based on the gross sales price, with a statutory minimum tax of $75.00."
+      },
+      {
+        "question": "How much is the title certificate fee in Virginia?",
+        "answer": "The Virginia DMV charges $15.00 for an original or transferred certificate of title. If the vehicle is financed, an additional $15.00 supplemental lien filing fee applies."
+      },
+      {
+        "question": "Does a trade-in reduce sales tax in Virginia?",
+        "answer": "No. Under Virginia law (VA Code § 58.1-2401), the Motor Vehicle Sales and Use Tax is calculated on the gross sales price. Trade-in deductions are not permitted on private-party or dealer transactions."
+      },
+      {
+        "question": "How much are vehicle registration fees in Virginia?",
+        "answer": "Virginia passenger vehicle registration is weight-based: $30.75/year for vehicles 4,000 lbs or less ($59.50 for 2 years with the $2 discount) and $35.75/year for vehicles over 4,000 lbs ($69.50 for 2 years). Motorcycles are $24.75/year ($47.50 for 2 years)."
+      }
+    ],
+    "sources": [
+      "https://www.dmv.virginia.gov/vehicles/taxes-fees/sut",
+      "https://www.dmv.virginia.gov/vehicles/taxes-fees/general-fees",
+      "https://www.dmv.virginia.gov/vehicles/taxes-fees/registration"
+    ]
+  },
+  "pennsylvania": {
+    "label": "Pennsylvania",
+    "slug": "pennsylvania-private-sale-tax-calculator",
+    "exciseTaxRate": 0.06,
+    "minExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 72,
+    "lienFilingFee": 36,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [1, 2],
+      "passenger": {
+        "under3700lbs": {
+          "1": 48.00,
+          "2": 96.00
+        },
+        "over3700lbs": {
+          "1": 48.00,
+          "2": 96.00
+        }
+      },
+      "motorcycle": {
+        "1": 25.00,
+        "2": 50.00
+      }
+    },
+    "notes": [
+      "Pennsylvania sales tax is 6% baseline (7% in Allegheny County, 8% in Philadelphia).",
+      "Certificate of title fee is $72.00 pursuant to PennDOT Form MV-70S biennial CPI adjustment (increased from older $58 schedule).",
+      "Trade-in deduction is only allowed at licensed Pennsylvania dealerships; private party sales cannot deduct trade-ins."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with PennDOT.",
+      "Pennsylvania sales tax is 6% statewide (7% in Allegheny County, 8% in City of Philadelphia).",
+      "Private vehicle purchases in Pennsylvania do not qualify for trade-in tax credits; tax is owed on the full agreed purchase price."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax rate in Pennsylvania?",
+        "answer": "The Pennsylvania state sales tax rate on motor vehicles is 6% of the purchase price. Residents of Allegheny County pay 7% (additional 1% local tax) and residents of Philadelphia pay 8% (additional 2% local tax)."
+      },
+      {
+        "question": "How much is the Pennsylvania vehicle title transfer fee?",
+        "answer": "The certificate of title fee in Pennsylvania is $72.00 according to PennDOT Form MV-70S. If the vehicle is financed, a $36.00 lien recordation fee is also required."
+      },
+      {
+        "question": "Does a trade-in reduce sales tax on private sales in Pennsylvania?",
+        "answer": "No. Pennsylvania only allows trade-in credits when you trade a vehicle into a licensed dealership. Private-to-private sales are taxed on the full purchase price or market value without trade-in deduction."
+      },
+      {
+        "question": "How much is vehicle registration in Pennsylvania?",
+        "answer": "Standard passenger vehicle registration in Pennsylvania is $48.00 per year ($96.00 for 2 years). Certain counties add an optional $5.00 local use fee. Motorcycle registration is $25.00 per year ($50.00 for 2 years)."
+      }
+    ],
+    "sources": [
+      "https://www.dmv.pa.gov/VEHICLE-SERVICES/Title-Registration/Pages/Fee-Schedule.aspx",
+      "https://www.revenue.pa.gov/TaxTypes/SUT/Pages/default.aspx",
+      "https://www.dot.state.pa.us/Public/DVSPubsForms/BMV/BMV%20Forms/MV-70S.pdf"
+    ]
+  },
+  "delaware": {
+    "label": "Delaware",
+    "slug": "delaware-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0525,
+    "minExciseTax": 8.00,
+    "taxBase": "price",
+    "titleFee": 35,
+    "lienFilingFee": 20,
+    "tradeInDeductible": true,
+    "registration": {
+      "terms": [1, 2],
+      "passenger": {
+        "under3700lbs": {
+          "1": 40.00,
+          "2": 80.00
+        },
+        "over3700lbs": {
+          "1": 40.00,
+          "2": 80.00
+        }
+      },
+      "motorcycle": {
+        "1": 15.00,
+        "2": 30.00
+      }
+    },
+    "notes": [
+      "Delaware has no general sales tax; it assesses a 5.25% Motor Vehicle Document Fee upon titling.",
+      "Delaware permits trade-in credit deductions on both dealer and private vehicle purchases (via Form MV347).",
+      "Title fee is $35 without a lien and $55 with a lien ($35 title + $20 lien fee)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with the Delaware DMV.",
+      "Delaware charges a 5.25% Motor Vehicle Document Fee (minimum $8.00) based on net purchase price or NADA average trade-in value.",
+      "Trade-in credit is permitted in Delaware: you may deduct the value of your trade-in vehicle from the purchase price before the 5.25% document fee is calculated."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle tax rate in Delaware?",
+        "answer": "Delaware does not have a general sales tax. Instead, the Delaware DMV assesses a 5.25% Motor Vehicle Document Fee on the vehicle's purchase price or NADA average trade-in value, whichever is higher (minimum $8.00)."
+      },
+      {
+        "question": "Does a trade-in reduce the vehicle document fee in Delaware?",
+        "answer": "Yes! Delaware law allows you to deduct the value of your trade-in vehicle from the purchase price before calculating the 5.25% document fee. For private sales, buyers can claim this credit using Delaware DMV Form MV347 if completed within 60 days."
+      },
+      {
+        "question": "How much is a title certificate in Delaware?",
+        "answer": "The Delaware DMV title certificate fee is $35.00. If the vehicle is financed with an active lien, the fee is $55.00 ($35 title + $20 lien filing fee)."
+      },
+      {
+        "question": "What are registration fees in Delaware?",
+        "answer": "Delaware passenger vehicle registration is $40.00 per year ($80.00 for a 2-year registration). Motorcycle registration is $15.00 per year ($30.00 for 2 years)."
+      }
+    ],
+    "sources": [
+      "https://dmv.de.gov/VehicleServices/titles/index.shtml?dc=veh_title_fees",
+      "https://delcode.delaware.gov/title30/c030/index.html",
+      "https://dmv.de.gov/forms/veh_serv_forms/pdfs/mv347.pdf"
+    ]
+  },
+  "district-of-columbia": {
+    "label": "District of Columbia",
+    "slug": "district-of-columbia-private-sale-tax-calculator",
+    "exciseTaxRate": 0.05,
+    "minExciseTax": null,
+    "taxBase": "fairMarketValue",
+    "titleFee": 26,
+    "lienFilingFee": 20,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [1, 2],
+      "passenger": {
+        "under3700lbs": {
+          "1": 72.00,
+          "2": 144.00
+        },
+        "over3700lbs": {
+          "1": 115.00,
+          "2": 230.00
+        }
+      },
+      "motorcycle": {
+        "1": 52.00,
+        "2": 104.00
+      }
+    },
+    "notes": [
+      "DC excise tax is assessed on vehicle Fair Market Value (NADA Eastern Region) at rates from 1.0% to 11.0% based on weight and EPA city MPG under the 2025 Act.",
+      "The 5.0% baseline rate models a standard passenger car (3,499 lbs or less, 21–25 city MPG).",
+      "Trade-ins on private-party sales do not reduce the DC Fair Market Value tax base."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with the DC DMV.",
+      "DC calculates vehicle excise tax based on Fair Market Value (NADA Eastern Region) and EPA city MPG tiers ranging from 1.0% to 11.0%. Baseline estimate uses standard 5.0% tier.",
+      "District of Columbia taxes full Fair Market Value — private party trade-in values do not reduce excise tax."
+    ],
+    "faqs": [
+      {
+        "question": "How is vehicle excise tax calculated in Washington DC?",
+        "answer": "Under DC DMV regulations and the 2025 Motor Excise Tax Amendment Act, excise tax is calculated by multiplying the vehicle's Fair Market Value (NADA Eastern Region Guide) by a percentage determined by unladen weight and EPA city MPG (ranging from 1.0% to 11.0%). Standard passenger vehicles generally fall into the 3.1% to 6.0% range (5.0% average baseline)."
+      },
+      {
+        "question": "Does a trade-in reduce vehicle excise tax in DC?",
+        "answer": "No. In the District of Columbia, excise tax is applied to the vehicle's Fair Market Value; private party trade-in values on a bill of sale do not reduce the assessed tax base."
+      },
+      {
+        "question": "How much is a title certificate in the District of Columbia?",
+        "answer": "The DC DMV certificate of title fee is $26.00 (scheduled to increase to $30.00 in 2026). If the vehicle is financed, a $20.00 lien recordation fee applies."
+      },
+      {
+        "question": "How much are vehicle registration fees in DC?",
+        "answer": "DC vehicle registration is weight-based: Class I (3,499 lbs or less) is $72.00 per year ($144.00 for 2 years); Class II (3,500 lbs and over) is $115.00 per year ($230.00 for 2 years). Motorcycle registration is $52.00 per year ($104.00 for 2 years)."
+      }
+    ],
+    "sources": [
+      "https://dmv.dc.gov/service/vehicle-excise-tax",
+      "https://dmv.dc.gov/service/vehicle-registration-fees",
+      "https://dmv.dc.gov/node/155452"
     ]
   }
 }

@@ -11,23 +11,25 @@ import { StateRule, CostBreakdown } from '../src/lib/types';
 const mdRule = stateRulesData.maryland as StateRule;
 
 describe('UI Component Unit Tests', () => {
-  it('renders PartnerSlot for "below-results" with href="#"', () => {
+  it('renders PartnerSlot for "below-results" with href="#" and rel="sponsored nofollow"', () => {
     render(<PartnerSlot position="below-results" />);
     const link = screen.getByRole('link', { name: /compare quotes/i });
     expect(link).toBeDefined();
     expect(link.getAttribute('href')).toBe('#');
+    expect(link.getAttribute('rel')).toBe('sponsored nofollow');
     expect(screen.getByText(/need insurance for this vehicle\?/i)).toBeDefined();
   });
 
-  it('renders PartnerSlot for "sidebar" with href="#"', () => {
+  it('renders PartnerSlot for "sidebar" with href="#" and rel="sponsored nofollow"', () => {
     render(<PartnerSlot position="sidebar" />);
     const link = screen.getByRole('link', { name: /check auto loan rates/i });
     expect(link).toBeDefined();
     expect(link.getAttribute('href')).toBe('#');
+    expect(link.getAttribute('rel')).toBe('sponsored nofollow');
     expect(screen.getByText(/financing this purchase\?/i)).toBeDefined();
   });
 
-  it('renders Disclaimers component with all §4 required notices', () => {
+  it('renders Disclaimers component with all required notices', () => {
     render(
       <Disclaimers
         disclaimers={mdRule.disclaimers}
@@ -61,6 +63,7 @@ describe('UI Component Unit Tests', () => {
       tradeInDeducted: 0,
       tradeInIgnored: false,
       veipFee: 14,
+      taxBase: 'price',
       itemizedList: [
         { id: 'excise-tax', label: 'Vehicle Excise Tax (6.5%)', amount: 975.0 },
         { id: 'title-fee', label: 'Certificate of Title Fee', amount: 200.0 },
