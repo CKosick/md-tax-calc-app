@@ -1,0 +1,20 @@
+[
+  {
+    "id": "insurance-compare",
+    "position": "below-results",
+    "headline": "Need insurance for this vehicle? Compare quotes",
+    "description": "Find competitive auto insurance policies customized to your vehicle year, make, and Maryland residency requirements.",
+    "ctaText": "Compare Quotes",
+    "badge": "Insurance Partner",
+    "href": "#"
+  },
+  {
+    "id": "auto-loan-rates",
+    "position": "sidebar",
+    "headline": "Financing this purchase? Check auto loan rates",
+    "description": "Explore competitive private-party auto loan financing options with flexible terms and quick approval.",
+    "ctaText": "Check Auto Loan Rates",
+    "badge": "Financing Partner",
+    "href": "#"
+  }
+]

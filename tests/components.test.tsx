@@ -1,0 +1,101 @@
+import React from 'react';
+import { describe, it, expect } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import { PartnerSlot } from '../src/components/PartnerSlot';
+import { Disclaimers } from '../src/components/Disclaimers';
+import { CostSummaryCard } from '../src/components/CostSummaryCard';
+import { FaqSection } from '../src/components/FaqSection';
+import stateRulesData from '../src/config/stateRules.json';
+import { StateRule, CostBreakdown } from '../src/lib/types';
+
+const mdRule = stateRulesData.maryland as StateRule;
+
+describe('UI Component Unit Tests', () => {
+  it('renders PartnerSlot for "below-results" with href="#"', () => {
+    render(<PartnerSlot position="below-results" />);
+    const link = screen.getByRole('link', { name: /compare quotes/i });
+    expect(link).toBeDefined();
+    expect(link.getAttribute('href')).toBe('#');
+    expect(screen.getByText(/need insurance for this vehicle\?/i)).toBeDefined();
+  });
+
+  it('renders PartnerSlot for "sidebar" with href="#"', () => {
+    render(<PartnerSlot position="sidebar" />);
+    const link = screen.getByRole('link', { name: /check auto loan rates/i });
+    expect(link).toBeDefined();
+    expect(link.getAttribute('href')).toBe('#');
+    expect(screen.getByText(/financing this purchase\?/i)).toBeDefined();
+  });
+
+  it('renders Disclaimers component with all §4 required notices', () => {
+    render(
+      <Disclaimers
+        disclaimers={mdRule.disclaimers}
+        bookValueApplies={true}
+        tradeInIgnored={true}
+      />
+    );
+
+    // 1. Estimates only notice
+    expect(screen.getAllByText(/estimates only/i).length).toBeGreaterThan(0);
+
+    // 2. Book value rule notice
+    expect(screen.getAllByText(/book-value rule/i).length).toBeGreaterThan(0);
+
+    // 3. Trade-in exemption rule notice
+    expect(screen.getAllByText(/trade-in exemption rule/i).length).toBeGreaterThan(0);
+  });
+
+  it('renders CostSummaryCard with hero total and itemized order', () => {
+    const mockBreakdown: CostBreakdown = {
+      exciseTax: 975.0,
+      titleFee: 200.0,
+      lienFilingFee: 0.0,
+      baseRegistrationFee: 251.0,
+      evSurcharge: 0.0,
+      registrationTotal: 251.0,
+      totalFirstYearCost: 1426.0,
+      minTaxApplied: false,
+      bookValueApplies: true,
+      vehicleAge: 7,
+      tradeInDeducted: 0,
+      tradeInIgnored: false,
+      veipFee: 14,
+      itemizedList: [
+        { id: 'excise-tax', label: 'Vehicle Excise Tax (6.5%)', amount: 975.0 },
+        { id: 'title-fee', label: 'Certificate of Title Fee', amount: 200.0 },
+        { id: 'lien-filing-fee', label: 'Lien / Security Filing Fee', amount: 0.0 },
+        { id: 'registration-fee', label: 'Registration & Tags (2-Year Term)', amount: 251.0 },
+        { id: 'total-cost', label: 'Total First-Year Out-of-Pocket Cost', amount: 1426.0, isHero: true }
+      ]
+    };
+
+    render(
+      <CostSummaryCard
+        breakdown={mockBreakdown}
+        rule={mdRule}
+        purchasePrice={15000}
+      />
+    );
+
+    // Hero Total check
+    expect(screen.getByText('$1,426.00')).toBeDefined();
+
+    // Check itemized amounts
+    expect(screen.getByText('$975.00')).toBeDefined();
+    expect(screen.getByText('$200.00')).toBeDefined();
+    expect(screen.getByText('$251.00')).toBeDefined();
+
+    // Check VEIP informational badge
+    expect(screen.getByText(/VEIP Vehicle Emissions Inspection/i)).toBeDefined();
+  });
+
+  it('renders FaqSection with all long-tail questions', () => {
+    render(<FaqSection faqs={mdRule.faqs} stateLabel="Maryland" />);
+
+    expect(screen.getByText(/Do I pay sales tax on a private car sale in Maryland\?/i)).toBeDefined();
+    expect(screen.getByText(/How much is the Maryland title transfer fee\?/i)).toBeDefined();
+    expect(screen.getByText(/How does Maryland calculate vehicle excise tax on private sales\?/i)).toBeDefined();
+    expect(screen.getByText(/Does a trade-in reduce vehicle excise tax in Maryland\?/i)).toBeDefined();
+  });
+});

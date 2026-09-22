@@ -1,0 +1,64 @@
+{
+  "maryland": {
+    "label": "Maryland",
+    "slug": "maryland-private-sale-tax-calculator",
+    "exciseTaxRate": 0.065,
+    "minExciseTax": 41.60,
+    "titleFee": 200,
+    "lienFilingFee": 40,
+    "tradeInDeductible": false,
+    "bookValueRule": "If vehicle is 7 years old or newer, MVA may assess on book value; a notarized bill of sale overrides",
+    "registration": {
+      "terms": [1, 2],
+      "passenger": {
+        "under3700lbs": {
+          "1": 125.50,
+          "2": 251.00
+        },
+        "over3700lbs": {
+          "1": 191.50,
+          "2": 383.00
+        }
+      },
+      "motorcycle": {
+        "1": 105.00,
+        "2": 210.00
+      },
+      "evSurchargeAnnual": 125,
+      "phevSurchargeAnnual": 100
+    },
+    "veipFee": 14,
+    "notes": [
+      "Title fee increased from $100 to $200 effective July 1, 2025.",
+      "Maryland MVA collects a mandatory $40/yr EMS surcharge bundled into registration fees.",
+      "Private-party sales are taxed on the full agreed price or book value; trade-in deductions are not permitted by MD statute."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with the Maryland MVA.",
+      "Vehicles 7 years old or newer may be assessed on book value, not your purchase price, unless you present a notarized bill of sale.",
+      "Maryland taxes the full purchase price — trade-ins and rebates do not reduce excise tax."
+    ],
+    "faqs": [
+      {
+        "question": "Do I pay sales tax on a private car sale in Maryland?",
+        "answer": "Yes. In Maryland, private vehicle purchases are subject to a 6.5% vehicle excise tax collected by the Maryland Motor Vehicle Administration (MVA) when you apply for the title certificate. There is a statutory minimum excise tax floor of $41.60 (based on a minimum $640 vehicle valuation)."
+      },
+      {
+        "question": "How much is the Maryland title transfer fee?",
+        "answer": "The certificate of title fee in Maryland is $200.00 for both new and used vehicles (increased from $100 on July 1, 2025). If your purchase is financed, an additional $40 security interest (lien) filing fee applies."
+      },
+      {
+        "question": "How does Maryland calculate vehicle excise tax on private sales?",
+        "answer": "For vehicles older than 7 years, the 6.5% excise tax is calculated directly on the purchase price stated on the title. For vehicles 7 years old or newer, the MVA assesses tax on whichever is higher: the purchase price or the NADA clean retail book value, unless the buyer and seller submit a notarized Maryland Bill of Sale (Form VR-181) verifying the lower price."
+      },
+      {
+        "question": "Does a trade-in reduce vehicle excise tax in Maryland?",
+        "answer": "No. Under Maryland law, trade-in deductions are only permitted on purchases from licensed Maryland motor vehicle dealers. In a private-party sale, the excise tax base is the full purchase price; any trade-in value does not reduce your tax obligation."
+      },
+      {
+        "question": "How much are Maryland vehicle registration and tag fees?",
+        "answer": "Maryland offers both 1-year and 2-year registration terms. For Class A passenger vehicles weighing 3,700 lbs or less, registration is $125.50 for 1 year or $251.00 for 2 years (including the mandatory annual $40 EMS surcharge). For vehicles over 3,700 lbs, registration is $191.50 for 1 year or $383.00 for 2 years. Motorcycles are $105.00 for 1 year or $210.00 for 2 years. Zero-emission electric vehicles (ZEVs) have an additional $125/year surcharge, while plug-in hybrids (PHEVs) have a $100/year surcharge."
+      }
+    ]
+  }
+}
