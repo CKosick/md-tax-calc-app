@@ -128,6 +128,18 @@ export default function HomePage() {
                 states={allStatesList}
                 featuredStates={featuredStates.slice(0, 6)}
               />
+
+              {/* Compare States Callout */}
+              <div className="mt-5 flex items-center justify-center">
+                <Link
+                  href="/vehicle-tax-by-state"
+                  className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white/95 px-4 py-2 text-xs font-bold text-indigo-700 shadow-xs transition-colors hover:border-indigo-400 hover:bg-indigo-50/50 dark:border-indigo-800 dark:bg-slate-900 dark:text-indigo-300 dark:hover:bg-slate-800"
+                >
+                  <span className="text-amber-500">📊</span>
+                  <span>Compare States: 2026 Vehicle Sales Tax &amp; Fee Rankings</span>
+                  <span className="text-indigo-500">→</span>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -146,15 +158,24 @@ export default function HomePage() {
                 Instant calculations tailored to state department of revenue and DMV guidelines:
               </p>
             </div>
-            <Link
-              href="/calculator"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400"
-            >
-              <span>View All 51 Jurisdictions</span>
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/vehicle-tax-by-state"
+                className="inline-flex items-center gap-1 text-xs font-bold text-slate-700 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400"
+              >
+                <span>State Rankings</span>
+              </Link>
+              <span className="text-slate-300 dark:text-slate-700">•</span>
+              <Link
+                href="/calculator"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400"
+              >
+                <span>All 51 Jurisdictions</span>
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">

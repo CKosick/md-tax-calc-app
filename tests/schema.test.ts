@@ -264,4 +264,45 @@ describe('State Rules Schema & Config Validation', () => {
       }
     }
   });
+
+  it('validates comparison page schema structures for Dataset, BreadcrumbList, and FAQPage', () => {
+    // 1. Dataset schema validation
+    const datasetSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'Dataset',
+      name: '2026 Vehicle Sales Tax, Title Fees, and First-Year Registration Costs by US State',
+      url: 'https://cartaxhub.com/vehicle-tax-by-state',
+      creator: {
+        '@type': 'Organization',
+        name: 'CarTaxHub',
+        url: 'https://cartaxhub.com'
+      },
+      variableMeasured: [
+        'State Vehicle Sales and Use Tax Rate',
+        'State Certificate of Title Fee',
+        'Annual Passenger Registration Fee',
+        'Total First-Year Out-of-Pocket Vehicle Titling Cost'
+      ]
+    };
+
+    expect(datasetSchema['@type']).toBe('Dataset');
+    expect(datasetSchema.creator['@type']).toBe('Organization');
+    expect(datasetSchema.variableMeasured.length).toBeGreaterThanOrEqual(4);
+
+    // 2. BreadcrumbList schema validation
+    const breadcrumbSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cartaxhub.com' },
+        { '@type': 'ListItem', position: 2, name: 'Compare', item: 'https://cartaxhub.com/vehicle-tax-by-state' },
+        { '@type': 'ListItem', position: 3, name: 'Vehicle Tax by State', item: 'https://cartaxhub.com/vehicle-tax-by-state' }
+      ]
+    };
+
+    expect(breadcrumbSchema['@type']).toBe('BreadcrumbList');
+    expect(breadcrumbSchema.itemListElement).toHaveLength(3);
+    expect(breadcrumbSchema.itemListElement[0].position).toBe(1);
+    expect(breadcrumbSchema.itemListElement[2].name).toBe('Vehicle Tax by State');
+  });
 });

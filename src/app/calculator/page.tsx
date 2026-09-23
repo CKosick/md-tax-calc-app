@@ -53,6 +53,32 @@ export default function CalculatorHubPage() {
           </p>
         </header>
 
+        {/* Comparison Study Banner */}
+        <div className="mt-8 rounded-2xl border border-indigo-200 bg-indigo-50/70 p-5 dark:border-indigo-900/60 dark:bg-indigo-950/40">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">📊</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
+                  Comprehensive Benchmarking
+                </span>
+              </div>
+              <p className="mt-1 text-base font-bold text-slate-900 dark:text-white">
+                Looking to compare all 50 states + DC side-by-side?
+              </p>
+              <p className="mt-0.5 text-xs text-slate-600 dark:text-slate-300 sm:text-sm">
+                Explore our full ranked study of private-party vehicle sales taxes, title fees, and total first-year costs with downloadable CSV data.
+              </p>
+            </div>
+            <Link
+              href="/vehicle-tax-by-state"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-indigo-600 px-4 py-2.5 text-xs font-bold text-white shadow-xs transition-colors hover:bg-indigo-700"
+            >
+              <span>Compare All 51 Jurisdictions →</span>
+            </Link>
+          </div>
+        </div>
+
         {/* State Cards Section */}
         <section className="mt-12">
           <div className="flex items-center justify-between border-b border-slate-200/80 pb-4 dark:border-slate-800">

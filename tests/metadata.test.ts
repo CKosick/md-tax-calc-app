@@ -79,23 +79,27 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
     expect(meta.description).toBe('The requested state vehicle tax calculator could not be found.');
   });
 
-  it('sitemap generates valid XML sitemap entries for root, hub, and all 51 states', () => {
+  it('sitemap generates valid XML sitemap entries for root, hub, comparison page, and all 51 states', () => {
     const entries = sitemap();
 
-    // 1 root + 1 hub (/calculator) + 51 state pages = 53 total entries
-    expect(entries).toHaveLength(53);
+    // 1 root + 1 hub (/calculator) + 1 comparison page (/vehicle-tax-by-state) + 51 state pages = 54 total entries
+    expect(entries).toHaveLength(54);
 
     const urls = entries.map((e) => e.url);
     expect(urls.some((u) => u.endsWith('/calculator'))).toBe(true);
+    expect(urls.some((u) => u.endsWith('/vehicle-tax-by-state'))).toBe(true);
     expect(urls.some((u) => u.endsWith('/calculator/maryland-private-sale-tax-calculator'))).toBe(true);
     expect(urls.some((u) => u.endsWith('/calculator/california-private-sale-tax-calculator'))).toBe(true);
 
-    // Verify priorities: root gets 1.0, directory gets 0.9, all 51 state pages get 0.8
-    const rootEntry = entries.find((e) => !e.url.includes('/calculator'));
+    // Verify priorities: root gets 1.0, hub and comparison get 0.9, all 51 state pages get 0.8
+    const rootEntry = entries.find((e) => e.url === 'https://cartaxhub.com');
     expect(rootEntry?.priority).toBe(1.0);
 
     const hubEntry = entries.find((e) => e.url.endsWith('/calculator'));
     expect(hubEntry?.priority).toBe(0.9);
+
+    const compareEntry = entries.find((e) => e.url.endsWith('/vehicle-tax-by-state'));
+    expect(compareEntry?.priority).toBe(0.9);
 
     const mdEntry = entries.find((e) => e.url.endsWith('maryland-private-sale-tax-calculator'));
     expect(mdEntry?.priority).toBe(0.8);

@@ -12,5 +12,5 @@ export function formatFee(amount: number): string {
 }
 
 export function formatPercent(rate: number): string {
-  return `${Number((rate * 100).toFixed(2))}%`;
+  return `${(rate * 100).toFixed(2)}%`;
 }

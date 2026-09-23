@@ -8,7 +8,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://cartaxhub.com';
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
 
-  // Root and hub index pages
+  // Root, hub, and comparison index pages
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${BASE_URL}`,
@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/calculator`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9
+    },
+    {
+      url: `${BASE_URL}/vehicle-tax-by-state`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9
