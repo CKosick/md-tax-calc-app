@@ -117,7 +117,8 @@ export function calculateVehicleCosts(
       baseRegistrationFee = term === 1 ? motoRule / 2 : motoRule;
     }
   } else {
-    const passRule = rule.registration.passenger[inputs.weightClass];
+    const passMap = rule.registration.passenger as Record<string, unknown>;
+    const passRule = passMap[inputs.weightClass] || passMap.standard || passMap.under3700lbs;
     if (typeof passRule === 'object' && passRule !== null) {
       const rates = passRule as Record<string, number>;
       if (rates[String(term)] !== undefined) {

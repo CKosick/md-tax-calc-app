@@ -2621,5 +2621,611 @@
     "sources": [
       "https://transportation.wv.gov/dmv"
     ]
+  },
+  "hawaii": {
+    "label": "Hawaii",
+    "slug": "hawaii-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0,
+    "taxBase": "price",
+    "titleFee": 10,
+    "lienFilingFee": 10,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 46
+        },
+        "over3700lbs": {
+          "1": 46
+        }
+      },
+      "motorcycle": {
+        "1": 35
+      },
+      "evSurchargeAnnual": 50
+    },
+    "localTaxNote": "Hawaii has no state sales tax or General Excise Tax (GET) on casual motor vehicle sales between private individuals. However, counties (Honolulu, Maui, Hawaii, Kauai) assess state (1.75¢/lb) and county (up to 7.0¢/lb) annual vehicle weight taxes at registration.",
+    "notes": [
+      "Private party casual vehicle sales between individuals are exempt from Hawaii General Excise Tax (GET) under HRS Chapter 237.",
+      "Certificate of ownership (title) transfer fee is $10.00.",
+      "Base state passenger vehicle registration fee is $46.00.",
+      "Counties levy weight taxes (e.g., Honolulu charges 7.0¢ per pound county tax plus 1.75¢ per pound state tax) collected annually at registration.",
+      "Buyers must transfer title and registration within 30 days to avoid a $50 late transfer penalty.",
+      "A valid Hawaii vehicle safety inspection certificate is required to complete the registration transfer."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Hawaii Department of Transportation and your local county DMV.",
+      "Hawaii does not levy sales tax or General Excise Tax on casual private vehicle sales.",
+      "Annual registration costs vary based on vehicle weight and county of residence."
+    ],
+    "faqs": [
+      {
+        "question": "Do I pay sales tax on a private car purchase in Hawaii?",
+        "answer": "No. Hawaii does not impose a sales tax or General Excise Tax (GET) on casual private party vehicle sales between individuals. GET only applies to sales made by licensed dealerships and commercial businesses."
+      },
+      {
+        "question": "What fees do I pay when transferring a car title in Hawaii?",
+        "answer": "The certificate of title transfer fee is $10.00. You will also pay the base annual registration fee ($46.00 state base) plus county registration fees and state/county weight taxes based on the vehicle's curb weight."
+      },
+      {
+        "question": "What is the vehicle weight tax in Hawaii?",
+        "answer": "Hawaii imposes both a state weight tax (1.75¢ per pound for passenger cars up to 4,000 lbs) and a county weight tax (such as 7.0¢ per pound in the City and County of Honolulu), assessed annually upon registration."
+      },
+      {
+        "question": "How long do I have to transfer a title in Hawaii?",
+        "answer": "The buyer must submit the endorsed title, registration, and safety inspection certificate to the county DMV within 30 days of purchase. Transfers submitted after 30 days incur a $50 late fee."
+      }
+    ],
+    "sources": [
+      "https://hidot.hawaii.gov",
+      "https://mvinquiry.hnl.info"
+    ]
+  },
+  "new-hampshire": {
+    "label": "New Hampshire",
+    "slug": "new-hampshire-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0,
+    "taxBase": "price",
+    "titleFee": 35,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 48
+        },
+        "over3700lbs": {
+          "1": 48
+        }
+      },
+      "motorcycle": {
+        "1": 24
+      },
+      "evSurchargeAnnual": 100
+    },
+    "localTaxNote": "New Hampshire has no state vehicle sales tax. However, under RSA 261:153, local town or city clerks collect an annual Municipal Permit Fee (personal property tax) based on vehicle MSRP and age ($18 down to $3 per $1,000) prior to state registration.",
+    "notes": [
+      "New Hampshire does not impose a state sales tax on motor vehicle purchases.",
+      "Certificate of title fee is $35.00 under RSA 261:20 (required for vehicles model year 2000 and newer).",
+      "State passenger vehicle registration fee is $48.00 under RSA 261:141 for standard 3,001–5,000 lb vehicles.",
+      "Municipal permit fees are paid to your local town or city clerk based on original MSRP and vehicle age.",
+      "Electric vehicles pay an additional $100 annual state registration surcharge ($50 for plug-in hybrids)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with New Hampshire DMV and your local town/city clerk.",
+      "New Hampshire has no state vehicle sales tax; local town permit fees (property tax) apply annually based on MSRP."
+    ],
+    "faqs": [
+      {
+        "question": "Is there sales tax on a used car in New Hampshire?",
+        "answer": "No. New Hampshire has no state sales tax on private party or dealer vehicle purchases."
+      },
+      {
+        "question": "How much does a title transfer cost in New Hampshire?",
+        "answer": "The state certificate of title fee in New Hampshire is $35.00 under RSA 261:20. Vehicles model year 1999 and older are title-exempt and require only a bill of sale and prior registration."
+      },
+      {
+        "question": "What is the New Hampshire town clerk permit fee?",
+        "answer": "Under RSA 261:153, New Hampshire towns and cities collect an annual permit fee (a local motor vehicle property tax) calculated from the manufacturer's suggested retail price (MSRP). Rates decrease from $18 per $1,000 of MSRP for new vehicles down to $3 per $1,000 for vehicles 5 model years old and older."
+      },
+      {
+        "question": "What is the registration process for a private sale in NH?",
+        "answer": "Buyers begin at their local town or city clerk's office with the signed title and bill of sale. You pay the municipal permit fee and title application fee locally, and either complete state registration directly through the municipal agent or at a state DMV location."
+      }
+    ],
+    "sources": [
+      "https://www.nh.gov/safety/divisions/dmv"
+    ]
+  },
+  "maine": {
+    "label": "Maine",
+    "slug": "maine-private-sale-tax-calculator",
+    "exciseTaxRate": 0.055,
+    "taxBase": "price",
+    "titleFee": 33,
+    "lienFilingFee": 0,
+    "tradeInDeductible": true,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 35
+        },
+        "over3700lbs": {
+          "1": 35
+        }
+      },
+      "motorcycle": {
+        "1": 21
+      },
+      "evSurchargeAnnual": 0
+    },
+    "localTaxNote": "Maine has no local sales tax. However, under 36 M.R.S. § 1482, municipalities collect an annual personal property Excise Tax based on vehicle maker's list price and age (24 mills down to 4 mills for 6th model year and older) prior to registration.",
+    "notes": [
+      "Maine levies a 5.5% sales/use tax on casual motor vehicle sales under 36 M.R.S. § 1764 & § 1811.",
+      "Trade-in deduction is permitted under 36 M.R.S. § 1765 when trading in property of the same category (car for car).",
+      "Certificate of title fee is $33.00.",
+      "Annual passenger vehicle registration fee is $35.00.",
+      "Local municipal excise tax must be paid to your city or town office before registering with the Bureau of Motor Vehicles (BMV)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Maine Bureau of Motor Vehicles (BMV) and Maine Revenue Services.",
+      "Maine charges a 5.5% state sales tax on private vehicle sales; local municipal excise tax is paid annually at your town office.",
+      "Trade-in allowance reduces the taxable purchase base when exchanging comparable vehicles."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax rate on a private car purchase in Maine?",
+        "answer": "Maine levies a uniform 5.5% sales and use tax on private party motor vehicle purchases under 36 M.R.S. § 1764, collected when the buyer registers the vehicle."
+      },
+      {
+        "question": "Can I deduct a trade-in on a private car purchase in Maine?",
+        "answer": "Yes. Under 36 M.R.S. § 1765, when vehicles in the same category are traded in toward the purchase of another vehicle, sales tax is assessed only on the net difference between the purchase price and trade-in allowance."
+      },
+      {
+        "question": "What is the Maine municipal excise tax?",
+        "answer": "Under 36 M.R.S. § 1482, municipalities levy an annual personal property excise tax based on the vehicle's original MSRP (maker's list price). Rates scale from 24 mills ($24 per $1,000) for current model year vehicles down to 4 mills ($4 per $1,000) for vehicles 6 model years old or older."
+      },
+      {
+        "question": "How much does it cost to title and register a car in Maine?",
+        "answer": "The state certificate of title fee is $33.00 and the standard annual passenger registration fee is $35.00, paid to the Bureau of Motor Vehicles (BMV) after paying municipal excise tax."
+      }
+    ],
+    "sources": [
+      "https://www.maine.gov/revenue",
+      "https://www.maine.gov/sos/bmv"
+    ]
+  },
+  "montana": {
+    "label": "Montana",
+    "slug": "montana-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0,
+    "taxBase": "price",
+    "titleFee": 12,
+    "lienFilingFee": 8,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 87
+        },
+        "over3700lbs": {
+          "1": 87
+        }
+      },
+      "motorcycle": {
+        "1": 53
+      },
+      "evSurchargeAnnual": 130
+    },
+    "localTaxNote": "Montana has no state sales tax. Light vehicle registration fees are flat and age-based ($217 for 0–4 yrs; $87 for 5–10 yrs; $28 for 11+ yrs). Under MCA 61-3-315, an annual $825 luxury surcharge applies to vehicles with MSRP over $150,000.",
+    "notes": [
+      "Montana does not impose a state sales tax or vehicle use tax.",
+      "Certificate of title fee is $12.00 ($10 statutory fee + $2 electronic administration fee under MCA 61-3-203).",
+      "Standard annual registration fee is age-based under MCA 61-3-321: $87.00 for vehicles 5–10 years old (such as a 2019 model in 2026).",
+      "Vehicles 11 years old or older qualify for permanent registration.",
+      "Under MCA 61-3-315, luxury light vehicles with an MSRP exceeding $150,000 pay an additional $825 annual luxury fee."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Montana Motor Vehicle Division (MVD) and your county treasurer.",
+      "Montana has 0% state sales tax. Registration fees follow a statutory age-based schedule."
+    ],
+    "faqs": [
+      {
+        "question": "Is there a sales tax on cars in Montana?",
+        "answer": "No. Montana has no general sales or use tax on motor vehicle sales, whether purchased from a private party or a dealership."
+      },
+      {
+        "question": "How are registration fees calculated in Montana?",
+        "answer": "Under MCA 61-3-321, Montana light vehicle registration fees are based on vehicle age: $217 for vehicles 0–4 years old, $87 for vehicles 5–10 years old, and $28 for vehicles 11 years and older."
+      },
+      {
+        "question": "Can I permanently register my car in Montana?",
+        "answer": "Yes. Vehicles that are 11 model years old or older qualify for permanent registration, allowing owners to pay a one-time fee and never renew registration tags again."
+      },
+      {
+        "question": "What is the Montana luxury vehicle tax?",
+        "answer": "Under MCA 61-3-315, light vehicles 10 years old or newer with a manufacturer's suggested retail price (MSRP) exceeding $150,000 pay an annual $825 luxury surcharge in addition to standard registration fees."
+      }
+    ],
+    "sources": [
+      "https://mvdmt.gov"
+    ]
+  },
+  "rhode-island": {
+    "label": "Rhode Island",
+    "slug": "rhode-island-private-sale-tax-calculator",
+    "exciseTaxRate": 0.07,
+    "taxBase": "price",
+    "titleFee": 52.5,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        2
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "2": 60
+        },
+        "over3700lbs": {
+          "2": 60
+        }
+      },
+      "motorcycle": {
+        "2": 32.5
+      },
+      "evSurchargeAnnual": 0
+    },
+    "localTaxNote": "Rhode Island does not levy local sales taxes. Vehicles 7 years old or newer are taxed on the greater of purchase price or NADA Clean Retail book value per R.I. Gen. Laws § 44-18-20.",
+    "notes": [
+      "Rhode Island imposes a 7.0% sales/use tax on casual vehicle purchases under R.I. Gen. Laws § 44-18-20.",
+      "For vehicles 7 years old or newer, tax is calculated on the greater of purchase price or NADA Clean Retail value.",
+      "Certificate of title fee is $52.50 under R.I. Gen. Laws § 31-3.1-6.",
+      "Passenger vehicle registration is issued for a 2-year biennial period ($60.00 for standard passenger weight class).",
+      "Trade-in deduction under § 44-18-30(23) applies exclusively to sales by licensed dealers; private party sales pay tax on the full taxable amount."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Rhode Island Division of Motor Vehicles (DMV) and Division of Taxation.",
+      "Rhode Island applies a 7.0% state sales tax. Vehicles 7 years old or newer are assessed on the higher of purchase price or NADA retail value.",
+      "Trade-in credits are not allowed for private party transactions."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax rate on a private car purchase in Rhode Island?",
+        "answer": "Rhode Island levies a 7.0% sales and use tax on private party motor vehicle purchases under R.I. Gen. Laws § 44-18-20, payable to the DMV upon registration."
+      },
+      {
+        "question": "How does Rhode Island calculate tax on used cars?",
+        "answer": "For vehicles 7 model years old or newer, the Rhode Island DMV calculates sales tax on either the purchase price or the NADA Clean Retail book value, whichever is higher."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private vehicle sale in Rhode Island?",
+        "answer": "No. Under R.I. Gen. Laws § 44-18-30(23), the trade-in allowance deduction is strictly limited to purchases made from licensed motor vehicle dealers. Private transactions are taxed on the full purchase price or book value."
+      },
+      {
+        "question": "How much are title and registration fees in Rhode Island?",
+        "answer": "The certificate of title fee is $52.50 under R.I. Gen. Laws § 31-3.1-6. Standard passenger vehicle registration is $60.00, which covers a two-year biennial registration period."
+      }
+    ],
+    "sources": [
+      "https://dmv.ri.gov",
+      "https://tax.ri.gov"
+    ]
+  },
+  "south-dakota": {
+    "label": "South Dakota",
+    "slug": "south-dakota-private-sale-tax-calculator",
+    "exciseTaxRate": 0.04,
+    "taxBase": "price",
+    "titleFee": 10,
+    "lienFilingFee": 10,
+    "tradeInDeductible": true,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 42
+        },
+        "over3700lbs": {
+          "1": 42
+        }
+      },
+      "motorcycle": {
+        "1": 18
+      },
+      "evSurchargeAnnual": 50
+    },
+    "localTaxNote": "South Dakota's 4% Motor Vehicle Excise Tax is collected at the state level in lieu of general sales tax; no local city or county sales taxes apply to vehicle purchases.",
+    "notes": [
+      "South Dakota levies a 4.0% Motor Vehicle Excise Tax on vehicle purchases under SDCL § 32-5B-1.",
+      "Trade-in deduction is permitted for private party transactions under SDCL § 32-5B-4 when documented with a bill of sale.",
+      "Certificate of title fee is $10.00; lien notation fee is $10.00.",
+      "Annual registration fee is based on vehicle weight under SDCL § 32-5-6 ($42.00 for standard passenger vehicles).",
+      "Vehicles 11 years old or older with a purchase price of $2,500 or less are exempt from motor vehicle excise tax under SDCL § 32-5B-2(1)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with South Dakota Department of Revenue and county treasurer.",
+      "South Dakota charges a 4% Motor Vehicle Excise Tax in lieu of sales tax. Private trade-in deductions are authorized by statute.",
+      "Older vehicles (11+ years old) priced at $2,500 or less are fully exempt from excise tax."
+    ],
+    "faqs": [
+      {
+        "question": "What is the tax on a private car purchase in South Dakota?",
+        "answer": "South Dakota imposes a 4.0% Motor Vehicle Excise Tax under SDCL § 32-5B-1, paid to the county treasurer when applying for title and registration."
+      },
+      {
+        "question": "Can I claim a trade-in deduction on a private vehicle sale in South Dakota?",
+        "answer": "Yes. Under SDCL § 32-5B-4, South Dakota allows a trade-in credit on private party transactions when documented with a bill of sale showing the trade-in allowance."
+      },
+      {
+        "question": "Are any vehicles exempt from excise tax in South Dakota?",
+        "answer": "Yes. Under SDCL § 32-5B-2(1), any motor vehicle 11 model years old or older with a purchase price of $2,500 or less is completely exempt from the 4% excise tax."
+      },
+      {
+        "question": "How much does it cost to title and register a car in South Dakota?",
+        "answer": "The title fee is $10.00 (plus $10.00 for lien notation if applicable). Standard annual passenger vehicle registration is weight-based under SDCL § 32-5-6 and averages $42.00."
+      }
+    ],
+    "sources": [
+      "https://dor.sd.gov/individuals/motor-vehicle"
+    ]
+  },
+  "north-dakota": {
+    "label": "North Dakota",
+    "slug": "north-dakota-private-sale-tax-calculator",
+    "exciseTaxRate": 0.05,
+    "taxBase": "price",
+    "titleFee": 5,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 81
+        },
+        "over3700lbs": {
+          "1": 81
+        }
+      },
+      "motorcycle": {
+        "1": 20
+      },
+      "evSurchargeAnnual": 120
+    },
+    "localTaxNote": "North Dakota's 5% Motor Vehicle Excise Tax is a uniform state levy in lieu of local sales taxes; no city or county taxes apply to vehicle purchases.",
+    "notes": [
+      "North Dakota imposes a 5.0% Motor Vehicle Excise Tax under N.D.C.C. § 57-40.3-02.",
+      "Certificate of title fee is $5.00 under N.D.C.C. § 39-05-05.",
+      "Annual registration fee is weight- and age-based under N.D.C.C. § 39-04-19 ($81.00 for a 7-year-old vehicle in the 3,200–4,499 lb class).",
+      "Trade-in deduction is restricted to transactions involving licensed dealers; private party purchases pay tax on the full purchase price.",
+      "Electric vehicles pay an additional $120 annual road use fee ($50 for plug-in hybrids)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with North Dakota Department of Transportation (NDDOT).",
+      "North Dakota charges a 5% Motor Vehicle Excise Tax statewide. Trade-in deductions are limited to dealer sales."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax on a private car purchase in North Dakota?",
+        "answer": "North Dakota levies a 5.0% Motor Vehicle Excise Tax on the purchase price of vehicles under N.D.C.C. § 57-40.3-02, paid to NDDOT when registering the vehicle."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private vehicle purchase in North Dakota?",
+        "answer": "No. Under NDDOT administrative rules and Form SFN 2872, trade-in deductions are restricted to transactions with licensed dealerships. Private purchases are taxed on the full purchase price."
+      },
+      {
+        "question": "How much is a title transfer in North Dakota?",
+        "answer": "The certificate of title fee in North Dakota is $5.00 under N.D.C.C. § 39-05-05, one of the lowest in the nation."
+      },
+      {
+        "question": "How are North Dakota registration fees calculated?",
+        "answer": "Under N.D.C.C. § 39-04-19, registration fees depend on the vehicle's unladen weight and age. For a passenger vehicle weighing between 3,200 and 4,499 lbs in its 7th year, annual registration is $81.00."
+      }
+    ],
+    "sources": [
+      "https://www.dot.nd.gov"
+    ]
+  },
+  "alaska": {
+    "label": "Alaska",
+    "slug": "alaska-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0,
+    "taxBase": "price",
+    "titleFee": 15,
+    "lienFilingFee": 15,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        2
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "2": 100
+        },
+        "over3700lbs": {
+          "2": 100
+        }
+      },
+      "motorcycle": {
+        "2": 60
+      },
+      "evSurchargeAnnual": 0
+    },
+    "localTaxNote": "Alaska has no statewide sales tax. However, local boroughs and municipalities may levy local sales tax (up to 7.5%) or a biennial Motor Vehicle Registration Tax (MVRT) under AS 28.10.431 ranging from $19 to $150.",
+    "notes": [
+      "Alaska does not impose a statewide sales or use tax on motor vehicle sales.",
+      "Certificate of title fee is $15.00 under AS 28.10.421.",
+      "Passenger vehicles are registered biennially (every 2 years) for $100.00 ($50/year equivalent) for vehicles under 4,000 lbs.",
+      "Many boroughs (Anchorage, Mat-Su, Kenai Peninsula) levy an age-based local Motor Vehicle Registration Tax (MVRT).",
+      "Seniors age 65 or older may be exempt from the state registration fee for one vehicle."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Alaska DMV and your local municipality/borough.",
+      "Alaska has 0% state sales tax, but local borough sales taxes or registration taxes (MVRT) may apply.",
+      "Standard registration fee covers a 2-year biennial registration period."
+    ],
+    "faqs": [
+      {
+        "question": "Is there sales tax on a used car in Alaska?",
+        "answer": "Alaska has no statewide sales tax. However, individual home-rule cities and boroughs (such as Juneau or Wasilla) may levy local sales tax on vehicle purchases."
+      },
+      {
+        "question": "How much does it cost to title and register a car in Alaska?",
+        "answer": "The certificate of title fee is $15.00 under AS 28.10.421. Standard passenger vehicle registration is $100.00, which covers a two-year biennial registration cycle."
+      },
+      {
+        "question": "What is the Alaska Motor Vehicle Registration Tax (MVRT)?",
+        "answer": "Under AS 28.10.431, boroughs such as Anchorage and Fairbanks levy an optional local Motor Vehicle Registration Tax (MVRT) based on vehicle age, collected biennially alongside state registration fees."
+      },
+      {
+        "question": "Can senior citizens get exempt from registration fees in Alaska?",
+        "answer": "Yes. Alaska residents aged 65 and older may receive an exemption from the state registration fee for one personal passenger vehicle."
+      }
+    ],
+    "sources": [
+      "https://dmv.alaska.gov"
+    ]
+  },
+  "vermont": {
+    "label": "Vermont",
+    "slug": "vermont-private-sale-tax-calculator",
+    "exciseTaxRate": 0.06,
+    "taxBase": "price",
+    "titleFee": 42,
+    "lienFilingFee": 14,
+    "tradeInDeductible": true,
+    "registration": {
+      "terms": [
+        1,
+        2
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 91,
+          "2": 167
+        },
+        "over3700lbs": {
+          "1": 91,
+          "2": 167
+        }
+      },
+      "motorcycle": {
+        "1": 58
+      },
+      "evSurchargeAnnual": 89
+    },
+    "localTaxNote": "Vermont charges a uniform 6.0% Motor Vehicle Purchase and Use Tax statewide; no local city or county sales taxes apply. Tax is assessed on the greater of purchase price or J.D. Power clean trade-in book value.",
+    "notes": [
+      "Vermont levies a 6.0% Motor Vehicle Purchase and Use Tax under 32 V.S.A. § 8903.",
+      "Certificate of title fee is $42.00 under 23 V.S.A. § 2002 (updated by Act 62, eff. Jan 1, 2024).",
+      "Annual pleasure car registration is $91.00 ($167.00 for two years).",
+      "Trade-in deduction is permitted under 32 V.S.A. § 8905: you can offset the trade-in value or receive credit for a prior vehicle sold within 3 months if previously registered in Vermont.",
+      "Tax is calculated on the greater of actual purchase price or J.D. Power clean trade-in book value."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Vermont Department of Motor Vehicles (DMV).",
+      "Vermont charges a 6% Purchase and Use Tax on the higher of the purchase price or J.D. Power clean trade-in book value.",
+      "Trade-in credits apply to private sales if the previous vehicle was registered in Vermont and sold within 3 months."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax in Vermont?",
+        "answer": "Vermont imposes a 6.0% Motor Vehicle Purchase and Use Tax on the taxable cost of vehicles under 32 V.S.A. § 8903, paid to the DMV at registration."
+      },
+      {
+        "question": "How does Vermont value vehicles for tax purposes?",
+        "answer": "Tax is calculated on either the actual purchase price or the J.D. Power clean trade-in book value, whichever is higher, to prevent artificial underreporting."
+      },
+      {
+        "question": "Can I deduct my trade-in or previous sale in Vermont?",
+        "answer": "Yes. Under 32 V.S.A. § 8905, you can deduct a trade-in allowance or claim a tax credit if you sold a vehicle previously registered in Vermont within three months of purchasing your new vehicle."
+      },
+      {
+        "question": "How much does it cost to title and register a car in Vermont?",
+        "answer": "The certificate of title fee is $42.00 under 23 V.S.A. § 2002 (increased from $35.00 by Act 62). Annual passenger registration ('pleasure car') is $91.00 for one year or $167.00 for two years."
+      }
+    ],
+    "sources": [
+      "https://dmv.vermont.gov"
+    ]
+  },
+  "wyoming": {
+    "label": "Wyoming",
+    "slug": "wyoming-private-sale-tax-calculator",
+    "exciseTaxRate": 0.04,
+    "taxBase": "price",
+    "titleFee": 15,
+    "lienFilingFee": 20,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 30
+        },
+        "over3700lbs": {
+          "1": 30
+        }
+      },
+      "motorcycle": {
+        "1": 15
+      },
+      "evSurchargeAnnual": 200
+    },
+    "localTaxNote": "Wyoming state sales/use tax is 4.0%. All 23 Wyoming counties impose a 1.0% to 2.0% local optional tax, making total sales tax between 5.0% and 6.0%. Under Wyo. Stat. § 31-3-102, an annual County Registration Fee (ad-valorem property tax) also applies at registration based on factory price × age × 3%.",
+    "notes": [
+      "Wyoming levies a 4.0% state sales/use tax on motor vehicle sales under Wyo. Stat. § 39-15-103.",
+      "All counties impose a 1.0% to 2.0% optional local sales tax, bringing the effective tax to 5.0%–6.0%.",
+      "State certificate of title fee is $15.00 under Wyo. Stat. § 31-3-102.",
+      "State flat passenger registration fee is $30.00 under Wyo. Stat. § 31-3-101.",
+      "Trade-in deduction under Wyo. Stat. § 39-15-101 applies exclusively to dealer transactions; private sales pay tax on full purchase price.",
+      "An annual County Registration Fee (ad-valorem property tax) is collected by the county treasurer based on factory cost and vehicle age."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Wyoming Department of Revenue and your County Clerk/Treasurer.",
+      "Wyoming charges 4% state tax plus 1% to 2% county optional tax. Annual county property fees apply at registration.",
+      "Trade-in deductions are not available for private party sales."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax rate on a private car purchase in Wyoming?",
+        "answer": "Wyoming imposes a 4.0% state sales and use tax under Wyo. Stat. § 39-15-103, plus a 1.0% to 2.0% county local option tax levied by every Wyoming county, resulting in a total sales tax rate between 5.0% and 6.0%."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private vehicle sale in Wyoming?",
+        "answer": "No. Under Wyo. Stat. § 39-15-101, trade-in allowances only reduce the taxable sales price when purchasing from a licensed motor vehicle dealer. Private sales pay sales tax on the full purchase price."
+      },
+      {
+        "question": "How are vehicle registration fees calculated in Wyoming?",
+        "answer": "Wyoming vehicle registration consists of two fees: a flat state registration fee ($30.00 for passenger vehicles under Wyo. Stat. § 31-3-101) and an annual County Registration Fee (ad-valorem property tax) calculated from the factory price multiplied by an age depreciation percentage times 3% (30 mills)."
+      },
+      {
+        "question": "How much does a title transfer cost in Wyoming?",
+        "answer": "The Wyoming certificate of title fee is $15.00 under Wyo. Stat. § 31-3-102, paid to your local County Clerk's office. If there is a lien on the vehicle, an additional $20.00 filing fee applies."
+      }
+    ],
+    "sources": [
+      "https://revenue.wyo.gov",
+      "https://www.dot.state.wy.us"
+    ]
   }
 }

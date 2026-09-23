@@ -825,3 +825,177 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     expect(wvTrade.exciseTax).toBe(750.00);
   });
 });
+
+describe('Batch 5 Worked Acceptance Tests (HI, NH, ME, MT, RI, SD, ND, AK, VT, WY)', () => {
+  const std1Yr: CalculatorInputs = {
+    state: '',
+    vehicleType: 'passenger',
+    purchasePrice: 15000,
+    vehicleYear: 2019,
+    weightClass: 'under3700lbs',
+    fuelType: 'gasoline',
+    registrationTerm: 1,
+    isFinanced: false,
+    tradeInValue: 0
+  };
+
+  const std2Yr: CalculatorInputs = {
+    ...std1Yr,
+    registrationTerm: 2
+  };
+
+  it('Hawaii: exact worked test ($15,000 -> $56.00, 0% casual sales GET exemption)', () => {
+    const rule = allRules.hawaii;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'hawaii' }, 2026);
+    expect(res.exciseTax).toBe(0.00);
+    expect(res.titleFee).toBe(10.00);
+    expect(res.registrationTotal).toBe(46.00);
+    expect(res.totalFirstYearCost).toBe(56.00);
+  });
+
+  it('New Hampshire: exact worked test ($15,000 -> $83.00, 0% state sales tax)', () => {
+    const rule = allRules['new-hampshire'];
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'new-hampshire' }, 2026);
+    expect(res.exciseTax).toBe(0.00);
+    expect(res.titleFee).toBe(35.00);
+    expect(res.registrationTotal).toBe(48.00);
+    expect(res.totalFirstYearCost).toBe(83.00);
+  });
+
+  it('Maine: exact worked test ($15,000 -> $893.00, 5.5% tax)', () => {
+    const rule = allRules.maine;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'maine' }, 2026);
+    expect(res.exciseTax).toBe(825.00); // 5.5% of 15000
+    expect(res.titleFee).toBe(33.00);
+    expect(res.registrationTotal).toBe(35.00);
+    expect(res.totalFirstYearCost).toBe(893.00);
+  });
+
+  it('Montana: exact worked test ($15,000 -> $99.00, 0% sales tax, $87 age-based 5-10yr reg)', () => {
+    const rule = allRules.montana;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'montana' }, 2026);
+    expect(res.exciseTax).toBe(0.00);
+    expect(res.titleFee).toBe(12.00);
+    expect(res.registrationTotal).toBe(87.00);
+    expect(res.totalFirstYearCost).toBe(99.00);
+  });
+
+  it('Rhode Island: exact worked test ($15,000 -> $1,162.50, 7.0% tax, 2yr reg)', () => {
+    const rule = allRules['rhode-island'];
+    const res = calculateVehicleCosts(rule, { ...std2Yr, state: 'rhode-island' }, 2026);
+    expect(res.exciseTax).toBe(1050.00); // 7.0% of 15000
+    expect(res.titleFee).toBe(52.50);
+    expect(res.registrationTotal).toBe(60.00);
+    expect(res.totalFirstYearCost).toBe(1162.50);
+  });
+
+  it('South Dakota: exact worked test ($15,000 -> $652.00, 4.0% motor vehicle excise tax)', () => {
+    const rule = allRules['south-dakota'];
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'south-dakota' }, 2026);
+    expect(res.exciseTax).toBe(600.00); // 4.0% of 15000
+    expect(res.titleFee).toBe(10.00);
+    expect(res.registrationTotal).toBe(42.00);
+    expect(res.totalFirstYearCost).toBe(652.00);
+  });
+
+  it('North Dakota: exact worked test ($15,000 -> $836.00, 5.0% motor vehicle excise tax)', () => {
+    const rule = allRules['north-dakota'];
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'north-dakota' }, 2026);
+    expect(res.exciseTax).toBe(750.00); // 5.0% of 15000
+    expect(res.titleFee).toBe(5.00);
+    expect(res.registrationTotal).toBe(81.00);
+    expect(res.totalFirstYearCost).toBe(836.00);
+  });
+
+  it('Alaska: exact worked test ($15,000 -> $115.00, 0% state sales tax, 2yr reg)', () => {
+    const rule = allRules.alaska;
+    const res = calculateVehicleCosts(rule, { ...std2Yr, state: 'alaska' }, 2026);
+    expect(res.exciseTax).toBe(0.00);
+    expect(res.titleFee).toBe(15.00);
+    expect(res.registrationTotal).toBe(100.00);
+    expect(res.totalFirstYearCost).toBe(115.00);
+  });
+
+  it('Vermont: exact worked test ($15,000 -> $1,033.00, 6.0% tax, confirmed $42 title fee)', () => {
+    const rule = allRules.vermont;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'vermont' }, 2026);
+    expect(res.exciseTax).toBe(900.00); // 6.0% of 15000
+    expect(res.titleFee).toBe(42.00);
+    expect(res.registrationTotal).toBe(91.00);
+    expect(res.totalFirstYearCost).toBe(1033.00);
+  });
+
+  it('Wyoming: exact worked test ($15,000 -> $645.00, 4.0% state tax)', () => {
+    const rule = allRules.wyoming;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'wyoming' }, 2026);
+    expect(res.exciseTax).toBe(600.00); // 4.0% of 15000
+    expect(res.titleFee).toBe(15.00);
+    expect(res.registrationTotal).toBe(30.00);
+    expect(res.totalFirstYearCost).toBe(645.00);
+  });
+
+  it('Batch 5 trade-in deductibility verification (ME, SD, VT allow; RI, ND, WY do not)', () => {
+    // Maine: allows trade-in on same property category
+    const meTrade = calculateVehicleCosts(allRules.maine, {
+      ...std1Yr,
+      state: 'maine',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(meTrade.tradeInDeducted).toBe(5000);
+    expect(meTrade.exciseTax).toBe(550.00); // $10,000 * 5.5%
+
+    // South Dakota: allows trade-in on private transfers with bill of sale (SDCL 32-5B-4)
+    const sdTrade = calculateVehicleCosts(allRules['south-dakota'], {
+      ...std1Yr,
+      state: 'south-dakota',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(sdTrade.tradeInDeducted).toBe(5000);
+    expect(sdTrade.exciseTax).toBe(400.00); // $10,000 * 4.0%
+
+    // Vermont: allows trade-in or credit for prior VT vehicle sold within 3 months
+    const vtTrade = calculateVehicleCosts(allRules.vermont, {
+      ...std1Yr,
+      state: 'vermont',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(vtTrade.tradeInDeducted).toBe(5000);
+    expect(vtTrade.exciseTax).toBe(600.00); // $10,000 * 6.0%
+
+    // Rhode Island: dealer only
+    const riTrade = calculateVehicleCosts(allRules['rhode-island'], {
+      ...std2Yr,
+      state: 'rhode-island',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(riTrade.tradeInDeducted).toBe(0);
+    expect(riTrade.tradeInIgnored).toBe(true);
+    expect(riTrade.exciseTax).toBe(1050.00);
+
+    // North Dakota: dealer only
+    const ndTrade = calculateVehicleCosts(allRules['north-dakota'], {
+      ...std1Yr,
+      state: 'north-dakota',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(ndTrade.tradeInDeducted).toBe(0);
+    expect(ndTrade.tradeInIgnored).toBe(true);
+    expect(ndTrade.exciseTax).toBe(750.00);
+
+    // Wyoming: dealer only
+    const wyTrade = calculateVehicleCosts(allRules.wyoming, {
+      ...std1Yr,
+      state: 'wyoming',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(wyTrade.tradeInDeducted).toBe(0);
+    expect(wyTrade.tradeInIgnored).toBe(true);
+    expect(wyTrade.exciseTax).toBe(600.00);
+  });
+});

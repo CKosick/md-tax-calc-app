@@ -62,8 +62,21 @@ describe('State Rules Schema & Config Validation', () => {
     'west-virginia'
   ];
 
-  it('contains exactly 41 configured jurisdictions (5 Mid-Atlantic + 9 Batch 1 + 9 Batch 2 + 9 Batch 3 + 9 Batch 4)', () => {
-    expect(Object.keys(allRules)).toHaveLength(41);
+  const batch5States = [
+    'hawaii',
+    'new-hampshire',
+    'maine',
+    'montana',
+    'rhode-island',
+    'south-dakota',
+    'north-dakota',
+    'alaska',
+    'vermont',
+    'wyoming'
+  ];
+
+  it('contains exactly 51 configured jurisdictions (50 US States + District of Columbia)', () => {
+    expect(Object.keys(allRules)).toHaveLength(51);
   });
 
   it('contains all 5 Mid-Atlantic regional states', () => {
@@ -110,6 +123,18 @@ describe('State Rules Schema & Config Validation', () => {
 
   it('contains all 9 Batch 4 heartland & mountain states', () => {
     for (const stateKey of batch4States) {
+      const rule = allRules[stateKey];
+      expect(rule, `State ${stateKey} should be defined`).toBeDefined();
+      expect(rule.slug).toBe(`${stateKey}-private-sale-tax-calculator`);
+      expect(typeof rule.titleFee).toBe('number');
+      expect(typeof rule.exciseTaxRate).toBe('number');
+      expect(Array.isArray(rule.sources)).toBe(true);
+      expect(rule.sources.length).toBeGreaterThanOrEqual(1);
+    }
+  });
+
+  it('contains all 10 Batch 5 states', () => {
+    for (const stateKey of batch5States) {
       const rule = allRules[stateKey];
       expect(rule, `State ${stateKey} should be defined`).toBeDefined();
       expect(rule.slug).toBe(`${stateKey}-private-sale-tax-calculator`);
