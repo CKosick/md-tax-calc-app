@@ -389,4 +389,121 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(nyTrade.tradeInIgnored).toBe(true);
     expect(nyTrade.exciseTax).toBe(15000 * 0.04); // 600.00
   });
+
+  // Batch 2 Worked Acceptance Tests
+  it('New Jersey: exact worked test ($15,000 -> $1,100.25)', () => {
+    const rule = allRules['new-jersey'];
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'new-jersey' }, 2026);
+    expect(res.exciseTax).toBe(993.75); // 6.625% of 15000
+    expect(res.titleFee).toBe(60.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(46.50);
+    expect(res.totalFirstYearCost).toBe(1100.25);
+  });
+
+  it('Washington: exact worked test ($15,000 -> $1,103.25)', () => {
+    const rule = allRules.washington;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'washington' }, 2026);
+    expect(res.exciseTax).toBe(1020.00); // 6.8% base statewide of 15000
+    expect(res.titleFee).toBe(15.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(68.25);
+    expect(res.totalFirstYearCost).toBe(1103.25);
+  });
+
+  it('Arizona: exact worked test ($15,000 -> $18.50, exempt from state sales tax)', () => {
+    const rule = allRules.arizona;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'arizona' }, 2026);
+    expect(res.exciseTax).toBe(0.00); // 0.0% exempt from state TPT
+    expect(res.titleFee).toBe(4.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(14.50);
+    expect(res.totalFirstYearCost).toBe(18.50);
+  });
+
+  it('Tennessee: exact worked test ($15,000 -> $1,090.50)', () => {
+    const rule = allRules.tennessee;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'tennessee' }, 2026);
+    expect(res.exciseTax).toBe(1050.00); // 7.0% of 15000
+    expect(res.titleFee).toBe(14.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(26.50);
+    expect(res.totalFirstYearCost).toBe(1090.50);
+  });
+
+  it('Massachusetts: exact worked test ($15,000 -> $1,072.50, 2-yr registration)', () => {
+    const rule = allRules.massachusetts;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, registrationTerm: 2, state: 'massachusetts' }, 2026);
+    expect(res.exciseTax).toBe(937.50); // 6.25% of 15000
+    expect(res.titleFee).toBe(75.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(60.00);
+    expect(res.totalFirstYearCost).toBe(1072.50);
+  });
+
+  it('Indiana: exact worked test ($15,000 -> $1,101.35)', () => {
+    const rule = allRules.indiana;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'indiana' }, 2026);
+    expect(res.exciseTax).toBe(1050.00); // 7.0% of 15000
+    expect(res.titleFee).toBe(15.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(36.35);
+    expect(res.totalFirstYearCost).toBe(1101.35);
+  });
+
+  it('Missouri: exact worked test ($15,000 -> $684.50)', () => {
+    const rule = allRules.missouri;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'missouri' }, 2026);
+    expect(res.exciseTax).toBe(633.75); // 4.225% of 15000
+    expect(res.titleFee).toBe(17.50);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(33.25);
+    expect(res.totalFirstYearCost).toBe(684.50);
+  });
+
+  it('Wisconsin: exact worked test ($15,000 -> $1,049.50)', () => {
+    const rule = allRules.wisconsin;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'wisconsin' }, 2026);
+    expect(res.exciseTax).toBe(750.00); // 5.0% of 15000
+    expect(res.titleFee).toBe(214.50);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(85.00);
+    expect(res.totalFirstYearCost).toBe(1049.50);
+  });
+
+  it('Colorado: exact worked test ($15,000 -> $495.70)', () => {
+    const rule = allRules.colorado;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'colorado' }, 2026);
+    expect(res.exciseTax).toBe(435.00); // 2.9% of 15000
+    expect(res.titleFee).toBe(7.20);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(53.50);
+    expect(res.totalFirstYearCost).toBe(495.70);
+  });
+
+  it('Batch 2 trade-in deductibility verification (MO allows trade-in; NJ & WA do not)', () => {
+    const tradeInputs: CalculatorInputs = {
+      ...std1Yr,
+      state: 'missouri',
+      tradeInValue: 5000
+    };
+
+    // Missouri allows trade-in on private sales (RSMo § 144.025)
+    const moTrade = calculateVehicleCosts(allRules.missouri, tradeInputs, 2026);
+    expect(moTrade.tradeInDeducted).toBe(5000);
+    expect(moTrade.tradeInIgnored).toBe(false);
+    expect(moTrade.exciseTax).toBe(10000 * 0.04225); // 422.50
+
+    // New Jersey does NOT allow trade-in on private sales
+    const njTrade = calculateVehicleCosts(allRules['new-jersey'], { ...tradeInputs, state: 'new-jersey' }, 2026);
+    expect(njTrade.tradeInDeducted).toBe(0);
+    expect(njTrade.tradeInIgnored).toBe(true);
+    expect(njTrade.exciseTax).toBe(15000 * 0.06625); // 993.75
+
+    // Washington does NOT allow trade-in on private sales
+    const waTrade = calculateVehicleCosts(allRules.washington, { ...tradeInputs, state: 'washington' }, 2026);
+    expect(waTrade.tradeInDeducted).toBe(0);
+    expect(waTrade.tradeInIgnored).toBe(true);
+    expect(waTrade.exciseTax).toBe(1020.00);
+  });
 });

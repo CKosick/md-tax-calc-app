@@ -41,7 +41,7 @@ export interface StateRule {
   label: string;
   slug: string;
   exciseTaxRate: number;
-  minExciseTax: number | null;
+  minExciseTax?: number | null;
   taxBase: TaxBaseType;
   titleFee: number;
   lienFilingFee: number;

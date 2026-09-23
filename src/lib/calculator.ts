@@ -59,9 +59,9 @@ export function calculateVehicleCosts(
     }
   } else {
     const rawTax = taxableBase * rule.exciseTaxRate;
-    exciseTax = rawTax;
+    exciseTax = Math.round(rawTax * 100) / 100;
 
-    if (price > 0 && rule.minExciseTax !== null && exciseTax < rule.minExciseTax) {
+    if (price > 0 && typeof rule.minExciseTax === 'number' && exciseTax < rule.minExciseTax) {
       exciseTax = rule.minExciseTax;
       minTaxApplied = true;
     }
@@ -119,7 +119,7 @@ export function calculateVehicleCosts(
 
   // 5. Total First-Year Out-Of-Pocket Cost
   const totalFirstYearCost =
-    exciseTax + titleFee + lienFilingFee + registrationTotal;
+    Math.round((exciseTax + titleFee + lienFilingFee + registrationTotal) * 100) / 100;
 
   // Age rule calculation (e.g. Maryland & Virginia book value checks for vehicles <= 7 or 5 years)
   const bookValueApplies = Boolean(rule.bookValueRule && vehicleAge <= 7);

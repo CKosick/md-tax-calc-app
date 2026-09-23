@@ -26,6 +26,18 @@ describe('State Rules Schema & Config Validation', () => {
     'michigan'
   ];
 
+  const batch2States = [
+    'new-jersey',
+    'washington',
+    'arizona',
+    'tennessee',
+    'massachusetts',
+    'indiana',
+    'missouri',
+    'wisconsin',
+    'colorado'
+  ];
+
   it('contains all 5 Mid-Atlantic regional states', () => {
     for (const stateKey of midAtlanticStates) {
       expect(allRules[stateKey]).toBeDefined();
@@ -34,6 +46,18 @@ describe('State Rules Schema & Config Validation', () => {
 
   it('contains all 9 Batch 1 mega-states', () => {
     for (const stateKey of batch1States) {
+      const rule = allRules[stateKey];
+      expect(rule, `State ${stateKey} should be defined`).toBeDefined();
+      expect(rule.slug).toBe(`${stateKey}-private-sale-tax-calculator`);
+      expect(typeof rule.titleFee).toBe('number');
+      expect(typeof rule.exciseTaxRate).toBe('number');
+      expect(Array.isArray(rule.sources)).toBe(true);
+      expect(rule.sources.length).toBeGreaterThanOrEqual(1);
+    }
+  });
+
+  it('contains all 9 Batch 2 high-traffic states', () => {
+    for (const stateKey of batch2States) {
       const rule = allRules[stateKey];
       expect(rule, `State ${stateKey} should be defined`).toBeDefined();
       expect(rule.slug).toBe(`${stateKey}-private-sale-tax-calculator`);
@@ -116,7 +140,7 @@ describe('State Rules Schema & Config Validation', () => {
 
   it('validates sane tax rates and non-negative fees across all states', () => {
     for (const [key, rule] of Object.entries(allRules)) {
-      expect(rule.exciseTaxRate, `Tax rate in ${key} must be between 0 and 12%`).toBeGreaterThan(0);
+      expect(rule.exciseTaxRate, `Tax rate in ${key} must be between 0 and 12%`).toBeGreaterThanOrEqual(0);
       expect(rule.exciseTaxRate, `Tax rate in ${key} must be between 0 and 12%`).toBeLessThanOrEqual(0.12);
       expect(rule.titleFee, `Title fee in ${key} must be >= 0`).toBeGreaterThanOrEqual(0);
       expect(rule.lienFilingFee, `Lien fee in ${key} must be >= 0`).toBeGreaterThanOrEqual(0);

@@ -901,5 +901,562 @@
       "https://www.michigan.gov/treasury/taxes/business-taxes/sales-use-tax",
       "https://www.michigan.gov/sos/vehicle/pricing"
     ]
+  },
+  "new-jersey": {
+    "label": "New Jersey",
+    "slug": "new-jersey-private-sale-tax-calculator",
+    "exciseTaxRate": 0.06625,
+    "taxBase": "price",
+    "titleFee": 60,
+    "lienFilingFee": 25,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 46.5
+        },
+        "over3700lbs": {
+          "1": 71.5
+        }
+      },
+      "motorcycle": {
+        "1": 65
+      },
+      "evSurchargeAnnual": 250
+    },
+    "localTaxNote": "New Jersey does not permit local option sales taxes; the 6.625% sales and use tax is uniform statewide.",
+    "notes": [
+      "New Jersey levies a uniform 6.625% sales and use tax on private party motor vehicle purchases.",
+      "Title fee is $60.00 for clean title ($85.00 with lien; $25 lien recording fee).",
+      "Registration is based on vehicle weight and age: $46.50/yr for vehicles older than 2 years under 3,500 lbs ($71.50 if over 3,500 lbs).",
+      "Zero Emission Vehicles (ZEVs) are subject to a $250 annual registration surcharge effective July 1, 2024.",
+      "Trade-in tax credits are restricted to licensed dealer purchases; private sales do not receive trade-in deductions."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with New Jersey Motor Vehicle Commission (MVC) and Division of Taxation.",
+      "Sales tax is paid directly to the NJ MVC at the time of titling and registration.",
+      "The NJ Division of Taxation monitors casual sales and may assess tax based on N.A.D.A. book value if purchase price is deemed below market value.",
+      "Trade-in allowances only reduce taxable value when purchasing from a licensed motor vehicle dealership."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax on a private car sale in New Jersey?",
+        "answer": "New Jersey levies a 6.625% sales and use tax on private party motor vehicle transactions. The tax is paid directly to the New Jersey Motor Vehicle Commission (MVC) when the buyer applies for title and registration."
+      },
+      {
+        "question": "How much does a title transfer cost in New Jersey?",
+        "answer": "The standard certificate of title fee in New Jersey is $60.00. If the vehicle has an active lien (is financed), the title fee is $85.00 ($60 title fee plus $25 lien recording fee)."
+      },
+      {
+        "question": "Does New Jersey allow a trade-in tax credit for private sales?",
+        "answer": "No. Under New Jersey sales tax regulations, trade-in deductions are exclusively permitted when trading in a vehicle with a registered motor vehicle dealer. Private party sales are taxed on the full agreed purchase price."
+      },
+      {
+        "question": "How does New Jersey verify private party vehicle sale prices?",
+        "answer": "The New Jersey Division of Taxation audits casual motor vehicle sales. If the reported purchase price appears significantly below fair market value, the state may issue a casual sales inquiry and assess sales tax based on standard N.A.D.A. book values unless proof of condition or purchase price is provided."
+      }
+    ],
+    "sources": [
+      "https://www.nj.gov/treasury/taxation/sales_use_tax.shtml",
+      "https://www.nj.gov/mvc/vehicles/titlenew.htm",
+      "https://www.nj.gov/mvc/regfee/"
+    ]
+  },
+  "washington": {
+    "label": "Washington",
+    "slug": "washington-private-sale-tax-calculator",
+    "exciseTaxRate": 0.068,
+    "taxBase": "fairMarketValue",
+    "titleFee": 15,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 68.25
+        },
+        "over3700lbs": {
+          "1": 78.25
+        }
+      },
+      "motorcycle": {
+        "1": 49.25
+      },
+      "evSurchargeAnnual": 225
+    },
+    "localTaxNote": "Washington local sales and use taxes add between 0.5% and 3.9% depending on locality. In the RTA district (King, Pierce, Snohomish counties), an additional 1.1% Regional Transit Authority motor vehicle excise tax applies.",
+    "notes": [
+      "Washington levies a 6.8% base statewide motor vehicle use tax (6.5% general use tax + 0.3% additional motor vehicle tax per RCW 82.08.020 / RCW 82.12.020).",
+      "Tax is assessed on fair market value (FMV) using industry valuation guides (Price Digests) if the declared purchase price is below market value.",
+      "Title application fee is $15.00 (additional local service/filing fees may apply at county licensing offices).",
+      "Standard passenger vehicle registration is $68.25/yr ($43.25 base license fee + $25.00 weight fee).",
+      "Electric vehicles pay a $225 annual registration surcharge ($150 EV fee + $75 electrification fee).",
+      "Trade-in deduction is not permitted on private party sales per RCW 82.08.010."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Washington Department of Licensing (DOL) or Department of Revenue (DOR).",
+      "Washington assesses use tax on the fair market value determined by industry pricing guides if purchase price is below fair market value.",
+      "Private party vehicle transactions do not qualify for trade-in allowance tax credits in Washington.",
+      "Local sales/use taxes (0.5%–3.9%) and RTA regional transit excise taxes (1.1%) may apply based on registered address."
+    ],
+    "faqs": [
+      {
+        "question": "What is the tax rate on a private vehicle sale in Washington?",
+        "answer": "Washington imposes a statewide base motor vehicle use tax of 6.8% (6.5% state use tax + 0.3% motor vehicle tax). In addition, local city and county taxes add between 0.5% and 3.9%, and residents in Sound Transit RTA areas pay an additional 1.1% motor vehicle excise tax."
+      },
+      {
+        "question": "How is vehicle value determined for use tax in Washington?",
+        "answer": "Under Washington DOL and DOR rules, use tax is calculated on the vehicle's fair market value. The state references industry pricing databases (such as Price Digests). If the declared purchase price is within 20% of fair market value, the purchase price is accepted; otherwise, the valuation guide is used unless proof of condition or an appraisal is provided."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private vehicle sale in Washington?",
+        "answer": "No. Under RCW 82.08.010, the trade-in tax exclusion is strictly limited to transactions where a licensed vehicle dealer or broker accepts the trade-in as part of the sale. Private party sales cannot deduct the value of another vehicle."
+      },
+      {
+        "question": "How much does title and registration cost in Washington?",
+        "answer": "The state certificate of title application fee is $15.00, and annual passenger vehicle registration is $68.25 ($43.25 basic license fee plus $25.00 weight fee), plus local licensing filing fees. Electric vehicles pay an additional $225 annual fee."
+      }
+    ],
+    "sources": [
+      "https://dor.wa.gov/taxes-rates/use-tax",
+      "https://dol.wa.gov/vehicles-and-boats/vehicle-registration-tabs-and-plates/renew-vehicle-tabs/calculate-vehicle-tab-fees",
+      "https://app.leg.wa.gov/rcw/default.aspx?cite=82.12.020"
+    ]
+  },
+  "arizona": {
+    "label": "Arizona",
+    "slug": "arizona-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0,
+    "taxBase": "price",
+    "titleFee": 4,
+    "lienFilingFee": 4,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 14.5
+        },
+        "over3700lbs": {
+          "1": 14.5
+        }
+      },
+      "motorcycle": {
+        "1": 14.5
+      }
+    },
+    "localTaxNote": "Private-party vehicle sales between individuals in Arizona are completely exempt from Arizona state sales tax (TPT). When titling, buyers pay title ($4), registration ($14.50), and the annual Vehicle License Tax (VLT) personal property tax.",
+    "notes": [
+      "Casual / private party vehicle sales between individuals are 100% EXEMPT from Arizona Transaction Privilege Tax (TPT) and state sales tax under A.R.S. Title 42.",
+      "Title fee is $4.00; base registration fee is $14.50 ($8.00 registration + $5.00 plate fee + $1.50 air quality fee).",
+      "Arizona assesses an annual Vehicle License Tax (VLT) personal property tax based on vehicle MSRP and age ($2.89 per $100 of assessed value for used vehicles).",
+      "Lien filing fee is $4.00 if the vehicle is financed."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Arizona Department of Transportation (ADOT) MVD.",
+      "Private-party vehicle purchases between individuals are exempt from Arizona state sales tax (Transaction Privilege Tax).",
+      "An annual Vehicle License Tax (VLT) applies at registration, calculated on 60% of original MSRP depreciated at 16.25% per year.",
+      "Out-of-state vehicle purchases brought into Arizona may be subject to use tax if sales tax was not previously paid."
+    ],
+    "faqs": [
+      {
+        "question": "Do I have to pay sales tax on a private car purchase in Arizona?",
+        "answer": "No. In Arizona, private-party vehicle sales between private individuals (casual sales) are completely exempt from Arizona Transaction Privilege Tax (TPT) and state sales tax. You pay $0 in state sales tax on a private transaction."
+      },
+      {
+        "question": "What fees do I pay when buying a car privately in Arizona?",
+        "answer": "When titling and registering a private vehicle purchase at the Arizona MVD, you pay a $4.00 title fee, a $14.50 standard registration fee ($8 base + $5 plate + $1.50 air quality fee), and the annual Vehicle License Tax (VLT)."
+      },
+      {
+        "question": "What is the Arizona Vehicle License Tax (VLT)?",
+        "answer": "The Vehicle License Tax (VLT) is an annual personal property tax collected in lieu of ad valorem property taxes. It is calculated from 60% of the vehicle's original base MSRP, reduced by 16.25% for each year since first registration, and assessed at $2.89 per $100 of assessed value for used vehicles."
+      },
+      {
+        "question": "Does trade-in reduce tax in Arizona?",
+        "answer": "Because private party vehicle sales in Arizona are already 100% exempt from sales tax, trade-in deductions do not apply to private sales. Dealership sales do allow trade-in credit to reduce dealer TPT."
+      }
+    ],
+    "sources": [
+      "https://azdot.gov/mvd/services/vehicle-services/vehicle-registration",
+      "https://azdor.gov/transaction-privilege-tax"
+    ]
+  },
+  "tennessee": {
+    "label": "Tennessee",
+    "slug": "tennessee-private-sale-tax-calculator",
+    "exciseTaxRate": 0.07,
+    "taxBase": "price",
+    "titleFee": 14,
+    "lienFilingFee": 11,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 26.5
+        },
+        "over3700lbs": {
+          "1": 26.5
+        }
+      },
+      "motorcycle": {
+        "1": 19.5
+      },
+      "evSurchargeAnnual": 200,
+      "phevSurchargeAnnual": 100
+    },
+    "localTaxNote": "Tennessee counties levy local option sales taxes between 1.50% and 2.75% on the first $1,600 to $3,200 of purchase price, plus a single article state tax of 2.75% on amounts between $1,600 and $3,200. Many counties also assess a local wheel tax ($10 to $100+).",
+    "notes": [
+      "Tennessee levies a 7.0% state sales/use tax on casual and private party motor vehicle sales collected by the County Clerk.",
+      "Title fee is $14.00 base state fee; lien notation fee is $11.00.",
+      "Standard annual passenger plate registration is $26.50/yr.",
+      "All-electric vehicles pay an additional $200.00 annual registration fee ($100.00 for hybrid vehicles).",
+      "Trade-in deduction is not permitted on private party sales per Tennessee Department of Revenue rules."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Tennessee Department of Revenue or your local County Clerk.",
+      "Casual and private party sales of motor vehicles in Tennessee are subject to the 7.0% state sales and use tax.",
+      "Trade-in tax credits are restricted to purchases from licensed dealers; private sales are taxed on the full purchase price.",
+      "Local option sales taxes (up to 2.75%), state single-article tax, and county wheel taxes may apply."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax rate on a private car purchase in Tennessee?",
+        "answer": "Tennessee charges a 7.0% state sales and use tax on private-party vehicle transactions. Taxes and fees are collected by your local County Clerk when you apply for title and registration."
+      },
+      {
+        "question": "Does Tennessee exempt casual private car sales from sales tax?",
+        "answer": "No. While Tennessee law exempts casual and isolated sales for many household goods, motor vehicles, vessels, and aircraft are explicitly excluded from the casual sale exemption and are fully taxable."
+      },
+      {
+        "question": "Can I deduct a trade-in on a private vehicle sale in Tennessee?",
+        "answer": "No. Under Tennessee Department of Revenue regulations, trade-in allowances only reduce the taxable sales price when trading a vehicle directly with a licensed motor vehicle dealer. Private transactions are taxed on the full agreed price."
+      },
+      {
+        "question": "How much does a title and plate cost in Tennessee?",
+        "answer": "The state certificate of title fee is $14.00, and standard passenger plate registration is $26.50. If financed, an $11.00 lien noting fee applies. Local county clerk processing fees and county wheel taxes may also apply."
+      }
+    ],
+    "sources": [
+      "https://www.tn.gov/revenue/taxes/sales-and-use-tax.html",
+      "https://www.tn.gov/revenue/title-and-registration.html"
+    ]
+  },
+  "massachusetts": {
+    "label": "Massachusetts",
+    "slug": "massachusetts-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0625,
+    "taxBase": "fairMarketValue",
+    "titleFee": 75,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        2
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "2": 60
+        },
+        "over3700lbs": {
+          "2": 60
+        }
+      },
+      "motorcycle": {
+        "2": 40
+      }
+    },
+    "localTaxNote": "Massachusetts has no local sales taxes on motor vehicles (uniform 6.25% statewide). However, your municipality will bill you an annual Motor Vehicle Excise tax at $25 per $1,000 of vehicle value based on state depreciation.",
+    "notes": [
+      "Massachusetts assesses a 6.25% sales/use tax on private party motor vehicle purchases.",
+      "Tax is assessed on the higher of the actual purchase price or NADA clean trade-in book value per Mass. Gen. Laws ch. 64I.",
+      "Title fee is $75.00; standard passenger vehicle registration is $60.00 for a 2-year term ($30.00/yr equivalent).",
+      "Trade-in deduction is strictly limited to purchases from Massachusetts registered dealers (MGL ch. 64H/64I)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Massachusetts RMV and Department of Revenue.",
+      "Massachusetts assesses sales tax on the higher of the purchase price or the NADA clean trade-in value.",
+      "Trade-in tax deductions are permitted only when purchasing from a registered Massachusetts motor vehicle dealer.",
+      "An annual local motor vehicle excise tax of $25 per $1,000 of assessed value is billed separately by your city or town."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax rate on a private car purchase in Massachusetts?",
+        "answer": "Massachusetts imposes a 6.25% sales and use tax on private party motor vehicle purchases. Tax is paid through the Massachusetts Registry of Motor Vehicles (RMV) or MassTaxConnect (Form ST-6)."
+      },
+      {
+        "question": "How does Massachusetts determine vehicle value for private sale tax?",
+        "answer": "Under Massachusetts law, sales tax on a private (casual) sale is calculated on the higher of the actual purchase price or the vehicle's NADA clean trade-in value. Condition does not reduce the taxable book value."
+      },
+      {
+        "question": "Does Massachusetts allow a trade-in deduction on private sales?",
+        "answer": "No. Under Mass. Gen. Laws ch. 64H and 64I, trade-in tax credits are only permitted when purchasing a vehicle from a Massachusetts registered motor vehicle dealer. Private sales must pay tax on the full value without trade-in credit."
+      },
+      {
+        "question": "How much are title and registration fees in Massachusetts?",
+        "answer": "The Massachusetts RMV charges $75.00 for a Certificate of Title and $60.00 for a standard 2-year passenger registration plate."
+      }
+    ],
+    "sources": [
+      "https://www.mass.gov/info-details/motor-vehicle-sales-and-use-tax",
+      "https://www.mass.gov/doc/rmv-schedule-of-fees/download"
+    ]
+  },
+  "indiana": {
+    "label": "Indiana",
+    "slug": "indiana-private-sale-tax-calculator",
+    "exciseTaxRate": 0.07,
+    "taxBase": "price",
+    "titleFee": 15,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 36.35
+        },
+        "over3700lbs": {
+          "1": 36.35
+        }
+      },
+      "motorcycle": {
+        "1": 26.35
+      },
+      "evSurchargeAnnual": 242,
+      "phevSurchargeAnnual": 81
+    },
+    "localTaxNote": "Indiana does not levy local option sales taxes on vehicles (uniform 7.0% statewide). However, the BMV assesses an annual Motor Vehicle Excise Tax and local County/Municipal Wheel Tax based on vehicle age and class at registration.",
+    "notes": [
+      "Indiana assesses a uniform 7.0% state sales/use tax on private party motor vehicle purchases collected at the BMV.",
+      "Title fee is $15.00; standard passenger registration is $36.35/yr ($21.35 registration + $15.00 Transportation Infrastructure Improvement Fee).",
+      "Electric vehicles pay an additional $242.00 annual supplemental fee ($81.00 for hybrid vehicles).",
+      "Trade-in deduction is not permitted on private party sales per Indiana DOR guidelines."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Indiana Bureau of Motor Vehicles (BMV) and Department of Revenue.",
+      "Private-party vehicle purchases in Indiana are subject to the 7.0% state sales and use tax.",
+      "Trade-in tax deductions apply exclusively to dealership purchases; private sales are taxed on the full purchase price.",
+      "Annual motor vehicle excise taxes and local wheel taxes are billed by the BMV based on vehicle class and age."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax on a private car purchase in Indiana?",
+        "answer": "Indiana charges a 7.0% sales and use tax on private-party motor vehicle sales. The tax is collected by the Indiana Bureau of Motor Vehicles (BMV) when you title and register the vehicle."
+      },
+      {
+        "question": "Can I deduct a trade-in on a private vehicle sale in Indiana?",
+        "answer": "No. Indiana Department of Revenue regulations allow trade-in credit only when purchasing from a licensed motor vehicle dealership. Private sales cannot deduct the value of a traded vehicle."
+      },
+      {
+        "question": "How much does it cost to title and register a car in Indiana?",
+        "answer": "The Indiana BMV charges $15.00 for a certificate of title and $36.35 for standard annual passenger registration ($21.35 base registration plus a $15.00 Transportation Infrastructure Improvement Fee)."
+      },
+      {
+        "question": "What additional taxes apply to vehicles in Indiana?",
+        "answer": "In addition to sales tax at purchase, Indiana vehicle owners pay an annual Motor Vehicle Excise Tax and local county/municipal wheel taxes based on the vehicle's age and original MSRP when registering each year."
+      }
+    ],
+    "sources": [
+      "https://www.in.gov/dor/business-tax/sales-tax/",
+      "https://www.in.gov/bmv/registration-plates/vehicle-registration-fees/"
+    ]
+  },
+  "missouri": {
+    "label": "Missouri",
+    "slug": "missouri-private-sale-tax-calculator",
+    "exciseTaxRate": 0.04225,
+    "taxBase": "price",
+    "titleFee": 17.5,
+    "lienFilingFee": 11,
+    "tradeInDeductible": true,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 33.25
+        },
+        "over3700lbs": {
+          "1": 33.25
+        }
+      },
+      "motorcycle": {
+        "1": 17.5
+      }
+    },
+    "localTaxNote": "Missouri municipalities and counties levy local sales taxes averaging 3.0% to 5.5% (totaling 7.5% to 10.0%). Local sales tax is based on the buyer's home residential address, not the purchase location.",
+    "notes": [
+      "Missouri levies a 4.225% state sales tax on motor vehicles, plus local city and county sales taxes.",
+      "Under RSMo § 144.025, trade-in allowances and replacement vehicle credits (selling a vehicle within 180 days before or after purchase) reduce the taxable purchase price for private party sales.",
+      "Title fee is $17.50 ($8.50 title fee + $9.00 title processing fee).",
+      "Registration is based on taxable horsepower: standard passenger cars (24–35 HP) pay $33.25/yr ($24.25 registration + $9.00 processing fee)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Missouri Department of Revenue (DOR).",
+      "Missouri state sales tax is 4.225%; local city and county sales taxes apply based on your residential address.",
+      "Under RSMo § 144.025, you may deduct a trade-in or a vehicle sold privately within 180 days to reduce your taxable purchase price.",
+      "A late titling penalty of $25 per 30-day period (up to $200) applies if the vehicle is not titled within 30 days of purchase."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax rate on a car purchase in Missouri?",
+        "answer": "Missouri charges a 4.225% state sales tax on motor vehicle purchases. In addition, local city and county sales taxes apply based on where the buyer resides, bringing total effective tax rates to between 7.5% and 10.0% in most areas."
+      },
+      {
+        "question": "Does Missouri allow trade-in credit for private car sales?",
+        "answer": "Yes! Under RSMo § 144.025, Missouri permits trade-in credits on vehicle purchases. Furthermore, if you sell a vehicle privately within 180 days before or after purchasing another vehicle, you can claim a sold-vehicle tax credit and only pay sales tax on the net difference."
+      },
+      {
+        "question": "How much does titling and registration cost in Missouri?",
+        "answer": "Titling a vehicle in Missouri costs $17.50 ($8.50 title fee plus $9.00 processing fee). Annual passenger registration for typical 24–35 taxable horsepower cars costs $33.25 ($24.25 plate fee plus $9.00 processing fee)."
+      },
+      {
+        "question": "How long do I have to title a car in Missouri after a private purchase?",
+        "answer": "You have 30 days from the purchase date to title and register your vehicle. Titling on or after day 31 incurs a $25.00 late penalty, which increases by $25 for every subsequent 30 days up to a maximum of $200.00."
+      }
+    ],
+    "sources": [
+      "https://dor.mo.gov/motor-vehicle/titling-registration/",
+      "https://sa.dor.mo.gov/mv/stc/"
+    ]
+  },
+  "wisconsin": {
+    "label": "Wisconsin",
+    "slug": "wisconsin-private-sale-tax-calculator",
+    "exciseTaxRate": 0.05,
+    "taxBase": "price",
+    "titleFee": 214.5,
+    "lienFilingFee": 10,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 85
+        },
+        "over3700lbs": {
+          "1": 85
+        }
+      },
+      "motorcycle": {
+        "1": 23
+      },
+      "evSurchargeAnnual": 175,
+      "phevSurchargeAnnual": 75
+    },
+    "localTaxNote": "Most Wisconsin counties levy a 0.5% county sales tax, bringing the effective sales tax rate to 5.5%. Milwaukee County levies an additional 0.4% county sales tax (total 5.9%) and the City of Milwaukee levies a 2.0% municipal sales tax (total 7.9%). Local wheel taxes ($10 to $40) may also apply.",
+    "notes": [
+      "Wisconsin assesses a 5.0% state sales/use tax on private party motor vehicle purchases, plus county taxes (usually 0.5%).",
+      "Title fee is $214.50 for original or transferred title (WisDOT).",
+      "Standard automobile registration is $85.00/yr.",
+      "Electric vehicles pay an additional $175.00 annual registration surcharge ($75.00 for hybrid vehicles).",
+      "Trade-in deduction is not permitted on private party sales per Wisconsin Department of Revenue rules."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Wisconsin Department of Transportation (WisDOT) and Department of Revenue.",
+      "Wisconsin assesses a 5.0% state sales/use tax; most counties assess an additional 0.5% county sales tax.",
+      "Trade-in deductions are only permitted when purchasing from a licensed motor vehicle dealer; private party sales pay tax on full price.",
+      "Buyers must title and register within two business days of purchase."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax rate on a private car sale in Wisconsin?",
+        "answer": "Wisconsin levies a 5.0% state sales and use tax on private-party vehicle purchases. In addition, most Wisconsin counties levy a 0.5% county sales tax, making the standard effective rate 5.5% (higher in Milwaukee County and the City of Milwaukee)."
+      },
+      {
+        "question": "Why is the Wisconsin title fee so high?",
+        "answer": "Under Wisconsin state law, the standard certificate of title fee for passenger vehicles is $214.50. This statutory fee is collected by the Wisconsin Department of Transportation (WisDOT) on all original titles and title transfers."
+      },
+      {
+        "question": "Can I deduct a trade-in on a private vehicle sale in Wisconsin?",
+        "answer": "No. According to the Wisconsin Department of Revenue, trade-in tax credits are only allowed when trading in a vehicle as part of a transaction with a licensed retailer. Private sales do not receive a trade-in deduction."
+      },
+      {
+        "question": "How much is car registration in Wisconsin?",
+        "answer": "Standard annual registration for an automobile in Wisconsin is $85.00. Electric vehicles pay an additional $175.00 annual surcharge ($75.00 for hybrids), and local municipal/county wheel taxes ($10 to $40) may apply depending on your location."
+      }
+    ],
+    "sources": [
+      "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/fee-chart.aspx",
+      "https://www.revenue.wi.gov/Pages/FAQS/pcs-motorveh.aspx"
+    ]
+  },
+  "colorado": {
+    "label": "Colorado",
+    "slug": "colorado-private-sale-tax-calculator",
+    "exciseTaxRate": 0.029,
+    "taxBase": "price",
+    "titleFee": 7.2,
+    "lienFilingFee": 5,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 53.5
+        },
+        "over3700lbs": {
+          "1": 63.5
+        }
+      },
+      "motorcycle": {
+        "1": 25
+      },
+      "evSurchargeAnnual": 54
+    },
+    "localTaxNote": "Colorado counties, cities, and special districts (such as RTD) levy local sales and use taxes ranging from 1.0% to over 6.0%, bringing total effective sales tax to between 4.0% and 9.5% depending on your residence. An annual Specific Ownership Tax (SOT) also applies at registration based on vehicle MSRP.",
+    "notes": [
+      "Colorado assesses a 2.9% state sales/use tax base on private party motor vehicle purchases.",
+      "Title fee is $7.20 (state application fee); lien filing fee is $5.00.",
+      "Standard passenger vehicle registration averages $53.50/yr ($25.00 weight fee + $28.50 FASTER road safety fee).",
+      "Electric vehicles pay a $54.00 annual EV registration fee ($50 EV fee + $4 road safety).",
+      "Trade-in deduction is not permitted on private party sales per Colorado Department of Revenue rules."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Colorado Department of Revenue (CDOR) and your county motor vehicle office.",
+      "Colorado state sales tax is 2.9%; local county, city, and RTD taxes significantly increase total tax depending on where you register.",
+      "Trade-in tax deductions are restricted to purchases from licensed dealers; private sales are taxed on the full purchase price.",
+      "An annual Specific Ownership Tax (SOT) personal property tax applies at registration, calculated from vehicle MSRP and age."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax rate on a private car purchase in Colorado?",
+        "answer": "Colorado imposes a 2.9% state sales and use tax on private party motor vehicle purchases. However, local city, county, and special district taxes (like RTD) usually add 2% to 6%, making total sales tax between 4.0% and 9.5% in most areas."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private car sale in Colorado?",
+        "answer": "No. Under Colorado Department of Revenue regulations, trade-in tax allowances are only permitted on purchases from licensed automobile dealers. Private party sales are taxed on the full purchase price."
+      },
+      {
+        "question": "How much does a title transfer cost in Colorado?",
+        "answer": "The state certificate of title fee in Colorado is $7.20. If the vehicle is financed, an additional $5.00 lien filing fee applies. Transactions are processed by your local County Clerk & Recorder's office."
+      },
+      {
+        "question": "What is the Colorado Specific Ownership Tax (SOT)?",
+        "answer": "The Specific Ownership Tax (SOT) is an annual personal property tax paid at registration in lieu of ad valorem property taxes. It is based on 85% of the vehicle's original manufacturer suggested retail price (MSRP) and depreciates annually as the vehicle ages."
+      }
+    ],
+    "sources": [
+      "https://tax.colorado.gov/sales-use-tax",
+      "https://dmv.colorado.gov/taxes-and-fees"
+    ]
   }
 }
