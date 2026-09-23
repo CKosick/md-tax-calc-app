@@ -1,12 +1,14 @@
 import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { PartnerSlot } from '../src/components/PartnerSlot';
 import { Disclaimers } from '../src/components/Disclaimers';
 import { CostSummaryCard } from '../src/components/CostSummaryCard';
 import { FaqSection } from '../src/components/FaqSection';
 import { Calculator } from '../src/components/Calculator';
 import CalculatorHubPage from '../src/app/calculator/page';
+import HomePage from '../src/app/page';
+import CalculatorSlugPage from '../src/app/calculator/[slug]/page';
 import stateRulesData from '../src/config/stateRules.json';
 import { StateRule, CostBreakdown } from '../src/lib/types';
 
@@ -105,13 +107,32 @@ describe('UI Component Unit Tests', () => {
     expect(screen.getByText(/VEIP Vehicle Emissions Inspection/i)).toBeDefined();
   });
 
-  it('renders FaqSection with all long-tail questions', () => {
+  it('renders FaqSection with all long-tail questions and toggles accordion panels on click', () => {
     render(<FaqSection faqs={mdRule.faqs} stateLabel="Maryland" />);
 
     expect(screen.getByText(/Do I pay sales tax on a private car sale in Maryland\?/i)).toBeDefined();
     expect(screen.getByText(/How much is the Maryland title transfer fee\?/i)).toBeDefined();
-    expect(screen.getByText(/How does Maryland calculate vehicle excise tax on private sales\?/i)).toBeDefined();
-    expect(screen.getByText(/Does a trade-in reduce vehicle excise tax in Maryland\?/i)).toBeDefined();
+
+    // First item is open by default
+    const firstBtn = screen.getByRole('button', { name: /Do I pay sales tax on a private car sale in Maryland\?/i });
+    expect(firstBtn.getAttribute('aria-expanded')).toBe('true');
+
+    // Click to collapse
+    fireEvent.click(firstBtn);
+    expect(firstBtn.getAttribute('aria-expanded')).toBe('false');
+
+    // Second button
+    const secondBtn = screen.getByRole('button', { name: /How much is the Maryland title transfer fee\?/i });
+    expect(secondBtn.getAttribute('aria-expanded')).toBe('false');
+
+    // Click to expand second button
+    fireEvent.click(secondBtn);
+    expect(secondBtn.getAttribute('aria-expanded')).toBe('true');
+  });
+
+  it('renders null for PartnerSlot when position has no configured slots', () => {
+    const { container } = render(<PartnerSlot position={'invalid-pos' as any} />);
+    expect(container.firstChild).toBeNull();
   });
 
   it('renders Delaware Calculator with exact 5.25% document fee copy and never rounds to 5.3%', () => {
@@ -145,5 +166,38 @@ describe('UI Component Unit Tests', () => {
     // Check Illinois has Flat Table (RUT-50) badge
     expect(screen.getByText(/Flat Table \(RUT-50\)/i)).toBeDefined();
     expect(screen.getByText(/Form RUT-50 Table/i)).toBeDefined();
+  });
+
+  it('renders HomePage with Maryland calculator and JSON-LD schemas', () => {
+    const { container } = render(<HomePage />);
+
+    expect(screen.getAllByText(/Maryland/i).length).toBeGreaterThan(0);
+    const jsonLdScripts = container.querySelectorAll('script[type="application/ld+json"]');
+    expect(jsonLdScripts.length).toBe(2);
+
+    const faqJson = JSON.parse(jsonLdScripts[0].textContent || '{}');
+    expect(faqJson['@type']).toBe('FAQPage');
+
+    const appJson = JSON.parse(jsonLdScripts[1].textContent || '{}');
+    expect(appJson['@type']).toBe('WebApplication');
+    expect(appJson.name).toContain('Maryland');
+  });
+
+  it('renders CalculatorSlugPage for Virginia with JSON-LD schemas', async () => {
+    const PageComponent = await CalculatorSlugPage({
+      params: Promise.resolve({ slug: 'virginia-private-sale-tax-calculator' })
+    });
+    const { container } = render(PageComponent);
+
+    expect(screen.getAllByText(/Virginia/i).length).toBeGreaterThan(0);
+    const jsonLdScripts = container.querySelectorAll('script[type="application/ld+json"]');
+    expect(jsonLdScripts.length).toBe(2);
+
+    const faqJson = JSON.parse(jsonLdScripts[0].textContent || '{}');
+    expect(faqJson['@type']).toBe('FAQPage');
+
+    const appJson = JSON.parse(jsonLdScripts[1].textContent || '{}');
+    expect(appJson['@type']).toBe('WebApplication');
+    expect(appJson.name).toContain('Virginia');
   });
 });

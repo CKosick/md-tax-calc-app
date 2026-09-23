@@ -5,7 +5,13 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    setupFiles: []
+    setupFiles: [],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/app/layout.tsx', 'src/app/globals.css', 'src/lib/types.ts']
+    }
   },
   resolve: {
     alias: {
