@@ -34,7 +34,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = `${rule.label} Private Party Car Tax Calculator — Excise Tax, Title & Tag Fees (2026)`;
-  const description = `Calculate your true first-year costs for a private car purchase in ${rule.label}. Accurate calculation for ${(rule.exciseTaxRate * 100).toFixed(1)}% MVA excise tax, $${rule.titleFee} title fee, 1 or 2-year tag registration, and book-value rules.`;
+  const rateFormatted = Number((rule.exciseTaxRate * 100).toFixed(2));
+  const taxName = rule.label === 'Delaware' ? 'document fee' : rule.label === 'Virginia' ? 'SUT' : 'excise tax';
+  const description = `Calculate your true first-year costs for a private car purchase in ${rule.label}. Accurate calculation for ${rateFormatted}% ${taxName}, $${rule.titleFee} title fee, 1 or 2-year tag registration, and book-value rules.`;
 
   return {
     title,

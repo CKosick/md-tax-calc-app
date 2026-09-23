@@ -144,7 +144,7 @@ export function VehicleInputForm({
               Purchase Price (Agreed Sale Price)
             </label>
             <span className="text-[11px] text-slate-400">
-              {rule.label} {(rule.exciseTaxRate * 100).toFixed(1)}% {rule.label === 'Delaware' ? 'fee base' : 'tax base'}
+              {rule.label} {Number((rule.exciseTaxRate * 100).toFixed(2))}% {rule.label === 'Delaware' ? 'fee base' : 'tax base'}
             </span>
           </div>
           <div className="relative mt-2">

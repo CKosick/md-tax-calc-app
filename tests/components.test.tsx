@@ -1,12 +1,23 @@
 import React from 'react';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { PartnerSlot } from '../src/components/PartnerSlot';
 import { Disclaimers } from '../src/components/Disclaimers';
 import { CostSummaryCard } from '../src/components/CostSummaryCard';
 import { FaqSection } from '../src/components/FaqSection';
+import { Calculator } from '../src/components/Calculator';
 import stateRulesData from '../src/config/stateRules.json';
 import { StateRule, CostBreakdown } from '../src/lib/types';
+
+vi.mock('next/navigation', () => ({
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+    back: vi.fn(),
+    forward: vi.fn()
+  })
+}));
 
 const mdRule = stateRulesData.maryland as StateRule;
 
@@ -100,5 +111,13 @@ describe('UI Component Unit Tests', () => {
     expect(screen.getByText(/How much is the Maryland title transfer fee\?/i)).toBeDefined();
     expect(screen.getByText(/How does Maryland calculate vehicle excise tax on private sales\?/i)).toBeDefined();
     expect(screen.getByText(/Does a trade-in reduce vehicle excise tax in Maryland\?/i)).toBeDefined();
+  });
+
+  it('renders Delaware Calculator with exact 5.25% document fee copy and never rounds to 5.3%', () => {
+    const deRule = (stateRulesData as Record<string, StateRule>).delaware;
+    render(<Calculator initialRule={deRule} />);
+
+    expect(screen.getAllByText(/5\.25% document fee/i).length).toBeGreaterThanOrEqual(1);
+    expect(screen.queryByText(/5\.3%/i)).toBeNull();
   });
 });

@@ -44,6 +44,8 @@ export function Calculator({ initialRule }: CalculatorProps) {
     ? 'SUT (Sales and Use Tax)'
     : 'excise/sales tax';
 
+  const rateFormatted = Number((initialRule.exciseTaxRate * 100).toFixed(2));
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Page Header */}
@@ -56,7 +58,7 @@ export function Calculator({ initialRule }: CalculatorProps) {
           {initialRule.label} Private Party Vehicle Tax, Tags &amp; Title Calculator
         </h1>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base dark:text-slate-300">
-          Calculate your true first-year out-of-pocket costs for a private vehicle sale in {initialRule.label}. Accurately accounts for the {(initialRule.exciseTaxRate * 100).toFixed(1)}% {taxName}, ${initialRule.titleFee} certificate of title fee, 1 or 2-year tag registration, and state-specific regulations.
+          Calculate your true first-year out-of-pocket costs for a private vehicle sale in {initialRule.label}. Accurately accounts for the {rateFormatted}% {taxName}, ${initialRule.titleFee} certificate of title fee, 1 or 2-year tag registration, and state-specific regulations.
         </p>
       </header>
 
