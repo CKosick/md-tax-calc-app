@@ -42,6 +42,7 @@ export interface StateRule {
   slug: string;
   exciseTaxRate: number;
   minExciseTax?: number | null;
+  maxExciseTax?: number | null;
   taxBase: TaxBaseType;
   titleFee: number;
   lienFilingFee: number;
@@ -88,6 +89,7 @@ export interface CostBreakdown {
   registrationTotal: number;
   totalFirstYearCost: number;
   minTaxApplied: boolean;
+  maxTaxApplied?: boolean;
   bookValueApplies: boolean;
   vehicleAge: number;
   tradeInDeducted: number;

@@ -22,6 +22,7 @@ export function calculateVehicleCosts(
 
   let exciseTax = 0;
   let minTaxApplied = false;
+  let maxTaxApplied = false;
   let flatTaxApplied = false;
   let flatTaxDetail = '';
 
@@ -64,6 +65,9 @@ export function calculateVehicleCosts(
     if (price > 0 && typeof rule.minExciseTax === 'number' && exciseTax < rule.minExciseTax) {
       exciseTax = rule.minExciseTax;
       minTaxApplied = true;
+    } else if (price > 0 && typeof rule.maxExciseTax === 'number' && exciseTax > rule.maxExciseTax) {
+      exciseTax = rule.maxExciseTax;
+      maxTaxApplied = true;
     }
   }
 
@@ -135,6 +139,8 @@ export function calculateVehicleCosts(
   let taxDescription = `Calculated at ${rateLabel} on taxable base of $${taxableBase.toLocaleString()}`;
   if (flatTaxApplied) {
     taxDescription = flatTaxDetail;
+  } else if (maxTaxApplied) {
+    taxDescription = `Statutory maximum tax cap applied ($${rule.maxExciseTax?.toFixed(2)})`;
   } else if (minTaxApplied) {
     taxDescription = `Statutory minimum tax floor applied ($${rule.minExciseTax?.toFixed(2)})`;
   } else if (rule.tradeInDeductible && tradeIn > 0) {
@@ -199,6 +205,7 @@ export function calculateVehicleCosts(
     registrationTotal,
     totalFirstYearCost,
     minTaxApplied,
+    maxTaxApplied,
     bookValueApplies,
     vehicleAge,
     tradeInDeducted,

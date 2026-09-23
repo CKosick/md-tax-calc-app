@@ -506,4 +506,150 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(waTrade.tradeInIgnored).toBe(true);
     expect(waTrade.exciseTax).toBe(1020.00);
   });
+
+  // Batch 3 mid-sized states acceptance tests
+  it('Minnesota: exact worked test ($15,000 -> $1,105.25)', () => {
+    const rule = allRules.minnesota;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'minnesota' }, 2026);
+    expect(res.exciseTax).toBe(1031.25); // 6.875% of 15000
+    expect(res.titleFee).toBe(23.50);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(50.50);
+    expect(res.totalFirstYearCost).toBe(1105.25);
+  });
+
+  it('South Carolina: exact worked test with $500 IMF cap ($15,000 -> $535.00)', () => {
+    const rule = allRules['south-carolina'];
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'south-carolina' }, 2026);
+    expect(res.exciseTax).toBe(500.00); // 5.0% of 15000 = 750, capped at 500.00
+    expect(res.maxTaxApplied).toBe(true);
+    expect(res.titleFee).toBe(15.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(20.00); // 1-year registration
+    expect(res.totalFirstYearCost).toBe(535.00);
+  });
+
+  it('South Carolina: under $10,000 purchase price charges exact 5% without hitting cap ($6,000 -> $300 tax)', () => {
+    const rule = allRules['south-carolina'];
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'south-carolina', purchasePrice: 6000 }, 2026);
+    expect(res.exciseTax).toBe(300.00); // 5.0% of 6000
+    expect(res.maxTaxApplied).toBe(false);
+    expect(res.totalFirstYearCost).toBe(335.00);
+  });
+
+  it('Alabama: exact worked test ($15,000 -> $338.00)', () => {
+    const rule = allRules.alabama;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'alabama' }, 2026);
+    expect(res.exciseTax).toBe(300.00); // 2.0% of 15000
+    expect(res.titleFee).toBe(15.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(23.00);
+    expect(res.totalFirstYearCost).toBe(338.00);
+  });
+
+  it('Louisiana: exact worked test ($15,000 -> $746.00)', () => {
+    const rule = allRules.louisiana;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'louisiana' }, 2026);
+    expect(res.exciseTax).toBe(667.50); // 4.45% of 15000
+    expect(res.titleFee).toBe(68.50);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(10.00);
+    expect(res.totalFirstYearCost).toBe(746.00);
+  });
+
+  it('Kentucky: exact worked test ($15,000 -> $930.00)', () => {
+    const rule = allRules.kentucky;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'kentucky' }, 2026);
+    expect(res.exciseTax).toBe(900.00); // 6.0% of 15000
+    expect(res.titleFee).toBe(9.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(21.00);
+    expect(res.totalFirstYearCost).toBe(930.00);
+  });
+
+  it('Oregon: exact worked test with zero sales tax ($15,000 -> $164.00)', () => {
+    const rule = allRules.oregon;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'oregon' }, 2026);
+    expect(res.exciseTax).toBe(0.00); // 0.0% sales tax
+    expect(res.titleFee).toBe(101.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(63.00);
+    expect(res.totalFirstYearCost).toBe(164.00);
+  });
+
+  it('Oklahoma: exact worked test ($15,000 -> $584.50)', () => {
+    const rule = allRules.oklahoma;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'oklahoma' }, 2026);
+    expect(res.exciseTax).toBe(487.50); // 3.25% of 15000
+    expect(res.titleFee).toBe(11.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(86.00); // 5-year-old vehicle in 2026
+    expect(res.totalFirstYearCost).toBe(584.50);
+  });
+
+  it('Connecticut: exact worked test ($15,000 -> $1,017.50)', () => {
+    const rule = allRules.connecticut;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'connecticut' }, 2026);
+    expect(res.exciseTax).toBe(952.50); // 6.35% of 15000
+    expect(res.titleFee).toBe(25.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(40.00);
+    expect(res.totalFirstYearCost).toBe(1017.50);
+  });
+
+  it('Utah: exact worked test ($15,000 -> $777.50)', () => {
+    const rule = allRules.utah;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'utah' }, 2026);
+    expect(res.exciseTax).toBe(727.50); // 4.85% of 15000
+    expect(res.titleFee).toBe(6.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(44.00);
+    expect(res.totalFirstYearCost).toBe(777.50);
+  });
+
+  it('Batch 3 trade-in deductibility verification (SC & KY allow trade-in; MN & CT do not)', () => {
+    // South Carolina: $15,000 price - $7,000 trade-in = $8,000 taxable base * 5% = $400.00 (under $500 cap)
+    const scTrade = calculateVehicleCosts(allRules['south-carolina'], {
+      ...std1Yr,
+      state: 'south-carolina',
+      purchasePrice: 15000,
+      tradeInValue: 7000
+    }, 2026);
+    expect(scTrade.tradeInDeducted).toBe(7000);
+    expect(scTrade.tradeInIgnored).toBe(false);
+    expect(scTrade.exciseTax).toBe(400.00);
+
+    // Kentucky: $15,000 price - $5,000 trade-in = $10,000 taxable base * 6% = $600.00
+    const kyTrade = calculateVehicleCosts(allRules.kentucky, {
+      ...std1Yr,
+      state: 'kentucky',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(kyTrade.tradeInDeducted).toBe(5000);
+    expect(kyTrade.tradeInIgnored).toBe(false);
+    expect(kyTrade.exciseTax).toBe(600.00);
+
+    // Minnesota: trade-in is IGNORED on private sales
+    const mnTrade = calculateVehicleCosts(allRules.minnesota, {
+      ...std1Yr,
+      state: 'minnesota',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(mnTrade.tradeInDeducted).toBe(0);
+    expect(mnTrade.tradeInIgnored).toBe(true);
+    expect(mnTrade.exciseTax).toBe(1031.25);
+
+    // Connecticut: trade-in is IGNORED on private sales
+    const ctTrade = calculateVehicleCosts(allRules.connecticut, {
+      ...std1Yr,
+      state: 'connecticut',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(ctTrade.tradeInDeducted).toBe(0);
+    expect(ctTrade.tradeInIgnored).toBe(true);
+    expect(ctTrade.exciseTax).toBe(952.50);
+  });
 });

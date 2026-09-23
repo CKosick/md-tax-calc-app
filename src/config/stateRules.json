@@ -785,6 +785,7 @@
     "slug": "north-carolina-private-sale-tax-calculator",
     "exciseTaxRate": 0.03,
     "minExciseTax": null,
+    "maxExciseTax": 2000,
     "taxBase": "price",
     "titleFee": 56,
     "lienFilingFee": 21.5,
@@ -1457,6 +1458,596 @@
     "sources": [
       "https://tax.colorado.gov/sales-use-tax",
       "https://dmv.colorado.gov/taxes-and-fees"
+    ]
+  },
+  "minnesota": {
+    "label": "Minnesota",
+    "slug": "minnesota-private-sale-tax-calculator",
+    "exciseTaxRate": 0.06875,
+    "minExciseTax": null,
+    "maxExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 23.5,
+    "lienFilingFee": 2,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 50.5
+        },
+        "over3700lbs": {
+          "1": 50.5
+        }
+      },
+      "motorcycle": {
+        "1": 25.5
+      },
+      "evSurchargeAnnual": 150
+    },
+    "localTaxNote": "Minnesota Motor Vehicle Sales Tax (MVST) is 6.875% statewide under Minn. Stat. § 297B.02. Local option sales taxes do not apply to motor vehicles.",
+    "notes": [
+      "Minnesota imposes a 6.875% Motor Vehicle Sales Tax (MVST) under Minn. Stat. § 297B.02 in lieu of general sales tax.",
+      "Total statutory titling fees are $23.50 ($8.25 base title + $2.25 technology surcharge + $12.00 filing fee + $1.00 transfer fee per Minn. Stat. § 168A.29 and § 168.33).",
+      "Trade-in deduction is not permitted on private-party sales under Minn. Stat. § 297B.01 subd. 14(b); trade-in credit is strictly restricted to licensed dealer purchases.",
+      "Vehicles 10 years or older with purchase price under $3,000 qualify for a flat $10 in-lieu tax (Minn. Stat. § 297B.025)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Minnesota Driver and Vehicle Services (DVS) or Department of Revenue.",
+      "Minnesota Motor Vehicle Sales Tax is 6.875% of purchase price or fair market value.",
+      "Trade-in credit is not available for private party sales in Minnesota; tax is paid on the full purchase price.",
+      "Annual registration tax is based on vehicle MSRP and age, with an additional $150 annual fee for all-electric vehicles."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax rate on a private car purchase in Minnesota?",
+        "answer": "Minnesota levies a 6.875% Motor Vehicle Sales Tax (MVST) under Minn. Stat. § 297B.02. Unlike general merchandise, motor vehicles are not subject to local city or county sales taxes in Minnesota."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private car sale in Minnesota?",
+        "answer": "No. Under Minnesota Statute § 297B.01 subd. 14(b), trade-in deductions are exclusively permitted when trading a vehicle to a licensed motor vehicle dealer. Private-to-private transactions are taxed on the full purchase price."
+      },
+      {
+        "question": "How much does a title transfer cost in Minnesota?",
+        "answer": "Standard Minnesota certificate of title transfer fees total $23.50, including the $8.25 base title fee, $2.25 technology surcharge, $12.00 DVS filing fee, and $1.00 public safety transfer fee. If financed, a $2.00 lien recording fee is added."
+      },
+      {
+        "question": "How is Minnesota vehicle registration calculated?",
+        "answer": "Minnesota annual vehicle registration tax is determined by the vehicle's original manufacturer suggested retail price (MSRP) and its age, plus a $15.50 plate fee and filing fees. All-electric vehicles pay an additional $150.00 annual surcharge."
+      }
+    ],
+    "sources": [
+      "https://www.revenue.state.mn.us/motor-vehicle-sales-tax",
+      "https://dps.mn.gov/divisions/dvs/fees/Pages/default.aspx"
+    ]
+  },
+  "south-carolina": {
+    "label": "South Carolina",
+    "slug": "south-carolina-private-sale-tax-calculator",
+    "exciseTaxRate": 0.05,
+    "minExciseTax": null,
+    "maxExciseTax": 500,
+    "taxBase": "price",
+    "titleFee": 15,
+    "lienFilingFee": 0,
+    "tradeInDeductible": true,
+    "registration": {
+      "terms": [
+        1,
+        2
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 20,
+          "2": 40
+        },
+        "over3700lbs": {
+          "1": 20,
+          "2": 40
+        }
+      },
+      "motorcycle": {
+        "1": 10,
+        "2": 20
+      },
+      "evSurchargeAnnual": 60
+    },
+    "localTaxNote": "South Carolina assesses an Infrastructure Maintenance Fee (IMF) of 5.0% capped at a strict statutory maximum of $500.00 (S.C. Code § 56-3-627), replacing sales tax. County property taxes are billed separately.",
+    "notes": [
+      "South Carolina replaces general vehicle sales tax with an Infrastructure Maintenance Fee (IMF) of 5.0% under S.C. Code Ann. § 56-3-627.",
+      "The IMF has a strict statutory cap of $500.00 — any purchase of $10,000 or greater pays exactly $500.00.",
+      "Trade-in allowance reduces the net purchase price before the 5% IMF is applied under S.C. Code § 56-3-627.",
+      "Title fee is $15.00; standard passenger vehicle registration is $40.00 biennial ($20.00/yr)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with South Carolina Department of Motor Vehicles (SCDMV).",
+      "South Carolina IMF is 5.0% of the purchase price minus trade-in, capped at a maximum of $500.00.",
+      "Trade-in deductions are permitted for private party transactions when documented on the bill of sale and title assignment.",
+      "Annual county personal property taxes are assessed separately by your county treasurer before vehicle registration renewal."
+    ],
+    "faqs": [
+      {
+        "question": "What is the car tax rate in South Carolina?",
+        "answer": "South Carolina does not charge general sales tax on vehicle purchases. Instead, the SCDMV levies an Infrastructure Maintenance Fee (IMF) of 5% of the purchase price, capped at a strict maximum of $500.00 pursuant to S.C. Code § 56-3-627."
+      },
+      {
+        "question": "Does South Carolina have a maximum cap on vehicle tax?",
+        "answer": "Yes! South Carolina law limits the Infrastructure Maintenance Fee to a maximum of $500.00 regardless of how high the vehicle's purchase price is. Any vehicle priced at $10,000 or higher incurs the $500.00 cap."
+      },
+      {
+        "question": "Does a trade-in reduce tax on private vehicle sales in South Carolina?",
+        "answer": "Yes. South Carolina law defines total purchase price as net of trade-in allowance. If your trade-in brings the net purchase price below $10,000, you pay 5% on the net amount; otherwise, the $500 maximum cap applies."
+      },
+      {
+        "question": "How much are title and registration fees in South Carolina?",
+        "answer": "The SCDMV certificate of title fee is $15.00. Standard passenger registration is $40.00 for a two-year plate ($20.00/year equivalent). Electric vehicles pay an additional $120.00 biennial road fee ($60.00/year)."
+      }
+    ],
+    "sources": [
+      "https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration",
+      "https://www.scstatehouse.gov/code/t56c003.php"
+    ]
+  },
+  "alabama": {
+    "label": "Alabama",
+    "slug": "alabama-private-sale-tax-calculator",
+    "exciseTaxRate": 0.02,
+    "minExciseTax": null,
+    "maxExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 15,
+    "lienFilingFee": 15,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 23
+        },
+        "over3700lbs": {
+          "1": 23
+        }
+      },
+      "motorcycle": {
+        "1": 15
+      },
+      "evSurchargeAnnual": 200,
+      "phevSurchargeAnnual": 100
+    },
+    "localTaxNote": "Alabama levies a 2.0% state automotive sales tax base (Ala. Code § 40-23-2(4)). Local county and city taxes typically add 1.0% to 4.0%, making total sales tax between 3.0% and 6.0%.",
+    "notes": [
+      "Alabama levies a 2.0% statewide automotive sales/use tax on casual and private party vehicle sales (Ala. Code § 40-23-2(4) and § 40-23-61(c)).",
+      "Title application fee is $15.00 under Ala. Code § 32-8-6; lien recording is $15.00 if financed.",
+      "Trade-in deduction is not permitted on private-party sales under Ala. Code § 40-23-103; trade-in allowances are restricted to licensed dealer purchases.",
+      "Annual ad valorem property taxes are assessed by your county license commissioner at registration."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Alabama Department of Revenue (ALDOR) or your county licensing office.",
+      "Alabama charges a 2.0% state automotive sales tax; county and municipal taxes add 1.0%–4.0% depending on residence.",
+      "Private vehicle purchases do not qualify for trade-in allowance deductions in Alabama.",
+      "Annual ad valorem personal property tax is collected at registration based on the vehicle's market value."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax rate in Alabama for private sales?",
+        "answer": "Alabama charges a 2.0% state automotive sales and use tax rate. County and city governments levy additional automotive taxes that typically range from 1.0% to 4.0%, making total sales tax between 3.0% and 6.0%."
+      },
+      {
+        "question": "Can I deduct a trade-in on a private vehicle purchase in Alabama?",
+        "answer": "No. Under Ala. Code § 40-23-103, trade-in deductions are exclusively permitted when trading a vehicle to a licensed motor vehicle dealer. Private casual sales are taxed on the full agreed sales price."
+      },
+      {
+        "question": "How much does an Alabama vehicle title transfer cost?",
+        "answer": "The statutory Alabama application fee for a certificate of title is $15.00 (plus a local county processing fee of $1.25–$1.50). Recording a security interest or lien costs an additional $15.00."
+      },
+      {
+        "question": "How much is vehicle registration in Alabama?",
+        "answer": "The base annual state license plate fee for passenger cars is $23.00. Electric vehicles pay an additional $200.00 annual surcharge ($100.00 for plug-in hybrids) in lieu of gas tax."
+      }
+    ],
+    "sources": [
+      "https://revenue.alabama.gov/motor-vehicle/",
+      "https://revenue.alabama.gov/sales-use/tax-rates/"
+    ]
+  },
+  "louisiana": {
+    "label": "Louisiana",
+    "slug": "louisiana-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0445,
+    "minExciseTax": null,
+    "maxExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 68.5,
+    "lienFilingFee": 10,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1,
+        2
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 10,
+          "2": 20
+        },
+        "over3700lbs": {
+          "1": 10,
+          "2": 20
+        }
+      },
+      "motorcycle": {
+        "1": 6,
+        "2": 12
+      },
+      "evSurchargeAnnual": 110,
+      "phevSurchargeAnnual": 60
+    },
+    "localTaxNote": "Louisiana state sales tax is 4.45% (La. R.S. § 47:302). Local parish and municipal sales taxes add 2.0% to 7.0%, bringing total effective sales tax to 6.45%–11.45% depending on your parish.",
+    "notes": [
+      "Louisiana imposes a 4.45% state sales and use tax on private party motor vehicle transfers (La. R.S. § 47:302).",
+      "Title fee is $68.50; an $8.00 state handling fee and notary fees typically apply at the Office of Motor Vehicles (OMV).",
+      "Passenger license plates are issued for 2-year terms based on vehicle value ($20.00 minimum for 2 years = $10.00/year).",
+      "Trade-in deduction is not permitted on private casual sales under La. R.S. 47:303; dealer purchases only."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Louisiana Office of Motor Vehicles (OMV) or Department of Revenue.",
+      "Louisiana state sales tax is 4.45%; parish and city sales taxes (2.0%–7.0%) are collected at titling.",
+      "Private-party sales do not receive trade-in tax credits in Louisiana; tax is assessed on full purchase price.",
+      "Louisiana requires the bill of sale or title assignment to be notarized by an authorized notary public."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax rate in Louisiana for private sales?",
+        "answer": "The Louisiana state sales tax rate is 4.45%. However, local parish and municipal taxes add between 2.0% and 7.0%, meaning buyers generally pay between 6.45% and 11.45% total sales tax when registering the vehicle."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private car sale in Louisiana?",
+        "answer": "No. Under Louisiana law (La. R.S. 47:303), trade-in credits are strictly limited to transactions conducted through licensed motor vehicle dealers. Private casual sales are taxed on the full purchase price."
+      },
+      {
+        "question": "Does Louisiana require a notarized bill of sale?",
+        "answer": "Yes. Louisiana law requires that vehicle title assignments and acts of sale be signed in the presence of a notary public before the transfer can be processed by the Office of Motor Vehicles (OMV)."
+      },
+      {
+        "question": "How much does a vehicle title cost in Louisiana?",
+        "answer": "The standard Louisiana OMV title fee is $68.50 (plus an $8.00 handling fee). If the vehicle is financed, a $10.00 lien recordation fee applies."
+      }
+    ],
+    "sources": [
+      "https://omv.dps.louisiana.gov/Fee_Schedule.aspx",
+      "https://revenue.louisiana.gov/SalesTax"
+    ]
+  },
+  "kentucky": {
+    "label": "Kentucky",
+    "slug": "kentucky-private-sale-tax-calculator",
+    "exciseTaxRate": 0.06,
+    "minExciseTax": null,
+    "maxExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 9,
+    "lienFilingFee": 22,
+    "tradeInDeductible": true,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 21
+        },
+        "over3700lbs": {
+          "1": 21
+        }
+      },
+      "motorcycle": {
+        "1": 15
+      },
+      "evSurchargeAnnual": 120,
+      "phevSurchargeAnnual": 60
+    },
+    "localTaxNote": "Kentucky assesses a flat 6.0% Motor Vehicle Usage Tax statewide (KRS 138.460). No local sales taxes apply to motor vehicles.",
+    "notes": [
+      "Kentucky assesses a 6.0% Motor Vehicle Usage Tax (KRS 138.460) on the total consideration paid or retail value.",
+      "Title application fee is $9.00 under KRS 186A.130; lien filing fee is $22.00 under KRS 186A.190.",
+      "Trade-in deduction is permitted on private-party sales under KRS 138.450 when documented on a notarized Form TC 96-182 affidavit of total consideration.",
+      "Annual motor vehicle property taxes are assessed separately by your county clerk based on January 1 vehicle value."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Kentucky Transportation Cabinet (KYTC) or your County Clerk.",
+      "Kentucky charges a 6.0% Motor Vehicle Usage Tax statewide upon transfer of ownership.",
+      "Trade-in credit is permitted on private vehicle sales when both parties execute a notarized affidavit (Form TC 96-182).",
+      "Standard annual registration is $21.00; electric vehicles pay an additional $120.00 annual road fee ($60.00 for hybrid)."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle tax rate in Kentucky?",
+        "answer": "Kentucky imposes a 6.0% Motor Vehicle Usage Tax (MVUT) under KRS 138.460. Unlike general retail sales, motor vehicles in Kentucky are not subject to local city or county sales taxes."
+      },
+      {
+        "question": "Does Kentucky allow trade-in credit on private vehicle sales?",
+        "answer": "Yes! Under KRS 138.450 and 138.460, trade-in allowances reduce taxable value for private transactions as long as both buyer and seller execute a notarized Affidavit of Total Consideration Given (Form TC 96-182)."
+      },
+      {
+        "question": "How much are Kentucky title and lien fees?",
+        "answer": "The Kentucky state certificate of title fee is $9.00. If the purchase is financed through a lender, an additional $22.00 lien filing fee is required by the County Clerk."
+      },
+      {
+        "question": "How much does vehicle registration cost in Kentucky?",
+        "answer": "Standard annual passenger car registration in Kentucky is $21.00. All-electric vehicles pay an additional $120.00 annual electric vehicle fee ($60.00 for hybrids)."
+      }
+    ],
+    "sources": [
+      "https://drive.ky.gov/motor-vehicle-licensing/Pages/Vehicle-Taxes.aspx",
+      "https://revenue.ky.gov/Property/Motor-Vehicles/Pages/default.aspx"
+    ]
+  },
+  "oregon": {
+    "label": "Oregon",
+    "slug": "oregon-private-sale-tax-calculator",
+    "exciseTaxRate": 0,
+    "minExciseTax": null,
+    "maxExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 101,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1,
+        2
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 63,
+          "2": 126
+        },
+        "over3700lbs": {
+          "1": 63,
+          "2": 126
+        }
+      },
+      "motorcycle": {
+        "1": 24,
+        "2": 48
+      },
+      "evSurchargeAnnual": 110
+    },
+    "localTaxNote": "Oregon has no state or local sales tax on private party motor vehicle sales (0.0%). The 0.5% vehicle use tax applies only to dealer sales of new vehicles.",
+    "notes": [
+      "Oregon has no general sales tax and charges 0.0% tax on private party vehicle sales.",
+      "Base certificate of title fee is $101.00 under ORS 803.090 for standard passenger vehicles.",
+      "Standard passenger vehicle registration is issued on a 2-year biennial term ($126.00 base for 0–19 MPG = $63.00/yr).",
+      "Certain metropolitan counties (Multnomah, Clackamas, Washington) assess local county registration fees of $30–$56/yr."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Oregon Driver and Motor Vehicle Services (DMV).",
+      "Oregon does not assess state or local sales tax on private vehicle transactions (0.0% tax).",
+      "Title and registration fees vary based on vehicle fuel efficiency rating (MPG) and county of residence.",
+      "Electric vehicles pay higher biennial registration fees or may opt into the per-mile OReGO program."
+    ],
+    "faqs": [
+      {
+        "question": "What is the car sales tax rate in Oregon for private sales?",
+        "answer": "Oregon does not have a general sales tax, and private-party vehicle sales between individuals are 100% tax-free (0.0% sales tax). The 0.5% Vehicle Privilege Tax only applies to licensed dealers selling new vehicles."
+      },
+      {
+        "question": "How much does a title transfer cost in Oregon?",
+        "answer": "Under ORS 803.090, the base Oregon DMV certificate of title fee for standard passenger cars is $101.00. Lien notation is processed on the title application without an extra filing fee."
+      },
+      {
+        "question": "How are registration fees calculated in Oregon?",
+        "answer": "Oregon registers passenger vehicles on a two-year cycle with fees tiered by EPA fuel economy rating, starting at $126.00 for vehicles under 20 MPG ($63.00/year equivalent). Tri-county areas (Multnomah, Washington, Clackamas) add local county fees."
+      },
+      {
+        "question": "Do electric vehicles pay extra fees in Oregon?",
+        "answer": "Yes. All-electric vehicles pay an increased biennial registration fee ($316.00 for 2 years) to compensate for untaxed motor fuel, or owners may enroll in Oregon's voluntary road usage charge program (OReGO)."
+      }
+    ],
+    "sources": [
+      "https://www.oregon.gov/odot/dmv/pages/fees/vehicle.aspx",
+      "https://www.oregon.gov/dor/programs/businesses/Pages/vehicle-privilege-and-use-taxes.aspx"
+    ]
+  },
+  "oklahoma": {
+    "label": "Oklahoma",
+    "slug": "oklahoma-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0325,
+    "minExciseTax": null,
+    "maxExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 11,
+    "lienFilingFee": 10,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 86
+        },
+        "over3700lbs": {
+          "1": 86
+        }
+      },
+      "motorcycle": {
+        "1": 86
+      },
+      "evSurchargeAnnual": 110,
+      "phevSurchargeAnnual": 82
+    },
+    "localTaxNote": "Oklahoma levies a 3.25% Motor Vehicle Excise Tax on used vehicles under 68 O.S. § 2103. A 1.25% state sales tax applies to new vehicle retail sales.",
+    "notes": [
+      "Oklahoma levies a 3.25% Motor Vehicle Excise Tax under 68 O.S. § 2103 on the purchase price or taxable value of used vehicles.",
+      "Title fee is $11.00 through Service Oklahoma; lien filing fee is $10.00.",
+      "Annual registration fees are age-based: $96.00 for years 1–4, $86.00 for years 5–8, $66.00 for years 9–12, and $46.00 for years 13–16.",
+      "Trade-in deduction is not permitted on private party sales under 68 O.S. § 2103."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Service Oklahoma or an authorized licensed operator.",
+      "Oklahoma charges a 3.25% Motor Vehicle Excise Tax on the purchase price of used vehicles transferred between individuals.",
+      "Trade-in tax deductions are not available for private party vehicle sales in Oklahoma.",
+      "Annual registration tag fees decrease as the vehicle ages according to Oklahoma statutory age brackets."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle tax rate in Oklahoma for private sales?",
+        "answer": "In Oklahoma, used vehicle transfers between private parties are subject to a 3.25% Motor Vehicle Excise Tax under 68 O.S. § 2103, assessed on the actual purchase price or fair market value."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private vehicle sale in Oklahoma?",
+        "answer": "No. Oklahoma law does not allow trade-in credit deductions on private-party vehicle transactions. Motor vehicle excise tax must be paid on the full purchase price."
+      },
+      {
+        "question": "How much does a title transfer cost in Oklahoma?",
+        "answer": "The standard Service Oklahoma certificate of title fee is $11.00 (plus an optional $17.00 ownership transfer fee at licensed operators). Lien recordation costs $10.00."
+      },
+      {
+        "question": "How are vehicle registration fees calculated in Oklahoma?",
+        "answer": "Oklahoma uses a flat age-based annual registration schedule: $96.00 for vehicles 1 to 4 years old, $86.00 for 5 to 8 years old, $66.00 for 9 to 12 years old, $46.00 for 13 to 16 years old, and $26.00 for 17+ years."
+      }
+    ],
+    "sources": [
+      "https://oklahoma.gov/service/all-services/vehicle-registration.html",
+      "https://oksenate.gov/legislation/oklahoma-statutes"
+    ]
+  },
+  "connecticut": {
+    "label": "Connecticut",
+    "slug": "connecticut-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0635,
+    "minExciseTax": null,
+    "maxExciseTax": null,
+    "taxBase": "fairMarketValue",
+    "bookValueRule": "Connecticut assesses 6.35% tax on the higher of the purchase price or NADA Eastern Edition average trade-in value.",
+    "titleFee": 25,
+    "lienFilingFee": 10,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1,
+        2
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 40,
+          "2": 80
+        },
+        "over3700lbs": {
+          "1": 40,
+          "2": 80
+        }
+      },
+      "motorcycle": {
+        "1": 21,
+        "2": 42
+      }
+    },
+    "localTaxNote": "Connecticut sales/use tax is 6.35% (7.75% for luxury vehicles over $50,000) under C.G.S. § 12-408. Municipal personal property taxes are assessed annually by your town.",
+    "notes": [
+      "Connecticut levies a 6.35% sales and use tax (C.G.S. § 12-408) on private casual vehicle sales (7.75% luxury rate for vehicles over $50,000).",
+      "Tax is assessed on the higher of the bill of sale purchase price or NADA Eastern Edition average trade-in book value.",
+      "Title fee is $25.00 under C.G.S. § 14-192; lien filing fee is $10.00.",
+      "Trade-in deduction is not permitted on private-party sales under C.G.S. § 12-408; dealer sales only.",
+      "Base passenger registration is $120.00 for a 3-year term ($40.00/yr equivalent)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Connecticut Department of Motor Vehicles (DMV) or DRS.",
+      "Connecticut sales tax is 6.35% on the higher of purchase price or NADA book value (7.75% on vehicles over $50,000).",
+      "Trade-in allowances from private vehicle sales cannot be deducted from taxable purchase price in Connecticut.",
+      "Municipal property tax on motor vehicles is billed separately each year by your local city or town tax collector."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax rate in Connecticut for private sales?",
+        "answer": "Connecticut charges a standard 6.35% sales and use tax on private party motor vehicle purchases. If the vehicle purchase price or book value exceeds $50,000, a luxury tax rate of 7.75% applies instead."
+      },
+      {
+        "question": "How is the tax base determined for private sales in Connecticut?",
+        "answer": "Under Connecticut DMV regulations, use tax is calculated on either the purchase price stated on the bill of sale or the NADA Official Used Car Guide (Eastern Edition) average trade-in value, whichever is higher."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private vehicle sale in Connecticut?",
+        "answer": "No. Under Connecticut General Statutes § 12-408, trade-in credits are strictly restricted to transactions with licensed motor vehicle dealers. Private casual sales are taxed on the full purchase price or book value."
+      },
+      {
+        "question": "How much are Connecticut vehicle title and registration fees?",
+        "answer": "The Connecticut DMV title certificate fee is $25.00. Standard passenger registration is $120.00 for a three-year cycle ($40.00/year equivalent), plus mandatory state Clean Air and Passport to the Parks fees."
+      }
+    ],
+    "sources": [
+      "https://portal.ct.gov/dmv/vehicle-services/fees-dmv-services",
+      "https://portal.ct.gov/drs/sales-tax/sales-and-use-tax"
+    ]
+  },
+  "utah": {
+    "label": "Utah",
+    "slug": "utah-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0485,
+    "minExciseTax": null,
+    "maxExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 6,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 44
+        },
+        "over3700lbs": {
+          "1": 44
+        }
+      },
+      "motorcycle": {
+        "1": 27.5
+      },
+      "evSurchargeAnnual": 138.5,
+      "phevSurchargeAnnual": 56.5
+    },
+    "localTaxNote": "Utah state sales tax base is 4.85% (Utah Code § 59-12-103). Local county, city, and transit taxes add 1.25% to 4.20%, making total combined sales tax between 6.10% and 9.05% depending on your residence.",
+    "notes": [
+      "Utah imposes a 4.85% state sales and use tax base on private party motor vehicle sales under Utah Code § 59-12-103.",
+      "Title fee is $6.00 under Utah Code § 41-1a-1201; lien notation is included on the standard title application.",
+      "Base passenger vehicle registration is $44.00 under Utah Code § 41-1a-1206, plus an age-based statewide uniform fee ($10–$150).",
+      "Trade-in deduction is not permitted on private-party sales under Utah Code § 59-12-102; dealer purchases only.",
+      "Electric vehicles pay an additional $138.50 annual road usage fee ($56.50 for plug-in hybrids)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Utah State Tax Commission and Utah DMV.",
+      "Utah charges 4.85% state sales tax; local county and transit taxes increase the total rate to between 6.10% and 9.05%.",
+      "Trade-in deductions are not available for private party vehicle sales in Utah.",
+      "An age-based uniform fee ($10.00 to $150.00) is collected at registration in lieu of personal property tax."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax rate in Utah for private sales?",
+        "answer": "Utah levies a 4.85% state sales tax on motor vehicles. Combined with local city, county, and transit taxes, total effective tax rates range from 6.10% to 9.05% depending on the buyer's home address where the vehicle is registered."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private vehicle sale in Utah?",
+        "answer": "No. Under Utah Code § 59-12-102, trade-in allowances only reduce sales tax when trading a vehicle to a licensed motor vehicle dealer. Private sales are taxed on the full purchase price."
+      },
+      {
+        "question": "How much does a vehicle title cost in Utah?",
+        "answer": "The Utah DMV certificate of title fee is $6.00. Lien recordation is included directly on the standard title application without extra fees."
+      },
+      {
+        "question": "What is the Utah age-based vehicle fee?",
+        "answer": "Utah charges an annual age-based uniform fee at registration in place of ad valorem property taxes. The fee scales from $150.00 for vehicles less than 3 years old down to $10.00 for vehicles 12 or more years old, added to the $44.00 base registration fee."
+      }
+    ],
+    "sources": [
+      "https://dmv.utah.gov/taxes-fees/sales-tax",
+      "https://dmv.utah.gov/taxes-fees/fees"
     ]
   }
 }
