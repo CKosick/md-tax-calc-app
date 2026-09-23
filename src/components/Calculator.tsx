@@ -23,6 +23,9 @@ const ALL_STATES = Object.entries(stateRulesData as StateRulesConfig)
   .sort((a, b) => a.label.localeCompare(b.label));
 
 export function Calculator({ initialRule }: CalculatorProps) {
+  const defaultTerm: 1 | 2 =
+    initialRule.registration.terms.includes(1) && !initialRule.registration.terms.includes(2) ? 1 : 2;
+
   const [inputs, setInputs] = useState<CalculatorInputs>({
     state: initialRule.slug,
     vehicleType: 'passenger',
@@ -30,7 +33,7 @@ export function Calculator({ initialRule }: CalculatorProps) {
     vehicleYear: 2019,
     weightClass: 'under3700lbs',
     fuelType: 'gasoline',
-    registrationTerm: 2,
+    registrationTerm: defaultTerm,
     isFinanced: false,
     tradeInValue: 0
   });

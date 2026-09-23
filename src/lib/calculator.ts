@@ -40,14 +40,28 @@ export function calculateVehicleCosts(
   if (inputs.vehicleType === 'motorcycle') {
     const motoRule = rule.registration.motorcycle;
     if (typeof motoRule === 'object' && motoRule !== null) {
-      baseRegistrationFee = (motoRule as Record<string, number>)[String(term)] ?? 0;
+      const rates = motoRule as Record<string, number>;
+      if (rates[String(term)] !== undefined) {
+        baseRegistrationFee = rates[String(term)];
+      } else if (term === 2 && rates['1'] !== undefined) {
+        baseRegistrationFee = rates['1'] * 2;
+      } else if (term === 1 && rates['2'] !== undefined) {
+        baseRegistrationFee = rates['2'] / 2;
+      }
     } else if (typeof motoRule === 'number') {
       baseRegistrationFee = term === 1 ? motoRule / 2 : motoRule;
     }
   } else {
     const passRule = rule.registration.passenger[inputs.weightClass];
     if (typeof passRule === 'object' && passRule !== null) {
-      baseRegistrationFee = (passRule as Record<string, number>)[String(term)] ?? 0;
+      const rates = passRule as Record<string, number>;
+      if (rates[String(term)] !== undefined) {
+        baseRegistrationFee = rates[String(term)];
+      } else if (term === 2 && rates['1'] !== undefined) {
+        baseRegistrationFee = rates['1'] * 2;
+      } else if (term === 1 && rates['2'] !== undefined) {
+        baseRegistrationFee = rates['2'] / 2;
+      }
     } else if (typeof passRule === 'number') {
       baseRegistrationFee = term === 1 ? passRule / 2 : passRule;
     }
