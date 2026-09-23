@@ -329,14 +329,14 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(912.00);
   });
 
-  it('Georgia: exact worked test ($15,000 -> $1,028.00)', () => {
+  it('Georgia: exact worked test ($15,000 -> $1,088.00)', () => {
     const rule = allRules.georgia;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'georgia' }, 2026);
-    expect(res.exciseTax).toBe(990.00); // 6.6% TAVT of 15000
+    expect(res.exciseTax).toBe(1050.00); // 7.0% statutory TAVT of 15000 (O.C.G.A. § 48-5C-1)
     expect(res.titleFee).toBe(18.00);
     expect(res.lienFilingFee).toBe(0.00);
     expect(res.registrationTotal).toBe(20.00);
-    expect(res.totalFirstYearCost).toBe(1028.00);
+    expect(res.totalFirstYearCost).toBe(1088.00);
   });
 
   it('North Carolina: exact worked test ($15,000 -> $544.75)', () => {
@@ -359,19 +359,20 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(1065.00);
   });
 
-  it('Batch 1 trade-in deductibility verification (TX & NC allow trade-in, CA & NY do not)', () => {
+  it('Batch 1 trade-in deductibility verification (NC allows trade-in; TX, CA & NY do not)', () => {
     const tradeInputs: CalculatorInputs = {
       ...std1Yr,
       state: 'texas',
       tradeInValue: 5000
     };
 
-    // Texas allows trade-in
+    // Texas does NOT allow trade-in on private sales (Comptroller Rule 3.70)
     const txTrade = calculateVehicleCosts(allRules.texas, tradeInputs, 2026);
-    expect(txTrade.tradeInDeducted).toBe(5000);
-    expect(txTrade.exciseTax).toBe(10000 * 0.0625); // 625.00
+    expect(txTrade.tradeInDeducted).toBe(0);
+    expect(txTrade.tradeInIgnored).toBe(true);
+    expect(txTrade.exciseTax).toBe(15000 * 0.0625); // 937.50
 
-    // NC allows trade-in
+    // NC allows trade-in on private sales (N.C. Gen. Stat. § 105-187.3)
     const ncTrade = calculateVehicleCosts(allRules['north-carolina'], { ...tradeInputs, state: 'north-carolina' }, 2026);
     expect(ncTrade.tradeInDeducted).toBe(5000);
     expect(ncTrade.exciseTax).toBe(10000 * 0.03); // 300.00

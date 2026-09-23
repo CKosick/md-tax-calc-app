@@ -393,7 +393,7 @@
     "bookValueRule": "Texas assesses 6.25% tax on the greater of sales price or 80% Standard Presumptive Value (SPV).",
     "titleFee": 33,
     "lienFilingFee": 0,
-    "tradeInDeductible": true,
+    "tradeInDeductible": false,
     "registration": {
       "terms": [
         1
@@ -415,12 +415,12 @@
     "notes": [
       "Texas assesses a flat 6.25% Motor Vehicle Sales and Use Tax statewide with no local sales surtaxes on motor vehicles.",
       "Private-party sales are taxed on the higher of the purchase price or Standard Presumptive Value (SPV).",
-      "Texas allows trade-in deduction on private party sales if documented on Form 130-U."
+      "Trade-in allowance does not apply to private-party sales per Texas Comptroller Rule 3.70; trade-in deductions are restricted to licensed dealer purchases."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Texas Comptroller or TxDMV.",
       "Texas assesses 6.25% Motor Vehicle Sales Tax on the higher of the purchase price or Standard Presumptive Value (SPV).",
-      "Trade-in allowance of another motor vehicle reduces the taxable amount if documented on Texas Form 130-U.",
+      "Trade-in deductions are not permitted on private-party vehicle sales in Texas; motor vehicle sales tax is calculated on the full sales price or SPV.",
       "Annual inspection and local county road & bridge fees ($10–$20) are collected by the county tax assessor."
     ],
     "faqs": [
@@ -434,7 +434,7 @@
       },
       {
         "question": "Can I deduct a trade-in on a private car sale in Texas?",
-        "answer": "Yes. Texas allows trade-in deductions on private-party sales as long as the trade-in vehicle is documented with title and vehicle identification number on Texas Form 130-U (Application for Texas Title)."
+        "answer": "No. According to the Texas Comptroller, the trade-in allowance for motor vehicle sales tax only applies when purchasing from a licensed motor vehicle dealer. In a private-party transaction, sales tax must be paid on the full purchase price or Standard Presumptive Value (SPV)."
       },
       {
         "question": "How much are Texas title and registration fees?",
@@ -721,7 +721,7 @@
   "georgia": {
     "label": "Georgia",
     "slug": "georgia-private-sale-tax-calculator",
-    "exciseTaxRate": 0.066,
+    "exciseTaxRate": 0.07,
     "minExciseTax": null,
     "taxBase": "fairMarketValue",
     "titleFee": 18,
@@ -742,24 +742,25 @@
       "motorcycle": {
         "1": 20
       },
-      "evSurchargeAnnual": 210.87
+      "evSurchargeAnnual": 238.59
     },
-    "localTaxNote": "Georgia Title Ad Valorem Tax (TAVT) is a uniform 6.6% statewide tax that replaces all sales tax and annual ad valorem property taxes.",
+    "localTaxNote": "Georgia Title Ad Valorem Tax (TAVT) is a uniform 7.0% statewide tax that replaces all sales tax and annual ad valorem property taxes.",
     "notes": [
-      "Georgia Title Ad Valorem Tax (TAVT) is 6.6% assessed on the Georgia Department of Revenue fair market value.",
+      "Georgia Title Ad Valorem Tax (TAVT) is 7.0% (O.C.G.A. § 48-5C-1) assessed on the Georgia Department of Revenue fair market value.",
       "Title fee is $18.00; standard annual license plate registration is $20.00.",
+      "Non-commercial Alternative Fuel Vehicle (AFV/EV) annual registration fee is $238.59.",
       "Trade-in deduction is not allowed on private party sales."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Georgia Department of Revenue or County Tag Office.",
-      "Georgia assesses Title Ad Valorem Tax (TAVT) at 6.6% on the state assessment manual fair market value (or purchase price if higher).",
+      "Georgia assesses Title Ad Valorem Tax (TAVT) at 7.0% on the state assessment manual fair market value (or purchase price if higher).",
       "Trade-in deductions are not available for private party sales in Georgia (only purchases from licensed Georgia dealers receive trade-in deductions).",
-      "Annual tag renewal in Georgia is $20.00; all-electric vehicles pay an annual alternative fuel fee ($210.87 in 2026)."
+      "Annual tag renewal in Georgia is $20.00; all-electric vehicles pay an annual alternative fuel fee ($238.59 in 2026)."
     ],
     "faqs": [
       {
         "question": "What is the Georgia Title Ad Valorem Tax (TAVT)?",
-        "answer": "Georgia's Title Ad Valorem Tax (TAVT) is a one-time 6.6% tax applied to vehicle purchases upon titling. TAVT replaced the old annual 'birthday tax' and general sales tax, applying uniformly across all Georgia counties."
+        "answer": "Georgia's Title Ad Valorem Tax (TAVT) is a one-time 7.0% tax applied to vehicle purchases upon titling. TAVT replaced the old annual 'birthday tax' and general sales tax, applying uniformly across all Georgia counties."
       },
       {
         "question": "How is the tax base determined for private sales in Georgia?",
