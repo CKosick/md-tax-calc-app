@@ -19,6 +19,15 @@ export const metadata: Metadata = {
   }
 };
 
+function formatCurrency(val: number): string {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(val);
+}
+
 export default function CalculatorHubPage() {
   const stateList = Object.entries(rules)
     .map(([key, rule]) => ({
@@ -48,6 +57,11 @@ export default function CalculatorHubPage() {
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {stateList.map((st) => {
             const taxPct = (st.exciseTaxRate * 100).toFixed(2);
+            const rateBadge = st.flatTaxTable ? 'Flat Table (RUT-50)' : `${taxPct}% Rate`;
+            const taxDescriptionText = st.flatTaxTable
+              ? `Calculates ${st.label}'s Form RUT-50 statutory tax tables, ${formatCurrency(st.titleFee)} title certificate, and annual tag fees.`
+              : `Calculates ${st.label}&apos;s ${taxPct}% ${st.label === 'Delaware' ? 'document fee' : st.label === 'Virginia' ? 'SUT' : 'tax'}, ${formatCurrency(st.titleFee)} title certificate, and annual or multi-year tag fees.`;
+
             return (
               <div
                 key={st.key}
@@ -59,7 +73,7 @@ export default function CalculatorHubPage() {
                       {st.label}
                     </span>
                     <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400">
-                      {taxPct}% Rate
+                      {rateBadge}
                     </span>
                   </div>
 
@@ -71,17 +85,17 @@ export default function CalculatorHubPage() {
                   </h2>
 
                   <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-                    Calculates {st.label}&apos;s {taxPct}% {st.label === 'Delaware' ? 'document fee' : st.label === 'Virginia' ? 'SUT' : 'tax'}, ${st.titleFee} title certificate, and annual or multi-year tag fees.
+                    {taxDescriptionText}
                   </p>
 
                   <div className="mt-5 space-y-2 border-t border-slate-100 pt-4 text-xs dark:border-slate-800">
                     <div className="flex justify-between">
                       <span className="text-slate-500 dark:text-slate-400">Title Certificate:</span>
-                      <span className="font-bold text-slate-900 dark:text-white">${st.titleFee}.00</span>
+                      <span className="font-bold text-slate-900 dark:text-white">{formatCurrency(st.titleFee)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-500 dark:text-slate-400">Lien Recordation:</span>
-                      <span className="font-bold text-slate-900 dark:text-white">${st.lienFilingFee}.00</span>
+                      <span className="font-bold text-slate-900 dark:text-white">{formatCurrency(st.lienFilingFee)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-500 dark:text-slate-400">Trade-in Credit:</span>
@@ -133,16 +147,16 @@ export default function CalculatorHubPage() {
                       </Link>
                     </td>
                     <td className="px-4 py-3 font-semibold text-slate-800 dark:text-slate-200">
-                      {(st.exciseTaxRate * 100).toFixed(2)}%
+                      {st.flatTaxTable ? 'Form RUT-50 Table' : `${(st.exciseTaxRate * 100).toFixed(2)}%`}
                     </td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-400 capitalize">
                       {st.taxBase === 'fairMarketValue' ? 'Fair Market Value (NADA)' : st.taxBase}
                     </td>
                     <td className="px-4 py-3 text-slate-800 dark:text-slate-200">
-                      ${st.titleFee}.00
+                      {formatCurrency(st.titleFee)}
                     </td>
                     <td className="px-4 py-3 text-slate-800 dark:text-slate-200">
-                      ${st.lienFilingFee}.00
+                      {formatCurrency(st.lienFilingFee)}
                     </td>
                     <td className="px-4 py-3">
                       <span className={`inline-flex rounded-full px-2 py-0.5 text-[10px] font-bold ${

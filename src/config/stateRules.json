@@ -596,22 +596,47 @@
       },
       "evSurchargeAnnual": 100
     },
-    "localTaxNote": "Illinois private party vehicle purchases are reported on Form RUT-50. A flat statutory bracket schedule applies ($565 for vehicles sold for $15,000–$19,999). Cook County and City of Chicago levy an additional $15 vehicle use tax.",
+    "flatTaxTable": {
+      "thresholdPrice": 15000,
+      "tableAByAge": [
+        { "maxAge": 1, "fee": 465 },
+        { "maxAge": 2, "fee": 365 },
+        { "maxAge": 3, "fee": 290 },
+        { "maxAge": 4, "fee": 240 },
+        { "maxAge": 5, "fee": 190 },
+        { "maxAge": 6, "fee": 165 },
+        { "maxAge": 7, "fee": 155 },
+        { "maxAge": 8, "fee": 140 },
+        { "maxAge": 9, "fee": 125 },
+        { "maxAge": 10, "fee": 115 },
+        { "fee": 100 }
+      ],
+      "tableBByPrice": [
+        { "minPrice": 15000, "maxPrice": 19999.99, "fee": 850 },
+        { "minPrice": 20000, "maxPrice": 24999.99, "fee": 1100 },
+        { "minPrice": 25000, "maxPrice": 29999.99, "fee": 1350 },
+        { "minPrice": 30000, "maxPrice": 49999.99, "fee": 1600 },
+        { "minPrice": 50000, "maxPrice": 99999.99, "fee": 2600 },
+        { "minPrice": 100000, "maxPrice": 999999.99, "fee": 5100 },
+        { "minPrice": 1000000, "fee": 10100 }
+      ]
+    },
+    "localTaxNote": "Illinois private-party vehicle purchases are reported on Form RUT-50 using statutory flat-tax tables (Table A by vehicle age under $15,000; Table B by purchase price bracket for $15,000 and over). Cook County and City of Chicago levy an additional $15 vehicle use tax.",
     "notes": [
-      "Illinois general statutory vehicle use tax rate is 6.25% (35 ILCS 105/3-10).",
-      "Private-party sales use Form RUT-50 with statutory tax brackets based on purchase price or vehicle age.",
-      "Title fee is $165.00; annual passenger car license plate tag fee is $151.00."
+      "Private-party vehicle purchases in Illinois are subject to the Private Party Vehicle Use Tax (Form RUT-50).",
+      "Form RUT-50 uses statutory fixed tax tables: Table A assigns a flat tax by vehicle age for purchases under $15,000; Table B assigns a flat tax by purchase price bracket for sales $15,000 and above ($850 for $15,000–$19,999.99).",
+      "Title fee is $165.00; standard annual passenger car license plate tag fee is $151.00."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with the Illinois Department of Revenue or Cyberdrive Illinois.",
-      "Illinois assesses use tax on private party purchases using Form RUT-50 bracket schedule or 6.25% statutory baseline.",
-      "Trade-in deductions are not permitted on private-party vehicle sales in Illinois; use tax is calculated on gross purchase price.",
+      "Illinois assesses use tax on private-party vehicle purchases using Form RUT-50 statutory tax tables (Table A by vehicle age when under $15,000; Table B by purchase price bracket when $15,000 or greater).",
+      "Trade-in deductions are not permitted on private-party vehicle sales in Illinois; use tax is calculated on gross purchase price or vehicle age.",
       "Standard passenger vehicle registration is $151.00 annually; electric vehicles pay an additional $100.00 annual EV road fee."
     ],
     "faqs": [
       {
         "question": "How is tax calculated on a private vehicle sale in Illinois?",
-        "answer": "In Illinois, private-party vehicle sales are reported on Form RUT-50 (Private Party Vehicle Use Tax). Tax is assessed according to purchase price brackets (e.g. $565 for sales between $15,000 and $19,999) or the 6.25% state rate baseline."
+        "answer": "In Illinois, private-party vehicle sales are reported on Form RUT-50 (Private Party Vehicle Use Tax). Tax is not a flat percentage; it is determined by statutory tables. If the purchase price is under $15,000, tax is a flat fee based on vehicle age (Table A, ranging from $100 to $465). If the purchase price is $15,000 or greater, tax is a flat fee based on purchase price brackets (Table B, starting at $850 for $15,000–$19,999.99 up to $10,100 for $1,000,000+)."
       },
       {
         "question": "How much does a vehicle title cost in Illinois?",

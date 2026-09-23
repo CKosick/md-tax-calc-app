@@ -6,6 +6,7 @@ import { Disclaimers } from '../src/components/Disclaimers';
 import { CostSummaryCard } from '../src/components/CostSummaryCard';
 import { FaqSection } from '../src/components/FaqSection';
 import { Calculator } from '../src/components/Calculator';
+import CalculatorHubPage from '../src/app/calculator/page';
 import stateRulesData from '../src/config/stateRules.json';
 import { StateRule, CostBreakdown } from '../src/lib/types';
 
@@ -119,5 +120,30 @@ describe('UI Component Unit Tests', () => {
 
     expect(screen.getAllByText(/5\.25% document fee/i).length).toBeGreaterThanOrEqual(1);
     expect(screen.queryByText(/5\.3%/i)).toBeNull();
+  });
+
+  it('renders Illinois Calculator with Form RUT-50 statutory use tax copy', () => {
+    const ilRule = (stateRulesData as Record<string, StateRule>).illinois;
+    render(<Calculator initialRule={ilRule} />);
+
+    expect(screen.getAllByText(/Form RUT-50/i).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByText(/\$1,166\.00/i)).toBeDefined(); // $850 tax + $165 title + $151 tags
+    expect(screen.getByText(/\$850\.00/i)).toBeDefined();
+  });
+
+  it('renders CalculatorHubPage with proper currency formatting and no .00 double-decimal bugs', () => {
+    render(<CalculatorHubPage />);
+
+    // Check Florida title fee is $75.25, NOT $75.25.00
+    expect(screen.queryByText(/\$75\.25\.00/)).toBeNull();
+    expect(screen.getAllByText(/\$75\.25/).length).toBeGreaterThanOrEqual(1);
+
+    // Check North Carolina lien fee is $21.50, NOT $21.5.00
+    expect(screen.queryByText(/\$21\.5\.00/)).toBeNull();
+    expect(screen.getAllByText(/\$21\.50/).length).toBeGreaterThanOrEqual(1);
+
+    // Check Illinois has Flat Table (RUT-50) badge
+    expect(screen.getByText(/Flat Table \(RUT-50\)/i)).toBeDefined();
+    expect(screen.getByText(/Form RUT-50 Table/i)).toBeDefined();
   });
 });

@@ -13,18 +13,58 @@ export function calculateVehicleCosts(
   const tradeIn = Math.max(0, Number(inputs.tradeInValue) || 0);
 
   // 1. Taxable base calculation
-  // Some states (e.g. Delaware) allow trade-in credit; others (Maryland, Virginia, Pennsylvania, DC) tax the full price
+  // Some states (e.g. Delaware) allow trade-in credit; others (Maryland, Virginia, Pennsylvania, DC, Illinois) tax the full price
   const taxableBase = rule.tradeInDeductible
     ? Math.max(0, price - tradeIn)
     : price;
 
-  const rawTax = taxableBase * rule.exciseTaxRate;
-  let exciseTax = rawTax;
-  let minTaxApplied = false;
+  const vehicleAge = Math.max(0, referenceYear - inputs.vehicleYear);
 
-  if (price > 0 && rule.minExciseTax !== null && exciseTax < rule.minExciseTax) {
-    exciseTax = rule.minExciseTax;
-    minTaxApplied = true;
+  let exciseTax = 0;
+  let minTaxApplied = false;
+  let flatTaxApplied = false;
+  let flatTaxDetail = '';
+
+  if (rule.flatTaxTable) {
+    flatTaxApplied = true;
+    if (price === 0) {
+      exciseTax = 0;
+      flatTaxDetail = 'No tax on $0.00 purchase price';
+    } else if (taxableBase < rule.flatTaxTable.thresholdPrice) {
+      // Table A by vehicle age
+      let matchedFee = 0;
+      for (const bracket of rule.flatTaxTable.tableAByAge) {
+        if (bracket.maxAge === undefined || vehicleAge <= bracket.maxAge) {
+          matchedFee = bracket.fee;
+          break;
+        }
+      }
+      exciseTax = matchedFee;
+      flatTaxDetail = `Form RUT-50 Table A flat tax for ${vehicleAge} year old vehicle (under $${rule.flatTaxTable.thresholdPrice.toLocaleString()})`;
+    } else {
+      // Table B by price bracket
+      let matchedFee = 0;
+      let matchedBracketStr = '';
+      for (const bracket of rule.flatTaxTable.tableBByPrice) {
+        if (taxableBase >= bracket.minPrice && (bracket.maxPrice === undefined || taxableBase <= bracket.maxPrice)) {
+          matchedFee = bracket.fee;
+          matchedBracketStr = bracket.maxPrice !== undefined
+            ? `$${bracket.minPrice.toLocaleString()}–$${bracket.maxPrice.toLocaleString()}`
+            : `$${bracket.minPrice.toLocaleString()}+`;
+          break;
+        }
+      }
+      exciseTax = matchedFee;
+      flatTaxDetail = `Form RUT-50 Table B flat tax (${matchedBracketStr} bracket)`;
+    }
+  } else {
+    const rawTax = taxableBase * rule.exciseTaxRate;
+    exciseTax = rawTax;
+
+    if (price > 0 && rule.minExciseTax !== null && exciseTax < rule.minExciseTax) {
+      exciseTax = rule.minExciseTax;
+      minTaxApplied = true;
+    }
   }
 
   // 2. Title Certificate Fee
@@ -82,7 +122,6 @@ export function calculateVehicleCosts(
     exciseTax + titleFee + lienFilingFee + registrationTotal;
 
   // Age rule calculation (e.g. Maryland & Virginia book value checks for vehicles <= 7 or 5 years)
-  const vehicleAge = referenceYear - inputs.vehicleYear;
   const bookValueApplies = Boolean(rule.bookValueRule && vehicleAge <= 7);
 
   // Trade-in reporting
@@ -94,7 +133,9 @@ export function calculateVehicleCosts(
   const rateLabel = `${ratePercent}%`;
 
   let taxDescription = `Calculated at ${rateLabel} on taxable base of $${taxableBase.toLocaleString()}`;
-  if (minTaxApplied) {
+  if (flatTaxApplied) {
+    taxDescription = flatTaxDetail;
+  } else if (minTaxApplied) {
     taxDescription = `Statutory minimum tax floor applied ($${rule.minExciseTax?.toFixed(2)})`;
   } else if (rule.tradeInDeductible && tradeIn > 0) {
     taxDescription = `${rateLabel} on net sale price after $${tradeIn.toLocaleString()} trade-in credit`;
@@ -111,7 +152,9 @@ export function calculateVehicleCosts(
   const itemizedList = [
     {
       id: 'excise-tax',
-      label: `Vehicle Sales / Excise Tax (${rateLabel})`,
+      label: rule.flatTaxTable
+        ? `${rule.label} Vehicle Use Tax (Form RUT-50 Table)`
+        : `Vehicle Sales / Excise Tax (${rateLabel})`,
       amount: exciseTax,
       description: taxDescription
     },

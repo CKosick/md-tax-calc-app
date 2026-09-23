@@ -258,14 +258,65 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(718.00);
   });
 
-  it('Illinois: exact worked test ($15,000 -> $1,253.50)', () => {
+  it('Illinois: exact worked test ($15,000 -> $1,166.00)', () => {
     const rule = allRules.illinois;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'illinois' }, 2026);
-    expect(res.exciseTax).toBe(937.50); // 6.25% of 15000
+    expect(res.exciseTax).toBe(850.00); // Form RUT-50 Table B: $15,000–$19,999.99
     expect(res.titleFee).toBe(165.00);
     expect(res.lienFilingFee).toBe(0.00);
     expect(res.registrationTotal).toBe(151.00);
-    expect(res.totalFirstYearCost).toBe(1253.50);
+    expect(res.totalFirstYearCost).toBe(1166.00);
+    expect(res.itemizedList[0].label).toContain('Form RUT-50 Table');
+    expect(res.itemizedList[0].description).toContain('Table B');
+  });
+
+  it('Illinois Form RUT-50: verifies Table B price brackets', () => {
+    const rule = allRules.illinois;
+    // $20k–$25k -> $1,100
+    expect(calculateVehicleCosts(rule, { ...std1Yr, purchasePrice: 22000, state: 'illinois' }, 2026).exciseTax).toBe(1100);
+    // $25k–$30k -> $1,350
+    expect(calculateVehicleCosts(rule, { ...std1Yr, purchasePrice: 27000, state: 'illinois' }, 2026).exciseTax).toBe(1350);
+    // $30k–$50k -> $1,600
+    expect(calculateVehicleCosts(rule, { ...std1Yr, purchasePrice: 35000, state: 'illinois' }, 2026).exciseTax).toBe(1600);
+    // $50k–$100k -> $2,600
+    expect(calculateVehicleCosts(rule, { ...std1Yr, purchasePrice: 75000, state: 'illinois' }, 2026).exciseTax).toBe(2600);
+    // $100k–$1M -> $5,100
+    expect(calculateVehicleCosts(rule, { ...std1Yr, purchasePrice: 250000, state: 'illinois' }, 2026).exciseTax).toBe(5100);
+    // $1M+ -> $10,100
+    expect(calculateVehicleCosts(rule, { ...std1Yr, purchasePrice: 1500000, state: 'illinois' }, 2026).exciseTax).toBe(10100);
+  });
+
+  it('Illinois Form RUT-50: verifies Table A vehicle age brackets for price < $15k', () => {
+    const rule = allRules.illinois;
+    const base = { ...std1Yr, purchasePrice: 10000, state: 'illinois' };
+
+    // <= 1 yr -> $465
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2026 }, 2026).exciseTax).toBe(465);
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2025 }, 2026).exciseTax).toBe(465);
+    // 2 yrs -> $365
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2024 }, 2026).exciseTax).toBe(365);
+    // 3 yrs -> $290
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2023 }, 2026).exciseTax).toBe(290);
+    // 4 yrs -> $240
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2022 }, 2026).exciseTax).toBe(240);
+    // 5 yrs -> $190
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2021 }, 2026).exciseTax).toBe(190);
+    // 6 yrs -> $165
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2020 }, 2026).exciseTax).toBe(165);
+    // 7 yrs -> $155
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2019 }, 2026).exciseTax).toBe(155);
+    // 8 yrs -> $140
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2018 }, 2026).exciseTax).toBe(140);
+    // 9 yrs -> $125
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2017 }, 2026).exciseTax).toBe(125);
+    // 10 yrs -> $115
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2016 }, 2026).exciseTax).toBe(115);
+    // 11+ yrs -> $100
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2015 }, 2026).exciseTax).toBe(100);
+    expect(calculateVehicleCosts(rule, { ...base, vehicleYear: 2005 }, 2026).exciseTax).toBe(100);
+
+    // $0 purchase price -> $0 tax
+    expect(calculateVehicleCosts(rule, { ...base, purchasePrice: 0 }, 2026).exciseTax).toBe(0);
   });
 
   it('Ohio: exact worked test ($15,000 -> $912.00)', () => {

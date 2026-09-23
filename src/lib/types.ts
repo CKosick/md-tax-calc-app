@@ -20,6 +20,23 @@ export interface FaqItem {
   answer: string;
 }
 
+export interface FlatTaxAgeBracket {
+  maxAge?: number;
+  fee: number;
+}
+
+export interface FlatTaxPriceBracket {
+  minPrice: number;
+  maxPrice?: number;
+  fee: number;
+}
+
+export interface FlatTaxTableConfig {
+  thresholdPrice: number;
+  tableAByAge: FlatTaxAgeBracket[];
+  tableBByPrice: FlatTaxPriceBracket[];
+}
+
 export interface StateRule {
   label: string;
   slug: string;
@@ -31,6 +48,7 @@ export interface StateRule {
   tradeInDeductible: boolean;
   bookValueRule?: string;
   registration: StateRegistrationRules;
+  flatTaxTable?: FlatTaxTableConfig;
   veipFee?: number;
   localTaxNote?: string;
   notes: string[];

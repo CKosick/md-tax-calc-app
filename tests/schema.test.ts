@@ -87,6 +87,22 @@ describe('State Rules Schema & Config Validation', () => {
     expect(dc.taxBase).toBe('fairMarketValue');
   });
 
+  it('validates Illinois Form RUT-50 flatTaxTable configuration', () => {
+    const il = allRules.illinois;
+    expect(il.flatTaxTable).toBeDefined();
+    expect(il.flatTaxTable?.thresholdPrice).toBe(15000);
+    expect(il.flatTaxTable?.tableAByAge).toHaveLength(11);
+    expect(il.flatTaxTable?.tableBByPrice).toHaveLength(7);
+
+    // Verify first and last brackets of Table A
+    expect(il.flatTaxTable?.tableAByAge[0]).toEqual({ maxAge: 1, fee: 465 });
+    expect(il.flatTaxTable?.tableAByAge[10]).toEqual({ fee: 100 });
+
+    // Verify key brackets of Table B
+    expect(il.flatTaxTable?.tableBByPrice[0]).toEqual({ minPrice: 15000, maxPrice: 19999.99, fee: 850 });
+    expect(il.flatTaxTable?.tableBByPrice[6]).toEqual({ minPrice: 1000000, fee: 10100 });
+  });
+
   it('validates every state entry contains verified official source URLs', () => {
     for (const [key, rule] of Object.entries(allRules)) {
       expect(Array.isArray(rule.sources), `State ${key} must have sources array`).toBe(true);
