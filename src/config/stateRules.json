@@ -2051,5 +2051,575 @@
       "https://dmv.utah.gov/taxes-fees/sales-tax",
       "https://dmv.utah.gov/taxes-fees/fees"
     ]
+  },
+  "iowa": {
+    "label": "Iowa",
+    "slug": "iowa-private-sale-tax-calculator",
+    "exciseTaxRate": 0.05,
+    "taxBase": "price",
+    "titleFee": 35,
+    "lienFilingFee": 20,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 50
+        },
+        "over3700lbs": {
+          "1": 50
+        }
+      },
+      "motorcycle": {
+        "1": 20
+      },
+      "evSurchargeAnnual": 130,
+      "phevSurchargeAnnual": 65
+    },
+    "localTaxNote": "Iowa levies the 5% Fee for New Registration statewide in lieu of retail sales tax; local option sales taxes (LOST) do not apply to motor vehicles.",
+    "notes": [
+      "Iowa assesses a 5% Fee for New Registration (FNR) on vehicle purchase price under Iowa Code § 321.105A.",
+      "Certificate of title fee is $35.00 (increased Jan 1, 2025 from $25.00); lien notation is $20.00.",
+      "Private party sales do not qualify for trade-in tax credits in Iowa; full purchase price is taxed.",
+      "Annual registration combines weight and list price depreciation formula with a $50 minimum floor."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Iowa DOT or county treasurer.",
+      "Trade-in deductions are not permitted on private-party vehicle sales in Iowa.",
+      "Certificate of title fee is $35.00 effective 2025."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax on a private car purchase in Iowa?",
+        "answer": "In Iowa, vehicle purchases are subject to a 5% 'Fee for New Registration' collected by your county treasurer under Iowa Code § 321.105A, replacing standard retail sales tax."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private vehicle purchase in Iowa?",
+        "answer": "No. Under Iowa Code § 321.105A, trade-in deductions are not allowed for private-party sales. You must pay the 5% fee on the full purchase price."
+      },
+      {
+        "question": "How much does a vehicle title cost in Iowa?",
+        "answer": "The certificate of title fee in Iowa is $35.00 (increased effective January 1, 2025). If the vehicle is financed, an additional $20.00 security interest (lien) fee applies."
+      },
+      {
+        "question": "How are Iowa annual registration fees determined?",
+        "answer": "Annual registration is calculated based on vehicle weight ($0.40 per 100 lbs) plus a percentage of the original list price that scales down as the car ages, subject to a $50.00 minimum floor for older vehicles."
+      }
+    ],
+    "sources": [
+      "https://iowadot.gov/mvd/buyingselling/registering-a-vehicle",
+      "https://iowatreasurers.org"
+    ]
+  },
+  "nevada": {
+    "label": "Nevada",
+    "slug": "nevada-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0,
+    "taxBase": "price",
+    "titleFee": 28.25,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 33
+        },
+        "over3700lbs": {
+          "1": 33
+        }
+      },
+      "motorcycle": {
+        "1": 33
+      },
+      "evSurchargeAnnual": 125,
+      "phevSurchargeAnnual": 75
+    },
+    "localTaxNote": "Private party vehicle sales in Nevada are 100% exempt from sales and use tax under NRS 372.320 ('occasional sale' exemption). However, an annual Governmental Services Tax (GST) based on the vehicle's depreciated original MSRP is collected upon registration.",
+    "notes": [
+      "Nevada exempts private party vehicle sales from sales and use tax under NRS 372.320 ('occasional sale' exemption).",
+      "Certificate of title fee is $28.25 under Nevada DMV fee schedule.",
+      "Base registration tag fee is $33.00 for passenger vehicles.",
+      "Nevada collects an annual Governmental Services Tax (GST) based on 35% of the vehicle's original MSRP depreciated by age."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Nevada DMV.",
+      "Private party vehicle sales are exempt from Nevada sales tax under NRS 372.320.",
+      "Registration includes an annual Governmental Services Tax (GST) calculated from the vehicle's original MSRP and age."
+    ],
+    "faqs": [
+      {
+        "question": "Do you pay sales tax on a private car sale in Nevada?",
+        "answer": "No. Under Nevada Revised Statutes (NRS 372.320), private-party vehicle sales qualify as occasional sales and are completely exempt from Nevada sales and use tax."
+      },
+      {
+        "question": "What fees do I pay when buying a car privately in Nevada?",
+        "answer": "While exempt from sales tax, you must pay a $28.25 certificate of title fee, a $33.00 base passenger registration fee, and the annual Governmental Services Tax (GST) based on the vehicle's depreciated original MSRP."
+      },
+      {
+        "question": "How is the Nevada Governmental Services Tax (GST) calculated?",
+        "answer": "The GST is calculated by taking 35% of the vehicle's original Manufacturer's Suggested Retail Price (MSRP), applying an annual depreciation percentage based on age, and multiplying by the 4% state GST rate (plus 1% optional supplemental county GST in Clark and Washoe counties)."
+      },
+      {
+        "question": "Do trade-in credits apply to private car sales in Nevada?",
+        "answer": "Because private-party sales in Nevada are already 0% sales tax, trade-in credits do not affect your sales tax liability."
+      }
+    ],
+    "sources": [
+      "https://dmv.nv.gov/fees.htm",
+      "https://tax.nv.gov"
+    ]
+  },
+  "arkansas": {
+    "label": "Arkansas",
+    "slug": "arkansas-private-sale-tax-calculator",
+    "exciseTaxRate": 0.065,
+    "priceTiers": [
+      {
+        "maxPrice": 4000,
+        "rate": 0.0
+      },
+      {
+        "maxPrice": 10000,
+        "rate": 0.035
+      },
+      {
+        "maxPrice": null,
+        "rate": 0.065
+      }
+    ],
+    "taxBase": "price",
+    "titleFee": 10,
+    "lienFilingFee": 0.5,
+    "tradeInDeductible": true,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 27.5
+        },
+        "over3700lbs": {
+          "1": 27.5
+        }
+      },
+      "motorcycle": {
+        "1": 12.5
+      },
+      "evSurchargeAnnual": 200,
+      "phevSurchargeAnnual": 100
+    },
+    "localTaxNote": "Arkansas cities and counties levy local sales taxes between 1.0% and 3.5%, bringing total sales tax to 7.5%–11.5%. Local sales taxes apply even to vehicles under $4,000 where state tax is exempt.",
+    "notes": [
+      "Under Ark. Code § 26-52-510, vehicles under $4,000 are exempt from state sales tax; $4,000–$9,999.99 are taxed at 3.5%; $10,000+ are taxed at 6.5%.",
+      "Arkansas SB49 (2025) to modify tiers failed to pass upon Sine Die adjournment on May 5, 2025; codified brackets remain in full effect.",
+      "Arkansas permits trade-in credit on private sales if replacement vehicle is purchased within 60 days of selling prior vehicle.",
+      "Certificate of title fee is $10.00; lien recordation fee is $0.50.",
+      "Passenger registration is $25.00 weight fee (3,001–4,500 lbs) plus a $2.50 validation decal = $27.50."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Arkansas DFA.",
+      "Motor vehicles under $4,000 purchase price are exempt from Arkansas state sales tax under Ark. Code § 26-52-510, while $4,000–$9,999 pay 3.5% and $10,000+ pay 6.5%.",
+      "City and county local sales taxes may apply even when exempt from state sales tax.",
+      "Trade-in sales tax credit is available if you sell your old vehicle within 60 days with bill of sale proof."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax rate in Arkansas?",
+        "answer": "Under Ark. Code § 26-52-510, state sales tax is tiered: vehicles under $4,000 are 0% (exempt); vehicles priced from $4,000 to $9,999.99 are taxed at a reduced 3.5% rate; vehicles $10,000 and above are taxed at 6.5%."
+      },
+      {
+        "question": "Did Arkansas change vehicle sales tax rates in 2025?",
+        "answer": "Senate Bill 49 of 2025 proposed altering the vehicle brackets, but the bill died in committee upon Sine Die adjournment on May 5, 2025. The existing $4,000 and $10,000 thresholds under Ark. Code § 26-52-510 remain the law."
+      },
+      {
+        "question": "Can I deduct a trade-in on a private vehicle sale in Arkansas?",
+        "answer": "Yes. Arkansas allows a 'sale in lieu of trade-in' tax credit on private party transactions if you sell your previous vehicle within 60 days before or after purchasing the replacement vehicle and submit bill of sale documentation to the DFA."
+      },
+      {
+        "question": "How much are Arkansas title and tag fees?",
+        "answer": "The Arkansas certificate of title fee is $10.00, lien recording is $0.50, and standard passenger vehicle registration is $27.50 (including the $25.00 weight fee and $2.50 validation decal)."
+      }
+    ],
+    "sources": [
+      "https://www.dfa.arkansas.gov/excise-tax/sales-and-use-tax/motor-vehicle-tax/",
+      "https://www.dfa.arkansas.gov/driver-services/fees/"
+    ]
+  },
+  "mississippi": {
+    "label": "Mississippi",
+    "slug": "mississippi-private-sale-tax-calculator",
+    "exciseTaxRate": 0.05,
+    "taxBase": "fairMarketValue",
+    "titleFee": 9,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 29
+        },
+        "over3700lbs": {
+          "1": 29
+        }
+      },
+      "motorcycle": {
+        "1": 15
+      },
+      "evSurchargeAnnual": 150,
+      "phevSurchargeAnnual": 75
+    },
+    "localTaxNote": "Mississippi levies a 5% casual sales tax statewide on private vehicle sales, but counties assess substantial annual ad valorem personal property taxes at registration based on local millage rates.",
+    "notes": [
+      "Mississippi imposes a 5% Casual Sales Tax on private party motor vehicle purchases under Miss. Code Ann. § 27-65-201.",
+      "Tax is assessed on the vehicle's true fair market value using Mississippi Department of Revenue assessment schedules.",
+      "Trade-in deductions are not permitted on private-party casual sales in Mississippi.",
+      "Certificate of title fee is $9.00; base registration is $14.00 tag fee plus $15.00 road and bridge privilege tax = $29.00."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Mississippi Department of Revenue and county tax collector.",
+      "Mississippi taxes private sales at 5% based on DOR true value schedules.",
+      "Counties levy annual ad valorem property taxes at registration based on local county millage rates."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax on a private car purchase in Mississippi?",
+        "answer": "Mississippi imposes a 5.0% Casual Sales Tax on private-party motor vehicle transfers under Miss. Code Ann. § 27-65-201, payable at the county tax collector's office upon registration."
+      },
+      {
+        "question": "How is vehicle value determined for Mississippi sales tax?",
+        "answer": "The casual sales tax is calculated based on the true market value from the Mississippi Department of Revenue's official motor vehicle assessment schedule, rather than purely on the private bill of sale price."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private car purchase in Mississippi?",
+        "answer": "No. Mississippi law only permits trade-in tax credits for transactions conducted through licensed motor vehicle dealers; private-party sales receive no trade-in deduction."
+      },
+      {
+        "question": "How much does it cost to title and tag a car in Mississippi?",
+        "answer": "The certificate of title fee is $9.00 and basic registration is $29.00 ($14.00 registration fee plus $15.00 road and bridge privilege tax), plus county ad valorem property taxes."
+      }
+    ],
+    "sources": [
+      "https://www.dor.ms.gov",
+      "https://www.dor.ms.gov/motor-vehicle"
+    ]
+  },
+  "kansas": {
+    "label": "Kansas",
+    "slug": "kansas-private-sale-tax-calculator",
+    "exciseTaxRate": 0.065,
+    "taxBase": "price",
+    "titleFee": 10,
+    "lienFilingFee": 1.5,
+    "tradeInDeductible": true,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 30
+        },
+        "over3700lbs": {
+          "1": 30
+        }
+      },
+      "motorcycle": {
+        "1": 16
+      },
+      "evSurchargeAnnual": 165,
+      "phevSurchargeAnnual": 100
+    },
+    "localTaxNote": "Kansas cities and counties impose local sales taxes between 1.0% and 4.0%, bringing the combined sales tax rate to 7.5%–10.5% depending on the buyer's taxing jurisdiction.",
+    "notes": [
+      "Kansas levies a 6.5% state retail sales tax on private vehicle transactions under K.S.A. 79-3603.",
+      "Under K.S.A. 79-3602, buyers can deduct the value of a privately sold or traded vehicle if purchased within 120/180 days.",
+      "Certificate of title fee is $10.00; lien fee is $1.50.",
+      "Standard passenger car registration is $30.00 under K.S.A. 8-143 for vehicles 4,500 lbs or less.",
+      "County treasurers also collect personal property taxes at registration based on local mill levies."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Kansas Department of Revenue and county treasurer.",
+      "Kansas state sales tax is 6.5%; local city and county taxes increase the total rate to between 7.5% and 10.5%.",
+      "You can claim a trade-in tax deduction if you sold another vehicle within 120 days.",
+      "County treasurers assess annual property taxes based on local mill levies at registration."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax in Kansas?",
+        "answer": "Kansas imposes a 6.5% base state sales tax on motor vehicles under K.S.A. 79-3603. Local city and county taxes typically bring the combined rate to between 7.5% and 10.5%."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private vehicle sale in Kansas?",
+        "answer": "Yes. Under K.S.A. 79-3602, Kansas permits a trade-in tax deduction even for private party transactions if you sell a vehicle and purchase a replacement within 120 days, paying tax only on the net difference."
+      },
+      {
+        "question": "How much does a vehicle title cost in Kansas?",
+        "answer": "The standard Kansas certificate of title fee is $10.00, with a $1.50 lien notation fee if your purchase is financed through a lender."
+      },
+      {
+        "question": "What are Kansas passenger vehicle registration fees?",
+        "answer": "Annual registration for passenger vehicles weighing 4,500 lbs or less is $30.00 under K.S.A. 8-143 ($40.00 for vehicles over 4,500 lbs), plus county personal property taxes."
+      }
+    ],
+    "sources": [
+      "https://www.ksrevenue.gov/",
+      "https://www.ksrevenue.gov/prtaxrates.html"
+    ]
+  },
+  "new-mexico": {
+    "label": "New Mexico",
+    "slug": "new-mexico-private-sale-tax-calculator",
+    "exciseTaxRate": 0.04,
+    "taxBase": "price",
+    "titleFee": 5,
+    "lienFilingFee": 5,
+    "tradeInDeductible": true,
+    "bookValueRule": "If declared purchase price is below 80% of NADA average trade-in value, NADA value is assessed unless an affidavit is provided.",
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 34
+        },
+        "over3700lbs": {
+          "1": 34
+        }
+      },
+      "motorcycle": {
+        "1": 15
+      }
+    },
+    "localTaxNote": "New Mexico's 4.0% Motor Vehicle Excise Tax applies statewide in lieu of the state and local Gross Receipts Tax (GRT); no county or municipal sales taxes apply to titled vehicles.",
+    "notes": [
+      "New Mexico levies a 4.0% Motor Vehicle Excise Tax (MVET) on vehicle purchase price under NMSA 1978 § 66-6-20.",
+      "If purchase price is less than 80% of NADA trade-in value, NADA value is assessed.",
+      "Trade-in allowance directly reduces the taxable base for MVET.",
+      "Certificate of title fee is $5.00; lien filing fee is $5.00.",
+      "Standard annual passenger registration is approximately $34.00 based on vehicle weight and age."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with New Mexico MVD.",
+      "New Mexico charges a 4% Motor Vehicle Excise Tax statewide; local Gross Receipts Taxes do not apply.",
+      "If your purchase price is less than 80% of NADA book value, tax may be assessed on the NADA value.",
+      "Trade-in value reduces your taxable base."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle excise tax in New Mexico?",
+        "answer": "New Mexico levies a 4.0% Motor Vehicle Excise Tax (MVET) on the purchase price of vehicles under NMSA 1978 § 66-6-20. This tax replaces general Gross Receipts Taxes."
+      },
+      {
+        "question": "What is the 80% NADA rule in New Mexico?",
+        "answer": "Under MVD regulations, if the stated purchase price on a private sale is less than 80% of the NADA clean trade-in book value, tax is computed on the 80% NADA value unless a notarized bill of sale or condition affidavit is accepted."
+      },
+      {
+        "question": "Does trade-in reduce tax in New Mexico private sales?",
+        "answer": "Yes. New Mexico permits a trade-in deduction, allowing you to pay the 4.0% MVET only on the net sales price after deducting the trade-in allowance."
+      },
+      {
+        "question": "How much is a title and registration in New Mexico?",
+        "answer": "The New Mexico title fee is $5.00 ($5.00 lien filing fee if financed) and standard annual passenger registration is approximately $34.00."
+      }
+    ],
+    "sources": [
+      "https://www.mvd.newmexico.gov/",
+      "https://www.mvd.newmexico.gov/vehicles/taxes-fees/"
+    ]
+  },
+  "nebraska": {
+    "label": "Nebraska",
+    "slug": "nebraska-private-sale-tax-calculator",
+    "exciseTaxRate": 0.055,
+    "taxBase": "price",
+    "titleFee": 10,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 23.2
+        },
+        "over3700lbs": {
+          "1": 23.2
+        }
+      },
+      "motorcycle": {
+        "1": 14.2
+      },
+      "evSurchargeAnnual": 150
+    },
+    "localTaxNote": "Nebraska cities and counties impose local sales taxes between 0.5% and 2.5% (total 6.0% to 8.0%). In addition, an annual Motor Vehicle Tax and Motor Vehicle Fee are assessed based on age and MSRP at registration.",
+    "notes": [
+      "Nebraska charges 5.5% state sales tax on private party motor vehicle purchases under Neb. Rev. Stat. § 77-2703.",
+      "Certificate of title fee is $10.00; lien recordation is included directly on the title.",
+      "Registration includes a $15.00 base passenger fee plus $8.20 license plate fee = $23.20.",
+      "Trade-in deductions are not allowed on private-party sales under Nebraska regulations; dealer sales only.",
+      "County treasurers collect an annual Motor Vehicle Tax based on MSRP and vehicle age (phases out at 14 years)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Nebraska Department of Revenue and county treasurer.",
+      "Nebraska charges 5.5% state sales tax; local city and county sales taxes can increase the total rate up to 8.0%.",
+      "Trade-in deductions are not permitted on private-party sales.",
+      "Annual Motor Vehicle Tax and Fee based on original MSRP are assessed at registration."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax rate for cars in Nebraska?",
+        "answer": "Nebraska charges a 5.5% state sales tax on motor vehicles under Neb. Rev. Stat. § 77-2703, plus local city and county taxes that can bring the total rate up to 8.0%."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private car purchase in Nebraska?",
+        "answer": "No. Under Nebraska tax law, trade-in deductions are restricted to purchases from licensed motor vehicle dealers. Private party sales are taxed on the full purchase price."
+      },
+      {
+        "question": "How much does a vehicle title and registration cost in Nebraska?",
+        "answer": "The certificate of title fee is $10.00. Standard passenger registration includes a $15.00 base fee plus $8.20 license plate fee ($23.20 total), plus annual property taxes."
+      },
+      {
+        "question": "What is the Nebraska Motor Vehicle Tax?",
+        "answer": "In Nebraska, vehicle owners pay an annual Motor Vehicle Tax and Motor Vehicle Fee based on the vehicle's original MSRP and age, collected by the county treasurer at registration."
+      }
+    ],
+    "sources": [
+      "https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling",
+      "https://revenue.nebraska.gov/"
+    ]
+  },
+  "idaho": {
+    "label": "Idaho",
+    "slug": "idaho-private-sale-tax-calculator",
+    "exciseTaxRate": 0.06,
+    "taxBase": "price",
+    "titleFee": 14,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 45
+        },
+        "over3700lbs": {
+          "1": 45
+        }
+      },
+      "motorcycle": {
+        "1": 19
+      },
+      "evSurchargeAnnual": 140,
+      "phevSurchargeAnnual": 75
+    },
+    "localTaxNote": "Idaho does not levy local sales tax on motor vehicles, but counties assess minor administrative and highway district registration fees.",
+    "notes": [
+      "Idaho imposes a 6.0% state sales/use tax on private party vehicle purchases under Idaho Code § 63-3619.",
+      "Certificate of title fee is $14.00 under Idaho Transportation Department fee schedule.",
+      "Passenger car registration is age-based: $69 (1–2 yrs), $57 (3–6 yrs), $45 (7+ yrs). For our 2019 test vehicle, base fee is $45.00.",
+      "Idaho does not allow trade-in deductions on private-party vehicle sales; trade-in credit only applies to licensed dealers.",
+      "Electric vehicles pay an additional $140/yr road surcharge ($75 for plug-in hybrids)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Idaho Transportation Department (ITD) and Idaho State Tax Commission.",
+      "Idaho charges 6.0% sales tax on the full purchase price; private trade-ins are not deductible.",
+      "Registration fees scale by vehicle age: $69 (1–2 yrs), $57 (3–6 yrs), $45 (7+ yrs)."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax on a private car purchase in Idaho?",
+        "answer": "Idaho levies a 6.0% state sales/use tax on private party vehicle sales under Idaho Code § 63-3619, payable to the county assessor motor vehicle office when titling."
+      },
+      {
+        "question": "Does Idaho allow trade-in tax deductions for private sales?",
+        "answer": "No. Under Idaho State Tax Commission rules, trade-in allowances are only available when purchasing from a licensed motor vehicle dealer; private sales pay tax on full price."
+      },
+      {
+        "question": "How much is an Idaho vehicle title fee?",
+        "answer": "The Idaho statutory certificate of title fee is $14.00. Lien filing is recorded on the application without separate additional state filing fees."
+      },
+      {
+        "question": "How do Idaho registration fees work?",
+        "answer": "Idaho passenger registration fees are determined by vehicle age: $69.00 annually for vehicles 1 to 2 years old, $57.00 for vehicles 3 to 6 years old, and $45.00 for vehicles 7 years or older."
+      }
+    ],
+    "sources": [
+      "https://itd.idaho.gov/",
+      "https://tax.idaho.gov/"
+    ]
+  },
+  "west-virginia": {
+    "label": "West Virginia",
+    "slug": "west-virginia-private-sale-tax-calculator",
+    "exciseTaxRate": 0.05,
+    "taxBase": "price",
+    "titleFee": 15,
+    "lienFilingFee": 10,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 51.5
+        },
+        "over3700lbs": {
+          "1": 51.5
+        }
+      },
+      "motorcycle": {
+        "1": 25
+      },
+      "evSurchargeAnnual": 200,
+      "phevSurchargeAnnual": 100
+    },
+    "localTaxNote": "West Virginia levies the 5% Motor Vehicle Privilege Tax uniformly statewide; no local, county, or city sales taxes apply to titled vehicles.",
+    "notes": [
+      "West Virginia imposes a 5.0% Motor Vehicle Privilege Tax on vehicle titling under W. Va. Code § 17A-3-4.",
+      "Certificate of title fee is $15.00; lien recordation fee is $10.00.",
+      "Annual registration fee for Class A passenger vehicles is $51.50.",
+      "Trade-in deduction proviso under § 17A-3-4 applies only to vehicles traded to licensed dealers; private-party sales are taxed on full purchase price.",
+      "Electric vehicles pay an annual $200 surcharge ($100 for plug-in hybrids)."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with West Virginia DMV.",
+      "West Virginia charges a uniform 5% Motor Vehicle Privilege Tax statewide under W. Va. Code § 17A-3-4; no local sales taxes apply.",
+      "Trade-in deductions are restricted to licensed dealer purchases and do not apply to private party sales."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle privilege tax in West Virginia?",
+        "answer": "West Virginia levies a 5.0% Motor Vehicle Privilege Tax on the purchase price of vehicles under W. Va. Code § 17A-3-4, collected by the DMV at the time of titling."
+      },
+      {
+        "question": "Can I deduct my trade-in on a private vehicle sale in West Virginia?",
+        "answer": "No. Under W. Va. Code § 17A-3-4 and W. Va. Code R. § 110-15-65, the trade-in allowance deduction applies only when purchasing from a licensed motor vehicle dealer; private-party sales pay tax on the full purchase price."
+      },
+      {
+        "question": "How much does a vehicle title cost in West Virginia?",
+        "answer": "The West Virginia certificate of title fee is $15.00. If the vehicle is financed, a $10.00 lien filing fee also applies."
+      },
+      {
+        "question": "How much is West Virginia passenger vehicle registration?",
+        "answer": "The standard annual registration fee for Class A passenger vehicles is $51.50. Electric vehicles pay an additional $200.00 annual surcharge ($100.00 for plug-in hybrids)."
+      }
+    ],
+    "sources": [
+      "https://transportation.wv.gov/dmv"
+    ]
   }
 }

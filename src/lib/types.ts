@@ -37,6 +37,11 @@ export interface FlatTaxTableConfig {
   tableBByPrice: FlatTaxPriceBracket[];
 }
 
+export interface PriceTier {
+  maxPrice: number | null;
+  rate: number;
+}
+
 export interface StateRule {
   label: string;
   slug: string;
@@ -45,6 +50,7 @@ export interface StateRule {
   maxExciseTax?: number | null;
   luxuryTaxThreshold?: number | null;
   luxuryTaxRate?: number | null;
+  priceTiers?: PriceTier[];
   taxBase: TaxBaseType;
   titleFee: number;
   lienFilingFee: number;

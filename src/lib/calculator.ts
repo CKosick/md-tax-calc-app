@@ -27,6 +27,9 @@ export function calculateVehicleCosts(
   let flatTaxApplied = false;
   let flatTaxDetail = '';
 
+  let effectiveRate = rule.exciseTaxRate;
+  let tierApplied = false;
+
   if (rule.flatTaxTable) {
     flatTaxApplied = true;
     if (price === 0) {
@@ -60,8 +63,15 @@ export function calculateVehicleCosts(
       flatTaxDetail = `Form RUT-50 Table B flat tax (${matchedBracketStr} bracket)`;
     }
   } else {
-    let effectiveRate = rule.exciseTaxRate;
-    if (
+    if (rule.priceTiers && rule.priceTiers.length > 0) {
+      for (const tier of rule.priceTiers) {
+        if (tier.maxPrice === null || taxableBase < tier.maxPrice) {
+          effectiveRate = tier.rate;
+          tierApplied = true;
+          break;
+        }
+      }
+    } else if (
       typeof rule.luxuryTaxThreshold === 'number' &&
       typeof rule.luxuryTaxRate === 'number' &&
       taxableBase > rule.luxuryTaxThreshold
@@ -143,9 +153,10 @@ export function calculateVehicleCosts(
   const tradeInDeducted = rule.tradeInDeductible ? Math.min(price, tradeIn) : 0;
   const tradeInIgnored = tradeIn > 0 && !rule.tradeInDeductible;
 
-  // Tax rate display formatted nicely (e.g. 6.5%, 4.15%, 6%, 5.25%, 5%, 7.75%)
-  const appliedRate =
-    luxuryTaxApplied && typeof rule.luxuryTaxRate === 'number'
+  // Tax rate display formatted nicely (e.g. 6.5%, 4.15%, 6%, 5.25%, 5%, 7.75%, 0%)
+  const appliedRate = tierApplied
+    ? effectiveRate
+    : luxuryTaxApplied && typeof rule.luxuryTaxRate === 'number'
       ? rule.luxuryTaxRate
       : rule.exciseTaxRate;
   const ratePercent = Number((appliedRate * 100).toFixed(2));
@@ -154,6 +165,12 @@ export function calculateVehicleCosts(
   let taxDescription = `Calculated at ${rateLabel} on taxable base of $${taxableBase.toLocaleString()}`;
   if (flatTaxApplied) {
     taxDescription = flatTaxDetail;
+  } else if (tierApplied) {
+    taxDescription = effectiveRate === 0
+      ? `Exempt from state vehicle sales tax (purchase price under tier threshold)`
+      : `Calculated at ${rateLabel} tiered rate on taxable base of $${taxableBase.toLocaleString()}`;
+  } else if (rule.exciseTaxRate === 0) {
+    taxDescription = `Exempt from vehicle sales tax (private-party occasional sales are not taxed in ${rule.label})`;
   } else if (luxuryTaxApplied) {
     taxDescription = `Calculated at ${rateLabel} luxury vehicle rate (purchase price over $${rule.luxuryTaxThreshold?.toLocaleString()})`;
   } else if (maxTaxApplied) {

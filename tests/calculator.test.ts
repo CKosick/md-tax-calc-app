@@ -665,3 +665,163 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(ctTrade.exciseTax).toBe(952.50);
   });
 });
+
+describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)', () => {
+  const std1Yr: CalculatorInputs = {
+    state: '',
+    vehicleType: 'passenger',
+    purchasePrice: 15000,
+    vehicleYear: 2019,
+    weightClass: 'under3700lbs',
+    fuelType: 'gasoline',
+    registrationTerm: 1,
+    isFinanced: false,
+    tradeInValue: 0
+  };
+
+  it('1. Iowa (IA) worked invariant: $15,000 purchase price yields $750.00 tax and $835.00 total', () => {
+    const res = calculateVehicleCosts(allRules.iowa, { ...std1Yr, state: 'iowa' }, 2026);
+    expect(res.exciseTax).toBe(750.00);
+    expect(res.titleFee).toBe(35.00);
+    expect(res.registrationTotal).toBe(50.00);
+    expect(res.totalFirstYearCost).toBe(835.00);
+  });
+
+  it('2. Nevada (NV) worked invariant: $15,000 purchase price yields $0.00 tax (NRS 372.320 exempt) and $61.25 total', () => {
+    const res = calculateVehicleCosts(allRules.nevada, { ...std1Yr, state: 'nevada' }, 2026);
+    expect(res.exciseTax).toBe(0.00);
+    expect(res.titleFee).toBe(28.25);
+    expect(res.registrationTotal).toBe(33.00);
+    expect(res.totalFirstYearCost).toBe(61.25);
+    const taxItem = res.itemizedList.find(i => i.id === 'excise-tax');
+    expect(taxItem?.label).toContain('0%');
+    expect(taxItem?.description).toContain('occasional sales are not taxed');
+  });
+
+  it('3. Arkansas (AR) worked invariant: $15,000 purchase price yields $975.00 tax (6.5% tier) and $1,012.50 total', () => {
+    const res = calculateVehicleCosts(allRules.arkansas, { ...std1Yr, state: 'arkansas' }, 2026);
+    expect(res.exciseTax).toBe(975.00);
+    expect(res.titleFee).toBe(10.00);
+    expect(res.registrationTotal).toBe(27.50);
+    expect(res.totalFirstYearCost).toBe(1012.50);
+  });
+
+  it('Arkansas tiered rate tests: <$4k exempt, $4k-$10k at 3.5%, $10k+ at 6.5%', () => {
+    // Under $4,000: 0% exempt
+    const under4k = calculateVehicleCosts(allRules.arkansas, {
+      ...std1Yr,
+      state: 'arkansas',
+      purchasePrice: 3000
+    }, 2026);
+    expect(under4k.exciseTax).toBe(0.00);
+    const under4kItem = under4k.itemizedList.find(i => i.id === 'excise-tax');
+    expect(under4kItem?.description).toContain('Exempt');
+
+    // $4,000 to $9,999.99: 3.5%
+    const midTier = calculateVehicleCosts(allRules.arkansas, {
+      ...std1Yr,
+      state: 'arkansas',
+      purchasePrice: 6000
+    }, 2026);
+    expect(midTier.exciseTax).toBe(210.00); // 6000 * 0.035
+
+    // $10,000+: 6.5%
+    const highTier = calculateVehicleCosts(allRules.arkansas, {
+      ...std1Yr,
+      state: 'arkansas',
+      purchasePrice: 15000
+    }, 2026);
+    expect(highTier.exciseTax).toBe(975.00); // 15000 * 0.065
+  });
+
+  it('4. Mississippi (MS) worked invariant: $15,000 purchase price yields $750.00 tax (5% casual) and $788.00 total', () => {
+    const res = calculateVehicleCosts(allRules.mississippi, { ...std1Yr, state: 'mississippi' }, 2026);
+    expect(res.exciseTax).toBe(750.00);
+    expect(res.titleFee).toBe(9.00);
+    expect(res.registrationTotal).toBe(29.00);
+    expect(res.totalFirstYearCost).toBe(788.00);
+  });
+
+  it('5. Kansas (KS) worked invariant: $15,000 purchase price yields $975.00 tax and $1,015.00 total', () => {
+    const res = calculateVehicleCosts(allRules.kansas, { ...std1Yr, state: 'kansas' }, 2026);
+    expect(res.exciseTax).toBe(975.00);
+    expect(res.titleFee).toBe(10.00);
+    expect(res.registrationTotal).toBe(30.00);
+    expect(res.totalFirstYearCost).toBe(1015.00);
+  });
+
+  it('6. New Mexico (NM) worked invariant: $15,000 purchase price yields $600.00 tax (4% MVET) and $639.00 total', () => {
+    const res = calculateVehicleCosts(allRules['new-mexico'], { ...std1Yr, state: 'new-mexico' }, 2026);
+    expect(res.exciseTax).toBe(600.00);
+    expect(res.titleFee).toBe(5.00);
+    expect(res.registrationTotal).toBe(34.00);
+    expect(res.totalFirstYearCost).toBe(639.00);
+  });
+
+  it('7. Nebraska (NE) worked invariant: $15,000 purchase price yields $825.00 tax (5.5%) and $858.20 total', () => {
+    const res = calculateVehicleCosts(allRules.nebraska, { ...std1Yr, state: 'nebraska' }, 2026);
+    expect(res.exciseTax).toBe(825.00);
+    expect(res.titleFee).toBe(10.00);
+    expect(res.registrationTotal).toBe(23.20);
+    expect(res.totalFirstYearCost).toBe(858.20);
+  });
+
+  it('8. Idaho (ID) worked invariant: $15,000 purchase price yields $900.00 tax and $959.00 total', () => {
+    const res = calculateVehicleCosts(allRules.idaho, { ...std1Yr, state: 'idaho' }, 2026);
+    expect(res.exciseTax).toBe(900.00);
+    expect(res.titleFee).toBe(14.00);
+    expect(res.registrationTotal).toBe(45.00);
+    expect(res.totalFirstYearCost).toBe(959.00);
+  });
+
+  it('9. West Virginia (WV) worked invariant: $15,000 purchase price yields $750.00 tax (5.0% privilege tax) and $816.50 total', () => {
+    const res = calculateVehicleCosts(allRules['west-virginia'], { ...std1Yr, state: 'west-virginia' }, 2026);
+    expect(res.exciseTax).toBe(750.00);
+    expect(res.titleFee).toBe(15.00);
+    expect(res.registrationTotal).toBe(51.50);
+    expect(res.totalFirstYearCost).toBe(816.50);
+  });
+
+  it('Batch 4 trade-in deductibility verification (AR, KS, NM allow; IA, MS, NE, ID, WV do not)', () => {
+    // Arkansas: allows trade-in (sale in lieu of trade-in)
+    const arTrade = calculateVehicleCosts(allRules.arkansas, {
+      ...std1Yr,
+      state: 'arkansas',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(arTrade.tradeInDeducted).toBe(5000);
+    expect(arTrade.exciseTax).toBe(650.00); // $10,000 * 6.5%
+
+    // Kansas: allows trade-in within 120 days
+    const ksTrade = calculateVehicleCosts(allRules.kansas, {
+      ...std1Yr,
+      state: 'kansas',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(ksTrade.tradeInDeducted).toBe(5000);
+    expect(ksTrade.exciseTax).toBe(650.00); // $10,000 * 6.5%
+
+    // New Mexico: allows trade-in
+    const nmTrade = calculateVehicleCosts(allRules['new-mexico'], {
+      ...std1Yr,
+      state: 'new-mexico',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(nmTrade.tradeInDeducted).toBe(5000);
+    expect(nmTrade.exciseTax).toBe(400.00); // $10,000 * 4%
+
+    // West Virginia: does NOT allow trade-in on private sales (dealer proviso only)
+    const wvTrade = calculateVehicleCosts(allRules['west-virginia'], {
+      ...std1Yr,
+      state: 'west-virginia',
+      purchasePrice: 15000,
+      tradeInValue: 5000
+    }, 2026);
+    expect(wvTrade.tradeInDeducted).toBe(0);
+    expect(wvTrade.tradeInIgnored).toBe(true);
+    expect(wvTrade.exciseTax).toBe(750.00);
+  });
+});
