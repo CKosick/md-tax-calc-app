@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { StateRule, CalculatorInputs } from '@/lib/types';
+import { StateRule, StateRulesConfig, CalculatorInputs } from '@/lib/types';
+import stateRulesData from '@/config/stateRules.json';
 import { calculateVehicleCosts } from '@/lib/calculator';
 import { VehicleInputForm } from './VehicleInputForm';
 import { CostSummaryCard } from './CostSummaryCard';
@@ -13,13 +14,13 @@ interface CalculatorProps {
   initialRule: StateRule;
 }
 
-const ALL_STATES = [
-  { key: 'maryland', label: 'Maryland', slug: 'maryland-private-sale-tax-calculator' },
-  { key: 'virginia', label: 'Virginia', slug: 'virginia-private-sale-tax-calculator' },
-  { key: 'pennsylvania', label: 'Pennsylvania', slug: 'pennsylvania-private-sale-tax-calculator' },
-  { key: 'delaware', label: 'Delaware', slug: 'delaware-private-sale-tax-calculator' },
-  { key: 'district-of-columbia', label: 'District of Columbia', slug: 'district-of-columbia-private-sale-tax-calculator' }
-];
+const ALL_STATES = Object.entries(stateRulesData as StateRulesConfig)
+  .map(([key, rule]) => ({
+    key,
+    label: rule.label,
+    slug: rule.slug
+  }))
+  .sort((a, b) => a.label.localeCompare(b.label));
 
 export function Calculator({ initialRule }: CalculatorProps) {
   const [inputs, setInputs] = useState<CalculatorInputs>({
@@ -77,6 +78,7 @@ export function Calculator({ initialRule }: CalculatorProps) {
             disclaimers={initialRule.disclaimers}
             bookValueApplies={breakdown.bookValueApplies}
             tradeInIgnored={breakdown.tradeInIgnored}
+            localTaxNote={initialRule.localTaxNote}
           />
         </div>
 

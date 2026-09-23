@@ -6,7 +6,7 @@ import { StateRule, PartnerSlotConfig } from '../src/lib/types';
 const allRules = stateRulesData as Record<string, StateRule>;
 
 describe('State Rules Schema & Config Validation', () => {
-  const expectedStates = [
+  const midAtlanticStates = [
     'maryland',
     'virginia',
     'pennsylvania',
@@ -14,9 +14,33 @@ describe('State Rules Schema & Config Validation', () => {
     'district-of-columbia'
   ];
 
+  const batch1States = [
+    'california',
+    'texas',
+    'florida',
+    'new-york',
+    'illinois',
+    'ohio',
+    'georgia',
+    'north-carolina',
+    'michigan'
+  ];
+
   it('contains all 5 Mid-Atlantic regional states', () => {
-    for (const stateKey of expectedStates) {
+    for (const stateKey of midAtlanticStates) {
       expect(allRules[stateKey]).toBeDefined();
+    }
+  });
+
+  it('contains all 9 Batch 1 mega-states', () => {
+    for (const stateKey of batch1States) {
+      const rule = allRules[stateKey];
+      expect(rule, `State ${stateKey} should be defined`).toBeDefined();
+      expect(rule.slug).toBe(`${stateKey}-private-sale-tax-calculator`);
+      expect(typeof rule.titleFee).toBe('number');
+      expect(typeof rule.exciseTaxRate).toBe('number');
+      expect(Array.isArray(rule.sources)).toBe(true);
+      expect(rule.sources.length).toBeGreaterThanOrEqual(1);
     }
   });
 

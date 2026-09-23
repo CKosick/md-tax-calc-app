@@ -32,6 +32,7 @@ export interface StateRule {
   bookValueRule?: string;
   registration: StateRegistrationRules;
   veipFee?: number;
+  localTaxNote?: string;
   notes: string[];
   disclaimers: string[];
   faqs: FaqItem[];

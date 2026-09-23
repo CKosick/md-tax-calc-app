@@ -2,12 +2,14 @@ import React from 'react';
 
 interface DisclaimersProps {
   disclaimers?: string[];
+  localTaxNote?: string;
   bookValueApplies?: boolean;
   tradeInIgnored?: boolean;
 }
 
 export function Disclaimers({
   disclaimers = [],
+  localTaxNote,
   bookValueApplies = false,
   tradeInIgnored = false
 }: DisclaimersProps) {
@@ -58,6 +60,13 @@ export function Disclaimers({
             </p>
           );
         })}
+
+        {localTaxNote && (
+          <p className="flex items-start gap-2 font-medium text-slate-800 dark:text-slate-100">
+            <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-500"></span>
+            <span><strong>County &amp; Local Tax Note:</strong> {localTaxNote}</span>
+          </p>
+        )}
       </div>
     </div>
   );

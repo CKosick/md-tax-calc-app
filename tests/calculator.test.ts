@@ -200,3 +200,141 @@ describe('Phase 2 Mid-Atlantic 5-State Worked Acceptance Tests', () => {
     expect(dcWithTrade.exciseTax).toBe(750.00);
   });
 });
+
+describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () => {
+  const std1Yr: Omit<CalculatorInputs, 'state'> = {
+    vehicleType: 'passenger',
+    purchasePrice: 15000,
+    vehicleYear: 2019,
+    weightClass: 'under3700lbs',
+    fuelType: 'gasoline',
+    registrationTerm: 1,
+    isFinanced: false,
+    tradeInValue: 0
+  };
+
+  const std2Yr: Omit<CalculatorInputs, 'state'> = {
+    ...std1Yr,
+    registrationTerm: 2
+  };
+
+  it('California: exact worked test ($15,000 -> $1,222.50)', () => {
+    const rule = allRules.california;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'california' }, 2026);
+    expect(res.exciseTax).toBe(1087.50); // 7.25% of 15000
+    expect(res.titleFee).toBe(29.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(106.00); // 74 base + 32 CHP
+    expect(res.totalFirstYearCost).toBe(1222.50);
+  });
+
+  it('Texas: exact worked test ($15,000 -> $1,022.25)', () => {
+    const rule = allRules.texas;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'texas' }, 2026);
+    expect(res.exciseTax).toBe(937.50); // 6.25% of 15000
+    expect(res.titleFee).toBe(33.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(51.75);
+    expect(res.totalFirstYearCost).toBe(1022.25);
+  });
+
+  it('Florida: exact worked test ($15,000 -> $1,002.85)', () => {
+    const rule = allRules.florida;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'florida' }, 2026);
+    expect(res.exciseTax).toBe(900.00); // 6.0% of 15000
+    expect(res.titleFee).toBe(75.25);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(27.60);
+    expect(res.totalFirstYearCost).toBe(1002.85);
+  });
+
+  it('New York: exact worked test ($15,000 -> $718.00, 2-yr term)', () => {
+    const rule = allRules['new-york'];
+    const res = calculateVehicleCosts(rule, { ...std2Yr, state: 'new-york' }, 2026);
+    expect(res.exciseTax).toBe(600.00); // 4.0% of 15000
+    expect(res.titleFee).toBe(50.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(68.00); // 2-year passenger <= 3700 lbs
+    expect(res.totalFirstYearCost).toBe(718.00);
+  });
+
+  it('Illinois: exact worked test ($15,000 -> $1,253.50)', () => {
+    const rule = allRules.illinois;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'illinois' }, 2026);
+    expect(res.exciseTax).toBe(937.50); // 6.25% of 15000
+    expect(res.titleFee).toBe(165.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(151.00);
+    expect(res.totalFirstYearCost).toBe(1253.50);
+  });
+
+  it('Ohio: exact worked test ($15,000 -> $912.00)', () => {
+    const rule = allRules.ohio;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'ohio' }, 2026);
+    expect(res.exciseTax).toBe(862.50); // 5.75% of 15000
+    expect(res.titleFee).toBe(15.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(34.50);
+    expect(res.totalFirstYearCost).toBe(912.00);
+  });
+
+  it('Georgia: exact worked test ($15,000 -> $1,028.00)', () => {
+    const rule = allRules.georgia;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'georgia' }, 2026);
+    expect(res.exciseTax).toBe(990.00); // 6.6% TAVT of 15000
+    expect(res.titleFee).toBe(18.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(20.00);
+    expect(res.totalFirstYearCost).toBe(1028.00);
+  });
+
+  it('North Carolina: exact worked test ($15,000 -> $544.75)', () => {
+    const rule = allRules['north-carolina'];
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'north-carolina' }, 2026);
+    expect(res.exciseTax).toBe(450.00); // 3.0% HUT of 15000
+    expect(res.titleFee).toBe(56.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(38.75);
+    expect(res.totalFirstYearCost).toBe(544.75);
+  });
+
+  it('Michigan: exact worked test ($15,000 -> $1,065.00)', () => {
+    const rule = allRules.michigan;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'michigan' }, 2026);
+    expect(res.exciseTax).toBe(900.00); // 6.0% of 15000
+    expect(res.titleFee).toBe(15.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(150.00);
+    expect(res.totalFirstYearCost).toBe(1065.00);
+  });
+
+  it('Batch 1 trade-in deductibility verification (TX & NC allow trade-in, CA & NY do not)', () => {
+    const tradeInputs: CalculatorInputs = {
+      ...std1Yr,
+      state: 'texas',
+      tradeInValue: 5000
+    };
+
+    // Texas allows trade-in
+    const txTrade = calculateVehicleCosts(allRules.texas, tradeInputs, 2026);
+    expect(txTrade.tradeInDeducted).toBe(5000);
+    expect(txTrade.exciseTax).toBe(10000 * 0.0625); // 625.00
+
+    // NC allows trade-in
+    const ncTrade = calculateVehicleCosts(allRules['north-carolina'], { ...tradeInputs, state: 'north-carolina' }, 2026);
+    expect(ncTrade.tradeInDeducted).toBe(5000);
+    expect(ncTrade.exciseTax).toBe(10000 * 0.03); // 300.00
+
+    // California does NOT allow trade-in
+    const caTrade = calculateVehicleCosts(allRules.california, { ...tradeInputs, state: 'california' }, 2026);
+    expect(caTrade.tradeInDeducted).toBe(0);
+    expect(caTrade.tradeInIgnored).toBe(true);
+    expect(caTrade.exciseTax).toBe(15000 * 0.0725); // 1087.50
+
+    // New York does NOT allow trade-in
+    const nyTrade = calculateVehicleCosts(allRules['new-york'], { ...tradeInputs, registrationTerm: 2, state: 'new-york' }, 2026);
+    expect(nyTrade.tradeInDeducted).toBe(0);
+    expect(nyTrade.tradeInIgnored).toBe(true);
+    expect(nyTrade.exciseTax).toBe(15000 * 0.04); // 600.00
+  });
+});

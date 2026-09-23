@@ -3,27 +3,30 @@
     "label": "Maryland",
     "slug": "maryland-private-sale-tax-calculator",
     "exciseTaxRate": 0.065,
-    "minExciseTax": 41.60,
+    "minExciseTax": 41.6,
     "taxBase": "price",
     "titleFee": 200,
     "lienFilingFee": 40,
     "tradeInDeductible": false,
     "bookValueRule": "If vehicle is 7 years old or newer, MVA may assess on book value; a notarized bill of sale overrides",
     "registration": {
-      "terms": [1, 2],
+      "terms": [
+        1,
+        2
+      ],
       "passenger": {
         "under3700lbs": {
-          "1": 125.50,
-          "2": 251.00
+          "1": 125.5,
+          "2": 251
         },
         "over3700lbs": {
-          "1": 191.50,
-          "2": 383.00
+          "1": 191.5,
+          "2": 383
         }
       },
       "motorcycle": {
-        "1": 105.00,
-        "2": 210.00
+        "1": 105,
+        "2": 210
       },
       "evSurchargeAnnual": 125,
       "phevSurchargeAnnual": 100
@@ -70,27 +73,30 @@
     "label": "Virginia",
     "slug": "virginia-private-sale-tax-calculator",
     "exciseTaxRate": 0.0415,
-    "minExciseTax": 75.00,
+    "minExciseTax": 75,
     "taxBase": "price",
     "titleFee": 15,
     "lienFilingFee": 15,
     "tradeInDeductible": false,
     "bookValueRule": "Vehicles 5 years old or newer sold below NADA trade-in value may be taxed on NADA value unless a Virginia DMV SUT-1A affidavit is submitted.",
     "registration": {
-      "terms": [1, 2],
+      "terms": [
+        1,
+        2
+      ],
       "passenger": {
         "under3700lbs": {
           "1": 30.75,
-          "2": 59.50
+          "2": 59.5
         },
         "over3700lbs": {
           "1": 35.75,
-          "2": 69.50
+          "2": 69.5
         }
       },
       "motorcycle": {
         "1": 24.75,
-        "2": 47.50
+        "2": 47.5
       },
       "evSurchargeAnnual": 128
     },
@@ -138,20 +144,23 @@
     "lienFilingFee": 36,
     "tradeInDeductible": false,
     "registration": {
-      "terms": [1, 2],
+      "terms": [
+        1,
+        2
+      ],
       "passenger": {
         "under3700lbs": {
-          "1": 48.00,
-          "2": 96.00
+          "1": 48,
+          "2": 96
         },
         "over3700lbs": {
-          "1": 48.00,
-          "2": 96.00
+          "1": 48,
+          "2": 96
         }
       },
       "motorcycle": {
-        "1": 25.00,
-        "2": 50.00
+        "1": 25,
+        "2": 50
       }
     },
     "notes": [
@@ -192,26 +201,29 @@
     "label": "Delaware",
     "slug": "delaware-private-sale-tax-calculator",
     "exciseTaxRate": 0.0525,
-    "minExciseTax": 8.00,
+    "minExciseTax": 8,
     "taxBase": "price",
     "titleFee": 35,
     "lienFilingFee": 20,
     "tradeInDeductible": true,
     "registration": {
-      "terms": [1, 2],
+      "terms": [
+        1,
+        2
+      ],
       "passenger": {
         "under3700lbs": {
-          "1": 40.00,
-          "2": 80.00
+          "1": 40,
+          "2": 80
         },
         "over3700lbs": {
-          "1": 40.00,
-          "2": 80.00
+          "1": 40,
+          "2": 80
         }
       },
       "motorcycle": {
-        "1": 15.00,
-        "2": 30.00
+        "1": 15,
+        "2": 30
       }
     },
     "notes": [
@@ -258,20 +270,23 @@
     "lienFilingFee": 20,
     "tradeInDeductible": false,
     "registration": {
-      "terms": [1, 2],
+      "terms": [
+        1,
+        2
+      ],
       "passenger": {
         "under3700lbs": {
-          "1": 72.00,
-          "2": 144.00
+          "1": 72,
+          "2": 144
         },
         "over3700lbs": {
-          "1": 115.00,
-          "2": 230.00
+          "1": 115,
+          "2": 230
         }
       },
       "motorcycle": {
-        "1": 52.00,
-        "2": 104.00
+        "1": 52,
+        "2": 104
       }
     },
     "notes": [
@@ -306,6 +321,559 @@
       "https://dmv.dc.gov/service/vehicle-excise-tax",
       "https://dmv.dc.gov/service/vehicle-registration-fees",
       "https://dmv.dc.gov/node/155452"
+    ]
+  },
+  "california": {
+    "label": "California",
+    "slug": "california-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0725,
+    "minExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 29,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 106
+        },
+        "over3700lbs": {
+          "1": 106
+        }
+      },
+      "motorcycle": {
+        "1": 105
+      },
+      "evSurchargeAnnual": 118
+    },
+    "localTaxNote": "District and county sales taxes add 0.10% to 3.00%, bringing total effective sales tax to between 7.75% and 10.75% depending on city and county.",
+    "notes": [
+      "California base statewide sales and use tax rate is 7.25% (CDTFA).",
+      "Title transfer fee is $29.00; standard annual vehicle registration includes $74 base fee and $32 California Highway Patrol (CHP) fee.",
+      "Trade-in deduction is not permitted on private-party vehicle sales per Cal. Rev. & Tax. Code § 6011."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with the California DMV or CDTFA.",
+      "California use tax is assessed on the purchase price and paid directly to the DMV upon transfer of title.",
+      "Private party trade-in deductions are not permitted in California; use tax applies to the full purchase price.",
+      "Local district taxes (0.10% to 3.00%) vary by city/county and are added to the 7.25% statewide base."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax rate on a private car purchase in California?",
+        "answer": "The California statewide base sales and use tax rate is 7.25%. Depending on your city and county of residence, local district taxes add between 0.10% and 3.00%, resulting in total effective tax rates between 7.75% and 10.75%."
+      },
+      {
+        "question": "How much does a title transfer cost in California?",
+        "answer": "The standard California DMV certificate of title transfer fee is $29.00. Lien recordation is included in the standard title application."
+      },
+      {
+        "question": "Does a trade-in reduce vehicle sales tax in California private sales?",
+        "answer": "No. Under California Revenue and Taxation Code Section 6011, trade-in allowances are only recognized when purchasing from licensed retail vehicle dealers. Private-party vehicle sales are taxed on the full purchase price."
+      },
+      {
+        "question": "How are California vehicle registration fees calculated?",
+        "answer": "California annual registration includes a $74.00 base vehicle registration fee, a $32.00 California Highway Patrol (CHP) fee, plus county transportation fees and an annual Road Improvement Fee ($118.00) for zero-emission vehicles."
+      }
+    ],
+    "sources": [
+      "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates-7-25.htm",
+      "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/"
+    ]
+  },
+  "texas": {
+    "label": "Texas",
+    "slug": "texas-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0625,
+    "minExciseTax": null,
+    "taxBase": "fairMarketValue",
+    "bookValueRule": "Texas assesses 6.25% tax on the greater of sales price or 80% Standard Presumptive Value (SPV).",
+    "titleFee": 33,
+    "lienFilingFee": 0,
+    "tradeInDeductible": true,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 51.75
+        },
+        "over3700lbs": {
+          "1": 54
+        }
+      },
+      "motorcycle": {
+        "1": 30
+      },
+      "evSurchargeAnnual": 200
+    },
+    "localTaxNote": "Texas charges a flat 6.25% motor vehicle sales tax statewide; local city and county sales taxes do not apply to motor vehicles.",
+    "notes": [
+      "Texas assesses a flat 6.25% Motor Vehicle Sales and Use Tax statewide with no local sales surtaxes on motor vehicles.",
+      "Private-party sales are taxed on the higher of the purchase price or Standard Presumptive Value (SPV).",
+      "Texas allows trade-in deduction on private party sales if documented on Form 130-U."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Texas Comptroller or TxDMV.",
+      "Texas assesses 6.25% Motor Vehicle Sales Tax on the higher of the purchase price or Standard Presumptive Value (SPV).",
+      "Trade-in allowance of another motor vehicle reduces the taxable amount if documented on Texas Form 130-U.",
+      "Annual inspection and local county road & bridge fees ($10–$20) are collected by the county tax assessor."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax rate in Texas for private sales?",
+        "answer": "Texas imposes a 6.25% Motor Vehicle Sales and Use Tax. Unlike general retail purchases, motor vehicle sales in Texas are not subject to local city or transit sales taxes."
+      },
+      {
+        "question": "What is the Standard Presumptive Value (SPV) rule in Texas?",
+        "answer": "Under Texas Tax Code Section 152.0412, private-party vehicle sales are taxed on whichever is greater: the actual purchase price or 80% of the vehicle's Standard Presumptive Value (SPV) as calculated by the Texas DMV database."
+      },
+      {
+        "question": "Can I deduct a trade-in on a private car sale in Texas?",
+        "answer": "Yes. Texas allows trade-in deductions on private-party sales as long as the trade-in vehicle is documented with title and vehicle identification number on Texas Form 130-U (Application for Texas Title)."
+      },
+      {
+        "question": "How much are Texas title and registration fees?",
+        "answer": "The statutory Texas application for certificate of title fee is $33.00 ($28.00 in non-attainment counties). Standard annual passenger car license plate registration is $51.75 plus local county road and bridge fees."
+      }
+    ],
+    "sources": [
+      "https://comptroller.texas.gov/taxes/publications/96-254.php",
+      "https://www.txdmv.gov/motorists/register-your-vehicle"
+    ]
+  },
+  "florida": {
+    "label": "Florida",
+    "slug": "florida-private-sale-tax-calculator",
+    "exciseTaxRate": 0.06,
+    "minExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 75.25,
+    "lienFilingFee": 2,
+    "tradeInDeductible": true,
+    "registration": {
+      "terms": [
+        1,
+        2
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 27.6,
+          "2": 55.2
+        },
+        "over3700lbs": {
+          "1": 37.6,
+          "2": 75.2
+        }
+      },
+      "motorcycle": {
+        "1": 20,
+        "2": 40
+      }
+    },
+    "localTaxNote": "Most Florida counties levy a discretionary sales surtax of 0.5% to 1.5% on the first $5,000 of purchase price.",
+    "notes": [
+      "Florida state sales tax is 6.0% baseline.",
+      "Certificate of title fee is $75.25 for an electronic title ($77.75 for paper).",
+      "A statutory $225.00 initial registration fee applies for buyers without an existing Florida license plate to transfer."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with the Florida Department of Revenue or FLHSMV.",
+      "Florida state sales tax is 6.0%; counties may add a discretionary surtax (0.5%–1.5%) on the first $5,000.",
+      "A $225.00 statutory initial registration fee applies if the purchaser does not have an existing Florida license plate to transfer.",
+      "Trade-in deductions between private individuals are permitted when supported by title assignment and bill of sale."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax rate in Florida for private party sales?",
+        "answer": "Florida levies a 6.0% state sales and use tax. Most Florida counties also impose a local discretionary sales surtax between 0.5% and 1.5%, which applies only to the first $5,000 of the purchase price."
+      },
+      {
+        "question": "How much is the Florida title transfer fee?",
+        "answer": "The Florida title transfer fee is $75.25 for an electronic certificate of title for a vehicle previously registered in Florida ($77.25 for out-of-state vehicles). If the vehicle is financed, a $2.00 lien filing fee is added."
+      },
+      {
+        "question": "What is the Florida $225 initial registration fee?",
+        "answer": "Florida imposes a one-time $225.00 initial registration fee on any motor vehicle registered in Florida for the first time by an owner who does not have a Florida license plate available to transfer."
+      },
+      {
+        "question": "Does Florida allow trade-in credit on private sales?",
+        "answer": "Yes. If two private individuals exchange vehicles, sales tax is assessed only on the net difference in value, provided both transfers are properly documented on bills of sale and title certificates."
+      }
+    ],
+    "sources": [
+      "https://floridarevenue.com/taxes/taxesfees/Pages/sales_tax.aspx",
+      "https://www.flhsmv.gov/fees/"
+    ]
+  },
+  "new-york": {
+    "label": "New York",
+    "slug": "new-york-private-sale-tax-calculator",
+    "exciseTaxRate": 0.04,
+    "minExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 50,
+    "lienFilingFee": 5,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        2
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "2": 68
+        },
+        "over3700lbs": {
+          "2": 92
+        }
+      },
+      "motorcycle": {
+        "2": 35
+      }
+    },
+    "localTaxNote": "Local county and city sales taxes add between 3.00% and 4.875% (total sales tax is 8.875% in NYC and 8.00%–8.875% in most counties).",
+    "notes": [
+      "New York State base sales tax is 4.0%; local sales taxes vary from 3.0% to 4.875% by county/city.",
+      "Title certificate fee is $50.00 pursuant to NY Vehicle & Traffic Law § 2125; recorded lien fee is $5.00 (Form MV-900).",
+      "Private-party trade-in deductions are not permitted in New York."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with NYS Department of Taxation and Finance or NYS DMV.",
+      "New York State levies a 4.0% state sales tax base; local county/city sales taxes (3.0%–4.875%) are collected by DMV at registration.",
+      "Private-party vehicle purchases do not qualify for trade-in allowance tax reductions in New York (tax is paid on full purchase price).",
+      "New York passenger vehicle registrations are issued for 2-year periods based on vehicle unladen weight."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax rate in New York State?",
+        "answer": "New York State levies a 4.0% state sales tax. Local county and municipal sales taxes add between 3.0% and 4.875%, making the total sales tax rate 8.00% to 8.875% across most New York jurisdictions (8.875% in New York City)."
+      },
+      {
+        "question": "How much is a title certificate in New York?",
+        "answer": "The New York State DMV title certificate fee is $50.00. If the vehicle purchase is financed through a lienholder, an additional $5.00 lien filing fee (Form MV-900) is collected."
+      },
+      {
+        "question": "Does New York allow trade-in credit for private car sales?",
+        "answer": "No. Under NYS Tax Law Section 1101, trade-in allowances only apply when trading a vehicle to a registered New York motor vehicle dealer. Private-party vehicle sales are taxed on the full purchase price without deduction."
+      },
+      {
+        "question": "How often do you renew vehicle registration in New York?",
+        "answer": "New York State vehicle registrations for passenger cars are issued for a two-year period. Registration fees are calculated based on vehicle unladen weight (averaging $68.00 for vehicles under 3,700 lbs)."
+      }
+    ],
+    "sources": [
+      "https://www.tax.ny.gov/pit/sp/sales_tax_rates.htm",
+      "https://dmv.ny.gov/registration/registration-fees-and-taxes-passenger-vehicles"
+    ]
+  },
+  "illinois": {
+    "label": "Illinois",
+    "slug": "illinois-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0625,
+    "minExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 165,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 151
+        },
+        "over3700lbs": {
+          "1": 151
+        }
+      },
+      "motorcycle": {
+        "1": 41
+      },
+      "evSurchargeAnnual": 100
+    },
+    "localTaxNote": "Illinois private party vehicle purchases are reported on Form RUT-50. A flat statutory bracket schedule applies ($565 for vehicles sold for $15,000–$19,999). Cook County and City of Chicago levy an additional $15 vehicle use tax.",
+    "notes": [
+      "Illinois general statutory vehicle use tax rate is 6.25% (35 ILCS 105/3-10).",
+      "Private-party sales use Form RUT-50 with statutory tax brackets based on purchase price or vehicle age.",
+      "Title fee is $165.00; annual passenger car license plate tag fee is $151.00."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with the Illinois Department of Revenue or Cyberdrive Illinois.",
+      "Illinois assesses use tax on private party purchases using Form RUT-50 bracket schedule or 6.25% statutory baseline.",
+      "Trade-in deductions are not permitted on private-party vehicle sales in Illinois; use tax is calculated on gross purchase price.",
+      "Standard passenger vehicle registration is $151.00 annually; electric vehicles pay an additional $100.00 annual EV road fee."
+    ],
+    "faqs": [
+      {
+        "question": "How is tax calculated on a private vehicle sale in Illinois?",
+        "answer": "In Illinois, private-party vehicle sales are reported on Form RUT-50 (Private Party Vehicle Use Tax). Tax is assessed according to purchase price brackets (e.g. $565 for sales between $15,000 and $19,999) or the 6.25% state rate baseline."
+      },
+      {
+        "question": "How much does a vehicle title cost in Illinois?",
+        "answer": "The Illinois Secretary of State certificate of title fee is $165.00 for standard passenger vehicles. Lien filing is processed on the certificate without additional fee."
+      },
+      {
+        "question": "Can I deduct a trade-in on a private vehicle sale in Illinois?",
+        "answer": "No. Illinois tax code does not allow trade-in credits on private-party sales reported on Form RUT-50; trade-in deductions are restricted to purchases from licensed retail dealers."
+      },
+      {
+        "question": "How much are license plate renewal fees in Illinois?",
+        "answer": "Standard annual license plate registration in Illinois is $151.00 for passenger vehicles. All-electric vehicles pay an additional $100.00 annual surcharge in lieu of motor fuel tax."
+      }
+    ],
+    "sources": [
+      "https://tax.illinois.gov/research/taxrates/rut-50.html",
+      "https://www.ilsos.gov/departments/vehicles/fees.html"
+    ]
+  },
+  "ohio": {
+    "label": "Ohio",
+    "slug": "ohio-private-sale-tax-calculator",
+    "exciseTaxRate": 0.0575,
+    "minExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 15,
+    "lienFilingFee": 15,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 34.5
+        },
+        "over3700lbs": {
+          "1": 34.5
+        }
+      },
+      "motorcycle": {
+        "1": 28.5
+      },
+      "evSurchargeAnnual": 200,
+      "phevSurchargeAnnual": 150
+    },
+    "localTaxNote": "Ohio counties levy permissive sales taxes ranging from 0.75% to 2.25%, making total effective sales tax 6.50% to 8.00% depending on county of residence.",
+    "notes": [
+      "Ohio base statewide sales and use tax rate is 5.75%.",
+      "Title fee is $15.00; lien notation fee is $15.00 if financed.",
+      "Trade-in deduction is prohibited on private party sales per Ohio Rev. Code § 5739.01."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Ohio Department of Taxation or Ohio BMV.",
+      "Ohio assesses a 5.75% state sales and use tax base; county permissive taxes (0.75%–2.25%) are collected by the Clerk of Courts.",
+      "Trade-in allowances from private vehicle sales do not reduce taxable amount in Ohio (trade-in credit is dealer-only per R.C. 5739.01).",
+      "Annual passenger registration is $34.50 base; electric vehicles pay an additional $200.00 annual fee ($150.00 for hybrid)."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle sales tax rate in Ohio for private sales?",
+        "answer": "Ohio levies a 5.75% statewide sales and use tax base. Counties levy permissive sales taxes between 0.75% and 2.25%, resulting in total combined tax rates between 6.50% and 8.00%."
+      },
+      {
+        "question": "How much does an Ohio vehicle title transfer cost?",
+        "answer": "The Ohio certificate of title fee is $15.00 paid to the County Clerk of Courts Title Office. If the vehicle is financed, a separate $15.00 lien recordation fee applies."
+      },
+      {
+        "question": "Does Ohio allow trade-in credit on private car sales?",
+        "answer": "No. Under Ohio Revised Code Section 5739.01, trade-in deductions are strictly limited to purchases of new or used vehicles from registered motor vehicle dealers. Private transactions are taxed on the full purchase price."
+      },
+      {
+        "question": "How much is passenger vehicle registration in Ohio?",
+        "answer": "Standard annual passenger car registration in Ohio is $34.50 (plus any local county or township permissive license tax of up to $25.00). Electric vehicles incur an additional $200.00 annual state fee."
+      }
+    ],
+    "sources": [
+      "https://tax.ohio.gov/help-center/faqs/sales-and-use-taxes-motor-vehicles",
+      "https://bmv.ohio.gov/vr-fees.aspx"
+    ]
+  },
+  "georgia": {
+    "label": "Georgia",
+    "slug": "georgia-private-sale-tax-calculator",
+    "exciseTaxRate": 0.066,
+    "minExciseTax": null,
+    "taxBase": "fairMarketValue",
+    "titleFee": 18,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 20
+        },
+        "over3700lbs": {
+          "1": 20
+        }
+      },
+      "motorcycle": {
+        "1": 20
+      },
+      "evSurchargeAnnual": 210.87
+    },
+    "localTaxNote": "Georgia Title Ad Valorem Tax (TAVT) is a uniform 6.6% statewide tax that replaces all sales tax and annual ad valorem property taxes.",
+    "notes": [
+      "Georgia Title Ad Valorem Tax (TAVT) is 6.6% assessed on the Georgia Department of Revenue fair market value.",
+      "Title fee is $18.00; standard annual license plate registration is $20.00.",
+      "Trade-in deduction is not allowed on private party sales."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Georgia Department of Revenue or County Tag Office.",
+      "Georgia assesses Title Ad Valorem Tax (TAVT) at 6.6% on the state assessment manual fair market value (or purchase price if higher).",
+      "Trade-in deductions are not available for private party sales in Georgia (only purchases from licensed Georgia dealers receive trade-in deductions).",
+      "Annual tag renewal in Georgia is $20.00; all-electric vehicles pay an annual alternative fuel fee ($210.87 in 2026)."
+    ],
+    "faqs": [
+      {
+        "question": "What is the Georgia Title Ad Valorem Tax (TAVT)?",
+        "answer": "Georgia's Title Ad Valorem Tax (TAVT) is a one-time 6.6% tax applied to vehicle purchases upon titling. TAVT replaced the old annual 'birthday tax' and general sales tax, applying uniformly across all Georgia counties."
+      },
+      {
+        "question": "How is the tax base determined for private sales in Georgia?",
+        "answer": "For private-party sales, Georgia assesses TAVT on the state's vehicle assessment manual fair market value (based on DOR valuation tables), or on the actual purchase price if the purchase price is higher."
+      },
+      {
+        "question": "Can I deduct a trade-in on a private vehicle sale in Georgia?",
+        "answer": "No. Under Georgia law (O.C.G.A. § 48-5C-1), trade-in allowances only reduce TAVT when purchasing a vehicle from a licensed Georgia motor vehicle dealer. Private sales do not receive trade-in credit."
+      },
+      {
+        "question": "How much are Georgia vehicle title and tag fees?",
+        "answer": "The Georgia certificate of title fee is $18.00. Annual license plate registration is $20.00. Lien recordation is included on the standard title application."
+      }
+    ],
+    "sources": [
+      "https://dor.georgia.gov/title-ad-valorem-tax-tavt-faq",
+      "https://dor.georgia.gov/motor-vehicles/vehicle-registration-and-licensing"
+    ]
+  },
+  "north-carolina": {
+    "label": "North Carolina",
+    "slug": "north-carolina-private-sale-tax-calculator",
+    "exciseTaxRate": 0.03,
+    "minExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 56,
+    "lienFilingFee": 21.5,
+    "tradeInDeductible": true,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 38.75
+        },
+        "over3700lbs": {
+          "1": 38.75
+        }
+      },
+      "motorcycle": {
+        "1": 24
+      },
+      "evSurchargeAnnual": 140
+    },
+    "localTaxNote": "North Carolina levies a 3.0% Highway Use Tax (HUT) capped at $2,000 for standard passenger vehicles; no local sales taxes apply.",
+    "notes": [
+      "North Carolina levies a 3.0% Highway Use Tax (HUT) in lieu of general sales tax, with a maximum cap of $2,000 for passenger vehicles.",
+      "Title fee is $56.00; lien recordation fee is $21.50.",
+      "Trade-in deduction is permitted if documented on bill of sale and title."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with NCDMV.",
+      "North Carolina charges a 3.0% Highway Use Tax (HUT) instead of general sales tax, with a maximum tax cap of $2,000 on passenger vehicles.",
+      "Trade-in allowance reduces the Highway Use Tax if you trade a vehicle with the private seller and record it properly on the title.",
+      "Standard passenger vehicle registration is $38.75 annually; electric vehicles pay an additional $140.00 annual EV fee."
+    ],
+    "faqs": [
+      {
+        "question": "What is the vehicle tax rate in North Carolina?",
+        "answer": "North Carolina assesses a 3.0% Highway Use Tax (HUT) on the retail value or purchase price of motor vehicles in lieu of general state and local sales taxes. For private passenger vehicles, HUT is capped at a maximum of $2,000."
+      },
+      {
+        "question": "How much is a title certificate in North Carolina?",
+        "answer": "The NCDMV certificate of title fee is $56.00. If the vehicle is financed, a $21.50 lien recording fee is also required."
+      },
+      {
+        "question": "Does North Carolina allow trade-in credit on private sales?",
+        "answer": "Yes. If you trade a vehicle with the seller as partial payment, North Carolina allows the trade-in allowance to reduce the taxable price subject to Highway Use Tax, provided the trade is properly detailed on the title assignment."
+      },
+      {
+        "question": "How much does license plate registration cost in North Carolina?",
+        "answer": "Annual registration for a private passenger car is $38.75. Fully electric vehicles are assessed an additional $140.00 annual fee ($70.00 for plug-in hybrids)."
+      }
+    ],
+    "sources": [
+      "https://www.ncdot.gov/dmv/title-registration/taxes/Pages/highway-use-tax.aspx",
+      "https://www.ncdot.gov/dmv/title-registration/vehicle/Pages/fees.aspx"
+    ]
+  },
+  "michigan": {
+    "label": "Michigan",
+    "slug": "michigan-private-sale-tax-calculator",
+    "exciseTaxRate": 0.06,
+    "minExciseTax": null,
+    "taxBase": "price",
+    "titleFee": 15,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 150
+        },
+        "over3700lbs": {
+          "1": 170
+        }
+      },
+      "motorcycle": {
+        "1": 25
+      },
+      "evSurchargeAnnual": 140
+    },
+    "localTaxNote": "Michigan does not permit local option sales taxes; the 6.0% use tax is uniform statewide.",
+    "notes": [
+      "Michigan assesses a uniform 6.0% state sales/use tax on motor vehicle transactions.",
+      "Title fee is $15.00; annual passenger registration is MSRP-based (MCL 257.801), averaging $150.00 for typical vehicles.",
+      "Trade-in deduction is not permitted on private party sales per Michigan law."
+    ],
+    "disclaimers": [
+      "Estimates only — not tax or legal advice. Verify with Michigan Department of Treasury or Michigan Secretary of State.",
+      "Michigan assesses 6.0% use tax on the purchase price or fair retail value (whichever is greater).",
+      "Private party vehicle transactions do not qualify for trade-in allowance tax credits in Michigan.",
+      "Michigan vehicle registration fees are based on the original manufacturer's suggested retail price (MSRP) of the vehicle."
+    ],
+    "faqs": [
+      {
+        "question": "What is the sales tax rate on a private vehicle purchase in Michigan?",
+        "answer": "Michigan imposes a 6.0% use tax on private-party vehicle sales. The tax is collected by the Michigan Secretary of State at the time of titling. Michigan does not have local or county sales taxes."
+      },
+      {
+        "question": "How much does a title transfer cost in Michigan?",
+        "answer": "The Michigan certificate of title transfer fee is $15.00. Lien filing is noted on the title application without an additional recording fee."
+      },
+      {
+        "question": "Does Michigan allow trade-in deductions on private car sales?",
+        "answer": "No. Under Michigan MCL 205.92, trade-in tax credits only apply when purchasing a vehicle from a licensed motor vehicle dealership. Private sales are taxed on the full transaction price."
+      },
+      {
+        "question": "How are vehicle registration fees calculated in Michigan?",
+        "answer": "In Michigan, registration fees for passenger vehicles (model year 1984 and newer) are determined by the vehicle's original manufacturer's suggested retail price (MSRP) when new, averaging approximately $140.00 to $180.00 per year."
+      }
+    ],
+    "sources": [
+      "https://www.michigan.gov/treasury/taxes/business-taxes/sales-use-tax",
+      "https://www.michigan.gov/sos/vehicle/pricing"
     ]
   }
 }

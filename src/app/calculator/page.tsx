@@ -7,23 +7,25 @@ const rules = stateRulesData as StateRulesConfig;
 
 export const metadata: Metadata = {
   title: 'Private Party Vehicle Tax & Title Calculators by State (2026)',
-  description: 'Select your state to calculate true out-of-pocket costs for a private vehicle sale: sales/excise tax, title certificate fees, tag registration, and lien fees across MD, VA, PA, DE, and DC.',
+  description: 'Select your state to calculate true out-of-pocket costs for a private vehicle sale: sales/excise tax, title certificate fees, tag registration, and lien fees across US states and jurisdictions.',
   alternates: {
     canonical: '/calculator'
   },
   openGraph: {
     title: 'Private Party Vehicle Tax & Title Calculators by State (2026)',
-    description: 'Select your state to calculate true out-of-pocket costs for a private vehicle sale across MD, VA, PA, DE, and DC.',
+    description: 'Select your state to calculate true out-of-pocket costs for a private vehicle sale across US states and jurisdictions.',
     url: '/calculator',
     type: 'website'
   }
 };
 
 export default function CalculatorHubPage() {
-  const stateList = Object.entries(rules).map(([key, rule]) => ({
-    key,
-    ...rule
-  }));
+  const stateList = Object.entries(rules)
+    .map(([key, rule]) => ({
+      key,
+      ...rule
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label));
 
   return (
     <main className="min-h-screen bg-slate-50/50 py-12 dark:bg-slate-950">
@@ -32,7 +34,7 @@ export default function CalculatorHubPage() {
         <header className="text-center sm:text-left">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-3 py-1 text-xs font-semibold text-indigo-700 dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
             <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-            <span>2026 Mid-Atlantic State Directory</span>
+            <span>2026 State Fee Directory ({stateList.length} Jurisdictions)</span>
           </div>
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
             Private-Party Vehicle Tax, Tags &amp; Title Calculators
@@ -104,10 +106,10 @@ export default function CalculatorHubPage() {
         {/* State Comparison Table */}
         <section className="mt-16 rounded-3xl border border-slate-200/80 bg-white/90 p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900/80">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-            Mid-Atlantic State Fee Comparison (2026)
+            State-by-State Fee Comparison (2026)
           </h2>
           <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-            Compare statutory vehicle taxes, title certificate fees, and trade-in deductibility across neighboring jurisdictions.
+            Compare statutory vehicle taxes, title certificate fees, and trade-in deductibility across jurisdictions.
           </p>
 
           <div className="mt-6 overflow-x-auto">

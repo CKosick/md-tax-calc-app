@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -14,14 +15,15 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://md-tax-calc-app.vercel.app';
+const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Private Party Vehicle Tax, Tags & Title Calculator',
-    template: '%s | AutoTaxCalc'
+    default: 'Private Party Vehicle Tax, Tags & Title Calculator | CarTaxHub',
+    template: '%s | CarTaxHub'
   },
-  description: 'Fast, accurate first-year vehicle cost estimator for private-party auto sales across MD, VA, PA, DE, and DC.',
+  description: 'Fast, accurate first-year vehicle cost estimator for private-party auto sales across all US states and jurisdictions.',
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined
   }
@@ -37,6 +39,16 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        {plausibleDomain && (
+          <Script
+            defer
+            data-domain={plausibleDomain}
+            src="https://plausible.io/js/script.js"
+            strategy="afterInteractive"
+          />
+        )}
+      </head>
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 selection:bg-indigo-500 selection:text-white dark:bg-slate-950 dark:text-slate-100">
         {/* Navigation Bar */}
         <header className="border-b border-slate-200/80 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/80">
@@ -49,10 +61,10 @@ export default function RootLayout({
               </span>
               <div>
                 <span className="block text-sm font-bold tracking-tight text-slate-900 dark:text-white">
-                  AutoTaxCalc<span className="text-indigo-600 dark:text-indigo-400">.us</span>
+                  CarTaxHub<span className="text-indigo-600 dark:text-indigo-400">.com</span>
                 </span>
                 <span className="block text-[10px] font-medium text-slate-400">
-                  Private Party Sales Calculator
+                  Private Party Vehicle Tax &amp; Tags Calculator
                 </span>
               </div>
             </Link>
@@ -62,11 +74,11 @@ export default function RootLayout({
                 href="/calculator"
                 className="text-xs font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400"
               >
-                All 5 States
+                State Directory
               </Link>
               <span className="hidden items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 sm:inline-flex dark:bg-slate-800 dark:text-slate-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
-                <span>Mid-Atlantic Cluster Active</span>
+                <span>2026 Rules Active</span>
               </span>
             </nav>
           </div>
@@ -89,10 +101,10 @@ export default function RootLayout({
               <span>•</span>
               <Link href="/calculator/district-of-columbia-private-sale-tax-calculator" className="hover:text-indigo-600">District of Columbia</Link>
               <span>•</span>
-              <Link href="/calculator" className="hover:text-indigo-600 font-bold">State Directory</Link>
+              <Link href="/calculator" className="hover:text-indigo-600 font-bold">All Calculators</Link>
             </div>
             <p className="mt-4">
-              © {new Date().getFullYear()} AutoTaxCalc.us. Estimates only. Not affiliated with or endorsed by any state DMV, MVA, or DOT agency.
+              © {new Date().getFullYear()} CarTaxHub.com. Estimates only. Not affiliated with or endorsed by any state DMV, MVA, or DOT agency.
             </p>
             <p className="mt-1 text-[11px] text-slate-400 dark:text-slate-500">
               Calculations based on published 2025–2026 statutory fee schedules and vehicle excise/sales tax codes.
