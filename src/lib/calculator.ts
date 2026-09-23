@@ -23,6 +23,7 @@ export function calculateVehicleCosts(
   let exciseTax = 0;
   let minTaxApplied = false;
   let maxTaxApplied = false;
+  let luxuryTaxApplied = false;
   let flatTaxApplied = false;
   let flatTaxDetail = '';
 
@@ -59,7 +60,17 @@ export function calculateVehicleCosts(
       flatTaxDetail = `Form RUT-50 Table B flat tax (${matchedBracketStr} bracket)`;
     }
   } else {
-    const rawTax = taxableBase * rule.exciseTaxRate;
+    let effectiveRate = rule.exciseTaxRate;
+    if (
+      typeof rule.luxuryTaxThreshold === 'number' &&
+      typeof rule.luxuryTaxRate === 'number' &&
+      taxableBase > rule.luxuryTaxThreshold
+    ) {
+      effectiveRate = rule.luxuryTaxRate;
+      luxuryTaxApplied = true;
+    }
+
+    const rawTax = taxableBase * effectiveRate;
     exciseTax = Math.round(rawTax * 100) / 100;
 
     if (price > 0 && typeof rule.minExciseTax === 'number' && exciseTax < rule.minExciseTax) {
@@ -132,13 +143,19 @@ export function calculateVehicleCosts(
   const tradeInDeducted = rule.tradeInDeductible ? Math.min(price, tradeIn) : 0;
   const tradeInIgnored = tradeIn > 0 && !rule.tradeInDeductible;
 
-  // Tax rate display formatted nicely (e.g. 6.5%, 4.15%, 6%, 5.25%, 5%)
-  const ratePercent = Number((rule.exciseTaxRate * 100).toFixed(2));
+  // Tax rate display formatted nicely (e.g. 6.5%, 4.15%, 6%, 5.25%, 5%, 7.75%)
+  const appliedRate =
+    luxuryTaxApplied && typeof rule.luxuryTaxRate === 'number'
+      ? rule.luxuryTaxRate
+      : rule.exciseTaxRate;
+  const ratePercent = Number((appliedRate * 100).toFixed(2));
   const rateLabel = `${ratePercent}%`;
 
   let taxDescription = `Calculated at ${rateLabel} on taxable base of $${taxableBase.toLocaleString()}`;
   if (flatTaxApplied) {
     taxDescription = flatTaxDetail;
+  } else if (luxuryTaxApplied) {
+    taxDescription = `Calculated at ${rateLabel} luxury vehicle rate (purchase price over $${rule.luxuryTaxThreshold?.toLocaleString()})`;
   } else if (maxTaxApplied) {
     taxDescription = `Statutory maximum tax cap applied ($${rule.maxExciseTax?.toFixed(2)})`;
   } else if (minTaxApplied) {
@@ -206,6 +223,7 @@ export function calculateVehicleCosts(
     totalFirstYearCost,
     minTaxApplied,
     maxTaxApplied,
+    luxuryTaxApplied,
     bookValueApplies,
     vehicleAge,
     tradeInDeducted,

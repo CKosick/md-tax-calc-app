@@ -43,6 +43,8 @@ export interface StateRule {
   exciseTaxRate: number;
   minExciseTax?: number | null;
   maxExciseTax?: number | null;
+  luxuryTaxThreshold?: number | null;
+  luxuryTaxRate?: number | null;
   taxBase: TaxBaseType;
   titleFee: number;
   lienFilingFee: number;
@@ -90,6 +92,7 @@ export interface CostBreakdown {
   totalFirstYearCost: number;
   minTaxApplied: boolean;
   maxTaxApplied?: boolean;
+  luxuryTaxApplied?: boolean;
   bookValueApplies: boolean;
   vehicleAge: number;
   tradeInDeducted: number;

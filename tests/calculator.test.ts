@@ -591,10 +591,22 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     const rule = allRules.connecticut;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'connecticut' }, 2026);
     expect(res.exciseTax).toBe(952.50); // 6.35% of 15000
+    expect(res.luxuryTaxApplied).toBe(false);
     expect(res.titleFee).toBe(25.00);
     expect(res.lienFilingFee).toBe(0.00);
     expect(res.registrationTotal).toBe(40.00);
     expect(res.totalFirstYearCost).toBe(1017.50);
+  });
+
+  it('Connecticut: luxury tier over $50,000 assesses 7.75% ($60,000 -> $4,650 tax)', () => {
+    const rule = allRules.connecticut;
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'connecticut', purchasePrice: 60000 }, 2026);
+    expect(res.exciseTax).toBe(4650.00); // 7.75% of 60000
+    expect(res.luxuryTaxApplied).toBe(true);
+    expect(res.titleFee).toBe(25.00);
+    expect(res.lienFilingFee).toBe(0.00);
+    expect(res.registrationTotal).toBe(40.00);
+    expect(res.totalFirstYearCost).toBe(4715.00);
   });
 
   it('Utah: exact worked test ($15,000 -> $777.50)', () => {

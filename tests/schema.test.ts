@@ -155,6 +155,16 @@ describe('State Rules Schema & Config Validation', () => {
     expect(il.flatTaxTable?.tableBByPrice[6]).toEqual({ minPrice: 1000000, fee: 10100 });
   });
 
+  it('validates statutory caps and luxury tax tier configurations (SC $500 cap, CT 7.75% over $50k)', () => {
+    const sc = allRules['south-carolina'];
+    expect(sc.maxExciseTax).toBe(500);
+
+    const ct = allRules.connecticut;
+    expect(ct.luxuryTaxThreshold).toBe(50000);
+    expect(ct.luxuryTaxRate).toBe(0.0775);
+    expect(ct.exciseTaxRate).toBe(0.0635);
+  });
+
   it('validates every state entry contains verified official source URLs', () => {
     for (const [key, rule] of Object.entries(allRules)) {
       expect(Array.isArray(rule.sources), `State ${key} must have sources array`).toBe(true);
