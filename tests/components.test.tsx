@@ -131,7 +131,7 @@ describe('UI Component Unit Tests', () => {
   });
 
   it('renders null for PartnerSlot when position has no configured slots', () => {
-    const { container } = render(<PartnerSlot position={'invalid-pos' as any} />);
+    const { container } = render(<PartnerSlot position={'invalid-pos' as unknown as 'below-results'} />);
     expect(container.firstChild).toBeNull();
   });
 

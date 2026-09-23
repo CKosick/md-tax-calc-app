@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { CalculatorInputs, StateRule, VehicleType, WeightClass, FuelType } from '@/lib/types';
+import { CalculatorInputs, StateRule, FuelType } from '@/lib/types';
 
 interface StateOption {
   key: string;

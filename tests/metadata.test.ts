@@ -2,7 +2,6 @@ import { describe, it, expect, vi } from 'vitest';
 import { generateStaticParams, generateMetadata } from '../src/app/calculator/[slug]/page';
 import sitemap from '../src/app/sitemap';
 import robots from '../src/app/robots';
-import stateRulesData from '../src/config/stateRules.json';
 
 vi.mock('next/navigation', () => ({
   useRouter: () => ({
