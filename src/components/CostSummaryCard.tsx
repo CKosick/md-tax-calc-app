@@ -86,17 +86,11 @@ export function CostSummaryCard({
                     1
                   </span>
                   <span className="font-semibold text-slate-800 dark:text-slate-200">
-                    {rule.label === 'Delaware' ? 'Document Fee' : 'Vehicle Sales / Excise Tax'} ({rateLabel})
+                    {breakdown.itemizedList[0]?.label || (rule.label === 'Delaware' ? `Document Fee (${rateLabel})` : `Vehicle Sales / Excise Tax (${rateLabel})`)}
                   </span>
                 </div>
                 <p className="mt-0.5 pl-6.5 text-xs text-slate-500 dark:text-slate-400">
-                  {breakdown.minTaxApplied
-                    ? `Assessed at statutory minimum floor of ${formatCurrency(rule.minExciseTax ?? 0)}`
-                    : rule.tradeInDeductible && breakdown.tradeInDeducted > 0
-                    ? `${rateLabel} on net price (${formatCurrency(purchasePrice - breakdown.tradeInDeducted)}) after trade-in credit`
-                    : rule.taxBase === 'fairMarketValue'
-                    ? `${rateLabel} baseline assessed on vehicle Fair Market Value`
-                    : `${rateLabel} on purchase price of ${formatCurrency(purchasePrice)}`}
+                  {breakdown.itemizedList[0]?.description || `${rateLabel} on purchase price of ${formatCurrency(purchasePrice)}`}
                 </p>
               </div>
               <span className="flex-shrink-0 font-bold text-slate-900 dark:text-white">
