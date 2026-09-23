@@ -44,6 +44,28 @@ export const metadata: Metadata = {
       'max-snippet': -1
     }
   },
+  openGraph: {
+    title: 'CarTaxHub — Private Party Car Tax & Fee Calculator',
+    description: 'Instant, accurate statutory vehicle sales tax, title transfer fees, and registration tag estimates across all 50 US States + DC.',
+    url: siteUrl,
+    siteName: 'CarTaxHub',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'CarTaxHub — Private Party Vehicle Tax, Tags & Title Calculator'
+      }
+    ],
+    locale: 'en_US',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CarTaxHub — Private Party Car Tax & Fee Calculator',
+    description: 'Instant, accurate statutory vehicle sales tax, title transfer fees, and registration tag estimates across all 50 US States + DC.',
+    images: ['/og-image.png']
+  },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined
   }

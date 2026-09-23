@@ -62,6 +62,18 @@
       {
         "question": "How much are Maryland vehicle registration and tag fees?",
         "answer": "Maryland offers both 1-year and 2-year registration terms. For Class A passenger vehicles weighing 3,700 lbs or less, registration is $125.50 for 1 year or $251.00 for 2 years (including the mandatory annual $40 EMS surcharge). For vehicles over 3,700 lbs, registration is $191.50 for 1 year or $383.00 for 2 years. Motorcycles are $105.00 for 1 year or $210.00 for 2 years. Zero-emission electric vehicles (ZEVs) have an additional $125/year surcharge, while plug-in hybrids (PHEVs) have a $100/year surcharge."
+      },
+      {
+        "question": "Do I pay Maryland vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Maryland, the state generally assesses its vehicle sales or use tax upon registration (6.50% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Maryland motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Maryland?",
+        "answer": "Many jurisdictions, including Maryland, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Maryland DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Maryland?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Maryland's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -126,6 +138,18 @@
       {
         "question": "How much are vehicle registration fees in Virginia?",
         "answer": "Virginia passenger vehicle registration is weight-based: $30.75/year for vehicles 4,000 lbs or less ($59.50 for 2 years with the $2 discount) and $35.75/year for vehicles over 4,000 lbs ($69.50 for 2 years). Motorcycles are $24.75/year ($47.50 for 2 years)."
+      },
+      {
+        "question": "Do I pay Virginia vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Virginia, the state generally assesses its vehicle sales or use tax upon registration (4.15% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Virginia motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Virginia?",
+        "answer": "Many jurisdictions, including Virginia, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Virginia DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Virginia?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Virginia's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -189,6 +213,18 @@
       {
         "question": "How much is vehicle registration in Pennsylvania?",
         "answer": "Standard passenger vehicle registration in Pennsylvania is $48.00 per year ($96.00 for 2 years). Certain counties add an optional $5.00 local use fee. Motorcycle registration is $25.00 per year ($50.00 for 2 years)."
+      },
+      {
+        "question": "Do I pay Pennsylvania vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Pennsylvania, the state generally assesses its vehicle sales or use tax upon registration (6.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Pennsylvania motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Pennsylvania?",
+        "answer": "Many jurisdictions, including Pennsylvania, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Pennsylvania DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Pennsylvania?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Pennsylvania's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -252,6 +288,18 @@
       {
         "question": "What are registration fees in Delaware?",
         "answer": "Delaware passenger vehicle registration is $40.00 per year ($80.00 for a 2-year registration). Motorcycle registration is $15.00 per year ($30.00 for 2 years)."
+      },
+      {
+        "question": "Do I pay Delaware vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Delaware, the state generally assesses its vehicle sales or use tax upon registration (5.25% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Delaware motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Delaware?",
+        "answer": "Many jurisdictions, including Delaware, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Delaware DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Delaware?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Delaware's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -310,11 +358,23 @@
       },
       {
         "question": "How much is a title certificate in the District of Columbia?",
-        "answer": "The DC DMV certificate of title fee is $26.00 (scheduled to increase to $30.00 in 2026). If the vehicle is financed, a $20.00 lien recordation fee applies."
+        "answer": "The DC DMV certificate of title fee is $26.00. If the vehicle is financed, a $20.00 lien recordation fee applies."
       },
       {
         "question": "How much are vehicle registration fees in DC?",
         "answer": "DC vehicle registration is weight-based: Class I (3,499 lbs or less) is $72.00 per year ($144.00 for 2 years); Class II (3,500 lbs and over) is $115.00 per year ($230.00 for 2 years). Motorcycle registration is $52.00 per year ($104.00 for 2 years)."
+      },
+      {
+        "question": "Do I pay District of Columbia vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in District of Columbia, the state generally assesses its vehicle sales or use tax upon registration (5.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the District of Columbia motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in District of Columbia?",
+        "answer": "Many jurisdictions, including District of Columbia, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the District of Columbia DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in District of Columbia?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond District of Columbia's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -377,6 +437,18 @@
       {
         "question": "How are California vehicle registration fees calculated?",
         "answer": "California annual registration includes a $74.00 base vehicle registration fee, a $32.00 California Highway Patrol (CHP) fee, plus county transportation fees and an annual Road Improvement Fee ($118.00) for zero-emission vehicles."
+      },
+      {
+        "question": "Do I pay California vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in California, the state generally assesses its vehicle sales or use tax upon registration (7.25% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the California motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in California?",
+        "answer": "Many jurisdictions, including California, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the California DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in California?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond California's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -439,6 +511,18 @@
       {
         "question": "How much are Texas title and registration fees?",
         "answer": "The statutory Texas application for certificate of title fee is $33.00 ($28.00 in non-attainment counties). Standard annual passenger car license plate registration is $51.75 plus local county road and bridge fees."
+      },
+      {
+        "question": "Do I pay Texas vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Texas, the state generally assesses its vehicle sales or use tax upon registration (6.25% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Texas motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Texas?",
+        "answer": "Many jurisdictions, including Texas, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Texas DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Texas?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Texas's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -503,6 +587,18 @@
       {
         "question": "Does Florida allow trade-in credit on private sales?",
         "answer": "Yes. If two private individuals exchange vehicles, sales tax is assessed only on the net difference in value, provided both transfers are properly documented on bills of sale and title certificates."
+      },
+      {
+        "question": "Do I pay Florida vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Florida, the state generally assesses its vehicle sales or use tax upon registration (6.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Florida motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Florida?",
+        "answer": "Many jurisdictions, including Florida, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Florida DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Florida?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Florida's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -563,6 +659,18 @@
       {
         "question": "How often do you renew vehicle registration in New York?",
         "answer": "New York State vehicle registrations for passenger cars are issued for a two-year period. Registration fees are calculated based on vehicle unladen weight (averaging $68.00 for vehicles under 3,700 lbs)."
+      },
+      {
+        "question": "Do I pay New York vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in New York, the state generally assesses its vehicle sales or use tax upon registration (4.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the New York motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in New York?",
+        "answer": "Many jurisdictions, including New York, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the New York DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in New York?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond New York's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -599,26 +707,85 @@
     "flatTaxTable": {
       "thresholdPrice": 15000,
       "tableAByAge": [
-        { "maxAge": 1, "fee": 465 },
-        { "maxAge": 2, "fee": 365 },
-        { "maxAge": 3, "fee": 290 },
-        { "maxAge": 4, "fee": 240 },
-        { "maxAge": 5, "fee": 190 },
-        { "maxAge": 6, "fee": 165 },
-        { "maxAge": 7, "fee": 155 },
-        { "maxAge": 8, "fee": 140 },
-        { "maxAge": 9, "fee": 125 },
-        { "maxAge": 10, "fee": 115 },
-        { "fee": 100 }
+        {
+          "maxAge": 1,
+          "fee": 465
+        },
+        {
+          "maxAge": 2,
+          "fee": 365
+        },
+        {
+          "maxAge": 3,
+          "fee": 290
+        },
+        {
+          "maxAge": 4,
+          "fee": 240
+        },
+        {
+          "maxAge": 5,
+          "fee": 190
+        },
+        {
+          "maxAge": 6,
+          "fee": 165
+        },
+        {
+          "maxAge": 7,
+          "fee": 155
+        },
+        {
+          "maxAge": 8,
+          "fee": 140
+        },
+        {
+          "maxAge": 9,
+          "fee": 125
+        },
+        {
+          "maxAge": 10,
+          "fee": 115
+        },
+        {
+          "fee": 100
+        }
       ],
       "tableBByPrice": [
-        { "minPrice": 15000, "maxPrice": 19999.99, "fee": 850 },
-        { "minPrice": 20000, "maxPrice": 24999.99, "fee": 1100 },
-        { "minPrice": 25000, "maxPrice": 29999.99, "fee": 1350 },
-        { "minPrice": 30000, "maxPrice": 49999.99, "fee": 1600 },
-        { "minPrice": 50000, "maxPrice": 99999.99, "fee": 2600 },
-        { "minPrice": 100000, "maxPrice": 999999.99, "fee": 5100 },
-        { "minPrice": 1000000, "fee": 10100 }
+        {
+          "minPrice": 15000,
+          "maxPrice": 19999.99,
+          "fee": 850
+        },
+        {
+          "minPrice": 20000,
+          "maxPrice": 24999.99,
+          "fee": 1100
+        },
+        {
+          "minPrice": 25000,
+          "maxPrice": 29999.99,
+          "fee": 1350
+        },
+        {
+          "minPrice": 30000,
+          "maxPrice": 49999.99,
+          "fee": 1600
+        },
+        {
+          "minPrice": 50000,
+          "maxPrice": 99999.99,
+          "fee": 2600
+        },
+        {
+          "minPrice": 100000,
+          "maxPrice": 999999.99,
+          "fee": 5100
+        },
+        {
+          "minPrice": 1000000,
+          "fee": 10100
+        }
       ]
     },
     "localTaxNote": "Illinois private-party vehicle purchases are reported on Form RUT-50 using statutory flat-tax tables (Table A by vehicle age under $15,000; Table B by purchase price bracket for $15,000 and over). Cook County and City of Chicago levy an additional $15 vehicle use tax.",
@@ -649,6 +816,18 @@
       {
         "question": "How much are license plate renewal fees in Illinois?",
         "answer": "Standard annual license plate registration in Illinois is $151.00 for passenger vehicles. All-electric vehicles pay an additional $100.00 annual surcharge in lieu of motor fuel tax."
+      },
+      {
+        "question": "Do I pay Illinois vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Illinois, the state generally assesses its vehicle sales or use tax upon registration (Form RUT-50 statutory tax). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Illinois motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Illinois?",
+        "answer": "Many jurisdictions, including Illinois, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Illinois DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Illinois?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Illinois's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -711,6 +890,18 @@
       {
         "question": "How much is passenger vehicle registration in Ohio?",
         "answer": "Standard annual passenger car registration in Ohio is $34.50 (plus any local county or township permissive license tax of up to $25.00). Electric vehicles incur an additional $200.00 annual state fee."
+      },
+      {
+        "question": "Do I pay Ohio vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Ohio, the state generally assesses its vehicle sales or use tax upon registration (5.75% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Ohio motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Ohio?",
+        "answer": "Many jurisdictions, including Ohio, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Ohio DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Ohio?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Ohio's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -773,6 +964,18 @@
       {
         "question": "How much are Georgia vehicle title and tag fees?",
         "answer": "The Georgia certificate of title fee is $18.00. Annual license plate registration is $20.00. Lien recordation is included on the standard title application."
+      },
+      {
+        "question": "Do I pay Georgia vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Georgia, the state generally assesses its vehicle sales or use tax upon registration (7.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Georgia motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Georgia?",
+        "answer": "Many jurisdictions, including Georgia, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Georgia DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Georgia?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Georgia's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -835,6 +1038,18 @@
       {
         "question": "How much does license plate registration cost in North Carolina?",
         "answer": "Annual registration for a private passenger car is $38.75. Fully electric vehicles are assessed an additional $140.00 annual fee ($70.00 for plug-in hybrids)."
+      },
+      {
+        "question": "Do I pay North Carolina vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in North Carolina, the state generally assesses its vehicle sales or use tax upon registration (3.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the North Carolina motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in North Carolina?",
+        "answer": "Many jurisdictions, including North Carolina, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the North Carolina DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in North Carolina?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond North Carolina's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -896,6 +1111,18 @@
       {
         "question": "How are vehicle registration fees calculated in Michigan?",
         "answer": "In Michigan, registration fees for passenger vehicles (model year 1984 and newer) are determined by the vehicle's original manufacturer's suggested retail price (MSRP) when new, averaging approximately $140.00 to $180.00 per year."
+      },
+      {
+        "question": "Do I pay Michigan vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Michigan, the state generally assesses its vehicle sales or use tax upon registration (6.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Michigan motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Michigan?",
+        "answer": "Many jurisdictions, including Michigan, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Michigan DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Michigan?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Michigan's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -958,6 +1185,18 @@
       {
         "question": "How does New Jersey verify private party vehicle sale prices?",
         "answer": "The New Jersey Division of Taxation audits casual motor vehicle sales. If the reported purchase price appears significantly below fair market value, the state may issue a casual sales inquiry and assess sales tax based on standard N.A.D.A. book values unless proof of condition or purchase price is provided."
+      },
+      {
+        "question": "Do I pay New Jersey vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in New Jersey, the state generally assesses its vehicle sales or use tax upon registration (6.63% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the New Jersey motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in New Jersey?",
+        "answer": "Many jurisdictions, including New Jersey, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the New Jersey DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in New Jersey?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond New Jersey's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1022,6 +1261,18 @@
       {
         "question": "How much does title and registration cost in Washington?",
         "answer": "The state certificate of title application fee is $15.00, and annual passenger vehicle registration is $68.25 ($43.25 basic license fee plus $25.00 weight fee), plus local licensing filing fees. Electric vehicles pay an additional $225 annual fee."
+      },
+      {
+        "question": "Do I pay Washington vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Washington, the state generally assesses its vehicle sales or use tax upon registration (6.80% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Washington motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Washington?",
+        "answer": "Many jurisdictions, including Washington, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Washington DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Washington?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Washington's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1033,7 +1284,7 @@
   "arizona": {
     "label": "Arizona",
     "slug": "arizona-private-sale-tax-calculator",
-    "exciseTaxRate": 0.0,
+    "exciseTaxRate": 0,
     "taxBase": "price",
     "titleFee": 4,
     "lienFilingFee": 4,
@@ -1083,6 +1334,18 @@
       {
         "question": "Does trade-in reduce tax in Arizona?",
         "answer": "Because private party vehicle sales in Arizona are already 100% exempt from sales tax, trade-in deductions do not apply to private sales. Dealership sales do allow trade-in credit to reduce dealer TPT."
+      },
+      {
+        "question": "Do I pay Arizona vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "Because Arizona does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Arizona. Standard certificate of title and license plate tag registration fees still apply."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Arizona?",
+        "answer": "In Arizona, private vehicle transfers are already exempt from sales tax. When transferring title between family members as a gift, you only pay standard title transfer fees and registration tags."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Arizona?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Arizona's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1146,6 +1409,18 @@
       {
         "question": "How much does a title and plate cost in Tennessee?",
         "answer": "The state certificate of title fee is $14.00, and standard passenger plate registration is $26.50. If financed, an $11.00 lien noting fee applies. Local county clerk processing fees and county wheel taxes may also apply."
+      },
+      {
+        "question": "Do I pay Tennessee vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Tennessee, the state generally assesses its vehicle sales or use tax upon registration (7.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Tennessee motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Tennessee?",
+        "answer": "Many jurisdictions, including Tennessee, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Tennessee DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Tennessee?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Tennessee's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1206,6 +1481,18 @@
       {
         "question": "How much are title and registration fees in Massachusetts?",
         "answer": "The Massachusetts RMV charges $75.00 for a Certificate of Title and $60.00 for a standard 2-year passenger registration plate."
+      },
+      {
+        "question": "Do I pay Massachusetts vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Massachusetts, the state generally assesses its vehicle sales or use tax upon registration (6.25% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Massachusetts motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Massachusetts?",
+        "answer": "Many jurisdictions, including Massachusetts, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Massachusetts DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Massachusetts?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Massachusetts's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1268,6 +1555,18 @@
       {
         "question": "What additional taxes apply to vehicles in Indiana?",
         "answer": "In addition to sales tax at purchase, Indiana vehicle owners pay an annual Motor Vehicle Excise Tax and local county/municipal wheel taxes based on the vehicle's age and original MSRP when registering each year."
+      },
+      {
+        "question": "Do I pay Indiana vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Indiana, the state generally assesses its vehicle sales or use tax upon registration (7.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Indiana motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Indiana?",
+        "answer": "Many jurisdictions, including Indiana, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Indiana DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Indiana?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Indiana's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1328,6 +1627,14 @@
       {
         "question": "How long do I have to title a car in Missouri after a private purchase?",
         "answer": "You have 30 days from the purchase date to title and register your vehicle. Titling on or after day 31 incurs a $25.00 late penalty, which increases by $25 for every subsequent 30 days up to a maximum of $200.00."
+      },
+      {
+        "question": "Do I pay Missouri vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Missouri, the state generally assesses its vehicle sales or use tax upon registration (4.23% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Missouri motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Missouri?",
+        "answer": "Many jurisdictions, including Missouri, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Missouri DMV or Department of Revenue to verify eligibility before titling."
       }
     ],
     "sources": [
@@ -1391,6 +1698,18 @@
       {
         "question": "How much is car registration in Wisconsin?",
         "answer": "Standard annual registration for an automobile in Wisconsin is $85.00. Electric vehicles pay an additional $175.00 annual surcharge ($75.00 for hybrids), and local municipal/county wheel taxes ($10 to $40) may apply depending on your location."
+      },
+      {
+        "question": "Do I pay Wisconsin vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Wisconsin, the state generally assesses its vehicle sales or use tax upon registration (5.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Wisconsin motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Wisconsin?",
+        "answer": "Many jurisdictions, including Wisconsin, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Wisconsin DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Wisconsin?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Wisconsin's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1453,6 +1772,18 @@
       {
         "question": "What is the Colorado Specific Ownership Tax (SOT)?",
         "answer": "The Specific Ownership Tax (SOT) is an annual personal property tax paid at registration in lieu of ad valorem property taxes. It is based on 85% of the vehicle's original manufacturer suggested retail price (MSRP) and depreciates annually as the vehicle ages."
+      },
+      {
+        "question": "Do I pay Colorado vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Colorado, the state generally assesses its vehicle sales or use tax upon registration (2.90% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Colorado motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Colorado?",
+        "answer": "Many jurisdictions, including Colorado, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Colorado DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Colorado?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Colorado's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1516,6 +1847,18 @@
       {
         "question": "How is Minnesota vehicle registration calculated?",
         "answer": "Minnesota annual vehicle registration tax is determined by the vehicle's original manufacturer suggested retail price (MSRP) and its age, plus a $15.50 plate fee and filing fees. All-electric vehicles pay an additional $150.00 annual surcharge."
+      },
+      {
+        "question": "Do I pay Minnesota vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Minnesota, the state generally assesses its vehicle sales or use tax upon registration (6.88% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Minnesota motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Minnesota?",
+        "answer": "Many jurisdictions, including Minnesota, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Minnesota DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Minnesota?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Minnesota's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1583,6 +1926,18 @@
       {
         "question": "How much are title and registration fees in South Carolina?",
         "answer": "The SCDMV certificate of title fee is $15.00. Standard passenger registration is $40.00 for a two-year plate ($20.00/year equivalent). Electric vehicles pay an additional $120.00 biennial road fee ($60.00/year)."
+      },
+      {
+        "question": "Do I pay South Carolina vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in South Carolina, the state generally assesses its vehicle sales or use tax upon registration (5.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the South Carolina motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in South Carolina?",
+        "answer": "Many jurisdictions, including South Carolina, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the South Carolina DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in South Carolina?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond South Carolina's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1647,6 +2002,18 @@
       {
         "question": "How much is vehicle registration in Alabama?",
         "answer": "The base annual state license plate fee for passenger cars is $23.00. Electric vehicles pay an additional $200.00 annual surcharge ($100.00 for plug-in hybrids) in lieu of gas tax."
+      },
+      {
+        "question": "Do I pay Alabama vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Alabama, the state generally assesses its vehicle sales or use tax upon registration (2.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Alabama motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Alabama?",
+        "answer": "Many jurisdictions, including Alabama, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Alabama DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Alabama?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Alabama's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1715,6 +2082,18 @@
       {
         "question": "How much does a vehicle title cost in Louisiana?",
         "answer": "The standard Louisiana OMV title fee is $68.50 (plus an $8.00 handling fee). If the vehicle is financed, a $10.00 lien recordation fee applies."
+      },
+      {
+        "question": "Do I pay Louisiana vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Louisiana, the state generally assesses its vehicle sales or use tax upon registration (4.45% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Louisiana motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Louisiana?",
+        "answer": "Many jurisdictions, including Louisiana, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Louisiana DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Louisiana?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Louisiana's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1779,6 +2158,18 @@
       {
         "question": "How much does vehicle registration cost in Kentucky?",
         "answer": "Standard annual passenger car registration in Kentucky is $21.00. All-electric vehicles pay an additional $120.00 annual electric vehicle fee ($60.00 for hybrids)."
+      },
+      {
+        "question": "Do I pay Kentucky vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Kentucky, the state generally assesses its vehicle sales or use tax upon registration (6.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Kentucky motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Kentucky?",
+        "answer": "Many jurisdictions, including Kentucky, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Kentucky DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Kentucky?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Kentucky's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1846,6 +2237,18 @@
       {
         "question": "Do electric vehicles pay extra fees in Oregon?",
         "answer": "Yes. All-electric vehicles pay an increased biennial registration fee ($316.00 for 2 years) to compensate for untaxed motor fuel, or owners may enroll in Oregon's voluntary road usage charge program (OReGO)."
+      },
+      {
+        "question": "Do I pay Oregon vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "Because Oregon does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Oregon. Standard certificate of title and license plate tag registration fees still apply."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Oregon?",
+        "answer": "In Oregon, private vehicle transfers are already exempt from sales tax. When transferring title between family members as a gift, you only pay standard title transfer fees and registration tags."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Oregon?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Oregon's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1910,6 +2313,18 @@
       {
         "question": "How are vehicle registration fees calculated in Oklahoma?",
         "answer": "Oklahoma uses a flat age-based annual registration schedule: $96.00 for vehicles 1 to 4 years old, $86.00 for 5 to 8 years old, $66.00 for 9 to 12 years old, $46.00 for 13 to 16 years old, and $26.00 for 17+ years."
+      },
+      {
+        "question": "Do I pay Oklahoma vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Oklahoma, the state generally assesses its vehicle sales or use tax upon registration (3.25% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Oklahoma motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Oklahoma?",
+        "answer": "Many jurisdictions, including Oklahoma, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Oklahoma DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Oklahoma?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Oklahoma's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -1980,6 +2395,18 @@
       {
         "question": "How much are Connecticut vehicle title and registration fees?",
         "answer": "The Connecticut DMV title certificate fee is $25.00. Standard passenger registration is $120.00 for a three-year cycle ($40.00/year equivalent), plus mandatory state Clean Air and Passport to the Parks fees."
+      },
+      {
+        "question": "Do I pay Connecticut vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Connecticut, the state generally assesses its vehicle sales or use tax upon registration (6.35% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Connecticut motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Connecticut?",
+        "answer": "Many jurisdictions, including Connecticut, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Connecticut DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Connecticut?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Connecticut's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2045,6 +2472,18 @@
       {
         "question": "What is the Utah age-based vehicle fee?",
         "answer": "Utah charges an annual age-based uniform fee at registration in place of ad valorem property taxes. The fee scales from $150.00 for vehicles less than 3 years old down to $10.00 for vehicles 12 or more years old, added to the $44.00 base registration fee."
+      },
+      {
+        "question": "Do I pay Utah vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Utah, the state generally assesses its vehicle sales or use tax upon registration (4.85% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Utah motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Utah?",
+        "answer": "Many jurisdictions, including Utah, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Utah DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Utah?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Utah's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2106,6 +2545,18 @@
       {
         "question": "How are Iowa annual registration fees determined?",
         "answer": "Annual registration is calculated based on vehicle weight ($0.40 per 100 lbs) plus a percentage of the original list price that scales down as the car ages, subject to a $50.00 minimum floor for older vehicles."
+      },
+      {
+        "question": "Do I pay Iowa vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Iowa, the state generally assesses its vehicle sales or use tax upon registration (5.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Iowa motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Iowa?",
+        "answer": "Many jurisdictions, including Iowa, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Iowa DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Iowa?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Iowa's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2116,7 +2567,7 @@
   "nevada": {
     "label": "Nevada",
     "slug": "nevada-private-sale-tax-calculator",
-    "exciseTaxRate": 0.0,
+    "exciseTaxRate": 0,
     "taxBase": "price",
     "titleFee": 28.25,
     "lienFilingFee": 0,
@@ -2167,6 +2618,18 @@
       {
         "question": "Do trade-in credits apply to private car sales in Nevada?",
         "answer": "Because private-party sales in Nevada are already 0% sales tax, trade-in credits do not affect your sales tax liability."
+      },
+      {
+        "question": "Do I pay Nevada vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "Because Nevada does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Nevada. Standard certificate of title and license plate tag registration fees still apply."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Nevada?",
+        "answer": "In Nevada, private vehicle transfers are already exempt from sales tax. When transferring title between family members as a gift, you only pay standard title transfer fees and registration tags."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Nevada?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Nevada's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2181,7 +2644,7 @@
     "priceTiers": [
       {
         "maxPrice": 4000,
-        "rate": 0.0
+        "rate": 0
       },
       {
         "maxPrice": 10000,
@@ -2244,6 +2707,18 @@
       {
         "question": "How much are Arkansas title and tag fees?",
         "answer": "The Arkansas certificate of title fee is $10.00, lien recording is $0.50, and standard passenger vehicle registration is $27.50 (including the $25.00 weight fee and $2.50 validation decal)."
+      },
+      {
+        "question": "Do I pay Arkansas vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Arkansas, the state generally assesses its vehicle sales or use tax upon registration (6.50% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Arkansas motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Arkansas?",
+        "answer": "Many jurisdictions, including Arkansas, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Arkansas DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Arkansas?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Arkansas's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2305,6 +2780,18 @@
       {
         "question": "How much does it cost to title and tag a car in Mississippi?",
         "answer": "The certificate of title fee is $9.00 and basic registration is $29.00 ($14.00 registration fee plus $15.00 road and bridge privilege tax), plus county ad valorem property taxes."
+      },
+      {
+        "question": "Do I pay Mississippi vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Mississippi, the state generally assesses its vehicle sales or use tax upon registration (5.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Mississippi motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Mississippi?",
+        "answer": "Many jurisdictions, including Mississippi, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Mississippi DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Mississippi?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Mississippi's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2368,6 +2855,18 @@
       {
         "question": "What are Kansas passenger vehicle registration fees?",
         "answer": "Annual registration for passenger vehicles weighing 4,500 lbs or less is $30.00 under K.S.A. 8-143 ($40.00 for vehicles over 4,500 lbs), plus county personal property taxes."
+      },
+      {
+        "question": "Do I pay Kansas vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Kansas, the state generally assesses its vehicle sales or use tax upon registration (6.50% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Kansas motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Kansas?",
+        "answer": "Many jurisdictions, including Kansas, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Kansas DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Kansas?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Kansas's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2430,6 +2929,18 @@
       {
         "question": "How much is a title and registration in New Mexico?",
         "answer": "The New Mexico title fee is $5.00 ($5.00 lien filing fee if financed) and standard annual passenger registration is approximately $34.00."
+      },
+      {
+        "question": "Do I pay New Mexico vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in New Mexico, the state generally assesses its vehicle sales or use tax upon registration (4.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the New Mexico motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in New Mexico?",
+        "answer": "Many jurisdictions, including New Mexico, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the New Mexico DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in New Mexico?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond New Mexico's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2492,6 +3003,18 @@
       {
         "question": "What is the Nebraska Motor Vehicle Tax?",
         "answer": "In Nebraska, vehicle owners pay an annual Motor Vehicle Tax and Motor Vehicle Fee based on the vehicle's original MSRP and age, collected by the county treasurer at registration."
+      },
+      {
+        "question": "Do I pay Nebraska vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Nebraska, the state generally assesses its vehicle sales or use tax upon registration (5.50% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Nebraska motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Nebraska?",
+        "answer": "Many jurisdictions, including Nebraska, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Nebraska DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Nebraska?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Nebraska's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2554,6 +3077,18 @@
       {
         "question": "How do Idaho registration fees work?",
         "answer": "Idaho passenger registration fees are determined by vehicle age: $69.00 annually for vehicles 1 to 2 years old, $57.00 for vehicles 3 to 6 years old, and $45.00 for vehicles 7 years or older."
+      },
+      {
+        "question": "Do I pay Idaho vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Idaho, the state generally assesses its vehicle sales or use tax upon registration (6.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Idaho motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Idaho?",
+        "answer": "Many jurisdictions, including Idaho, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Idaho DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Idaho?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Idaho's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2616,6 +3151,18 @@
       {
         "question": "How much is West Virginia passenger vehicle registration?",
         "answer": "The standard annual registration fee for Class A passenger vehicles is $51.50. Electric vehicles pay an additional $200.00 annual surcharge ($100.00 for plug-in hybrids)."
+      },
+      {
+        "question": "Do I pay West Virginia vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in West Virginia, the state generally assesses its vehicle sales or use tax upon registration (5.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the West Virginia motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in West Virginia?",
+        "answer": "Many jurisdictions, including West Virginia, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the West Virginia DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in West Virginia?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond West Virginia's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2625,7 +3172,7 @@
   "hawaii": {
     "label": "Hawaii",
     "slug": "hawaii-private-sale-tax-calculator",
-    "exciseTaxRate": 0.0,
+    "exciseTaxRate": 0,
     "taxBase": "price",
     "titleFee": 10,
     "lienFilingFee": 10,
@@ -2677,6 +3224,14 @@
       {
         "question": "How long do I have to transfer a title in Hawaii?",
         "answer": "The buyer must submit the endorsed title, registration, and safety inspection certificate to the county DMV within 30 days of purchase. Transfers submitted after 30 days incur a $50 late fee."
+      },
+      {
+        "question": "Do I pay Hawaii vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "Because Hawaii does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Hawaii. Standard certificate of title and license plate tag registration fees still apply."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Hawaii?",
+        "answer": "In Hawaii, private vehicle transfers are already exempt from sales tax. When transferring title between family members as a gift, you only pay standard title transfer fees and registration tags."
       }
     ],
     "sources": [
@@ -2687,7 +3242,7 @@
   "new-hampshire": {
     "label": "New Hampshire",
     "slug": "new-hampshire-private-sale-tax-calculator",
-    "exciseTaxRate": 0.0,
+    "exciseTaxRate": 0,
     "taxBase": "price",
     "titleFee": 35,
     "lienFilingFee": 0,
@@ -2737,6 +3292,18 @@
       {
         "question": "What is the registration process for a private sale in NH?",
         "answer": "Buyers begin at their local town or city clerk's office with the signed title and bill of sale. You pay the municipal permit fee and title application fee locally, and either complete state registration directly through the municipal agent or at a state DMV location."
+      },
+      {
+        "question": "Do I pay New Hampshire vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "Because New Hampshire does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in New Hampshire. Standard certificate of title and license plate tag registration fees still apply."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in New Hampshire?",
+        "answer": "In New Hampshire, private vehicle transfers are already exempt from sales tax. When transferring title between family members as a gift, you only pay standard title transfer fees and registration tags."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in New Hampshire?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond New Hampshire's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2797,6 +3364,18 @@
       {
         "question": "How much does it cost to title and register a car in Maine?",
         "answer": "The state certificate of title fee is $33.00 and the standard annual passenger registration fee is $35.00, paid to the Bureau of Motor Vehicles (BMV) after paying municipal excise tax."
+      },
+      {
+        "question": "Do I pay Maine vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Maine, the state generally assesses its vehicle sales or use tax upon registration (5.50% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Maine motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Maine?",
+        "answer": "Many jurisdictions, including Maine, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Maine DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Maine?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Maine's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2807,7 +3386,7 @@
   "montana": {
     "label": "Montana",
     "slug": "montana-private-sale-tax-calculator",
-    "exciseTaxRate": 0.0,
+    "exciseTaxRate": 0,
     "taxBase": "price",
     "titleFee": 12,
     "lienFilingFee": 8,
@@ -2857,6 +3436,18 @@
       {
         "question": "What is the Montana luxury vehicle tax?",
         "answer": "Under MCA 61-3-315, light vehicles 10 years old or newer with a manufacturer's suggested retail price (MSRP) exceeding $150,000 pay an annual $825 luxury surcharge in addition to standard registration fees."
+      },
+      {
+        "question": "Do I pay Montana vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "Because Montana does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Montana. Standard certificate of title and license plate tag registration fees still apply."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Montana?",
+        "answer": "In Montana, private vehicle transfers are already exempt from sales tax. When transferring title between family members as a gift, you only pay standard title transfer fees and registration tags."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Montana?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Montana's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2917,6 +3508,18 @@
       {
         "question": "How much are title and registration fees in Rhode Island?",
         "answer": "The certificate of title fee is $52.50 under R.I. Gen. Laws § 31-3.1-6. Standard passenger vehicle registration is $60.00, which covers a two-year biennial registration period."
+      },
+      {
+        "question": "Do I pay Rhode Island vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Rhode Island, the state generally assesses its vehicle sales or use tax upon registration (7.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Rhode Island motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Rhode Island?",
+        "answer": "Many jurisdictions, including Rhode Island, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Rhode Island DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Rhode Island?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Rhode Island's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -2978,6 +3581,18 @@
       {
         "question": "How much does it cost to title and register a car in South Dakota?",
         "answer": "The title fee is $10.00 (plus $10.00 for lien notation if applicable). Standard annual passenger vehicle registration is weight-based under SDCL § 32-5-6 and averages $42.00."
+      },
+      {
+        "question": "Do I pay South Dakota vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in South Dakota, the state generally assesses its vehicle sales or use tax upon registration (4.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the South Dakota motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in South Dakota?",
+        "answer": "Many jurisdictions, including South Dakota, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the South Dakota DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in South Dakota?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond South Dakota's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -3037,6 +3652,18 @@
       {
         "question": "How are North Dakota registration fees calculated?",
         "answer": "Under N.D.C.C. § 39-04-19, registration fees depend on the vehicle's unladen weight and age. For a passenger vehicle weighing between 3,200 and 4,499 lbs in its 7th year, annual registration is $81.00."
+      },
+      {
+        "question": "Do I pay North Dakota vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in North Dakota, the state generally assesses its vehicle sales or use tax upon registration (5.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the North Dakota motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in North Dakota?",
+        "answer": "Many jurisdictions, including North Dakota, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the North Dakota DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in North Dakota?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond North Dakota's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -3046,7 +3673,7 @@
   "alaska": {
     "label": "Alaska",
     "slug": "alaska-private-sale-tax-calculator",
-    "exciseTaxRate": 0.0,
+    "exciseTaxRate": 0,
     "taxBase": "price",
     "titleFee": 15,
     "lienFilingFee": 15,
@@ -3097,6 +3724,18 @@
       {
         "question": "Can senior citizens get exempt from registration fees in Alaska?",
         "answer": "Yes. Alaska residents aged 65 and older may receive an exemption from the state registration fee for one personal passenger vehicle."
+      },
+      {
+        "question": "Do I pay Alaska vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "Because Alaska does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Alaska. Standard certificate of title and license plate tag registration fees still apply."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Alaska?",
+        "answer": "In Alaska, private vehicle transfers are already exempt from sales tax. When transferring title between family members as a gift, you only pay standard title transfer fees and registration tags."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Alaska?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Alaska's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -3160,6 +3799,18 @@
       {
         "question": "How much does it cost to title and register a car in Vermont?",
         "answer": "The certificate of title fee is $42.00 under 23 V.S.A. § 2002 (increased from $35.00 by Act 62). Annual passenger registration ('pleasure car') is $91.00 for one year or $167.00 for two years."
+      },
+      {
+        "question": "Do I pay Vermont vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Vermont, the state generally assesses its vehicle sales or use tax upon registration (6.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Vermont motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Vermont?",
+        "answer": "Many jurisdictions, including Vermont, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Vermont DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Vermont?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Vermont's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [
@@ -3221,6 +3872,18 @@
       {
         "question": "How much does a title transfer cost in Wyoming?",
         "answer": "The Wyoming certificate of title fee is $15.00 under Wyo. Stat. § 31-3-102, paid to your local County Clerk's office. If there is a lien on the vehicle, an additional $20.00 filing fee applies."
+      },
+      {
+        "question": "Do I pay Wyoming vehicle tax if I buy a car from an out-of-state private seller?",
+        "answer": "When titling an out-of-state private vehicle in Wyoming, the state generally assesses its vehicle sales or use tax upon registration (4.00% tax rate). Many states grant reciprocal credit if sales tax was legally paid to the prior jurisdiction with official proof of payment, though private-sale reciprocity rules vary. Check with the Wyoming motor vehicle agency for reciprocal documentation requirements."
+      },
+      {
+        "question": "Is a vehicle transfer between family members taxable in Wyoming?",
+        "answer": "Many jurisdictions, including Wyoming, provide tax exemptions or relief for bona fide vehicle gifts or transfers between qualifying immediate family members (such as spouses, parents, and children). Specific relationship qualifications and required documentation—such as a certified gift affidavit—vary. Contact the Wyoming DMV or Department of Revenue to verify eligibility before titling."
+      },
+      {
+        "question": "How long do I have to title and register a private vehicle purchase in Wyoming?",
+        "answer": "Under typical state motor vehicle guidelines, buyers generally have between 15 to 30 days from the date of sale to transfer the certificate of title and obtain valid registration tags. Delaying beyond Wyoming's statutory filing window can result in late penalty fees and restricts legal driving on public roadways."
       }
     ],
     "sources": [

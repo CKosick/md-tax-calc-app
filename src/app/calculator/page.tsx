@@ -53,69 +53,97 @@ export default function CalculatorHubPage() {
           </p>
         </header>
 
-        {/* State Cards Grid */}
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {stateList.map((st) => {
-            const taxPct = (st.exciseTaxRate * 100).toFixed(2);
-            const rateBadge = st.flatTaxTable ? 'Flat Table (RUT-50)' : `${taxPct}% Rate`;
-            const taxDescriptionText = st.flatTaxTable
-              ? `Calculates ${st.label}'s Form RUT-50 statutory tax tables, ${formatCurrency(st.titleFee)} title certificate, and annual tag fees.`
-              : `Calculates ${st.label}&apos;s ${taxPct}% ${st.label === 'Delaware' ? 'document fee' : st.label === 'Virginia' ? 'SUT' : 'tax'}, ${formatCurrency(st.titleFee)} title certificate, and annual or multi-year tag fees.`;
+        {/* State Cards Section */}
+        <section className="mt-12">
+          <div className="flex items-center justify-between border-b border-slate-200/80 pb-4 dark:border-slate-800">
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+                Browse Calculators by State
+              </h2>
+              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                Select your vehicle registration state to open the dedicated out-of-pocket estimator.
+              </p>
+            </div>
+            <span className="hidden sm:inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+              51 Jurisdictions
+            </span>
+          </div>
 
-            return (
-              <div
-                key={st.key}
-                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200/80 bg-white/90 p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-indigo-400 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900/80"
-              >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
-                      {st.label}
-                    </span>
-                    <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400">
-                      {rateBadge}
-                    </span>
-                  </div>
+          <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {stateList.map((st) => {
+              const taxPct = (st.exciseTaxRate * 100).toFixed(2);
+              const rateBadge = st.flatTaxTable
+                ? 'Flat Table (RUT-50)'
+                : st.exciseTaxRate === 0
+                ? '0.00% (Tax-Free)'
+                : `${taxPct}% Rate`;
 
-                  <h2 className="mt-4 text-xl font-bold tracking-tight text-slate-900 group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400">
-                    <Link href={`/calculator/${st.slug}`} className="focus:outline-none">
-                      <span className="absolute inset-0" aria-hidden="true" />
-                      {st.label} Vehicle Tax Calculator
-                    </Link>
-                  </h2>
+              let taxDescriptionText: string;
+              if (st.flatTaxTable) {
+                taxDescriptionText = `Estimates statutory Form RUT-50 flat-tax schedules based on purchase price and vehicle age, plus ${formatCurrency(st.titleFee)} title certificate fees.`;
+              } else if (st.exciseTaxRate === 0) {
+                taxDescriptionText = `Private vehicle transactions in ${st.label} are 100% exempt from sales tax. Calculates ${formatCurrency(st.titleFee)} title transfer and statutory tag fees.`;
+              } else if (st.tradeInDeductible) {
+                taxDescriptionText = `Calculates ${st.label}'s ${taxPct}% ${st.label === 'Delaware' ? 'document fee' : st.label === 'Virginia' ? 'SUT' : 'tax'} with full private-sale trade-in allowance and ${formatCurrency(st.titleFee)} title fee.`;
+              } else {
+                taxDescriptionText = `Computes ${st.label}'s ${taxPct}% tax on agreed purchase price, ${formatCurrency(st.titleFee)} title certificate, and annual license plate registration.`;
+              }
 
-                  <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-                    {taxDescriptionText}
-                  </p>
-
-                  <div className="mt-5 space-y-2 border-t border-slate-100 pt-4 text-xs dark:border-slate-800">
-                    <div className="flex justify-between">
-                      <span className="text-slate-500 dark:text-slate-400">Title Certificate:</span>
-                      <span className="font-bold text-slate-900 dark:text-white">{formatCurrency(st.titleFee)}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-500 dark:text-slate-400">Lien Recordation:</span>
-                      <span className="font-bold text-slate-900 dark:text-white">{formatCurrency(st.lienFilingFee)}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-500 dark:text-slate-400">Trade-in Credit:</span>
-                      <span className={`font-bold ${st.tradeInDeductible ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-600 dark:text-slate-400'}`}>
-                        {st.tradeInDeductible ? 'Deductible (Allowed)' : 'Not Deductible'}
+              return (
+                <div
+                  key={st.key}
+                  className="group relative flex flex-col justify-between rounded-3xl border border-slate-200/80 bg-white/90 p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-indigo-400 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900/80"
+                >
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                        {st.label}
+                      </span>
+                      <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+                        {rateBadge}
                       </span>
                     </div>
+
+                    <h3 className="mt-4 text-xl font-bold tracking-tight text-slate-900 group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400">
+                      <Link href={`/calculator/${st.slug}`} className="focus:outline-none">
+                        <span className="absolute inset-0" aria-hidden="true" />
+                        {st.label} Car Tax Calculator
+                      </Link>
+                    </h3>
+
+                    <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                      {taxDescriptionText}
+                    </p>
+
+                    <div className="mt-5 space-y-2 border-t border-slate-100 pt-4 text-xs dark:border-slate-800">
+                      <div className="flex justify-between">
+                        <span className="text-slate-500 dark:text-slate-400">Title Certificate:</span>
+                        <span className="font-bold text-slate-900 dark:text-white">{formatCurrency(st.titleFee)}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500 dark:text-slate-400">Lien Recordation:</span>
+                        <span className="font-bold text-slate-900 dark:text-white">{formatCurrency(st.lienFilingFee)}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500 dark:text-slate-400">Trade-in Credit:</span>
+                        <span className={`font-bold ${st.tradeInDeductible ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-600 dark:text-slate-400'}`}>
+                          {st.tradeInDeductible ? 'Deductible (Allowed)' : 'Not Deductible'}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 flex items-center gap-1.5 text-xs font-bold text-indigo-600 group-hover:text-indigo-700 dark:text-indigo-400">
+                    <span>Open {st.label} Calculator</span>
+                    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
                   </div>
                 </div>
-
-                <div className="mt-6 flex items-center gap-1.5 text-xs font-bold text-indigo-600 group-hover:text-indigo-700 dark:text-indigo-400">
-                  <span>Open {st.label} Calculator</span>
-                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                  </svg>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </section>
 
         {/* State Comparison Table */}
         <section className="mt-16 rounded-3xl border border-slate-200/80 bg-white/90 p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900/80">

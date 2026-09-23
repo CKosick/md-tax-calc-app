@@ -18,14 +18,11 @@ export function FaqSection({ faqs, stateLabel = 'Maryland' }: FaqSectionProps) {
   return (
     <section aria-labelledby="faq-section-title" className="mt-16 border-t border-slate-200 pt-12 dark:border-slate-800">
       <div className="mb-8">
-        <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
-          Frequently Asked Questions
-        </span>
-        <h2 id="faq-section-title" className="mt-1 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
-          {stateLabel} Private Vehicle Sales & Tag Rules
+        <h2 id="faq-section-title" className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+          Frequently Asked Questions: {stateLabel} Vehicle Taxes &amp; Fees
         </h2>
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-          Essential statutory answers regarding MVA excise taxes, titling requirements, and tag renewal fees.
+          Essential statutory answers regarding {stateLabel} vehicle sales taxes, titling requirements, and registration fees.
         </p>
       </div>
 

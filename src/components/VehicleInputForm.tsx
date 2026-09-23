@@ -71,7 +71,7 @@ export function VehicleInputForm({
               State of Registration
             </label>
             <span className="rounded-md bg-indigo-100 px-2 py-0.5 text-[10px] font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
-              5 Regional States Active
+              51 Jurisdictions Active
             </span>
           </div>
           <div className="relative mt-2">
@@ -194,12 +194,12 @@ export function VehicleInputForm({
             </label>
             <span
               className={`text-[11px] font-medium ${
-                currentYear - inputs.vehicleYear <= 7
+                rule.slug === 'maryland-private-sale-tax-calculator' && currentYear - inputs.vehicleYear <= 7
                   ? 'font-bold text-amber-600 dark:text-amber-400'
                   : 'text-slate-400'
               }`}
             >
-              {currentYear - inputs.vehicleYear} years old {rule.bookValueRule ? (currentYear - inputs.vehicleYear <= 7 ? '(≤ 7 yrs rule)' : '(> 7 yrs)') : ''}
+              {currentYear - inputs.vehicleYear} years old {rule.slug === 'maryland-private-sale-tax-calculator' ? (currentYear - inputs.vehicleYear <= 7 ? '(≤ 7 yrs rule)' : '(> 7 yrs)') : ''}
             </span>
           </div>
           <div className="mt-2 grid grid-cols-3 gap-2">
@@ -239,7 +239,9 @@ export function VehicleInputForm({
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
                 Vehicle Weight Classification
               </label>
-              <span className="text-[11px] text-slate-400">Class A Passenger</span>
+              <span className="text-[11px] text-slate-400">
+                {rule.slug === 'maryland-private-sale-tax-calculator' ? 'Class A Passenger' : 'Standard Passenger'}
+              </span>
             </div>
             <div className="mt-2 grid grid-cols-2 gap-2">
               <button
@@ -472,6 +474,10 @@ export function VehicleInputForm({
             {rule.tradeInDeductible ? (
               <>
                 <strong>{rule.label} Statute:</strong> {rule.label} allows trade-in value on private sales to be deducted from the purchase price before applying the {(rule.exciseTaxRate * 100).toFixed(2)}% fee.
+              </>
+            ) : rule.exciseTaxRate === 0 ? (
+              <>
+                <strong>{rule.label} Notice:</strong> Private-party vehicle purchases in {rule.label} are exempt from vehicle sales tax (0% tax rate), so trade-in deductions do not apply.
               </>
             ) : (
               <>

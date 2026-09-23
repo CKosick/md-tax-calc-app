@@ -3,7 +3,7 @@ import stateRulesData from '@/config/stateRules.json';
 import { StateRulesConfig } from '@/lib/types';
 
 const rules = stateRulesData as StateRulesConfig;
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://md-tax-calc-app.vercel.app';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://cartaxhub.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
@@ -24,12 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   ];
 
-  // Dynamic state calculator routes
+  // Dynamic state calculator routes (all 51 jurisdictions normalized to 0.8)
   const stateRoutes: MetadataRoute.Sitemap = Object.values(rules).map((rule) => ({
     url: `${BASE_URL}/calculator/${rule.slug}`,
     lastModified: currentDate,
     changeFrequency: 'weekly',
-    priority: rule.slug.startsWith('maryland') ? 1.0 : 0.9
+    priority: 0.8
   }));
 
   return [...staticRoutes, ...stateRoutes];

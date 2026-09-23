@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import stateRulesData from '@/config/stateRules.json';
 import { StateRule, StateRulesConfig } from '@/lib/types';
+import { formatFee } from '@/lib/formatters';
 import { Calculator } from '@/components/Calculator';
 
 const rules = stateRulesData as StateRulesConfig;
@@ -33,11 +34,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const title = `${rule.label} Private Party Car Tax Calculator — Excise Tax, Title & Tag Fees (2026)`;
+  // Concise title (<= 60 chars with "| CarTaxHub" template)
+  const title = `${rule.label} Car Tax Calculator (2026)`;
   const rateFormatted = Number((rule.exciseTaxRate * 100).toFixed(2));
-  const taxName = rule.label === 'Delaware' ? 'document fee' : rule.label === 'Virginia' ? 'SUT' : 'excise tax';
+  const taxName = rule.label === 'Delaware' ? 'document fee' : rule.label === 'Virginia' ? 'SUT' : 'sales/use tax';
   const taxDetail = rule.flatTaxTable ? 'Form RUT-50 statutory tax tables' : `${rateFormatted}% ${taxName}`;
-  const description = `Calculate your true first-year costs for a private car purchase in ${rule.label}. Accurate calculation for ${taxDetail}, $${rule.titleFee} title fee, 1 or 2-year tag registration, and book-value rules.`;
+  const description = `Calculate your true first-year costs for a private car purchase in ${rule.label}. Accurate calculation for ${taxDetail}, ${formatFee(rule.titleFee)} title fee, 1 or 2-year tag registration, and book-value rules.`;
 
   return {
     title,
@@ -67,6 +69,32 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
     notFound();
   }
 
+  // JSON-LD Breadcrumb Schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://cartaxhub.com/'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Calculators',
+        item: 'https://cartaxhub.com/calculator'
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: `${rule.label} Car Tax Calculator`,
+        item: `https://cartaxhub.com/calculator/${rule.slug}`
+      }
+    ]
+  };
+
   // JSON-LD FAQ Schema
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -85,10 +113,10 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
   const appSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: `${rule.label} Private Party Vehicle Tax Calculator`,
+    name: `${rule.label} Private Party Car Tax Calculator`,
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'All',
-    description: `Online calculator for private party vehicle purchases in ${rule.label}, calculating excise tax, titling fees, and tag registrations.`,
+    description: `Online calculator for private party vehicle purchases in ${rule.label}, calculating sales tax, titling fees, and tag registrations.`,
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -98,7 +126,11 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
 
   return (
     <>
-      {/* Structured Data Script */}
+      {/* Structured Data Scripts */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

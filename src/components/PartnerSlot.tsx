@@ -7,7 +7,10 @@ import { PartnerSlotConfig } from '@/lib/types';
 interface PartnerSlotProps {
   position: 'below-results' | 'sidebar';
   className?: string;
+  forceShow?: boolean;
 }
+
+const MONETIZATION_ENABLED = process.env.NEXT_PUBLIC_ENABLE_MONETIZATION === 'true';
 
 function buildPartnerUrl(href: string, trackingParams?: Record<string, string>): string {
   if (!href || href === '#' || !trackingParams) {
@@ -28,7 +31,10 @@ function buildPartnerUrl(href: string, trackingParams?: Record<string, string>):
   }
 }
 
-export function PartnerSlot({ position, className = '' }: PartnerSlotProps) {
+export function PartnerSlot({ position, className = '', forceShow = false }: PartnerSlotProps) {
+  // Suppress partner affiliate slots until formal tracked links exist
+  if (!MONETIZATION_ENABLED && !forceShow) return null;
+
   const slots = (partnerSlotsData as PartnerSlotConfig[]).filter(
     (slot) => slot.position === position
   );

@@ -34,9 +34,9 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
       params: Promise.resolve({ slug: 'maryland-private-sale-tax-calculator' })
     });
 
-    expect(meta.title).toBe('Maryland Private Party Car Tax Calculator — Excise Tax, Title & Tag Fees (2026)');
-    expect(meta.description).toContain('6.5% excise tax');
-    expect(meta.description).toContain('$200 title fee');
+    expect(meta.title).toBe('Maryland Car Tax Calculator (2026)');
+    expect(meta.description).toContain('6.5% sales/use tax');
+    expect(meta.description).toContain('$200.00 title fee');
     expect(meta.alternates?.canonical).toBe('/calculator/maryland-private-sale-tax-calculator');
     expect(meta.openGraph?.title).toBe(meta.title);
     expect(meta.openGraph?.url).toBe('/calculator/maryland-private-sale-tax-calculator');
@@ -49,7 +49,7 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
     });
 
     expect(meta.description).toContain('5.25% document fee');
-    expect(meta.description).toContain('$35 title fee');
+    expect(meta.description).toContain('$35.00 title fee');
   });
 
   it('generateMetadata handles Virginia with exact "SUT" tax wording', async () => {
@@ -58,7 +58,7 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
     });
 
     expect(meta.description).toContain('4.15% SUT');
-    expect(meta.description).toContain('$15 title fee');
+    expect(meta.description).toContain('$15.00 title fee');
   });
 
   it('generateMetadata handles Illinois with Form RUT-50 statutory tax table notice', async () => {
@@ -67,7 +67,7 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
     });
 
     expect(meta.description).toContain('Form RUT-50 statutory tax tables');
-    expect(meta.description).toContain('$165 title fee');
+    expect(meta.description).toContain('$165.00 title fee');
   });
 
   it('generateMetadata returns fallback not found metadata for invalid slug', async () => {
@@ -90,15 +90,18 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
     expect(urls.some((u) => u.endsWith('/calculator/maryland-private-sale-tax-calculator'))).toBe(true);
     expect(urls.some((u) => u.endsWith('/calculator/california-private-sale-tax-calculator'))).toBe(true);
 
-    // Verify priorities: root and Maryland get 1.0, others get 0.9
+    // Verify priorities: root gets 1.0, directory gets 0.9, all 51 state pages get 0.8
     const rootEntry = entries.find((e) => !e.url.includes('/calculator'));
     expect(rootEntry?.priority).toBe(1.0);
 
+    const hubEntry = entries.find((e) => e.url.endsWith('/calculator'));
+    expect(hubEntry?.priority).toBe(0.9);
+
     const mdEntry = entries.find((e) => e.url.endsWith('maryland-private-sale-tax-calculator'));
-    expect(mdEntry?.priority).toBe(1.0);
+    expect(mdEntry?.priority).toBe(0.8);
 
     const vaEntry = entries.find((e) => e.url.endsWith('virginia-private-sale-tax-calculator'));
-    expect(vaEntry?.priority).toBe(0.9);
+    expect(vaEntry?.priority).toBe(0.8);
   });
 
   it('robots generates correct indexing rules and sitemap path', () => {
@@ -110,5 +113,25 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
     expect(rules.allow).toBe('/');
     expect(rules.disallow).toContain('/api/');
     expect(robotsConfig.sitemap).toMatch(/\/sitemap\.xml$/);
+  });
+
+  it('all 51 state pages have titles <= 60 characters and no single-decimal fee bugs', async () => {
+    const params = await generateStaticParams();
+    for (const { slug } of params) {
+      const meta = await generateMetadata({ params: Promise.resolve({ slug }) });
+      const fullTitle = `${meta.title} | CarTaxHub`;
+
+      // H2 target: <= 60 chars to avoid SERP truncation
+      expect(fullTitle.length, `Title for ${slug} should be <= 60 chars but was ${fullTitle.length} ("${fullTitle}")`).toBeLessThanOrEqual(60);
+
+      // H3 target: no "Excise Tax" in the shortened state title
+      expect(meta.title).not.toContain('Excise Tax');
+
+      // M5 target: no single-decimal bug like $52.5 or $7.2
+      expect(meta.description).not.toMatch(/\$\d+\.\d(?!\d)/);
+
+      // Canonical check
+      expect(meta.alternates?.canonical).toBe(`/calculator/${slug}`);
+    }
   });
 });

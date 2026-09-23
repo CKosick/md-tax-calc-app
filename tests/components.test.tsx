@@ -26,7 +26,7 @@ const mdRule = stateRulesData.maryland as StateRule;
 
 describe('UI Component Unit Tests', () => {
   it('renders PartnerSlot for "below-results" with href="#" and rel="sponsored nofollow"', () => {
-    render(<PartnerSlot position="below-results" />);
+    render(<PartnerSlot position="below-results" forceShow={true} />);
     const link = screen.getByRole('link', { name: /compare quotes/i });
     expect(link).toBeDefined();
     expect(link.getAttribute('href')).toBe('#');
@@ -35,7 +35,7 @@ describe('UI Component Unit Tests', () => {
   });
 
   it('renders PartnerSlot for "sidebar" with href="#" and rel="sponsored nofollow"', () => {
-    render(<PartnerSlot position="sidebar" />);
+    render(<PartnerSlot position="sidebar" forceShow={true} />);
     const link = screen.getByRole('link', { name: /check auto loan rates/i });
     expect(link).toBeDefined();
     expect(link.getAttribute('href')).toBe('#');
@@ -168,19 +168,25 @@ describe('UI Component Unit Tests', () => {
     expect(screen.getByText(/Form RUT-50 Table/i)).toBeDefined();
   });
 
-  it('renders HomePage with Maryland calculator and JSON-LD schemas', () => {
+  it('renders HomePage with brand H1, state quick-finder, and WebSite/Organization schemas', () => {
     const { container } = render(<HomePage />);
 
-    expect(screen.getAllByText(/Maryland/i).length).toBeGreaterThan(0);
+    expect(screen.getByRole('heading', { level: 1, name: /Private Party Car Tax Calculator for All 50 States \+ DC/i })).toBeDefined();
+    expect(screen.getByText(/How CarTaxHub Calculates Your First-Year Costs/i)).toBeDefined();
+    expect(screen.getByText(/Choose your registration state\.\.\./i)).toBeDefined();
+
     const jsonLdScripts = container.querySelectorAll('script[type="application/ld+json"]');
-    expect(jsonLdScripts.length).toBe(2);
+    expect(jsonLdScripts.length).toBe(3);
 
-    const faqJson = JSON.parse(jsonLdScripts[0].textContent || '{}');
-    expect(faqJson['@type']).toBe('FAQPage');
+    const siteJson = JSON.parse(jsonLdScripts[0].textContent || '{}');
+    expect(siteJson['@type']).toBe('WebSite');
 
-    const appJson = JSON.parse(jsonLdScripts[1].textContent || '{}');
+    const orgJson = JSON.parse(jsonLdScripts[1].textContent || '{}');
+    expect(orgJson['@type']).toBe('Organization');
+
+    const appJson = JSON.parse(jsonLdScripts[2].textContent || '{}');
     expect(appJson['@type']).toBe('WebApplication');
-    expect(appJson.name).toContain('Maryland');
+    expect(appJson.name).toContain('CarTaxHub');
   });
 
   it('renders CalculatorSlugPage for Virginia with JSON-LD schemas', async () => {
@@ -191,12 +197,15 @@ describe('UI Component Unit Tests', () => {
 
     expect(screen.getAllByText(/Virginia/i).length).toBeGreaterThan(0);
     const jsonLdScripts = container.querySelectorAll('script[type="application/ld+json"]');
-    expect(jsonLdScripts.length).toBe(2);
+    expect(jsonLdScripts.length).toBe(3);
 
-    const faqJson = JSON.parse(jsonLdScripts[0].textContent || '{}');
+    const breadcrumbJson = JSON.parse(jsonLdScripts[0].textContent || '{}');
+    expect(breadcrumbJson['@type']).toBe('BreadcrumbList');
+
+    const faqJson = JSON.parse(jsonLdScripts[1].textContent || '{}');
     expect(faqJson['@type']).toBe('FAQPage');
 
-    const appJson = JSON.parse(jsonLdScripts[1].textContent || '{}');
+    const appJson = JSON.parse(jsonLdScripts[2].textContent || '{}');
     expect(appJson['@type']).toBe('WebApplication');
     expect(appJson.name).toContain('Virginia');
   });

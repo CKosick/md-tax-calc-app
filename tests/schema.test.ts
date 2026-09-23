@@ -240,7 +240,7 @@ describe('State Rules Schema & Config Validation', () => {
       expect(rule.disclaimers.length, `${key} must have at least 2 disclaimers`).toBeGreaterThanOrEqual(2);
 
       expect(Array.isArray(rule.faqs), `${key} must have faqs`).toBe(true);
-      expect(rule.faqs.length, `${key} must have at least 3 faqs`).toBeGreaterThanOrEqual(3);
+      expect(rule.faqs.length, `${key} must have at least 6 faqs`).toBeGreaterThanOrEqual(6);
     }
   });
 
