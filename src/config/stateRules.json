@@ -15,6 +15,14 @@
         2
       ],
       "passenger": {
+        "under3500lbs": {
+          "1": 120.5,
+          "2": 241
+        },
+        "3501to3700lbs": {
+          "1": 125.5,
+          "2": 251
+        },
         "under3700lbs": {
           "1": 125.5,
           "2": 251
@@ -61,7 +69,7 @@
       },
       {
         "question": "How much are Maryland vehicle registration and tag fees?",
-        "answer": "Maryland offers both 1-year and 2-year registration terms. For Class A passenger vehicles weighing 3,700 lbs or less, registration is $125.50 for 1 year or $251.00 for 2 years (including the mandatory annual $40 EMS surcharge). For vehicles over 3,700 lbs, registration is $191.50 for 1 year or $383.00 for 2 years. Motorcycles are $105.00 for 1 year or $210.00 for 2 years. Zero-emission electric vehicles (ZEVs) have an additional $125/year surcharge, while plug-in hybrids (PHEVs) have a $100/year surcharge."
+        "answer": "Maryland offers both 1-year and 2-year registration terms for Class A (passenger) and Class M (multipurpose) vehicles across three statutory weight tiers under SB 362: vehicles 0–3,500 lbs are $120.50 for 1 year ($241.00 for 2 years); vehicles 3,501–3,700 lbs are $125.50 for 1 year ($251.00 for 2 years); and vehicles over 3,700 lbs are $191.50 for 1 year ($383.00 for 2 years). These tier rates represent the total annual fee and include the mandatory annual $40 EMS surcharge ($80 for 2-year terms). Class D motorcycles are $105.00 for 1 year or $210.00 for 2 years. Zero-emission electric vehicles (ZEVs) have an additional $125/year surcharge, while plug-in hybrids (PHEVs) have a $100/year surcharge."
       },
       {
         "question": "Do I pay Maryland vehicle tax if I buy a car from an out-of-state private seller?",
@@ -454,7 +462,9 @@
     "sources": [
       "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates-7-25.htm",
       "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/"
-    ]
+    ],
+    "localTaxMinRate": 0.001,
+    "localTaxMaxRate": 0.035
   },
   "texas": {
     "label": "Texas",
@@ -676,7 +686,9 @@
     "sources": [
       "https://www.tax.ny.gov/pit/sp/sales_tax_rates.htm",
       "https://dmv.ny.gov/registration/registration-fees-and-taxes-passenger-vehicles"
-    ]
+    ],
+    "localTaxMinRate": 0.03,
+    "localTaxMaxRate": 0.04875
   },
   "illinois": {
     "label": "Illinois",
@@ -907,7 +919,9 @@
     "sources": [
       "https://tax.ohio.gov/help-center/faqs/sales-and-use-taxes-motor-vehicles",
       "https://bmv.ohio.gov/vr-fees.aspx"
-    ]
+    ],
+    "localTaxMinRate": 0.0075,
+    "localTaxMaxRate": 0.0225
   },
   "georgia": {
     "label": "Georgia",
@@ -1279,7 +1293,9 @@
       "https://dor.wa.gov/taxes-rates/use-tax",
       "https://dol.wa.gov/vehicles-and-boats/vehicle-registration-tabs-and-plates/renew-vehicle-tabs/calculate-vehicle-tab-fees",
       "https://app.leg.wa.gov/rcw/default.aspx?cite=82.12.020"
-    ]
+    ],
+    "localTaxMinRate": 0.005,
+    "localTaxMaxRate": 0.039
   },
   "arizona": {
     "label": "Arizona",
@@ -1640,7 +1656,9 @@
     "sources": [
       "https://dor.mo.gov/motor-vehicle/titling-registration/",
       "https://sa.dor.mo.gov/mv/stc/"
-    ]
+    ],
+    "localTaxMinRate": 0.03,
+    "localTaxMaxRate": 0.055
   },
   "wisconsin": {
     "label": "Wisconsin",
@@ -1715,7 +1733,9 @@
     "sources": [
       "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/fee-chart.aspx",
       "https://www.revenue.wi.gov/Pages/FAQS/pcs-motorveh.aspx"
-    ]
+    ],
+    "localTaxMinRate": 0.005,
+    "localTaxMaxRate": 0.029
   },
   "colorado": {
     "label": "Colorado",
@@ -1789,7 +1809,9 @@
     "sources": [
       "https://tax.colorado.gov/sales-use-tax",
       "https://dmv.colorado.gov/taxes-and-fees"
-    ]
+    ],
+    "localTaxMinRate": 0.01,
+    "localTaxMaxRate": 0.06
   },
   "minnesota": {
     "label": "Minnesota",
@@ -2019,7 +2041,9 @@
     "sources": [
       "https://revenue.alabama.gov/motor-vehicle/",
       "https://revenue.alabama.gov/sales-use/tax-rates/"
-    ]
+    ],
+    "localTaxMinRate": 0.01,
+    "localTaxMaxRate": 0.04
   },
   "louisiana": {
     "label": "Louisiana",
@@ -2099,7 +2123,9 @@
     "sources": [
       "https://omv.dps.louisiana.gov/Fee_Schedule.aspx",
       "https://revenue.louisiana.gov/SalesTax"
-    ]
+    ],
+    "localTaxMinRate": 0.02,
+    "localTaxMaxRate": 0.07
   },
   "kentucky": {
     "label": "Kentucky",
@@ -2489,7 +2515,9 @@
     "sources": [
       "https://dmv.utah.gov/taxes-fees/sales-tax",
       "https://dmv.utah.gov/taxes-fees/fees"
-    ]
+    ],
+    "localTaxMinRate": 0.0125,
+    "localTaxMaxRate": 0.042
   },
   "iowa": {
     "label": "Iowa",
@@ -2724,7 +2752,9 @@
     "sources": [
       "https://www.dfa.arkansas.gov/excise-tax/sales-and-use-tax/motor-vehicle-tax/",
       "https://www.dfa.arkansas.gov/driver-services/fees/"
-    ]
+    ],
+    "localTaxMinRate": 0.01,
+    "localTaxMaxRate": 0.035
   },
   "mississippi": {
     "label": "Mississippi",
@@ -2872,7 +2902,9 @@
     "sources": [
       "https://www.ksrevenue.gov/",
       "https://www.ksrevenue.gov/prtaxrates.html"
-    ]
+    ],
+    "localTaxMinRate": 0.01,
+    "localTaxMaxRate": 0.04
   },
   "new-mexico": {
     "label": "New Mexico",
@@ -3020,7 +3052,9 @@
     "sources": [
       "https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling",
       "https://revenue.nebraska.gov/"
-    ]
+    ],
+    "localTaxMinRate": 0.005,
+    "localTaxMaxRate": 0.025
   },
   "idaho": {
     "label": "Idaho",
@@ -3889,6 +3923,8 @@
     "sources": [
       "https://revenue.wyo.gov",
       "https://www.dot.state.wy.us"
-    ]
+    ],
+    "localTaxMinRate": 0.01,
+    "localTaxMaxRate": 0.02
   }
 }

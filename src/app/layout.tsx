@@ -163,6 +163,13 @@ export default function RootLayout({
               <span>•</span>
               <Link href="/calculator" className="hover:text-indigo-600 font-bold">All Calculators</Link>
             </div>
+            <div className="mt-3 flex flex-wrap justify-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400">
+              <Link href="/about" className="hover:text-indigo-600 dark:hover:text-indigo-400">About</Link>
+              <span>•</span>
+              <Link href="/privacy" className="hover:text-indigo-600 dark:hover:text-indigo-400">Privacy Policy</Link>
+              <span>•</span>
+              <Link href="/contact" className="hover:text-indigo-600 dark:hover:text-indigo-400">Contact</Link>
+            </div>
             <p className="mt-4">
               © {new Date().getFullYear()} CarTaxHub.com. Estimates only. Not affiliated with or endorsed by any state DMV, MVA, or DOT agency.
             </p>

@@ -61,12 +61,18 @@ export function CostSummaryCard({
             Total True First-Year Cost
           </span>
           <div className="mt-1 flex items-baseline gap-2">
-            <span className="text-4xl font-extrabold tracking-tight sm:text-5xl">
-              {formatCurrency(breakdown.totalFirstYearCost)}
+            <span className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
+              {breakdown.hasLocalTax &&
+              breakdown.totalFirstYearCostMin !== undefined &&
+              breakdown.totalFirstYearCostMax !== undefined &&
+              (breakdown.localTaxMax ?? 0) > 0
+                ? `${formatCurrency(breakdown.totalFirstYearCostMin)} – ${formatCurrency(breakdown.totalFirstYearCostMax)}`
+                : formatCurrency(breakdown.totalFirstYearCost)}
             </span>
           </div>
           <p className="mt-2 text-xs text-slate-300">
-            {rule.label === 'Delaware' ? 'Document Fee' : 'Sales/Excise Tax'} + Title Certificate + Tags &amp; Registration {breakdown.lienFilingFee > 0 ? '+ Lien Fee' : ''}
+            {rule.label === 'Delaware' ? 'Document Fee' : 'Sales/Excise Tax'}
+            {breakdown.hasLocalTax ? ' (State + Local Range)' : ''} + Title Certificate + Tags &amp; Registration {breakdown.lienFilingFee > 0 ? '+ Lien Fee' : ''}
           </p>
         </div>
 
@@ -94,7 +100,12 @@ export function CostSummaryCard({
                 </p>
               </div>
               <span className="flex-shrink-0 font-bold text-slate-900 dark:text-white">
-                {formatCurrency(breakdown.exciseTax)}
+                {breakdown.hasLocalTax &&
+                breakdown.combinedTaxMin !== undefined &&
+                breakdown.combinedTaxMax !== undefined &&
+                (breakdown.localTaxMax ?? 0) > 0
+                  ? `${formatCurrency(breakdown.combinedTaxMin)} – ${formatCurrency(breakdown.combinedTaxMax)}`
+                  : formatCurrency(breakdown.exciseTax)}
               </span>
             </div>
 

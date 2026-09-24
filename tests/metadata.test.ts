@@ -82,12 +82,15 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
   it('sitemap generates valid XML sitemap entries for root, hub, comparison page, and all 51 states', () => {
     const entries = sitemap();
 
-    // 1 root + 1 hub (/calculator) + 1 comparison page (/vehicle-tax-by-state) + 51 state pages = 54 total entries
-    expect(entries).toHaveLength(54);
+    // 1 root + 1 hub (/calculator) + 1 comparison page (/vehicle-tax-by-state) + 3 trust pages (/about, /privacy, /contact) + 51 state pages = 57 total entries
+    expect(entries).toHaveLength(57);
 
     const urls = entries.map((e) => e.url);
     expect(urls.some((u) => u.endsWith('/calculator'))).toBe(true);
     expect(urls.some((u) => u.endsWith('/vehicle-tax-by-state'))).toBe(true);
+    expect(urls.some((u) => u.endsWith('/about'))).toBe(true);
+    expect(urls.some((u) => u.endsWith('/privacy'))).toBe(true);
+    expect(urls.some((u) => u.endsWith('/contact'))).toBe(true);
     expect(urls.some((u) => u.endsWith('/calculator/maryland-private-sale-tax-calculator'))).toBe(true);
     expect(urls.some((u) => u.endsWith('/calculator/california-private-sale-tax-calculator'))).toBe(true);
 

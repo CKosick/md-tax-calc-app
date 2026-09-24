@@ -1,5 +1,9 @@
 export type VehicleType = 'passenger' | 'motorcycle';
-export type WeightClass = 'under3700lbs' | 'over3700lbs';
+export type WeightClass =
+  | 'under3500lbs'
+  | '3501to3700lbs'
+  | 'under3700lbs'
+  | 'over3700lbs';
 export type FuelType = 'gasoline' | 'ev' | 'phev';
 export type RegistrationTerm = 1 | 2;
 export type TaxBaseType = 'price' | 'fairMarketValue' | 'bookValue';
@@ -7,8 +11,11 @@ export type TaxBaseType = 'price' | 'fairMarketValue' | 'bookValue';
 export interface StateRegistrationRules {
   terms: number[];
   passenger: {
-    under3700lbs: number | Record<string, number>;
+    under3500lbs?: number | Record<string, number>;
+    '3501to3700lbs'?: number | Record<string, number>;
+    under3700lbs?: number | Record<string, number>;
     over3700lbs: number | Record<string, number>;
+    [key: string]: unknown;
   };
   motorcycle: number | Record<string, number>;
   evSurchargeAnnual?: number;
@@ -48,6 +55,8 @@ export interface StateRule {
   exciseTaxRate: number;
   minExciseTax?: number | null;
   maxExciseTax?: number | null;
+  localTaxMinRate?: number;
+  localTaxMaxRate?: number;
   luxuryTaxThreshold?: number | null;
   luxuryTaxRate?: number | null;
   priceTiers?: PriceTier[];
@@ -74,6 +83,9 @@ export interface CalculatorInputs {
   purchasePrice: number;
   vehicleYear: number;
   weightClass: WeightClass;
+  vehicleWeight?: number;
+  vehicleWeightLbs?: number;
+  weight?: number;
   fuelType: FuelType;
   registrationTerm: RegistrationTerm;
   isFinanced: boolean;
@@ -84,18 +96,27 @@ export interface ItemizedCostItem {
   id: string;
   label: string;
   amount: number;
+  amountMax?: number;
+  amountRangeFormatted?: string;
   description?: string;
   isHero?: boolean;
 }
 
 export interface CostBreakdown {
   exciseTax: number;
+  localTaxMin?: number;
+  localTaxMax?: number;
+  combinedTaxMin?: number;
+  combinedTaxMax?: number;
+  hasLocalTax?: boolean;
   titleFee: number;
   lienFilingFee: number;
   baseRegistrationFee: number;
   evSurcharge: number;
   registrationTotal: number;
   totalFirstYearCost: number;
+  totalFirstYearCostMin?: number;
+  totalFirstYearCostMax?: number;
   minTaxApplied: boolean;
   maxTaxApplied?: boolean;
   luxuryTaxApplied?: boolean;

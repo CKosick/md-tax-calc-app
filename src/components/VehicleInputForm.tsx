@@ -240,56 +240,130 @@ export function VehicleInputForm({
                 Vehicle Weight Classification
               </label>
               <span className="text-[11px] text-slate-400">
-                {rule.slug === 'maryland-private-sale-tax-calculator' ? 'Class A Passenger' : 'Standard Passenger'}
+                {rule.slug === 'maryland-private-sale-tax-calculator' ? 'Class A & M Tiers (SB 362)' : 'Standard Passenger'}
               </span>
             </div>
-            <div className="mt-2 grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                id="weight-under-3700"
-                onClick={() => updateField('weightClass', 'under3700lbs')}
-                className={`rounded-2xl border p-3.5 text-left transition-all ${
-                  inputs.weightClass === 'under3700lbs'
-                    ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
-                    : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-900 dark:text-white">
-                    Standard / Light
-                  </span>
-                  <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                    ≤ 3,700 lbs
-                  </span>
-                </div>
-                <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
-                  Sedans, compact crossovers, hatchbacks
-                </p>
-              </button>
 
-              <button
-                type="button"
-                id="weight-over-3700"
-                onClick={() => updateField('weightClass', 'over3700lbs')}
-                className={`rounded-2xl border p-3.5 text-left transition-all ${
-                  inputs.weightClass === 'over3700lbs'
-                    ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
-                    : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-900 dark:text-white">
-                    Heavy / Trucks
-                  </span>
-                  <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                    &gt; 3,700 lbs
-                  </span>
-                </div>
-                <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
-                  Mid/full SUVs, pickups, vans
-                </p>
-              </button>
-            </div>
+            {rule.slug === 'maryland-private-sale-tax-calculator' || rule.registration.passenger.under3500lbs ? (
+              <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
+                <button
+                  type="button"
+                  id="weight-under-3500"
+                  onClick={() => updateField('weightClass', 'under3500lbs')}
+                  className={`rounded-2xl border p-3.5 text-left transition-all ${
+                    inputs.weightClass === 'under3500lbs'
+                      ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
+                      : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-slate-900 dark:text-white">
+                      Light
+                    </span>
+                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                      0–3,500 lbs
+                    </span>
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+                    $120.50/yr (Compacts, subcompacts)
+                  </p>
+                </button>
+
+                <button
+                  type="button"
+                  id="weight-3501-3700"
+                  onClick={() => updateField('weightClass', '3501to3700lbs')}
+                  className={`rounded-2xl border p-3.5 text-left transition-all ${
+                    inputs.weightClass === '3501to3700lbs' || inputs.weightClass === 'under3700lbs'
+                      ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
+                      : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-slate-900 dark:text-white">
+                      Standard
+                    </span>
+                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                      3,501–3,700 lbs
+                    </span>
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+                    $125.50/yr (Mid-size sedans, compact SUVs)
+                  </p>
+                </button>
+
+                <button
+                  type="button"
+                  id="weight-over-3700"
+                  onClick={() => updateField('weightClass', 'over3700lbs')}
+                  className={`rounded-2xl border p-3.5 text-left transition-all ${
+                    inputs.weightClass === 'over3700lbs'
+                      ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
+                      : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-slate-900 dark:text-white">
+                      Heavy / Trucks
+                    </span>
+                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                      &gt; 3,700 lbs
+                    </span>
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+                    $191.50/yr (Mid/full SUVs, pickups, vans)
+                  </p>
+                </button>
+              </div>
+            ) : (
+              <div className="mt-2 grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  id="weight-under-3700"
+                  onClick={() => updateField('weightClass', 'under3700lbs')}
+                  className={`rounded-2xl border p-3.5 text-left transition-all ${
+                    inputs.weightClass === 'under3700lbs' || inputs.weightClass === 'under3500lbs' || inputs.weightClass === '3501to3700lbs'
+                      ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
+                      : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-slate-900 dark:text-white">
+                      Standard / Light
+                    </span>
+                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                      ≤ 3,700 lbs
+                    </span>
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+                    Sedans, compact crossovers, hatchbacks
+                  </p>
+                </button>
+
+                <button
+                  type="button"
+                  id="weight-over-3700"
+                  onClick={() => updateField('weightClass', 'over3700lbs')}
+                  className={`rounded-2xl border p-3.5 text-left transition-all ${
+                    inputs.weightClass === 'over3700lbs'
+                      ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
+                      : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-slate-900 dark:text-white">
+                      Heavy / Trucks
+                    </span>
+                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                      &gt; 3,700 lbs
+                    </span>
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+                    Mid/full SUVs, pickups, vans
+                  </p>
+                </button>
+              </div>
+            )}
           </div>
         )}
 

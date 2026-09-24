@@ -118,7 +118,34 @@ export function calculateVehicleCosts(
     }
   } else {
     const passMap = rule.registration.passenger as Record<string, unknown>;
-    const passRule = passMap[inputs.weightClass] || passMap.standard || passMap.under3700lbs;
+
+    // Support explicit numerical vehicle weight (e.g. 3,400 lbs vs 3,600 lbs vs 4,000 lbs)
+    const numericWeight = inputs.vehicleWeight ?? inputs.vehicleWeightLbs ?? inputs.weight;
+    let resolvedWeightClass: string = inputs.weightClass;
+    if (typeof numericWeight === 'number' && numericWeight > 0) {
+      if (numericWeight <= 3500) {
+        resolvedWeightClass = 'under3500lbs';
+      } else if (numericWeight <= 3700) {
+        resolvedWeightClass = '3501to3700lbs';
+      } else {
+        resolvedWeightClass = 'over3700lbs';
+      }
+    }
+
+    let passRule = passMap[resolvedWeightClass];
+    // Fallback if specific tier key isn't present in this state's rules
+    if (!passRule) {
+      if (resolvedWeightClass === 'under3500lbs') {
+        passRule = passMap['3501to3700lbs'] || passMap.under3700lbs || passMap.standard;
+      } else if (resolvedWeightClass === '3501to3700lbs') {
+        passRule = passMap.under3700lbs || passMap.under3500lbs || passMap.standard;
+      } else if (resolvedWeightClass === 'under3700lbs') {
+        passRule = passMap['3501to3700lbs'] || passMap.under3500lbs || passMap.standard;
+      } else {
+        passRule = passMap.over3700lbs || passMap.heavy || passMap.standard;
+      }
+    }
+
     if (typeof passRule === 'object' && passRule !== null) {
       const rates = passRule as Record<string, number>;
       if (rates[String(term)] !== undefined) {
@@ -143,9 +170,36 @@ export function calculateVehicleCosts(
 
   const registrationTotal = baseRegistrationFee + evSurcharge;
 
-  // 5. Total First-Year Out-Of-Pocket Cost
+  // 5. Local Tax & Total First-Year Out-Of-Pocket Cost
+  const hasLocalTax =
+    typeof rule.localTaxMinRate === 'number' &&
+    typeof rule.localTaxMaxRate === 'number' &&
+    taxableBase > 0;
+
+  const localTaxMin = hasLocalTax
+    ? Math.round(taxableBase * rule.localTaxMinRate! * 100) / 100
+    : undefined;
+  const localTaxMax = hasLocalTax
+    ? Math.round(taxableBase * rule.localTaxMaxRate! * 100) / 100
+    : undefined;
+
+  const combinedTaxMin = hasLocalTax
+    ? Math.round((exciseTax + (localTaxMin || 0)) * 100) / 100
+    : undefined;
+  const combinedTaxMax = hasLocalTax
+    ? Math.round((exciseTax + (localTaxMax || 0)) * 100) / 100
+    : undefined;
+
+  const otherFees = titleFee + lienFilingFee + registrationTotal;
   const totalFirstYearCost =
-    Math.round((exciseTax + titleFee + lienFilingFee + registrationTotal) * 100) / 100;
+    Math.round((exciseTax + otherFees) * 100) / 100;
+
+  const totalFirstYearCostMin = hasLocalTax
+    ? Math.round(((combinedTaxMin || 0) + otherFees) * 100) / 100
+    : undefined;
+  const totalFirstYearCostMax = hasLocalTax
+    ? Math.round(((combinedTaxMax || 0) + otherFees) * 100) / 100
+    : undefined;
 
   // Age rule calculation (e.g. Maryland & Virginia book value checks for vehicles <= 7 or 5 years)
   const bookValueApplies = Boolean(rule.bookValueRule && vehicleAge <= 7);
@@ -163,8 +217,23 @@ export function calculateVehicleCosts(
   const ratePercent = Number((appliedRate * 100).toFixed(2));
   const rateLabel = `${ratePercent}%`;
 
+  const formatCurrencyLocal = (val: number) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(val);
+  };
+
   let taxDescription = `Calculated at ${rateLabel} on taxable base of $${taxableBase.toLocaleString()}`;
-  if (flatTaxApplied) {
+  if (tierApplied && effectiveRate === 0) {
+    taxDescription = hasLocalTax && localTaxMin !== undefined && localTaxMax !== undefined
+      ? `State tax: Exempt (purchase price under tier threshold) + Local tax (varies by county) ${formatCurrencyLocal(localTaxMin)}–${formatCurrencyLocal(localTaxMax)}`
+      : `Exempt from state vehicle sales tax (purchase price under tier threshold)`;
+  } else if (hasLocalTax && localTaxMin !== undefined && localTaxMax !== undefined) {
+    taxDescription = `State tax ${formatCurrencyLocal(exciseTax)} + Local tax (varies by county) ${formatCurrencyLocal(localTaxMin)}–${formatCurrencyLocal(localTaxMax)}`;
+  } else if (flatTaxApplied) {
     taxDescription = flatTaxDetail;
   } else if (tierApplied) {
     taxDescription = effectiveRate === 0
@@ -193,10 +262,16 @@ export function calculateVehicleCosts(
   const itemizedList = [
     {
       id: 'excise-tax',
-      label: rule.flatTaxTable
+      label: hasLocalTax
+        ? `Vehicle Sales / Excise Tax (${rateLabel} State + Local Range)`
+        : rule.flatTaxTable
         ? `${rule.label} Vehicle Use Tax (Form RUT-50 Table)`
         : `Vehicle Sales / Excise Tax (${rateLabel})`,
       amount: exciseTax,
+      amountMax: combinedTaxMax,
+      amountRangeFormatted: hasLocalTax && combinedTaxMin !== undefined && combinedTaxMax !== undefined
+        ? `${formatCurrencyLocal(combinedTaxMin)} – ${formatCurrencyLocal(combinedTaxMax)}`
+        : undefined,
       description: taxDescription
     },
     {
@@ -226,19 +301,32 @@ export function calculateVehicleCosts(
       id: 'total-cost',
       label: 'Total First-Year Out-of-Pocket Cost',
       amount: totalFirstYearCost,
-      description: 'Sum of all mandatory state taxes and fees for year one',
+      amountMax: totalFirstYearCostMax,
+      amountRangeFormatted: hasLocalTax && totalFirstYearCostMin !== undefined && totalFirstYearCostMax !== undefined
+        ? `${formatCurrencyLocal(totalFirstYearCostMin)} – ${formatCurrencyLocal(totalFirstYearCostMax)}`
+        : undefined,
+      description: hasLocalTax
+        ? 'Sum of all mandatory state and estimated local taxes and fees for year one'
+        : 'Sum of all mandatory state taxes and fees for year one',
       isHero: true
     }
   ];
 
   return {
     exciseTax,
+    localTaxMin,
+    localTaxMax,
+    combinedTaxMin,
+    combinedTaxMax,
+    hasLocalTax: Boolean(hasLocalTax),
     titleFee,
     lienFilingFee,
     baseRegistrationFee,
     evSurcharge,
     registrationTotal,
     totalFirstYearCost,
+    totalFirstYearCostMin,
+    totalFirstYearCostMax,
     minTaxApplied,
     maxTaxApplied,
     luxuryTaxApplied,
