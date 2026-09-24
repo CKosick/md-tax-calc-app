@@ -5,6 +5,7 @@ import stateRulesData from '../src/config/stateRules.json';
 import { StateRule, StateRulesConfig, CalculatorInputs } from '../src/lib/types';
 import { calculateVehicleCosts } from '../src/lib/calculator';
 import { CostSummaryCard } from '../src/components/CostSummaryCard';
+import { Calculator } from '../src/components/Calculator';
 import RootLayout from '../src/app/layout';
 import PrivacyPage from '../src/app/privacy/page';
 import AboutPage from '../src/app/about/page';
@@ -231,7 +232,7 @@ describe('Work Order Acceptance Tests', () => {
       expect(resWithTier.registrationTotal).toBe(191.50);
     });
 
-    it('FAQ text states all three tiers with the 3,500 / 3,700 lb breakpoints', () => {
+    it('FAQ text states all three tiers with the 3,500 / 3,700 lb breakpoints and excludes unverified EMS surcharge', () => {
       const regFaq = mdRule.faqs.find(f => f.question.includes('registration and tag fees'));
       expect(regFaq).toBeDefined();
       const ans = regFaq!.answer;
@@ -241,10 +242,16 @@ describe('Work Order Acceptance Tests', () => {
       expect(ans).toContain('$120.50');
       expect(ans).toContain('$125.50');
       expect(ans).toContain('$191.50');
-      expect(ans).toContain('EMS surcharge');
-      expect(ans).toContain('$40');
+      expect(ans).not.toContain('EMS surcharge');
       expect(ans).toContain('Class A');
       expect(ans).toContain('Class M');
+    });
+
+    it('MD calculator form defaults to under3500lbs light tier so untouched form shows $120.50/yr ($241.00 for 2-yr)', () => {
+      render(<Calculator initialRule={mdRule} />);
+      // Untouched form registration fee line should show $241.00 (2-year term default), not the stale $251.00
+      expect(screen.getByText('$241.00')).toBeDefined();
+      expect(screen.queryByText('$251.00')).toBeNull();
     });
   });
 

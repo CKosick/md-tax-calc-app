@@ -23,10 +23,6 @@
           "1": 125.5,
           "2": 251
         },
-        "under3700lbs": {
-          "1": 125.5,
-          "2": 251
-        },
         "over3700lbs": {
           "1": 191.5,
           "2": 383
@@ -42,7 +38,7 @@
     "veipFee": 14,
     "notes": [
       "Title fee increased from $100 to $200 effective July 1, 2025.",
-      "Maryland MVA collects a mandatory $40/yr EMS surcharge bundled into registration fees.",
+      "Registration fees reflect the 3 statutory passenger/multipurpose weight tiers under Maryland SB 362 (effective July 1, 2024 / 2025).",
       "Private-party sales are taxed on the full agreed price or book value; trade-in deductions are not permitted by MD statute."
     ],
     "disclaimers": [
@@ -69,7 +65,7 @@
       },
       {
         "question": "How much are Maryland vehicle registration and tag fees?",
-        "answer": "Maryland offers both 1-year and 2-year registration terms for Class A (passenger) and Class M (multipurpose) vehicles across three statutory weight tiers under SB 362: vehicles 0–3,500 lbs are $120.50 for 1 year ($241.00 for 2 years); vehicles 3,501–3,700 lbs are $125.50 for 1 year ($251.00 for 2 years); and vehicles over 3,700 lbs are $191.50 for 1 year ($383.00 for 2 years). These tier rates represent the total annual fee and include the mandatory annual $40 EMS surcharge ($80 for 2-year terms). Class D motorcycles are $105.00 for 1 year or $210.00 for 2 years. Zero-emission electric vehicles (ZEVs) have an additional $125/year surcharge, while plug-in hybrids (PHEVs) have a $100/year surcharge."
+        "answer": "Maryland offers both 1-year and 2-year registration terms for Class A (passenger) and Class M (multipurpose) vehicles across three statutory weight tiers under SB 362: vehicles 0–3,500 lbs are $120.50 for 1 year ($241.00 for 2 years); vehicles 3,501–3,700 lbs are $125.50 for 1 year ($251.00 for 2 years); and vehicles over 3,700 lbs are $191.50 for 1 year ($383.00 for 2 years). Class D motorcycles are $105.00 for 1 year or $210.00 for 2 years. Zero-emission electric vehicles (ZEVs) have an additional $125/year surcharge, while plug-in hybrids (PHEVs) have a $100/year surcharge."
       },
       {
         "question": "Do I pay Maryland vehicle tax if I buy a car from an out-of-state private seller?",

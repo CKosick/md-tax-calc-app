@@ -14,9 +14,10 @@ Starting with **Maryland**, the system is architected to expand to all 50 states
 - **6.5% Vehicle Excise Tax:** Assessed on purchase price or NADA fair market value, with a statutory minimum tax floor of **$41.60** (derived from the $640 assessed valuation minimum).
 - **$200 Title Certificate Fee:** Reflects the official fee increase effective July 1, 2025.
 - **$40 Security Interest / Lien Fee:** Included when a purchase is financed through a lender.
-- **Annual or 2-Year Tag Registration:** Accommodates Maryland's 1-year and 2-year registration terms, including the mandatory $40/year Emergency Medical Services (EMS) surcharge:
-  - Class A Passenger ($\le$ 3,700 lbs): **$125.50/yr** (2-year: **$251.00**)
-  - Class A Passenger ($>$ 3,700 lbs): **$191.50/yr** (2-year: **$383.00**)
+- **Annual or 2-Year Tag Registration:** Accommodates Maryland's 1-year and 2-year registration terms across the 3 statutory weight tiers under SB 362:
+  - Class A / M Passenger (0–3,500 lbs): **$120.50/yr** (2-year: **$241.00**)
+  - Class A / M Passenger (3,501–3,700 lbs): **$125.50/yr** (2-year: **$251.00**)
+  - Class A / M Passenger ($>$ 3,700 lbs): **$191.50/yr** (2-year: **$383.00**)
   - Class D Motorcycle: **$105.00/yr** (2-year: **$210.00**)
 - **EV & PHEV Surcharges:** $125/year for zero-emission electric vehicles and $100/year for plug-in hybrids.
 - **Trade-in Exemption Invariance:** Maryland statute taxes the full purchase price on private sales; trade-ins and rebates do not reduce excise tax.

@@ -274,7 +274,7 @@ export function VehicleInputForm({
                   id="weight-3501-3700"
                   onClick={() => updateField('weightClass', '3501to3700lbs')}
                   className={`rounded-2xl border p-3.5 text-left transition-all ${
-                    inputs.weightClass === '3501to3700lbs' || inputs.weightClass === 'under3700lbs'
+                    inputs.weightClass === '3501to3700lbs'
                       ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
                       : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
                   }`}

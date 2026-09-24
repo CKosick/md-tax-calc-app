@@ -17,7 +17,7 @@ describe('Maryland Private-Party Vehicle Tax Calculator', () => {
       vehicleType: 'passenger',
       purchasePrice: 15000,
       vehicleYear: 2019,
-      weightClass: 'under3700lbs',
+      weightClass: '3501to3700lbs',
       fuelType: 'gasoline',
       registrationTerm: 2,
       isFinanced: false,
@@ -35,14 +35,18 @@ describe('Maryland Private-Party Vehicle Tax Calculator', () => {
     // 3. Lien filing fee: 0.00 (cash purchase)
     expect(result.lienFilingFee).toBe(0.00);
 
-    // 4. Registration fee: 2-year passenger <= 3,700 lbs = 251.00
-    const expectedReg = (mdRule.registration.passenger.under3700lbs as Record<string, number>)['2'];
+    // 4. Registration fee: 2-year passenger 3,501–3,700 lbs = 251.00
+    const expectedReg = (mdRule.registration.passenger['3501to3700lbs'] as Record<string, number>)['2'];
     expect(result.baseRegistrationFee).toBe(expectedReg);
     expect(result.registrationTotal).toBe(expectedReg);
 
     // 5. Total first-year out-of-pocket cost = 975 + 200 + 0 + 251 = 1426.00
     const expectedTotal = 975.00 + 200.00 + 0.00 + expectedReg;
     expect(result.totalFirstYearCost).toBe(expectedTotal);
+
+    // Light car under 3,500 lbs check (241.00 for 2-yr)
+    const lightResult = calculateVehicleCosts(mdRule, { ...inputs, weightClass: 'under3500lbs' }, 2026);
+    expect(lightResult.registrationTotal).toBe(241.00);
 
     // Book value warning should trigger because 2026 - 2019 = 7 years (<= 7 years)
     expect(result.bookValueApplies).toBe(true);

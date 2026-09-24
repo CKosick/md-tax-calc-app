@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { StateRule, StateRulesConfig, CalculatorInputs } from '@/lib/types';
+import { StateRule, StateRulesConfig, CalculatorInputs, WeightClass } from '@/lib/types';
 import stateRulesData from '@/config/stateRules.json';
 import { calculateVehicleCosts } from '@/lib/calculator';
 import { formatFee } from '@/lib/formatters';
@@ -43,12 +43,16 @@ export function Calculator({ initialRule }: CalculatorProps) {
   const defaultTerm: 1 | 2 =
     initialRule.registration.terms.includes(1) && !initialRule.registration.terms.includes(2) ? 1 : 2;
 
+  const defaultWeightClass: WeightClass = initialRule.registration.passenger.under3500lbs
+    ? 'under3500lbs'
+    : 'under3700lbs';
+
   const [inputs, setInputs] = useState<CalculatorInputs>({
     state: initialRule.slug,
     vehicleType: 'passenger',
     purchasePrice: 15000,
     vehicleYear: 2019,
-    weightClass: 'under3700lbs',
+    weightClass: defaultWeightClass,
     fuelType: 'gasoline',
     registrationTerm: defaultTerm,
     isFinanced: false,
