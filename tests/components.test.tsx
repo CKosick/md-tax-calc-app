@@ -25,20 +25,54 @@ vi.mock('next/navigation', () => ({
 const mdRule = stateRulesData.maryland as StateRule;
 
 describe('UI Component Unit Tests', () => {
-  it('renders PartnerSlot for "below-results" with href="#" and rel="sponsored nofollow"', () => {
-    render(<PartnerSlot position="below-results" forceShow={true} />);
-    const link = screen.getByRole('link', { name: /compare quotes/i });
-    expect(link).toBeDefined();
-    expect(link.getAttribute('href')).toBe('#');
-    expect(link.getAttribute('rel')).toBe('sponsored nofollow');
-    expect(screen.getByText(/need insurance for this vehicle\?/i)).toBeDefined();
+  it('hides PartnerSlot and renders nothing when href is "#" or missing (even with forceShow=true)', () => {
+    const { container: belowContainer } = render(<PartnerSlot position="below-results" forceShow={true} />);
+    expect(belowContainer.firstChild).toBeNull();
+
+    const { container: sidebarContainer } = render(<PartnerSlot position="sidebar" forceShow={true} />);
+    expect(sidebarContainer.firstChild).toBeNull();
   });
 
-  it('renders PartnerSlot for "sidebar" with href="#" and rel="sponsored nofollow"', () => {
-    render(<PartnerSlot position="sidebar" forceShow={true} />);
+  it('renders PartnerSlot when real affiliate URL is configured via environment variable', () => {
+    const originalEnv = process.env.NEXT_PUBLIC_PARTNER_INSURANCE_URL;
+    process.env.NEXT_PUBLIC_PARTNER_INSURANCE_URL = 'https://partner.example.com/insurance';
+
+    try {
+      render(<PartnerSlot position="below-results" />);
+      const link = screen.getByRole('link', { name: /compare quotes/i });
+      expect(link).toBeDefined();
+      expect(link.getAttribute('href')).toContain('https://partner.example.com/insurance');
+      expect(link.getAttribute('href')).toContain('utm_source=taxcalc');
+      expect(link.getAttribute('rel')).toBe('sponsored nofollow');
+      expect(screen.getByText(/need insurance for this vehicle\?/i)).toBeDefined();
+    } finally {
+      if (originalEnv !== undefined) {
+        process.env.NEXT_PUBLIC_PARTNER_INSURANCE_URL = originalEnv;
+      } else {
+        delete process.env.NEXT_PUBLIC_PARTNER_INSURANCE_URL;
+      }
+    }
+  });
+
+  it('renders PartnerSlot when real affiliate URL is configured via slot config', () => {
+    const customSlots = [
+      {
+        id: 'auto-loan-rates',
+        position: 'sidebar' as const,
+        headline: 'Financing this purchase? Check auto loan rates',
+        description: 'Explore competitive private-party auto loan financing options.',
+        ctaText: 'Check Auto Loan Rates',
+        badge: 'Financing Partner',
+        href: 'https://partner.example.com/loans',
+        trackingParams: { utm_source: 'taxcalc', utm_medium: 'affiliate' }
+      }
+    ];
+
+    render(<PartnerSlot position="sidebar" slots={customSlots} />);
     const link = screen.getByRole('link', { name: /check auto loan rates/i });
     expect(link).toBeDefined();
-    expect(link.getAttribute('href')).toBe('#');
+    expect(link.getAttribute('href')).toContain('https://partner.example.com/loans');
+    expect(link.getAttribute('href')).toContain('utm_source=taxcalc');
     expect(link.getAttribute('rel')).toBe('sponsored nofollow');
     expect(screen.getByText(/financing this purchase\?/i)).toBeDefined();
   });

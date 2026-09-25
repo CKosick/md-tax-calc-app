@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://md-tax-calc-app.vercel.app';
+const BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://cartaxhub.com').replace(/\/$/, '');
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -12,3 +12,4 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: `${BASE_URL}/sitemap.xml`
   };
 }
+

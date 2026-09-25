@@ -8,21 +8,92 @@ interface PartnerSlotProps {
   position: 'below-results' | 'sidebar';
   className?: string;
   forceShow?: boolean;
+  slots?: PartnerSlotConfig[];
 }
 
-const MONETIZATION_ENABLED = process.env.NEXT_PUBLIC_ENABLE_MONETIZATION === 'true';
+/**
+ * Checks whether an affiliate link is a valid real destination URL.
+ * Missing, empty, or placeholder '#' links are rejected so the slot remains hidden.
+ */
+export function isValidRealUrl(href?: string | null): boolean {
+  if (!href) return false;
+  const trimmed = href.trim();
+  if (trimmed === '' || trimmed === '#' || trimmed.startsWith('#')) {
+    return false;
+  }
+  return true;
+}
+
+/**
+ * Resolves effective affiliate destination URL from environment variables or slot configuration.
+ * Allows inserting production affiliate links dynamically without code modifications.
+ */
+export function getSlotHref(slot: PartnerSlotConfig): string | undefined {
+  if (typeof process !== 'undefined' && process.env) {
+    // Dynamic slot-specific env variable (e.g. NEXT_PUBLIC_PARTNER_INSURANCE_COMPARE_URL)
+    const envKey = `NEXT_PUBLIC_PARTNER_${slot.id.toUpperCase().replace(/[^A-Z0-9]/g, '_')}_URL`;
+    const affiliateEnvKey = `NEXT_PUBLIC_AFFILIATE_${slot.id.toUpperCase().replace(/[^A-Z0-9]/g, '_')}_URL`;
+
+    // Convenient friendly aliases for standard slots
+    const aliasMap: Record<string, string[]> = {
+      'insurance-compare': [
+        'NEXT_PUBLIC_PARTNER_INSURANCE_URL',
+        'NEXT_PUBLIC_AFFILIATE_INSURANCE_URL',
+        'NEXT_PUBLIC_INSURANCE_PARTNER_URL'
+      ],
+      'auto-loan-rates': [
+        'NEXT_PUBLIC_PARTNER_LOAN_URL',
+        'NEXT_PUBLIC_AFFILIATE_LOAN_URL',
+        'NEXT_PUBLIC_PARTNER_AUTO_LOAN_URL',
+        'NEXT_PUBLIC_LOAN_PARTNER_URL'
+      ]
+    };
+
+    const candidateKeys = [
+      envKey,
+      affiliateEnvKey,
+      ...(aliasMap[slot.id] || [])
+    ];
+
+    for (const key of candidateKeys) {
+      const val = process.env[key];
+      if (val && typeof val === 'string' && val.trim() !== '') {
+        return val.trim();
+      }
+    }
+
+    // Optional JSON bundle of partner links: NEXT_PUBLIC_PARTNER_LINKS='{"insurance-compare":"https://..."}'
+    if (process.env.NEXT_PUBLIC_PARTNER_LINKS) {
+      try {
+        const parsed = JSON.parse(process.env.NEXT_PUBLIC_PARTNER_LINKS);
+        if (parsed && typeof parsed[slot.id] === 'string' && parsed[slot.id].trim() !== '') {
+          return parsed[slot.id].trim();
+        }
+      } catch {
+        // ignore JSON parse error
+      }
+    }
+  }
+
+  // Fallback to static slot configuration
+  return slot.href;
+}
 
 function buildPartnerUrl(href: string, trackingParams?: Record<string, string>): string {
-  if (!href || href === '#' || !trackingParams) {
-    return href || '#';
+  if (!isValidRealUrl(href)) {
+    return '';
+  }
+  if (!trackingParams || Object.keys(trackingParams).length === 0) {
+    return href;
   }
   try {
+    const isAbsolute = href.startsWith('http://') || href.startsWith('https://');
     const url = new URL(href, 'https://example.com');
     Object.entries(trackingParams).forEach(([key, value]) => {
       url.searchParams.set(key, value);
     });
     // Return relative or absolute based on input
-    if (href.startsWith('http://') || href.startsWith('https://')) {
+    if (isAbsolute) {
       return url.toString();
     }
     return url.pathname + url.search + url.hash;
@@ -31,21 +102,40 @@ function buildPartnerUrl(href: string, trackingParams?: Record<string, string>):
   }
 }
 
-export function PartnerSlot({ position, className = '', forceShow = false }: PartnerSlotProps) {
-  // Suppress partner affiliate slots until formal tracked links exist
-  if (!MONETIZATION_ENABLED && !forceShow) return null;
+export function PartnerSlot({
+  position,
+  className = '',
+  forceShow = false,
+  slots: customSlots
+}: PartnerSlotProps) {
+  // If monetization is explicitly killed via env and not forced, render nothing
+  if (process.env.NEXT_PUBLIC_ENABLE_MONETIZATION === 'false' && !forceShow) {
+    return null;
+  }
 
-  const slots = (partnerSlotsData as PartnerSlotConfig[]).filter(
-    (slot) => slot.position === position
-  );
+  const sourceSlots = customSlots || (partnerSlotsData as PartnerSlotConfig[]);
 
-  if (slots.length === 0) return null;
+  // Filter slots for the target position and resolve their effective URL from env/config
+  const configuredSlots = sourceSlots
+    .filter((slot) => slot.position === position)
+    .map((slot) => ({
+      ...slot,
+      resolvedHref: getSlotHref(slot)
+    }))
+    // Hide slots everywhere unless a real destination URL is configured (render nothing if missing or '#')
+    .filter((slot) => isValidRealUrl(slot.resolvedHref));
+
+  // If no slots have a real URL configured, render nothing
+  if (configuredSlots.length === 0) {
+    return null;
+  }
 
   return (
     <div className={`space-y-4 ${className}`}>
-      {slots.map((slot) => {
-        const destinationUrl = buildPartnerUrl(slot.href, slot.trackingParams);
-        const isExternal = slot.href.startsWith('http://') || slot.href.startsWith('https://');
+      {configuredSlots.map((slot) => {
+        const destinationUrl = buildPartnerUrl(slot.resolvedHref || '', slot.trackingParams);
+        if (!isValidRealUrl(destinationUrl)) return null;
+        const isExternal = destinationUrl.startsWith('http://') || destinationUrl.startsWith('https://');
 
         return (
           <div
@@ -96,3 +186,4 @@ export function PartnerSlot({ position, className = '', forceShow = false }: Par
     </div>
   );
 }
+

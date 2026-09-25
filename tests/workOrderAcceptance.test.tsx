@@ -2,7 +2,7 @@ import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import stateRulesData from '../src/config/stateRules.json';
-import { StateRule, StateRulesConfig, CalculatorInputs } from '../src/lib/types';
+import { StateRulesConfig, CalculatorInputs } from '../src/lib/types';
 import { calculateVehicleCosts } from '../src/lib/calculator';
 import { CostSummaryCard } from '../src/components/CostSummaryCard';
 import { Calculator } from '../src/components/Calculator';

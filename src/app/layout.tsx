@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cartaxhub.com';
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || process.env.NEXT_PUBLIC_GA_ID;
+const googleVerification =
+  process.env.GOOGLE_SITE_VERIFICATION ||
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const viewport: Viewport = {
   themeColor: [
@@ -67,7 +70,7 @@ export const metadata: Metadata = {
     images: ['/og-image.png']
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined
+    google: googleVerification || undefined
   }
 };
 
@@ -82,10 +85,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        {process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && (
+        {googleVerification && (
           <meta
             name="google-site-verification"
-            content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
+            content={googleVerification}
           />
         )}
         {gaMeasurementId && (

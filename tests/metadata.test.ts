@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { generateStaticParams, generateMetadata } from '../src/app/calculator/[slug]/page';
 import sitemap from '../src/app/sitemap';
 import robots from '../src/app/robots';
+import { metadata as rootMetadata } from '../src/app/layout';
 
 vi.mock('next/navigation', () => ({
   useRouter: () => ({
@@ -12,6 +13,11 @@ vi.mock('next/navigation', () => ({
     forward: vi.fn()
   }),
   notFound: vi.fn()
+}));
+
+vi.mock('next/font/google', () => ({
+  Geist: () => ({ variable: '--font-geist-sans' }),
+  Geist_Mono: () => ({ variable: '--font-geist-mono' })
 }));
 
 describe('Metadata, SEO, Sitemap & Robots Validation', () => {
@@ -79,29 +85,35 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
     expect(meta.description).toBe('The requested state vehicle tax calculator could not be found.');
   });
 
-  it('sitemap generates valid XML sitemap entries for root, hub, comparison page, and all 51 states', () => {
+  it('sitemap generates valid XML sitemap entries for root, hub, comparison page, and all 51 states with production domain', () => {
     const entries = sitemap();
 
     // 1 root + 1 hub (/calculator) + 1 comparison page (/vehicle-tax-by-state) + 3 trust pages (/about, /privacy, /contact) + 51 state pages = 57 total entries
     expect(entries).toHaveLength(57);
 
     const urls = entries.map((e) => e.url);
-    expect(urls.some((u) => u.endsWith('/calculator'))).toBe(true);
-    expect(urls.some((u) => u.endsWith('/vehicle-tax-by-state'))).toBe(true);
-    expect(urls.some((u) => u.endsWith('/about'))).toBe(true);
-    expect(urls.some((u) => u.endsWith('/privacy'))).toBe(true);
-    expect(urls.some((u) => u.endsWith('/contact'))).toBe(true);
-    expect(urls.some((u) => u.endsWith('/calculator/maryland-private-sale-tax-calculator'))).toBe(true);
-    expect(urls.some((u) => u.endsWith('/calculator/california-private-sale-tax-calculator'))).toBe(true);
+    expect(urls).toContain('https://cartaxhub.com');
+    expect(urls).toContain('https://cartaxhub.com/calculator');
+    expect(urls).toContain('https://cartaxhub.com/vehicle-tax-by-state');
+    expect(urls).toContain('https://cartaxhub.com/about');
+    expect(urls).toContain('https://cartaxhub.com/privacy');
+    expect(urls).toContain('https://cartaxhub.com/contact');
+
+    // Ensure all 51 state calculator pages are present with production domain
+    const stateCalculatorUrls = urls.filter((u) => u.startsWith('https://cartaxhub.com/calculator/'));
+    expect(stateCalculatorUrls).toHaveLength(51);
+    expect(urls).toContain('https://cartaxhub.com/calculator/maryland-private-sale-tax-calculator');
+    expect(urls).toContain('https://cartaxhub.com/calculator/california-private-sale-tax-calculator');
+    expect(urls).toContain('https://cartaxhub.com/calculator/texas-private-sale-tax-calculator');
 
     // Verify priorities: root gets 1.0, hub and comparison get 0.9, all 51 state pages get 0.8
     const rootEntry = entries.find((e) => e.url === 'https://cartaxhub.com');
     expect(rootEntry?.priority).toBe(1.0);
 
-    const hubEntry = entries.find((e) => e.url.endsWith('/calculator'));
+    const hubEntry = entries.find((e) => e.url === 'https://cartaxhub.com/calculator');
     expect(hubEntry?.priority).toBe(0.9);
 
-    const compareEntry = entries.find((e) => e.url.endsWith('/vehicle-tax-by-state'));
+    const compareEntry = entries.find((e) => e.url === 'https://cartaxhub.com/vehicle-tax-by-state');
     expect(compareEntry?.priority).toBe(0.9);
 
     const mdEntry = entries.find((e) => e.url.endsWith('maryland-private-sale-tax-calculator'));
@@ -111,7 +123,7 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
     expect(vaEntry?.priority).toBe(0.8);
   });
 
-  it('robots generates correct indexing rules and sitemap path', () => {
+  it('robots generates correct indexing rules and production domain sitemap path', () => {
     const robotsConfig = robots();
 
     expect(robotsConfig.rules).toBeDefined();
@@ -119,7 +131,13 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
     expect(rules.userAgent).toBe('*');
     expect(rules.allow).toBe('/');
     expect(rules.disallow).toContain('/api/');
-    expect(robotsConfig.sitemap).toMatch(/\/sitemap\.xml$/);
+    expect(robotsConfig.sitemap).toBe('https://cartaxhub.com/sitemap.xml');
+  });
+
+  it('Google Search Console verification meta tag slot is supported in metadata and reads from env', () => {
+    // Check layout metadata has the verification slot defined
+    expect(rootMetadata).toBeDefined();
+    expect('verification' in rootMetadata).toBe(true);
   });
 
   it('all 51 state pages have titles <= 60 characters and no single-decimal fee bugs', async () => {

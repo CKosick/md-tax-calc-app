@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function VehicleTaxByStatePage() {
   const dataset = getComparisonDataset();
-  const { heroRows, taxRateRows, titleFeeRows, stats, standardScenario, lastVerifiedDate } = dataset;
+  const { heroRows, taxRateRows, titleFeeRows, stats, lastVerifiedDate } = dataset;
 
   // 1. Dataset JSON-LD Schema
   const datasetSchema = {

@@ -3,7 +3,7 @@ import stateRulesData from '@/config/stateRules.json';
 import { StateRulesConfig } from '@/lib/types';
 
 const rules = stateRulesData as StateRulesConfig;
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://cartaxhub.com';
+const BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://cartaxhub.com').replace(/\/$/, '');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
