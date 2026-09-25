@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -118,11 +119,14 @@ export default function RootLayout({
         <header className="border-b border-slate-200/80 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/80">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
             <Link href="/" className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-600 font-bold text-white shadow-sm dark:bg-indigo-500">
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                </svg>
-              </span>
+              <Image
+                src="/icon.png"
+                alt="CarTaxHub"
+                width={40}
+                height={40}
+                className="h-10 w-10 shrink-0 rounded-xl"
+                priority
+              />
               <div>
                 <span className="block text-sm font-bold tracking-tight text-slate-900 dark:text-white">
                   CarTaxHub<span className="text-indigo-600 dark:text-indigo-400">.com</span>
