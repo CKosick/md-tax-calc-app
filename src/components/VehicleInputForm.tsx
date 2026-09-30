@@ -203,27 +203,29 @@ export function VehicleInputForm({
               {currentYear - inputs.vehicleYear} years old {isMaryland ? (currentYear - inputs.vehicleYear <= 7 ? '(≤ 7 yrs rule)' : '(> 7 yrs)') : ''}
             </span>
           </div>
-          <div className="mt-2 grid grid-cols-3 gap-2">
-            <input
-              type="number"
-              id="model-year-input"
-              min="1970"
-              max={currentYear + 1}
-              value={inputs.vehicleYear || ''}
-              onChange={(e) => updateField('vehicleYear', parseInt(e.target.value) || currentYear)}
-              placeholder="2019"
-              className="col-span-1 min-h-[44px] rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-900 shadow-xs focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
-            />
-            <div className="col-span-2 flex items-center gap-1.5 overflow-x-auto pb-0.5">
+          <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-12 sm:items-center sm:gap-2.5">
+            <div className="sm:col-span-4">
+              <input
+                type="number"
+                id="model-year-input"
+                min="1970"
+                max={currentYear + 1}
+                value={inputs.vehicleYear || ''}
+                onChange={(e) => updateField('vehicleYear', parseInt(e.target.value) || currentYear)}
+                placeholder="2019"
+                className="w-full min-h-[44px] rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-900 shadow-xs focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+              />
+            </div>
+            <div className="grid grid-cols-5 gap-1.5 sm:col-span-8 sm:gap-2">
               {[2024, 2021, 2019, 2017, 2015].map((yr) => (
                 <button
                   key={yr}
                   type="button"
                   onClick={() => updateField('vehicleYear', yr)}
-                  className={`flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl px-3 py-2 text-xs font-bold transition-all cursor-pointer ${
+                  className={`flex min-h-[44px] min-w-0 items-center justify-center rounded-xl px-1 py-2 text-xs font-bold transition-all cursor-pointer ${
                     inputs.vehicleYear === yr
                       ? 'bg-slate-900 text-white shadow-xs dark:bg-white dark:text-slate-900'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300'
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200 active:bg-slate-300 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
                   }`}
                 >
                   {yr}

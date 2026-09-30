@@ -101,10 +101,10 @@ export function CostSummaryCard({
         <div className="flex items-center justify-between border-b border-slate-100 pb-4 dark:border-slate-800">
           <div>
             <span className="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">
-              Estimated Total Breakdown
+              Estimated taxes &amp; fees
             </span>
             <h2 className="mt-1 text-lg font-bold tracking-tight text-slate-900 dark:text-white">
-              First-Year Out-of-Pocket Cost
+              Estimated taxes &amp; fees
             </h2>
           </div>
           <div className="text-right">

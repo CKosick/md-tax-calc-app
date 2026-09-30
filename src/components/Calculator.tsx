@@ -127,7 +127,7 @@ export function Calculator({ initialRule }: CalculatorProps) {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-6 sm:py-8 sm:px-6 lg:px-8 pb-28 md:pb-8">
+    <div className="mx-auto max-w-7xl px-4 py-6 sm:py-8 sm:px-6 lg:px-8 pb-28 lg:pb-8">
       {/* Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="mb-4 sm:mb-6 flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
         <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400">
@@ -243,9 +243,9 @@ export function Calculator({ initialRule }: CalculatorProps) {
         </div>
       </section>
 
-      {/* Sticky Bottom Bar on Phones (UI element, safe-area padding for iOS) */}
+      {/* Sticky Bottom Bar on Phones & Tablets (UI element, safe-area padding for iOS) */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200/90 bg-white/95 px-4 pt-3 shadow-2xl backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/95 md:hidden"
+        className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200/90 bg-white/95 px-4 pt-3 shadow-2xl backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/95 lg:hidden"
         style={{ paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom, 0.75rem))' }}
       >
         <div className="mx-auto flex max-w-md items-center justify-between gap-3">

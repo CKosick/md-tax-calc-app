@@ -39,14 +39,20 @@ describe('CarTaxHub UI Pass Acceptance Tests', () => {
     vi.clearAllMocks();
   });
 
-  describe('1. Mobile Results & Sticky Bottom Bar', () => {
-    it('renders a summary card with estimated taxes & fees and sticky bottom bar with Recalculate button', () => {
-      render(<Calculator initialRule={mdRule} />);
+  describe('1. Mobile Results & Sticky Bottom Bar (covering tablets)', () => {
+    it('renders a summary card with estimated taxes & fees and sticky bottom bar with Recalculate button covering tablets (lg:hidden)', () => {
+      const { container } = render(<Calculator initialRule={mdRule} />);
 
       // Summary card heading in results
       expect(screen.getAllByText(/Estimated taxes & fees/i).length).toBeGreaterThanOrEqual(1);
 
-      // Recalculate button on sticky phone bar
+      // Sticky bar covers phones and tablets below lg (lg:hidden, not md:hidden)
+      const stickyBar = container.querySelector('.fixed.bottom-0');
+      expect(stickyBar).toBeDefined();
+      expect(stickyBar?.className).toContain('lg:hidden');
+      expect(stickyBar?.className).not.toContain('md:hidden');
+
+      // Recalculate button on sticky bar
       const recalculateBtn = screen.getByRole('button', { name: /recalculate/i });
       expect(recalculateBtn).toBeDefined();
 
@@ -61,26 +67,30 @@ describe('CarTaxHub UI Pass Acceptance Tests', () => {
     });
   });
 
-  describe('2. Results UI Label Renaming', () => {
-    it('renames "Total True First-Year Cost" to "Estimated taxes & fees" in CostSummaryCard', () => {
+  describe('2. Results UI Label Renaming & Consistency', () => {
+    it('standardizes on "Estimated taxes & fees" in all three spots (badge, h2, hero label) in CostSummaryCard', () => {
       const breakdown = calculateVehicleCosts(mdRule, defaultInputs, 2026);
       const { container } = render(
         <CostSummaryCard breakdown={breakdown} rule={mdRule} purchasePrice={15000} />
       );
 
-      // Must NOT contain old label
+      // Must NOT contain old differing labels
       expect(container.textContent).not.toContain('Total True First-Year Cost');
-
-      // Must contain new label: "Estimated taxes & fees"
-      expect(container.textContent).toContain('Estimated taxes & fees');
+      expect(container.textContent).not.toContain('First-Year Out-of-Pocket Cost');
+      expect(container.textContent).not.toContain('Estimated Total Breakdown');
       // Must not contain "DMV fees"
       expect(container.textContent).not.toContain('DMV fees');
+
+      // Must contain new label: "Estimated taxes & fees" in all three spots
+      const matches = screen.getAllByText('Estimated taxes & fees');
+      // Badge, h2, and hero label
+      expect(matches.length).toBe(3);
     });
   });
 
-  describe('3. Tap Target Sizes (min 44px)', () => {
-    it('ensures price preset buttons and tap targets have min-h-[44px] styling', () => {
-      render(
+  describe('3. Tap Target Sizes & Year Presets Without Scroll', () => {
+    it('ensures price preset buttons and tap targets have min-h-[44px] styling and all 5 year presets fit without horizontal scroll', () => {
+      const { container } = render(
         <VehicleInputForm
           inputs={defaultInputs}
           onChange={vi.fn()}
@@ -97,9 +107,18 @@ describe('CarTaxHub UI Pass Acceptance Tests', () => {
       const preset25k = screen.getByRole('button', { name: /\$25,000/i });
       expect(preset25k.className).toContain('min-h-[44px]');
 
-      // Year buttons
-      const year2024 = screen.getByRole('button', { name: '2024' });
-      expect(year2024.className).toContain('min-h-[44px]');
+      // All 5 year presets visible and styled with min-h-[44px]
+      const yearPresets = [2024, 2021, 2019, 2017, 2015];
+      yearPresets.forEach((yr) => {
+        const yrBtn = screen.getByRole('button', { name: String(yr) });
+        expect(yrBtn).toBeDefined();
+        expect(yrBtn.className).toContain('min-h-[44px]');
+      });
+
+      // Confirm no overflow-x-auto on year preset container
+      const yearGrid = container.querySelector('.grid.grid-cols-5');
+      expect(yearGrid).toBeDefined();
+      expect(yearGrid?.className).not.toContain('overflow-x-auto');
 
       // Vehicle type toggle
       const passengerBtn = screen.getByRole('button', { name: /Car \/ SUV \/ Truck/i });

@@ -156,7 +156,7 @@ export default function RootLayout({
         <div className="flex-1">{children}</div>
 
         {/* Footer */}
-        <footer className="border-t border-slate-200 bg-white pt-8 pb-[calc(5rem+env(safe-area-inset-bottom,0.75rem))] text-center text-xs text-slate-500 dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400 md:py-8">
+        <footer className="border-t border-slate-200 bg-white pt-8 pb-[calc(5rem+env(safe-area-inset-bottom,0.75rem))] text-center text-xs text-slate-500 dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400 lg:py-8">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap justify-center gap-4 text-xs font-medium text-slate-600 dark:text-slate-400">
               <Link href="/calculator/maryland-private-sale-tax-calculator" className="hover:text-indigo-600">Maryland</Link>
