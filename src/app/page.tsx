@@ -107,19 +107,19 @@ export default function HomePage() {
 
       <main className="min-h-screen bg-slate-50/50 dark:bg-slate-950">
         {/* Hero Section */}
-        <section className="relative overflow-hidden border-b border-slate-200/80 bg-white/70 py-16 dark:border-slate-800 dark:bg-slate-900/50 sm:py-24">
+        <section className="relative overflow-hidden border-b border-slate-200/80 bg-white/70 py-8 dark:border-slate-800 dark:bg-slate-900/50 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-3.5 py-1 text-xs font-semibold text-indigo-700 dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
+              <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-3 py-0.5 text-xs font-semibold text-indigo-700 dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300 sm:px-3.5 sm:py-1">
                 <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
                 <span>Verified 2026 Statutory Rates • 50 States + DC</span>
               </div>
 
-              <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white">
+              <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:mt-5 sm:text-5xl lg:text-6xl dark:text-white">
                 Private Party Car Tax Calculator for All 50 States + DC
               </h1>
 
-              <p className="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
+              <p className="mt-2.5 text-sm leading-relaxed text-slate-600 sm:mt-5 sm:text-base lg:text-lg dark:text-slate-300">
                 Buying a car from a private seller? Calculate your true first-year out-of-pocket costs in seconds. Accurately estimates vehicle sales &amp; use taxes, DMV title certificate fees, tag registration, and trade-in exemptions.
               </p>
 
@@ -130,10 +130,10 @@ export default function HomePage() {
               />
 
               {/* Compare States Callout */}
-              <div className="mt-5 flex items-center justify-center">
+              <div className="mt-4 sm:mt-5 flex items-center justify-center">
                 <Link
                   href="/vehicle-tax-by-state"
-                  className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white/95 px-4 py-2 text-xs font-bold text-indigo-700 shadow-xs transition-colors hover:border-indigo-400 hover:bg-indigo-50/50 dark:border-indigo-800 dark:bg-slate-900 dark:text-indigo-300 dark:hover:bg-slate-800"
+                  className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-indigo-200 bg-white/95 px-4 py-2 text-xs font-bold text-indigo-700 shadow-xs transition-colors hover:border-indigo-400 hover:bg-indigo-50/50 dark:border-indigo-800 dark:bg-slate-900 dark:text-indigo-300 dark:hover:bg-slate-800"
                 >
                   <span className="text-amber-500">📊</span>
                   <span>Compare States: 2026 Vehicle Sales Tax &amp; Fee Rankings</span>

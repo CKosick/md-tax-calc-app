@@ -1,5 +1,6 @@
 import stateRulesData from '@/config/stateRules.json';
 import { calculateVehicleCosts } from '@/lib/calculator';
+import { LAST_VERIFIED_DATE } from '@/lib/constants';
 import { formatFee, formatPercent } from '@/lib/formatters';
 import { CalculatorInputs, CostBreakdown, StateRule, StateRulesConfig } from '@/lib/types';
 
@@ -209,7 +210,7 @@ export function getComparisonDataset(): ComparisonDataset {
     titleFeeRows,
     stats,
     standardScenario: STANDARD_SCENARIO_INPUTS,
-    lastVerifiedDate: 'September 2026'
+    lastVerifiedDate: LAST_VERIFIED_DATE
   };
 }
 

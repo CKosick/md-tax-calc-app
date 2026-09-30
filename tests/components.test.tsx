@@ -182,7 +182,7 @@ describe('UI Component Unit Tests', () => {
     render(<Calculator initialRule={ilRule} />);
 
     expect(screen.getAllByText(/Form RUT-50/i).length).toBeGreaterThanOrEqual(1);
-    expect(screen.getByText(/\$1,166\.00/i)).toBeDefined(); // $850 tax + $165 title + $151 tags
+    expect(screen.getAllByText(/\$1,166\.00/i).length).toBeGreaterThanOrEqual(1); // $850 tax + $165 title + $151 tags
     expect(screen.getByText(/\$850\.00/i)).toBeDefined();
   });
 

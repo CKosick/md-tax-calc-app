@@ -25,6 +25,7 @@ export function VehicleInputForm({
 }: VehicleInputFormProps) {
   const router = useRouter();
   const currentYear = 2026;
+  const isMaryland = rule.slug === 'maryland-private-sale-tax-calculator' || rule.label.toLowerCase() === 'maryland';
 
   const updateField = <K extends keyof CalculatorInputs>(
     field: K,
@@ -49,7 +50,7 @@ export function VehicleInputForm({
   const selectedKey = currentOption ? currentOption.key : inputs.state;
 
   return (
-    <div className="space-y-6 rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-sm backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/80 sm:p-8">
+    <div id="calculator-form" className="space-y-6 rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-sm backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/80 sm:p-8">
       {/* Form Header */}
       <div className="border-b border-slate-100 pb-5 dark:border-slate-800">
         <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -79,7 +80,7 @@ export function VehicleInputForm({
               id="state-select"
               value={selectedKey}
               onChange={handleStateSelect}
-              className="block w-full appearance-none rounded-2xl border border-slate-300 bg-white px-4 py-3.5 pr-10 text-sm font-bold text-slate-900 shadow-xs transition-all hover:border-indigo-400 focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white cursor-pointer"
+              className="block w-full min-h-[44px] appearance-none rounded-2xl border border-slate-300 bg-white px-4 py-3 pr-10 text-sm font-bold text-slate-900 shadow-xs transition-all hover:border-indigo-400 focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white cursor-pointer"
             >
               {allStates.map((st) => (
                 <option key={st.key} value={st.key}>
@@ -105,7 +106,7 @@ export function VehicleInputForm({
               type="button"
               id="type-passenger"
               onClick={() => updateField('vehicleType', 'passenger')}
-              className={`flex items-center justify-center gap-2 rounded-xl py-2.5 text-xs font-bold transition-all ${
+              className={`flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-3 py-2.5 text-xs font-bold transition-all cursor-pointer ${
                 inputs.vehicleType === 'passenger'
                   ? 'bg-white text-indigo-600 shadow-sm dark:bg-slate-900 dark:text-indigo-400'
                   : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
@@ -120,7 +121,7 @@ export function VehicleInputForm({
               type="button"
               id="type-motorcycle"
               onClick={() => updateField('vehicleType', 'motorcycle')}
-              className={`flex items-center justify-center gap-2 rounded-xl py-2.5 text-xs font-bold transition-all ${
+              className={`flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-3 py-2.5 text-xs font-bold transition-all cursor-pointer ${
                 inputs.vehicleType === 'motorcycle'
                   ? 'bg-white text-indigo-600 shadow-sm dark:bg-slate-900 dark:text-indigo-400'
                   : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
@@ -161,20 +162,20 @@ export function VehicleInputForm({
               value={inputs.purchasePrice || ''}
               onChange={(e) => updateField('purchasePrice', Math.max(0, parseFloat(e.target.value) || 0))}
               placeholder="15000"
-              className="block w-full rounded-2xl border border-slate-200 bg-white py-3.5 pl-8 pr-4 text-base font-bold text-slate-900 shadow-xs transition-all focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+              className="block w-full min-h-[44px] rounded-2xl border border-slate-200 bg-white py-3 pl-8 pr-4 text-base font-bold text-slate-900 shadow-xs transition-all focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
             />
           </div>
-          {/* Quick preset chips */}
-          <div className="mt-2 flex flex-wrap gap-1.5">
+          {/* Quick preset chips - 44px minimum tap targets */}
+          <div className="mt-2.5 flex flex-wrap gap-2">
             {[5000, 10000, 15000, 20000, 25000, 35000].map((preset) => (
               <button
                 key={preset}
                 type="button"
                 onClick={() => updateField('purchasePrice', preset)}
-                className={`rounded-lg px-2.5 py-1 text-[11px] font-semibold transition-colors ${
+                className={`inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl px-3.5 py-2.5 text-xs font-bold transition-all cursor-pointer ${
                   inputs.purchasePrice === preset
-                    ? 'bg-indigo-600 text-white dark:bg-indigo-500'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
+                    ? 'bg-indigo-600 text-white shadow-xs dark:bg-indigo-500'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200 active:bg-slate-300 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
                 }`}
               >
                 ${preset.toLocaleString()}
@@ -194,12 +195,12 @@ export function VehicleInputForm({
             </label>
             <span
               className={`text-[11px] font-medium ${
-                rule.slug === 'maryland-private-sale-tax-calculator' && currentYear - inputs.vehicleYear <= 7
+                isMaryland && currentYear - inputs.vehicleYear <= 7
                   ? 'font-bold text-amber-600 dark:text-amber-400'
                   : 'text-slate-400'
               }`}
             >
-              {currentYear - inputs.vehicleYear} years old {rule.slug === 'maryland-private-sale-tax-calculator' ? (currentYear - inputs.vehicleYear <= 7 ? '(≤ 7 yrs rule)' : '(> 7 yrs)') : ''}
+              {currentYear - inputs.vehicleYear} years old {isMaryland ? (currentYear - inputs.vehicleYear <= 7 ? '(≤ 7 yrs rule)' : '(> 7 yrs)') : ''}
             </span>
           </div>
           <div className="mt-2 grid grid-cols-3 gap-2">
@@ -211,17 +212,17 @@ export function VehicleInputForm({
               value={inputs.vehicleYear || ''}
               onChange={(e) => updateField('vehicleYear', parseInt(e.target.value) || currentYear)}
               placeholder="2019"
-              className="col-span-1 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 shadow-xs focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+              className="col-span-1 min-h-[44px] rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-900 shadow-xs focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
             />
-            <div className="col-span-2 flex items-center gap-1.5 overflow-x-auto">
+            <div className="col-span-2 flex items-center gap-1.5 overflow-x-auto pb-0.5">
               {[2024, 2021, 2019, 2017, 2015].map((yr) => (
                 <button
                   key={yr}
                   type="button"
                   onClick={() => updateField('vehicleYear', yr)}
-                  className={`rounded-xl px-2.5 py-2.5 text-xs font-semibold transition-all ${
+                  className={`flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl px-3 py-2 text-xs font-bold transition-all cursor-pointer ${
                     inputs.vehicleYear === yr
-                      ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
+                      ? 'bg-slate-900 text-white shadow-xs dark:bg-white dark:text-slate-900'
                       : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300'
                   }`}
                 >
@@ -240,17 +241,17 @@ export function VehicleInputForm({
                 Vehicle Weight Classification
               </label>
               <span className="text-[11px] text-slate-400">
-                {rule.slug === 'maryland-private-sale-tax-calculator' ? 'Class A & M Tiers (SB 362)' : 'Standard Passenger'}
+                {isMaryland ? 'Class A & M Tiers (SB 362)' : 'Standard Passenger'}
               </span>
             </div>
 
-            {rule.slug === 'maryland-private-sale-tax-calculator' || rule.registration.passenger.under3500lbs ? (
+            {isMaryland || rule.registration.passenger.under3500lbs ? (
               <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
                 <button
                   type="button"
                   id="weight-under-3500"
                   onClick={() => updateField('weightClass', 'under3500lbs')}
-                  className={`rounded-2xl border p-3.5 text-left transition-all ${
+                  className={`min-h-[44px] rounded-2xl border p-3.5 text-left transition-all cursor-pointer ${
                     inputs.weightClass === 'under3500lbs'
                       ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
                       : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
@@ -273,7 +274,7 @@ export function VehicleInputForm({
                   type="button"
                   id="weight-3501-3700"
                   onClick={() => updateField('weightClass', '3501to3700lbs')}
-                  className={`rounded-2xl border p-3.5 text-left transition-all ${
+                  className={`min-h-[44px] rounded-2xl border p-3.5 text-left transition-all cursor-pointer ${
                     inputs.weightClass === '3501to3700lbs'
                       ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
                       : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
@@ -296,7 +297,7 @@ export function VehicleInputForm({
                   type="button"
                   id="weight-over-3700"
                   onClick={() => updateField('weightClass', 'over3700lbs')}
-                  className={`rounded-2xl border p-3.5 text-left transition-all ${
+                  className={`min-h-[44px] rounded-2xl border p-3.5 text-left transition-all cursor-pointer ${
                     inputs.weightClass === 'over3700lbs'
                       ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
                       : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
@@ -321,7 +322,7 @@ export function VehicleInputForm({
                   type="button"
                   id="weight-under-3700"
                   onClick={() => updateField('weightClass', 'under3700lbs')}
-                  className={`rounded-2xl border p-3.5 text-left transition-all ${
+                  className={`min-h-[44px] rounded-2xl border p-3.5 text-left transition-all cursor-pointer ${
                     inputs.weightClass === 'under3700lbs' || inputs.weightClass === 'under3500lbs' || inputs.weightClass === '3501to3700lbs'
                       ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
                       : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
@@ -344,7 +345,7 @@ export function VehicleInputForm({
                   type="button"
                   id="weight-over-3700"
                   onClick={() => updateField('weightClass', 'over3700lbs')}
-                  className={`rounded-2xl border p-3.5 text-left transition-all ${
+                  className={`min-h-[44px] rounded-2xl border p-3.5 text-left transition-all cursor-pointer ${
                     inputs.weightClass === 'over3700lbs'
                       ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
                       : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
@@ -380,7 +381,7 @@ export function VehicleInputForm({
               type="button"
               id="term-1-year"
               onClick={() => updateField('registrationTerm', 1)}
-              className={`rounded-xl py-2.5 text-xs font-bold transition-all ${
+              className={`flex min-h-[44px] items-center justify-center rounded-xl py-2.5 text-xs font-bold transition-all cursor-pointer ${
                 inputs.registrationTerm === 1
                   ? 'bg-white text-indigo-600 shadow-sm dark:bg-slate-900 dark:text-indigo-400'
                   : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
@@ -392,7 +393,7 @@ export function VehicleInputForm({
               type="button"
               id="term-2-year"
               onClick={() => updateField('registrationTerm', 2)}
-              className={`rounded-xl py-2.5 text-xs font-bold transition-all ${
+              className={`flex min-h-[44px] items-center justify-center rounded-xl py-2.5 text-xs font-bold transition-all cursor-pointer ${
                 inputs.registrationTerm === 2
                   ? 'bg-white text-indigo-600 shadow-sm dark:bg-slate-900 dark:text-indigo-400'
                   : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
@@ -433,7 +434,7 @@ export function VehicleInputForm({
                 key={f.id}
                 type="button"
                 onClick={() => updateField('fuelType', f.id as FuelType)}
-                className={`rounded-2xl border p-2.5 text-center transition-all ${
+                className={`flex min-h-[44px] flex-col items-center justify-center rounded-2xl border p-2.5 text-center transition-all cursor-pointer ${
                   inputs.fuelType === f.id
                     ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
                     : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
@@ -465,7 +466,7 @@ export function VehicleInputForm({
               type="button"
               id="financed-no"
               onClick={() => updateField('isFinanced', false)}
-              className={`rounded-2xl border p-3 text-left transition-all ${
+              className={`min-h-[44px] rounded-2xl border p-3 text-left transition-all cursor-pointer ${
                 !inputs.isFinanced
                   ? 'border-emerald-500 bg-emerald-50/50 dark:border-emerald-500 dark:bg-emerald-950/40'
                   : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
@@ -488,7 +489,7 @@ export function VehicleInputForm({
               type="button"
               id="financed-yes"
               onClick={() => updateField('isFinanced', true)}
-              className={`rounded-2xl border p-3 text-left transition-all ${
+              className={`min-h-[44px] rounded-2xl border p-3 text-left transition-all cursor-pointer ${
                 inputs.isFinanced
                   ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
                   : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
@@ -509,8 +510,12 @@ export function VehicleInputForm({
           </div>
         </div>
 
-        {/* Trade-In Input with State-Specific Statute Notice */}
-        <div className="rounded-2xl border border-slate-200/60 bg-slate-50/50 p-4 dark:border-slate-800 dark:bg-slate-800/30">
+        {/* Trade-In Input with State-Specific Statute Notice (Item 5: Disabled for Maryland) */}
+        <div className={`rounded-2xl border p-4 transition-all ${
+          isMaryland
+            ? 'border-slate-200/60 bg-slate-50/40 dark:border-slate-800/60 dark:bg-slate-800/20'
+            : 'border-slate-200/60 bg-slate-50/50 dark:border-slate-800 dark:bg-slate-800/30'
+        }`}>
           <div className="flex items-center justify-between">
             <label
               htmlFor="trade-in-input"
@@ -522,6 +527,10 @@ export function VehicleInputForm({
               <span className="rounded-md bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                 {rule.label}: Deductible
               </span>
+            ) : isMaryland ? (
+              <span className="rounded-md bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-800 dark:bg-amber-950 dark:text-amber-300">
+                Maryland: Non-Deductible (Dealer Only)
+              </span>
             ) : (
               <span className="rounded-md bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-800 dark:bg-amber-950 dark:text-amber-300">
                 {rule.label}: Non-Deductible
@@ -531,21 +540,30 @@ export function VehicleInputForm({
 
           <div className="relative mt-2">
             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5">
-              <span className="text-sm font-bold text-slate-400">$</span>
+              <span className={`text-sm font-bold ${isMaryland ? 'text-slate-300 dark:text-slate-600' : 'text-slate-400'}`}>$</span>
             </div>
             <input
               type="number"
               id="trade-in-input"
               min="0"
               step="100"
-              value={inputs.tradeInValue || ''}
+              disabled={isMaryland}
+              value={isMaryland ? '' : (inputs.tradeInValue || '')}
               onChange={(e) => updateField('tradeInValue', Math.max(0, parseFloat(e.target.value) || 0))}
-              placeholder="0"
-              className="block w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-7 pr-3 text-sm font-bold text-slate-900 shadow-xs focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+              placeholder={isMaryland ? 'Disabled: Trade-ins not deductible on MD private sales' : '0'}
+              className={`block w-full min-h-[44px] rounded-xl border border-slate-200 py-2.5 pl-7 pr-3 text-sm font-bold shadow-xs focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/10 dark:border-slate-700 ${
+                isMaryland
+                  ? 'cursor-not-allowed bg-slate-100/90 text-slate-400 dark:bg-slate-800/80 dark:text-slate-500'
+                  : 'bg-white text-slate-900 dark:bg-slate-900 dark:text-white'
+              }`}
             />
           </div>
           <p className="mt-2 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
-            {rule.tradeInDeductible ? (
+            {isMaryland ? (
+              <>
+                <strong>Maryland Statute:</strong> Maryland taxes the full agreed vehicle price — trade-ins do not reduce the tax base on private-party sales. Trade-in deductions are legally permitted only on transactions through licensed Maryland motor vehicle dealers.
+              </>
+            ) : rule.tradeInDeductible ? (
               <>
                 <strong>{rule.label} Statute:</strong> {rule.label} allows trade-in value on private sales to be deducted from the purchase price before applying the {(rule.exciseTaxRate * 100).toFixed(2)}% fee.
               </>
