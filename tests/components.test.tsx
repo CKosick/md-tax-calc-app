@@ -2,6 +2,7 @@ import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { PartnerSlot } from '../src/components/PartnerSlot';
+import { resolvePartnerHrefs } from '../src/lib/partnerLinks';
 import { Disclaimers } from '../src/components/Disclaimers';
 import { CostSummaryCard } from '../src/components/CostSummaryCard';
 import { FaqSection } from '../src/components/FaqSection';
@@ -38,7 +39,8 @@ describe('UI Component Unit Tests', () => {
     process.env.NEXT_PUBLIC_PARTNER_INSURANCE_URL = 'https://partner.example.com/insurance';
 
     try {
-      render(<PartnerSlot position="below-results" />);
+      // Env is resolved server-side and passed down as props (dynamic env lookups are not inlined in the browser)
+      render(<PartnerSlot position="below-results" hrefs={resolvePartnerHrefs()} />);
       const link = screen.getByRole('link', { name: /compare quotes/i });
       expect(link).toBeDefined();
       expect(link.getAttribute('href')).toContain('https://partner.example.com/insurance');

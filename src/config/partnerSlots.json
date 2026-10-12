@@ -21,6 +21,7 @@
     "ctaText": "Check Auto Loan Rates",
     "badge": "Financing Partner",
     "href": "#",
+    "requiresFinancing": true,
     "trackingParams": {
       "utm_source": "taxcalc",
       "utm_medium": "affiliate",

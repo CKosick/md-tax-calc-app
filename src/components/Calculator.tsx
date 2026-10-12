@@ -11,9 +11,12 @@ import { CostSummaryCard } from './CostSummaryCard';
 import { Disclaimers } from './Disclaimers';
 import { FaqSection } from './FaqSection';
 import { PartnerSlot } from './PartnerSlot';
+import { PartnerHrefs } from '@/lib/partnerLinks';
 
 interface CalculatorProps {
   initialRule: StateRule;
+  /** Partner URLs resolved on the server (see resolvePartnerHrefs). */
+  partnerHrefs?: PartnerHrefs;
 }
 
 const ALL_STATES = Object.entries(stateRulesData as StateRulesConfig)
@@ -39,7 +42,7 @@ const POPULAR_SLUGS = [
   'maryland-private-sale-tax-calculator'
 ];
 
-export function Calculator({ initialRule }: CalculatorProps) {
+export function Calculator({ initialRule, partnerHrefs }: CalculatorProps) {
   const defaultTerm: 1 | 2 =
     initialRule.registration.terms.includes(1) && !initialRule.registration.terms.includes(2) ? 1 : 2;
 
@@ -186,6 +189,7 @@ export function Calculator({ initialRule }: CalculatorProps) {
             rule={initialRule}
             purchasePrice={inputs.purchasePrice}
             inputs={inputs}
+            partnerHrefs={partnerHrefs}
           />
 
           {/* Mobile Disclaimers: rendered below results on mobile so user sees results first */}
@@ -198,7 +202,12 @@ export function Calculator({ initialRule }: CalculatorProps) {
             />
           </div>
 
-          <PartnerSlot position="sidebar" />
+          <PartnerSlot
+            position="sidebar"
+            hrefs={partnerHrefs}
+            isFinanced={inputs.isFinanced}
+            stateSlug={initialRule.slug}
+          />
         </div>
       </div>
 

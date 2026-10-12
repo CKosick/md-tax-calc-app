@@ -4,6 +4,7 @@ import stateRulesData from '@/config/stateRules.json';
 import { StateRule, StateRulesConfig } from '@/lib/types';
 import { formatFee } from '@/lib/formatters';
 import { Calculator } from '@/components/Calculator';
+import { resolvePartnerHrefs } from '@/lib/partnerLinks';
 
 const rules = stateRulesData as StateRulesConfig;
 
@@ -141,7 +142,7 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
       />
 
       <main className="min-h-screen bg-slate-50/50 dark:bg-slate-950">
-        <Calculator initialRule={rule} />
+        <Calculator initialRule={rule} partnerHrefs={resolvePartnerHrefs()} />
       </main>
     </>
   );

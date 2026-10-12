@@ -137,5 +137,7 @@ export interface PartnerSlotConfig {
   ctaText: string;
   badge?: string;
   href: string;
+  /** Only show this slot once the user indicates the purchase is financed. */
+  requiresFinancing?: boolean;
   trackingParams?: Record<string, string>;
 }

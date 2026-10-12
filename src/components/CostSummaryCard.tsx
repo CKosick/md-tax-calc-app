@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { CostBreakdown, StateRule, CalculatorInputs } from '@/lib/types';
 import { PartnerSlot } from './PartnerSlot';
+import { PartnerHrefs } from '@/lib/partnerLinks';
 import { LAST_VERIFIED_DATE } from '@/lib/constants';
 
 interface CostSummaryCardProps {
@@ -10,13 +11,16 @@ interface CostSummaryCardProps {
   rule: StateRule;
   purchasePrice: number;
   inputs?: CalculatorInputs;
+  /** Partner URLs resolved on the server (see resolvePartnerHrefs). */
+  partnerHrefs?: PartnerHrefs;
 }
 
 export function CostSummaryCard({
   breakdown,
   rule,
   purchasePrice,
-  inputs
+  inputs,
+  partnerHrefs
 }: CostSummaryCardProps) {
   const [copied, setCopied] = useState(false);
 
@@ -332,7 +336,12 @@ export function CostSummaryCard({
       </div>
 
       {/* Monetization Slot - Below Results */}
-      <PartnerSlot position="below-results" />
+      <PartnerSlot
+        position="below-results"
+        hrefs={partnerHrefs}
+        isFinanced={inputs?.isFinanced}
+        stateSlug={rule.slug}
+      />
     </div>
   );
 }
