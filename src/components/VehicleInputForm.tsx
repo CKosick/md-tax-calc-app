@@ -3,6 +3,8 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { CalculatorInputs, StateRule, FuelType } from '@/lib/types';
+import { getCalculationYear, getModelYearPresets } from '@/lib/constants';
+import { formatVehicleAge } from '@/lib/formatters';
 
 interface StateOption {
   key: string;
@@ -15,16 +17,20 @@ interface VehicleInputFormProps {
   onChange: (inputs: CalculatorInputs) => void;
   rule: StateRule;
   allStates?: StateOption[];
+  /** Calendar year for age math and model year presets (defaults to the current year). */
+  calculationYear?: number;
 }
 
 export function VehicleInputForm({
   inputs,
   onChange,
   rule,
-  allStates = []
+  allStates = [],
+  calculationYear
 }: VehicleInputFormProps) {
   const router = useRouter();
-  const currentYear = 2026;
+  const currentYear = calculationYear ?? getCalculationYear();
+  const vehicleAge = currentYear - inputs.vehicleYear;
   const isMaryland = rule.slug === 'maryland-private-sale-tax-calculator' || rule.label.toLowerCase() === 'maryland';
 
   const updateField = <K extends keyof CalculatorInputs>(
@@ -195,12 +201,12 @@ export function VehicleInputForm({
             </label>
             <span
               className={`text-[11px] font-medium ${
-                isMaryland && currentYear - inputs.vehicleYear <= 7
+                isMaryland && vehicleAge <= 7
                   ? 'font-bold text-amber-600 dark:text-amber-400'
                   : 'text-slate-400'
               }`}
             >
-              {currentYear - inputs.vehicleYear} years old {isMaryland ? (currentYear - inputs.vehicleYear <= 7 ? '(≤ 7 yrs rule)' : '(> 7 yrs)') : ''}
+              {formatVehicleAge(inputs.vehicleYear, currentYear)} {isMaryland ? (vehicleAge <= 7 ? '(≤ 7 yrs rule)' : '(> 7 yrs)') : ''}
             </span>
           </div>
           <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-12 sm:items-center sm:gap-2.5">
@@ -217,7 +223,7 @@ export function VehicleInputForm({
               />
             </div>
             <div className="grid grid-cols-5 gap-1.5 sm:col-span-8 sm:gap-2">
-              {[2024, 2021, 2019, 2017, 2015].map((yr) => (
+              {getModelYearPresets(currentYear).map((yr) => (
                 <button
                   key={yr}
                   type="button"

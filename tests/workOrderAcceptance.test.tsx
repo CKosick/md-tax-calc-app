@@ -14,6 +14,7 @@ import ContactPage from '../src/app/contact/page';
 const rules = stateRulesData as StateRulesConfig;
 
 vi.mock('next/navigation', () => ({
+  useSearchParams: () => new URLSearchParams(),
   useRouter: () => ({
     push: vi.fn(),
     replace: vi.fn(),

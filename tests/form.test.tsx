@@ -4,9 +4,11 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { VehicleInputForm } from '../src/components/VehicleInputForm';
 import stateRulesData from '../src/config/stateRules.json';
 import { CalculatorInputs, StateRule } from '../src/lib/types';
+import { getCalculationYear, getModelYearPresets } from '../src/lib/constants';
 
 const mockPush = vi.fn();
 vi.mock('next/navigation', () => ({
+  useSearchParams: () => new URLSearchParams(),
   useRouter: () => ({
     push: mockPush,
     replace: vi.fn(),
@@ -172,12 +174,13 @@ describe('VehicleInputForm Interactive Testing', () => {
       })
     );
 
-    const yearChip = screen.getByRole('button', { name: '2024' });
+    const newestPreset = getModelYearPresets(getCalculationYear())[0];
+    const yearChip = screen.getByRole('button', { name: String(newestPreset) });
     fireEvent.click(yearChip);
 
     expect(handleChange).toHaveBeenCalledWith(
       expect.objectContaining({
-        vehicleYear: 2024
+        vehicleYear: newestPreset
       })
     );
   });

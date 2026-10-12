@@ -5,6 +5,7 @@ import robots from '../src/app/robots';
 import { metadata as rootMetadata } from '../src/app/layout';
 
 vi.mock('next/navigation', () => ({
+  useSearchParams: () => new URLSearchParams(),
   useRouter: () => ({
     push: vi.fn(),
     replace: vi.fn(),

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import stateRulesData from '@/config/stateRules.json';
 import { StateRulesConfig } from '@/lib/types';
+import { RATES_VERIFIED_YEAR } from '@/lib/constants';
 
 const rules = stateRulesData as StateRulesConfig;
 
@@ -43,7 +44,7 @@ export default function CalculatorHubPage() {
         <header className="text-center sm:text-left">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-3 py-1 text-xs font-semibold text-indigo-700 dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
             <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-            <span>2026 State Fee Directory ({stateList.length} Jurisdictions)</span>
+            <span>{RATES_VERIFIED_YEAR} State Fee Directory ({stateList.length} Jurisdictions)</span>
           </div>
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
             Private-Party Vehicle Tax, Tags &amp; Title Calculators

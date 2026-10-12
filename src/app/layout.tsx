@@ -5,6 +5,7 @@ import Script from 'next/script';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
+import { RATES_VERIFIED_YEAR } from '@/lib/constants';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -146,7 +147,7 @@ export default function RootLayout({
               </Link>
               <span className="hidden items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 sm:inline-flex dark:bg-slate-800 dark:text-slate-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
-                <span>2026 Rules Active</span>
+                <span>{RATES_VERIFIED_YEAR} Rules Active</span>
               </span>
             </nav>
           </div>

@@ -1,11 +1,14 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { Suspense, useState, useMemo } from 'react';
 import Link from 'next/link';
-import { StateRule, StateRulesConfig, CalculatorInputs, WeightClass, FuelType } from '@/lib/types';
+import { useSearchParams } from 'next/navigation';
+import { StateRule, StateRulesConfig, CalculatorInputs } from '@/lib/types';
 import stateRulesData from '@/config/stateRules.json';
 import { calculateVehicleCosts } from '@/lib/calculator';
 import { formatFee } from '@/lib/formatters';
+import { RATES_VERIFIED_YEAR, getCalculationYear } from '@/lib/constants';
+import { getDefaultInputs, inputsFromSearchParams } from '@/lib/shareParams';
 import { VehicleInputForm } from './VehicleInputForm';
 import { CostSummaryCard } from './CostSummaryCard';
 import { Disclaimers } from './Disclaimers';
@@ -42,48 +45,66 @@ const POPULAR_SLUGS = [
   'maryland-private-sale-tax-calculator'
 ];
 
+/**
+ * Share links (?price=&year=...) are read with useSearchParams, which makes everything inside
+ * the Suspense boundary render in the browser on prerendered pages. The fallback is the full
+ * calculator with default inputs, so the prerendered HTML (H1, results, FAQ) is unchanged for SEO.
+ */
 export function Calculator({ initialRule, partnerHrefs }: CalculatorProps) {
-  const defaultTerm: 1 | 2 =
-    initialRule.registration.terms.includes(1) && !initialRule.registration.terms.includes(2) ? 1 : 2;
+  const calculationYear = getCalculationYear();
+  const defaults = getDefaultInputs(initialRule, calculationYear);
 
-  const defaultWeightClass: WeightClass = initialRule.registration.passenger.under3500lbs
-    ? 'under3500lbs'
-    : 'under3700lbs';
+  return (
+    <Suspense
+      fallback={
+        <CalculatorView
+          initialRule={initialRule}
+          partnerHrefs={partnerHrefs}
+          initialInputs={defaults}
+          calculationYear={calculationYear}
+        />
+      }
+    >
+      <CalculatorFromSearchParams
+        initialRule={initialRule}
+        partnerHrefs={partnerHrefs}
+        defaults={defaults}
+        calculationYear={calculationYear}
+      />
+    </Suspense>
+  );
+}
 
-  const [inputs, setInputs] = useState<CalculatorInputs>({
-    state: initialRule.slug,
-    vehicleType: 'passenger',
-    purchasePrice: 15000,
-    vehicleYear: 2019,
-    weightClass: defaultWeightClass,
-    fuelType: 'gasoline',
-    registrationTerm: defaultTerm,
-    isFinanced: false,
-    tradeInValue: 0
-  });
+function CalculatorFromSearchParams({
+  initialRule,
+  partnerHrefs,
+  defaults,
+  calculationYear
+}: CalculatorProps & { defaults: CalculatorInputs; calculationYear: number }) {
+  const searchParams = useSearchParams();
+  return (
+    <CalculatorView
+      // Remount with fresh inputs if the query string changes on client navigation
+      key={searchParams?.toString() ?? ''}
+      initialRule={initialRule}
+      partnerHrefs={partnerHrefs}
+      initialInputs={inputsFromSearchParams(initialRule, searchParams, defaults)}
+      calculationYear={calculationYear}
+    />
+  );
+}
 
-  // URL query parameter hydration for shared / saved calculation links
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const params = new URLSearchParams(window.location.search);
-    if (!params.has('price') && !params.has('year') && !params.has('type')) return;
+interface CalculatorViewProps extends CalculatorProps {
+  initialInputs: CalculatorInputs;
+  calculationYear: number;
+}
 
-    setInputs((prev) => ({
-      ...prev,
-      purchasePrice: params.has('price') ? Math.max(0, Number(params.get('price')) || 0) : prev.purchasePrice,
-      vehicleYear: params.has('year') ? Number(params.get('year')) || prev.vehicleYear : prev.vehicleYear,
-      vehicleType: (params.get('type') === 'motorcycle' ? 'motorcycle' : 'passenger') as 'passenger' | 'motorcycle',
-      weightClass: (params.get('weight') || prev.weightClass) as WeightClass,
-      fuelType: (params.get('fuel') || prev.fuelType) as FuelType,
-      registrationTerm: (Number(params.get('term')) === 1 ? 1 : 2) as 1 | 2,
-      isFinanced: params.get('financed') === 'true',
-      tradeInValue: params.has('tradeIn') ? Math.max(0, Number(params.get('tradeIn')) || 0) : prev.tradeInValue
-    }));
-  }, []);
+function CalculatorView({ initialRule, partnerHrefs, initialInputs, calculationYear }: CalculatorViewProps) {
+  const [inputs, setInputs] = useState<CalculatorInputs>(initialInputs);
 
   const breakdown = useMemo(() => {
-    return calculateVehicleCosts(initialRule, inputs, 2026);
-  }, [initialRule, inputs]);
+    return calculateVehicleCosts(initialRule, inputs, calculationYear);
+  }, [initialRule, inputs, calculationYear]);
 
   const taxName = initialRule.label === 'Delaware'
     ? 'document fee'
@@ -150,7 +171,7 @@ export function Calculator({ initialRule, partnerHrefs }: CalculatorProps) {
       <header className="mb-6 sm:mb-10 text-center sm:text-left">
         <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-3 py-1 text-xs font-semibold text-indigo-700 dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
           <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-          <span>Verified for 2026 {initialRule.label} Statutory Rates</span>
+          <span>Verified for {RATES_VERIFIED_YEAR} {initialRule.label} Statutory Rates</span>
         </div>
         <h1 className="mt-2 sm:mt-3 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
           {initialRule.label} Private Party Car Tax Calculator
@@ -169,6 +190,7 @@ export function Calculator({ initialRule, partnerHrefs }: CalculatorProps) {
             onChange={setInputs}
             rule={initialRule}
             allStates={ALL_STATES}
+            calculationYear={calculationYear}
           />
 
           {/* Desktop Disclaimers */}

@@ -4,6 +4,7 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { StateComparisonRow, TaxRateRow, TitleFeeRow, generateComparisonCsv } from '@/lib/stateComparison';
 import { formatFee } from '@/lib/formatters';
+import { getCalculationYear } from '@/lib/constants';
 
 interface VehicleTaxComparisonTablesProps {
   initialHeroRows: StateComparisonRow[];
@@ -144,7 +145,7 @@ export function VehicleTaxComparisonTables({
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.setAttribute('href', url);
-    link.setAttribute('download', 'cartaxhub-vehicle-tax-by-state-2026.csv');
+    link.setAttribute('download', `cartaxhub-vehicle-tax-by-state-${getCalculationYear()}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

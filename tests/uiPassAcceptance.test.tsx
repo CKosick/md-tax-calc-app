@@ -5,10 +5,12 @@ import { Calculator } from '../src/components/Calculator';
 import { CostSummaryCard } from '../src/components/CostSummaryCard';
 import { VehicleInputForm } from '../src/components/VehicleInputForm';
 import stateRulesData from '../src/config/stateRules.json';
-import { StateRule, StateRulesConfig, CalculatorInputs } from '../src/lib/types';
+import { StateRulesConfig, CalculatorInputs } from '../src/lib/types';
 import { calculateVehicleCosts } from '../src/lib/calculator';
+import { getCalculationYear, getModelYearPresets } from '../src/lib/constants';
 
 vi.mock('next/navigation', () => ({
+  useSearchParams: () => new URLSearchParams(),
   useRouter: () => ({
     push: vi.fn(),
     replace: vi.fn(),
@@ -108,7 +110,7 @@ describe('CarTaxHub UI Pass Acceptance Tests', () => {
       expect(preset25k.className).toContain('min-h-[44px]');
 
       // All 5 year presets visible and styled with min-h-[44px]
-      const yearPresets = [2024, 2021, 2019, 2017, 2015];
+      const yearPresets = getModelYearPresets(getCalculationYear());
       yearPresets.forEach((yr) => {
         const yrBtn = screen.getByRole('button', { name: String(yr) });
         expect(yrBtn).toBeDefined();

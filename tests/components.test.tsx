@@ -14,6 +14,7 @@ import stateRulesData from '../src/config/stateRules.json';
 import { StateRule, CostBreakdown } from '../src/lib/types';
 
 vi.mock('next/navigation', () => ({
+  useSearchParams: () => new URLSearchParams(),
   useRouter: () => ({
     push: vi.fn(),
     replace: vi.fn(),

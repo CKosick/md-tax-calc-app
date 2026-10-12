@@ -4,6 +4,7 @@ import stateRulesData from '@/config/stateRules.json';
 import { StateRulesConfig } from '@/lib/types';
 import { formatFee } from '@/lib/formatters';
 import { HomeStateSelector } from '@/components/HomeStateSelector';
+import { RATES_VERIFIED_YEAR } from '@/lib/constants';
 
 const rules = stateRulesData as StateRulesConfig;
 
@@ -112,7 +113,7 @@ export default function HomePage() {
             <div className="mx-auto max-w-3xl text-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-3 py-0.5 text-xs font-semibold text-indigo-700 dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300 sm:px-3.5 sm:py-1">
                 <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-                <span>Verified 2026 Statutory Rates • 50 States + DC</span>
+                <span>Verified {RATES_VERIFIED_YEAR} Statutory Rates • 50 States + DC</span>
               </div>
 
               <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:mt-5 sm:text-5xl lg:text-6xl dark:text-white">

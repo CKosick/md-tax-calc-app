@@ -1,6 +1,6 @@
 import stateRulesData from '@/config/stateRules.json';
 import { calculateVehicleCosts } from '@/lib/calculator';
-import { LAST_VERIFIED_DATE } from '@/lib/constants';
+import { LAST_VERIFIED_DATE, RATES_VERIFIED_YEAR } from '@/lib/constants';
 import { formatFee, formatPercent } from '@/lib/formatters';
 import { CalculatorInputs, CostBreakdown, StateRule, StateRulesConfig } from '@/lib/types';
 
@@ -86,7 +86,7 @@ export function getComparisonDataset(): ComparisonDataset {
       state: key
     };
 
-    const breakdown = calculateVehicleCosts(rule, inputs, 2026);
+    const breakdown = calculateVehicleCosts(rule, inputs, RATES_VERIFIED_YEAR);
     const isFlat = Boolean(rule.flatTaxTable);
     const rateDisplay = isFlat
       ? 'Flat Table'

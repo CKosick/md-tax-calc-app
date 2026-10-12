@@ -1,4 +1,5 @@
 import { CalculatorInputs, CostBreakdown, StateRule } from './types';
+import { RATES_VERIFIED_YEAR } from './constants';
 
 /**
  * Pure calculation engine for vehicle tax, tags, and titling costs across US states.
@@ -7,7 +8,7 @@ import { CalculatorInputs, CostBreakdown, StateRule } from './types';
 export function calculateVehicleCosts(
   rule: StateRule,
   inputs: CalculatorInputs,
-  referenceYear: number = 2026
+  referenceYear: number = RATES_VERIFIED_YEAR
 ): CostBreakdown {
   const price = Math.max(0, Number(inputs.purchasePrice) || 0);
   const tradeIn = Math.max(0, Number(inputs.tradeInValue) || 0);
