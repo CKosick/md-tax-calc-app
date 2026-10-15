@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cartaxhub.com';
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || process.env.NEXT_PUBLIC_GA_ID;
+const IMPACT_SITE_VERIFICATION = '266c0f4e-6b54-4731-bbc2-7a28a1a7d844';
 const googleVerification =
   process.env.GOOGLE_SITE_VERIFICATION ||
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
@@ -88,6 +89,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        {/* Impact affiliate network site verification. Impact's tag uses value= (not content=);
+            React's meta typings omit value, so it is passed via spread. */}
+        <meta name="impact-site-verification" {...{ value: IMPACT_SITE_VERIFICATION }} />
         {googleVerification && (
           <meta
             name="google-site-verification"
