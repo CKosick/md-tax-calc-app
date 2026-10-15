@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cartaxhub.com';
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || process.env.NEXT_PUBLIC_GA_ID;
-const IMPACT_SITE_VERIFICATION = '266c0f4e-6b54-4731-bbc2-7a28a1a7d844';
+const IMPACT_SITE_VERIFICATION = 'b0fc741b-a888-43de-95c8-64b9d15ce586';
 const googleVerification =
   process.env.GOOGLE_SITE_VERIFICATION ||
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;

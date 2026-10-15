@@ -28,7 +28,7 @@ describe('Site verification tags in the root layout', () => {
 
   it('renders the Impact verification meta tag in <head> with a value attribute', () => {
     expect(head).toContain(
-      '<meta name="impact-site-verification" value="266c0f4e-6b54-4731-bbc2-7a28a1a7d844"/>'
+      '<meta name="impact-site-verification" value="b0fc741b-a888-43de-95c8-64b9d15ce586"/>'
     );
   });
 
