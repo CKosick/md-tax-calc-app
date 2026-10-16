@@ -48,8 +48,8 @@ describe('Maryland Private-Party Vehicle Tax Calculator', () => {
     const lightResult = calculateVehicleCosts(mdRule, { ...inputs, weightClass: 'under3500lbs' }, 2026);
     expect(lightResult.registrationTotal).toBe(241.00);
 
-    // Book value warning should trigger because 2026 - 2019 = 7 years (<= 7 years)
-    expect(result.bookValueApplies).toBe(true);
+    // 2026 - 2019 = 7 years: Maryland's book value rule covers vehicles under 7 years old, so no warning
+    expect(result.bookValueApplies).toBe(false);
   });
 
   it('acceptance criterion: Trade-in input does NOT reduce the Maryland excise total or first-year total', () => {

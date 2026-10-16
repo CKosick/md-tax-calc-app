@@ -31,6 +31,9 @@ export function VehicleInputForm({
   const router = useRouter();
   const currentYear = calculationYear ?? getCalculationYear();
   const vehicleAge = currentYear - inputs.vehicleYear;
+  // Maryland book value rule applies to vehicles under the configured age limit
+  const bookValueAgeLimit = rule.bookValueAssessment?.maxVehicleAge;
+  const inBookValueWindow = bookValueAgeLimit !== undefined && vehicleAge < bookValueAgeLimit;
   const isMaryland = rule.slug === 'maryland-private-sale-tax-calculator' || rule.label.toLowerCase() === 'maryland';
 
   const updateField = <K extends keyof CalculatorInputs>(
@@ -201,12 +204,17 @@ export function VehicleInputForm({
             </label>
             <span
               className={`text-[11px] font-medium ${
-                isMaryland && vehicleAge <= 7
+                isMaryland && inBookValueWindow
                   ? 'font-bold text-amber-600 dark:text-amber-400'
                   : 'text-slate-400'
               }`}
             >
-              {formatVehicleAge(inputs.vehicleYear, currentYear)} {isMaryland ? (vehicleAge <= 7 ? '(≤ 7 yrs rule)' : '(> 7 yrs)') : ''}
+              {formatVehicleAge(inputs.vehicleYear, currentYear)}{' '}
+              {isMaryland && bookValueAgeLimit !== undefined
+                ? inBookValueWindow
+                  ? `(under ${bookValueAgeLimit} yrs rule)`
+                  : `(${bookValueAgeLimit}+ yrs)`
+                : ''}
             </span>
           </div>
           <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-12 sm:items-center sm:gap-2.5">

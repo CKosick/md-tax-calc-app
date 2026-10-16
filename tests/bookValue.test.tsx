@@ -170,3 +170,54 @@ describe('Maryland calculator UI', () => {
     expect(writeText).toHaveBeenCalledWith(expect.stringContaining('book=12000'));
   });
 });
+
+describe('Maryland copy matches the under-7 rule (no notarized bill of sale)', () => {
+  beforeEach(() => {
+    vi.useFakeTimers({ toFake: ['Date'] });
+    vi.setSystemTime(new Date('2026-10-16T12:00:00'));
+    currentSearchParams = new URLSearchParams();
+  });
+  afterEach(() => {
+    cleanup();
+    vi.useRealTimers();
+  });
+
+  const set = (id: string, value: string) => fireEvent.change(document.getElementById(id)!, { target: { value } });
+  const ageLabel = () => document.querySelector('label[for="model-year-input"]')?.nextElementSibling?.textContent ?? '';
+  const resultsText = () => document.getElementById('calculator-results')?.textContent ?? '';
+
+  it('engine flag: a 7-year-old Maryland car is outside the book value window; Virginia keeps its rule', () => {
+    expect(calc(mdInputs(15000, 2019)).bookValueApplies).toBe(false);
+    expect(calc(mdInputs(15000, 2020)).bookValueApplies).toBe(true);
+    const vaInputs = { ...getDefaultInputs(va, 2026), purchasePrice: 15000, vehicleYear: 2019 };
+    expect(calc(vaInputs, va).bookValueApplies).toBe(true);
+  });
+
+  it('config copy: no notarized bill of sale, no "7 years old or newer", under-7 wording present', () => {
+    const allText = JSON.stringify(md);
+    expect(allText).not.toMatch(/notari|VR-181|7 years old or newer|whichever is higher/i);
+    expect(md.disclaimers.join(' ')).toContain('Vehicles under 7 years old may be assessed on book value');
+    expect(md.disclaimers.join(' ')).toContain('Documentation of the lower sale price can support taxing it on your price.');
+    expect(md.faqs.map((f) => f.answer).join(' ')).toContain('more than $500 below the NADA retail book value');
+  });
+
+  it('7-year-old car: label says 7+, no book value warning in results', () => {
+    render(<Calculator initialRule={md} />);
+    set('model-year-input', '2019');
+    expect(ageLabel()).toContain('(7+ yrs)');
+    expect(resultsText()).not.toMatch(/Book Value Assessment Rule/);
+  });
+
+  it('6-year-old car: label and warning use the under-7 rule and documentation wording', () => {
+    render(<Calculator initialRule={md} />);
+    set('model-year-input', '2020');
+    expect(ageLabel()).toContain('(under 7 yrs rule)');
+    const text = resultsText();
+    expect(text).toContain('Book Value Assessment Rule (Under 7 Years Old)');
+    expect(text).toContain('Because this vehicle is under 7 years old');
+    expect(text).toContain('more than $500 below it');
+    expect(text).toContain('Documentation of the lower sale price can support taxing it on your price.');
+    expect(text).not.toMatch(/notari/i);
+    expect(document.body.textContent).not.toMatch(/notari|7 years old or newer/i);
+  });
+});

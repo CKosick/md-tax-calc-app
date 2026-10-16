@@ -8,7 +8,7 @@
     "titleFee": 200,
     "lienFilingFee": 40,
     "tradeInDeductible": false,
-    "bookValueRule": "If vehicle is 7 years old or newer, MVA may assess on book value; a notarized bill of sale overrides",
+    "bookValueRule": "If vehicle is under 7 years old and the price is more than $500 below NADA retail, MVA may assess on book value; documentation of the lower price can support taxing it on the price",
     "bookValueAssessment": {
       "maxVehicleAge": 7,
       "priceBelowBookThreshold": 500
@@ -47,7 +47,7 @@
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with the Maryland MVA.",
-      "Vehicles 7 years old or newer may be assessed on book value, not your purchase price, unless you present a notarized bill of sale.",
+      "Vehicles under 7 years old may be assessed on book value, not your purchase price, when the price is more than $500 below NADA retail. Documentation of the lower sale price can support taxing it on your price.",
       "Maryland taxes the full purchase price — trade-ins and rebates do not reduce excise tax."
     ],
     "faqs": [
@@ -61,7 +61,7 @@
       },
       {
         "question": "How does Maryland calculate vehicle excise tax on private sales?",
-        "answer": "For vehicles older than 7 years, the 6.5% excise tax is calculated directly on the purchase price stated on the title. For vehicles 7 years old or newer, the MVA assesses tax on whichever is higher: the purchase price or the NADA clean retail book value, unless the buyer and seller submit a notarized Maryland Bill of Sale (Form VR-181) verifying the lower price."
+        "answer": "For vehicles 7 or more years old, the 6.5% excise tax is calculated on the purchase price, with a minimum taxable value of $640. For vehicles under 7 years old, the tax is also calculated on the purchase price unless the price is more than $500 below the NADA retail book value. In that case the MVA may assess the tax on the book value instead. Documentation of the lower sale price can support taxing it on your price."
       },
       {
         "question": "Does a trade-in reduce vehicle excise tax in Maryland?",

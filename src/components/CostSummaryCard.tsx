@@ -314,11 +314,21 @@ export function CostSummaryCard({
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
                 </svg>
-                <span>Book Value Assessment Rule (≤ 7 Years Old)</span>
+                <span>
+                  {rule.bookValueAssessment
+                    ? `Book Value Assessment Rule (Under ${rule.bookValueAssessment.maxVehicleAge} Years Old)`
+                    : 'Book Value Assessment Rule (≤ 7 Years Old)'}
+                </span>
               </div>
-              <p className="mt-1 leading-relaxed">
-                Because this vehicle is 7 years old or newer ({breakdown.vehicleAge} years old), {rule.label} DMV may assess the {rateLabel} tax on book value instead of your purchase price unless accompanied by a verified or notarized bill of sale.
-              </p>
+              {rule.bookValueAssessment ? (
+                <p className="mt-1 leading-relaxed">
+                  Because this vehicle is under {rule.bookValueAssessment.maxVehicleAge} years old ({breakdown.vehicleAge} years old), {rule.label} may assess the {rateLabel} tax on the NADA retail book value instead of your purchase price if your price is more than {formatCurrency(rule.bookValueAssessment.priceBelowBookThreshold).replace('.00', '')} below it. Documentation of the lower sale price can support taxing it on your price.
+                </p>
+              ) : (
+                <p className="mt-1 leading-relaxed">
+                  Because this vehicle is 7 years old or newer ({breakdown.vehicleAge} years old), {rule.label} DMV may assess the {rateLabel} tax on book value instead of your purchase price unless accompanied by a verified or notarized bill of sale.
+                </p>
+              )}
             </div>
           )}
 
