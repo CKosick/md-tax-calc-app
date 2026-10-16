@@ -7,7 +7,7 @@ import { calculateVehicleCosts } from '../src/lib/calculator';
 import { CostSummaryCard } from '../src/components/CostSummaryCard';
 import { Calculator } from '../src/components/Calculator';
 import RootLayout from '../src/app/layout';
-import PrivacyPage from '../src/app/privacy/page';
+import PrivacyPage, { metadata as privacyMetadata } from '../src/app/privacy/page';
 import AboutPage from '../src/app/about/page';
 import ContactPage from '../src/app/contact/page';
 
@@ -298,6 +298,9 @@ describe('Work Order Acceptance Tests', () => {
       // The site runs no ads: no AdSense section and no Advertising Cookies bullet
       expect(text).not.toContain('Google AdSense');
       expect(text).not.toContain('Advertising Cookies');
+      expect(text).not.toMatch(/advertisements/i);
+      expect(text).toContain('to ensure site functionality and understand audience engagement.');
+      expect(String(privacyMetadata.description)).not.toMatch(/AdSense/);
       const headings = [...container.querySelectorAll('h2')].map((h) => h.textContent?.trim());
       expect(headings).toEqual([
         '1. Calculator Inputs and Data Storage',

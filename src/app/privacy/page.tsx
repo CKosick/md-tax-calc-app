@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Privacy Policy | CarTaxHub',
   description:
-    'Privacy Policy for CarTaxHub. Discloses our browser-only calculator privacy, cookie usage, Google AdSense, and affiliate partnerships.',
+    'Privacy Policy for CarTaxHub. Discloses our browser-only calculator privacy, cookie usage, and affiliate partnerships.',
   alternates: {
     canonical: '/privacy'
   }
@@ -60,7 +60,7 @@ export default function PrivacyPolicyPage() {
               2. Cookies and Tracking Technologies
             </h2>
             <p className="text-sm sm:text-base">
-              CarTaxHub uses standard first-party and third-party cookies, web beacons, and similar tracking technologies to ensure site functionality, understand audience engagement, and deliver relevant advertisements.
+              CarTaxHub uses standard first-party and third-party cookies, web beacons, and similar tracking technologies to ensure site functionality and understand audience engagement.
             </p>
             <ul className="list-disc pl-5 space-y-1.5 text-sm sm:text-base">
               <li>
