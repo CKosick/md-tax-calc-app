@@ -3,11 +3,11 @@
 import React from 'react';
 import { track } from '@vercel/analytics';
 import partnerSlotsData from '@/config/partnerSlots.json';
-import { PartnerSlotConfig } from '@/lib/types';
+import { PartnerSlotConfig, PartnerSlotPosition } from '@/lib/types';
 import { PartnerHrefs, buildPartnerUrl, isValidRealUrl } from '@/lib/partnerLinks';
 
 interface PartnerSlotProps {
-  position: 'below-results' | 'sidebar';
+  position: PartnerSlotPosition;
   className?: string;
   forceShow?: boolean;
   slots?: PartnerSlotConfig[];
@@ -79,6 +79,18 @@ export function getVisiblePartnerSlots({
     }))
     // Hide slots everywhere unless a real destination URL is configured (render nothing if missing or '#')
     .filter((slot) => isValidRealUrl(slot.destinationUrl));
+}
+
+/** Affiliate disclosure fine print. Render once per results view, next to the first visible offer. */
+export function PartnerDisclosure() {
+  return (
+    <p
+      id="partner-disclosure"
+      className="-mt-3 text-center text-[11px] font-medium text-slate-500 dark:text-slate-400"
+    >
+      We may earn a commission if you use partner links. It doesn&apos;t change your estimate.
+    </p>
+  );
 }
 
 export function PartnerSlot({

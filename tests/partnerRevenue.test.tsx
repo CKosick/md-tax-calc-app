@@ -250,3 +250,70 @@ describe('Affiliate disclosure line on results', () => {
     expect(screen.queryByText(DISCLOSURE)).toBeNull();
   });
 });
+
+describe('VIN check slot (EpicVIN, above results)', () => {
+  const REFERRAL = 'https://epicvin.com?a_aid=oihxljfdeecka';
+  const vinHrefs = resolvePartnerHrefs(slots, { NEXT_PUBLIC_PARTNER_VIN_CHECK_URL: REFERRAL });
+  const allHrefs = resolvePartnerHrefs(slots, {
+    NEXT_PUBLIC_PARTNER_INSURANCE_URL: INSURANCE,
+    NEXT_PUBLIC_PARTNER_LOAN_URL: LOANS,
+    NEXT_PUBLIC_PARTNER_VIN_CHECK_URL: REFERRAL
+  });
+  const vinLink = () => screen.queryByRole('link', { name: /check the vin/i });
+
+  it('is configured as an above-results slot with a placeholder href', () => {
+    const vin = slots.find((s) => s.id === 'vin-check');
+    expect(vin?.position).toBe('above-results');
+    expect(vin?.href).toBe('#');
+    expect(vin?.requiresFinancing).toBeUndefined();
+  });
+
+  it('resolver picks up NEXT_PUBLIC_PARTNER_VIN_CHECK_URL and keeps a_aid alongside the utm params', () => {
+    const url = new URL(vinHrefs['vin-check']);
+    expect(url.origin).toBe('https://epicvin.com');
+    expect(url.searchParams.get('a_aid')).toBe('oihxljfdeecka');
+    expect(url.searchParams.get('utm_source')).toBe('taxcalc');
+    expect(url.searchParams.get('utm_medium')).toBe('affiliate');
+    expect(url.searchParams.get('utm_campaign')).toBe('vin-check');
+  });
+
+  it('stays hidden when the env var is unset or "#"', () => {
+    expect(resolvePartnerHrefs(slots, {})['vin-check']).toBeUndefined();
+    expect(resolvePartnerHrefs(slots, { NEXT_PUBLIC_PARTNER_VIN_CHECK_URL: '#' })['vin-check']).toBeUndefined();
+    render(<Calculator initialRule={mdRule} partnerHrefs={{}} />);
+    expect(vinLink()).toBeNull();
+  });
+
+  it('respects the monetization kill switch', () => {
+    vi.stubEnv('NEXT_PUBLIC_ENABLE_MONETIZATION', 'false');
+    render(<Calculator initialRule={mdRule} partnerHrefs={vinHrefs} />);
+    expect(vinLink()).toBeNull();
+  });
+
+  it('renders above the results for non-financed and financed visitors', () => {
+    render(<Calculator initialRule={mdRule} partnerHrefs={vinHrefs} />);
+    const results = document.getElementById('calculator-results')!;
+    const before = vinLink()!;
+    expect(before.compareDocumentPosition(results) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(new URL(before.getAttribute('href')!).searchParams.get('a_aid')).toBe('oihxljfdeecka');
+
+    fireEvent.click(document.getElementById('financed-yes')!);
+    expect(vinLink()).not.toBeNull();
+  });
+
+  it('emits partner_click with slot vin-check and the state slug', () => {
+    render(<Calculator initialRule={mdRule} partnerHrefs={vinHrefs} />);
+    fireEvent.click(vinLink()!);
+    expect(trackMock).toHaveBeenCalledWith('partner_click', { slot: 'vin-check', state: mdRule.slug });
+  });
+
+  it('shows the disclosure once, directly under the VIN offer, even with all three offers live', () => {
+    render(<Calculator initialRule={mdRule} partnerHrefs={allHrefs} />);
+    fireEvent.click(document.getElementById('financed-yes')!);
+    expect(screen.getAllByRole('link', { name: /check the vin|compare quotes|check auto loan rates/i })).toHaveLength(3);
+    const disclosures = document.querySelectorAll('#partner-disclosure');
+    expect(disclosures).toHaveLength(1);
+    const results = document.getElementById('calculator-results')!;
+    expect(disclosures[0].compareDocumentPosition(results) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
+});

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { CostBreakdown, StateRule, CalculatorInputs } from '@/lib/types';
-import { PartnerSlot } from './PartnerSlot';
+import { PartnerDisclosure, PartnerSlot } from './PartnerSlot';
 import { PartnerHrefs } from '@/lib/partnerLinks';
 import { LAST_VERIFIED_DATE } from '@/lib/constants';
 
@@ -347,14 +347,7 @@ export function CostSummaryCard({
       />
 
       {/* Affiliate disclosure: once per results view, inside the sticky block so it stays with the offers */}
-      {showPartnerDisclosure && (
-        <p
-          id="partner-disclosure"
-          className="-mt-3 text-center text-[11px] font-medium text-slate-500 dark:text-slate-400"
-        >
-          We may earn a commission if you use partner links. It doesn&apos;t change your estimate.
-        </p>
-      )}
+      {showPartnerDisclosure && <PartnerDisclosure />}
     </div>
   );
 }

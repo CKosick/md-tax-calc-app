@@ -13,7 +13,7 @@ import { VehicleInputForm } from './VehicleInputForm';
 import { CostSummaryCard } from './CostSummaryCard';
 import { Disclaimers } from './Disclaimers';
 import { FaqSection } from './FaqSection';
-import { PartnerSlot, getVisiblePartnerSlots } from './PartnerSlot';
+import { PartnerDisclosure, PartnerSlot, getVisiblePartnerSlots } from './PartnerSlot';
 import { PartnerHrefs } from '@/lib/partnerLinks';
 
 interface CalculatorProps {
@@ -108,6 +108,9 @@ function CalculatorView({ initialRule, partnerHrefs, initialInputs, calculationY
 
   const hasVisiblePartner =
     getVisiblePartnerSlots({ hrefs: partnerHrefs, isFinanced: inputs.isFinanced }).length > 0;
+  // The disclosure sits under the first offer in reading order: the VIN check when shown, else below the results
+  const hasVisibleAboveResults =
+    getVisiblePartnerSlots({ position: 'above-results', hrefs: partnerHrefs, isFinanced: inputs.isFinanced }).length > 0;
 
   const taxName = initialRule.label === 'Delaware'
     ? 'document fee'
@@ -209,13 +212,22 @@ function CalculatorView({ initialRule, partnerHrefs, initialInputs, calculationY
 
         {/* Right Column: Hero Cost Summary Card + Mobile Disclaimers + Sidebar Monetization */}
         <div className="space-y-6 lg:col-span-5">
+          {/* Monetization Slot - Above Results ("check the VIN before you pay") */}
+          <PartnerSlot
+            position="above-results"
+            hrefs={partnerHrefs}
+            isFinanced={inputs.isFinanced}
+            stateSlug={initialRule.slug}
+          />
+          {hasVisibleAboveResults && <PartnerDisclosure />}
+
           <CostSummaryCard
             breakdown={breakdown}
             rule={initialRule}
             purchasePrice={inputs.purchasePrice}
             inputs={inputs}
             partnerHrefs={partnerHrefs}
-            showPartnerDisclosure={hasVisiblePartner}
+            showPartnerDisclosure={hasVisiblePartner && !hasVisibleAboveResults}
           />
 
           {/* Mobile Disclaimers: rendered below results on mobile so user sees results first */}

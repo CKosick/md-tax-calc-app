@@ -27,5 +27,19 @@
       "utm_medium": "affiliate",
       "utm_campaign": "auto-loan-rates"
     }
+  },
+  {
+    "id": "vin-check",
+    "position": "above-results",
+    "headline": "Check this VIN before you buy",
+    "description": "Spot accident, title, and odometer problems before you pay a private seller.",
+    "ctaText": "Check the VIN",
+    "badge": "Vehicle History",
+    "href": "#",
+    "trackingParams": {
+      "utm_source": "taxcalc",
+      "utm_medium": "affiliate",
+      "utm_campaign": "vin-check"
+    }
   }
 ]

@@ -129,9 +129,12 @@ export interface CostBreakdown {
   itemizedList: ItemizedCostItem[];
 }
 
+/** Where a partner slot renders: above-results sits directly above the cost summary. */
+export type PartnerSlotPosition = 'above-results' | 'below-results' | 'sidebar';
+
 export interface PartnerSlotConfig {
   id: string;
-  position: 'below-results' | 'sidebar';
+  position: PartnerSlotPosition;
   headline: string;
   description: string;
   ctaText: string;
