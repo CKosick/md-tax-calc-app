@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            Last Updated: September 2026
+            Last Updated: October 2026
           </p>
         </header>
 
@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
                 <strong>Functional Cookies:</strong> Used to maintain responsive preferences and navigation state while exploring state calculators.
               </li>
               <li>
-                <strong>Analytics:</strong> Aggregated, anonymous traffic analytics (Google Analytics and Cloudflare Web Analytics) to monitor page performance, visitor flow, and popular jurisdictional calculators. Cloudflare Web Analytics is cookieless and does not fingerprint visitors.
+                <strong>Analytics:</strong> Aggregated, anonymous traffic analytics (Google Analytics, Cloudflare Web Analytics, and Vercel Analytics) to monitor page performance, visitor flow, and popular jurisdictional calculators. Cloudflare Web Analytics is cookieless and does not fingerprint visitors.
               </li>
               <li>
                 <strong>Advertising Cookies:</strong> Deployed by third-party advertising partners to deliver tailored advertisements and measure ad performance.

@@ -296,7 +296,8 @@ describe('Work Order Acceptance Tests', () => {
 
       expect(text).toContain('Google AdSense');
       expect(text).toContain('cookies');
-      expect(text).toContain('Google Analytics and Cloudflare Web Analytics');
+      expect(text).toContain('Google Analytics, Cloudflare Web Analytics, and Vercel Analytics');
+      expect(text).toContain('Last Updated: October 2026');
       expect(text).toContain('Cloudflare Web Analytics is cookieless and does not fingerprint visitors.');
       expect(text).toContain('EpicVIN');
       expect(text).toContain('CJ Affiliate and Impact networks');
