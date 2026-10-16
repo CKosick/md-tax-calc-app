@@ -3,6 +3,14 @@ import { getDefaultModelYear } from './constants';
 
 type SearchParamsLike = Pick<URLSearchParams, 'get' | 'has'>;
 
+const WEIGHT_CLASSES: readonly WeightClass[] = ['under3500lbs', '3501to3700lbs', 'under3700lbs', 'over3700lbs'];
+const FUEL_TYPES: readonly FuelType[] = ['gasoline', 'ev', 'phev'];
+
+/** Returns the share-link value if it is one of the allowed options, otherwise the fallback. */
+function pickAllowed<T extends string>(value: string | null, allowed: readonly T[], fallback: T): T {
+  return value !== null && (allowed as readonly string[]).includes(value) ? (value as T) : fallback;
+}
+
 /** The state's own default registration term: 1-year when that is all it offers, else 2-year. */
 export function getDefaultTerm(rule: StateRule): 1 | 2 {
   return rule.registration.terms.includes(1) && !rule.registration.terms.includes(2) ? 1 : 2;
@@ -26,7 +34,8 @@ export function getDefaultInputs(rule: StateRule, calculationYear: number): Calc
 /**
  * Applies shared / saved calculation link params (?price=&year=&type=...) on top of the
  * defaults. Links without price, year, or type are ignored. A missing term falls back to
- * the state's default term; an explicit ?term= wins.
+ * the state's default term; an explicit ?term= wins. Invalid weight= or fuel= values fall back to
+ * the defaults.
  */
 export function inputsFromSearchParams(
   rule: StateRule,
@@ -42,8 +51,9 @@ export function inputsFromSearchParams(
     purchasePrice: params.has('price') ? Math.max(0, Number(params.get('price')) || 0) : defaults.purchasePrice,
     vehicleYear: params.has('year') ? Number(params.get('year')) || defaults.vehicleYear : defaults.vehicleYear,
     vehicleType: params.get('type') === 'motorcycle' ? 'motorcycle' : 'passenger',
-    weightClass: (params.get('weight') || defaults.weightClass) as WeightClass,
-    fuelType: (params.get('fuel') || defaults.fuelType) as FuelType,
+    // Unknown or mistyped values fall back to the defaults instead of reaching the engine
+    weightClass: pickAllowed(params.get('weight'), WEIGHT_CLASSES, defaults.weightClass),
+    fuelType: pickAllowed(params.get('fuel'), FUEL_TYPES, defaults.fuelType),
     registrationTerm: params.has('term')
       ? Number(params.get('term')) === 1 ? 1 : 2
       : getDefaultTerm(rule),

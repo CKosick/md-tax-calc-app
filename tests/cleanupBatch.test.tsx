@@ -163,3 +163,47 @@ describe('Share-link term default respects the state', () => {
     expect(selectedTerm()).toBe(1);
   });
 });
+
+describe('Share-link weight= and fuel= validation', () => {
+  const defaults = getDefaultInputs(mdRule, 2026);
+  const parse = (qs: string) => inputsFromSearchParams(mdRule, new URLSearchParams(qs), defaults);
+
+  it('accepts every valid weight class and fuel type', () => {
+    for (const weight of ['under3500lbs', '3501to3700lbs', 'under3700lbs', 'over3700lbs']) {
+      expect(parse(`price=15000&weight=${weight}`).weightClass).toBe(weight);
+    }
+    for (const fuel of ['gasoline', 'ev', 'phev']) {
+      expect(parse(`price=15000&fuel=${fuel}`).fuelType).toBe(fuel);
+    }
+  });
+
+  it('falls back to the defaults for invalid, empty, or wrong-case values', () => {
+    for (const qs of ['weight=heavy', 'weight=', 'weight=OVER3700LBS', 'weight=over3700lbs%20']) {
+      expect(parse(`price=15000&${qs}`).weightClass).toBe(defaults.weightClass);
+    }
+    for (const qs of ['fuel=diesel', 'fuel=', 'fuel=EV', 'fuel=<script>']) {
+      expect(parse(`price=15000&${qs}`).fuelType).toBe(defaults.fuelType);
+    }
+  });
+
+  it('keeps the other share-link values when weight and fuel are invalid', () => {
+    const inputs = parse('price=22000&year=2018&weight=bogus&fuel=diesel&term=1');
+    expect(inputs.purchasePrice).toBe(22000);
+    expect(inputs.vehicleYear).toBe(2018);
+    expect(inputs.registrationTerm).toBe(1);
+    expect(inputs.weightClass).toBe(defaults.weightClass);
+    expect(inputs.fuelType).toBe(defaults.fuelType);
+  });
+
+  it('a junk link renders the same total as a clean one', () => {
+    const totalText = () => document.getElementById('calculator-results')?.textContent?.match(/\$[\d,]+\.\d\d/)?.[0];
+    currentSearchParams = new URLSearchParams('price=15000');
+    render(<Calculator initialRule={mdRule} />);
+    const clean = totalText();
+    cleanup();
+
+    currentSearchParams = new URLSearchParams('price=15000&weight=heavy&fuel=diesel');
+    render(<Calculator initialRule={mdRule} />);
+    expect(totalText()).toBe(clean);
+  });
+});
