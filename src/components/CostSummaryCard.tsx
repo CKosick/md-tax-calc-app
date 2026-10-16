@@ -59,6 +59,9 @@ export function CostSummaryCard({
       url.searchParams.set('fuel', inputs.fuelType);
       url.searchParams.set('term', String(inputs.registrationTerm));
       url.searchParams.set('financed', String(inputs.isFinanced));
+      if (rule.bookValueAssessment && inputs.bookValue && inputs.bookValue > 0) {
+        url.searchParams.set('book', String(inputs.bookValue));
+      }
       if (inputs.tradeInValue > 0) {
         url.searchParams.set('tradeIn', String(inputs.tradeInValue));
       }
@@ -290,7 +293,22 @@ export function CostSummaryCard({
 
         {/* Contextual Warning / Info Pills */}
         <div className="mt-6 space-y-2">
-          {breakdown.bookValueApplies && (
+          {breakdown.bookValueApplied ? (
+            <div
+              id="book-value-applied"
+              className="rounded-xl border border-amber-200/90 bg-amber-50/90 p-3.5 text-xs text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-200"
+            >
+              <div className="flex items-center gap-1.5 font-bold text-amber-800 dark:text-amber-300">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                </svg>
+                <span>Taxed on book value</span>
+              </div>
+              <p className="mt-1 leading-relaxed">
+                Your price is more than {formatCurrency(rule.bookValueAssessment?.priceBelowBookThreshold ?? 0).replace('.00', '')} below NADA retail, so {rule.label} may assess the {rateLabel} tax on the book value ({formatCurrency(inputs?.bookValue ?? 0)}) instead. Documentation of the lower sale price can support taxing it on your price.
+              </p>
+            </div>
+          ) : breakdown.bookValueApplies && (
             <div className="rounded-xl border border-amber-200/90 bg-amber-50/90 p-3.5 text-xs text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-200">
               <div className="flex items-center gap-1.5 font-bold text-amber-800 dark:text-amber-300">
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

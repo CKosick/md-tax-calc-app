@@ -11,6 +11,13 @@ function pickAllowed<T extends string>(value: string | null, allowed: readonly T
   return value !== null && (allowed as readonly string[]).includes(value) ? (value as T) : fallback;
 }
 
+/** Share-link book value: a positive finite number, otherwise undefined (treated as blank). */
+export function parseBookValue(value: string | null): number | undefined {
+  if (value === null || value.trim() === '') return undefined;
+  const n = Number(value);
+  return Number.isFinite(n) && n > 0 ? n : undefined;
+}
+
 /** The state's own default registration term: 1-year when that is all it offers, else 2-year. */
 export function getDefaultTerm(rule: StateRule): 1 | 2 {
   return rule.registration.terms.includes(1) && !rule.registration.terms.includes(2) ? 1 : 2;
@@ -58,6 +65,7 @@ export function inputsFromSearchParams(
       ? Number(params.get('term')) === 1 ? 1 : 2
       : getDefaultTerm(rule),
     isFinanced: params.get('financed') === 'true',
-    tradeInValue: params.has('tradeIn') ? Math.max(0, Number(params.get('tradeIn')) || 0) : defaults.tradeInValue
+    tradeInValue: params.has('tradeIn') ? Math.max(0, Number(params.get('tradeIn')) || 0) : defaults.tradeInValue,
+    bookValue: parseBookValue(params.get('book')) ?? defaults.bookValue
   };
 }

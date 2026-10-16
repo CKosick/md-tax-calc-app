@@ -65,6 +65,14 @@ export interface StateRule {
   lienFilingFee: number;
   tradeInDeductible: boolean;
   bookValueRule?: string;
+  /**
+   * Book value assessment: when the vehicle is younger than maxVehicleAge and the price is more
+   * than priceBelowBookThreshold below the entered book value, tax is calculated on the book value.
+   */
+  bookValueAssessment?: {
+    maxVehicleAge: number;
+    priceBelowBookThreshold: number;
+  };
   registration: StateRegistrationRules;
   flatTaxTable?: FlatTaxTableConfig;
   veipFee?: number;
@@ -90,6 +98,8 @@ export interface CalculatorInputs {
   registrationTerm: RegistrationTerm;
   isFinanced: boolean;
   tradeInValue: number;
+  /** Optional NADA retail book value (states with a bookValueAssessment rule). */
+  bookValue?: number;
 }
 
 export interface ItemizedCostItem {
@@ -121,6 +131,8 @@ export interface CostBreakdown {
   maxTaxApplied?: boolean;
   luxuryTaxApplied?: boolean;
   bookValueApplies: boolean;
+  /** True when the excise tax was calculated on the entered book value instead of the price. */
+  bookValueApplied?: boolean;
   vehicleAge: number;
   tradeInDeducted: number;
   tradeInIgnored: boolean;

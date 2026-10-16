@@ -9,6 +9,10 @@
     "lienFilingFee": 40,
     "tradeInDeductible": false,
     "bookValueRule": "If vehicle is 7 years old or newer, MVA may assess on book value; a notarized bill of sale overrides",
+    "bookValueAssessment": {
+      "maxVehicleAge": 7,
+      "priceBelowBookThreshold": 500
+    },
     "registration": {
       "terms": [
         1,

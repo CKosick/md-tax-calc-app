@@ -13,13 +13,27 @@ export function calculateVehicleCosts(
   const price = Math.max(0, Number(inputs.purchasePrice) || 0);
   const tradeIn = Math.max(0, Number(inputs.tradeInValue) || 0);
 
+  const vehicleAge = Math.max(0, referenceYear - inputs.vehicleYear);
+
   // 1. Taxable base calculation
+  // Book value assessment (e.g. Maryland): a vehicle younger than maxVehicleAge sold for more than
+  // the threshold below its entered book value is assessed on the book value instead of the price.
+  const bookValue = Number(inputs.bookValue);
+  const assessment = rule.bookValueAssessment;
+  const bookValueApplied = Boolean(
+    assessment &&
+      Number.isFinite(bookValue) &&
+      bookValue > 0 &&
+      price > 0 &&
+      vehicleAge < assessment.maxVehicleAge &&
+      price < bookValue - assessment.priceBelowBookThreshold
+  );
+  const assessedValue = bookValueApplied ? bookValue : price;
+
   // Some states (e.g. Delaware) allow trade-in credit; others (Maryland, Virginia, Pennsylvania, DC, Illinois) tax the full price
   const taxableBase = rule.tradeInDeductible
-    ? Math.max(0, price - tradeIn)
-    : price;
-
-  const vehicleAge = Math.max(0, referenceYear - inputs.vehicleYear);
+    ? Math.max(0, assessedValue - tradeIn)
+    : assessedValue;
 
   let exciseTax = 0;
   let minTaxApplied = false;
@@ -242,6 +256,8 @@ export function calculateVehicleCosts(
       : `Calculated at ${rateLabel} tiered rate on taxable base of $${taxableBase.toLocaleString()}`;
   } else if (rule.exciseTaxRate === 0) {
     taxDescription = `Exempt from vehicle sales tax (private-party occasional sales are not taxed in ${rule.label})`;
+  } else if (bookValueApplied) {
+    taxDescription = `Calculated at ${rateLabel} on book value of $${taxableBase.toLocaleString()} (price is more than $${assessment?.priceBelowBookThreshold.toLocaleString()} below book value)`;
   } else if (luxuryTaxApplied) {
     taxDescription = `Calculated at ${rateLabel} luxury vehicle rate (purchase price over $${rule.luxuryTaxThreshold?.toLocaleString()})`;
   } else if (maxTaxApplied) {
@@ -332,6 +348,7 @@ export function calculateVehicleCosts(
     maxTaxApplied,
     luxuryTaxApplied,
     bookValueApplies,
+    bookValueApplied,
     vehicleAge,
     tradeInDeducted,
     tradeInIgnored,

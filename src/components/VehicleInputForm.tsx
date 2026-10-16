@@ -241,6 +241,44 @@ export function VehicleInputForm({
           </div>
         </div>
 
+        {/* Book Value (states with a book value assessment rule, e.g. Maryland) */}
+        {rule.bookValueAssessment && (
+          <div>
+            <div className="flex items-center justify-between">
+              <label
+                htmlFor="book-value-input"
+                className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300"
+              >
+                Book Value (NADA Retail)
+              </label>
+              <span className="text-[11px] text-slate-400">Optional</span>
+            </div>
+            <div className="relative mt-2">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+                <span className="text-base font-bold text-slate-400">$</span>
+              </div>
+              <input
+                type="number"
+                id="book-value-input"
+                min="0"
+                step="100"
+                value={inputs.bookValue || ''}
+                onChange={(e) => {
+                  const n = parseFloat(e.target.value);
+                  updateField('bookValue', Number.isFinite(n) && n > 0 ? n : undefined);
+                }}
+                placeholder="Leave blank if unknown"
+                className="block w-full min-h-[44px] rounded-2xl border border-slate-200 bg-white py-3 pl-8 pr-4 text-base font-bold text-slate-900 shadow-xs transition-all focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+              />
+            </div>
+            <p id="book-value-help" className="mt-1.5 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
+              {vehicleAge >= rule.bookValueAssessment.maxVehicleAge
+                ? `Not used for vehicles ${rule.bookValueAssessment.maxVehicleAge} or more years old. They are taxed on the price.`
+                : `Used only if your price is more than $${rule.bookValueAssessment.priceBelowBookThreshold.toLocaleString()} below book value. ${rule.label} may then assess the tax on the book value.`}
+            </p>
+          </div>
+        )}
+
         {/* Weight Class (Passenger Cars only) */}
         {inputs.vehicleType === 'passenger' && (
           <div>
