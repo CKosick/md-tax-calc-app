@@ -69,48 +69,12 @@ export default function PrivacyPolicyPage() {
               <li>
                 <strong>Analytics:</strong> Aggregated, anonymous traffic analytics (Google Analytics, Cloudflare Web Analytics, and Vercel Analytics) to monitor page performance, visitor flow, and popular jurisdictional calculators. Cloudflare Web Analytics is cookieless and does not fingerprint visitors.
               </li>
-              <li>
-                <strong>Advertising Cookies:</strong> Deployed by third-party advertising partners to deliver tailored advertisements and measure ad performance.
-              </li>
             </ul>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-              3. Google AdSense &amp; Third-Party Advertising
-            </h2>
-            <p className="text-sm sm:text-base">
-              We may display third-party advertisements served by Google AdSense and other advertising networks.
-            </p>
-            <p className="text-sm sm:text-base">
-              Third-party vendors, including Google, use cookies to serve ads based on a user&apos;s prior visits to this website or other websites on the Internet. Google&apos;s use of advertising cookies enables it and its partners to serve ads to our users based on their visits to CarTaxHub.com and other sites on the web.
-            </p>
-            <p className="text-sm sm:text-base">
-              Users may opt out of personalized advertising at any time by visiting{' '}
-              <a
-                href="https://www.google.com/settings/ads"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-indigo-600 underline hover:text-indigo-700 dark:text-indigo-400"
-              >
-                Google Ads Settings
-              </a>
-              . Alternatively, you can opt out of third-party vendor use of cookies for personalized advertising by visiting{' '}
-              <a
-                href="https://www.aboutads.info/choices/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-indigo-600 underline hover:text-indigo-700 dark:text-indigo-400"
-              >
-                www.aboutads.info
-              </a>
-              .
-            </p>
-          </section>
-
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-              4. Affiliate Relationships &amp; Commercial Disclosures
+              3. Affiliate Relationships &amp; Commercial Disclosures
             </h2>
             <p className="text-sm sm:text-base">
               CarTaxHub is supported in part through affiliate marketing relationships. When you click on outbound recommendation links or promotional banners on our site and make a purchase or request a quote, we may receive a commission or referral fee at zero additional cost to you.
@@ -136,7 +100,7 @@ export default function PrivacyPolicyPage() {
 
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-              5. Children&apos;s Online Privacy Protection
+              4. Children&apos;s Online Privacy Protection
             </h2>
             <p className="text-sm sm:text-base">
               CarTaxHub is directed toward vehicle buyers of legal driving and contracting age. We do not knowingly collect or solicit personal information from individuals under the age of 13.
@@ -145,7 +109,7 @@ export default function PrivacyPolicyPage() {
 
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-              6. Privacy Contact Information
+              5. Privacy Contact Information
             </h2>
             <p className="text-sm sm:text-base">
               If you have any questions or feedback regarding this Privacy Policy, our data handling practices, or cookie disclosures, please contact us by email:
