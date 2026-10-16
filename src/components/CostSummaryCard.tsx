@@ -13,6 +13,8 @@ interface CostSummaryCardProps {
   inputs?: CalculatorInputs;
   /** Partner URLs resolved on the server (see resolvePartnerHrefs). */
   partnerHrefs?: PartnerHrefs;
+  /** Show the affiliate disclosure line (only while a partner offer is visible on the page). */
+  showPartnerDisclosure?: boolean;
 }
 
 export function CostSummaryCard({
@@ -20,7 +22,8 @@ export function CostSummaryCard({
   rule,
   purchasePrice,
   inputs,
-  partnerHrefs
+  partnerHrefs,
+  showPartnerDisclosure = false
 }: CostSummaryCardProps) {
   const [copied, setCopied] = useState(false);
 
@@ -342,6 +345,16 @@ export function CostSummaryCard({
         isFinanced={inputs?.isFinanced}
         stateSlug={rule.slug}
       />
+
+      {/* Affiliate disclosure: once per results view, inside the sticky block so it stays with the offers */}
+      {showPartnerDisclosure && (
+        <p
+          id="partner-disclosure"
+          className="-mt-3 text-center text-[11px] font-medium text-slate-500 dark:text-slate-400"
+        >
+          We may earn a commission if you use partner links. It doesn&apos;t change your estimate.
+        </p>
+      )}
     </div>
   );
 }

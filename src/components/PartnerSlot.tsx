@@ -42,26 +42,36 @@ export function trackPartnerClick(slotId: string, stateSlug?: string): void {
   }
 }
 
-export function PartnerSlot({
+interface VisibleSlotOptions {
+  position?: PartnerSlotProps['position'];
+  forceShow?: boolean;
+  slots?: PartnerSlotConfig[];
+  hrefs?: PartnerHrefs;
+  isFinanced?: boolean;
+}
+
+/**
+ * Partner slots that will actually render, with their destination URLs. Shared by PartnerSlot
+ * and the results disclosure line so the two always agree. Omit position to check every slot.
+ */
+export function getVisiblePartnerSlots({
   position,
-  className = '',
   forceShow = false,
   slots: customSlots,
   hrefs = {},
-  isFinanced = false,
-  stateSlug
-}: PartnerSlotProps) {
-  // If monetization is explicitly killed via env and not forced, render nothing
+  isFinanced = false
+}: VisibleSlotOptions) {
+  // If monetization is explicitly killed via env and not forced, nothing renders
   if (process.env.NEXT_PUBLIC_ENABLE_MONETIZATION === 'false' && !forceShow) {
-    return null;
+    return [];
   }
 
   const sourceSlots = customSlots || (partnerSlotsData as PartnerSlotConfig[]);
 
   // Filter slots for the target position and pick their server-resolved URL.
   // A static href in the slot config is identical on server and client, so it is a safe fallback.
-  const configuredSlots = sourceSlots
-    .filter((slot) => slot.position === position)
+  return sourceSlots
+    .filter((slot) => position === undefined || slot.position === position)
     .filter((slot) => forceShow || !slot.requiresFinancing || isFinanced)
     .map((slot) => ({
       ...slot,
@@ -69,6 +79,18 @@ export function PartnerSlot({
     }))
     // Hide slots everywhere unless a real destination URL is configured (render nothing if missing or '#')
     .filter((slot) => isValidRealUrl(slot.destinationUrl));
+}
+
+export function PartnerSlot({
+  position,
+  className = '',
+  forceShow = false,
+  slots,
+  hrefs,
+  isFinanced,
+  stateSlug
+}: PartnerSlotProps) {
+  const configuredSlots = getVisiblePartnerSlots({ position, forceShow, slots, hrefs, isFinanced });
 
   // If no slots have a real URL configured, render nothing
   if (configuredSlots.length === 0) {

@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
                 <strong>Functional Cookies:</strong> Used to maintain responsive preferences and navigation state while exploring state calculators.
               </li>
               <li>
-                <strong>Analytics Cookies:</strong> Aggregated, anonymous traffic analytics (e.g., Google Analytics) to monitor page performance, visitor flow, and popular jurisdictional calculators.
+                <strong>Analytics:</strong> Aggregated, anonymous traffic analytics (Google Analytics and Cloudflare Web Analytics) to monitor page performance, visitor flow, and popular jurisdictional calculators. Cloudflare Web Analytics is cookieless and does not fingerprint visitors.
               </li>
               <li>
                 <strong>Advertising Cookies:</strong> Deployed by third-party advertising partners to deliver tailored advertisements and measure ad performance.
@@ -116,19 +116,19 @@ export default function PrivacyPolicyPage() {
               CarTaxHub is supported in part through affiliate marketing relationships. When you click on outbound recommendation links or promotional banners on our site and make a purchase or request a quote, we may receive a commission or referral fee at zero additional cost to you.
             </p>
             <p className="text-sm sm:text-base">
-              Our verified affiliate partners include:
+              Our current affiliate partners include:
             </p>
             <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base">
               <li>
-                <strong>ClearVin:</strong> Independent vehicle history reports, VIN checks, and title brand verifications.
-              </li>
-              <li>
-                <strong>uShip:</strong> Marketplace for nationwide vehicle shipping and auto transport quotes.
-              </li>
-              <li>
-                <strong>SmartFinancial:</strong> Independent auto insurance comparison and rate quote marketplace.
+                <strong>EpicVIN:</strong> Independent vehicle history reports and VIN checks.
               </li>
             </ul>
+            <p className="text-sm sm:text-base">
+              We also work with the CJ Affiliate and Impact networks, through which insurance comparison and auto loan partners may appear on calculator pages as those programs are approved.
+            </p>
+            <p className="text-sm sm:text-base">
+              Partner categories may include vehicle history reports, auto insurance comparison, and auto loan marketplaces.
+            </p>
             <p className="text-sm text-slate-500 dark:text-slate-400">
               Affiliate partnerships do not influence our calculation formulas, statutory fee tables, or state tax rate algorithms, which remain strictly objective and grounded in state statutes.
             </p>

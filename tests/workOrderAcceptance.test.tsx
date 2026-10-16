@@ -290,15 +290,19 @@ describe('Work Order Acceptance Tests', () => {
       expect(contactLink).not.toBeNull();
     });
 
-    it('Privacy page explicitly mentions Google AdSense/cookies and affiliate commissions (ClearVin, uShip, SmartFinancial)', () => {
+    it('Privacy page mentions Google AdSense/cookies, both analytics providers, and only active affiliate partners', () => {
       const { container } = render(<PrivacyPage />);
       const text = container.textContent || '';
 
       expect(text).toContain('Google AdSense');
       expect(text).toContain('cookies');
-      expect(text).toContain('ClearVin');
-      expect(text).toContain('uShip');
-      expect(text).toContain('SmartFinancial');
+      expect(text).toContain('Google Analytics and Cloudflare Web Analytics');
+      expect(text).toContain('Cloudflare Web Analytics is cookieless and does not fingerprint visitors.');
+      expect(text).toContain('EpicVIN');
+      expect(text).toContain('CJ Affiliate and Impact networks');
+      expect(text).toContain('do not influence our calculation formulas');
+      // Never-active partners must not be named
+      expect(text).not.toMatch(/ClearVin|uShip|SmartFinancial/);
       expect(text).toContain('contact@cartaxhub.com');
       // Inputs never leave browser
       expect(text).toMatch(/never leave (your|the) browser/i);

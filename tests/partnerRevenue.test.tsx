@@ -220,3 +220,33 @@ describe('Loan slot only shows when financed', () => {
     });
   });
 });
+
+describe('Affiliate disclosure line on results', () => {
+  const DISCLOSURE = "We may earn a commission if you use partner links. It doesn't change your estimate.";
+  const loanOnly = resolvePartnerHrefs(slots, { NEXT_PUBLIC_PARTNER_LOAN_URL: LOANS });
+
+  it('shows exactly once when partner offers are visible', () => {
+    render(<Calculator initialRule={mdRule} partnerHrefs={bothHrefs} />);
+    expect(screen.getAllByText(DISCLOSURE)).toHaveLength(1);
+    // Cards keep their per-card Sponsored Link label
+    expect(screen.getAllByText('Sponsored Link').length).toBeGreaterThan(0);
+  });
+
+  it('is hidden when no partner offer is showing', () => {
+    render(<Calculator initialRule={mdRule} partnerHrefs={{}} />);
+    expect(screen.queryByText(DISCLOSURE)).toBeNull();
+  });
+
+  it('follows the financed toggle when the loan offer is the only partner', () => {
+    render(<Calculator initialRule={mdRule} partnerHrefs={loanOnly} />);
+    expect(screen.queryByText(DISCLOSURE)).toBeNull();
+    fireEvent.click(document.getElementById('financed-yes')!);
+    expect(screen.getAllByText(DISCLOSURE)).toHaveLength(1);
+  });
+
+  it('respects the monetization kill switch', () => {
+    vi.stubEnv('NEXT_PUBLIC_ENABLE_MONETIZATION', 'false');
+    render(<Calculator initialRule={mdRule} partnerHrefs={bothHrefs} />);
+    expect(screen.queryByText(DISCLOSURE)).toBeNull();
+  });
+});

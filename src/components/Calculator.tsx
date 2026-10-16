@@ -13,7 +13,7 @@ import { VehicleInputForm } from './VehicleInputForm';
 import { CostSummaryCard } from './CostSummaryCard';
 import { Disclaimers } from './Disclaimers';
 import { FaqSection } from './FaqSection';
-import { PartnerSlot } from './PartnerSlot';
+import { PartnerSlot, getVisiblePartnerSlots } from './PartnerSlot';
 import { PartnerHrefs } from '@/lib/partnerLinks';
 
 interface CalculatorProps {
@@ -105,6 +105,9 @@ function CalculatorView({ initialRule, partnerHrefs, initialInputs, calculationY
   const breakdown = useMemo(() => {
     return calculateVehicleCosts(initialRule, inputs, calculationYear);
   }, [initialRule, inputs, calculationYear]);
+
+  const hasVisiblePartner =
+    getVisiblePartnerSlots({ hrefs: partnerHrefs, isFinanced: inputs.isFinanced }).length > 0;
 
   const taxName = initialRule.label === 'Delaware'
     ? 'document fee'
@@ -212,6 +215,7 @@ function CalculatorView({ initialRule, partnerHrefs, initialInputs, calculationY
             purchasePrice={inputs.purchasePrice}
             inputs={inputs}
             partnerHrefs={partnerHrefs}
+            showPartnerDisclosure={hasVisiblePartner}
           />
 
           {/* Mobile Disclaimers: rendered below results on mobile so user sees results first */}
