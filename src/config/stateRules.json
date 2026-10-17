@@ -39,7 +39,7 @@
       "evSurchargeAnnual": 125,
       "phevSurchargeAnnual": 100
     },
-    "veipFee": 14,
+    "veipFee": 30,
     "notes": [
       "Title fee increased from $100 to $200 effective July 1, 2025.",
       "Registration fees reflect the 3 statutory passenger/multipurpose weight tiers under Maryland SB 362 (effective July 1, 2024 / 2025).",
@@ -84,9 +84,10 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Maryland's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Maryland motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "October 2026",
     "sources": [
-      "https://mva.maryland.gov/about-mva/Pages/fees.aspx",
-      "https://mva.maryland.gov/vehicles/Pages/registration/fees.aspx"
+      "https://mva.maryland.gov/title-registration/fees-payment-options/excise-tax",
+      "https://mva.maryland.gov/title-registration/fees-payment-options"
     ]
   },
   "virginia": {
@@ -160,6 +161,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Virginia's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Virginia motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.dmv.virginia.gov/vehicles/taxes-fees/sut",
       "https://www.dmv.virginia.gov/vehicles/taxes-fees/general-fees",
@@ -235,6 +237,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Pennsylvania's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Pennsylvania motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.dmv.pa.gov/VEHICLE-SERVICES/Title-Registration/Pages/Fee-Schedule.aspx",
       "https://www.revenue.pa.gov/TaxTypes/SUT/Pages/default.aspx",
@@ -310,6 +313,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Delaware's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Delaware motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://dmv.de.gov/VehicleServices/titles/index.shtml?dc=veh_title_fees",
       "https://delcode.delaware.gov/title30/c030/index.html",
@@ -385,6 +389,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond District of Columbia's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the District of Columbia motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://dmv.dc.gov/service/vehicle-excise-tax",
       "https://dmv.dc.gov/service/vehicle-registration-fees",
@@ -459,6 +464,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond California's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the California motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates-7-25.htm",
       "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/"
@@ -535,6 +541,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Texas's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Texas motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://comptroller.texas.gov/taxes/publications/96-254.php",
       "https://www.txdmv.gov/motorists/register-your-vehicle"
@@ -611,6 +618,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Florida's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Florida motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://floridarevenue.com/taxes/taxesfees/Pages/sales_tax.aspx",
       "https://www.flhsmv.gov/fees/"
@@ -683,6 +691,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond New York's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the New York motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.tax.ny.gov/pit/sp/sales_tax_rates.htm",
       "https://dmv.ny.gov/registration/registration-fees-and-taxes-passenger-vehicles"
@@ -842,6 +851,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Illinois's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Illinois motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://tax.illinois.gov/research/taxrates/rut-50.html",
       "https://www.ilsos.gov/departments/vehicles/fees.html"
@@ -916,6 +926,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Ohio's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Ohio motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://tax.ohio.gov/help-center/faqs/sales-and-use-taxes-motor-vehicles",
       "https://bmv.ohio.gov/vr-fees.aspx"
@@ -992,6 +1003,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Georgia's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Georgia motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://dor.georgia.gov/title-ad-valorem-tax-tavt-faq",
       "https://dor.georgia.gov/motor-vehicles/vehicle-registration-and-licensing"
@@ -1066,6 +1078,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond North Carolina's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the North Carolina motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.ncdot.gov/dmv/title-registration/taxes/Pages/highway-use-tax.aspx",
       "https://www.ncdot.gov/dmv/title-registration/vehicle/Pages/fees.aspx"
@@ -1139,6 +1152,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Michigan's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Michigan motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.michigan.gov/treasury/taxes/business-taxes/sales-use-tax",
       "https://www.michigan.gov/sos/vehicle/pricing"
@@ -1213,6 +1227,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond New Jersey's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the New Jersey motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.nj.gov/treasury/taxation/sales_use_tax.shtml",
       "https://www.nj.gov/mvc/vehicles/titlenew.htm",
@@ -1289,6 +1304,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Washington's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Washington motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://dor.wa.gov/taxes-rates/use-tax",
       "https://dol.wa.gov/vehicles-and-boats/vehicle-registration-tabs-and-plates/renew-vehicle-tabs/calculate-vehicle-tab-fees",
@@ -1364,6 +1380,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Arizona's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Arizona motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://azdot.gov/mvd/services/vehicle-services/vehicle-registration",
       "https://azdor.gov/transaction-privilege-tax"
@@ -1439,6 +1456,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Tennessee's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Tennessee motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.tn.gov/revenue/taxes/sales-and-use-tax.html",
       "https://www.tn.gov/revenue/title-and-registration.html"
@@ -1511,6 +1529,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Massachusetts's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Massachusetts motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.mass.gov/info-details/motor-vehicle-sales-and-use-tax",
       "https://www.mass.gov/doc/rmv-schedule-of-fees/download"
@@ -1585,6 +1604,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Indiana's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Indiana motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.in.gov/dor/business-tax/sales-tax/",
       "https://www.in.gov/bmv/registration-plates/vehicle-registration-fees/"
@@ -1653,6 +1673,7 @@
         "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Missouri DMV or Department of Revenue to verify eligibility and required documentation before titling."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://dor.mo.gov/motor-vehicle/titling-registration/",
       "https://sa.dor.mo.gov/mv/stc/"
@@ -1730,6 +1751,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Wisconsin's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Wisconsin motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/fee-chart.aspx",
       "https://www.revenue.wi.gov/Pages/FAQS/pcs-motorveh.aspx"
@@ -1806,6 +1828,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Colorado's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Colorado motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://tax.colorado.gov/sales-use-tax",
       "https://dmv.colorado.gov/taxes-and-fees"
@@ -1883,6 +1906,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Minnesota's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Minnesota motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.revenue.state.mn.us/motor-vehicle-sales-tax",
       "https://dps.mn.gov/divisions/dvs/fees/Pages/default.aspx"
@@ -1962,6 +1986,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond South Carolina's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the South Carolina motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration",
       "https://www.scstatehouse.gov/code/t56c003.php"
@@ -2038,6 +2063,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Alabama's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Alabama motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://revenue.alabama.gov/motor-vehicle/",
       "https://revenue.alabama.gov/sales-use/tax-rates/"
@@ -2120,6 +2146,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Louisiana's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Louisiana motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://omv.dps.louisiana.gov/Fee_Schedule.aspx",
       "https://revenue.louisiana.gov/SalesTax"
@@ -2198,6 +2225,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Kentucky's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Kentucky motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://drive.ky.gov/motor-vehicle-licensing/Pages/Vehicle-Taxes.aspx",
       "https://revenue.ky.gov/Property/Motor-Vehicles/Pages/default.aspx"
@@ -2277,6 +2305,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Oregon's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Oregon motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.oregon.gov/odot/dmv/pages/fees/vehicle.aspx",
       "https://www.oregon.gov/dor/programs/businesses/Pages/vehicle-privilege-and-use-taxes.aspx"
@@ -2353,6 +2382,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Oklahoma's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Oklahoma motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://oklahoma.gov/service/all-services/vehicle-registration.html",
       "https://oksenate.gov/legislation/oklahoma-statutes"
@@ -2435,6 +2465,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Connecticut's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Connecticut motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://portal.ct.gov/dmv/vehicle-services/fees-dmv-services",
       "https://portal.ct.gov/drs/sales-tax/sales-and-use-tax"
@@ -2512,6 +2543,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Utah's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Utah motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://dmv.utah.gov/taxes-fees/sales-tax",
       "https://dmv.utah.gov/taxes-fees/fees"
@@ -2587,6 +2619,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Iowa's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Iowa motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://iowadot.gov/mvd/buyingselling/registering-a-vehicle",
       "https://iowatreasurers.org"
@@ -2660,6 +2693,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Nevada's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Nevada motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://dmv.nv.gov/fees.htm",
       "https://tax.nv.gov"
@@ -2749,6 +2783,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Arkansas's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Arkansas motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.dfa.arkansas.gov/excise-tax/sales-and-use-tax/motor-vehicle-tax/",
       "https://www.dfa.arkansas.gov/driver-services/fees/"
@@ -2824,6 +2859,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Mississippi's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Mississippi motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.dor.ms.gov",
       "https://www.dor.ms.gov/motor-vehicle"
@@ -2899,6 +2935,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Kansas's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Kansas motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.ksrevenue.gov/",
       "https://www.ksrevenue.gov/prtaxrates.html"
@@ -2975,6 +3012,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond New Mexico's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the New Mexico motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.mvd.newmexico.gov/",
       "https://www.mvd.newmexico.gov/vehicles/taxes-fees/"
@@ -3049,6 +3087,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Nebraska's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Nebraska motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling",
       "https://revenue.nebraska.gov/"
@@ -3125,6 +3164,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Idaho's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Idaho motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://itd.idaho.gov/",
       "https://tax.idaho.gov/"
@@ -3199,6 +3239,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond West Virginia's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the West Virginia motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://transportation.wv.gov/dmv"
     ]
@@ -3268,6 +3309,7 @@
         "answer": "In Hawaii, private vehicle transfers are not subject to a statewide vehicle sales tax. When transferring title between family members, you only pay standard title transfer fees and registration charges."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://hidot.hawaii.gov",
       "https://mvinquiry.hnl.info"
@@ -3340,6 +3382,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond New Hampshire's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the New Hampshire motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.nh.gov/safety/divisions/dmv"
     ]
@@ -3412,6 +3455,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Maine's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Maine motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.maine.gov/revenue",
       "https://www.maine.gov/sos/bmv"
@@ -3484,6 +3528,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Montana's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Montana motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://mvdmt.gov"
     ]
@@ -3556,6 +3601,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Rhode Island's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Rhode Island motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://dmv.ri.gov",
       "https://tax.ri.gov"
@@ -3629,6 +3675,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond South Dakota's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the South Dakota motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://dor.sd.gov/individuals/motor-vehicle"
     ]
@@ -3700,6 +3747,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond North Dakota's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the North Dakota motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://www.dot.nd.gov"
     ]
@@ -3772,6 +3820,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Alaska's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Alaska motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://dmv.alaska.gov"
     ]
@@ -3847,6 +3896,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Vermont's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Vermont motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://dmv.vermont.gov"
     ]
@@ -3920,6 +3970,7 @@
         "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Wyoming's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Wyoming motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
       }
     ],
+    "lastVerified": "September 2026",
     "sources": [
       "https://revenue.wyo.gov",
       "https://www.dot.state.wy.us"

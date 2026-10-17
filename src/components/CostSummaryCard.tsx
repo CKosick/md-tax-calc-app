@@ -5,6 +5,7 @@ import { CostBreakdown, StateRule, CalculatorInputs } from '@/lib/types';
 import { PartnerDisclosure, PartnerSlot } from './PartnerSlot';
 import { PartnerHrefs } from '@/lib/partnerLinks';
 import { LAST_VERIFIED_DATE } from '@/lib/constants';
+import { getVisibleSources } from '@/lib/sources';
 
 interface CostSummaryCardProps {
   breakdown: CostBreakdown;
@@ -26,6 +27,7 @@ export function CostSummaryCard({
   showPartnerDisclosure = false
 }: CostSummaryCardProps) {
   const [copied, setCopied] = useState(false);
+  const visibleSources = getVisibleSources(rule);
 
   const formatCurrency = (val: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -345,25 +347,35 @@ export function CostSummaryCard({
           )}
         </div>
 
-        {/* Sources / Last Checked Section */}
-        {rule.sources && rule.sources.length > 0 && (
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 pt-4 text-xs dark:border-slate-800">
-            <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">
-              Statutory verification: {LAST_VERIFIED_DATE}
-            </span>
-            <a
-              href={rule.sources[0]}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-[44px] items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 underline underline-offset-2"
-            >
-              <span>Sources / last checked</span>
-              <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg>
-            </a>
-          </div>
-        )}
+        {/* Last Verified Date + Official Sources (known-dead links hidden) */}
+        <div id="state-sources" className="mt-6 border-t border-slate-100 pt-4 text-xs dark:border-slate-800">
+          <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">
+            {rule.label} rates last verified: {rule.lastVerified ?? LAST_VERIFIED_DATE}
+          </span>
+          {visibleSources.length > 0 ? (
+            <ul className="mt-1.5 space-y-0.5">
+              {visibleSources.map((source) => (
+                <li key={source.url}>
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[32px] items-center gap-1.5 text-xs font-semibold text-indigo-600 underline underline-offset-2 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
+                  >
+                    <span className="break-all">{source.label}</span>
+                    <svg className="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="mt-1.5 text-[11px] text-slate-500 dark:text-slate-400">
+              Official source links for {rule.label} are being updated.
+            </p>
+          )}
+        </div>
       </div>
 
       {/* Monetization Slot - Below Results */}

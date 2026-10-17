@@ -80,6 +80,8 @@ export interface StateRule {
   notes: string[];
   disclaimers: string[];
   faqs: FaqItem[];
+  /** Month and year this state's rates and fees were last checked against its sources. */
+  lastVerified: string;
   sources: string[];
 }
 

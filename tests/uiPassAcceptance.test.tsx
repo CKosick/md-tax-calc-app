@@ -174,19 +174,17 @@ describe('CarTaxHub UI Pass Acceptance Tests', () => {
   });
 
   describe('5. Sources / Last Checked Link', () => {
-    it('renders "Sources / last checked" link with real tracked date and real state URL', () => {
+    it('renders the per-state last verified date and the state source links', () => {
       const breakdown = calculateVehicleCosts(mdRule, defaultInputs, 2026);
       render(
         <CostSummaryCard breakdown={breakdown} rule={mdRule} purchasePrice={15000} />
       );
 
-      const sourceLink = screen.getByRole('link', { name: /sources \/ last checked/i });
-      expect(sourceLink).toBeDefined();
-      expect(sourceLink.getAttribute('href')).toBe('https://mva.maryland.gov/about-mva/Pages/fees.aspx');
+      // Maryland was re-verified against current MVA pages in October 2026
+      expect(screen.getByText('Maryland rates last verified: October 2026')).toBeDefined();
+      const sourceLink = screen.getByRole('link', { name: /mva\.maryland\.gov: excise tax/i });
+      expect(sourceLink.getAttribute('href')).toBe('https://mva.maryland.gov/title-registration/fees-payment-options/excise-tax');
       expect(sourceLink.getAttribute('target')).toBe('_blank');
-
-      // Uses real tracked date September 2026
-      expect(screen.getByText(/September 2026/i)).toBeDefined();
     });
   });
 
