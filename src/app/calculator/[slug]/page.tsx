@@ -5,6 +5,7 @@ import { StateRule, StateRulesConfig } from '@/lib/types';
 import { formatFee } from '@/lib/formatters';
 import { Calculator } from '@/components/Calculator';
 import { resolvePartnerHrefs } from '@/lib/partnerLinks';
+import { getGuidesForState } from '@/config/guides';
 
 const rules = stateRulesData as StateRulesConfig;
 
@@ -69,6 +70,13 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
   if (!rule) {
     notFound();
   }
+
+  const stateKey = Object.keys(rules).find((key) => rules[key].slug === rule.slug) ?? '';
+  const guideLinks = getGuidesForState(stateKey).map((guide) => ({
+    href: `/guides/${guide.slug}`,
+    title: guide.title,
+    description: guide.cardDescription
+  }));
 
   // JSON-LD Breadcrumb Schema
   const breadcrumbSchema = {
@@ -142,7 +150,7 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
       />
 
       <main className="min-h-screen bg-slate-50/50 dark:bg-slate-950">
-        <Calculator initialRule={rule} partnerHrefs={resolvePartnerHrefs()} />
+        <Calculator initialRule={rule} partnerHrefs={resolvePartnerHrefs()} guides={guideLinks} />
       </main>
     </>
   );

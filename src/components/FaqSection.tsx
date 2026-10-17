@@ -6,9 +6,12 @@ import { FaqItem } from '@/lib/types';
 interface FaqSectionProps {
   faqs: FaqItem[];
   stateLabel?: string;
+  /** Overrides the default heading and intro (used on guide pages). */
+  heading?: string;
+  intro?: string;
 }
 
-export function FaqSection({ faqs, stateLabel = 'Maryland' }: FaqSectionProps) {
+export function FaqSection({ faqs, stateLabel = 'Maryland', heading, intro }: FaqSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
@@ -19,10 +22,10 @@ export function FaqSection({ faqs, stateLabel = 'Maryland' }: FaqSectionProps) {
     <section aria-labelledby="faq-section-title" className="mt-16 border-t border-slate-200 pt-12 dark:border-slate-800">
       <div className="mb-8">
         <h2 id="faq-section-title" className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
-          Frequently Asked Questions: {stateLabel} Vehicle Taxes &amp; Fees
+          {heading ?? `Frequently Asked Questions: ${stateLabel} Vehicle Taxes & Fees`}
         </h2>
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-          Essential statutory answers regarding {stateLabel} vehicle sales taxes, titling requirements, and registration fees.
+          {intro ?? `Essential statutory answers regarding ${stateLabel} vehicle sales taxes, titling requirements, and registration fees.`}
         </p>
       </div>
 

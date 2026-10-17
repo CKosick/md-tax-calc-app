@@ -177,6 +177,8 @@ export default function RootLayout({
               <Link href="/calculator" className="hover:text-indigo-600 font-bold">All Calculators</Link>
             </div>
             <div className="mt-3 flex flex-wrap justify-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400">
+              <Link href="/guides" className="hover:text-indigo-600 dark:hover:text-indigo-400">Guides</Link>
+              <span>•</span>
               <Link href="/about" className="hover:text-indigo-600 dark:hover:text-indigo-400">About</Link>
               <span>•</span>
               <Link href="/privacy" className="hover:text-indigo-600 dark:hover:text-indigo-400">Privacy Policy</Link>

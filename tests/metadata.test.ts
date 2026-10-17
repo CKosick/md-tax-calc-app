@@ -89,8 +89,8 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
   it('sitemap generates valid XML sitemap entries for root, hub, comparison page, and all 51 states with production domain', () => {
     const entries = sitemap();
 
-    // 1 root + 1 hub (/calculator) + 1 comparison page (/vehicle-tax-by-state) + 3 trust pages (/about, /privacy, /contact) + 51 state pages = 57 total entries
-    expect(entries).toHaveLength(57);
+    // 6 static pages + 51 state calculators + guides index + 3 Maryland guides
+    expect(entries).toHaveLength(61);
 
     const urls = entries.map((e) => e.url);
     expect(urls).toContain('https://cartaxhub.com');

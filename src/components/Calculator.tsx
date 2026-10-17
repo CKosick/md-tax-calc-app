@@ -20,6 +20,19 @@ interface CalculatorProps {
   initialRule: StateRule;
   /** Partner URLs resolved on the server (see resolvePartnerHrefs). */
   partnerHrefs?: PartnerHrefs;
+  /**
+   * Embedded in another page (e.g. a guide): renders only the form, results, disclaimers, and
+   * partner offers. The host page supplies its own H1, breadcrumb, FAQ, and links.
+   */
+  embedded?: boolean;
+  /** How-to guides for this state, listed in a Guides block on the calculator page. */
+  guides?: GuideLink[];
+}
+
+export interface GuideLink {
+  href: string;
+  title: string;
+  description: string;
 }
 
 const ALL_STATES = Object.entries(stateRulesData as StateRulesConfig)
@@ -50,46 +63,28 @@ const POPULAR_SLUGS = [
  * the Suspense boundary render in the browser on prerendered pages. The fallback is the full
  * calculator with default inputs, so the prerendered HTML (H1, results, FAQ) is unchanged for SEO.
  */
-export function Calculator({ initialRule, partnerHrefs }: CalculatorProps) {
+export function Calculator(props: CalculatorProps) {
   const calculationYear = getCalculationYear();
-  const defaults = getDefaultInputs(initialRule, calculationYear);
+  const defaults = getDefaultInputs(props.initialRule, calculationYear);
 
   return (
-    <Suspense
-      fallback={
-        <CalculatorView
-          initialRule={initialRule}
-          partnerHrefs={partnerHrefs}
-          initialInputs={defaults}
-          calculationYear={calculationYear}
-        />
-      }
-    >
-      <CalculatorFromSearchParams
-        initialRule={initialRule}
-        partnerHrefs={partnerHrefs}
-        defaults={defaults}
-        calculationYear={calculationYear}
-      />
+    <Suspense fallback={<CalculatorView {...props} initialInputs={defaults} calculationYear={calculationYear} />}>
+      <CalculatorFromSearchParams {...props} defaults={defaults} calculationYear={calculationYear} />
     </Suspense>
   );
 }
 
 function CalculatorFromSearchParams({
-  initialRule,
-  partnerHrefs,
   defaults,
-  calculationYear
+  ...props
 }: CalculatorProps & { defaults: CalculatorInputs; calculationYear: number }) {
   const searchParams = useSearchParams();
   return (
     <CalculatorView
       // Remount with fresh inputs if the query string changes on client navigation
       key={searchParams?.toString() ?? ''}
-      initialRule={initialRule}
-      partnerHrefs={partnerHrefs}
-      initialInputs={inputsFromSearchParams(initialRule, searchParams, defaults)}
-      calculationYear={calculationYear}
+      {...props}
+      initialInputs={inputsFromSearchParams(props.initialRule, searchParams, defaults)}
     />
   );
 }
@@ -99,7 +94,14 @@ interface CalculatorViewProps extends CalculatorProps {
   calculationYear: number;
 }
 
-function CalculatorView({ initialRule, partnerHrefs, initialInputs, calculationYear }: CalculatorViewProps) {
+function CalculatorView({
+  initialRule,
+  partnerHrefs,
+  initialInputs,
+  calculationYear,
+  embedded = false,
+  guides = []
+}: CalculatorViewProps) {
   const [inputs, setInputs] = useState<CalculatorInputs>(initialInputs);
 
   const breakdown = useMemo(() => {
@@ -157,7 +159,9 @@ function CalculatorView({ initialRule, partnerHrefs, initialInputs, calculationY
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-6 sm:py-8 sm:px-6 lg:px-8 pb-28 lg:pb-8">
+    <div className={embedded ? '' : 'mx-auto max-w-7xl px-4 py-6 sm:py-8 sm:px-6 lg:px-8 pb-28 lg:pb-8'}>
+      {!embedded && (
+      <>
       {/* Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="mb-4 sm:mb-6 flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
         <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400">
@@ -186,6 +190,8 @@ function CalculatorView({ initialRule, partnerHrefs, initialInputs, calculationY
           Calculate your true first-year out-of-pocket costs for a private vehicle sale in {initialRule.label}. Accurately accounts for {taxPhrase}, {formatFee(initialRule.titleFee)} certificate of title fee, 1 or 2-year tag registration, and state-specific regulations.
         </p>
       </header>
+      </>
+      )}
 
       {/* Main Grid: Inputs on Left, Sticky Hero Summary on Right (Desktop two-column layout kept as is) */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
@@ -249,8 +255,48 @@ function CalculatorView({ initialRule, partnerHrefs, initialInputs, calculationY
         </div>
       </div>
 
+      {!embedded && (
+      <>
       {/* FAQ Section with long-tail query H2s */}
       <FaqSection faqs={initialRule.faqs} stateLabel={initialRule.label} />
+
+      {/* How-to guides for this state */}
+      {guides.length > 0 && (
+        <section id="state-guides" className="mt-16 border-t border-slate-200 pt-10 dark:border-slate-800">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+                {initialRule.label} Guides
+              </h2>
+              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                Step-by-step help for titling and tagging a vehicle in {initialRule.label}:
+              </p>
+            </div>
+            <Link
+              href="/guides"
+              className="inline-flex min-h-[44px] items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400"
+            >
+              <span>All Guides</span>
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {guides.map((guide) => (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                className="flex min-h-[44px] flex-col rounded-xl border border-slate-200/80 bg-white/70 p-4 transition-all hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900/60"
+              >
+                <span className="text-sm font-semibold text-slate-900 dark:text-white">{guide.title}</span>
+                <span className="mt-1 text-xs leading-relaxed text-slate-500 dark:text-slate-400">{guide.description}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Internal Linking: Sibling & Popular State Calculators */}
       <section className="mt-16 border-t border-slate-200 pt-10 dark:border-slate-800">
@@ -317,6 +363,8 @@ function CalculatorView({ initialRule, partnerHrefs, initialInputs, calculationY
           </button>
         </div>
       </div>
+      </>
+      )}
     </div>
   );
 }

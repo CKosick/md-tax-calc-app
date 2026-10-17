@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import stateRulesData from '@/config/stateRules.json';
 import { StateRulesConfig } from '@/lib/types';
+import { GUIDES } from '@/config/guides';
 
 const rules = stateRulesData as StateRulesConfig;
 const BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://cartaxhub.com').replace(/\/$/, '');
@@ -56,5 +57,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8
   }));
 
-  return [...staticRoutes, ...stateRoutes];
+  // How-to guides
+  const guideRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/guides`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8
+    },
+    ...GUIDES.map((guide) => ({
+      url: `${BASE_URL}/guides/${guide.slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8
+    }))
+  ];
+
+  return [...staticRoutes, ...stateRoutes, ...guideRoutes];
 }
