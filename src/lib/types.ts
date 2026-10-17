@@ -20,6 +20,11 @@ export interface StateRegistrationRules {
   motorcycle: number | Record<string, number>;
   evSurchargeAnnual?: number;
   phevSurchargeAnnual?: number;
+  /**
+   * Weight (lbs) separating the two passenger tiers for states priced as under3700lbs / over3700lbs.
+   * Defaults to 3,700; Virginia splits at 4,000. Only the form labels use it.
+   */
+  passengerWeightSplitLbs?: number;
 }
 
 export interface FaqItem {
@@ -72,6 +77,15 @@ export interface StateRule {
   bookValueAssessment?: {
     maxVehicleAge: number;
     priceBelowBookThreshold: number;
+  };
+  /**
+   * State-specific book value warning (no effect on the tax): shown in the results when the
+   * vehicle is younger than maxVehicleAge. States without it keep the general <= 7 year notice.
+   */
+  bookValueNotice?: {
+    maxVehicleAge: number;
+    heading: string;
+    text: string;
   };
   registration: StateRegistrationRules;
   flatTaxTable?: FlatTaxTableConfig;

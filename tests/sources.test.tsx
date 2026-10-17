@@ -21,10 +21,11 @@ const renderCard = (key: string) => {
 };
 
 describe('Per-state last verified dates', () => {
-  it('every state has a Month YYYY date; Maryland is October 2026 and the rest September 2026', () => {
+  it('every state has a Month YYYY date; re-checked states are October 2026 and the rest September 2026', () => {
+    const reverified = ['maryland', 'virginia', 'pennsylvania'];
     for (const [key, rule] of Object.entries(rules)) {
       expect(rule.lastVerified).toMatch(/^(January|February|March|April|May|June|July|August|September|October|November|December) \d{4}$/);
-      expect(rule.lastVerified).toBe(key === 'maryland' ? 'October 2026' : 'September 2026');
+      expect(rule.lastVerified).toBe(reverified.includes(key) ? 'October 2026' : 'September 2026');
     }
   });
 

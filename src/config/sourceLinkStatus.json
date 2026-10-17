@@ -2,66 +2,294 @@
   "checkedOn": "2026-10-16",
   "method": "Each state source URL was requested with curl, then every non-200 or suspect result was opened in a real browser and judged by the page shown (403s and timeouts from scripts are often bot blocking, so they were not treated as dead without a browser check).",
   "hidden": [
-    { "state": "arizona", "url": "https://azdor.gov/transaction-privilege-tax", "finding": "Page not found" },
-    { "state": "arkansas", "url": "https://www.dfa.arkansas.gov/excise-tax/sales-and-use-tax/motor-vehicle-tax/", "finding": "Page not found" },
-    { "state": "arkansas", "url": "https://www.dfa.arkansas.gov/driver-services/fees/", "finding": "Page not found" },
-    { "state": "california", "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates-7-25.htm", "finding": "404 Not Found" },
-    { "state": "connecticut", "url": "https://portal.ct.gov/dmv/vehicle-services/fees-dmv-services", "finding": "404" },
-    { "state": "connecticut", "url": "https://portal.ct.gov/drs/sales-tax/sales-and-use-tax", "finding": "Redirects to a 404 error page" },
-    { "state": "district-of-columbia", "url": "https://dmv.dc.gov/service/vehicle-excise-tax", "finding": "Page not found" },
-    { "state": "district-of-columbia", "url": "https://dmv.dc.gov/service/vehicle-registration-fees", "finding": "Page not found" },
-    { "state": "georgia", "url": "https://dor.georgia.gov/motor-vehicles/vehicle-registration-and-licensing", "finding": "Page not found" },
-    { "state": "illinois", "url": "https://tax.illinois.gov/research/taxrates/rut-50.html", "finding": "404" },
-    { "state": "illinois", "url": "https://www.ilsos.gov/departments/vehicles/fees.html", "finding": "Not found" },
-    { "state": "indiana", "url": "https://www.in.gov/bmv/registration-plates/vehicle-registration-fees/", "finding": "Page not found" },
-    { "state": "iowa", "url": "https://iowadot.gov/mvd/buyingselling/registering-a-vehicle", "finding": "Page not found" },
-    { "state": "kansas", "url": "https://www.ksrevenue.gov/prtaxrates.html", "finding": "Redirects to a 404 page" },
-    { "state": "kentucky", "url": "https://drive.ky.gov/motor-vehicle-licensing/Pages/Vehicle-Taxes.aspx", "finding": "Redirects to a 404 page" },
-    { "state": "louisiana", "url": "https://omv.dps.louisiana.gov/Fee_Schedule.aspx", "finding": "Site did not load (script and browser)" },
-    { "state": "louisiana", "url": "https://revenue.louisiana.gov/SalesTax", "finding": "Page not found" },
-    { "state": "massachusetts", "url": "https://www.mass.gov/info-details/motor-vehicle-sales-and-use-tax", "finding": "Not found" },
-    { "state": "michigan", "url": "https://www.michigan.gov/sos/vehicle/pricing", "finding": "Redirects to a 404 page" },
-    { "state": "michigan", "url": "https://www.michigan.gov/treasury/taxes/business-taxes/sales-use-tax", "finding": "Redirects to a 404 page" },
-    { "state": "minnesota", "url": "https://dps.mn.gov/divisions/dvs/fees/Pages/default.aspx", "finding": "404" },
-    { "state": "minnesota", "url": "https://www.revenue.state.mn.us/motor-vehicle-sales-tax", "finding": "Page not found" },
-    { "state": "nebraska", "url": "https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling", "finding": "404 Not Found" },
-    { "state": "nevada", "url": "https://dmv.nv.gov/fees.htm", "finding": "404" },
-    { "state": "new-jersey", "url": "https://www.nj.gov/treasury/taxation/sales_use_tax.shtml", "finding": "404 Page Not Found" },
-    { "state": "new-mexico", "url": "https://www.mvd.newmexico.gov/vehicles/taxes-fees/", "finding": "404 Not Found" },
-    { "state": "new-york", "url": "https://dmv.ny.gov/registration/registration-fees-and-taxes-passenger-vehicles", "finding": "Redirects to site search (404)" },
-    { "state": "new-york", "url": "https://www.tax.ny.gov/pit/sp/sales_tax_rates.htm", "finding": "404 Page not found" },
-    { "state": "north-carolina", "url": "https://www.ncdot.gov/dmv/title-registration/taxes/Pages/highway-use-tax.aspx", "finding": "Redirects to a page-not-found page" },
-    { "state": "ohio", "url": "https://bmv.ohio.gov/vr-fees.aspx", "finding": "The resource cannot be found" },
-    { "state": "ohio", "url": "https://tax.ohio.gov/help-center/faqs/sales-and-use-taxes-motor-vehicles", "finding": "Redirects to a 404 page" },
-    { "state": "oklahoma", "url": "https://oklahoma.gov/service/all-services/vehicle-registration.html", "finding": "404 resource not found" },
-    { "state": "oklahoma", "url": "https://oksenate.gov/legislation/oklahoma-statutes", "finding": "Error page (\"Oops\")" },
-    { "state": "pennsylvania", "url": "https://www.dot.state.pa.us/Public/DVSPubsForms/BMV/BMV%20Forms/MV-70S.pdf", "finding": "Site did not load (retired PennDOT domain)" },
-    { "state": "south-carolina", "url": "https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration", "finding": "Page not found" },
-    { "state": "texas", "url": "https://comptroller.texas.gov/taxes/publications/96-254.php", "finding": "Shows the Comptroller homepage, not the publication" },
-    { "state": "utah", "url": "https://dmv.utah.gov/taxes-fees/fees", "finding": "Redirects to an unrelated page (Impound Fees)" },
-    { "state": "utah", "url": "https://dmv.utah.gov/taxes-fees/sales-tax", "finding": "404" },
-    { "state": "virginia", "url": "https://www.dmv.virginia.gov/vehicles/taxes-fees/general-fees", "finding": "404" },
-    { "state": "virginia", "url": "https://www.dmv.virginia.gov/vehicles/taxes-fees/registration", "finding": "404" },
-    { "state": "washington", "url": "https://dol.wa.gov/vehicles-and-boats/vehicle-registration-tabs-and-plates/renew-vehicle-tabs/calculate-vehicle-tab-fees", "finding": "404 Page Not Found" },
-    { "state": "wisconsin", "url": "https://www.revenue.wi.gov/Pages/FAQS/pcs-motorveh.aspx", "finding": "Redirects to a page-not-found page" }
+    {
+      "state": "arizona",
+      "url": "https://azdor.gov/transaction-privilege-tax",
+      "finding": "Page not found"
+    },
+    {
+      "state": "arkansas",
+      "url": "https://www.dfa.arkansas.gov/excise-tax/sales-and-use-tax/motor-vehicle-tax/",
+      "finding": "Page not found"
+    },
+    {
+      "state": "arkansas",
+      "url": "https://www.dfa.arkansas.gov/driver-services/fees/",
+      "finding": "Page not found"
+    },
+    {
+      "state": "california",
+      "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates-7-25.htm",
+      "finding": "404 Not Found"
+    },
+    {
+      "state": "connecticut",
+      "url": "https://portal.ct.gov/dmv/vehicle-services/fees-dmv-services",
+      "finding": "404"
+    },
+    {
+      "state": "connecticut",
+      "url": "https://portal.ct.gov/drs/sales-tax/sales-and-use-tax",
+      "finding": "Redirects to a 404 error page"
+    },
+    {
+      "state": "district-of-columbia",
+      "url": "https://dmv.dc.gov/service/vehicle-excise-tax",
+      "finding": "Page not found"
+    },
+    {
+      "state": "district-of-columbia",
+      "url": "https://dmv.dc.gov/service/vehicle-registration-fees",
+      "finding": "Page not found"
+    },
+    {
+      "state": "georgia",
+      "url": "https://dor.georgia.gov/motor-vehicles/vehicle-registration-and-licensing",
+      "finding": "Page not found"
+    },
+    {
+      "state": "illinois",
+      "url": "https://tax.illinois.gov/research/taxrates/rut-50.html",
+      "finding": "404"
+    },
+    {
+      "state": "illinois",
+      "url": "https://www.ilsos.gov/departments/vehicles/fees.html",
+      "finding": "Not found"
+    },
+    {
+      "state": "indiana",
+      "url": "https://www.in.gov/bmv/registration-plates/vehicle-registration-fees/",
+      "finding": "Page not found"
+    },
+    {
+      "state": "iowa",
+      "url": "https://iowadot.gov/mvd/buyingselling/registering-a-vehicle",
+      "finding": "Page not found"
+    },
+    {
+      "state": "kansas",
+      "url": "https://www.ksrevenue.gov/prtaxrates.html",
+      "finding": "Redirects to a 404 page"
+    },
+    {
+      "state": "kentucky",
+      "url": "https://drive.ky.gov/motor-vehicle-licensing/Pages/Vehicle-Taxes.aspx",
+      "finding": "Redirects to a 404 page"
+    },
+    {
+      "state": "louisiana",
+      "url": "https://omv.dps.louisiana.gov/Fee_Schedule.aspx",
+      "finding": "Site did not load (script and browser)"
+    },
+    {
+      "state": "louisiana",
+      "url": "https://revenue.louisiana.gov/SalesTax",
+      "finding": "Page not found"
+    },
+    {
+      "state": "massachusetts",
+      "url": "https://www.mass.gov/info-details/motor-vehicle-sales-and-use-tax",
+      "finding": "Not found"
+    },
+    {
+      "state": "michigan",
+      "url": "https://www.michigan.gov/sos/vehicle/pricing",
+      "finding": "Redirects to a 404 page"
+    },
+    {
+      "state": "michigan",
+      "url": "https://www.michigan.gov/treasury/taxes/business-taxes/sales-use-tax",
+      "finding": "Redirects to a 404 page"
+    },
+    {
+      "state": "minnesota",
+      "url": "https://dps.mn.gov/divisions/dvs/fees/Pages/default.aspx",
+      "finding": "404"
+    },
+    {
+      "state": "minnesota",
+      "url": "https://www.revenue.state.mn.us/motor-vehicle-sales-tax",
+      "finding": "Page not found"
+    },
+    {
+      "state": "nebraska",
+      "url": "https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling",
+      "finding": "404 Not Found"
+    },
+    {
+      "state": "nevada",
+      "url": "https://dmv.nv.gov/fees.htm",
+      "finding": "404"
+    },
+    {
+      "state": "new-jersey",
+      "url": "https://www.nj.gov/treasury/taxation/sales_use_tax.shtml",
+      "finding": "404 Page Not Found"
+    },
+    {
+      "state": "new-mexico",
+      "url": "https://www.mvd.newmexico.gov/vehicles/taxes-fees/",
+      "finding": "404 Not Found"
+    },
+    {
+      "state": "new-york",
+      "url": "https://dmv.ny.gov/registration/registration-fees-and-taxes-passenger-vehicles",
+      "finding": "Redirects to site search (404)"
+    },
+    {
+      "state": "new-york",
+      "url": "https://www.tax.ny.gov/pit/sp/sales_tax_rates.htm",
+      "finding": "404 Page not found"
+    },
+    {
+      "state": "north-carolina",
+      "url": "https://www.ncdot.gov/dmv/title-registration/taxes/Pages/highway-use-tax.aspx",
+      "finding": "Redirects to a page-not-found page"
+    },
+    {
+      "state": "ohio",
+      "url": "https://bmv.ohio.gov/vr-fees.aspx",
+      "finding": "The resource cannot be found"
+    },
+    {
+      "state": "ohio",
+      "url": "https://tax.ohio.gov/help-center/faqs/sales-and-use-taxes-motor-vehicles",
+      "finding": "Redirects to a 404 page"
+    },
+    {
+      "state": "oklahoma",
+      "url": "https://oklahoma.gov/service/all-services/vehicle-registration.html",
+      "finding": "404 resource not found"
+    },
+    {
+      "state": "oklahoma",
+      "url": "https://oksenate.gov/legislation/oklahoma-statutes",
+      "finding": "Error page (\"Oops\")"
+    },
+    {
+      "state": "south-carolina",
+      "url": "https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration",
+      "finding": "Page not found"
+    },
+    {
+      "state": "texas",
+      "url": "https://comptroller.texas.gov/taxes/publications/96-254.php",
+      "finding": "Shows the Comptroller homepage, not the publication"
+    },
+    {
+      "state": "utah",
+      "url": "https://dmv.utah.gov/taxes-fees/fees",
+      "finding": "Redirects to an unrelated page (Impound Fees)"
+    },
+    {
+      "state": "utah",
+      "url": "https://dmv.utah.gov/taxes-fees/sales-tax",
+      "finding": "404"
+    },
+    {
+      "state": "washington",
+      "url": "https://dol.wa.gov/vehicles-and-boats/vehicle-registration-tabs-and-plates/renew-vehicle-tabs/calculate-vehicle-tab-fees",
+      "finding": "404 Page Not Found"
+    },
+    {
+      "state": "wisconsin",
+      "url": "https://www.revenue.wi.gov/Pages/FAQS/pcs-motorveh.aspx",
+      "finding": "Redirects to a page-not-found page"
+    }
   ],
   "homepageOnly": [
-    { "state": "alaska", "url": "https://dmv.alaska.gov", "finding": "Agency homepage" },
-    { "state": "hawaii", "url": "https://hidot.hawaii.gov", "finding": "Agency homepage" },
-    { "state": "hawaii", "url": "https://mvinquiry.hnl.info", "finding": "Lookup tool homepage" },
-    { "state": "iowa", "url": "https://iowatreasurers.org", "finding": "Agency homepage" },
-    { "state": "maine", "url": "https://www.maine.gov/revenue", "finding": "Agency homepage" },
-    { "state": "mississippi", "url": "https://www.dor.ms.gov", "finding": "Agency homepage" },
-    { "state": "montana", "url": "https://mvdmt.gov", "finding": "Agency homepage" },
-    { "state": "nevada", "url": "https://tax.nv.gov", "finding": "Agency homepage" },
-    { "state": "new-hampshire", "url": "https://www.nh.gov/safety/divisions/dmv", "finding": "Redirects to the DMV homepage" },
-    { "state": "north-dakota", "url": "https://www.dot.nd.gov", "finding": "Agency homepage" },
-    { "state": "pennsylvania", "url": "https://www.dmv.pa.gov/VEHICLE-SERVICES/Title-Registration/Pages/Fee-Schedule.aspx", "finding": "Redirects to the PennDOT driver and vehicle services homepage" },
-    { "state": "rhode-island", "url": "https://dmv.ri.gov", "finding": "Agency homepage" },
-    { "state": "rhode-island", "url": "https://tax.ri.gov", "finding": "Agency homepage" },
-    { "state": "vermont", "url": "https://dmv.vermont.gov", "finding": "Agency homepage" },
-    { "state": "west-virginia", "url": "https://transportation.wv.gov/dmv", "finding": "Redirects to the DMV homepage" },
-    { "state": "wyoming", "url": "https://revenue.wyo.gov", "finding": "Agency homepage" },
-    { "state": "wyoming", "url": "https://www.dot.state.wy.us", "finding": "Agency homepage" }
+    {
+      "state": "alaska",
+      "url": "https://dmv.alaska.gov",
+      "finding": "Agency homepage"
+    },
+    {
+      "state": "hawaii",
+      "url": "https://hidot.hawaii.gov",
+      "finding": "Agency homepage"
+    },
+    {
+      "state": "hawaii",
+      "url": "https://mvinquiry.hnl.info",
+      "finding": "Lookup tool homepage"
+    },
+    {
+      "state": "iowa",
+      "url": "https://iowatreasurers.org",
+      "finding": "Agency homepage"
+    },
+    {
+      "state": "maine",
+      "url": "https://www.maine.gov/revenue",
+      "finding": "Agency homepage"
+    },
+    {
+      "state": "mississippi",
+      "url": "https://www.dor.ms.gov",
+      "finding": "Agency homepage"
+    },
+    {
+      "state": "montana",
+      "url": "https://mvdmt.gov",
+      "finding": "Agency homepage"
+    },
+    {
+      "state": "nevada",
+      "url": "https://tax.nv.gov",
+      "finding": "Agency homepage"
+    },
+    {
+      "state": "new-hampshire",
+      "url": "https://www.nh.gov/safety/divisions/dmv",
+      "finding": "Redirects to the DMV homepage"
+    },
+    {
+      "state": "north-dakota",
+      "url": "https://www.dot.nd.gov",
+      "finding": "Agency homepage"
+    },
+    {
+      "state": "rhode-island",
+      "url": "https://dmv.ri.gov",
+      "finding": "Agency homepage"
+    },
+    {
+      "state": "rhode-island",
+      "url": "https://tax.ri.gov",
+      "finding": "Agency homepage"
+    },
+    {
+      "state": "vermont",
+      "url": "https://dmv.vermont.gov",
+      "finding": "Agency homepage"
+    },
+    {
+      "state": "west-virginia",
+      "url": "https://transportation.wv.gov/dmv",
+      "finding": "Redirects to the DMV homepage"
+    },
+    {
+      "state": "wyoming",
+      "url": "https://revenue.wyo.gov",
+      "finding": "Agency homepage"
+    },
+    {
+      "state": "wyoming",
+      "url": "https://www.dot.state.wy.us",
+      "finding": "Agency homepage"
+    }
+  ],
+  "repaired": [
+    {
+      "state": "virginia",
+      "on": "2026-10-17",
+      "note": "Dead fee and registration links replaced with the DMV 201 fee sheet, registration page, and buying/selling page; rates and fees re-checked."
+    },
+    {
+      "state": "pennsylvania",
+      "on": "2026-10-17",
+      "note": "Retired PennDOT links replaced with the current MV-70S fee schedule, buying/selling page and fact sheet, and the Revenue sales tax page; rates and fees re-checked."
+    }
   ]
 }

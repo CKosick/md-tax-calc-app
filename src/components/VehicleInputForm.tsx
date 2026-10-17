@@ -31,6 +31,8 @@ export function VehicleInputForm({
   const router = useRouter();
   const currentYear = calculationYear ?? getCalculationYear();
   const vehicleAge = currentYear - inputs.vehicleYear;
+  // Two-tier passenger states split at 3,700 lbs unless configured (Virginia: 4,000)
+  const weightSplitLabel = (rule.registration.passengerWeightSplitLbs ?? 3700).toLocaleString('en-US');
   // Maryland book value rule applies to vehicles under the configured age limit
   const bookValueAgeLimit = rule.bookValueAssessment?.maxVehicleAge;
   const inBookValueWindow = bookValueAgeLimit !== undefined && vehicleAge < bookValueAgeLimit;
@@ -387,7 +389,7 @@ export function VehicleInputForm({
                       Standard / Light
                     </span>
                     <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                      ≤ 3,700 lbs
+                      ≤ {weightSplitLabel} lbs
                     </span>
                   </div>
                   <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
@@ -410,7 +412,7 @@ export function VehicleInputForm({
                       Heavy / Trucks
                     </span>
                     <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                      &gt; 3,700 lbs
+                      &gt; {weightSplitLabel} lbs
                     </span>
                   </div>
                   <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">

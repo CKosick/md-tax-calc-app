@@ -186,11 +186,12 @@ describe('Maryland copy matches the under-7 rule (no notarized bill of sale)', (
   const ageLabel = () => document.querySelector('label[for="model-year-input"]')?.nextElementSibling?.textContent ?? '';
   const resultsText = () => document.getElementById('calculator-results')?.textContent ?? '';
 
-  it('engine flag: a 7-year-old Maryland car is outside the book value window; Virginia keeps its rule', () => {
+  it('engine flag: a 7-year-old Maryland car is outside the book value window; Virginia uses its under-5 rule', () => {
     expect(calc(mdInputs(15000, 2019)).bookValueApplies).toBe(false);
     expect(calc(mdInputs(15000, 2020)).bookValueApplies).toBe(true);
-    const vaInputs = { ...getDefaultInputs(va, 2026), purchasePrice: 15000, vehicleYear: 2019 };
-    expect(calc(vaInputs, va).bookValueApplies).toBe(true);
+    const vaInputs = (vehicleYear: number) => ({ ...getDefaultInputs(va, 2026), purchasePrice: 15000, vehicleYear });
+    expect(calc(vaInputs(2022), va).bookValueApplies).toBe(true); // 4 years old
+    expect(calc(vaInputs(2021), va).bookValueApplies).toBe(false); // 5 years old
   });
 
   it('config copy: no notarized bill of sale, no "7 years old or newer", under-7 wording present', () => {

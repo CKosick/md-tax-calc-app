@@ -1,19 +1,26 @@
 # CarTaxHub source link report (2026-10-16)
 
-Every state source URL in `src/config/stateRules.json` was checked. This report is generated from `src/config/sourceLinkStatus.json`, which is also what the site uses to hide dead links.
+Every state source URL in `src/config/stateRules.json` was checked. This report is generated from `src/config/sourceLinkStatus.json` (by `scripts/source-link-report.mjs`), which is also what the site uses to hide dead links.
 
 **Method:** Each state source URL was requested with curl, then every non-200 or suspect result was opened in a real browser and judged by the page shown (403s and timeouts from scripts are often bot blocking, so they were not treated as dead without a browser check).
 
 ## Summary
 
-- Source links checked: 101 across 51 jurisdictions
-- Hidden on the site (dead or unreachable): 42
-- Working but only an agency homepage, not a specific page: 17
-- States now showing no source link ("Official source links ... are being updated"): 10
-- States with some links hidden: 20
-- Maryland: old MVA URLs replaced with the current excise tax and fees pages; re-verified October 2026.
+- Source links configured now: 103 across 51 jurisdictions
+- Hidden on the site (dead or unreachable): 39
+- Working but only an agency homepage, not a specific page: 16
+- States showing no source link ("Official source links ... are being updated"): 10
+- States with some links hidden: 18
+- States re-verified since the check: Maryland (October 2026), Pennsylvania (October 2026), Virginia (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
+
+## Repaired
+
+| State | Repaired on | What changed |
+|---|---|---|
+| Virginia | 2026-10-17 | Dead fee and registration links replaced with the DMV 201 fee sheet, registration page, and buying/selling page; rates and fees re-checked. |
+| Pennsylvania | 2026-10-17 | Retired PennDOT links replaced with the current MV-70S fee schedule, buying/selling page and fact sheet, and the Revenue sales tax page; rates and fees re-checked. |
 
 ## Priority: states with no working source link
 
@@ -65,13 +72,10 @@ All other states keep their September 2026 verified date until their rates are r
 | Ohio | https://tax.ohio.gov/help-center/faqs/sales-and-use-taxes-motor-vehicles | Redirects to a 404 page |
 | Oklahoma | https://oklahoma.gov/service/all-services/vehicle-registration.html | 404 resource not found |
 | Oklahoma | https://oksenate.gov/legislation/oklahoma-statutes | Error page ("Oops") |
-| Pennsylvania | https://www.dot.state.pa.us/Public/DVSPubsForms/BMV/BMV%20Forms/MV-70S.pdf | Site did not load (retired PennDOT domain) |
 | South Carolina | https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration | Page not found |
 | Texas | https://comptroller.texas.gov/taxes/publications/96-254.php | Shows the Comptroller homepage, not the publication |
 | Utah | https://dmv.utah.gov/taxes-fees/fees | Redirects to an unrelated page (Impound Fees) |
 | Utah | https://dmv.utah.gov/taxes-fees/sales-tax | 404 |
-| Virginia | https://www.dmv.virginia.gov/vehicles/taxes-fees/general-fees | 404 |
-| Virginia | https://www.dmv.virginia.gov/vehicles/taxes-fees/registration | 404 |
 | Washington | https://dol.wa.gov/vehicles-and-boats/vehicle-registration-tabs-and-plates/renew-vehicle-tabs/calculate-vehicle-tab-fees | 404 Page Not Found |
 | Wisconsin | https://www.revenue.wi.gov/Pages/FAQS/pcs-motorveh.aspx | Redirects to a page-not-found page |
 
@@ -89,7 +93,6 @@ All other states keep their September 2026 verified date until their rates are r
 | Nevada | https://tax.nv.gov | Agency homepage |
 | New Hampshire | https://www.nh.gov/safety/divisions/dmv | Redirects to the DMV homepage |
 | North Dakota | https://www.dot.nd.gov | Agency homepage |
-| Pennsylvania | https://www.dmv.pa.gov/VEHICLE-SERVICES/Title-Registration/Pages/Fee-Schedule.aspx | Redirects to the PennDOT driver and vehicle services homepage |
 | Rhode Island | https://dmv.ri.gov | Agency homepage |
 | Rhode Island | https://tax.ri.gov | Agency homepage |
 | Vermont | https://dmv.vermont.gov | Agency homepage |
@@ -99,7 +102,7 @@ All other states keep their September 2026 verified date until their rates are r
 
 ## Repairing a state
 
-1. Find the current official page(s) for the state's tax rate and title/registration fees.
-2. Re-check the state's numbers in `stateRules.json` against them and fix any that changed.
-3. Replace the dead URLs in that state's `sources`, remove its entries from `sourceLinkStatus.json` (`hidden` / `homepageOnly`), and set its `lastVerified` to the month of the re-check.
-4. Regenerate this report.
+1. Find the current official page(s) for the state's tax rate and title/registration fees, and confirm they load in a real browser.
+2. Re-check every configured number for the state in `stateRules.json` (rates, minimums, fees, registration tiers, surcharges, FAQ and disclaimer text) and fix anything that changed.
+3. Replace the dead or homepage-only URLs in that state's `sources`, remove its entries from `sourceLinkStatus.json` (`hidden` / `homepageOnly`), add a `repaired` entry, and set its `lastVerified` to the month of the re-check only if the re-check completed.
+4. Run `node scripts/source-link-report.mjs`.

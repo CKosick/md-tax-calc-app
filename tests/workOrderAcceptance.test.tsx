@@ -130,7 +130,7 @@ describe('Work Order Acceptance Tests', () => {
       const statesWithoutLocalAddOn = [
         'maryland',
         'virginia',
-        'pennsylvania',
+        // Pennsylvania now shows a 6% to 8% range (Allegheny County 7%, Philadelphia 8%)
         'delaware',
         'district-of-columbia',
         'texas',

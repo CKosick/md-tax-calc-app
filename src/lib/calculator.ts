@@ -216,11 +216,14 @@ export function calculateVehicleCosts(
     ? Math.round(((combinedTaxMax || 0) + otherFees) * 100) / 100
     : undefined;
 
-  // Age rule calculation: states with a structured bookValueAssessment (Maryland) use its age limit
-  // (under maxVehicleAge); other states with a bookValueRule keep the general <= 7 years check
+  // Age rule calculation: states with a structured bookValueAssessment (Maryland) or a
+  // bookValueNotice (Virginia) use its age limit (under maxVehicleAge); other states with a
+  // bookValueRule keep the general <= 7 years check
   const bookValueApplies = assessment
     ? vehicleAge < assessment.maxVehicleAge
-    : Boolean(rule.bookValueRule && vehicleAge <= 7);
+    : rule.bookValueNotice
+      ? vehicleAge < rule.bookValueNotice.maxVehicleAge
+      : Boolean(rule.bookValueRule && vehicleAge <= 7);
 
   // Trade-in reporting
   const tradeInDeducted = rule.tradeInDeductible ? Math.min(price, tradeIn) : 0;

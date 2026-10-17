@@ -99,7 +99,12 @@
     "titleFee": 15,
     "lienFilingFee": 15,
     "tradeInDeductible": false,
-    "bookValueRule": "Vehicles 5 years old or newer sold below NADA trade-in value may be taxed on NADA value unless a Virginia DMV SUT-1A affidavit is submitted.",
+    "bookValueRule": "Vehicles under 5 model years old need an Affidavit for Procurement of Title (SUT-1A) if the sale price is not within $1,500 of the NADA trade-in value.",
+    "bookValueNotice": {
+      "maxVehicleAge": 5,
+      "heading": "Price Check Rule (Under 5 Years Old)",
+      "text": "Because this vehicle is under 5 model years old, Virginia requires an Affidavit for Procurement of Title (Form SUT-1A) if the sale price is not within $1,500 of the NADA trade-in value."
+    },
     "registration": {
       "terms": [
         1,
@@ -119,17 +124,19 @@
         "1": 24.75,
         "2": 47.5
       },
-      "evSurchargeAnnual": 128
+      "evSurchargeAnnual": 135.63,
+      "passengerWeightSplitLbs": 4000
     },
     "notes": [
-      "Virginia levies a 4.15% Motor Vehicle Sales and Use Tax (SUT) with a $75.00 minimum floor.",
-      "Virginia taxes the gross purchase price; trade-ins are not deductible under VA Code § 58.1-2401.",
-      "A $2.00 discount applies when registering passenger vehicles or motorcycles for a 2-year term."
+      "Virginia levies a 4.15% Motor Vehicle Sales and Use Tax (SUT) with a $75.00 minimum.",
+      "Virginia taxes the gross sales price; trade-in credits do not reduce it.",
+      "A $2.00 discount applies to a 2-year registration in person or by mail ($3.00 online)."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with the Virginia DMV.",
-      "Virginia taxes the full sales price — trade-ins and rebates do not reduce Motor Vehicle Sales and Use Tax.",
-      "Vehicles 5 years old or newer sold below NADA value may be assessed on NADA trade-in value unless form SUT-1A is submitted."
+      "Estimates only, not tax or legal advice. Verify with the Virginia DMV.",
+      "Virginia taxes the gross sales price. Trade-ins do not reduce the Motor Vehicle Sales and Use Tax.",
+      "Vehicles under 5 model years old need Form SUT-1A if the sale price is not within $1,500 of the NADA trade-in value.",
+      "A Highway Use Fee may apply in addition to registration. The calculator includes it only for electric vehicles."
     ],
     "faqs": [
       {
@@ -150,22 +157,23 @@
       },
       {
         "question": "Do I pay Virginia vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Virginia, the state generally assesses its applicable vehicle sales or use tax (4.15%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Virginia motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. Virginia collects its 4.15% Sales and Use Tax (minimum $75) when you title the vehicle in Virginia, based on the sale price. Bring the signed-over out-of-state title, a completed Application for Title and Registration (VSA 17A), proof of address, and proof of the purchase price."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Virginia?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Virginia DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A gift to a spouse, or to a biological or adopted child or parent, is exempt from the Sales and Use Tax with the Purchaser’s Statement of Tax Exemption (Form SUT 3). Stepchildren, stepparents, siblings, and other relatives do not qualify; for them the tax is based on the NADA trade-in value or the $75 minimum, whichever is greater."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Virginia?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Virginia's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Virginia motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Virginia law (Code of Virginia § 46.2-630) requires the buyer to send the signed title to the DMV with an application for title and registration within 30 days."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
       "https://www.dmv.virginia.gov/vehicles/taxes-fees/sut",
-      "https://www.dmv.virginia.gov/vehicles/taxes-fees/general-fees",
-      "https://www.dmv.virginia.gov/vehicles/taxes-fees/registration"
+      "https://www.dmv.virginia.gov/sites/default/files/forms/dmv201.pdf",
+      "https://www.dmv.virginia.gov/vehicles/registration",
+      "https://www.dmv.virginia.gov/vehicles/buy-sell"
     ]
   },
   "pennsylvania": {
@@ -173,6 +181,9 @@
     "slug": "pennsylvania-private-sale-tax-calculator",
     "exciseTaxRate": 0.06,
     "minExciseTax": null,
+    "localTaxMinRate": 0,
+    "localTaxMaxRate": 0.02,
+    "localTaxNote": "Pennsylvania sales tax is 6% statewide. Allegheny County residents pay 7% and City of Philadelphia residents pay 8%; the range shows 6% to 8%.",
     "taxBase": "price",
     "titleFee": 72,
     "lienFilingFee": 36,
@@ -198,14 +209,15 @@
       }
     },
     "notes": [
-      "Pennsylvania sales tax is 6% baseline (7% in Allegheny County, 8% in Philadelphia).",
-      "Certificate of title fee is $72.00 pursuant to PennDOT Form MV-70S biennial CPI adjustment (increased from older $58 schedule).",
-      "Trade-in deduction is only allowed at licensed Pennsylvania dealerships; private party sales cannot deduct trade-ins."
+      "Pennsylvania sales tax is 6% of the purchase price or current market value (7% in Allegheny County, 8% in the City of Philadelphia).",
+      "The certificate of title fee is $72.00 and a lien is $36.00 per lien (PennDOT Form MV-70S).",
+      "Trade-in credits apply only when a dealer takes the trade-in; private sales are taxed on the full price."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with PennDOT.",
-      "Pennsylvania sales tax is 6% statewide (7% in Allegheny County, 8% in City of Philadelphia).",
-      "Private vehicle purchases in Pennsylvania do not qualify for trade-in tax credits; tax is owed on the full agreed purchase price."
+      "Estimates only, not tax or legal advice. Verify with PennDOT.",
+      "Pennsylvania sales tax is 6% statewide (7% in Allegheny County, 8% in the City of Philadelphia).",
+      "Private vehicle purchases do not get trade-in tax credits. Tax is owed on the full purchase price or current market value.",
+      "Participating counties add a $5 annual fee for local use, collected with registration. It is not included here."
     ],
     "faqs": [
       {
@@ -214,7 +226,7 @@
       },
       {
         "question": "How much is the Pennsylvania vehicle title transfer fee?",
-        "answer": "The certificate of title fee in Pennsylvania is $72.00 according to PennDOT Form MV-70S. If the vehicle is financed, a $36.00 lien recordation fee is also required."
+        "answer": "The certificate of title fee is $72.00 (PennDOT Form MV-70S). If the vehicle is financed, recording a lien adds $36.00 per lien."
       },
       {
         "question": "Does a trade-in reduce sales tax on private sales in Pennsylvania?",
@@ -222,26 +234,27 @@
       },
       {
         "question": "How much is vehicle registration in Pennsylvania?",
-        "answer": "Standard passenger vehicle registration in Pennsylvania is $48.00 per year ($96.00 for 2 years). Certain counties add an optional $5.00 local use fee. Motorcycle registration is $25.00 per year ($50.00 for 2 years)."
+        "answer": "Passenger vehicle registration is $48.00 for one year or $96.00 for two years. Motorcycles are $25.00 for one year or $50.00 for two. Participating counties also charge a $5 annual fee for local use, collected with registration."
       },
       {
         "question": "Do I pay Pennsylvania vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Pennsylvania, the state generally assesses its applicable vehicle sales or use tax (6.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Pennsylvania motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. When you title the vehicle in Pennsylvania you pay Pennsylvania sales tax (6%, or 7% in Allegheny County and 8% in Philadelphia) through an authorized PennDOT agent, along with the title and registration fees."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Pennsylvania?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Pennsylvania DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A true gift, with no money, property, service, or debt forgiveness in exchange, is exempt from sales tax when both parties complete the Affidavit of Gift (Form MV-13ST). A sale between family members is taxable, and the Department of Revenue may review family sales priced well below fair market value."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Pennsylvania?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Pennsylvania's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Pennsylvania motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "The buyer and seller complete the transfer together at an authorized PennDOT agent (a notary, tag service, or dealer), and the agent must submit the application to PennDOT within 20 days of the sale. A used vehicle must also be inspected within 10 days of sale unless it already has a valid inspection sticker."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://www.dmv.pa.gov/VEHICLE-SERVICES/Title-Registration/Pages/Fee-Schedule.aspx",
-      "https://www.revenue.pa.gov/TaxTypes/SUT/Pages/default.aspx",
-      "https://www.dot.state.pa.us/Public/DVSPubsForms/BMV/BMV%20Forms/MV-70S.pdf"
+      "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-forms/mv-70s.pdf",
+      "https://www.pa.gov/agencies/dmv/vehicle-services/title-and-registration/buying-or-selling-a-vehicle",
+      "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-fact-sheets/fs-buysell.pdf",
+      "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/sales-use-and-hotel-occupancy-tax"
     ]
   },
   "delaware": {

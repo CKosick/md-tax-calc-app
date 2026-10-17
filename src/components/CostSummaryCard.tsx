@@ -319,13 +319,17 @@ export function CostSummaryCard({
                 <span>
                   {rule.bookValueAssessment
                     ? `Book Value Assessment Rule (Under ${rule.bookValueAssessment.maxVehicleAge} Years Old)`
-                    : 'Book Value Assessment Rule (≤ 7 Years Old)'}
+                    : rule.bookValueNotice
+                      ? rule.bookValueNotice.heading
+                      : 'Book Value Assessment Rule (≤ 7 Years Old)'}
                 </span>
               </div>
               {rule.bookValueAssessment ? (
                 <p className="mt-1 leading-relaxed">
                   Because this vehicle is under {rule.bookValueAssessment.maxVehicleAge} years old ({breakdown.vehicleAge} years old), {rule.label} may assess the {rateLabel} tax on the NADA retail book value instead of your purchase price if your price is more than {formatCurrency(rule.bookValueAssessment.priceBelowBookThreshold).replace('.00', '')} below it. Documentation of the lower sale price can support taxing it on your price.
                 </p>
+              ) : rule.bookValueNotice ? (
+                <p className="mt-1 leading-relaxed">{rule.bookValueNotice.text}</p>
               ) : (
                 <p className="mt-1 leading-relaxed">
                   Because this vehicle is 7 years old or newer ({breakdown.vehicleAge} years old), {rule.label} DMV may assess the {rateLabel} tax on book value instead of your purchase price unless accompanied by a verified or notarized bill of sale.
