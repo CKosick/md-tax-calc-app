@@ -1,9 +1,9 @@
 import { FaqItem } from '@/lib/types';
 
 /**
- * How-to guides. Every fee, deadline, exemption, and document below was checked against
- * MDOT MVA pages (listed in each guide's sources) on the lastVerified date. When MVA guidance
- * was silent or ambiguous on a point, the guide says less rather than guessing.
+ * How-to guides. Every fee, deadline, exemption, and document below was checked against the
+ * state agency's pages (listed in each guide's sources) on the lastVerified date. When agency
+ * guidance was silent or ambiguous on a point, the guide says less rather than guessing.
  */
 export interface GuideStep {
   title: string;
@@ -30,6 +30,8 @@ export interface Guide {
   cardDescription: string;
   intro: string[];
   lastVerified: string;
+  /** Agency the facts were checked against, e.g. "Maryland MVA". */
+  agency: string;
   steps: GuideStep[];
   sections?: GuideSection[];
   checklist: string[];
@@ -55,6 +57,31 @@ const SOURCES = {
   oct2026: { label: 'MVA bulletin: Legislative update, effective October 1, 2026', url: `${MVA}/your-mva-guide/businesses/bulletins-businesses/legislative-update-effective-october-1-2026` }
 };
 
+const VA_DMV = 'https://www.dmv.virginia.gov';
+const PA = 'https://www.pa.gov';
+const PENNDOT_DOCS = `${PA}/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv`;
+
+const VA_SOURCES = {
+  sut: { label: 'Virginia DMV: Motor Vehicle Sales and Use Tax', url: `${VA_DMV}/vehicles/taxes-fees/sut` },
+  buySell: { label: 'Virginia DMV: Buying/Selling a Vehicle', url: `${VA_DMV}/vehicles/buy-sell` },
+  title: { label: 'Virginia DMV: Title Your Vehicle or Trailer', url: `${VA_DMV}/vehicles/title` },
+  registration: { label: 'Virginia DMV: Register Your Vehicle', url: `${VA_DMV}/vehicles/registration` },
+  fees: { label: 'Virginia DMV: DMV Fees (Form DMV 201)', url: `${VA_DMV}/sites/default/files/forms/dmv201.pdf` },
+  newResident: { label: 'Virginia DMV: New to Virginia', url: `${VA_DMV}/moving/new-virginia` },
+  giftForm: { label: 'Virginia DMV Form SUT 3: Purchaser’s Statement of Tax Exemption', url: `${VA_DMV}/sites/default/files/forms/sut3.pdf` },
+  code630: { label: 'Code of Virginia § 46.2-630', url: 'https://law.lis.virginia.gov/vacode/title46.2/chapter6/section46.2-630/' }
+};
+
+const PA_SOURCES = {
+  buySell: { label: 'PennDOT: Buying or Selling a Vehicle', url: `${PA}/agencies/dmv/vehicle-services/title-and-registration/buying-or-selling-a-vehicle` },
+  buySellFactSheet: { label: 'PennDOT fact sheet: Buying or Selling Your Vehicle in Pennsylvania', url: `${PENNDOT_DOCS}/bmv-fact-sheets/fs-buysell.pdf` },
+  fees: { label: 'PennDOT Form MV-70S: Schedule of Fees', url: `${PENNDOT_DOCS}/bmv-forms/mv-70s.pdf` },
+  agentHandbook: { label: 'PennDOT Publication 457B: Agent Services Handbook', url: `${PENNDOT_DOCS}/bmv-publications/pub457b.pdf` },
+  giftForm: { label: 'PennDOT Form MV-13ST: Affidavit of Gift', url: `${PENNDOT_DOCS}/bmv-forms/mv-13st.pdf` },
+  newResident: { label: 'PennDOT: Transfer Vehicle Registration from Another State', url: `${PA}/services/dmv/transfer-vehicle-registration-from-another-state` },
+  outOfState: { label: 'PennDOT fact sheet: How to Title and Register Your Out-of-State Vehicle', url: `${PENNDOT_DOCS}/bmv-fact-sheets/fs-toos.pdf` }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -70,6 +97,7 @@ export const GUIDES: Guide[] = [
       'Here is the order to do it in, what each step costs, and what to bring.'
     ],
     lastVerified: 'October 2026',
+    agency: 'Maryland MVA',
     steps: [
       {
         title: 'Check the title before you pay',
@@ -179,6 +207,7 @@ export const GUIDES: Guide[] = [
       'Here is who qualifies and how to transfer the title.'
     ],
     lastVerified: 'October 2026',
+    agency: 'Maryland MVA',
     steps: [
       {
         title: 'Check that the relationship qualifies',
@@ -282,6 +311,7 @@ export const GUIDES: Guide[] = [
       'Here is what to do, what you will pay, and what to bring.'
     ],
     lastVerified: 'October 2026',
+    agency: 'Maryland MVA',
     steps: [
       {
         title: 'Mark the 60-day deadline',
@@ -369,6 +399,552 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [SOURCES.newResident, SOURCES.exciseTax, SOURCES.oct2026, SOURCES.inspection, SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-virginia',
+    stateKey: 'virginia',
+    title: 'How to Title a Private Car Sale in Virginia',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Virginia',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Virginia: the title, the 4.15% sales and use tax, the $15 title fee, the 30-day deadline, inspection, and registration.',
+    cardDescription: 'Title, the 4.15% sales and use tax, the 30-day deadline, and inspection.',
+    intro: [
+      'When you buy a car from a private seller in Virginia, the seller signs the title over to you and you title and register the car with the DMV.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Virginia DMV',
+    steps: [
+      {
+        title: 'Check the title before you pay',
+        body: [
+          'Make sure the title is complete and accurate, including the seller’s odometer reading and signature. The DMV suggests checking the vehicle’s history through the National Motor Vehicle Title Information System (NMVTIS) first.'
+        ]
+      },
+      {
+        title: 'Have the seller complete Section A of the title',
+        body: [
+          'The seller enters your name and address, the odometer reading from the vehicle (not an estimate), the date of sale, and the sale price, then prints and signs. All owners listed on the title must sign.',
+          'The sale price on the title serves as the bill of sale.'
+        ]
+      },
+      {
+        title: 'Let the seller keep the plates',
+        body: [
+          'The seller removes the license plates before you take the car. You can buy new plates or transfer plates from another of your vehicles.'
+        ]
+      },
+      {
+        title: 'Insure the car',
+        body: ['Get liability insurance on the car before you register it. You certify the coverage on the registration section of the title.']
+      },
+      {
+        title: 'Complete your sections of the title',
+        body: [
+          'Sign and print your name as buyer in Section A, then complete the remaining buyer sections on the back, including the lien section if the car is financed and the registration section if you are registering at the same time.'
+        ]
+      },
+      {
+        title: 'Title and register within 30 days',
+        body: [
+          'Virginia law requires you to send the title to the DMV with your application within 30 days. You can drop it off or make an appointment at a DMV customer service center, go to a DMV Select, or mail it.',
+          'If the car already has a Virginia title and no lien, you and the seller can transfer it completely online, as long as both of you have myDMV accounts.',
+          'You pay the 4.15% sales and use tax, the $15 title fee, and the registration fee ($30.75 a year for a passenger vehicle of 4,000 lbs or less, $35.75 up to 6,500 lbs). Recording a lien adds $15.'
+        ]
+      },
+      {
+        title: 'Check the inspection sticker',
+        body: [
+          'A vehicle must pass an annual safety inspection and display a valid inspection sticker to be driven in Virginia. If the car is kept in Arlington, Fairfax, Loudoun, Prince William, or Stafford County, or the cities of Alexandria, Fairfax, Falls Church, Manassas, or Manassas Park, it also needs an emissions inspection to register.',
+          'Some localities also require their own vehicle registration or decal. Check with your city or county.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'How the 4.15% sales and use tax is calculated',
+        intro: 'Virginia charges a 4.15% Sales and Use Tax (SUT) when you title the car:',
+        items: [
+          'The tax is 4.15% of the gross sales price or $75, whichever is greater.',
+          'Trade-in credits do not reduce the taxable price.',
+          'Vehicles under 5 model years old: if the sale price is not within $1,500 of the NADA trade-in value, you must submit an Affidavit for Procurement of Title (Form SUT-1A).',
+          'Vehicles over 5 years old: if the price on the title is blank or incorrect, submit a Vehicle Price Certification (SUT 1) or a handwritten bill of sale signed by both of you with the price, year, make, model, VIN, and date of sale.'
+        ]
+      }
+    ],
+    checklist: [
+      'The Virginia title, signed over to you, with your buyer sections completed',
+      'Proof of the price if needed (bill of sale or Vehicle Price Certification, Form SUT 1)',
+      'Form SUT-1A, if the car is under 5 model years old and the price is not within $1,500 of NADA trade-in value',
+      'Proof of liability insurance (certified on the title’s registration section)',
+      'Emissions inspection, if the car is kept in a Northern Virginia emissions locality',
+      'Payment for the sales and use tax, title fee, and registration fee'
+    ],
+    calculatorNote:
+      'Enter the price you paid and choose the weight class. The calculator applies the $75 minimum tax automatically.',
+    faqs: [
+      {
+        question: 'How long do I have to title a car I bought privately in Virginia?',
+        answer:
+          '30 days. Virginia law (Code of Virginia § 46.2-630) requires the buyer to send the signed title to the DMV with an application for title and registration within 30 days.'
+      },
+      {
+        question: 'Do I need a separate bill of sale in Virginia?',
+        answer:
+          'Usually not. The sale price the seller writes on the title serves as the bill of sale. If it is blank or incorrect, you can submit a Vehicle Price Certification (SUT 1) or a handwritten bill of sale signed by both of you.'
+      },
+      {
+        question: 'Can I transfer a Virginia title online?',
+        answer:
+          'Yes, if the car already has a Virginia title and no lien, and both you and the seller have myDMV accounts.'
+      },
+      {
+        question: 'What if I paid much less than book value?',
+        answer:
+          'For a vehicle under 5 model years old, you need an Affidavit for Procurement of Title (Form SUT-1A) if the sale price is not within $1,500 of the NADA trade-in value.'
+      }
+    ],
+    sources: [VA_SOURCES.buySell, VA_SOURCES.title, VA_SOURCES.sut, VA_SOURCES.fees, VA_SOURCES.registration, VA_SOURCES.newResident, VA_SOURCES.code630]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-virginia',
+    stateKey: 'virginia',
+    title: 'How to Gift a Car in Virginia',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Virginia',
+    metaDescription:
+      'How to give or receive a car as a gift in Virginia: who qualifies for the sales and use tax exemption, Form SUT 3, what non-qualifying relatives pay, and titling steps.',
+    cardDescription: 'Who skips the sales and use tax, Form SUT 3, and what others pay.',
+    intro: [
+      'Virginia exempts a gift from its 4.15% Sales and Use Tax only for a few close relationships. Everyone else pays tax based on the car’s value, even when no money changes hands.',
+      'Here is who qualifies and how to transfer the title.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Virginia DMV',
+    steps: [
+      {
+        title: 'Check that the relationship qualifies',
+        body: [
+          'The exemption covers a gift to a spouse, or to a son, daughter, or parent of the owner. For this exemption, “child” and “parent” include only biological and adopted relationships.',
+          'Stepchildren, stepparents, brothers and sisters, grandparents, and friends do not qualify.'
+        ]
+      },
+      {
+        title: 'Sign the title over as a gift',
+        body: [
+          'The giver completes Section A of the title with the recipient’s name and address, the odometer reading, and the date, and writes “gift” where the sale price goes. All owners listed on the title must sign.'
+        ]
+      },
+      {
+        title: 'Complete the Purchaser’s Statement of Tax Exemption (Form SUT 3)',
+        body: [
+          'The form certifies that the car was received as a gift and states the recipient’s relationship to the giver.',
+          'Except for a gift to a spouse, the exemption does not cover any loan or other obligation the recipient takes over.'
+        ]
+      },
+      {
+        title: 'Keep or replace the plates',
+        body: ['The giver removes the license plates. The recipient buys new plates or transfers plates from another of their vehicles.']
+      },
+      {
+        title: 'Insure, title, and register within 30 days',
+        body: [
+          'Get liability insurance, then title and register the car with the DMV within 30 days. The $15 title fee and the registration fee still apply. The car must display a valid safety inspection sticker to be driven.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'When a gift is still taxed',
+        items: [
+          'The recipient is not a spouse or a biological or adopted child or parent (for example, a stepchild, sibling, grandchild, or friend).',
+          'Without a sale price, the tax is based on the NADA trade-in value, or the $75 minimum, whichever is greater.',
+          'The recipient takes over a loan on the car, unless the gift is to a spouse.'
+        ]
+      }
+    ],
+    checklist: [
+      'The Virginia title, signed by the giver, with “gift” as the sale price',
+      'Purchaser’s Statement of Tax Exemption (Form SUT 3), for a spouse, child, or parent',
+      'Proof of liability insurance',
+      'Emissions inspection, if the car is kept in a Northern Virginia emissions locality',
+      'Payment for the title and registration fees (and the sales and use tax if the gift does not qualify)'
+    ],
+    calculatorNote:
+      'For a qualifying gift, enter $0 as the price to see only the title and registration costs. If the gift does not qualify, enter the car’s NADA trade-in value as the price.',
+    faqs: [
+      {
+        question: 'Do I pay sales tax on a car my parent gives me in Virginia?',
+        answer:
+          'No, if you are the parent’s biological or adopted child, no money changes hands, and you file the Purchaser’s Statement of Tax Exemption (Form SUT 3).'
+      },
+      {
+        question: 'Is a gift from a stepparent or sibling tax-free in Virginia?',
+        answer:
+          'No. Only spouses and biological or adopted children and parents qualify. Other gifts are taxed on the NADA trade-in value or the $75 minimum, whichever is greater.'
+      },
+      {
+        question: 'What do I write as the sale price for a gift?',
+        answer: 'The giver writes “gift” where the sale price goes on the title.'
+      },
+      {
+        question: 'How long do I have to title a gifted car?',
+        answer: '30 days. Virginia law requires the new owner to send the title to the DMV with an application within 30 days.'
+      }
+    ],
+    sources: [VA_SOURCES.giftForm, VA_SOURCES.buySell, VA_SOURCES.sut, VA_SOURCES.title, VA_SOURCES.fees, VA_SOURCES.code630]
+  },
+  {
+    slug: 'titling-a-car-in-virginia-after-moving-from-another-state',
+    stateKey: 'virginia',
+    title: 'Titling a Car in Virginia After Moving From Another State',
+    shortTitle: 'Title a car after moving to Virginia',
+    metaTitle: 'Titling Your Car After Moving to Virginia',
+    metaDescription:
+      'New to Virginia? Title and register your car within 30 days of moving. Covers the sales and use tax exemption for cars titled in your name, inspections, insurance, and documents.',
+    cardDescription: 'The 30-day deadline, the tax exemption, inspections, and documents.',
+    intro: [
+      'If you move to Virginia with a car titled in another state, you have 30 days to title it here, then register it.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Virginia DMV',
+    steps: [
+      {
+        title: 'Mark the 30-day deadline',
+        body: ['You must title your vehicle within 30 days of moving to Virginia. Titling comes first, then registration.']
+      },
+      {
+        title: 'Get Virginia liability insurance',
+        body: [
+          'You must keep at least Virginia’s minimum liability coverage from the time you register. Registering without insurance carries a $600 noncompliance fee, and your license and registration are suspended until you pay a $145 reinstatement fee.'
+        ]
+      },
+      {
+        title: 'Title the car',
+        body: [
+          'Apply online or with the paper Application for Title and Registration (Form VSA 17A). Bring proof of address and your previous state’s title or registration card. If you bought the car within the last 12 months, also bring proof of the purchase price.'
+        ]
+      },
+      {
+        title: 'Check whether you owe sales and use tax',
+        body: [
+          'If you hold a valid title or registration in your name from another state or a U.S. Armed Forces branch, you are generally exempt from Virginia’s Sales and Use Tax.',
+          'If you bought the car within the last 12 months, you must show that sales and use tax was paid elsewhere to qualify.'
+        ]
+      },
+      {
+        title: 'Register and get inspected',
+        body: [
+          'Register at a DMV customer service center within 30 days of moving. The car must pass an annual safety inspection and display a valid sticker.',
+          'If the car is kept in Arlington, Fairfax, Loudoun, Prince William, or Stafford County, or the cities of Alexandria, Fairfax, Falls Church, Manassas, or Manassas Park, it must also pass an emissions inspection before it can be registered, unless it has a valid emissions certificate from the last 12 months.'
+        ]
+      },
+      {
+        title: 'Buy a local decal if your locality requires one',
+        body: ['Some localities require new residents to buy a local sticker or decal within 30 days of moving. These come from your local Commissioner of the Revenue, Treasurer, or Director of Finance, not the DMV.']
+      }
+    ],
+    checklist: [
+      'Application for Title and Registration (Form VSA 17A), or the online application',
+      'Proof of your Virginia address',
+      'Your previous state’s title or registration card in your name',
+      'Proof of the purchase price, and of sales tax paid elsewhere, if you bought the car within the last 12 months',
+      'Proof of Virginia liability insurance',
+      'Emissions inspection, if required in your locality',
+      'Payment for the $15 title fee and the registration fee'
+    ],
+    calculatorNote:
+      'If you are exempt from the sales and use tax, enter $0 as the price to see only the title and registration costs.',
+    faqs: [
+      {
+        question: 'How long do I have to title my car after moving to Virginia?',
+        answer: '30 days. You must title the vehicle within 30 days of moving to Virginia, then register it.'
+      },
+      {
+        question: 'Do I pay Virginia sales tax on a car I already own?',
+        answer:
+          'Generally no, if you hold a valid title or registration in your name from another state. If you bought the car within the last 12 months, you must show that sales and use tax was paid elsewhere.'
+      },
+      {
+        question: 'Do I need an emissions inspection?',
+        answer:
+          'Only if the car is kept in one of the Northern Virginia emissions localities: Arlington, Fairfax, Loudoun, Prince William, or Stafford County, or the cities of Alexandria, Fairfax, Falls Church, Manassas, or Manassas Park. A valid emissions certificate from the last 12 months can count for a first-time registration.'
+      },
+      {
+        question: 'What if I register without insurance?',
+        answer:
+          'You pay a $600 noncompliance fee, and your license and registration are suspended until you pay a $145 reinstatement fee.'
+      }
+    ],
+    sources: [VA_SOURCES.newResident, VA_SOURCES.title, VA_SOURCES.sut, VA_SOURCES.registration, VA_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-pennsylvania',
+    stateKey: 'pennsylvania',
+    title: 'How to Title a Private Car Sale in Pennsylvania',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Pennsylvania',
+    metaDescription:
+      'Step-by-step guide to a private car sale in Pennsylvania: meeting at a PennDOT agent, the notarized title, 6% sales tax (7% Allegheny, 8% Philadelphia), fees, plates, and inspection.',
+    cardDescription: 'The agent visit, notarized title, sales tax, fees, and inspection.',
+    intro: [
+      'In Pennsylvania, the buyer and seller complete a private sale together at an authorized PennDOT agent, who files the title and registration for you.',
+      'Here is how it works, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'PennDOT',
+    steps: [
+      {
+        title: 'Meet the seller at an authorized PennDOT agent',
+        body: [
+          'Most notaries, tag services, and dealers are authorized agents. The seller’s signature on a Pennsylvania title must be notarized or verified, so the seller signs in front of the agent.'
+        ]
+      },
+      {
+        title: 'Complete the title together',
+        body: [
+          'The seller lists your name and address, discloses the odometer reading, and signs and prints their name. You sign and print your name and complete Section D on the front of the title, including the lien information if the car is financed.'
+        ]
+      },
+      {
+        title: 'Pay the sales tax and fees',
+        body: [
+          'Sales tax is 6% of the purchase price or the car’s current market value (7% for Allegheny County residents, 8% for City of Philadelphia residents). The agent collects it with the title fee ($72), any lien fee ($36 per lien), and registration ($48 a year for a passenger car).',
+          'Agents may add their own service fee, which varies by agent.'
+        ]
+      },
+      {
+        title: 'Get a plate',
+        body: [
+          'The seller removes their plate and keeps it. The agent can transfer a plate from another of your vehicles, or issue a temporary registration valid for 90 days if you have no plate to transfer.',
+          'You need proof of Pennsylvania insurance, such as an insurance ID card or declaration page, before a temporary plate or plate transfer.'
+        ]
+      },
+      {
+        title: 'Let the agent file within 20 days',
+        body: ['The agent must submit the completed application and documents to PennDOT within 20 days of the sale.']
+      },
+      {
+        title: 'Inspect within 10 days',
+        body: [
+          'A used vehicle must be inspected within 10 days of the sale unless it already displays a valid inspection sticker. Some counties also require an annual emissions inspection.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'How Pennsylvania sales tax is calculated',
+        items: [
+          '6% statewide, 7% for Allegheny County residents, and 8% for City of Philadelphia residents.',
+          'The tax is on the purchase price or the current market value of the vehicle.',
+          'If the car sells far below its fair market value, the agent completes Form MV-3 (Verification of Fair Market Value), and the Department of Revenue may review sales between family members priced well below fair market value.',
+          'Trade-in credits apply only when a dealer takes a trade-in, not in a private sale.'
+        ]
+      }
+    ],
+    checklist: [
+      'The seller, in person, to sign the Pennsylvania title in front of the agent',
+      'Proof of Pennsylvania insurance (insurance ID card, declaration page, or signed binder)',
+      'Lien information, if the car is financed',
+      'For a car titled in another state: the seller’s signed title (some require notarization) and a tracing of the VIN plate',
+      'Payment for the sales tax, title, lien, and registration fees, plus the agent’s service fee'
+    ],
+    calculatorNote:
+      'The calculator shows a 6% to 8% range for the sales tax. Allegheny County residents pay 7% and City of Philadelphia residents pay 8%.',
+    faqs: [
+      {
+        question: 'Does the seller’s signature have to be notarized in Pennsylvania?',
+        answer:
+          'Yes. The seller’s signature on a Pennsylvania title must be notarized or verified, which is why buyer and seller meet at an authorized PennDOT agent such as a notary, tag service, or dealer.'
+      },
+      {
+        question: 'How long do I have to title a car I bought privately in Pennsylvania?',
+        answer: 'You complete the transfer at the agent, and the agent must submit the application to PennDOT within 20 days of the sale.'
+      },
+      {
+        question: 'What is the sales tax in Philadelphia?',
+        answer: '8% for City of Philadelphia residents, compared with 7% in Allegheny County and 6% in the rest of Pennsylvania.'
+      },
+      {
+        question: 'Can I drive the car home on the seller’s plate?',
+        answer:
+          'No. The plate stays with the seller. The agent can transfer a plate from another of your vehicles or issue a temporary registration valid for 90 days.'
+      }
+    ],
+    sources: [PA_SOURCES.buySell, PA_SOURCES.buySellFactSheet, PA_SOURCES.fees, PA_SOURCES.agentHandbook]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-pennsylvania',
+    stateKey: 'pennsylvania',
+    title: 'How to Gift a Car in Pennsylvania',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Pennsylvania',
+    metaDescription:
+      'How to give or receive a car as a gift in Pennsylvania: the Affidavit of Gift (MV-13ST), when sales tax does not apply, gifts of out-of-state cars, and titling at a PennDOT agent.',
+    cardDescription: 'The Affidavit of Gift, when no sales tax applies, and titling.',
+    intro: [
+      'Pennsylvania does not charge sales tax on a true gift, whoever the recipient is, when both sides sign the Affidavit of Gift. A sale between family members is still taxed.',
+      'Here is how to transfer a gifted car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'PennDOT',
+    steps: [
+      {
+        title: 'Make sure it is a true gift',
+        body: [
+          'A gift is a vehicle transferred without consideration or compensation: no money, property, or service in exchange, and no forgiveness or waiver of a debt or obligation.'
+        ]
+      },
+      {
+        title: 'Meet at an authorized PennDOT agent',
+        body: [
+          'The giver signs the title in front of a notary, tag service, or dealer, because the seller’s signature on a Pennsylvania title must be notarized or verified.'
+        ]
+      },
+      {
+        title: 'Complete the Affidavit of Gift (Form MV-13ST)',
+        body: [
+          'All givers and all recipients complete the affidavit, which is attached to the title application to claim the gift exemption from sales tax. It asks whether you are related and how.'
+        ]
+      },
+      {
+        title: 'Check the out-of-state rule',
+        body: [
+          'A car with an out-of-state title can also be gifted. The giver must show that sales tax was paid on it in a state that is reciprocal with Pennsylvania; otherwise tax is due on its current fair market value.'
+        ]
+      },
+      {
+        title: 'Insure, pay fees, and inspect',
+        body: [
+          'Bring proof of Pennsylvania insurance. The $72 title fee and registration still apply, and the agent may add a service fee. The car must be inspected within 10 days unless it has a valid inspection sticker.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'When tax is still owed',
+        items: [
+          'Anything of value changes hands, including taking over or forgiving a debt.',
+          'A family sale at a low price: the Department of Revenue may review sales between family members priced well below fair market value.',
+          'An out-of-state car without proof that sales tax was paid in a reciprocal state.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the giver in front of the agent',
+      'Affidavit of Gift (Form MV-13ST), completed by every giver and recipient',
+      'For an out-of-state title: proof that sales tax was paid in a reciprocal state',
+      'Proof of Pennsylvania insurance',
+      'Payment for the title and registration fees and the agent’s service fee'
+    ],
+    calculatorNote: 'For a gift that qualifies, enter $0 as the price. The calculator then shows only the title and registration costs.',
+    faqs: [
+      {
+        question: 'Who can I gift a car to tax-free in Pennsylvania?',
+        answer:
+          'Anyone, as long as it is a true gift with nothing of value in exchange and both of you complete the Affidavit of Gift (Form MV-13ST). The form asks about your relationship but does not limit the exemption to relatives.'
+      },
+      {
+        question: 'Can I sell a car to a relative for $1 to avoid tax?',
+        answer:
+          'A sale is not a gift, and the Department of Revenue may review sales between family members priced well below fair market value. Sales tax applies to the purchase price or current market value.'
+      },
+      {
+        question: 'Does a gifted car need an inspection?',
+        answer: 'Yes. A used vehicle must be inspected within 10 days of the transfer unless it already displays a valid inspection sticker.'
+      },
+      {
+        question: 'Can I gift a car that has an out-of-state title?',
+        answer:
+          'Yes. The giver must show that sales tax was paid in a state reciprocal with Pennsylvania; otherwise tax is due on the car’s current fair market value.'
+      }
+    ],
+    sources: [PA_SOURCES.giftForm, PA_SOURCES.buySell, PA_SOURCES.buySellFactSheet, PA_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-pennsylvania-after-moving-from-another-state',
+    stateKey: 'pennsylvania',
+    title: 'Titling a Car in Pennsylvania After Moving From Another State',
+    shortTitle: 'Title a car after moving to Pennsylvania',
+    metaTitle: 'Titling Your Car After Moving to Pennsylvania',
+    metaDescription:
+      'New to Pennsylvania? Title and register your car within 20 days of moving. Covers the sales tax exemption for cars you have owned six months, inspection within 10 days, and documents.',
+    cardDescription: 'The 20-day deadline, the six-month tax rule, and inspection.',
+    intro: [
+      'If you move to Pennsylvania with a car from another state, you have 20 days to title and register it here.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'PennDOT',
+    steps: [
+      {
+        title: 'Mark the 20-day deadline',
+        body: ['Apply for a Pennsylvania title and registration within 20 days of moving to Pennsylvania.']
+      },
+      {
+        title: 'Get Pennsylvania insurance',
+        body: ['You need proof of Pennsylvania insurance, such as an insurance ID card or declaration page.']
+      },
+      {
+        title: 'Apply through an authorized agent',
+        body: [
+          'Use an authorized agent such as a notary, dealer, or messenger service, or visit the PennDOT Riverfront Office Center in Harrisburg. You complete Form MV-1 (Application for Certificate of Title) and surrender your out-of-state title.',
+          'A tracing of the vehicle identification number (VIN) is attached to the application.'
+        ]
+      },
+      {
+        title: 'Handle a lien, if you have one',
+        body: [
+          'If your lienholder holds the out-of-state title, contact PennDOT’s Call Center to request a letter asking the lienholder to send the title to PennDOT. A temporary plate can be issued only when the out-of-state title is submitted with Form MV-1.'
+        ]
+      },
+      {
+        title: 'Check whether you owe sales tax',
+        body: [
+          'You generally do not owe sales tax if you have a valid out-of-state title and owned the vehicle for at least six months before moving. If you owned it for less than six months, you must prove you paid sales tax or pay Pennsylvania’s tax.'
+        ]
+      },
+      {
+        title: 'Inspect within 10 days',
+        body: [
+          'A newly registered vehicle must pass a Pennsylvania safety inspection within 10 days. Check Drive Clean PA to see whether your county also requires an emissions inspection.'
+        ]
+      }
+    ],
+    checklist: [
+      'Form MV-1, Application for Certificate of Title (the agent completes it)',
+      'Your out-of-state title, issued in your name',
+      'A tracing of the vehicle identification number (VIN)',
+      'Proof of Pennsylvania insurance',
+      'A valid Pennsylvania photo driver’s license or photo ID card',
+      'Proof of sales tax paid, if you owned the car less than six months',
+      'Payment for the title and registration fees, plus the agent’s service fee'
+    ],
+    calculatorNote:
+      'If you owned the car at least six months before moving, enter $0 as the price to see only the title and registration costs.',
+    faqs: [
+      {
+        question: 'How long do I have to title my car after moving to Pennsylvania?',
+        answer: '20 days from moving to Pennsylvania.'
+      },
+      {
+        question: 'Do I pay Pennsylvania sales tax on a car I already own?',
+        answer:
+          'Generally not, if you have a valid out-of-state title and owned the car for at least six months before moving. Otherwise you must prove you paid sales tax or pay Pennsylvania’s tax.'
+      },
+      {
+        question: 'When do I need a Pennsylvania inspection?',
+        answer: 'Within 10 days of registering. Some counties also require an annual emissions inspection.'
+      },
+      {
+        question: 'What if my lender has my title?',
+        answer:
+          'Contact PennDOT’s Call Center to request a letter asking your lienholder to send the out-of-state title to PennDOT. A temporary plate can be issued only when the title is submitted with Form MV-1.'
+      }
+    ],
+    sources: [PA_SOURCES.newResident, PA_SOURCES.outOfState, PA_SOURCES.fees]
   }
 ];
 

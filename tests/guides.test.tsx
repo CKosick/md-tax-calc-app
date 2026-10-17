@@ -37,24 +37,35 @@ const allStrings = (value: unknown): string[] =>
         ? Object.values(value).flatMap(allStrings)
         : [];
 
-describe('Guide content (batch 1: Maryland)', () => {
-  it('has the three Maryland guides with unique slugs', () => {
-    expect(GUIDES.map((g) => g.slug)).toEqual([
-      'how-to-title-a-private-car-sale-in-maryland',
-      'how-to-gift-a-car-in-maryland',
-      'titling-a-car-in-maryland-after-moving-from-another-state'
-    ]);
-    expect(getGuidesForState('maryland')).toHaveLength(3);
+const GUIDE_STATES = {
+  maryland: { label: 'Maryland', agency: 'Maryland MVA', hosts: ['mva.maryland.gov'] },
+  virginia: { label: 'Virginia', agency: 'Virginia DMV', hosts: ['www.dmv.virginia.gov', 'law.lis.virginia.gov'] },
+  pennsylvania: { label: 'Pennsylvania', agency: 'PennDOT', hosts: ['www.pa.gov'] }
+} as const;
+const topics = (state: string) => [
+  `how-to-title-a-private-car-sale-in-${state}`,
+  `how-to-gift-a-car-in-${state}`,
+  `titling-a-car-in-${state}-after-moving-from-another-state`
+];
+
+describe('Guide content (batches 1 and 2: Maryland, Virginia, Pennsylvania)', () => {
+  it('has the same three guides for each state, with unique slugs', () => {
+    expect(GUIDES.map((g) => g.slug)).toEqual(Object.keys(GUIDE_STATES).flatMap(topics));
+    for (const state of Object.keys(GUIDE_STATES)) {
+      expect(getGuidesForState(state).map((g) => g.slug)).toEqual(topics(state));
+    }
   });
 
-  it('each guide is complete, dated, sourced from MVA pages, and has short titles', () => {
+  it('each guide is complete, dated, sourced from its state agency, and has short titles', () => {
     for (const guide of GUIDES) {
+      const state = GUIDE_STATES[guide.stateKey as keyof typeof GUIDE_STATES];
       expect(guide.lastVerified).toBe('October 2026');
+      expect(guide.agency).toBe(state.agency);
       expect(guide.steps.length).toBeGreaterThanOrEqual(5);
       expect(guide.checklist.length).toBeGreaterThanOrEqual(5);
       expect(guide.faqs.length).toBeGreaterThanOrEqual(3);
       expect(guide.sources.length).toBeGreaterThan(0);
-      for (const source of guide.sources) expect(source.url.startsWith('https://mva.maryland.gov/')).toBe(true);
+      for (const source of guide.sources) expect(state.hosts).toContain(new URL(source.url).hostname);
       expect(`${guide.metaTitle} | CarTaxHub`.length).toBeLessThanOrEqual(60);
       expect(guide.metaDescription.length).toBeLessThanOrEqual(200);
     }
@@ -71,6 +82,19 @@ describe('Guide content (batch 1: Maryland)', () => {
     }
     for (const fact of ['VR-103', 'VR-299', 'at least 65', 'GIFT', 'parent and child']) expect(gift).toContain(fact);
     for (const fact of ['60 days', '$100', '2.5%', '$41.60', '$7 per day', '$420', 'VEIP']) expect(moving).toContain(fact);
+  });
+
+  it('keeps the verified Virginia and Pennsylvania key facts', () => {
+    const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+    const [vaSale, vaGift, vaMove] = topics('virginia').map(text);
+    for (const fact of ['4.15%', '$75', '$15 title fee', '30 days', 'SUT-1A', '$1,500', '4,000 lbs', '$30.75', '$35.75']) expect(vaSale).toContain(fact);
+    for (const fact of ['SUT 3', 'biological and adopted', 'Stepchildren', 'NADA trade-in value', '$75 minimum']) expect(vaGift).toContain(fact);
+    for (const fact of ['30 days', 'VSA 17A', 'last 12 months', '$600', '$145', 'Manassas Park']) expect(vaMove).toContain(fact);
+
+    const [paSale, paGift, paMove] = topics('pennsylvania').map(text);
+    for (const fact of ['notarized', '6%', '7%', '8%', '($72)', '($36 per lien)', '$48', '90 days', '20 days', '10 days', 'MV-3']) expect(paSale).toContain(fact);
+    for (const fact of ['MV-13ST', 'without consideration', 'forgiveness', 'reciprocal', 'fair market value']) expect(paGift).toContain(fact);
+    for (const fact of ['20 days', 'six months', 'MV-1', 'VIN', '10 days', 'Harrisburg']) expect(paMove).toContain(fact);
   });
 });
 
@@ -95,9 +119,12 @@ describe('Guide pages', () => {
     const h1s = container.querySelectorAll('h1');
     expect(h1s).toHaveLength(1);
     expect(h1s[0].textContent).toBe(guide.title);
-    expect(container.textContent).not.toContain('Frequently Asked Questions: Maryland Vehicle Taxes');
+    const state = GUIDE_STATES[guide.stateKey as keyof typeof GUIDE_STATES];
+    expect(container.textContent).not.toContain(`Frequently Asked Questions: ${state.label} Vehicle Taxes`);
 
-    expect(container.querySelector('#guide-last-verified')?.textContent).toContain('Last verified: October 2026');
+    expect(container.querySelector('#guide-last-verified')?.textContent).toBe(
+      `Last verified: October 2026 against ${state.agency} sources`
+    );
     expect(container.querySelectorAll('ol > li')).toHaveLength(guide.steps.length);
     expect(screen.getByRole('heading', { name: 'What to bring' })).toBeDefined();
 
@@ -110,10 +137,21 @@ describe('Guide pages', () => {
     expect(ld.map((x) => x['@type'])).toEqual(['BreadcrumbList', 'FAQPage']);
     expect(ld[1].mainEntity.map((q: { name: string }) => q.name)).toEqual(guide.faqs.map((f) => f.question));
 
-    // Links to the other two guides and the Maryland calculator
+    // Links to the state's other two guides and its calculator, not other states' guides
     const hrefs = [...container.querySelectorAll('a')].map((a) => a.getAttribute('href'));
-    for (const other of GUIDES.filter((g) => g.slug !== slug)) expect(hrefs).toContain(`/guides/${other.slug}`);
-    expect(hrefs).toContain('/calculator/maryland-private-sale-tax-calculator');
+    for (const other of getGuidesForState(guide.stateKey).filter((g) => g.slug !== slug)) {
+      expect(hrefs).toContain(`/guides/${other.slug}`);
+    }
+    for (const foreign of GUIDES.filter((g) => g.stateKey !== guide.stateKey)) {
+      expect(hrefs).not.toContain(`/guides/${foreign.slug}`);
+    }
+    expect(hrefs).toContain(`/calculator/${guide.stateKey}-private-sale-tax-calculator`);
+  });
+
+  it('the Pennsylvania guide calculator shows the 6% to 8% sales tax range', async () => {
+    const { container } = await renderGuide('how-to-title-a-private-car-sale-in-pennsylvania');
+    // $15,000 at 6% to 8% = $900 to $1,200 tax, plus $72 title and $96 two-year registration
+    expect(container.querySelector('#calculator-results')?.textContent).toContain('$1,068.00 – $1,368.00');
   });
 
   it('the embedded calculator calculates and shows partner offers with one disclosure', async () => {
@@ -135,16 +173,18 @@ describe('Guide pages', () => {
 });
 
 describe('Guide links and discovery', () => {
-  it('the Maryland calculator page links to all three guides; other states show no guides block', async () => {
-    const md = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'maryland-private-sale-tax-calculator' }) }));
-    const block = md.container.querySelector('#state-guides');
-    expect(block?.textContent).toContain('Maryland Guides');
-    const hrefs = [...(block?.querySelectorAll('a') ?? [])].map((a) => a.getAttribute('href'));
-    for (const guide of GUIDES) expect(hrefs).toContain(`/guides/${guide.slug}`);
-    cleanup();
+  it('each guide state’s calculator page links to its own three guides; other states show no guides block', async () => {
+    for (const [state, { label }] of Object.entries(GUIDE_STATES)) {
+      const page = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: `${state}-private-sale-tax-calculator` }) }));
+      const block = page.container.querySelector('#state-guides');
+      expect(block?.textContent).toContain(`${label} Guides`);
+      const hrefs = [...(block?.querySelectorAll('a') ?? [])].map((a) => a.getAttribute('href'));
+      expect(hrefs.filter((h) => h?.startsWith('/guides/'))).toEqual(topics(state).map((s) => `/guides/${s}`));
+      cleanup();
+    }
 
-    const va = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'virginia-private-sale-tax-calculator' }) }));
-    expect(va.container.querySelector('#state-guides')).toBeNull();
+    const tx = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'texas-private-sale-tax-calculator' }) }));
+    expect(tx.container.querySelector('#state-guides')).toBeNull();
   });
 
   it('the guides index lists every guide', () => {

@@ -9,7 +9,7 @@ const rules = stateRulesData as StateRulesConfig;
 export const metadata: Metadata = {
   title: 'Car Title, Tax & Registration Guides',
   description:
-    'Step-by-step guides to titling, gifting, and registering a vehicle, with the documents to bring and a built-in cost calculator. Starting with Maryland.',
+    'Step-by-step guides to titling, gifting, and registering a vehicle, with the documents to bring and a built-in cost calculator, for Maryland, Virginia, and Pennsylvania.',
   alternates: {
     canonical: '/guides'
   }

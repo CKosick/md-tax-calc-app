@@ -98,7 +98,7 @@ export default async function GuidePage({ params }: PageProps) {
                 {guide.title}
               </h1>
               <p id="guide-last-verified" className="mt-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                Last verified: {guide.lastVerified} against Maryland MVA sources
+                Last verified: {guide.lastVerified} against {guide.agency} sources
               </p>
               <div className="mt-4 space-y-3 text-base leading-relaxed text-slate-600 dark:text-slate-300">
                 {guide.intro.map((paragraph) => (
@@ -206,7 +206,7 @@ export default async function GuidePage({ params }: PageProps) {
               faqs={guide.faqs}
               stateLabel={rule.label}
               heading="Frequently Asked Questions"
-              intro={`Common questions about this ${rule.label} MVA process.`}
+              intro={`Common questions about this ${guide.agency} process.`}
             />
 
             {/* Sources */}
@@ -215,7 +215,7 @@ export default async function GuidePage({ params }: PageProps) {
                 Sources
               </h2>
               <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                Last verified: {guide.lastVerified}. Rules change, so confirm with the MVA before you go.
+                Last verified: {guide.lastVerified}. Rules change, so check with {guide.agency} before you go.
               </p>
               <ul className="mt-3 space-y-1.5 text-sm">
                 {guide.sources.map((source) => (
