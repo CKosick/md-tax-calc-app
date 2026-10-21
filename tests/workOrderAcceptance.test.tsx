@@ -66,9 +66,9 @@ describe('Work Order Acceptance Tests', () => {
       expect(taxItem).toBeDefined();
       expect(taxItem?.description).toContain('State tax $600.00 + Local tax (varies by county) $450.00–$731.25');
 
-      // Headline total is a range: min $1,168.00 to max $1,449.25 (includes $50 title + $68 2-yr reg)
-      expect(res.totalFirstYearCostMin).toBe(1168.00);
-      expect(res.totalFirstYearCostMax).toBe(1449.25);
+      // Headline total is a range: min $1,156.50 to max $1,437.75 (includes $50 title + $56.50 2-yr reg at 3,500 lbs)
+      expect(res.totalFirstYearCostMin).toBe(1156.50);
+      expect(res.totalFirstYearCostMax).toBe(1437.75);
       expect(res.hasLocalTax).toBe(true);
 
       // Verify CostSummaryCard renders range headline
@@ -81,7 +81,7 @@ describe('Work Order Acceptance Tests', () => {
       );
 
       const heroText = container.textContent || '';
-      expect(heroText).toContain('$1,168.00 – $1,449.25');
+      expect(heroText).toContain('$1,156.50 – $1,437.75');
       // Tax line shows combined range
       expect(heroText).toContain('$1,050.00 – $1,331.25');
       // Itemized description shows breakdown
@@ -161,9 +161,9 @@ describe('Work Order Acceptance Tests', () => {
     });
 
     it('Preserves existing county/local note text on state pages', () => {
-      expect(rules['new-york'].localTaxNote).toContain('Local county and city sales taxes add between 3.00% and 4.875%');
+      expect(rules['new-york'].localTaxNote).toContain('combined rates from 7% to 8.875%');
       expect(rules['california'].localTaxNote).toContain('District taxes in many cities and counties raise the total');
-      expect(rules['ohio'].localTaxNote).toContain('Ohio counties levy permissive sales taxes');
+      expect(rules['ohio'].localTaxNote).toContain('combined rates from 6.50% to 8.25%');
     });
   });
 

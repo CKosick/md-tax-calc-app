@@ -690,62 +690,290 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "2": 68
+          "2": 56.5
         },
         "over3700lbs": {
-          "2": 92
+          "2": 56.5
         }
       },
       "motorcycle": {
-        "2": 35
+        "1": 17.5
+      },
+      "passengerWeightChart": {
+        "termYears": 2,
+        "defaultWeightLbs": 3500,
+        "tiers": [
+          {
+            "maxLbs": 1650,
+            "fee": 26
+          },
+          {
+            "maxLbs": 1750,
+            "fee": 27.5
+          },
+          {
+            "maxLbs": 1850,
+            "fee": 29
+          },
+          {
+            "maxLbs": 1950,
+            "fee": 31
+          },
+          {
+            "maxLbs": 2050,
+            "fee": 32.5
+          },
+          {
+            "maxLbs": 2150,
+            "fee": 34
+          },
+          {
+            "maxLbs": 2250,
+            "fee": 35.5
+          },
+          {
+            "maxLbs": 2350,
+            "fee": 37.5
+          },
+          {
+            "maxLbs": 2450,
+            "fee": 39
+          },
+          {
+            "maxLbs": 2550,
+            "fee": 40.5
+          },
+          {
+            "maxLbs": 2650,
+            "fee": 42
+          },
+          {
+            "maxLbs": 2750,
+            "fee": 43.5
+          },
+          {
+            "maxLbs": 2850,
+            "fee": 45.5
+          },
+          {
+            "maxLbs": 2950,
+            "fee": 47
+          },
+          {
+            "maxLbs": 3050,
+            "fee": 48.5
+          },
+          {
+            "maxLbs": 3150,
+            "fee": 50
+          },
+          {
+            "maxLbs": 3250,
+            "fee": 52
+          },
+          {
+            "maxLbs": 3350,
+            "fee": 53.5
+          },
+          {
+            "maxLbs": 3450,
+            "fee": 55
+          },
+          {
+            "maxLbs": 3550,
+            "fee": 56.5
+          },
+          {
+            "maxLbs": 3650,
+            "fee": 59
+          },
+          {
+            "maxLbs": 3750,
+            "fee": 61.5
+          },
+          {
+            "maxLbs": 3850,
+            "fee": 64
+          },
+          {
+            "maxLbs": 3950,
+            "fee": 66.5
+          },
+          {
+            "maxLbs": 4050,
+            "fee": 69
+          },
+          {
+            "maxLbs": 4150,
+            "fee": 71
+          },
+          {
+            "maxLbs": 4250,
+            "fee": 73.5
+          },
+          {
+            "maxLbs": 4350,
+            "fee": 76
+          },
+          {
+            "maxLbs": 4450,
+            "fee": 78.5
+          },
+          {
+            "maxLbs": 4550,
+            "fee": 81
+          },
+          {
+            "maxLbs": 4650,
+            "fee": 83.5
+          },
+          {
+            "maxLbs": 4750,
+            "fee": 85.5
+          },
+          {
+            "maxLbs": 4850,
+            "fee": 88
+          },
+          {
+            "maxLbs": 4950,
+            "fee": 90.5
+          },
+          {
+            "maxLbs": 5050,
+            "fee": 93
+          },
+          {
+            "maxLbs": 5150,
+            "fee": 95.5
+          },
+          {
+            "maxLbs": 5250,
+            "fee": 98
+          },
+          {
+            "maxLbs": 5350,
+            "fee": 100.5
+          },
+          {
+            "maxLbs": 5450,
+            "fee": 102.5
+          },
+          {
+            "maxLbs": 5550,
+            "fee": 105
+          },
+          {
+            "maxLbs": 5650,
+            "fee": 107.5
+          },
+          {
+            "maxLbs": 5750,
+            "fee": 110
+          },
+          {
+            "maxLbs": 5850,
+            "fee": 112.5
+          },
+          {
+            "maxLbs": 5950,
+            "fee": 115
+          },
+          {
+            "maxLbs": 6050,
+            "fee": 117
+          },
+          {
+            "maxLbs": 6150,
+            "fee": 119.5
+          },
+          {
+            "maxLbs": 6250,
+            "fee": 122
+          },
+          {
+            "maxLbs": 6350,
+            "fee": 124.5
+          },
+          {
+            "maxLbs": 6450,
+            "fee": 127
+          },
+          {
+            "maxLbs": 6550,
+            "fee": 129.5
+          },
+          {
+            "maxLbs": 6650,
+            "fee": 131.5
+          },
+          {
+            "maxLbs": 6750,
+            "fee": 134
+          },
+          {
+            "maxLbs": 6850,
+            "fee": 136.5
+          },
+          {
+            "maxLbs": 6950,
+            "fee": 139
+          },
+          {
+            "fee": 140
+          }
+        ]
       }
     },
-    "localTaxNote": "Local county and city sales taxes add between 3.00% and 4.875% (total sales tax is 8.875% in NYC and 8.00%–8.875% in most counties).",
+    "localTaxNote": "New York’s 4% state sales tax plus local tax gives combined rates from 7% to 8.875% (8.875% in New York City). The rate is set by where the buyer lives, and the DMV collects it when you register.",
     "notes": [
-      "New York State base sales tax is 4.0%; local sales taxes vary from 3.0% to 4.875% by county/city.",
-      "Title certificate fee is $50.00 pursuant to NY Vehicle & Traffic Law § 2125; recorded lien fee is $5.00 (Form MV-900).",
-      "Private-party trade-in deductions are not permitted in New York."
+      "New York’s state sales tax is 4%; local tax brings the combined rate to between 7% and 8.875%.",
+      "The title certificate fee is $50. Recording a lien costs $5.",
+      "Passenger registration is a 2-year fee set by the vehicle’s weight on the DMV fee chart."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with NYS Department of Taxation and Finance or NYS DMV.",
-      "New York State levies a 4.0% state sales tax base; local county/city sales taxes (3.0%–4.875%) are collected by DMV at registration.",
-      "Private-party vehicle purchases do not qualify for trade-in allowance tax reductions in New York (tax is paid on full purchase price).",
-      "New York passenger vehicle registrations are issued for 2-year periods based on vehicle unladen weight."
+      "Estimates only, not tax or legal advice. Verify with the NYS DMV or the NYS Department of Taxation and Finance.",
+      "Sales tax is 4% state tax plus local tax (combined 7% to 8.875%) at the rate where the buyer lives, paid to the DMV with Form DTF-802.",
+      "Registration shown is the 2-year fee from the DMV weight chart. Also due on an original registration: $25 for plates. New York City and many counties add a vehicle use tax of $10 to $60 for 2 years, and the 12 counties of the Metropolitan Commuter Transportation District add a $50 supplemental fee for 2 years.",
+      "Motorcycle registration is $17.50 a year.",
+      "Have the vehicle inspected within 10 days of registering. An inspection issued to the previous owner is not valid."
     ],
     "faqs": [
       {
         "question": "What is the vehicle sales tax rate in New York State?",
-        "answer": "New York State levies a 4.0% state sales tax. Local county and municipal sales taxes add between 3.0% and 4.875%, making the total sales tax rate 8.00% to 8.875% across most New York jurisdictions (8.875% in New York City)."
+        "answer": "New York’s state sales tax is 4%. Local tax brings the combined rate to between 7% and 8.875% (8.875% in New York City). You pay the rate where you live, to the DMV when you register, using Form DTF-802."
       },
       {
         "question": "How much is a title certificate in New York?",
-        "answer": "The New York State DMV title certificate fee is $50.00. If the vehicle purchase is financed through a lienholder, an additional $5.00 lien filing fee (Form MV-900) is collected."
+        "answer": "The title certificate fee is $50. If the vehicle is financed, recording the lien costs $5."
       },
       {
         "question": "Does New York allow trade-in credit for private car sales?",
-        "answer": "No. Under NYS Tax Law Section 1101, trade-in allowances only apply when trading a vehicle to a registered New York motor vehicle dealer. Private-party vehicle sales are taxed on the full purchase price without deduction."
+        "answer": "A private sale has no trade-in, so sales tax is figured on the full purchase price you report on Form DTF-802."
       },
       {
         "question": "How often do you renew vehicle registration in New York?",
-        "answer": "New York State vehicle registrations for passenger cars are issued for a two-year period. Registration fees are calculated based on vehicle unladen weight (averaging $68.00 for vehicles under 3,700 lbs)."
+        "answer": "Passenger registrations run for 2 years. The fee depends on the vehicle’s weight: for example, $56.50 for 3,451 to 3,550 lbs, $69 for 3,951 to 4,050 lbs, and $140 for 6,951 lbs or more. There is a $32.50 minimum for vehicles with 6 or more cylinders and electric vehicles. A new registration also costs $25 for plates, plus county use tax and, in the downstate commuter district, a $50 supplemental fee."
       },
       {
         "question": "Do I pay New York vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into New York, the state generally assesses its applicable vehicle sales or use tax (4.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the New York motor vehicle agency to verify documentation requirements."
+        "answer": "If you live in New York, you pay New York sales tax when you register the vehicle here. Form DTF-804 gives credit for sales tax already paid to another state only if that state allows the same credit for New York tax. If you were not a New York resident when you bought the vehicle, Form DTF-803 claims the non-resident exemption."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in New York?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the New York DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "No sales tax is due on a gift, or on a purchase from your spouse, parent, child, stepparent, or stepchild. Claim the exemption on Form DTF-802. For a gift from anyone else, the person giving the vehicle completes section 6 of the form."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in New York?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond New York's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the New York motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Register and title the vehicle at a DMV office before you drive it. Bring the signed title, a bill of sale, Form DTF-802, Form MV-82, and New York insurance, and register within 180 days of the effective date on your insurance card. Get an inspection within 10 days of registering. New residents must register within 30 days of moving to New York."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://www.tax.ny.gov/pit/sp/sales_tax_rates.htm",
-      "https://dmv.ny.gov/registration/registration-fees-and-taxes-passenger-vehicles"
+      "https://dmv.ny.gov/registration/passenger-vehicle-registration-fees-use-taxes-and-supplemental-fees",
+      "https://dmv.ny.gov/registration/sales-tax-information",
+      "https://dmv.ny.gov/titles/buy-sell-or-transfer-vehicle-ownership",
+      "https://www.tax.ny.gov/pdf/publications/sales/pub718.pdf"
     ],
     "localTaxMinRate": 0.03,
     "localTaxMaxRate": 0.04875
@@ -858,54 +1086,57 @@
           "minPrice": 1000000,
           "fee": 10100
         }
-      ]
+      ],
+      "motorcycleFee": 25
     },
-    "localTaxNote": "Illinois private-party vehicle purchases are reported on Form RUT-50 using statutory flat-tax tables (Table A by vehicle age under $15,000; Table B by purchase price bracket for $15,000 and over). Cook County and City of Chicago levy an additional $15 vehicle use tax.",
+    "localTaxNote": "Illinois taxes private-party purchases with the flat amounts on Form RUT-50: Table A by vehicle age under $15,000, Table B by price at $15,000 and up. Chicago and Cook County residents also owe local vehicle use taxes based on the vehicle’s age: Chicago $50 to $80 (none at 15 years or older), Cook County $90 to $225. For motorcycles, Chicago charges $15 and Cook County $90.",
     "notes": [
-      "Private-party vehicle purchases in Illinois are subject to the Private Party Vehicle Use Tax (Form RUT-50).",
-      "Form RUT-50 uses statutory fixed tax tables: Table A assigns a flat tax by vehicle age for purchases under $15,000; Table B assigns a flat tax by purchase price bracket for sales $15,000 and above ($850 for $15,000–$19,999.99).",
-      "Title fee is $165.00; standard annual passenger car license plate tag fee is $151.00."
+      "Private-party vehicle purchases in Illinois are taxed on Form RUT-50, the Private Party Vehicle Use Tax.",
+      "Under $15,000 the tax is a flat amount by vehicle age (Table A); at $15,000 and up it is a flat amount by price (Table B). Motorcycles pay a flat $25.",
+      "The title fee is $165, and standard passenger plates are $151 a year."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with the Illinois Department of Revenue or Cyberdrive Illinois.",
-      "Illinois assesses use tax on private-party vehicle purchases using Form RUT-50 statutory tax tables (Table A by vehicle age when under $15,000; Table B by purchase price bracket when $15,000 or greater).",
-      "Trade-in deductions are not permitted on private-party vehicle sales in Illinois; use tax is calculated on gross purchase price or vehicle age.",
-      "Standard passenger vehicle registration is $151.00 annually; electric vehicles pay an additional $100.00 annual EV road fee."
+      "Estimates only, not tax or legal advice. Verify with the Illinois Department of Revenue or the Illinois Secretary of State.",
+      "Illinois taxes private-party purchases on Form RUT-50 with flat amounts: Table A by vehicle age under $15,000, Table B by price at $15,000 and up, and $25 for motorcycles.",
+      "Purchases from a spouse or civil union partner, parent, brother, sister, or child are taxed $15 instead.",
+      "Passenger registration is $151 a year; electric vehicles pay $100 more."
     ],
     "faqs": [
       {
         "question": "How is tax calculated on a private vehicle sale in Illinois?",
-        "answer": "In Illinois, private-party vehicle sales are reported on Form RUT-50 (Private Party Vehicle Use Tax). Tax is not a flat percentage; it is determined by statutory tables. If the purchase price is under $15,000, tax is a flat fee based on vehicle age (Table A, ranging from $100 to $465). If the purchase price is $15,000 or greater, tax is a flat fee based on purchase price brackets (Table B, starting at $850 for $15,000–$19,999.99 up to $10,100 for $1,000,000+)."
+        "answer": "Illinois taxes private-party purchases on Form RUT-50 with flat amounts, not a percentage. Under $15,000, the tax depends on the vehicle’s age (Table A, from $465 for a vehicle up to 1 year old down to $100 for one over 10 years old). At $15,000 and up, it depends on the price (Table B, from $850 for $15,000 to $19,999.99 up to $10,100 at $1,000,000 or more). Motorcycles pay a flat $25."
       },
       {
         "question": "How much does a vehicle title cost in Illinois?",
-        "answer": "The Illinois Secretary of State certificate of title fee is $165.00 for standard passenger vehicles. Lien filing is processed on the certificate without additional fee."
+        "answer": "The Illinois Secretary of State charges $165 for an original title. Its fee list shows no separate lien fee."
       },
       {
         "question": "Can I deduct a trade-in on a private vehicle sale in Illinois?",
-        "answer": "No. Illinois tax code does not allow trade-in credits on private-party sales reported on Form RUT-50; trade-in deductions are restricted to purchases from licensed retail dealers."
+        "answer": "No. Form RUT-50 has no trade-in credit. The tax comes from the purchase price and the vehicle’s age."
       },
       {
         "question": "How much are license plate renewal fees in Illinois?",
-        "answer": "Standard annual license plate registration in Illinois is $151.00 for passenger vehicles. All-electric vehicles pay an additional $100.00 annual surcharge in lieu of motor fuel tax."
+        "answer": "Standard passenger plates are $151 a year, and motorcycle plates are $41. Electric vehicles pay $100 more each year."
       },
       {
         "question": "Do I pay Illinois vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Illinois, the state generally assesses its applicable vehicle sales or use tax (6.25%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Illinois motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. If you buy from a private seller and bring the vehicle into Illinois, you file Form RUT-50 and pay the Illinois tax within 30 days of bringing it in, using the same tables."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Illinois?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Illinois DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A purchase from your spouse or civil union partner, parent, brother, sister, or child (including adopted children) is taxed $15 on Form RUT-50. A gift or transfer with no price is taxed on the vehicle’s fair market value using the regular tables."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Illinois?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Illinois's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Illinois motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "File Form RUT-50 and pay the tax within 30 days of buying the vehicle, then apply for the title and registration with the Secretary of State. New residents have 30 days to title and register their vehicles in Illinois."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://tax.illinois.gov/research/taxrates/rut-50.html",
-      "https://www.ilsos.gov/departments/vehicles/fees.html"
+      "https://tax.illinois.gov/forms/sales/vehicleusetax/rut-50-instructions.html",
+      "https://tax.illinois.gov/content/dam/soi/en/web/tax/forms/sales/documents/vehicleusetax/rut-5.pdf",
+      "https://www.ilsos.gov/departments/vehicles/basicfees.html",
+      "https://www.ilsos.gov/services/newresidents/vehicle-titles-and-license-plates-for-new-illinois-residents.html"
     ]
   },
   "ohio": {
@@ -914,8 +1145,8 @@
     "exciseTaxRate": 0.0575,
     "minExciseTax": null,
     "taxBase": "price",
-    "titleFee": 15,
-    "lienFilingFee": 15,
+    "titleFee": 18,
+    "lienFilingFee": 0,
     "tradeInDeductible": false,
     "registration": {
       "terms": [
@@ -923,67 +1154,70 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 34.5
+          "1": 36
         },
         "over3700lbs": {
-          "1": 34.5
+          "1": 36
         }
       },
       "motorcycle": {
-        "1": 28.5
+        "1": 30
       },
       "evSurchargeAnnual": 200,
       "phevSurchargeAnnual": 150
     },
-    "localTaxNote": "Ohio counties levy permissive sales taxes ranging from 0.75% to 2.25%, making total effective sales tax 6.50% to 8.00% depending on county of residence.",
+    "localTaxNote": "Ohio’s 5.75% state rate plus county tax gives combined rates from 6.50% to 8.25% (October to December 2026). The rate is set by the county where the buyer lives, and the tax is paid to the county clerk of courts when the title is transferred.",
     "notes": [
-      "Ohio base statewide sales and use tax rate is 5.75%.",
-      "Title fee is $15.00; lien notation fee is $15.00 if financed.",
-      "Trade-in deduction is prohibited on private party sales per Ohio Rev. Code § 5739.01."
+      "Ohio’s state sales tax rate is 5.75%; county tax brings the combined rate to between 6.50% and 8.25%.",
+      "The title fee is $18 ($23 in counties that add $5), and it covers noting a lien.",
+      "Private sales are taxed on the full price paid, even between family members."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Ohio Department of Taxation or Ohio BMV.",
-      "Ohio assesses a 5.75% state sales and use tax base; county permissive taxes (0.75%–2.25%) are collected by the Clerk of Courts.",
-      "Trade-in allowances from private vehicle sales do not reduce taxable amount in Ohio (trade-in credit is dealer-only per R.C. 5739.01).",
-      "Annual passenger registration is $34.50 base; electric vehicles pay an additional $200.00 annual fee ($150.00 for hybrid)."
+      "Estimates only, not tax or legal advice. Verify with the Ohio Department of Taxation, the Ohio BMV, or your county clerk of courts title office.",
+      "Ohio charges 5.75% state sales tax plus county tax (combined 6.50% to 8.25%) at the rate of the county where you live, paid to the clerk of courts at title transfer.",
+      "Registration shown is the $36 passenger fee ($30 for motorcycles). Also due: an $8 deputy registrar fee and any local permissive tax of up to $30. Electric vehicles add $200 a year, plug-in hybrids $150, and hybrids $100.",
+      "Some counties require an E-Check emissions certificate before you can register."
     ],
     "faqs": [
       {
         "question": "What is the vehicle sales tax rate in Ohio for private sales?",
-        "answer": "Ohio levies a 5.75% statewide sales and use tax base. Counties levy permissive sales taxes between 0.75% and 2.25%, resulting in total combined tax rates between 6.50% and 8.00%."
+        "answer": "Ohio’s state rate is 5.75%. County tax brings the combined rate to between 6.50% and 8.25% (October to December 2026). You pay the rate for the county where you live, to the clerk of courts when the title is transferred."
       },
       {
         "question": "How much does an Ohio vehicle title transfer cost?",
-        "answer": "The Ohio certificate of title fee is $15.00 paid to the County Clerk of Courts Title Office. If the vehicle is financed, a separate $15.00 lien recordation fee applies."
+        "answer": "The certificate of title fee is $18, or $23 in counties that add $5. Noting a lien is included in the title fee. Titles are issued by county clerk of courts title offices, not the BMV."
       },
       {
         "question": "Does Ohio allow trade-in credit on private car sales?",
-        "answer": "No. Under Ohio Revised Code Section 5739.01, trade-in deductions are strictly limited to purchases of new or used vehicles from registered motor vehicle dealers. Private transactions are taxed on the full purchase price."
+        "answer": "No. A private sale is taxed on the full price paid. Ohio’s trade-in credit applies to new vehicles bought from a dealer."
       },
       {
         "question": "How much is passenger vehicle registration in Ohio?",
-        "answer": "Standard annual passenger car registration in Ohio is $34.50 (plus any local county or township permissive license tax of up to $25.00). Electric vehicles incur an additional $200.00 annual state fee."
+        "answer": "Passenger registration is $36 a year and motorcycles are $30, plus an $8 deputy registrar fee and any local permissive tax of up to $30. Electric vehicles add $200 a year, plug-in hybrids $150, and hybrids $100."
       },
       {
         "question": "Do I pay Ohio vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Ohio, the state generally assesses its applicable vehicle sales or use tax (5.75%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Ohio motor vehicle agency to verify documentation requirements."
+        "answer": "Ohio gives credit for sales or use tax legally paid to another state, with proof of payment, so you owe only any difference. If you bought the vehicle at least six months before moving to Ohio, no Ohio tax is due when you title it here."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Ohio?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Ohio DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A sale between family members is taxed if any money or other payment changes hands, on the full amount paid. No tax is due on some transfers with no payment, such as an inheritance through probate court, a transfer-on-death beneficiary, or a divorce decree. For a gift, ask your county clerk of courts title office how to claim it."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Ohio?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Ohio's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Ohio motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Transfer the title at a county clerk of courts title office within 30 days of the sale; a late application costs $5 more. The seller’s signature on the title must be notarized. New residents have 30 days after establishing residency to transfer their title and registration to Ohio."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://tax.ohio.gov/help-center/faqs/sales-and-use-taxes-motor-vehicles",
-      "https://bmv.ohio.gov/vr-fees.aspx"
+      "https://tax.ohio.gov/business/sales-and-use-tax/motor-vehicles",
+      "https://tax.ohio.gov/business/sales-and-use-tax/rate-tables/by-county-q4-2026",
+      "https://bmv.ohio.gov/doc-fees.aspx",
+      "https://bmv.ohio.gov/titles-new.aspx",
+      "https://codes.ohio.gov/ohio-revised-code/section-4505.09"
     ],
     "localTaxMinRate": 0.0075,
-    "localTaxMaxRate": 0.0225
+    "localTaxMaxRate": 0.025
   },
   "georgia": {
     "label": "Georgia",

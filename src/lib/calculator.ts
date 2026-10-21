@@ -69,6 +69,9 @@ export function calculateVehicleCosts(
     if (price === 0) {
       exciseTax = 0;
       flatTaxDetail = 'No tax on $0.00 purchase price';
+    } else if (inputs.vehicleType === 'motorcycle' && rule.flatTaxTable.motorcycleFee !== undefined) {
+      exciseTax = rule.flatTaxTable.motorcycleFee;
+      flatTaxDetail = 'Form RUT-50 flat tax for motorcycles';
     } else if (taxableBase < rule.flatTaxTable.thresholdPrice) {
       // Table A by vehicle age
       let matchedFee = 0;
@@ -150,6 +153,13 @@ export function calculateVehicleCosts(
     } else if (typeof motoRule === 'number') {
       baseRegistrationFee = term === 1 ? motoRule / 2 : motoRule;
     }
+  } else if (rule.registration.passengerWeightChart) {
+    // Weight chart states (New York): look up the entered weight, or the chart's default
+    const chart = rule.registration.passengerWeightChart;
+    const enteredWeight = inputs.vehicleWeight ?? inputs.vehicleWeightLbs ?? inputs.weight;
+    const lbs = typeof enteredWeight === 'number' && enteredWeight > 0 ? enteredWeight : chart.defaultWeightLbs;
+    const tier = chart.tiers.find((t) => t.maxLbs === undefined || lbs <= t.maxLbs);
+    baseRegistrationFee = Math.round(((tier?.fee ?? 0) * term) / chart.termYears * 100) / 100;
   } else {
     const passMap = rule.registration.passenger as Record<string, unknown>;
 

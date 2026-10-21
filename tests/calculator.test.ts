@@ -253,14 +253,14 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(1010.85);
   });
 
-  it('New York: exact worked test ($15,000 -> $718.00, 2-yr term)', () => {
+  it('New York: exact worked test ($15,000 -> $706.50, 2-yr term)', () => {
     const rule = allRules['new-york'];
     const res = calculateVehicleCosts(rule, { ...std2Yr, state: 'new-york' }, 2026);
     expect(res.exciseTax).toBe(600.00); // 4.0% of 15000
     expect(res.titleFee).toBe(50.00);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(68.00); // 2-year passenger <= 3700 lbs
-    expect(res.totalFirstYearCost).toBe(718.00);
+    expect(res.registrationTotal).toBe(56.50); // 2-year DMV chart fee at the 3,500 lb default (3,451 to 3,550 lbs)
+    expect(res.totalFirstYearCost).toBe(706.50);
   });
 
   it('Illinois: exact worked test ($15,000 -> $1,166.00)', () => {
@@ -324,14 +324,14 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(calculateVehicleCosts(rule, { ...base, purchasePrice: 0 }, 2026).exciseTax).toBe(0);
   });
 
-  it('Ohio: exact worked test ($15,000 -> $912.00)', () => {
+  it('Ohio: exact worked test ($15,000 -> $916.50)', () => {
     const rule = allRules.ohio;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'ohio' }, 2026);
     expect(res.exciseTax).toBe(862.50); // 5.75% of 15000
-    expect(res.titleFee).toBe(15.00);
+    expect(res.titleFee).toBe(18.00); // R.C. 4505.09, from January 1, 2026
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(34.50);
-    expect(res.totalFirstYearCost).toBe(912.00);
+    expect(res.registrationTotal).toBe(36.00);
+    expect(res.totalFirstYearCost).toBe(916.50);
   });
 
   it('Georgia: exact worked test ($15,000 -> $1,088.00)', () => {

@@ -6,12 +6,12 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 109 across 51 jurisdictions
-- Hidden on the site (dead or unreachable): 37
+- Source links configured now: 116 across 51 jurisdictions
+- Hidden on the site (dead or unreachable): 31
 - Working but only an agency homepage, not a specific page: 16
-- States showing no source link ("Official source links ... are being updated"): 10
+- States showing no source link ("Official source links ... are being updated"): 7
 - States with some links hidden: 16
-- States re-verified since the check: California (October 2026), Florida (October 2026), Maryland (October 2026), Pennsylvania (October 2026), Texas (October 2026), Virginia (October 2026)
+- States re-verified since the check: California (October 2026), Florida (October 2026), Illinois (October 2026), Maryland (October 2026), New York (October 2026), Ohio (October 2026), Pennsylvania (October 2026), Texas (October 2026), Virginia (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
 
@@ -24,17 +24,17 @@ All other states keep their September 2026 verified date until their rates are r
 | Texas | 2026-10-20 | Comptroller publication link (showed the homepage) replaced with the SPV and gift tax pages; TxDMV registration and buying/selling pages added; rates and fees re-checked. |
 | California | 2026-10-20 | Dead CDTFA rate link replaced with the CDTFA vehicles page and the October 2026 rate notice; DMV fee and private-party pages added; rates and fees re-checked. |
 | Florida | 2026-10-20 | Sources replaced with the FLHSMV fee, private sale, and registration pages and the DOR motor vehicle sales tax brochure; rates and fees re-checked. |
+| New York | 2026-10-21 | Dead DMV fee and Tax Department rate links replaced with the DMV passenger fee chart, sales tax, and ownership transfer pages and Publication 718; rates and fees re-checked. |
+| Illinois | 2026-10-21 | Dead RUT-50 and Secretary of State fee links replaced with the RUT-50 instructions, the RUT-5 tax chart, the SOS fee list, and the SOS new resident page; rates and fees re-checked. |
+| Ohio | 2026-10-21 | Dead BMV and Department of Taxation links replaced with the Taxation motor vehicle and county rate pages, the BMV fee and title pages, and R.C. 4505.09; rates and fees re-checked. |
 
 ## Priority: states with no working source link
 
 - Arkansas
 - Connecticut
-- Illinois
 - Louisiana
 - Michigan
 - Minnesota
-- New York
-- Ohio
 - Oklahoma
 - Utah
 
@@ -50,8 +50,6 @@ All other states keep their September 2026 verified date until their rates are r
 | District of Columbia | https://dmv.dc.gov/service/vehicle-excise-tax | Page not found |
 | District of Columbia | https://dmv.dc.gov/service/vehicle-registration-fees | Page not found |
 | Georgia | https://dor.georgia.gov/motor-vehicles/vehicle-registration-and-licensing | Page not found |
-| Illinois | https://tax.illinois.gov/research/taxrates/rut-50.html | 404 |
-| Illinois | https://www.ilsos.gov/departments/vehicles/fees.html | Not found |
 | Indiana | https://www.in.gov/bmv/registration-plates/vehicle-registration-fees/ | Page not found |
 | Iowa | https://iowadot.gov/mvd/buyingselling/registering-a-vehicle | Page not found |
 | Kansas | https://www.ksrevenue.gov/prtaxrates.html | Redirects to a 404 page |
@@ -67,11 +65,7 @@ All other states keep their September 2026 verified date until their rates are r
 | Nevada | https://dmv.nv.gov/fees.htm | 404 |
 | New Jersey | https://www.nj.gov/treasury/taxation/sales_use_tax.shtml | 404 Page Not Found |
 | New Mexico | https://www.mvd.newmexico.gov/vehicles/taxes-fees/ | 404 Not Found |
-| New York | https://dmv.ny.gov/registration/registration-fees-and-taxes-passenger-vehicles | Redirects to site search (404) |
-| New York | https://www.tax.ny.gov/pit/sp/sales_tax_rates.htm | 404 Page not found |
 | North Carolina | https://www.ncdot.gov/dmv/title-registration/taxes/Pages/highway-use-tax.aspx | Redirects to a page-not-found page |
-| Ohio | https://bmv.ohio.gov/vr-fees.aspx | The resource cannot be found |
-| Ohio | https://tax.ohio.gov/help-center/faqs/sales-and-use-taxes-motor-vehicles | Redirects to a 404 page |
 | Oklahoma | https://oklahoma.gov/service/all-services/vehicle-registration.html | 404 resource not found |
 | Oklahoma | https://oksenate.gov/legislation/oklahoma-statutes | Error page ("Oops") |
 | South Carolina | https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration | Page not found |

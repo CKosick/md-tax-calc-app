@@ -43,16 +43,6 @@
       "finding": "Page not found"
     },
     {
-      "state": "illinois",
-      "url": "https://tax.illinois.gov/research/taxrates/rut-50.html",
-      "finding": "404"
-    },
-    {
-      "state": "illinois",
-      "url": "https://www.ilsos.gov/departments/vehicles/fees.html",
-      "finding": "Not found"
-    },
-    {
       "state": "indiana",
       "url": "https://www.in.gov/bmv/registration-plates/vehicle-registration-fees/",
       "finding": "Page not found"
@@ -128,29 +118,9 @@
       "finding": "404 Not Found"
     },
     {
-      "state": "new-york",
-      "url": "https://dmv.ny.gov/registration/registration-fees-and-taxes-passenger-vehicles",
-      "finding": "Redirects to site search (404)"
-    },
-    {
-      "state": "new-york",
-      "url": "https://www.tax.ny.gov/pit/sp/sales_tax_rates.htm",
-      "finding": "404 Page not found"
-    },
-    {
       "state": "north-carolina",
       "url": "https://www.ncdot.gov/dmv/title-registration/taxes/Pages/highway-use-tax.aspx",
       "finding": "Redirects to a page-not-found page"
-    },
-    {
-      "state": "ohio",
-      "url": "https://bmv.ohio.gov/vr-fees.aspx",
-      "finding": "The resource cannot be found"
-    },
-    {
-      "state": "ohio",
-      "url": "https://tax.ohio.gov/help-center/faqs/sales-and-use-taxes-motor-vehicles",
-      "finding": "Redirects to a 404 page"
     },
     {
       "state": "oklahoma",
@@ -295,6 +265,21 @@
       "state": "florida",
       "on": "2026-10-20",
       "note": "Sources replaced with the FLHSMV fee, private sale, and registration pages and the DOR motor vehicle sales tax brochure; rates and fees re-checked."
+    },
+    {
+      "state": "new-york",
+      "on": "2026-10-21",
+      "note": "Dead DMV fee and Tax Department rate links replaced with the DMV passenger fee chart, sales tax, and ownership transfer pages and Publication 718; rates and fees re-checked."
+    },
+    {
+      "state": "illinois",
+      "on": "2026-10-21",
+      "note": "Dead RUT-50 and Secretary of State fee links replaced with the RUT-50 instructions, the RUT-5 tax chart, the SOS fee list, and the SOS new resident page; rates and fees re-checked."
+    },
+    {
+      "state": "ohio",
+      "on": "2026-10-21",
+      "note": "Dead BMV and Department of Taxation links replaced with the Taxation motor vehicle and county rate pages, the BMV fee and title pages, and R.C. 4505.09; rates and fees re-checked."
     }
   ]
 }

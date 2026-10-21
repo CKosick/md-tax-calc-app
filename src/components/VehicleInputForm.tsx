@@ -37,6 +37,8 @@ export function VehicleInputForm({
     Boolean(passenger.under3500lbs) || JSON.stringify(passenger.under3700lbs) !== JSON.stringify(passenger.over3700lbs);
   // Two-tier passenger states split at 3,700 lbs unless configured (Virginia: 4,000)
   const weightSplitLabel = (rule.registration.passengerWeightSplitLbs ?? 3700).toLocaleString('en-US');
+  // Weight chart states (New York) ask for the weight in lbs instead of a weight class
+  const weightChart = rule.registration.passengerWeightChart;
   // Maryland book value rule applies to vehicles under the configured age limit
   const bookValueAgeLimit = rule.bookValueAssessment?.maxVehicleAge;
   const inBookValueWindow = bookValueAgeLimit !== undefined && vehicleAge < bookValueAgeLimit;
@@ -361,8 +363,40 @@ export function VehicleInputForm({
           </div>
         )}
 
+        {/* Vehicle weight in lbs (passenger cars in weight chart states, e.g. New York) */}
+        {inputs.vehicleType === 'passenger' && weightChart && (
+          <div>
+            <div className="flex items-center justify-between">
+              <label
+                htmlFor="vehicle-weight-input"
+                className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300"
+              >
+                Vehicle Weight (lbs)
+              </label>
+              <span className="text-[11px] text-slate-400">Sets the registration fee</span>
+            </div>
+            <input
+              type="number"
+              id="vehicle-weight-input"
+              min="0"
+              step="50"
+              value={inputs.vehicleWeight || ''}
+              onChange={(e) => {
+                const n = parseFloat(e.target.value);
+                updateField('vehicleWeight', Number.isFinite(n) && n > 0 ? n : undefined);
+              }}
+              placeholder={`${weightChart.defaultWeightLbs.toLocaleString('en-US')} if unknown`}
+              className="mt-2 block w-full min-h-[44px] rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base font-bold text-slate-900 shadow-xs transition-all focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+            />
+            <p id="vehicle-weight-help" className="mt-1.5 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
+              {rule.label} prices registration by unladen weight, shown on the title or the driver&apos;s door frame sticker.
+              {!inputs.vehicleWeight && ` Blank uses ${weightChart.defaultWeightLbs.toLocaleString('en-US')} lbs.`}
+            </p>
+          </div>
+        )}
+
         {/* Weight Class (Passenger Cars only; hidden when the state's fee does not depend on weight) */}
-        {inputs.vehicleType === 'passenger' && passengerFeeVariesByWeight && (
+        {inputs.vehicleType === 'passenger' && !weightChart && passengerFeeVariesByWeight && (
           <div>
             <div className="flex items-center justify-between">
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">

@@ -26,6 +26,16 @@ export interface StateRegistrationRules {
    */
   passengerWeightSplitLbs?: number;
   /**
+   * Passenger fee chart by vehicle weight (New York). When present it replaces the weight
+   * classes: the form asks for the weight in lbs and the first tier whose maxLbs is at or above
+   * it applies (a tier without maxLbs covers everything heavier). Fees are for termYears.
+   */
+  passengerWeightChart?: {
+    termYears: number;
+    defaultWeightLbs: number;
+    tiers: { maxLbs?: number; fee: number }[];
+  };
+  /**
    * Registration fees that scale with the vehicle's value (California). On a private-party
    * transfer the value is the purchase price, so they are estimated from the price entered.
    */
@@ -57,6 +67,8 @@ export interface FlatTaxTableConfig {
   thresholdPrice: number;
   tableAByAge: FlatTaxAgeBracket[];
   tableBByPrice: FlatTaxPriceBracket[];
+  /** Flat tax for motorcycles, which skip Tables A and B (Illinois RUT-50: $25). */
+  motorcycleFee?: number;
 }
 
 export interface PriceTier {

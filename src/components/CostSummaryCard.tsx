@@ -70,6 +70,9 @@ export function CostSummaryCard({
           url.searchParams.set('appraisal', String(inputs.appraisedValue));
         }
       }
+      if (rule.registration.passengerWeightChart && inputs.vehicleWeight && inputs.vehicleWeight > 0) {
+        url.searchParams.set('lbs', String(inputs.vehicleWeight));
+      }
       if (inputs.tradeInValue > 0) {
         url.searchParams.set('tradeIn', String(inputs.tradeInValue));
       }
@@ -267,6 +270,8 @@ export function CostSummaryCard({
                 </div>
                 <p className="mt-0.5 pl-6.5 text-xs text-slate-500 dark:text-slate-400">
                   Base license plates &amp; tags
+                  {rule.registration.passengerWeightChart && inputs?.vehicleType === 'passenger' &&
+                    ` for ${(inputs.vehicleWeight || rule.registration.passengerWeightChart.defaultWeightLbs).toLocaleString('en-US')} lbs`}
                   {breakdown.evSurcharge > 0 && ` + ${formatCurrency(breakdown.evSurcharge)} EV surcharge`}
                   {(breakdown.vehicleLicenseFee ?? 0) > 0 &&
                     ` + ${formatCurrency(breakdown.vehicleLicenseFee ?? 0)} vehicle license fee (0.65% of price)`}
