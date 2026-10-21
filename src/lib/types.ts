@@ -92,6 +92,14 @@ export interface StateRule {
    * State-specific book value warning (no effect on the tax): shown in the results when the
    * vehicle is younger than maxVehicleAge. States without it keep the general <= 7 year notice.
    */
+  /**
+   * Presumptive value rule (Texas SPV): a private sale is taxed on the greater of the price or
+   * minShareOfValue x the entered presumptive value. A certified appraisal, if entered, replaces
+   * the presumptive value test but cannot take the taxable value below the price.
+   */
+  presumptiveValueRule?: {
+    minShareOfValue: number;
+  };
   bookValueNotice?: {
     maxVehicleAge: number;
     heading: string;
@@ -126,6 +134,10 @@ export interface CalculatorInputs {
   tradeInValue: number;
   /** Optional NADA retail book value (states with a bookValueAssessment rule). */
   bookValue?: number;
+  /** Optional Standard Presumptive Value (states with a presumptiveValueRule, e.g. Texas). */
+  presumptiveValue?: number;
+  /** Optional certified appraisal value that replaces the presumptive value test. */
+  appraisedValue?: number;
 }
 
 export interface ItemizedCostItem {
@@ -163,6 +175,8 @@ export interface CostBreakdown {
   bookValueApplies: boolean;
   /** True when the excise tax was calculated on the entered book value instead of the price. */
   bookValueApplied?: boolean;
+  /** 'presumptive' when taxed on the presumptive value share, 'appraisal' when on the appraisal. */
+  presumptiveValueApplied?: 'presumptive' | 'appraisal';
   vehicleAge: number;
   tradeInDeducted: number;
   tradeInIgnored: boolean;

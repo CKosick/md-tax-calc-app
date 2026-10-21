@@ -1050,7 +1050,7 @@ export const GUIDES: Guide[] = [
       'Payment for the motor vehicle tax, title fee, and registration fees'
     ],
     calculatorNote:
-      'Enter the price you paid. If it is below 80% of the car’s SPV, enter 80% of SPV instead, since that is what Texas will tax unless you get a certified appraisal.',
+      'Enter the price you paid and the car’s Standard Presumptive Value (from TxDMV’s SPV calculator). The calculator taxes the greater of the price or 80% of SPV, or your certified appraisal if you enter one.',
     faqs: [
       {
         question: 'How long do I have to title a car I bought privately in Texas?',

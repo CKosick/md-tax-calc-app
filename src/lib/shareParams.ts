@@ -66,6 +66,8 @@ export function inputsFromSearchParams(
       : getDefaultTerm(rule),
     isFinanced: params.get('financed') === 'true',
     tradeInValue: params.has('tradeIn') ? Math.max(0, Number(params.get('tradeIn')) || 0) : defaults.tradeInValue,
-    bookValue: parseBookValue(params.get('book')) ?? defaults.bookValue
+    bookValue: parseBookValue(params.get('book')) ?? defaults.bookValue,
+    presumptiveValue: parseBookValue(params.get('spv')) ?? defaults.presumptiveValue,
+    appraisedValue: parseBookValue(params.get('appraisal')) ?? defaults.appraisedValue
   };
 }

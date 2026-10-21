@@ -28,7 +28,26 @@ export function calculateVehicleCosts(
       vehicleAge < assessment.maxVehicleAge &&
       price < bookValue - assessment.priceBelowBookThreshold
   );
-  const assessedValue = bookValueApplied ? bookValue : price;
+  // Presumptive value rule (e.g. Texas SPV): taxed on the greater of the price or a share of the
+  // presumptive value; a certified appraisal replaces that test but never goes below the price.
+  const presumptive = Number(inputs.presumptiveValue);
+  const appraised = Number(inputs.appraisedValue);
+  let presumptiveValueApplied: 'presumptive' | 'appraisal' | undefined;
+  let assessedValue = bookValueApplied ? bookValue : price;
+  if (rule.presumptiveValueRule && price > 0 && Number.isFinite(presumptive) && presumptive > 0) {
+    if (Number.isFinite(appraised) && appraised > 0) {
+      if (appraised > price) {
+        assessedValue = appraised;
+        presumptiveValueApplied = 'appraisal';
+      }
+    } else {
+      const floor = Math.round(presumptive * rule.presumptiveValueRule.minShareOfValue * 100) / 100;
+      if (floor > price) {
+        assessedValue = floor;
+        presumptiveValueApplied = 'presumptive';
+      }
+    }
+  }
 
   // Some states (e.g. Delaware) allow trade-in credit; others (Maryland, Virginia, Pennsylvania, DC, Illinois) tax the full price
   const taxableBase = rule.tradeInDeductible
@@ -276,6 +295,10 @@ export function calculateVehicleCosts(
       : `Calculated at ${rateLabel} tiered rate on taxable base of $${taxableBase.toLocaleString()}`;
   } else if (rule.exciseTaxRate === 0) {
     taxDescription = `Exempt from vehicle sales tax (private-party occasional sales are not taxed in ${rule.label})`;
+  } else if (presumptiveValueApplied === 'presumptive') {
+    taxDescription = `Calculated at ${rateLabel} on ${Number(((rule.presumptiveValueRule?.minShareOfValue ?? 0) * 100).toFixed(0))}% of Standard Presumptive Value ($${taxableBase.toLocaleString()}), which is more than the price`;
+  } else if (presumptiveValueApplied === 'appraisal') {
+    taxDescription = `Calculated at ${rateLabel} on the certified appraisal value ($${taxableBase.toLocaleString()})`;
   } else if (bookValueApplied) {
     taxDescription = `Calculated at ${rateLabel} on book value of $${taxableBase.toLocaleString()} (price is more than $${assessment?.priceBelowBookThreshold.toLocaleString()} below book value)`;
   } else if (luxuryTaxApplied) {
@@ -380,6 +403,7 @@ export function calculateVehicleCosts(
     luxuryTaxApplied,
     bookValueApplies,
     bookValueApplied,
+    presumptiveValueApplied,
     vehicleAge,
     tradeInDeducted,
     tradeInIgnored,

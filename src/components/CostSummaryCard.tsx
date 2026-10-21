@@ -64,6 +64,12 @@ export function CostSummaryCard({
       if (rule.bookValueAssessment && inputs.bookValue && inputs.bookValue > 0) {
         url.searchParams.set('book', String(inputs.bookValue));
       }
+      if (rule.presumptiveValueRule && inputs.presumptiveValue && inputs.presumptiveValue > 0) {
+        url.searchParams.set('spv', String(inputs.presumptiveValue));
+        if (inputs.appraisedValue && inputs.appraisedValue > 0) {
+          url.searchParams.set('appraisal', String(inputs.appraisedValue));
+        }
+      }
       if (inputs.tradeInValue > 0) {
         url.searchParams.set('tradeIn', String(inputs.tradeInValue));
       }
@@ -299,6 +305,23 @@ export function CostSummaryCard({
 
         {/* Contextual Warning / Info Pills */}
         <div className="mt-6 space-y-2">
+          {breakdown.presumptiveValueApplied && (
+            <div
+              id="presumptive-value-applied"
+              className="rounded-xl border border-amber-200/90 bg-amber-50/90 p-3.5 text-xs text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-200"
+            >
+              <div className="font-bold text-amber-800 dark:text-amber-300">
+                {breakdown.presumptiveValueApplied === 'appraisal'
+                  ? 'Taxed on the certified appraisal'
+                  : 'Taxed on Standard Presumptive Value'}
+              </div>
+              <p className="mt-1 leading-relaxed">
+                {breakdown.presumptiveValueApplied === 'appraisal'
+                  ? `${rule.label} taxes the certified appraisal value (${formatCurrency(inputs?.appraisedValue ?? 0)}) because it is more than your price. A certified appraisal can lower the taxable value but never below the price.`
+                  : `Your price is below ${Number(((rule.presumptiveValueRule?.minShareOfValue ?? 0) * 100).toFixed(0))}% of the Standard Presumptive Value, so ${rule.label} taxes ${formatCurrency(breakdown.exciseTax / rule.exciseTaxRate)} instead. A certified appraisal (Form 14-128) obtained within 30 days of the purchase can lower it.`}
+              </p>
+            </div>
+          )}
           {breakdown.bookValueApplied ? (
             <div
               id="book-value-applied"

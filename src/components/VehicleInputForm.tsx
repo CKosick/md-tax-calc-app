@@ -293,6 +293,74 @@ export function VehicleInputForm({
           </div>
         )}
 
+        {/* Standard Presumptive Value (states with a presumptive value rule, e.g. Texas) */}
+        {rule.presumptiveValueRule && (
+          <div>
+            <div className="flex items-center justify-between">
+              <label
+                htmlFor="spv-input"
+                className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300"
+              >
+                Standard Presumptive Value (SPV)
+              </label>
+              <span className="text-[11px] text-slate-400">Optional</span>
+            </div>
+            <div className="relative mt-2">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+                <span className="text-base font-bold text-slate-400">$</span>
+              </div>
+              <input
+                type="number"
+                id="spv-input"
+                min="0"
+                step="100"
+                value={inputs.presumptiveValue || ''}
+                onChange={(e) => {
+                  const n = parseFloat(e.target.value);
+                  updateField('presumptiveValue', Number.isFinite(n) && n > 0 ? n : undefined);
+                }}
+                placeholder="Look up on TxDMV's SPV calculator"
+                className="block w-full min-h-[44px] rounded-2xl border border-slate-200 bg-white py-3 pl-8 pr-4 text-base font-bold text-slate-900 shadow-xs transition-all focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+              />
+            </div>
+            <p id="spv-help" className="mt-1.5 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
+              {rule.label} taxes the greater of your price or {Number((rule.presumptiveValueRule.minShareOfValue * 100).toFixed(0))}% of SPV.
+            </p>
+
+            {(inputs.presumptiveValue ?? 0) > 0 && (
+              <div className="mt-3">
+                <label
+                  htmlFor="appraisal-input"
+                  className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300"
+                >
+                  Certified Appraisal (Form 14-128)
+                </label>
+                <div className="relative mt-2">
+                  <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+                    <span className="text-base font-bold text-slate-400">$</span>
+                  </div>
+                  <input
+                    type="number"
+                    id="appraisal-input"
+                    min="0"
+                    step="100"
+                    value={inputs.appraisedValue || ''}
+                    onChange={(e) => {
+                      const n = parseFloat(e.target.value);
+                      updateField('appraisedValue', Number.isFinite(n) && n > 0 ? n : undefined);
+                    }}
+                    placeholder="Only if you have one"
+                    className="block w-full min-h-[44px] rounded-2xl border border-slate-200 bg-white py-3 pl-8 pr-4 text-base font-bold text-slate-900 shadow-xs transition-all focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+                  />
+                </div>
+                <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
+                  An appraisal obtained within 30 days of the purchase replaces the SPV test. The tax is never on less than your price.
+                </p>
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Weight Class (Passenger Cars only; hidden when the state's fee does not depend on weight) */}
         {inputs.vehicleType === 'passenger' && passengerFeeVariesByWeight && (
           <div>

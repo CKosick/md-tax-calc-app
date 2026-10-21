@@ -519,6 +519,9 @@
     "minExciseTax": null,
     "taxBase": "fairMarketValue",
     "bookValueRule": "Texas taxes private-party sales on the greater of the sales price or 80% of the Standard Presumptive Value (SPV); a certified appraisal (Form 14-128) obtained within 30 days can lower it.",
+    "presumptiveValueRule": {
+      "minShareOfValue": 0.8
+    },
     "titleFee": 33,
     "lienFilingFee": 0,
     "tradeInDeductible": false,
