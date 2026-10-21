@@ -47,7 +47,7 @@ describe('Vehicle Tax by State Comparison Engine & Verification', () => {
   });
 
   describe('5-State Hand Verification of Standard $25,000 Scenario', () => {
-    it('1. California: 7.25% sales tax, $15.00 transfer, $110.00 reg = $1,937.50 total', () => {
+    it('1. California: 7.25% sales tax, $15.00 transfer, $404.50 reg = $2,232.00 total', () => {
       const caRule = rules.california;
       const directCalc = calculateVehicleCosts(caRule, {
         ...STANDARD_SCENARIO_INPUTS,
@@ -56,15 +56,15 @@ describe('Vehicle Tax by State Comparison Engine & Verification', () => {
 
       expect(directCalc.exciseTax).toBe(1812.5); // 25,000 * 0.0725
       expect(directCalc.titleFee).toBe(15.0);
-      expect(directCalc.registrationTotal).toBe(110.0);
-      expect(directCalc.totalFirstYearCost).toBe(1937.5);
+      expect(directCalc.registrationTotal).toBe(404.5); // $110 + $162.50 VLF + $132 TIF ($25,000)
+      expect(directCalc.totalFirstYearCost).toBe(2232.0);
 
       const heroRow = dataset.heroRows.find((r) => r.key === 'california');
       expect(heroRow).toBeDefined();
       expect(heroRow?.salesTaxAmount).toBe(1812.5);
       expect(heroRow?.titleFee).toBe(15.0);
-      expect(heroRow?.registrationFee).toBe(110.0);
-      expect(heroRow?.totalCost).toBe(1937.5);
+      expect(heroRow?.registrationFee).toBe(404.5);
+      expect(heroRow?.totalCost).toBe(2232.0);
       expect(heroRow?.rateDisplay).toBe('7.25%');
     });
 

@@ -222,14 +222,15 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     registrationTerm: 2
   };
 
-  it('California: exact worked test ($15,000 -> $1,212.50)', () => {
+  it('California: exact worked test ($15,000 -> $1,376.00)', () => {
     const rule = allRules.california;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'california' }, 2026);
     expect(res.exciseTax).toBe(1087.50); // 7.25% of 15000
     expect(res.titleFee).toBe(15.00); // DMV transfer fee (re-checked Oct 2026)
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(110.00); // $76 registration + $34 CHP (re-checked Oct 2026)
-    expect(res.totalFirstYearCost).toBe(1212.50);
+    // $76 registration + $34 CHP + $97.50 VLF (0.65%) + $66 TIF ($5,000 to $24,999)
+    expect(res.registrationTotal).toBe(273.50);
+    expect(res.totalFirstYearCost).toBe(1376.00);
   });
 
   it('Texas: exact worked test ($15,000 -> $1,022.25)', () => {

@@ -25,6 +25,16 @@ export interface StateRegistrationRules {
    * Defaults to 3,700; Virginia splits at 4,000. Only the form labels use it.
    */
   passengerWeightSplitLbs?: number;
+  /**
+   * Registration fees that scale with the vehicle's value (California). On a private-party
+   * transfer the value is the purchase price, so they are estimated from the price entered.
+   */
+  valueBasedFees?: {
+    /** Annual license fee as a share of value (California VLF: 0.0065). */
+    licenseFeeRate: number;
+    /** Flat annual fee by value bracket: the highest minValue not above the value applies. */
+    improvementFeeTiers: { minValue: number; fee: number }[];
+  };
 }
 
 export interface FaqItem {
@@ -139,6 +149,10 @@ export interface CostBreakdown {
   lienFilingFee: number;
   baseRegistrationFee: number;
   evSurcharge: number;
+  /** Value-based license fee (California VLF), included in registrationTotal. */
+  vehicleLicenseFee?: number;
+  /** Value-tiered transportation improvement fee (California TIF), included in registrationTotal. */
+  transportationImprovementFee?: number;
   registrationTotal: number;
   totalFirstYearCost: number;
   totalFirstYearCostMin?: number;

@@ -433,19 +433,44 @@
       "motorcycle": {
         "1": 112
       },
-      "evSurchargeAnnual": 121
+      "evSurchargeAnnual": 121,
+      "valueBasedFees": {
+        "licenseFeeRate": 0.0065,
+        "improvementFeeTiers": [
+          {
+            "minValue": 0,
+            "fee": 33
+          },
+          {
+            "minValue": 5000,
+            "fee": 66
+          },
+          {
+            "minValue": 25000,
+            "fee": 132
+          },
+          {
+            "minValue": 35000,
+            "fee": 198
+          },
+          {
+            "minValue": 60000,
+            "fee": 231
+          }
+        ]
+      }
     },
     "localTaxNote": "California’s 7.25% base rate applies statewide. District taxes in many cities and counties raise the total, up to 11.75% (Lancaster and Palmdale from October 1, 2026). Use tax is based on the address where you register the vehicle.",
     "notes": [
       "California’s statewide base sales and use tax rate is 7.25%; district taxes add up to 4.50%.",
-      "A private-party transfer costs a $15 transfer fee plus use tax. Registration is $76 plus a $34 CHP fee, plus value-based fees.",
+      "A private-party transfer costs a $15 transfer fee plus use tax. Registration is $76 plus a $34 CHP fee, a 0.65% vehicle license fee, and a transportation improvement fee of $33 to $231 by value.",
       "Trade-in credit does not apply to private-party sales."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with the California DMV or CDTFA.",
       "Use tax is based on the purchase price and the rate where you register the vehicle, and is paid to the DMV at transfer.",
       "Private-party trade-in deductions are not permitted in California.",
-      "Registration shown is the $76 registration fee plus the $34 CHP fee. Not included: the vehicle license fee (0.65% of value), the transportation improvement fee ($33 to $231 by value), county and district fees, and the smog transfer fee for vehicles four model years old or newer."
+      "Registration includes the $76 registration fee, the $34 CHP fee, and estimates of the value-based fees: the vehicle license fee (0.65% of the price, since the DMV bases it on the new owner’s price when a registered vehicle is transferred) and the transportation improvement fee ($33 to $231 by value). Not included: county and district fees and the smog transfer fee."
     ],
     "faqs": [
       {

@@ -1301,7 +1301,7 @@ export const GUIDES: Guide[] = [
       'Payment for the $15 transfer fee, use tax, and any registration fees due'
     ],
     calculatorNote:
-      'The calculator shows the use tax as a range from 7.25% to 11.75%. Registration shown is $76 plus the $34 CHP fee; the value-based vehicle license and transportation improvement fees are extra.',
+      'The calculator shows the use tax as a range from 7.25% to 11.75%. Registration includes the $76 fee, the $34 CHP fee, and estimates of the vehicle license fee (0.65% of the price) and the transportation improvement fee.',
     faqs: [
       {
         question: 'How long do I have to transfer a car I bought privately in California?',
@@ -1387,7 +1387,8 @@ export const GUIDES: Guide[] = [
       'Smog certification, unless the family or 90-day exemption applies',
       'Payment for the $15 transfer fee'
     ],
-    calculatorNote: 'For a gift or exempt family transfer, enter $0 as the price to see the transfer and registration costs.',
+    calculatorNote:
+      'For a gift or exempt family transfer, enter $0 as the price to see the transfer fee and the $76 registration and $34 CHP fees. The vehicle license fee (0.65% of the car’s value) and transportation improvement fee are extra.',
     faqs: [
       {
         question: 'Do I pay use tax on a car gifted to me in California?',
@@ -1465,7 +1466,7 @@ export const GUIDES: Guide[] = [
       'Payment for registration fees and any use tax'
     ],
     calculatorNote:
-      'If no use tax applies, enter $0 as the price. Registration shown is $76 plus the $34 CHP fee; value-based fees are extra.',
+      'If no use tax applies, enter $0 as the price. At $0 the calculator shows the $76 registration and $34 CHP fees only; the vehicle license fee (0.65% of the car’s value) and transportation improvement fee are extra.',
     faqs: [
       {
         question: 'How long do I have to register my car after moving to California?',

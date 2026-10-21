@@ -57,9 +57,11 @@ describe('California re-check (October 2026)', () => {
     expect(b.combinedTaxMax).toBe(1762.5); // 11.75%
   });
 
-  it('discloses the value-based fees it does not include', () => {
-    expect(ca.disclaimers.join(' ')).toContain('vehicle license fee (0.65% of value)');
-    expect(ca.disclaimers.join(' ')).toContain('transportation improvement fee ($33 to $231 by value)');
+  it('explains the value-based fee estimates and what is still not included', () => {
+    const text = ca.disclaimers.join(' ');
+    expect(text).toContain('vehicle license fee (0.65% of the price');
+    expect(text).toContain('transportation improvement fee ($33 to $231 by value)');
+    expect(text).toContain('Not included: county and district fees and the smog transfer fee');
   });
 });
 

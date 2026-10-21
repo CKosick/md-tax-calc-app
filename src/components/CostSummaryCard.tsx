@@ -262,6 +262,10 @@ export function CostSummaryCard({
                 <p className="mt-0.5 pl-6.5 text-xs text-slate-500 dark:text-slate-400">
                   Base license plates &amp; tags
                   {breakdown.evSurcharge > 0 && ` + ${formatCurrency(breakdown.evSurcharge)} EV surcharge`}
+                  {(breakdown.vehicleLicenseFee ?? 0) > 0 &&
+                    ` + ${formatCurrency(breakdown.vehicleLicenseFee ?? 0)} vehicle license fee (0.65% of price)`}
+                  {(breakdown.transportationImprovementFee ?? 0) > 0 &&
+                    ` + ${formatCurrency(breakdown.transportationImprovementFee ?? 0)} transportation improvement fee`}
                 </p>
               </div>
               <span className="flex-shrink-0 font-bold text-slate-900 dark:text-white">

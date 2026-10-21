@@ -183,7 +183,21 @@ export function calculateVehicleCosts(
     evSurcharge = rule.registration.phevSurchargeAnnual * term;
   }
 
-  const registrationTotal = baseRegistrationFee + evSurcharge;
+  // Value-based registration fees (California): estimated from the purchase price, which becomes
+  // the vehicle's value for these fees when a registered vehicle is transferred. Skipped at $0.
+  let vehicleLicenseFee = 0;
+  let transportationImprovementFee = 0;
+  const valueFees = rule.registration.valueBasedFees;
+  if (valueFees && price > 0) {
+    vehicleLicenseFee = Math.round(price * valueFees.licenseFeeRate * term * 100) / 100;
+    const tier = [...valueFees.improvementFeeTiers]
+      .sort((a, b) => b.minValue - a.minValue)
+      .find((t) => price >= t.minValue);
+    transportationImprovementFee = (tier?.fee ?? 0) * term;
+  }
+
+  const registrationTotal =
+    Math.round((baseRegistrationFee + evSurcharge + vehicleLicenseFee + transportationImprovementFee) * 100) / 100;
 
   // 5. Local Tax & Total First-Year Out-Of-Pocket Cost
   const hasLocalTax =
@@ -316,9 +330,18 @@ export function calculateVehicleCosts(
       label: `Registration & Tags (${term}-Year Term)`,
       amount: registrationTotal,
       description:
-        evSurcharge > 0
-          ? `Base tag fee ($${baseRegistrationFee.toFixed(2)}) + EV/PHEV surcharge ($${evSurcharge.toFixed(2)})`
-          : `${rule.label} license plates and tag registration`
+        [
+          vehicleLicenseFee > 0 || transportationImprovementFee > 0 || evSurcharge > 0
+            ? `Base tag fee ($${baseRegistrationFee.toFixed(2)})`
+            : `${rule.label} license plates and tag registration`,
+          evSurcharge > 0 ? `EV/PHEV surcharge ($${evSurcharge.toFixed(2)})` : '',
+          vehicleLicenseFee > 0
+            ? `vehicle license fee ($${vehicleLicenseFee.toFixed(2)}, ${Number(((valueFees?.licenseFeeRate ?? 0) * 100).toFixed(2))}% of price)`
+            : '',
+          transportationImprovementFee > 0 ? `transportation improvement fee ($${transportationImprovementFee.toFixed(2)})` : ''
+        ]
+          .filter(Boolean)
+          .join(' + ')
     },
     {
       id: 'total-cost',
@@ -346,6 +369,8 @@ export function calculateVehicleCosts(
     lienFilingFee,
     baseRegistrationFee,
     evSurcharge,
+    vehicleLicenseFee,
+    transportationImprovementFee,
     registrationTotal,
     totalFirstYearCost,
     totalFirstYearCostMin,
