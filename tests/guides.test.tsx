@@ -43,7 +43,10 @@ const GUIDE_STATES = {
   pennsylvania: { label: 'Pennsylvania', agency: 'PennDOT', hosts: ['www.pa.gov'] },
   texas: { label: 'Texas', agency: 'TxDMV and Texas Comptroller', hosts: ['www.txdmv.gov', 'comptroller.texas.gov'] },
   california: { label: 'California', agency: 'California DMV and CDTFA', hosts: ['www.dmv.ca.gov', 'cdtfa.ca.gov', 'www.bar.ca.gov'] },
-  florida: { label: 'Florida', agency: 'FLHSMV and Florida DOR', hosts: ['www.flhsmv.gov', 'floridarevenue.com'] }
+  florida: { label: 'Florida', agency: 'FLHSMV and Florida DOR', hosts: ['www.flhsmv.gov', 'floridarevenue.com'] },
+  'new-york': { label: 'New York', agency: 'NYS DMV and NYS Tax Department', hosts: ['dmv.ny.gov', 'www.tax.ny.gov'] },
+  illinois: { label: 'Illinois', agency: 'Illinois SOS and IDOR', hosts: ['tax.illinois.gov', 'www.ilsos.gov'] },
+  ohio: { label: 'Ohio', agency: 'Ohio BMV and Ohio Department of Taxation', hosts: ['tax.ohio.gov', 'bmv.ohio.gov', 'www.bmv.ohio.gov', 'codes.ohio.gov'] }
 } as const;
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
@@ -175,6 +178,26 @@ describe('Guide pages', () => {
   });
 });
 
+describe('Batch 4 guides (New York, Illinois, Ohio)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified New York, Illinois, and Ohio key facts', () => {
+    const [nySale, nyGift, nyMove] = topics('new-york').map(text);
+    for (const fact of ['DTF-802', 'MV-82', '7% to 8.875%', '$50', '$56.50', '$25 for plates', '10 days', '180 days']) expect(nySale).toContain(fact);
+    for (const fact of ['$0', 'section 6', 'stepparent', 'stepchild']) expect(nyGift).toContain(fact);
+    for (const fact of ['30 days', 'DTF-803', 'DTF-804', 'Photocopies are not accepted']) expect(nyMove).toContain(fact);
+
+    const [ilSale, ilGift, ilMove] = topics('illinois').map(text);
+    for (const fact of ['RUT-50', '$465', '$850', '$10,100', 'flat $25', '30 days', '$165', '$151', 'VSD-190', 'Cook County']) expect(ilSale).toContain(fact);
+    for (const fact of ['$15', 'civil union partner', 'fair market value', 'adopted']) expect(ilGift).toContain(fact);
+    for (const fact of ['30 days', '3 months', 'RUT-25', '$41']) expect(ilMove).toContain(fact);
+
+    const [ohSale, ohGift, ohMove] = topics('ohio').map(text);
+    for (const fact of ['notarized', '30 days', '$5', '6.50% to 8.25%', '$18', '$23', '$36', '$8 deputy registrar fee', 'E-Check']) expect(ohSale).toContain(fact);
+    for (const fact of ['exemption certificate', 'probate', 'transfer-on-death', 'divorce decree']) expect(ohGift).toContain(fact);
+    for (const fact of ['30 days', 'VIN inspection', 'six months', 'clerk of courts']) expect(ohMove).toContain(fact);
+  });
+});
+
 describe('Guide links and discovery', () => {
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', async () => {
     for (const [state, { label }] of Object.entries(GUIDE_STATES)) {
@@ -186,8 +209,8 @@ describe('Guide links and discovery', () => {
       cleanup();
     }
 
-    const oh = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'ohio-private-sale-tax-calculator' }) }));
-    expect(oh.container.querySelector('#state-guides')).toBeNull();
+    const mi = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'michigan-private-sale-tax-calculator' }) }));
+    expect(mi.container.querySelector('#state-guides')).toBeNull();
   });
 
   it('the guides index lists every guide', () => {
@@ -217,6 +240,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('Pennsylvania, Texas, California, and Florida.');
+    expect(String(metadata.description)).toContain('Florida, New York, Illinois, and Ohio.');
   });
 });

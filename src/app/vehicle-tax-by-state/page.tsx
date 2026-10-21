@@ -111,7 +111,7 @@ export default function VehicleTaxByStatePage() {
     {
       question: 'Why do vehicle sales taxes and fees differ so dramatically across states?',
       answer:
-        'Vehicle taxation is governed entirely by individual state statutes and legislative revenue policies. Several states levy 0% statewide tax on private sales (or have no sales tax at all), while others levy sales tax rates over 7%. Furthermore, states fund their transportation and motor vehicle departments through different mechanisms—some rely on higher percentage sales taxes with low flat registration fees, while others charge higher annual tag or titling fees.'
+        'Vehicle taxation is governed entirely by individual state statutes and legislative revenue policies. Several states levy 0% statewide tax on private sales (or have no sales tax at all), while others levy sales tax rates over 7%. Furthermore, states fund their transportation and motor vehicle departments through different mechanisms. Some rely on higher percentage sales taxes with low flat registration fees, while others charge higher annual tag or titling fees.'
     },
     {
       question: 'Do local, county, or municipal taxes apply to private-party vehicle sales?',

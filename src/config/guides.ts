@@ -111,6 +111,32 @@ const FL_SOURCES = {
   newResidentTax: { label: 'Florida DOR: Tax Information for New Residents (GT-800025)', url: 'https://floridarevenue.com/Forms_library/current/brochure/gt800025.pdf' }
 };
 
+const NY_SOURCES = {
+  transfer: { label: 'NYS DMV: Buy, Sell, or Transfer Vehicle Ownership', url: 'https://dmv.ny.gov/titles/buy-sell-or-transfer-vehicle-ownership' },
+  register: { label: 'NYS DMV: Register and Title a Vehicle', url: 'https://dmv.ny.gov/registration/register-and-title-a-vehicle' },
+  fees: { label: 'NYS DMV: Passenger Vehicle Registration Fees, Use Taxes and Supplemental Fees', url: 'https://dmv.ny.gov/registration/passenger-vehicle-registration-fees-use-taxes-and-supplemental-fees' },
+  salesTax: { label: 'NYS DMV: Sales Tax Information', url: 'https://dmv.ny.gov/registration/sales-tax-information' },
+  outOfState: { label: 'NYS DMV: Register an Out-of-State Vehicle', url: 'https://dmv.ny.gov/registration/register-an-out-of-state-vehicle' },
+  rates: { label: 'NYS Tax Department: Publication 718, Sales and Use Tax Rates by Jurisdiction', url: 'https://www.tax.ny.gov/pdf/publications/sales/pub718.pdf' }
+};
+
+const IL_SOURCES = {
+  rut50: { label: 'Illinois Department of Revenue: Form RUT-50 Instructions', url: 'https://tax.illinois.gov/forms/sales/vehicleusetax/rut-50-instructions.html' },
+  rut5: { label: 'Illinois Department of Revenue: Private Party Vehicle Tax Chart (RUT-5)', url: 'https://tax.illinois.gov/content/dam/soi/en/web/tax/forms/sales/documents/vehicleusetax/rut-5.pdf' },
+  fees: { label: 'Illinois SOS: Fees', url: 'https://www.ilsos.gov/departments/vehicles/basicfees.html' },
+  newResident: { label: 'Illinois SOS: Vehicle Titles and License Plates for New Illinois Residents', url: 'https://www.ilsos.gov/services/newresidents/vehicle-titles-and-license-plates-for-new-illinois-residents.html' }
+};
+
+const OH_SOURCES = {
+  salesTax: { label: 'Ohio Department of Taxation: Sales Tax for Motor Vehicles', url: 'https://tax.ohio.gov/business/sales-and-use-tax/motor-vehicles' },
+  rates: { label: 'Ohio Department of Taxation: Sales and Use Tax Rates by County, October to December 2026', url: 'https://tax.ohio.gov/business/sales-and-use-tax/rate-tables/by-county-q4-2026' },
+  fees: { label: 'Ohio BMV: Documents and Fees', url: 'https://bmv.ohio.gov/doc-fees.aspx' },
+  titles: { label: 'Ohio BMV: Vehicle Titles', url: 'https://bmv.ohio.gov/titles-new.aspx' },
+  newResident: { label: 'Ohio BMV: New Ohio Residents', url: 'https://www.bmv.ohio.gov/new-to-ohio.aspx' },
+  titleFee: { label: 'Ohio Revised Code 4505.09: Title fees', url: 'https://codes.ohio.gov/ohio-revised-code/section-4505.09' },
+  exemption: { label: 'Ohio Administrative Code 5703-9-10: Exemption certificates at title', url: 'https://codes.ohio.gov/ohio-administrative-code/rule-5703-9-10' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -1739,6 +1765,695 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [FL_SOURCES.newResident, FL_SOURCES.registrations, FL_SOURCES.fees, FL_SOURCES.newResidentTax]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-new-york',
+    stateKey: 'new-york',
+    title: 'How to Title a Private Car Sale in New York',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in New York',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in New York: the bill of sale, Form DTF-802, sales tax of 7% to 8.875%, registration by weight, and inspection.',
+    cardDescription: 'The paperwork, sales tax, registration by weight, and inspection.',
+    intro: [
+      'When you buy a car from a private seller in New York, you register and title it at a DMV office and pay the sales tax there.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'NYS DMV and NYS Tax Department',
+    steps: [
+      {
+        title: 'Get the title and a bill of sale',
+        body: [
+          'The seller completes and signs the transfer section on the back of the title. If the vehicle has a transferable registration instead of a title, the seller signs that over to you.',
+          'Sign a bill of sale (MV-912 works) showing the year and make, the VIN, the sale date, the price, and both names and signatures. The original goes to the DMV.'
+        ]
+      },
+      {
+        title: 'Get New York insurance',
+        body: ['You need proof of New York auto liability insurance. Register within 180 days of the effective date on your insurance ID card.']
+      },
+      {
+        title: 'Complete the forms',
+        body: [
+          'Fill out the Vehicle Registration/Title Application (MV-82) and the Statement of Transaction (DTF-802), which reports the price for sales tax.'
+        ]
+      },
+      {
+        title: 'Register at a DMV office and pay',
+        body: [
+          'Sales tax is 4% state tax plus local tax, 7% to 8.875% in total at the rate where you live (8.875% in New York City).',
+          'The title certificate is $50. Registration is a 2-year fee by the vehicle’s weight (for example, $56.50 for 3,451 to 3,550 lbs), plus $25 for plates, any county or New York City vehicle use tax, and a $50 supplemental fee in the 12 commuter district counties.'
+        ]
+      },
+      {
+        title: 'Get it inspected within 10 days',
+        body: [
+          'You receive an inspection extension that lasts 10 days from the registration date. An inspection issued to the previous owner is not valid.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'What New York registration costs',
+        intro: 'The registration fee covers 2 years and is set by the vehicle’s weight on the DMV chart:',
+        items: [
+          '$26 for 1,650 lbs or less, rising in steps of about $1.50 to $2.50 per 100 lbs.',
+          '$56.50 for 3,451 to 3,550 lbs, and $69 for 3,951 to 4,050 lbs.',
+          '$140 for 6,951 lbs or more.',
+          'A $32.50 minimum for vehicles with 6 or more cylinders and electric vehicles.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title (or transferable registration) signed over to you',
+      'A bill of sale signed by you and the seller',
+      'Vehicle Registration/Title Application (MV-82)',
+      'Statement of Transaction (DTF-802)',
+      'Proof of New York insurance',
+      'Proof of identity',
+      'Payment for sales tax, the $50 title fee, registration, and plates'
+    ],
+    calculatorNote:
+      'Enter the vehicle’s weight for the exact registration fee. The calculator shows sales tax as a range from 7% to 8.875% and does not include the $25 plates, county use tax, or the commuter district fee.',
+    faqs: [
+      {
+        question: 'How much is sales tax on a private car sale in New York?',
+        answer: 'The 4% state rate plus local tax, 7% to 8.875% in total, at the rate where you live. You pay it to the DMV when you register, using Form DTF-802.'
+      },
+      {
+        question: 'Do I need an inspection?',
+        answer: 'Yes. Get the vehicle inspected within 10 days of registering. The previous owner’s inspection does not carry over.'
+      },
+      {
+        question: 'How is the registration fee set?',
+        answer: 'By the vehicle’s weight. The fee covers 2 years, for example $56.50 for 3,451 to 3,550 lbs and $140 for 6,951 lbs or more.'
+      }
+    ],
+    sources: [NY_SOURCES.transfer, NY_SOURCES.register, NY_SOURCES.fees, NY_SOURCES.salesTax, NY_SOURCES.rates]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-new-york',
+    stateKey: 'new-york',
+    title: 'How to Gift a Car in New York',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in New York',
+    metaDescription:
+      'How to give or receive a car as a gift in New York: the sales tax exemption on Form DTF-802, family purchases, the $0 bill of sale, and registering at the DMV.',
+    cardDescription: 'The DTF-802 exemption, family purchases, and registering.',
+    intro: [
+      'New York does not charge sales tax on a vehicle given as a gift, or bought from your spouse, parent, child, stepparent, or stepchild. You claim the exemption on Form DTF-802.',
+      'Here is how to transfer a gifted car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'NYS DMV and NYS Tax Department',
+    steps: [
+      {
+        title: 'Sign over the title',
+        body: ['The person giving the car completes and signs the transfer section on the title.']
+      },
+      {
+        title: 'Write a $0 bill of sale',
+        body: ['A bill of sale is still needed for a gift. List the price as $0 and note that the vehicle is a gift. Both of you sign it.']
+      },
+      {
+        title: 'Claim the exemption on Form DTF-802',
+        body: [
+          'On the Statement of Transaction (DTF-802), note the vehicle as a gift. For a gift from anyone other than a spouse, parent, child, stepparent, or stepchild, the person giving the car completes section 6 of the form.'
+        ]
+      },
+      {
+        title: 'Get New York insurance',
+        body: ['You need proof of New York auto liability insurance to register.']
+      },
+      {
+        title: 'Register at a DMV office',
+        body: [
+          'Bring the forms and pay the $50 title fee and registration. Registration is a 2-year fee by weight, plus $25 for plates and any county use tax. Get an inspection within 10 days.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'Purchases from family',
+        items: [
+          'No sales tax is due on a purchase from your spouse, parent, child, stepparent, or stepchild, even if you pay for it.',
+          'Purchases from other relatives are taxed like any other sale, unless the vehicle is a gift.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over by the person giving the car',
+      'A bill of sale showing $0 and noting the gift',
+      'Statement of Transaction (DTF-802), with section 6 completed if the giver is not a close family member',
+      'Vehicle Registration/Title Application (MV-82)',
+      'Proof of New York insurance and proof of identity',
+      'Payment for the title fee, registration, and plates'
+    ],
+    calculatorNote: 'For a gift, enter $0 as the price. The calculator then shows only the title and registration costs.',
+    faqs: [
+      {
+        question: 'Do I pay sales tax on a gifted car in New York?',
+        answer: 'No. Claim the gift exemption on Form DTF-802. If the giver is not your spouse, parent, child, stepparent, or stepchild, they complete section 6 of the form.'
+      },
+      {
+        question: 'Do I need a bill of sale for a gift?',
+        answer: 'Yes. Show the price as $0 and note that the vehicle is a gift.'
+      },
+      {
+        question: 'Is a sale between family members taxed?',
+        answer: 'Not if you buy from your spouse, parent, child, stepparent, or stepchild. Other family sales are taxed on the price.'
+      }
+    ],
+    sources: [NY_SOURCES.salesTax, NY_SOURCES.transfer, NY_SOURCES.register, NY_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-new-york-after-moving-from-another-state',
+    stateKey: 'new-york',
+    title: 'Titling a Car in New York After Moving From Another State',
+    shortTitle: 'Title a car after moving to New York',
+    metaTitle: 'Titling Your Car After Moving to New York',
+    metaDescription:
+      'New to New York? Register your car within 30 days of moving. Covers the MV-82, proof of ownership, New York insurance, sales tax forms DTF-803 and DTF-804, and the 10-day inspection.',
+    cardDescription: 'The 30-day deadline, the forms, sales tax, and inspection.',
+    intro: [
+      'If you move to New York with a car from another state, you must register it here within 30 days of becoming a resident.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'NYS DMV and NYS Tax Department',
+    steps: [
+      {
+        title: 'Mark the 30-day deadline',
+        body: ['Register within 30 days of becoming a New York resident. Non-residents can keep driving on their home state’s registration.']
+      },
+      {
+        title: 'Get New York insurance',
+        body: ['You need proof of New York auto liability insurance.']
+      },
+      {
+        title: 'Gather proof of ownership',
+        body: [
+          'Bring your original out-of-state title or other original proof of ownership. Photocopies are not accepted.'
+        ]
+      },
+      {
+        title: 'Settle the sales tax question',
+        body: [
+          'If you were not a New York resident when you bought the vehicle, claim the non-resident exemption on Form DTF-803.',
+          'If you bought it as a New York resident in another state, Form DTF-804 gives credit for the other state’s tax only if that state gives the same credit for New York tax.'
+        ]
+      },
+      {
+        title: 'Register and get inspected',
+        body: [
+          'Submit the Vehicle Registration/Title Application (MV-82) with your documents and pay the title fee and registration. Registration is a 2-year fee by weight, plus $25 for plates and any county use tax.',
+          'You receive a 10-day inspection extension. Get the vehicle inspected before it runs out.'
+        ]
+      }
+    ],
+    checklist: [
+      'Original out-of-state title or other original proof of ownership',
+      'Vehicle Registration/Title Application (MV-82)',
+      'Proof of New York insurance',
+      'Proof of identity and age',
+      'Sales tax form DTF-803 or DTF-804, if it applies',
+      'Payment for the title fee, registration, and plates'
+    ],
+    calculatorNote:
+      'If no sales tax is due, enter $0 as the price and the vehicle’s weight. The calculator shows the title and 2-year registration costs.',
+    faqs: [
+      {
+        question: 'How long do I have to register my car after moving to New York?',
+        answer: '30 days after you become a New York resident.'
+      },
+      {
+        question: 'Do I pay New York sales tax on a car I already own?',
+        answer:
+          'Not if you were a non-resident when you bought it; claim the exemption on Form DTF-803. If you bought it out of state while living in New York, you owe New York tax, with credit on Form DTF-804 only for states that offer the same credit.'
+      },
+      {
+        question: 'When do I need an inspection?',
+        answer: 'Within the 10-day inspection extension you receive when you register.'
+      }
+    ],
+    sources: [NY_SOURCES.outOfState, NY_SOURCES.salesTax, NY_SOURCES.register, NY_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-illinois',
+    stateKey: 'illinois',
+    title: 'How to Title a Private Car Sale in Illinois',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Illinois',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Illinois: Form RUT-50 and its flat tax tables, the 30-day deadline, the $165 title, and $151 plates.',
+    cardDescription: 'Form RUT-50, the flat tax tables, the 30-day deadline, and fees.',
+    intro: [
+      'Illinois taxes a car bought from a private seller with flat amounts on Form RUT-50, not a percentage of the price.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Illinois SOS and IDOR',
+    steps: [
+      {
+        title: 'Get the signed-over title',
+        body: ['The seller signs the title over to you. Note the odometer reading and the purchase date.']
+      },
+      {
+        title: 'Work out the tax on Form RUT-50',
+        body: [
+          'Under $15,000, the tax depends on the vehicle’s age (Table A): $465 for a vehicle up to 1 year old, down to $100 for one over 10 years old. Age is the year you apply for the title minus the model year.',
+          'At $15,000 and up, the tax depends on the price (Table B): $850 for $15,000 to $19,999.99, rising to $10,100 at $1,000,000 or more. Motorcycles pay a flat $25.'
+        ]
+      },
+      {
+        title: 'File within 30 days',
+        body: ['File Form RUT-50 and pay the tax within 30 days of buying the vehicle.']
+      },
+      {
+        title: 'Apply for the title and plates',
+        body: [
+          'Complete the Application for Vehicle Transaction(s) (VSD-190) and apply at a Secretary of State facility with the title and Form RUT-50.',
+          'The title is $165. Passenger plates are $151 a year ($41 for motorcycles), and electric vehicles pay $100 more.'
+        ]
+      },
+      {
+        title: 'Check for local taxes',
+        body: [
+          'Chicago residents owe $50 to $80 more by vehicle age (none at 15 years or older), and Cook County residents $90 to $225. For motorcycles, Chicago charges $15 and Cook County $90.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'Form RUT-50 Table A (under $15,000)',
+        items: [
+          '1 year old or newer: $465',
+          '2 years: $365; 3 years: $290; 4 years: $240; 5 years: $190',
+          '6 years: $165; 7 years: $155; 8 years: $140; 9 years: $125; 10 years: $115',
+          'Over 10 years: $100'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over by the seller',
+      'Form RUT-50 with the tax payment',
+      'Application for Vehicle Transaction(s) (VSD-190)',
+      'Proof of liability insurance',
+      'Payment for the $165 title fee and plates'
+    ],
+    calculatorNote:
+      'The calculator applies the RUT-50 tables, including the $25 flat tax for motorcycles. It does not add the Chicago or Cook County taxes.',
+    faqs: [
+      {
+        question: 'How is tax figured on a private car sale in Illinois?',
+        answer:
+          'With flat amounts on Form RUT-50: by vehicle age under $15,000 (Table A) and by price at $15,000 and up (Table B). Motorcycles pay $25.'
+      },
+      {
+        question: 'How long do I have to file Form RUT-50?',
+        answer: '30 days after buying the vehicle.'
+      },
+      {
+        question: 'Do Chicago and Cook County charge extra?',
+        answer: 'Yes. Chicago adds $50 to $80 by vehicle age (none at 15 years or older), and Cook County adds $90 to $225.'
+      }
+    ],
+    sources: [IL_SOURCES.rut50, IL_SOURCES.rut5, IL_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-illinois',
+    stateKey: 'illinois',
+    title: 'How to Gift a Car in Illinois',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Illinois',
+    metaDescription:
+      'How to give or receive a car as a gift in Illinois: the $15 family rate on Form RUT-50, how gifts to others are taxed on fair market value, and titling within 30 days.',
+    cardDescription: 'The $15 family rate, gifts to others, and titling.',
+    intro: [
+      'Illinois still requires Form RUT-50 for a gifted car. Close family members pay $15; other gifts are taxed on the vehicle’s fair market value using the regular tables.',
+      'Here is how to transfer a gifted car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Illinois SOS and IDOR',
+    steps: [
+      {
+        title: 'Sign over the title',
+        body: ['The person giving the car signs the title over to you.']
+      },
+      {
+        title: 'Check whether the $15 family rate applies',
+        body: [
+          'A transfer from your spouse or civil union partner, parent, brother, sister, or child (including adopted children) is taxed $15 on Form RUT-50.'
+        ]
+      },
+      {
+        title: 'Otherwise, use fair market value',
+        body: [
+          'A gift or transfer with no price from anyone else is taxed on the vehicle’s fair market value, using Table A (under $15,000) or Table B ($15,000 and up).'
+        ]
+      },
+      {
+        title: 'File Form RUT-50 within 30 days',
+        body: ['File the form and pay the tax within 30 days of receiving the vehicle.']
+      },
+      {
+        title: 'Apply for the title and plates',
+        body: [
+          'Apply at a Secretary of State facility with the title, Form RUT-50, and the Application for Vehicle Transaction(s) (VSD-190). The title is $165 and passenger plates are $151 a year.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over by the giver',
+      'Form RUT-50 with the $15 family rate or the table amount',
+      'Application for Vehicle Transaction(s) (VSD-190)',
+      'Proof of liability insurance',
+      'Payment for the title fee and plates'
+    ],
+    calculatorNote:
+      'For a family transfer, the tax is $15 rather than the table amount. For other gifts, enter the vehicle’s fair market value as the price.',
+    faqs: [
+      {
+        question: 'Is a gifted car taxed in Illinois?',
+        answer:
+          'Yes, but between close family it is only $15: spouse or civil union partner, parent, brother, sister, or child. Other gifts are taxed on fair market value using the RUT-50 tables.'
+      },
+      {
+        question: 'Which form do I file for a gift?',
+        answer: 'Form RUT-50, the Private Party Vehicle Use Tax return, within 30 days.'
+      },
+      {
+        question: 'Do grandparents qualify for the $15 rate?',
+        answer: 'No. The $15 rate covers a spouse or civil union partner, parent, brother, sister, or child.'
+      }
+    ],
+    sources: [IL_SOURCES.rut50, IL_SOURCES.rut5, IL_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-illinois-after-moving-from-another-state',
+    stateKey: 'illinois',
+    title: 'Titling a Car in Illinois After Moving From Another State',
+    shortTitle: 'Title a car after moving to Illinois',
+    metaTitle: 'Titling Your Car After Moving to Illinois',
+    metaDescription:
+      'New to Illinois? Title and register your car within 30 days. Covers the VSD-190, your out-of-state title, when Illinois tax applies, the $165 title, and $151 plates.',
+    cardDescription: 'The 30-day deadline, the VSD-190, tax, and fees.',
+    intro: [
+      'If you move to Illinois with a car registered in another state, you have 30 days to apply for an Illinois title and registration.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Illinois SOS and IDOR',
+    steps: [
+      {
+        title: 'Mark the 30-day deadline',
+        body: ['Apply within 30 days of establishing residence in Illinois.']
+      },
+      {
+        title: 'Complete the VSD-190',
+        body: [
+          'Fill out the Application for Vehicle Transaction(s) (VSD-190) with your Illinois address, the odometer reading, the vehicle description and VIN, and any lienholders.'
+        ]
+      },
+      {
+        title: 'Bring your out-of-state title',
+        body: [
+          'Submit the out-of-state title. If a lienholder holds it, submit a copy of the title, registration, or bill of sale and a copy of the loan agreement instead.'
+        ]
+      },
+      {
+        title: 'Check whether tax applies',
+        body: [
+          'A vehicle titled and registered in another state 3 months or more before you moved is exempt. You still submit Form RUT-50 or RUT-25 showing the exempt status.',
+          'A recent purchase from an individual is taxed on Form RUT-50.'
+        ]
+      },
+      {
+        title: 'Apply and pay the fees',
+        body: [
+          'Apply at a Secretary of State facility. The title is $165, passenger plates are $151 a year, and motorcycle plates are $41. You need liability insurance.'
+        ]
+      }
+    ],
+    checklist: [
+      'Application for Vehicle Transaction(s) (VSD-190)',
+      'Out-of-state title (or copies and the loan agreement if a lienholder holds it)',
+      'Form RUT-50 or RUT-25',
+      'Proof of liability insurance',
+      'Payment for the $165 title fee and plates'
+    ],
+    calculatorNote:
+      'If the vehicle is exempt from tax, enter $0 as the price. The calculator then shows only the title and registration costs.',
+    faqs: [
+      {
+        question: 'How long do I have to title my car after moving to Illinois?',
+        answer: '30 days after establishing residence.'
+      },
+      {
+        question: 'Do I pay Illinois tax on a car I already own?',
+        answer:
+          'Not if it was titled and registered in another state at least 3 months before you moved. Submit Form RUT-50 or RUT-25 showing the exempt status.'
+      },
+      {
+        question: 'How much are the title and plates?',
+        answer: 'The title is $165, and passenger plates are $151 a year. Electric vehicles pay $100 more.'
+      }
+    ],
+    sources: [IL_SOURCES.newResident, IL_SOURCES.fees, IL_SOURCES.rut50]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-ohio',
+    stateKey: 'ohio',
+    title: 'How to Title a Private Car Sale in Ohio',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Ohio',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Ohio: the notarized title, the 30-day deadline, county sales tax of 6.50% to 8.25%, the $18 title, and registration.',
+    cardDescription: 'The notarized title, 30-day deadline, county tax, and fees.',
+    intro: [
+      'In Ohio, titles are issued by county clerk of courts title offices, not the BMV. You pay the sales tax there when the title is transferred, then register at a deputy registrar.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Ohio BMV and Ohio Department of Taxation',
+    steps: [
+      {
+        title: 'Get the title with a notarized signature',
+        body: ['The seller signs the title over to you, and the seller’s signature must be notarized.']
+      },
+      {
+        title: 'Transfer the title within 30 days',
+        body: [
+          'Take the title to a county clerk of courts title office within 30 days of the sale. A late application costs $5 more.'
+        ]
+      },
+      {
+        title: 'Pay the sales tax at the title office',
+        body: [
+          'A private sale is taxed on the price paid, at the rate for the county where you live: 5.75% state tax plus county tax, 6.50% to 8.25% in total.',
+          'The title fee is $18 ($23 in counties that add $5), and it includes noting a lien.'
+        ]
+      },
+      {
+        title: 'Register at a deputy registrar',
+        body: [
+          'With your Ohio title, register at a deputy registrar license agency. Registration is $36 a year ($30 for motorcycles), plus an $8 deputy registrar fee and any local permissive tax of up to $30.',
+          'Electric vehicles pay $200 a year more, plug-in hybrids $150, and hybrids $100.'
+        ]
+      },
+      {
+        title: 'Check for E-Check',
+        body: ['Some counties require an E-Check emissions certificate before you can register.']
+      }
+    ],
+    sections: [
+      {
+        heading: 'How Ohio sales tax works on a private sale',
+        items: [
+          'Private (casual) sales of motor vehicles are taxable in Ohio.',
+          'The tax is on the full amount paid, including between family members.',
+          'An even trade of vehicles is taxed on each vehicle’s fair market value.',
+          'If you take over the seller’s loan, the tax is on the loan balance you assume.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the seller with the signature notarized',
+      'Payment for sales tax at your county’s rate',
+      'Payment for the $18 title fee (or $23)',
+      'Proof of identity',
+      'An E-Check certificate, if your county requires one',
+      'Payment for registration and the deputy registrar fee'
+    ],
+    calculatorNote:
+      'The calculator shows sales tax as a range from 6.50% to 8.25% and includes the $18 title and $36 registration. It does not add the $8 deputy registrar fee or local permissive tax.',
+    faqs: [
+      {
+        question: 'Where do I title a car in Ohio?',
+        answer: 'At a county clerk of courts title office. The BMV does not issue titles.'
+      },
+      {
+        question: 'How long do I have to transfer the title?',
+        answer: '30 days from the date of sale. After that, a $5 late fee applies.'
+      },
+      {
+        question: 'What sales tax rate do I pay?',
+        answer: 'The rate for the county where you live: 5.75% state tax plus county tax, 6.50% to 8.25% in total.'
+      }
+    ],
+    sources: [OH_SOURCES.titles, OH_SOURCES.salesTax, OH_SOURCES.rates, OH_SOURCES.fees, OH_SOURCES.titleFee]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-ohio',
+    stateKey: 'ohio',
+    title: 'How to Gift a Car in Ohio',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Ohio',
+    metaDescription:
+      'How to give or receive a car in Ohio without a sale: when tax is due between family members, the exemption certificate at the title office, and the 30-day title transfer.',
+    cardDescription: 'When tax is due, the exemption certificate, and the title transfer.',
+    intro: [
+      'In Ohio, any payment for a vehicle is taxed, even between family members. A transfer with no tax due needs an exemption certificate at the title office.',
+      'Here is how to transfer a car you are giving or receiving.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Ohio BMV and Ohio Department of Taxation',
+    steps: [
+      {
+        title: 'Know when tax is due',
+        body: [
+          'If any money or other payment changes hands, the full amount paid is taxed, even between family members. Taking over a loan counts as payment.'
+        ]
+      },
+      {
+        title: 'Sign over the title',
+        body: ['The person giving the car signs the title over, and the signature must be notarized.']
+      },
+      {
+        title: 'Bring an exemption certificate if no tax is paid',
+        body: [
+          'The clerk will not issue a title without tax unless you, as the person receiving the car, sign an exemption certificate giving the reason the transfer is not taxable. Ask the title office which reason applies to your transfer.'
+        ]
+      },
+      {
+        title: 'Transfer the title within 30 days',
+        body: ['Apply at a county clerk of courts title office within 30 days. The title fee is $18 ($23 in some counties).']
+      },
+      {
+        title: 'Register the car',
+        body: ['Register at a deputy registrar: $36 a year, plus an $8 deputy registrar fee and any local permissive tax.']
+      }
+    ],
+    sections: [
+      {
+        heading: 'Transfers Ohio lists as not taxed',
+        items: [
+          'Inheritance through probate court where there is no clear payment.',
+          'A transfer to the beneficiary named on a transfer-on-death title.',
+          'A transfer under a divorce decree.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over with the signature notarized',
+      'An exemption certificate signed by the person receiving the car, if no tax is paid',
+      'Payment for any tax due on an amount paid',
+      'Payment for the $18 title fee (or $23)',
+      'Payment for registration and the deputy registrar fee'
+    ],
+    calculatorNote:
+      'If no tax is due, enter $0 as the price. If anything was paid, enter that amount; Ohio taxes it at your county’s rate.',
+    faqs: [
+      {
+        question: 'Is a family car sale taxed in Ohio?',
+        answer: 'Yes, if any payment changes hands. The full amount paid is taxed.'
+      },
+      {
+        question: 'What do I need at the title office if no tax is paid?',
+        answer: 'An exemption certificate, signed by you as the person receiving the car, giving the reason the transfer is not taxable.'
+      },
+      {
+        question: 'Is an inherited car taxed?',
+        answer:
+          'Not when it passes through probate court with no clear payment, or to the beneficiary named on a transfer-on-death title.'
+      }
+    ],
+    sources: [OH_SOURCES.salesTax, OH_SOURCES.exemption, OH_SOURCES.titles, OH_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-ohio-after-moving-from-another-state',
+    stateKey: 'ohio',
+    title: 'Titling a Car in Ohio After Moving From Another State',
+    shortTitle: 'Title a car after moving to Ohio',
+    metaTitle: 'Titling Your Car After Moving to Ohio',
+    metaDescription:
+      'New to Ohio? Transfer your title and registration within 30 days. Covers the clerk of courts title office, the VIN inspection, when sales tax applies, and E-Check.',
+    cardDescription: 'The 30-day deadline, VIN inspection, tax, and E-Check.',
+    intro: [
+      'If you move to Ohio with a car from another state, you have 30 days after establishing residency to transfer your title and registration.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Ohio BMV and Ohio Department of Taxation',
+    steps: [
+      {
+        title: 'Mark the 30-day deadline',
+        body: [
+          'Transfer your out-of-state title and registration to Ohio within 30 days of establishing residency.'
+        ]
+      },
+      {
+        title: 'Get a VIN inspection',
+        body: [
+          'An out-of-state vehicle needs a VIN inspection, done at a deputy registrar license agency, a participating clerk of courts title office, or a participating Ohio dealer.'
+        ]
+      },
+      {
+        title: 'Convert your title at the clerk of courts',
+        body: [
+          'Take your out-of-state title to a county clerk of courts title office to get an Ohio title. The title fee is $18 ($23 in some counties).'
+        ]
+      },
+      {
+        title: 'Check whether sales tax applies',
+        body: [
+          'If you bought the vehicle at least six months before moving to Ohio, no Ohio tax is due. If you bought it more recently, Ohio tax is due with credit for sales tax paid to the other state.'
+        ]
+      },
+      {
+        title: 'Register at a deputy registrar',
+        body: [
+          'Bring your Ohio title and proof of identity. Registration is $36 a year plus an $8 deputy registrar fee and any local permissive tax. If your county requires E-Check, bring the certificate.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title',
+      'A completed VIN inspection',
+      'Proof of identity',
+      'Proof of sales tax paid to another state, if you bought within six months',
+      'An E-Check certificate, if your county requires one',
+      'Payment for the title fee and registration'
+    ],
+    calculatorNote:
+      'If no tax is due, enter $0 as the price. The calculator then shows the $18 title and $36 registration.',
+    faqs: [
+      {
+        question: 'How long do I have to title my car after moving to Ohio?',
+        answer: '30 days after establishing residency.'
+      },
+      {
+        question: 'Do I pay Ohio sales tax on a car I already own?',
+        answer:
+          'Not if you bought it at least six months before moving. Otherwise Ohio tax is due, with credit for sales tax paid to another state.'
+      },
+      {
+        question: 'Where do I get the VIN inspected?',
+        answer: 'At a deputy registrar license agency, a participating clerk of courts title office, or a participating Ohio dealer.'
+      }
+    ],
+    sources: [OH_SOURCES.newResident, OH_SOURCES.titles, OH_SOURCES.salesTax, OH_SOURCES.fees]
   }
 ];
 

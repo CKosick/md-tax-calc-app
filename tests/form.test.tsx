@@ -293,7 +293,7 @@ describe('VehicleInputForm Interactive Testing', () => {
     );
 
     expect(screen.getByText(/Maryland: Non-Deductible/i)).toBeDefined();
-    expect(screen.getByText(/taxes the full agreed vehicle price — trade-ins do not reduce the tax base/i)).toBeDefined();
+    expect(screen.getByText(/taxes the full agreed vehicle price. Trade-ins do not reduce the tax base/i)).toBeDefined();
 
     rerender(
       <VehicleInputForm

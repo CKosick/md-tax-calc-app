@@ -389,7 +389,7 @@ export function VehicleInputForm({
               className="mt-2 block w-full min-h-[44px] rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base font-bold text-slate-900 shadow-xs transition-all focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
             />
             <p id="vehicle-weight-help" className="mt-1.5 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
-              {rule.label} prices registration by unladen weight, shown on the title or the driver&apos;s door frame sticker.
+              {rule.label} prices registration by the vehicle&apos;s unladen weight. Check the sticker on the driver&apos;s side door frame.
               {!inputs.vehicleWeight && ` Blank uses ${weightChart.defaultWeightLbs.toLocaleString('en-US')} lbs.`}
             </p>
           </div>
@@ -723,7 +723,7 @@ export function VehicleInputForm({
           <p className="mt-2 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
             {isMaryland ? (
               <>
-                <strong>Maryland Statute:</strong> Maryland taxes the full agreed vehicle price — trade-ins do not reduce the tax base on private-party sales. Trade-in deductions are legally permitted only on transactions through licensed Maryland motor vehicle dealers.
+                <strong>Maryland Statute:</strong> Maryland taxes the full agreed vehicle price. Trade-ins do not reduce the tax base on private-party sales. Trade-in deductions are legally permitted only on transactions through licensed Maryland motor vehicle dealers.
               </>
             ) : rule.tradeInDeductible ? (
               <>
@@ -735,7 +735,7 @@ export function VehicleInputForm({
               </>
             ) : (
               <>
-                <strong>{rule.label} Notice:</strong> {rule.label} taxes the full agreed vehicle price — trade-ins do not reduce the tax base on private-party sales.
+                <strong>{rule.label} Notice:</strong> {rule.label} taxes the full agreed vehicle price. Trade-ins do not reduce the tax base on private-party sales.
               </>
             )}
           </p>
