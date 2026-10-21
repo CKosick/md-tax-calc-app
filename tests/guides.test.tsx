@@ -40,7 +40,10 @@ const allStrings = (value: unknown): string[] =>
 const GUIDE_STATES = {
   maryland: { label: 'Maryland', agency: 'Maryland MVA', hosts: ['mva.maryland.gov'] },
   virginia: { label: 'Virginia', agency: 'Virginia DMV', hosts: ['www.dmv.virginia.gov', 'law.lis.virginia.gov'] },
-  pennsylvania: { label: 'Pennsylvania', agency: 'PennDOT', hosts: ['www.pa.gov'] }
+  pennsylvania: { label: 'Pennsylvania', agency: 'PennDOT', hosts: ['www.pa.gov'] },
+  texas: { label: 'Texas', agency: 'TxDMV and Texas Comptroller', hosts: ['www.txdmv.gov', 'comptroller.texas.gov'] },
+  california: { label: 'California', agency: 'California DMV and CDTFA', hosts: ['www.dmv.ca.gov', 'cdtfa.ca.gov', 'www.bar.ca.gov'] },
+  florida: { label: 'Florida', agency: 'FLHSMV and Florida DOR', hosts: ['www.flhsmv.gov', 'floridarevenue.com'] }
 } as const;
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
@@ -183,8 +186,8 @@ describe('Guide links and discovery', () => {
       cleanup();
     }
 
-    const tx = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'texas-private-sale-tax-calculator' }) }));
-    expect(tx.container.querySelector('#state-guides')).toBeNull();
+    const oh = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'ohio-private-sale-tax-calculator' }) }));
+    expect(oh.container.querySelector('#state-guides')).toBeNull();
   });
 
   it('the guides index lists every guide', () => {

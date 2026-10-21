@@ -82,6 +82,35 @@ const PA_SOURCES = {
   outOfState: { label: 'PennDOT fact sheet: How to Title and Register Your Out-of-State Vehicle', url: `${PENNDOT_DOCS}/bmv-fact-sheets/fs-toos.pdf` }
 };
 
+const TX_SOURCES = {
+  buySell: { label: 'TxDMV: Buying or Selling a Vehicle', url: 'https://www.txdmv.gov/motorists/buying-or-selling-a-vehicle' },
+  register: { label: 'TxDMV: Register Your Vehicle', url: 'https://www.txdmv.gov/motorists/register-your-vehicle' },
+  newResident: { label: 'TxDMV: New to Texas', url: 'https://www.txdmv.gov/motorists/new-to-texas' },
+  spv: { label: 'Texas Comptroller: Private-Party Purchases and Standard Presumptive Values', url: 'https://comptroller.texas.gov/taxes/motor-vehicle/private-party-spv.php' },
+  gift: { label: 'Texas Comptroller: Motor Vehicle Tax Guide, Gift Tax', url: 'https://comptroller.texas.gov/taxes/publications/96-254/gift.php' },
+  family: { label: 'Texas Comptroller: Motor Vehicle Tax Guide, Family Transfers', url: 'https://comptroller.texas.gov/taxes/publications/96-254/family-transfers.php' },
+  penalties: { label: 'TxDMV: Title penalties notice', url: 'https://www.txdmv.gov/sites/default/files/body-files/titlepenaltiespressrelease_4.pdf' }
+};
+
+const CA_SOURCES = {
+  privateParty: { label: 'California DMV: Registering a Vehicle Purchased From a Private Party', url: 'https://www.dmv.ca.gov/portal/vehicle-registration/new-registration/registering-a-vehicle-purchased-from-a-private-party/' },
+  fees: { label: 'California DMV: Registration Fees', url: 'https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/' },
+  smog: { label: 'Bureau of Automotive Repair: Smog Check', url: 'https://www.bar.ca.gov/smog-check' },
+  cdtfa: { label: 'CDTFA: Tax Guide for Purchasers of Vehicles', url: 'https://cdtfa.ca.gov/industry/vehicles-vessels-aircraft/vehicles.htm' },
+  newResident: { label: 'California DMV: New California Resident', url: 'https://www.dmv.ca.gov/portal/driver-education-and-safety/special-interest-driver-guides/new-to-california/' },
+  outOfState: { label: 'California DMV: Register a Vehicle From Out of State (HTVR 9)', url: 'https://www.dmv.ca.gov/portal/file/how-to-register-an-out-of-state-vehicle-htvr9/' }
+};
+
+const FL_SOURCES = {
+  privateSale: { label: 'FLHSMV: Buying from a Private Sale', url: 'https://www.flhsmv.gov/safety-center/consumer-education/buying-vehicle-florida/buying-private-sale/' },
+  fees: { label: 'FLHSMV: Fees', url: 'https://www.flhsmv.gov/fees/' },
+  registrations: { label: 'FLHSMV: Motor Vehicle Registrations', url: 'https://www.flhsmv.gov/motor-vehicles-tags-titles/license-plates-registration/motor-vehicle-registrations/' },
+  newResident: { label: 'FLHSMV: New Resident', url: 'https://www.flhsmv.gov/new-resident/' },
+  giftFaq: { label: 'Florida DOR: Sales tax on a vehicle given as a gift', url: 'https://floridarevenue.com/faq/Pages/FAQDetails.aspx?FAQID=1297' },
+  salesTax: { label: 'Florida DOR: Sales and Use Tax on Motor Vehicles (GT-800030)', url: 'https://floridarevenue.com/Forms_library/gt800030.pdf' },
+  newResidentTax: { label: 'Florida DOR: Tax Information for New Residents (GT-800025)', url: 'https://floridarevenue.com/Forms_library/current/brochure/gt800025.pdf' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -945,6 +974,770 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [PA_SOURCES.newResident, PA_SOURCES.outOfState, PA_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-texas',
+    stateKey: 'texas',
+    title: 'How to Title a Private Car Sale in Texas',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Texas',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Texas: Form 130-U, the 6.25% tax on the price or SPV, the 30-day deadline and penalties, and county tax office fees.',
+    cardDescription: 'Form 130-U, the 6.25% tax and SPV rule, and the 30-day deadline.',
+    intro: [
+      'When you buy a car from a private seller in Texas, you title it in your name at your county tax assessor-collector’s office.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'TxDMV and Texas Comptroller',
+    steps: [
+      {
+        title: 'Check the title and the vehicle',
+        body: [
+          'Make sure the title and registration match the seller’s name and address and that the VIN is intact. TxDMV’s Title Check shows whether the title has issues that affect value. If there is a lien, the lienholder must release it.'
+        ]
+      },
+      {
+        title: 'Get the signed title and Form 130-U',
+        body: [
+          'The seller gives you a properly signed title with the date of sale and odometer reading, plus a signed Application for Texas Title and/or Registration (Form 130-U) showing the sales price.'
+        ]
+      },
+      {
+        title: 'Sort out the plates and insurance',
+        body: [
+          'The seller may remove the license plates and registration sticker. You need liability insurance to register the car (you can apply for a title only without it).'
+        ]
+      },
+      {
+        title: 'Go to the county tax office within 30 days',
+        body: [
+          'Title the car in your name within 30 days of the sale. It helps to bring the seller along, because tax office staff can check the title before you submit it.',
+          'Late filing costs $25, plus another $25 for each additional month late, with no waivers. Active-duty military get 60 days.'
+        ]
+      },
+      {
+        title: 'Pay the motor vehicle tax and fees',
+        body: [
+          'You pay 6.25% motor vehicle tax on the greater of the price or 80% of the vehicle’s Standard Presumptive Value (SPV), a title fee of $33 (nonattainment counties) or $28, and registration ($50.75 plus $1 TexasSure for a car or light truck of 6,000 lbs or less, plus a $7.50 inspection program replacement fee, a processing fee, and county fees).'
+        ]
+      },
+      {
+        title: 'Know the inspection rules',
+        body: [
+          'Since January 1, 2025, non-commercial vehicles no longer need a safety inspection to register. In Brazoria, Collin, Dallas, Denton, El Paso, Ellis, Fort Bend, Galveston, Harris, Johnson, Kaufman, Montgomery, Parker, Rockwall, Tarrant, Travis, and Williamson counties, the car still needs an emissions inspection.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'How the SPV rule works',
+        intro: 'Texas does not just tax the price you write down:',
+        items: [
+          'The tax is 6.25% of the greater of the price you paid or 80% of the SPV on the day you title the car. Look up SPV with TxDMV’s calculator.',
+          'If you paid less than 80% of SPV, a certified appraisal on Form 14-128 (Texas Used Motor Vehicle Certified Appraisal), obtained within 30 days of the purchase, can lower the taxable value, but not below the price.',
+          'Trade-in credit does not apply to private-party sales.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the seller with the date of sale and odometer reading',
+      'Form 130-U, signed by the seller and showing the sales price',
+      'Release of lien, if there was a lien',
+      'Proof of liability insurance',
+      'Form 14-128 certified appraisal, if you paid below 80% of SPV',
+      'Emissions inspection, if you live in one of the 17 emissions counties',
+      'Payment for the motor vehicle tax, title fee, and registration fees'
+    ],
+    calculatorNote:
+      'Enter the price you paid. If it is below 80% of the car’s SPV, enter 80% of SPV instead, since that is what Texas will tax unless you get a certified appraisal.',
+    faqs: [
+      {
+        question: 'How long do I have to title a car I bought privately in Texas?',
+        answer: '30 days from the date of sale. After that, a $25 penalty applies, plus $25 for each additional month late. Active-duty military get 60 days.'
+      },
+      {
+        question: 'What is the Standard Presumptive Value (SPV)?',
+        answer:
+          'A value TxDMV assigns to used vehicles. Private-party sales are taxed on the greater of the price or 80% of SPV. A certified appraisal (Form 14-128) within 30 days can lower it.'
+      },
+      {
+        question: 'Do I need a safety inspection in Texas?',
+        answer:
+          'Not for a non-commercial vehicle since January 1, 2025. A $7.50 inspection program replacement fee is charged at registration instead, and 17 counties still require an emissions inspection.'
+      },
+      {
+        question: 'Does the seller have to file anything?',
+        answer:
+          'The seller should file a Vehicle Transfer Notification within 30 days of the sale, which protects them from tickets and tolls you incur afterward.'
+      }
+    ],
+    sources: [TX_SOURCES.buySell, TX_SOURCES.spv, TX_SOURCES.register, TX_SOURCES.penalties]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-texas',
+    stateKey: 'texas',
+    title: 'How to Gift a Car in Texas',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Texas',
+    metaDescription:
+      'How to give or receive a car as a gift in Texas: who qualifies for the $10 gift tax, the notarized Form 14-317 affidavit, what other relatives pay, and titling within 30 days.',
+    cardDescription: 'Who pays only the $10 gift tax, Form 14-317, and what others pay.',
+    intro: [
+      'Texas taxes a gift between close family members only $10, instead of the 6.25% motor vehicle tax, when both sides sign a gift affidavit.',
+      'Here is who qualifies and how to transfer the title.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'TxDMV and Texas Comptroller',
+    steps: [
+      {
+        title: 'Check that the giver qualifies',
+        body: [
+          'The $10 gift tax applies when the car comes from a spouse (separate property only), parent or stepparent, child or stepchild, sibling or sibling-in-law, parent-in-law or child-in-law, grandparent or grandchild (including in-laws and great-grand relationships), or guardian.',
+          'Aunts, uncles, nieces, nephews, and cousins do not qualify.'
+        ]
+      },
+      {
+        title: 'Make sure nothing is given in return',
+        body: [
+          'A gift has no payment of any kind. If the recipient takes over a loan, the payoff amount is taxable as a sale.'
+        ]
+      },
+      {
+        title: 'Sign the Affidavit of Motor Vehicle Gift Transfer (Form 14-317)',
+        body: [
+          'The giver and the recipient sign one joint, notarized affidavit. The county tax office can witness a signature instead of a notary if the person signs in front of staff.'
+        ]
+      },
+      {
+        title: 'Complete the title and Form 130-U',
+        body: ['The giver signs the title over with the odometer reading, and you complete the Application for Texas Title and/or Registration (Form 130-U).']
+      },
+      {
+        title: 'Title it within 30 days',
+        body: [
+          'Take the title, Form 130-U, and Form 14-317 to your county tax assessor-collector within 30 days. You pay the $10 gift tax, the title fee ($33 or $28 by county), and registration fees.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'When a family transfer is taxed',
+        items: [
+          'The giver is not on the list (for example, an aunt, uncle, niece, nephew, or cousin): the transfer is treated as a sale and the 6.25% motor vehicle tax applies, possibly on Standard Presumptive Value.',
+          'Money changes hands: a sale between family members is taxed like any private sale.',
+          'The recipient takes over a loan: the loan payoff (plus anything else paid) is taxable.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over by the giver with the odometer reading',
+      'Affidavit of Motor Vehicle Gift Transfer (Form 14-317), signed by both and notarized',
+      'Form 130-U, Application for Texas Title and/or Registration',
+      'Proof of liability insurance',
+      'Payment for the $10 gift tax, title fee, and registration fees'
+    ],
+    calculatorNote:
+      'For a qualifying gift, enter $0 as the price to see the title and registration costs, then add the $10 gift tax.',
+    faqs: [
+      {
+        question: 'How much is the gift tax on a car in Texas?',
+        answer: '$10, when the car comes from a qualifying relative or guardian and both of you sign Form 14-317.'
+      },
+      {
+        question: 'Can my aunt or uncle gift me a car for the $10 tax?',
+        answer: 'No. Aunts, uncles, nieces, nephews, and cousins are not eligible, so the transfer is taxed as a sale.'
+      },
+      {
+        question: 'Does the gift affidavit have to be notarized?',
+        answer:
+          'Yes, unless the signer signs in front of county tax office staff, who can acknowledge the signature instead.'
+      },
+      {
+        question: 'What if I take over the car loan?',
+        answer: 'Then it is not a gift. The loan payoff amount, plus anything else you give, is taxed like a sale.'
+      }
+    ],
+    sources: [TX_SOURCES.gift, TX_SOURCES.family, TX_SOURCES.buySell, TX_SOURCES.register]
+  },
+  {
+    slug: 'titling-a-car-in-texas-after-moving-from-another-state',
+    stateKey: 'texas',
+    title: 'Registering a Car in Texas After Moving From Another State',
+    shortTitle: 'Register a car after moving to Texas',
+    metaTitle: 'Registering Your Car After Moving to Texas',
+    metaDescription:
+      'New to Texas? Register your car within 30 days of moving. Covers the $90 new resident tax, insurance minimums, emissions inspection counties, and what to bring to the county tax office.',
+    cardDescription: 'The 30-day deadline, the $90 new resident tax, and emissions counties.',
+    intro: [
+      'If you move to Texas with a car, you have 30 days to register it at your county tax assessor-collector’s office.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'TxDMV and Texas Comptroller',
+    steps: [
+      {
+        title: 'Mark the 30-day deadline',
+        body: ['You have 30 days from the time you move to Texas to register your vehicle.']
+      },
+      {
+        title: 'Get Texas liability insurance',
+        body: ['Texas requires at least $30,000 per injured person, up to $60,000 per accident, and $25,000 for property damage.']
+      },
+      {
+        title: 'Get an emissions inspection if your county requires one',
+        body: [
+          'In Brazoria, Collin, Dallas, Denton, El Paso, Ellis, Fort Bend, Galveston, Harris, Johnson, Kaufman, Montgomery, Parker, Rockwall, Tarrant, Travis, and Williamson counties, pass an emissions inspection before you register. Non-commercial vehicles no longer need a safety inspection.'
+        ]
+      },
+      {
+        title: 'Register at the county tax office',
+        body: [
+          'Bring your insurance card, proof that you own the car (your previous state’s title or registration), and a completed Form 130-U. TxDMV notes that you are not required to title the vehicle in Texas to register it.'
+        ]
+      },
+      {
+        title: 'Pay the new resident tax and fees',
+        body: [
+          'If the car was registered in your name in another state, you pay a $90 new resident tax instead of the 6.25% motor vehicle tax. It does not give credit for tax paid elsewhere. If the car was never registered in your name in another state, motor vehicle use tax applies instead.',
+          'Registration is $50.75 plus $1 TexasSure for a car or light truck of 6,000 lbs or less, plus the inspection program replacement fee and any county fees.'
+        ]
+      }
+    ],
+    checklist: [
+      'Proof of Texas liability insurance',
+      'Your previous state’s title or registration in your name',
+      'Form 130-U, Application for Texas Title and/or Registration',
+      'Passing emissions inspection, if you live in one of the 17 emissions counties',
+      'Payment for the $90 new resident tax and registration fees'
+    ],
+    calculatorNote:
+      'The calculator is built for a purchase. To see registration costs, enter $0 as the price, then add the $90 new resident tax if it applies.',
+    faqs: [
+      {
+        question: 'How long do I have to register my car after moving to Texas?',
+        answer: '30 days from the time you move to Texas.'
+      },
+      {
+        question: 'Do I pay Texas sales tax on a car I already own?',
+        answer:
+          'If the car was registered in your name in another state, you pay a $90 new resident tax instead. If it was never registered in your name elsewhere, motor vehicle use tax applies.'
+      },
+      {
+        question: 'Do I need a vehicle inspection?',
+        answer:
+          'Only an emissions inspection, and only in 17 counties including Dallas, Harris, Tarrant, Travis, and El Paso. Safety inspections ended for non-commercial vehicles on January 1, 2025.'
+      },
+      {
+        question: 'Do I have to get a Texas title?',
+        answer: 'TxDMV says you are not required to title the vehicle in Texas; you must register it within 30 days.'
+      }
+    ],
+    sources: [TX_SOURCES.newResident, TX_SOURCES.register, TX_SOURCES.spv]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-california',
+    stateKey: 'california',
+    title: 'How to Transfer a Private Car Sale in California',
+    shortTitle: 'Transfer a private car sale',
+    metaTitle: 'How to Transfer a Private Car Sale in California',
+    metaDescription:
+      'Step-by-step guide to a private car sale in California: the signed title, smog certification, the 10-day transfer deadline, the $15 transfer fee, and use tax at your local rate.',
+    cardDescription: 'The title, smog certificate, 10-day deadline, and use tax.',
+    intro: [
+      'In a California private sale, the seller signs the title and provides a smog certificate, and you transfer ownership with the DMV within 10 days.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'California DMV and CDTFA',
+    steps: [
+      {
+        title: 'Get the signed title',
+        body: [
+          'The seller signs Line 1 of the title. If the vehicle is less than 10 years old, record the mileage; if the title has no mileage line, use a Vehicle/Vessel Transfer and Reassignment form (REG 262) signed by both of you.',
+          'If the seller is not the owner named on the title, get a bill of sale signed by both the seller and the titled owner.'
+        ]
+      },
+      {
+        title: 'Get the smog certification',
+        body: [
+          'The seller gives you a valid smog certification for a gas vehicle more than four model years old. For a vehicle four model years old or newer, no smog check is needed; you pay a smog transfer fee to the DMV instead. Diesel vehicles have no model-year exemption.'
+        ]
+      },
+      {
+        title: 'Transfer ownership within 10 days',
+        body: [
+          'You have 10 days after the purchase to transfer ownership with the DMV. The seller has 5 days to file a Notice of Transfer and Release of Liability.'
+        ]
+      },
+      {
+        title: 'Pay the transfer fee and use tax',
+        body: [
+          'The transfer fee is $15. Use tax is charged on the purchase price at the sales tax rate where you register the car: 7.25% statewide, up to 11.75% with local district taxes.'
+        ]
+      },
+      {
+        title: 'Plan for registration fees',
+        body: [
+          'Registration is $76 plus a $34 CHP fee, plus a vehicle license fee of 0.65% of the car’s value, a transportation improvement fee from $33 to $231 depending on value, and county fees. Zero-emission vehicles from model year 2020 on add a $121 road improvement fee.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'How California use tax works on a private sale',
+        items: [
+          'You generally pay use tax at the DMV when you register, at the rate for the address where you register the car.',
+          'Trade-in credit does not apply to a private sale.',
+          'Purchases from close family members, and true gifts, can be exempt. See the gift guide.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the seller on Line 1',
+      'Odometer reading for a vehicle less than 10 years old (REG 262 if the title has no mileage line)',
+      'Smog certification from the seller (or the smog transfer fee for a vehicle four model years old or newer)',
+      'Bill of sale, if the seller is not the owner named on the title',
+      'Payment for the $15 transfer fee, use tax, and any registration fees due'
+    ],
+    calculatorNote:
+      'The calculator shows the use tax as a range from 7.25% to 11.75%. Registration shown is $76 plus the $34 CHP fee; the value-based vehicle license and transportation improvement fees are extra.',
+    faqs: [
+      {
+        question: 'How long do I have to transfer a car I bought privately in California?',
+        answer: '10 days after the purchase. The seller has 5 days to report the sale to the DMV.'
+      },
+      {
+        question: 'Who provides the smog certificate?',
+        answer:
+          'The seller, for a gas vehicle more than four model years old. For a vehicle four model years old or newer, the buyer pays a smog transfer fee instead.'
+      },
+      {
+        question: 'How much is the California title transfer fee?',
+        answer: 'The DMV transfer fee is $15, plus use tax on the purchase price.'
+      },
+      {
+        question: 'What use tax rate do I pay?',
+        answer: 'The sales tax rate where you register the car: 7.25% statewide, up to 11.75% in Lancaster and Palmdale.'
+      }
+    ],
+    sources: [CA_SOURCES.privateParty, CA_SOURCES.fees, CA_SOURCES.smog, CA_SOURCES.cdtfa]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-california',
+    stateKey: 'california',
+    title: 'How to Gift a Car in California',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in California',
+    metaDescription:
+      'How to give or receive a car as a gift in California: the use tax gift exemption, family members who qualify, smog exemptions for family transfers, and the 10-day transfer deadline.',
+    cardDescription: 'The use tax gift and family exemptions, and smog rules.',
+    intro: [
+      'California does not charge use tax on a true gift, and purchases from close family members are exempt too. Family transfers can also skip the smog certificate.',
+      'Here is who qualifies and how to transfer the title.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'California DMV and CDTFA',
+    steps: [
+      {
+        title: 'Make sure it is a true gift',
+        body: [
+          'The owner must give the car freely, with no payment from the person receiving it. Paying cash, trading property, providing services, or taking over a loan makes it a purchase, not a gift.'
+        ]
+      },
+      {
+        title: 'Know the family exemption',
+        body: [
+          'Even a purchase is exempt from use tax when the seller is your parent, grandparent, child, grandchild, spouse, or registered domestic partner, or your brother or sister when both of you are minors (related by blood or adoption). Stepparents and stepchildren qualify only through legal adoption, and ex-spouses after a divorce decree do not qualify.'
+        ]
+      },
+      {
+        title: 'Check whether a smog certificate is needed',
+        body: [
+          'Transfers between parent, grandparent, child, grandchild, brother, sister, spouse, or domestic partner are exempt from the smog certification requirement, as are vehicles smog certified in the last 90 days.'
+        ]
+      },
+      {
+        title: 'Sign the title and transfer within 10 days',
+        body: [
+          'The giver signs the title, and you transfer ownership with the DMV within 10 days. You pay the $15 transfer fee.'
+        ]
+      },
+      {
+        title: 'Keep proof of the gift or relationship',
+        body: [
+          'Keep a signed statement from the former owner and a copy of the title, plus proof of the relationship for a family exemption. The DMV may ask for a use tax clearance (Form CDTFA-106), and CDTFA may contact you later for documents.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'When use tax is still owed',
+        items: [
+          'Anything is given in return, including taking over a loan, and the seller is not a qualifying family member.',
+          'The family member who sells you the car is in the business of selling that type of vehicle.',
+          'A sale between stepfamily without legal adoption, or between ex-spouses after a divorce decree.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the giver',
+      'A signed statement from the giver that the car is a gift, with a copy of the title',
+      'Proof of relationship for a family exemption (for example, a birth or marriage certificate)',
+      'Smog certification, unless the family or 90-day exemption applies',
+      'Payment for the $15 transfer fee'
+    ],
+    calculatorNote: 'For a gift or exempt family transfer, enter $0 as the price to see the transfer and registration costs.',
+    faqs: [
+      {
+        question: 'Do I pay use tax on a car gifted to me in California?',
+        answer: 'No, if it is a true gift with nothing given in return, including no loan takeover.'
+      },
+      {
+        question: 'Can I buy a car from my parent without paying use tax?',
+        answer:
+          'Yes. Purchases from a parent, grandparent, child, grandchild, spouse, or registered domestic partner are exempt, as long as they are not in the business of selling vehicles.'
+      },
+      {
+        question: 'Is a car from my brother or sister exempt?',
+        answer: 'Only if both of you are minors. Otherwise a purchase from a sibling is taxable, though a true gift is not.'
+      },
+      {
+        question: 'Does a family transfer need a smog check?',
+        answer:
+          'No. Transfers between parent, grandparent, child, grandchild, brother, sister, spouse, or domestic partner are exempt from the smog certification requirement.'
+      }
+    ],
+    sources: [CA_SOURCES.cdtfa, CA_SOURCES.smog, CA_SOURCES.privateParty, CA_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-california-after-moving-from-another-state',
+    stateKey: 'california',
+    title: 'Registering a Car in California After Moving From Another State',
+    shortTitle: 'Register a car after moving to California',
+    metaTitle: 'Registering Your Car After Moving to California',
+    metaDescription:
+      'New to California? Register your car within 20 days of becoming a resident. Covers VIN verification, the smog certificate, use tax on recent purchases, and documents to bring.',
+    cardDescription: 'The 20-day deadline, VIN verification, smog, and use tax.',
+    intro: [
+      'If you move to California with a car registered in another state, you must register it within 20 days of becoming a resident or taking a job here.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'California DMV and CDTFA',
+    steps: [
+      {
+        title: 'Mark the 20-day deadline',
+        body: [
+          'Register the vehicle within 20 days of becoming a resident or getting a job in California. To avoid penalties, submit the application and fees on time even if you do not yet have every document.'
+        ]
+      },
+      {
+        title: 'Get the VIN verified',
+        body: [
+          'A DMV employee, law enforcement officer, or California-licensed vehicle verifier completes a Verification of Vehicle (REG 31). You can bring the car to a DMV office for this.'
+        ]
+      },
+      {
+        title: 'Get a California smog certification',
+        body: [
+          'Gas vehicles from model year 1976 and newer need a smog certification from a California station (motorcycles are exempt). The newer-vehicle smog exemption does not apply to vehicles coming from out of state.'
+        ]
+      },
+      {
+        title: 'Bring your title or registration',
+        body: [
+          'Bring the out-of-state title, or proof of the last registration, such as the last registration certificate or renewal notice.'
+        ]
+      },
+      {
+        title: 'Check whether use tax applies',
+        body: [
+          'A vehicle bought within 12 months before you bring it into California is presumed bought for use here, so use tax may be due, with credit for sales tax paid to another state. Evidence such as tax paid elsewhere can rebut the presumption.'
+        ]
+      }
+    ],
+    checklist: [
+      'Out-of-state title, or your last registration certificate or renewal notice',
+      'Verification of Vehicle (REG 31)',
+      'California smog certification (gas vehicles 1976 and newer)',
+      'Proof of sales tax paid in another state, if you bought the car within 12 months',
+      'Payment for registration fees and any use tax'
+    ],
+    calculatorNote:
+      'If no use tax applies, enter $0 as the price. Registration shown is $76 plus the $34 CHP fee; value-based fees are extra.',
+    faqs: [
+      {
+        question: 'How long do I have to register my car after moving to California?',
+        answer: '20 days after becoming a resident or getting a job in California.'
+      },
+      {
+        question: 'Do I need a smog check for a car from another state?',
+        answer:
+          'Yes, for gas vehicles from model year 1976 and newer (motorcycles are exempt). The newer-vehicle exemption does not apply to out-of-state vehicles.'
+      },
+      {
+        question: 'Do I pay California use tax on a car I already own?',
+        answer:
+          'Only if you bought it within 12 months before bringing it in and cannot show it was bought for use elsewhere. Sales tax paid to another state is credited.'
+      },
+      {
+        question: 'Who can verify my VIN?',
+        answer: 'A DMV employee, a law enforcement officer, or a California-licensed vehicle verifier, on form REG 31.'
+      }
+    ],
+    sources: [CA_SOURCES.newResident, CA_SOURCES.outOfState, CA_SOURCES.cdtfa, CA_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-florida',
+    stateKey: 'florida',
+    title: 'How to Title a Private Car Sale in Florida',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Florida',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Florida: the title transfer, HSMV 82040, the 30-day deadline, 6% sales tax plus county surtax, and the $225 fee.',
+    cardDescription: 'The title transfer, 30-day deadline, sales tax, and the $225 fee.',
+    intro: [
+      'When you buy a car from a private seller in Florida, you title and register it at a motor vehicle service center within 30 days.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'FLHSMV and Florida DOR',
+    steps: [
+      {
+        title: 'Complete the title transfer',
+        body: [
+          'For a paper title, the seller completes the Transfer of Title by Seller section, including the odometer reading, which both of you acknowledge.',
+          'For an electronic title, you and the seller visit a motor vehicle service center together with photo ID to complete a secure title reassignment.'
+        ]
+      },
+      {
+        title: 'Let the seller keep the plate',
+        body: ['License plates stay with the seller, not the vehicle. You use your own plate or get a new one.']
+      },
+      {
+        title: 'Get Florida insurance',
+        body: ['You need proof of Florida personal injury protection (PIP) and property damage liability (PDL) insurance from a Florida insurance company to register.']
+      },
+      {
+        title: 'Apply within 30 days',
+        body: [
+          'Complete the Application for Certificate of Title With/Without Registration (HSMV 82040) and submit it with the title at a motor vehicle service center within 30 calendar days, starting the day after the sale, to avoid a late transfer penalty.',
+          'If the car was not previously titled in Florida, a VIN and odometer verification (HSMV 82042) is also needed.'
+        ]
+      },
+      {
+        title: 'Pay the tax and fees',
+        body: [
+          'You pay 6% sales tax plus any county surtax, a $75.25 title fee (add $2.50 for a paper title), and registration by weight ($35.60 for 2,500 to 3,499 lbs, $45.60 for 3,500 lbs and up, $27.60 under 2,500 lbs).',
+          'If you have no Florida plate registered in your name to transfer, add the $225 initial registration fee and $28 for a new metal plate.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'How Florida sales tax works on a private sale',
+        items: [
+          '6% state sales tax on the price.',
+          'Most counties add a discretionary surtax of 0.5% to 2%, based on your county of residence, applied only to the first $5,000 of the price.',
+          'A trade-in lowers the taxable price only when two individuals trade vehicles in a single transaction. Selling one car and using the money for another is not a trade-in.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, with the seller’s transfer section and odometer reading completed',
+      'Application for Certificate of Title With/Without Registration (HSMV 82040)',
+      'Proof of Florida PIP and PDL insurance',
+      'VIN and odometer verification (HSMV 82042), if the car was not previously titled in Florida',
+      'Photo ID',
+      'Payment for sales tax, title, and registration fees (plus $225 and $28 if you have no plate to transfer)'
+    ],
+    calculatorNote:
+      'The calculator includes the 6% state tax but not the county surtax (at most 2% of the first $5,000) or the $225 initial registration fee.',
+    faqs: [
+      {
+        question: 'How long do I have to title a car I bought privately in Florida?',
+        answer: '30 calendar days, starting the day after the seller completes the title transfer and delivers the vehicle.'
+      },
+      {
+        question: 'What is the $225 initial registration fee?',
+        answer:
+          'A one-time fee charged when you do not have a Florida license plate, registered in your name from a previously owned vehicle, to transfer to the new car.'
+      },
+      {
+        question: 'Does the county surtax apply to the whole price?',
+        answer: 'No. It applies only to the first $5,000 of the price, at your county of residence’s rate.'
+      },
+      {
+        question: 'Do I keep the seller’s plate?',
+        answer: 'No. Florida plates stay with the seller. You transfer your own plate or buy a new one.'
+      }
+    ],
+    sources: [FL_SOURCES.privateSale, FL_SOURCES.fees, FL_SOURCES.registrations, FL_SOURCES.salesTax]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-florida',
+    stateKey: 'florida',
+    title: 'How to Gift a Car in Florida',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Florida',
+    metaDescription:
+      'How to give or receive a car as a gift in Florida: when a gift is not taxed, the sworn statement on the title application, loans and lienholders, and titling within 30 days.',
+    cardDescription: 'When a gift is tax-free, the sworn statement, and titling.',
+    intro: [
+      'Florida does not charge sales tax on a car given as a gift between individuals, whoever the recipient is, as long as nothing is paid and no loan is taken over.',
+      'Here is how to transfer a gifted car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'FLHSMV and Florida DOR',
+    steps: [
+      {
+        title: 'Make sure it is a gift',
+        body: [
+          'No payment of any kind is made, in money or otherwise, and the recipient does not take over an outstanding lien. If the giver is also the lienholder, the transfer is treated as a sale.'
+        ]
+      },
+      {
+        title: 'Transfer the title',
+        body: [
+          'The giver completes the title transfer section with the odometer reading. For an electronic title, both of you visit a motor vehicle service center with photo ID.'
+        ]
+      },
+      {
+        title: 'Claim the exemption on the title application',
+        body: [
+          'On the Application for Certificate of Title (HSMV 82040), declare the gift exemption and include a sworn statement with a description of the vehicle, the giver’s name and address, and statements that nothing was paid and no lien is being taken over.'
+        ]
+      },
+      {
+        title: 'Insure and title within 30 days',
+        body: [
+          'Get Florida PIP and PDL insurance and apply at a motor vehicle service center within 30 days. Title and registration fees still apply, plus the $225 initial registration fee if you have no Florida plate to transfer.'
+        ]
+      },
+      {
+        title: 'Keep the plate rules in mind',
+        body: ['The giver keeps their plate. You transfer your own plate or get a new one.']
+      }
+    ],
+    sections: [
+      {
+        heading: 'When tax is still owed',
+        items: [
+          'Any payment is made, in money or otherwise.',
+          'The recipient takes over an outstanding loan on the car.',
+          'The giver is also the lender (lienholder).',
+          'A sale between relatives is taxed like any other sale.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, transferred by the giver with the odometer reading',
+      'HSMV 82040 with the gift exemption declared and a sworn statement',
+      'Proof of Florida PIP and PDL insurance',
+      'Photo ID',
+      'Payment for title and registration fees'
+    ],
+    calculatorNote: 'For a gift, enter $0 as the price. The calculator then shows only the title and registration costs.',
+    faqs: [
+      {
+        question: 'Who can I gift a car to tax-free in Florida?',
+        answer:
+          'Anyone. A gift between individuals is not taxed when nothing is paid and no outstanding lien is taken over.'
+      },
+      {
+        question: 'What if the car still has a loan?',
+        answer:
+          'If the recipient takes over the loan, it is not a gift and sales tax applies. If the giver is also the lender, the transfer is treated as a sale.'
+      },
+      {
+        question: 'How do I claim the gift exemption?',
+        answer:
+          'Declare it on the title application (HSMV 82040) and include a sworn statement that nothing was paid and no lien is being taken over.'
+      },
+      {
+        question: 'Do I still pay the $225 fee for a gifted car?',
+        answer: 'Yes, if you do not have a Florida license plate registered in your name to transfer.'
+      }
+    ],
+    sources: [FL_SOURCES.giftFaq, FL_SOURCES.privateSale, FL_SOURCES.fees, FL_SOURCES.registrations]
+  },
+  {
+    slug: 'titling-a-car-in-florida-after-moving-from-another-state',
+    stateKey: 'florida',
+    title: 'Titling a Car in Florida After Moving From Another State',
+    shortTitle: 'Title a car after moving to Florida',
+    metaTitle: 'Titling Your Car After Moving to Florida',
+    metaDescription:
+      'New to Florida? Title and register your car within 10 days of starting work, enrolling kids in school, or establishing residency. Covers VIN verification, the $225 fee, and use tax.',
+    cardDescription: 'The 10-day deadline, VIN verification, the $225 fee, and use tax.',
+    intro: [
+      'If you move to Florida with a car from another state, Florida law requires you to title it here, not just register it, and the deadline is short.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'FLHSMV and Florida DOR',
+    steps: [
+      {
+        title: 'Mark the 10-day deadline',
+        body: [
+          'Register an out-of-state vehicle within 10 days of becoming employed, placing children in public school, or establishing residency in Florida.'
+        ]
+      },
+      {
+        title: 'Get Florida insurance',
+        body: ['You need proof of Florida PIP and PDL insurance from a Florida insurance company.']
+      },
+      {
+        title: 'Get the VIN verified',
+        body: [
+          'A vehicle not previously titled in Florida needs a VIN and odometer verification (HSMV 82042), done by an FLHSMV compliance examiner or officer, a licensed Florida dealer, a Florida notary public, or a police officer.'
+        ]
+      },
+      {
+        title: 'Title and register in person',
+        body: [
+          'At a motor vehicle service center, bring proof of identity for all owners, Florida insurance, your original out-of-state title, and HSMV 82040 signed by all owners. If a lienholder holds your title, the lienholder must send it.',
+          'Fees include the $85.25 title fee for a used vehicle titled in Florida for the first time, registration by weight, the $225 initial registration fee if you have no Florida plate to transfer, and $28 for a new plate.'
+        ]
+      },
+      {
+        title: 'Check whether use tax applies',
+        body: [
+          'Florida’s 6% use tax applies to a vehicle brought in within six months of purchase, with credit for sales tax paid to another state (you pay any difference). A vehicle used in another state for six months or longer is presumed not bought for use in Florida.'
+        ]
+      }
+    ],
+    checklist: [
+      'Proof of identity for all owners',
+      'Proof of Florida PIP and PDL insurance',
+      'Your original out-of-state title (or the lienholder sends it)',
+      'HSMV 82040, signed by all owners',
+      'VIN and odometer verification (HSMV 82042)',
+      'Payment for title and registration fees, the $225 initial registration fee if it applies, and any use tax'
+    ],
+    calculatorNote:
+      'If no use tax applies, enter $0 as the price. The calculator shows the $75.25 transfer title fee; a first-time Florida title is $85.25, and the $225 initial registration fee is extra.',
+    faqs: [
+      {
+        question: 'How long do I have to register my car after moving to Florida?',
+        answer: '10 days after you become employed, place children in public school, or establish residency in Florida.'
+      },
+      {
+        question: 'Do I pay Florida sales tax on a car I already own?',
+        answer:
+          'Not if you used it in another state for six months or longer before bringing it to Florida. If you bought it within six months, 6% use tax applies, with credit for sales tax paid to another state.'
+      },
+      {
+        question: 'Do new residents pay the $225 fee?',
+        answer: 'Yes, unless you already have a Florida license plate registered in your name to transfer.'
+      },
+      {
+        question: 'Who can verify my VIN?',
+        answer: 'An FLHSMV compliance examiner or officer, a licensed Florida dealer, a Florida notary public, or a police officer, on form HSMV 82042.'
+      }
+    ],
+    sources: [FL_SOURCES.newResident, FL_SOURCES.registrations, FL_SOURCES.fees, FL_SOURCES.newResidentTax]
   }
 ];
 
