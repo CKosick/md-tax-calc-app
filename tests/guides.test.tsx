@@ -211,3 +211,12 @@ describe('Guide links and discovery', () => {
     expect(container.querySelector('footer a[href="/guides"]')).not.toBeNull();
   });
 });
+
+describe('Guides index metadata', () => {
+  it('names every state that has guides, generated from the guides data', async () => {
+    const { metadata } = await import('../src/app/guides/page');
+    const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
+    for (const label of states) expect(String(metadata.description)).toContain(String(label));
+    expect(String(metadata.description)).toContain('Pennsylvania, Texas, California, and Florida.');
+  });
+});

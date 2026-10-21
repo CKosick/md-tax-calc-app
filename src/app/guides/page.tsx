@@ -6,10 +6,16 @@ import { GUIDES } from '@/config/guides';
 
 const rules = stateRulesData as StateRulesConfig;
 
+/** "A", "A and B", or "A, B, and C": the states that have guides, in publishing order. */
+function listGuideStates(): string {
+  const labels = [...new Set(GUIDES.map((g) => rules[g.stateKey].label))];
+  if (labels.length <= 2) return labels.join(' and ');
+  return `${labels.slice(0, -1).join(', ')}, and ${labels[labels.length - 1]}`;
+}
+
 export const metadata: Metadata = {
   title: 'Car Title, Tax & Registration Guides',
-  description:
-    'Step-by-step guides to titling, gifting, and registering a vehicle, with the documents to bring and a built-in cost calculator, for Maryland, Virginia, and Pennsylvania.',
+  description: `Step-by-step guides to titling, gifting, and registering a vehicle, with the documents to bring and a built-in cost calculator, for ${listGuideStates()}.`,
   alternates: {
     canonical: '/guides'
   }
