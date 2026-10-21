@@ -22,7 +22,7 @@ import stateRulesData from '../src/config/stateRules.json';
 import { StateRulesConfig } from '../src/lib/types';
 
 const rules = stateRulesData as StateRulesConfig;
-const RECHECKED = ['maryland', 'virginia', 'pennsylvania'];
+const RECHECKED = ['maryland', 'virginia', 'pennsylvania', 'texas', 'california', 'florida'];
 const GENERIC = /vary significantly by state|deadlines for private vehicle purchases vary by jurisdiction|many states offer reciprocal tax credit/i;
 
 afterEach(() => cleanup());
@@ -45,9 +45,9 @@ describe('Generic FAQ answers are hidden on states not yet re-checked', () => {
       hidden += rule.faqs.length - published.length;
       if (!RECHECKED.includes(key)) expect(published.length).toBeGreaterThanOrEqual(4);
     }
-    // 40 states x 3 + 6 states x 1 (deadline only) + 1 state x 2 (gift and out-of-state);
-    // Maryland's three were replaced with verified answers instead of being hidden
-    expect(hidden).toBe(40 * 3 + 6 * 1 + 1 * 2);
+    // 37 states x 3 + 6 states x 1 (deadline only) + 1 state x 2 (gift and out-of-state);
+    // Maryland's, Texas's, California's, and Florida's were replaced with verified answers
+    expect(hidden).toBe(37 * 3 + 6 * 1 + 1 * 2);
   });
 
   it('Maryland’s gift, deadline, and out-of-state answers are the verified ones', () => {

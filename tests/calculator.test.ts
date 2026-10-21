@@ -222,14 +222,14 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     registrationTerm: 2
   };
 
-  it('California: exact worked test ($15,000 -> $1,222.50)', () => {
+  it('California: exact worked test ($15,000 -> $1,212.50)', () => {
     const rule = allRules.california;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'california' }, 2026);
     expect(res.exciseTax).toBe(1087.50); // 7.25% of 15000
-    expect(res.titleFee).toBe(29.00);
+    expect(res.titleFee).toBe(15.00); // DMV transfer fee (re-checked Oct 2026)
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(106.00); // 74 base + 32 CHP
-    expect(res.totalFirstYearCost).toBe(1222.50);
+    expect(res.registrationTotal).toBe(110.00); // $76 registration + $34 CHP (re-checked Oct 2026)
+    expect(res.totalFirstYearCost).toBe(1212.50);
   });
 
   it('Texas: exact worked test ($15,000 -> $1,022.25)', () => {
@@ -242,14 +242,14 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(1022.25);
   });
 
-  it('Florida: exact worked test ($15,000 -> $1,002.85)', () => {
+  it('Florida: exact worked test ($15,000 -> $1,010.85)', () => {
     const rule = allRules.florida;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'florida' }, 2026);
     expect(res.exciseTax).toBe(900.00); // 6.0% of 15000
     expect(res.titleFee).toBe(75.25);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(27.60);
-    expect(res.totalFirstYearCost).toBe(1002.85);
+    expect(res.registrationTotal).toBe(35.60); // 2,500 to 3,499 lbs, HSMV 83140 (re-checked Oct 2026)
+    expect(res.totalFirstYearCost).toBe(1010.85);
   });
 
   it('New York: exact worked test ($15,000 -> $718.00, 2-yr term)', () => {

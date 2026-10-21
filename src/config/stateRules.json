@@ -415,7 +415,7 @@
     "exciseTaxRate": 0.0725,
     "minExciseTax": null,
     "taxBase": "price",
-    "titleFee": 29,
+    "titleFee": 15,
     "lienFilingFee": 0,
     "tradeInDeductible": false,
     "registration": {
@@ -424,37 +424,37 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 106
+          "1": 110
         },
         "over3700lbs": {
-          "1": 106
+          "1": 110
         }
       },
       "motorcycle": {
-        "1": 105
+        "1": 112
       },
-      "evSurchargeAnnual": 118
+      "evSurchargeAnnual": 121
     },
-    "localTaxNote": "District and county sales taxes add 0.10% to 3.00%, bringing total effective sales tax to between 7.75% and 10.75% depending on city and county.",
+    "localTaxNote": "California’s 7.25% base rate applies statewide. District taxes in many cities and counties raise the total, up to 11.75% (Lancaster and Palmdale from October 1, 2026). Use tax is based on the address where you register the vehicle.",
     "notes": [
-      "California base statewide sales and use tax rate is 7.25% (CDTFA).",
-      "Title transfer fee is $29.00; standard annual vehicle registration includes $74 base fee and $32 California Highway Patrol (CHP) fee.",
-      "Trade-in deduction is not permitted on private-party vehicle sales per Cal. Rev. & Tax. Code § 6011."
+      "California’s statewide base sales and use tax rate is 7.25%; district taxes add up to 4.50%.",
+      "A private-party transfer costs a $15 transfer fee plus use tax. Registration is $76 plus a $34 CHP fee, plus value-based fees.",
+      "Trade-in credit does not apply to private-party sales."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with the California DMV or CDTFA.",
-      "California use tax is assessed on the purchase price and paid directly to the DMV upon transfer of title.",
-      "Private party trade-in deductions are not permitted in California; use tax applies to the full purchase price.",
-      "Local district taxes (0.10% to 3.00%) vary by city/county and are added to the 7.25% statewide base."
+      "Estimates only, not tax or legal advice. Verify with the California DMV or CDTFA.",
+      "Use tax is based on the purchase price and the rate where you register the vehicle, and is paid to the DMV at transfer.",
+      "Private-party trade-in deductions are not permitted in California.",
+      "Registration shown is the $76 registration fee plus the $34 CHP fee. Not included: the vehicle license fee (0.65% of value), the transportation improvement fee ($33 to $231 by value), county and district fees, and the smog transfer fee for vehicles four model years old or newer."
     ],
     "faqs": [
       {
         "question": "What is the vehicle sales tax rate on a private car purchase in California?",
-        "answer": "The California statewide base sales and use tax rate is 7.25%. Depending on your city and county of residence, local district taxes add between 0.10% and 3.00%, resulting in total effective tax rates between 7.75% and 10.75%."
+        "answer": "California’s statewide base sales and use tax rate is 7.25%. District taxes raise it in many places, up to 11.75% in Lancaster and Palmdale (from October 1, 2026). The rate is based on the address where you register the vehicle."
       },
       {
         "question": "How much does a title transfer cost in California?",
-        "answer": "The standard California DMV certificate of title transfer fee is $29.00. Lien recordation is included in the standard title application."
+        "answer": "The DMV transfer fee is $15. You also pay use tax on the purchase price when you transfer the title."
       },
       {
         "question": "Does a trade-in reduce vehicle sales tax in California private sales?",
@@ -462,28 +462,30 @@
       },
       {
         "question": "How are California vehicle registration fees calculated?",
-        "answer": "California annual registration includes a $74.00 base vehicle registration fee, a $32.00 California Highway Patrol (CHP) fee, plus county transportation fees and an annual Road Improvement Fee ($118.00) for zero-emission vehicles."
+        "answer": "Registration is $76 (including a $3 alternative fuel and technology fee) plus a $34 CHP fee. Value-based fees are added: a vehicle license fee of 0.65% of the vehicle’s value and a transportation improvement fee from $33 to $231. Zero-emission vehicles from model year 2020 on also pay a $121 road improvement fee."
       },
       {
         "question": "Do I pay California vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into California, the state generally assesses its applicable vehicle sales or use tax (7.25%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the California motor vehicle agency to verify documentation requirements."
+        "answer": "Yes, if you bring it into California for use here. A vehicle brought in within 12 months of purchase is presumed bought for use in California, and use tax is due when you register it. You may get credit for sales tax paid to another state."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in California?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the California DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A purchase from a parent, grandparent, child, grandchild, spouse, or registered domestic partner is exempt from use tax, and so is a purchase from a brother or sister when both are minors. A true gift with nothing given in return is also exempt. Stepparents and stepchildren qualify only through legal adoption."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in California?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond California's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the California motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "The buyer has 10 days after the purchase to transfer ownership with the DMV. The seller has 5 days to file a Notice of Transfer and Release of Liability."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates-7-25.htm",
-      "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/"
+      "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/",
+      "https://www.dmv.ca.gov/portal/vehicle-registration/new-registration/registering-a-vehicle-purchased-from-a-private-party/",
+      "https://cdtfa.ca.gov/industry/vehicles-vessels-aircraft/vehicles.htm",
+      "https://cdtfa.ca.gov/formspubs/L1037.pdf"
     ],
-    "localTaxMinRate": 0.001,
-    "localTaxMaxRate": 0.035
+    "localTaxMinRate": 0,
+    "localTaxMaxRate": 0.045
   },
   "texas": {
     "label": "Texas",
@@ -491,7 +493,7 @@
     "exciseTaxRate": 0.0625,
     "minExciseTax": null,
     "taxBase": "fairMarketValue",
-    "bookValueRule": "Texas assesses 6.25% tax on the greater of sales price or 80% Standard Presumptive Value (SPV).",
+    "bookValueRule": "Texas taxes private-party sales on the greater of the sales price or 80% of the Standard Presumptive Value (SPV); a certified appraisal (Form 14-128) obtained within 30 days can lower it.",
     "titleFee": 33,
     "lienFilingFee": 0,
     "tradeInDeductible": false,
@@ -504,25 +506,27 @@
           "1": 51.75
         },
         "over3700lbs": {
-          "1": 54
+          "1": 55
         }
       },
       "motorcycle": {
         "1": 30
       },
-      "evSurchargeAnnual": 200
+      "evSurchargeAnnual": 200,
+      "passengerWeightSplitLbs": 6000
     },
     "localTaxNote": "Texas charges a flat 6.25% motor vehicle sales tax statewide; local city and county sales taxes do not apply to motor vehicles.",
     "notes": [
-      "Texas assesses a flat 6.25% Motor Vehicle Sales and Use Tax statewide with no local sales surtaxes on motor vehicles.",
-      "Private-party sales are taxed on the higher of the purchase price or Standard Presumptive Value (SPV).",
-      "Trade-in allowance does not apply to private-party sales per Texas Comptroller Rule 3.70; trade-in deductions are restricted to licensed dealer purchases."
+      "Texas charges a 6.25% motor vehicle sales tax statewide.",
+      "Private-party sales are taxed on the greater of the purchase price or 80% of the Standard Presumptive Value (SPV).",
+      "Trade-in credit does not apply to private-party sales; it applies only to purchases from a licensed dealer."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Texas Comptroller or TxDMV.",
-      "Texas assesses 6.25% Motor Vehicle Sales Tax on the higher of the purchase price or Standard Presumptive Value (SPV).",
-      "Trade-in deductions are not permitted on private-party vehicle sales in Texas; motor vehicle sales tax is calculated on the full sales price or SPV.",
-      "Annual inspection and local county road & bridge fees ($10–$20) are collected by the county tax assessor."
+      "Estimates only, not tax or legal advice. Verify with the Texas Comptroller, TxDMV, or your county tax assessor-collector.",
+      "Texas charges 6.25% motor vehicle tax on the greater of the purchase price or 80% of the Standard Presumptive Value (SPV).",
+      "Trade-in deductions do not apply to private-party sales in Texas.",
+      "Registration shown is the $50.75 base fee (or $54 for 6,001 to 10,000 lbs) plus $1 TexasSure. Also due at registration: a $7.50 inspection program replacement fee, a $4.75 processing fee, a $2.75 emissions fee in 17 counties, and county fees of $0 to $31.50. The title fee is $33 in nonattainment counties and $28 elsewhere.",
+      "Texas no longer requires safety inspections for non-commercial vehicles (since January 1, 2025). Vehicles in 17 counties still need an emissions inspection."
     ],
     "faqs": [
       {
@@ -531,7 +535,7 @@
       },
       {
         "question": "What is the Standard Presumptive Value (SPV) rule in Texas?",
-        "answer": "Under Texas Tax Code Section 152.0412, private-party vehicle sales are taxed on whichever is greater: the actual purchase price or 80% of the vehicle's Standard Presumptive Value (SPV) as calculated by the Texas DMV database."
+        "answer": "Private-party sales are taxed on whichever is greater: the price you paid or 80% of the vehicle’s Standard Presumptive Value (SPV). If you paid less, a certified appraisal on Form 14-128, obtained within 30 days of purchase, can lower the taxable value (but not below the price)."
       },
       {
         "question": "Can I deduct a trade-in on a private car sale in Texas?",
@@ -539,25 +543,27 @@
       },
       {
         "question": "How much are Texas title and registration fees?",
-        "answer": "The statutory Texas application for certificate of title fee is $33.00 ($28.00 in non-attainment counties). Standard annual passenger car license plate registration is $51.75 plus local county road and bridge fees."
+        "answer": "The title application fee is $33 in nonattainment counties and $28 in all other counties. Registration for a car or light truck of 6,000 lbs or less is $50.75 plus $1 TexasSure ($54 plus $1 for 6,001 to 10,000 lbs), plus a $7.50 inspection program replacement fee, a processing fee, and county fees of up to $31.50. Electric vehicles add $200 a year."
       },
       {
         "question": "Do I pay Texas vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Texas, the state generally assesses its applicable vehicle sales or use tax (6.25%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Texas motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. You pay Texas’s 6.25% motor vehicle tax when you title the vehicle in Texas, on the greater of the price or 80% of its Standard Presumptive Value. Title it in your name within 30 days of the sale."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Texas?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Texas DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A gift from a spouse (separate property), parent or stepparent, child or stepchild, sibling, grandparent or grandchild (including in-laws), or guardian is taxed only the $10 gift tax, with a joint notarized Affidavit of Motor Vehicle Gift Transfer (Form 14-317). Gifts from aunts, uncles, nieces, nephews, or cousins, and family sales for money, owe the regular 6.25% motor vehicle tax."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Texas?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Texas's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Texas motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "30 days from the date of sale. After that, a $25 delinquent transfer penalty applies, plus another $25 for each additional month late. Active-duty military get 60 days."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://comptroller.texas.gov/taxes/publications/96-254.php",
-      "https://www.txdmv.gov/motorists/register-your-vehicle"
+      "https://comptroller.texas.gov/taxes/motor-vehicle/private-party-spv.php",
+      "https://comptroller.texas.gov/taxes/publications/96-254/gift.php",
+      "https://www.txdmv.gov/motorists/register-your-vehicle",
+      "https://www.txdmv.gov/motorists/buying-or-selling-a-vehicle"
     ]
   },
   "florida": {
@@ -576,65 +582,69 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 27.6,
-          "2": 55.2
+          "1": 35.6,
+          "2": 71.2
         },
         "over3700lbs": {
-          "1": 37.6,
-          "2": 75.2
+          "1": 45.6,
+          "2": 91.2
         }
       },
       "motorcycle": {
-        "1": 20,
-        "2": 40
-      }
+        "1": 24.1,
+        "2": 48.2
+      },
+      "passengerWeightSplitLbs": 3499
     },
-    "localTaxNote": "Most Florida counties levy a discretionary sales surtax of 0.5% to 1.5% on the first $5,000 of purchase price.",
+    "localTaxNote": "Most Florida counties add a discretionary sales surtax (0.5% to 2%, by county of residence) on the first $5,000 of the price. It is not included in this estimate.",
     "notes": [
-      "Florida state sales tax is 6.0% baseline.",
-      "Certificate of title fee is $75.25 for an electronic title ($77.75 for paper).",
-      "A statutory $225.00 initial registration fee applies for buyers without an existing Florida license plate to transfer."
+      "Florida state sales tax is 6%.",
+      "Title transfer is $75.25 for an electronic title ($77.75 for paper); $85.25 for a used vehicle titled in Florida for the first time.",
+      "A $225 initial registration fee (and $28 for a new metal plate) applies when the buyer has no Florida plate to transfer."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with the Florida Department of Revenue or FLHSMV.",
-      "Florida state sales tax is 6.0%; counties may add a discretionary surtax (0.5%–1.5%) on the first $5,000.",
-      "A $225.00 statutory initial registration fee applies if the purchaser does not have an existing Florida license plate to transfer.",
-      "Trade-in deductions between private individuals are permitted when supported by title assignment and bill of sale."
+      "Estimates only, not tax or legal advice. Verify with the Florida Department of Revenue or FLHSMV.",
+      "Florida sales tax is 6%. Most counties add a discretionary surtax of 0.5% to 2% on the first $5,000, based on the buyer’s county of residence (not included).",
+      "A $225 initial registration fee and $28 metal plate fee apply when the buyer has no Florida plate to transfer (not included).",
+      "Registration shown is for cars of 2,500 to 3,499 lbs ($35.60) and 3,500 lbs and up ($45.60). Cars under 2,500 lbs pay $27.60.",
+      "A trade-in between individuals reduces the taxable price only when vehicles are traded in a single transaction, documented on the bill of sale and titles."
     ],
     "faqs": [
       {
         "question": "What is the vehicle sales tax rate in Florida for private party sales?",
-        "answer": "Florida levies a 6.0% state sales and use tax. Most Florida counties also impose a local discretionary sales surtax between 0.5% and 1.5%, which applies only to the first $5,000 of the purchase price."
+        "answer": "Florida charges 6% state sales tax. Most counties add a discretionary sales surtax of 0.5% to 2%, based on the buyer’s county of residence, on only the first $5,000 of the price."
       },
       {
         "question": "How much is the Florida title transfer fee?",
-        "answer": "The Florida title transfer fee is $75.25 for an electronic certificate of title for a vehicle previously registered in Florida ($77.25 for out-of-state vehicles). If the vehicle is financed, a $2.00 lien filing fee is added."
+        "answer": "A title transfer is $75.25 for an electronic title (add $2.50 for a paper title). A used vehicle titled in Florida for the first time costs $85.25. Recording a lien may add $2."
       },
       {
         "question": "What is the Florida $225 initial registration fee?",
-        "answer": "Florida imposes a one-time $225.00 initial registration fee on any motor vehicle registered in Florida for the first time by an owner who does not have a Florida license plate available to transfer."
+        "answer": "Florida charges a one-time $225 initial registration fee when the owner does not have a Florida license plate, registered in their name from a previously owned vehicle, to transfer. A new metal plate adds $28."
       },
       {
         "question": "Does Florida allow trade-in credit on private sales?",
-        "answer": "Yes. If two private individuals exchange vehicles, sales tax is assessed only on the net difference in value, provided both transfers are properly documented on bills of sale and title certificates."
+        "answer": "Only when two individuals trade vehicles in a single transaction. Then sales tax applies to the difference in value. Selling one car and using the money to buy another is not a trade-in."
       },
       {
         "question": "Do I pay Florida vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Florida, the state generally assesses its applicable vehicle sales or use tax (6.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Florida motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. When you title and register the vehicle in Florida you pay Florida’s 6% sales tax, plus any county surtax. If you paid sales tax in another state, you pay the difference when Florida’s rate is higher."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Florida?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Florida DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A gift between individuals is not taxed when no payment is made and no loan is taken over; declare it on the title application with a sworn statement. A sale between relatives is taxed like any other sale."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Florida?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Florida's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Florida motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "30 calendar days, starting the day after the seller completes the title transfer and delivers the vehicle. After that, a late transfer fee applies."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://floridarevenue.com/taxes/taxesfees/Pages/sales_tax.aspx",
-      "https://www.flhsmv.gov/fees/"
+      "https://www.flhsmv.gov/fees/",
+      "https://www.flhsmv.gov/safety-center/consumer-education/buying-vehicle-florida/buying-private-sale/",
+      "https://www.flhsmv.gov/motor-vehicles-tags-titles/license-plates-registration/motor-vehicle-registrations/",
+      "https://floridarevenue.com/Forms_library/gt800030.pdf"
     ]
   },
   "new-york": {

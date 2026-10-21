@@ -162,7 +162,7 @@ describe('Work Order Acceptance Tests', () => {
 
     it('Preserves existing county/local note text on state pages', () => {
       expect(rules['new-york'].localTaxNote).toContain('Local county and city sales taxes add between 3.00% and 4.875%');
-      expect(rules['california'].localTaxNote).toContain('District and county sales taxes');
+      expect(rules['california'].localTaxNote).toContain('District taxes in many cities and counties raise the total');
       expect(rules['ohio'].localTaxNote).toContain('Ohio counties levy permissive sales taxes');
     });
   });

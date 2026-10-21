@@ -31,6 +31,10 @@ export function VehicleInputForm({
   const router = useRouter();
   const currentYear = calculationYear ?? getCalculationYear();
   const vehicleAge = currentYear - inputs.vehicleYear;
+  // Three-tier (Maryland-style) states always ask; two-tier states ask only if the tiers differ
+  const passenger = rule.registration.passenger;
+  const passengerFeeVariesByWeight =
+    Boolean(passenger.under3500lbs) || JSON.stringify(passenger.under3700lbs) !== JSON.stringify(passenger.over3700lbs);
   // Two-tier passenger states split at 3,700 lbs unless configured (Virginia: 4,000)
   const weightSplitLabel = (rule.registration.passengerWeightSplitLbs ?? 3700).toLocaleString('en-US');
   // Maryland book value rule applies to vehicles under the configured age limit
@@ -289,8 +293,8 @@ export function VehicleInputForm({
           </div>
         )}
 
-        {/* Weight Class (Passenger Cars only) */}
-        {inputs.vehicleType === 'passenger' && (
+        {/* Weight Class (Passenger Cars only; hidden when the state's fee does not depend on weight) */}
+        {inputs.vehicleType === 'passenger' && passengerFeeVariesByWeight && (
           <div>
             <div className="flex items-center justify-between">
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">

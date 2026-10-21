@@ -18,11 +18,6 @@
       "finding": "Page not found"
     },
     {
-      "state": "california",
-      "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates-7-25.htm",
-      "finding": "404 Not Found"
-    },
-    {
       "state": "connecticut",
       "url": "https://portal.ct.gov/dmv/vehicle-services/fees-dmv-services",
       "finding": "404"
@@ -173,11 +168,6 @@
       "finding": "Page not found"
     },
     {
-      "state": "texas",
-      "url": "https://comptroller.texas.gov/taxes/publications/96-254.php",
-      "finding": "Shows the Comptroller homepage, not the publication"
-    },
-    {
       "state": "utah",
       "url": "https://dmv.utah.gov/taxes-fees/fees",
       "finding": "Redirects to an unrelated page (Impound Fees)"
@@ -290,6 +280,21 @@
       "state": "pennsylvania",
       "on": "2026-10-17",
       "note": "Retired PennDOT links replaced with the current MV-70S fee schedule, buying/selling page and fact sheet, and the Revenue sales tax page; rates and fees re-checked."
+    },
+    {
+      "state": "texas",
+      "on": "2026-10-20",
+      "note": "Comptroller publication link (showed the homepage) replaced with the SPV and gift tax pages; TxDMV registration and buying/selling pages added; rates and fees re-checked."
+    },
+    {
+      "state": "california",
+      "on": "2026-10-20",
+      "note": "Dead CDTFA rate link replaced with the CDTFA vehicles page and the October 2026 rate notice; DMV fee and private-party pages added; rates and fees re-checked."
+    },
+    {
+      "state": "florida",
+      "on": "2026-10-20",
+      "note": "Sources replaced with the FLHSMV fee, private sale, and registration pages and the DOR motor vehicle sales tax brochure; rates and fees re-checked."
     }
   ]
 }

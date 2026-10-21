@@ -54,8 +54,14 @@ describe('Virginia re-check (October 2026)', () => {
     expect(container.textContent).not.toContain('3,700 lbs');
     cleanup();
 
+    // A two-tier state whose fees differ by weight and that has no configured split
     const twoTier = Object.values(rules).find(
-      (r) => r !== va && r.registration.passenger.under3700lbs && !r.registration.passenger.under3500lbs
+      (r) =>
+        r !== va &&
+        !r.registration.passengerWeightSplitLbs &&
+        r.registration.passenger.under3700lbs &&
+        !r.registration.passenger.under3500lbs &&
+        JSON.stringify(r.registration.passenger.under3700lbs) !== JSON.stringify(r.registration.passenger.over3700lbs)
     ) as StateRule;
     const other = render(<Calculator initialRule={twoTier} />);
     expect(other.container.textContent).toContain('≤ 3,700 lbs');
@@ -104,7 +110,7 @@ describe('Virginia and Pennsylvania sources and dates', () => {
     const listed = [...sourceLinkStatus.hidden, ...sourceLinkStatus.homepageOnly].map((e) => e.state);
     expect(listed).not.toContain('virginia');
     expect(listed).not.toContain('pennsylvania');
-    expect(sourceLinkStatus.repaired.map((r) => r.state)).toEqual(['virginia', 'pennsylvania']);
+    expect(sourceLinkStatus.repaired.map((r) => r.state)).toEqual(expect.arrayContaining(['virginia', 'pennsylvania']));
   });
 
   it('FAQs and disclaimers carry the verified facts, without the old generic answers', () => {

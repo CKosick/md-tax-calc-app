@@ -6,12 +6,12 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 103 across 51 jurisdictions
-- Hidden on the site (dead or unreachable): 39
+- Source links configured now: 109 across 51 jurisdictions
+- Hidden on the site (dead or unreachable): 37
 - Working but only an agency homepage, not a specific page: 16
 - States showing no source link ("Official source links ... are being updated"): 10
-- States with some links hidden: 18
-- States re-verified since the check: Maryland (October 2026), Pennsylvania (October 2026), Virginia (October 2026)
+- States with some links hidden: 16
+- States re-verified since the check: California (October 2026), Florida (October 2026), Maryland (October 2026), Pennsylvania (October 2026), Texas (October 2026), Virginia (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
 
@@ -21,6 +21,9 @@ All other states keep their September 2026 verified date until their rates are r
 |---|---|---|
 | Virginia | 2026-10-17 | Dead fee and registration links replaced with the DMV 201 fee sheet, registration page, and buying/selling page; rates and fees re-checked. |
 | Pennsylvania | 2026-10-17 | Retired PennDOT links replaced with the current MV-70S fee schedule, buying/selling page and fact sheet, and the Revenue sales tax page; rates and fees re-checked. |
+| Texas | 2026-10-20 | Comptroller publication link (showed the homepage) replaced with the SPV and gift tax pages; TxDMV registration and buying/selling pages added; rates and fees re-checked. |
+| California | 2026-10-20 | Dead CDTFA rate link replaced with the CDTFA vehicles page and the October 2026 rate notice; DMV fee and private-party pages added; rates and fees re-checked. |
+| Florida | 2026-10-20 | Sources replaced with the FLHSMV fee, private sale, and registration pages and the DOR motor vehicle sales tax brochure; rates and fees re-checked. |
 
 ## Priority: states with no working source link
 
@@ -42,7 +45,6 @@ All other states keep their September 2026 verified date until their rates are r
 | Arizona | https://azdor.gov/transaction-privilege-tax | Page not found |
 | Arkansas | https://www.dfa.arkansas.gov/excise-tax/sales-and-use-tax/motor-vehicle-tax/ | Page not found |
 | Arkansas | https://www.dfa.arkansas.gov/driver-services/fees/ | Page not found |
-| California | https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates-7-25.htm | 404 Not Found |
 | Connecticut | https://portal.ct.gov/dmv/vehicle-services/fees-dmv-services | 404 |
 | Connecticut | https://portal.ct.gov/drs/sales-tax/sales-and-use-tax | Redirects to a 404 error page |
 | District of Columbia | https://dmv.dc.gov/service/vehicle-excise-tax | Page not found |
@@ -73,7 +75,6 @@ All other states keep their September 2026 verified date until their rates are r
 | Oklahoma | https://oklahoma.gov/service/all-services/vehicle-registration.html | 404 resource not found |
 | Oklahoma | https://oksenate.gov/legislation/oklahoma-statutes | Error page ("Oops") |
 | South Carolina | https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration | Page not found |
-| Texas | https://comptroller.texas.gov/taxes/publications/96-254.php | Shows the Comptroller homepage, not the publication |
 | Utah | https://dmv.utah.gov/taxes-fees/fees | Redirects to an unrelated page (Impound Fees) |
 | Utah | https://dmv.utah.gov/taxes-fees/sales-tax | 404 |
 | Washington | https://dol.wa.gov/vehicles-and-boats/vehicle-registration-tabs-and-plates/renew-vehicle-tabs/calculate-vehicle-tab-fees | 404 Page Not Found |
