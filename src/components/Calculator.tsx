@@ -9,6 +9,7 @@ import { calculateVehicleCosts } from '@/lib/calculator';
 import { formatFee } from '@/lib/formatters';
 import { RATES_VERIFIED_YEAR, getCalculationYear } from '@/lib/constants';
 import { getDefaultInputs, inputsFromSearchParams } from '@/lib/shareParams';
+import { getPublishedFaqs } from '@/lib/faqs';
 import { VehicleInputForm } from './VehicleInputForm';
 import { CostSummaryCard } from './CostSummaryCard';
 import { Disclaimers } from './Disclaimers';
@@ -258,7 +259,7 @@ function CalculatorView({
       {!embedded && (
       <>
       {/* FAQ Section with long-tail query H2s */}
-      <FaqSection faqs={initialRule.faqs} stateLabel={initialRule.label} />
+      <FaqSection faqs={getPublishedFaqs(initialRule)} stateLabel={initialRule.label} />
 
       {/* How-to guides for this state */}
       {guides.length > 0 && (

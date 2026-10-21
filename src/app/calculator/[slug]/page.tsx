@@ -6,6 +6,7 @@ import { formatFee } from '@/lib/formatters';
 import { Calculator } from '@/components/Calculator';
 import { resolvePartnerHrefs } from '@/lib/partnerLinks';
 import { getGuidesForState } from '@/config/guides';
+import { getPublishedFaqs } from '@/lib/faqs';
 
 const rules = stateRulesData as StateRulesConfig;
 
@@ -108,7 +109,7 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: rule.faqs.map((faq) => ({
+    mainEntity: getPublishedFaqs(rule).map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {
@@ -150,7 +151,7 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
       />
 
       <main className="min-h-screen bg-slate-50/50 dark:bg-slate-950">
-        <Calculator initialRule={rule} partnerHrefs={resolvePartnerHrefs()} guides={guideLinks} />
+        <Calculator initialRule={{ ...rule, faqs: getPublishedFaqs(rule) }} partnerHrefs={resolvePartnerHrefs()} guides={guideLinks} />
       </main>
     </>
   );

@@ -4,6 +4,7 @@ import stateRulesData from '@/config/stateRules.json';
 import { StateRulesConfig } from '@/lib/types';
 import { formatFee } from '@/lib/formatters';
 import { HomeStateSelector } from '@/components/HomeStateSelector';
+import { GUIDES } from '@/config/guides';
 import { RATES_VERIFIED_YEAR } from '@/lib/constants';
 
 const rules = stateRulesData as StateRulesConfig;
@@ -58,6 +59,13 @@ export default function HomePage() {
     .sort((a, b) => a.label.localeCompare(b.label));
 
   const featuredStates = FEATURED_STATE_KEYS.map((k) => rules[k]).filter(Boolean);
+
+  // How-to guides grouped by state, in the order they were published
+  const guideStates = [...new Set(GUIDES.map((g) => g.stateKey))].map((stateKey) => ({
+    stateKey,
+    label: rules[stateKey].label,
+    guides: GUIDES.filter((g) => g.stateKey === stateKey)
+  }));
 
   const websiteSchema = {
     '@context': 'https://schema.org',
@@ -217,6 +225,55 @@ export default function HomePage() {
                 </Link>
               );
             })}
+          </div>
+        </section>
+
+        {/* How-To Guides Section */}
+        <section id="home-guides" className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                Step-by-Step Guides
+              </span>
+              <h2 className="mt-1 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+                Buying, Gifting, or Moving With a Car
+              </h2>
+              <p className="mt-2 text-xs text-slate-500 sm:text-sm dark:text-slate-400">
+                What to do, what to bring, and what it costs, checked against each state’s motor vehicle agency:
+              </p>
+            </div>
+            <Link
+              href="/guides"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400"
+            >
+              <span>All Guides</span>
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {guideStates.map(({ stateKey, label, guides }) => (
+              <div
+                key={stateKey}
+                className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs dark:border-slate-800 dark:bg-slate-900/80"
+              >
+                <h3 className="font-bold text-slate-900 dark:text-white">{label}</h3>
+                <ul className="mt-3 space-y-1">
+                  {guides.map((guide) => (
+                    <li key={guide.slug}>
+                      <Link
+                        href={`/guides/${guide.slug}`}
+                        className="flex min-h-[44px] items-center text-sm font-medium text-indigo-600 hover:text-indigo-700 hover:underline dark:text-indigo-400"
+                      >
+                        {guide.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </section>
 

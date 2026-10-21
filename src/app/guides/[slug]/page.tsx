@@ -197,7 +197,7 @@ export default async function GuidePage({ params }: PageProps) {
                 </svg>
               </Link>
             </div>
-            <Calculator initialRule={rule} partnerHrefs={resolvePartnerHrefs()} embedded />
+            <Calculator initialRule={{ ...rule, faqs: [] }} partnerHrefs={resolvePartnerHrefs()} embedded />
           </section>
 
           <div className="mx-auto max-w-3xl">

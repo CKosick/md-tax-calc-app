@@ -144,6 +144,12 @@ export default function RootLayout({
 
             <nav className="flex items-center gap-3">
               <Link
+                href="/guides"
+                className="text-xs font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400"
+              >
+                Guides
+              </Link>
+              <Link
                 href="/calculator"
                 className="text-xs font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400"
               >
