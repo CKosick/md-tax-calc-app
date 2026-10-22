@@ -78,26 +78,6 @@
       "finding": "Not found"
     },
     {
-      "state": "michigan",
-      "url": "https://www.michigan.gov/sos/vehicle/pricing",
-      "finding": "Redirects to a 404 page"
-    },
-    {
-      "state": "michigan",
-      "url": "https://www.michigan.gov/treasury/taxes/business-taxes/sales-use-tax",
-      "finding": "Redirects to a 404 page"
-    },
-    {
-      "state": "minnesota",
-      "url": "https://dps.mn.gov/divisions/dvs/fees/Pages/default.aspx",
-      "finding": "404"
-    },
-    {
-      "state": "minnesota",
-      "url": "https://www.revenue.state.mn.us/motor-vehicle-sales-tax",
-      "finding": "Page not found"
-    },
-    {
       "state": "nebraska",
       "url": "https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling",
       "finding": "404 Not Found"
@@ -121,16 +101,6 @@
       "state": "north-carolina",
       "url": "https://www.ncdot.gov/dmv/title-registration/taxes/Pages/highway-use-tax.aspx",
       "finding": "Redirects to a page-not-found page"
-    },
-    {
-      "state": "oklahoma",
-      "url": "https://oklahoma.gov/service/all-services/vehicle-registration.html",
-      "finding": "404 resource not found"
-    },
-    {
-      "state": "oklahoma",
-      "url": "https://oksenate.gov/legislation/oklahoma-statutes",
-      "finding": "Error page (\"Oops\")"
     },
     {
       "state": "south-carolina",
@@ -280,6 +250,21 @@
       "state": "ohio",
       "on": "2026-10-21",
       "note": "Dead BMV and Department of Taxation links replaced with the Taxation motor vehicle and county rate pages, the BMV fee and title pages, and R.C. 4505.09; rates and fees re-checked."
+    },
+    {
+      "state": "michigan",
+      "on": "2026-10-22",
+      "note": "Dead Treasury and SOS pricing links replaced with the SOS title transfer, ownership, titles FAQ, and plates pages and MCL 257.801; rates and fees re-checked."
+    },
+    {
+      "state": "minnesota",
+      "on": "2026-10-22",
+      "note": "Dead Revenue and DVS fee links replaced with the Revenue motor vehicle sales, nontaxable, and miscellaneous sales guides, the DVS fees and registration pages, and Minn. Stat. 168.013; rates and fees re-checked."
+    },
+    {
+      "state": "oklahoma",
+      "on": "2026-10-22",
+      "note": "Dead Service Oklahoma and statute links replaced with the Service Oklahoma fees, titles, and out-of-state transfer pages, the title transfer procedure, and OTC Form 579; rates and fees re-checked."
     }
   ]
 }

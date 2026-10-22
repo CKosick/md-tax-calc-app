@@ -6,12 +6,12 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 116 across 51 jurisdictions
-- Hidden on the site (dead or unreachable): 31
+- Source links configured now: 126 across 51 jurisdictions
+- Hidden on the site (dead or unreachable): 25
 - Working but only an agency homepage, not a specific page: 16
-- States showing no source link ("Official source links ... are being updated"): 7
+- States showing no source link ("Official source links ... are being updated"): 4
 - States with some links hidden: 16
-- States re-verified since the check: California (October 2026), Florida (October 2026), Illinois (October 2026), Maryland (October 2026), New York (October 2026), Ohio (October 2026), Pennsylvania (October 2026), Texas (October 2026), Virginia (October 2026)
+- States re-verified since the check: California (October 2026), Florida (October 2026), Illinois (October 2026), Maryland (October 2026), Michigan (October 2026), Minnesota (October 2026), New York (October 2026), Ohio (October 2026), Oklahoma (October 2026), Pennsylvania (October 2026), Texas (October 2026), Virginia (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
 
@@ -27,15 +27,15 @@ All other states keep their September 2026 verified date until their rates are r
 | New York | 2026-10-21 | Dead DMV fee and Tax Department rate links replaced with the DMV passenger fee chart, sales tax, and ownership transfer pages and Publication 718; rates and fees re-checked. |
 | Illinois | 2026-10-21 | Dead RUT-50 and Secretary of State fee links replaced with the RUT-50 instructions, the RUT-5 tax chart, the SOS fee list, and the SOS new resident page; rates and fees re-checked. |
 | Ohio | 2026-10-21 | Dead BMV and Department of Taxation links replaced with the Taxation motor vehicle and county rate pages, the BMV fee and title pages, and R.C. 4505.09; rates and fees re-checked. |
+| Michigan | 2026-10-22 | Dead Treasury and SOS pricing links replaced with the SOS title transfer, ownership, titles FAQ, and plates pages and MCL 257.801; rates and fees re-checked. |
+| Minnesota | 2026-10-22 | Dead Revenue and DVS fee links replaced with the Revenue motor vehicle sales, nontaxable, and miscellaneous sales guides, the DVS fees and registration pages, and Minn. Stat. 168.013; rates and fees re-checked. |
+| Oklahoma | 2026-10-22 | Dead Service Oklahoma and statute links replaced with the Service Oklahoma fees, titles, and out-of-state transfer pages, the title transfer procedure, and OTC Form 579; rates and fees re-checked. |
 
 ## Priority: states with no working source link
 
 - Arkansas
 - Connecticut
 - Louisiana
-- Michigan
-- Minnesota
-- Oklahoma
 - Utah
 
 ## Hidden links by state
@@ -57,17 +57,11 @@ All other states keep their September 2026 verified date until their rates are r
 | Louisiana | https://omv.dps.louisiana.gov/Fee_Schedule.aspx | Site did not load (script and browser) |
 | Louisiana | https://revenue.louisiana.gov/SalesTax | Page not found |
 | Massachusetts | https://www.mass.gov/info-details/motor-vehicle-sales-and-use-tax | Not found |
-| Michigan | https://www.michigan.gov/sos/vehicle/pricing | Redirects to a 404 page |
-| Michigan | https://www.michigan.gov/treasury/taxes/business-taxes/sales-use-tax | Redirects to a 404 page |
-| Minnesota | https://dps.mn.gov/divisions/dvs/fees/Pages/default.aspx | 404 |
-| Minnesota | https://www.revenue.state.mn.us/motor-vehicle-sales-tax | Page not found |
 | Nebraska | https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling | 404 Not Found |
 | Nevada | https://dmv.nv.gov/fees.htm | 404 |
 | New Jersey | https://www.nj.gov/treasury/taxation/sales_use_tax.shtml | 404 Page Not Found |
 | New Mexico | https://www.mvd.newmexico.gov/vehicles/taxes-fees/ | 404 Not Found |
 | North Carolina | https://www.ncdot.gov/dmv/title-registration/taxes/Pages/highway-use-tax.aspx | Redirects to a page-not-found page |
-| Oklahoma | https://oklahoma.gov/service/all-services/vehicle-registration.html | 404 resource not found |
-| Oklahoma | https://oksenate.gov/legislation/oklahoma-statutes | Error page ("Oops") |
 | South Carolina | https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration | Page not found |
 | Utah | https://dmv.utah.gov/taxes-fees/fees | Redirects to an unrelated page (Impound Fees) |
 | Utah | https://dmv.utah.gov/taxes-fees/sales-tax | 404 |

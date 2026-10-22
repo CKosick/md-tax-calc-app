@@ -70,6 +70,9 @@ export function inputsFromSearchParams(
     presumptiveValue: parseBookValue(params.get('spv')) ?? defaults.presumptiveValue,
     appraisedValue: parseBookValue(params.get('appraisal')) ?? defaults.appraisedValue,
     ...(rule.registration.newPlateFees ? { hasPlateToTransfer: params.get('plate') === 'yes' } : {}),
+    ...(rule.registration.listPriceRegistration
+      ? { listPrice: parseBookValue(params.get('msrp')) ?? defaults.listPrice }
+      : {}),
     vehicleWeight: rule.registration.passengerWeightChart
       ? parseBookValue(params.get('lbs')) ?? defaults.vehicleWeight
       : defaults.vehicleWeight

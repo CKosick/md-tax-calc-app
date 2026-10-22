@@ -40,6 +40,33 @@ export interface StateRegistrationRules {
    * transfer the value is the purchase price, so they are estimated from the price entered.
    */
   /**
+   * Registration by the vehicle's original list price (MSRP), reduced with age (Michigan,
+   * Minnesota). The form asks for the list price; a blank entry uses defaultListPrice.
+   * The registration year is the vehicle's age plus one (model year = first year).
+   */
+  listPriceRegistration?: {
+    defaultListPrice: number;
+    /** Michigan: first-year fee by list price bracket (a bracket covers prices up to maxPrice). */
+    brackets?: { maxPrice: number; fee: number }[];
+    /** Michigan: above the top bracket, this much more for each $1,000 (or part) over it. */
+    perThousandOverTop?: number;
+    /** Minnesota: fixed amount plus rate x list price x the year's factor. */
+    fixed?: number;
+    rate?: number;
+    /** Share applied by registration year (index 0 = first year); the last value repeats. */
+    yearFactors: number[];
+    /** A flat amount from this registration year on (Minnesota: $30 from the 11th year). */
+    flatFromYear?: { year: number; fee: number };
+  };
+  /**
+   * Annual passenger and motorcycle fees by registration year (Oklahoma), replacing the weight
+   * tiers. The registration year is the vehicle's age plus one.
+   */
+  feesByRegistrationYear?: {
+    passenger: { maxYear?: number; fee: number }[];
+    motorcycle: { maxYear?: number; fee: number }[];
+  };
+  /**
    * One-time fees when the buyer has no plate of their own to transfer (Florida: $225 initial
    * registration fee and $28 for a new plate). The form asks; the default answer is no plate.
    */
@@ -94,6 +121,15 @@ export interface StateRule {
   localTaxMaxRate?: number;
   /** Local tax applies only to this much of the taxable base (Florida surtax: first $5,000). */
   localTaxBaseCap?: number;
+  /**
+   * Used vehicle excise floor (Oklahoma): a flat tax covers the first part of the value and the
+   * excise rate applies only above it ($20 on the first $1,500, then 3.25%).
+   */
+  usedVehicleExcise?: { flatTax: number; flatTaxCovers: number };
+  /** A second state tax on the same base, added to the excise tax (Oklahoma 1.25% sales tax). */
+  additionalSalesTaxRate?: number;
+  /** Flat tax in place of the rate for older, low-priced vehicles (Minnesota: $10). */
+  olderVehicleFlatTax?: { minAge: number; maxPrice: number; tax: number };
   luxuryTaxThreshold?: number | null;
   luxuryTaxRate?: number | null;
   priceTiers?: PriceTier[];
@@ -160,6 +196,8 @@ export interface CalculatorInputs {
   presumptiveValue?: number;
   /** Optional certified appraisal value that replaces the presumptive value test. */
   appraisedValue?: number;
+  /** Original list price (MSRP), for states with listPriceRegistration. */
+  listPrice?: number;
   /** True when the buyer has a plate of their own to transfer (states with newPlateFees). */
   hasPlateToTransfer?: boolean;
 }
@@ -194,6 +232,8 @@ export interface CostBreakdown {
   initialRegistrationFee?: number;
   /** New plate fee when there is no plate to transfer (Florida $28). */
   newPlateFee?: number;
+  /** List price the registration was figured on (states with listPriceRegistration). */
+  listPriceUsed?: number;
   totalFirstYearCost: number;
   totalFirstYearCostMin?: number;
   totalFirstYearCostMax?: number;
