@@ -137,6 +137,33 @@ const OH_SOURCES = {
   exemption: { label: 'Ohio Administrative Code 5703-9-10: Exemption certificates at title', url: 'https://codes.ohio.gov/ohio-administrative-code/rule-5703-9-10' }
 };
 
+const MI_SOURCES = {
+  transfer: { label: 'Michigan SOS: Title Transfer and Vehicle Registration', url: 'https://www.michigan.gov/sos/all-services/title-transfer-and-vehicle-registration' },
+  ownership: { label: 'Michigan SOS: Buying, Selling, or Leasing', url: 'https://www.michigan.gov/sos/vehicle/ownership' },
+  titles: { label: 'Michigan SOS: Titles FAQs', url: 'https://www.michigan.gov/sos/faqs/vehicles/titles' },
+  plates: { label: 'Michigan SOS: License Plates and Tabs', url: 'https://www.michigan.gov/sos/vehicle/license-plates/plates-and-tabs' },
+  newResident: { label: 'Michigan SOS: New Michigan Residents', url: 'https://www.michigan.gov/sos/faqs/resources/new-michigan-residents' },
+  registrationLaw: { label: 'Michigan Legislature: MCL 257.801, Registration Tax', url: 'https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-257-801' }
+};
+
+const MN_SOURCES = {
+  salesTax: { label: 'Minnesota Revenue: Motor Vehicle Sales', url: 'https://www.revenue.state.mn.us/guide/motor-vehicle-sales' },
+  nontaxable: { label: 'Minnesota Revenue: Nontaxable Transactions', url: 'https://www.revenue.state.mn.us/guide/nontaxable-transactions-0' },
+  misc: { label: 'Minnesota Revenue: Miscellaneous Motor Vehicle Sales', url: 'https://www.revenue.state.mn.us/guide/miscellaneous-motor-vehicle-sales' },
+  fees: { label: 'Minnesota DVS: Vehicle Fees', url: 'https://dps.mn.gov/divisions/dvs/vehicle/vehicle-fees' },
+  registration: { label: 'Minnesota DVS: Vehicle Registration', url: 'https://dps.mn.gov/divisions/dvs/vehicle/vehicle-registration' },
+  newResident: { label: 'Minnesota DVS: Title and Registration for Those New to Minnesota', url: 'https://dps.mn.gov/divisions/dvs/vehicle/vehicle-title-and-registration-those-new-mn' },
+  buyingSelling: { label: 'Minnesota DVS: Buying or Selling a Motor Vehicle', url: 'https://dps.mn.gov/divisions/dvs/forms-documents/Documents/BuyingorSellingMotorVehicle_Just_the_Facts.pdf' }
+};
+
+const OK_SOURCES = {
+  fees: { label: 'Service Oklahoma: Fees and Exemptions', url: 'https://oklahoma.gov/service/all-services/auto-vehicle/fees.html' },
+  titles: { label: 'Service Oklahoma: Vehicle Titles', url: 'https://oklahoma.gov/service/all-services/auto-vehicle/vehicle-titles.html' },
+  outOfState: { label: 'Service Oklahoma: Out-of-State Title Transfers', url: 'https://oklahoma.gov/service/all-services/auto-vehicle/title-transfers.html' },
+  procedure: { label: 'Service Oklahoma: Title Transfers Procedure (G.02)', url: 'https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf' },
+  familyAffidavit: { label: 'Service Oklahoma Form 794: Family Affidavit', url: 'https://oklahoma.gov/content/dam/service-oklahoma/Documents/mv-forms/2023/794%20Family%20Affidavit%20R01-2023.pdf' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -2454,6 +2481,682 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [OH_SOURCES.newResident, OH_SOURCES.titles, OH_SOURCES.salesTax, OH_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-michigan',
+    stateKey: 'michigan',
+    title: 'How to Title a Private Car Sale in Michigan',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Michigan',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Michigan: the signed title, the 15-day deadline, 6% tax, the $15 title fee, plates, and registration by list price.',
+    cardDescription: 'The signed title, 15-day deadline, 6% tax, and plates.',
+    intro: [
+      'When you buy a car from a private seller in Michigan, you transfer the title at a Secretary of State office (or online) within 15 days and pay the 6% tax there.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Michigan Secretary of State',
+    steps: [
+      {
+        title: 'Get the completed title',
+        body: [
+          'The seller completes and signs the seller’s portion of the title, with an accurate odometer reading. If the title has no space for it, use an Odometer Mileage Statement.',
+          'If the seller had a loan, get the lien termination: a completed termination statement on the title, the lienholder’s paid stamp, or a signed release.'
+        ]
+      },
+      {
+        title: 'Know the plate rules',
+        body: ['The seller keeps the plate. You transfer a plate you already own or buy a new one.']
+      },
+      {
+        title: 'Get Michigan No-Fault insurance',
+        body: ['You need proof of a Michigan No-Fault policy to register the vehicle. An out-of-state policy does not qualify.']
+      },
+      {
+        title: 'Transfer the title within 15 days',
+        body: [
+          'Visit a Secretary of State office, or transfer online if you and the seller each have a Michigan driver’s license or ID and an online account, it is a one-to-one sale on a Michigan paper title, and you are not financing the car.',
+          'After 15 days, a $15 late fee applies.'
+        ]
+      },
+      {
+        title: 'Pay the tax and fees',
+        body: [
+          'You pay 6% of the purchase price or the car’s fair market value, whichever is greater, plus the $15 title transfer fee.',
+          'Registration for 1984 and newer cars is set by the original list price (MSRP): $178 at $30,000, for example. It drops 10% a year for three years, then stays level. A plate transfer is $10 to $15.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'Michigan registration by list price',
+        intro: 'The first-year registration tax depends on the original list price:',
+        items: [
+          '$36 up to $6,000, then $4 to $6 more for each $1,000.',
+          '$148 at $25,000 and $178 at $30,000.',
+          'Above $30,000, $6 more for each $1,000 or part of $1,000.',
+          'The next three years are 90% of the year before, then the amount stays level.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, with the seller’s portion completed and the odometer reading',
+      'A lien termination, if the seller had a loan',
+      'Proof of Michigan No-Fault insurance',
+      'Your driver’s license or ID',
+      'Payment for the 6% tax, the $15 title fee, and registration'
+    ],
+    calculatorNote:
+      'Enter the original list price (MSRP) for the registration estimate. The calculator taxes the price you enter; Michigan uses fair market value if it is higher.',
+    faqs: [
+      {
+        question: 'How long do I have to transfer the title in Michigan?',
+        answer: '15 days from the date of sale. After that, a $15 late fee applies.'
+      },
+      {
+        question: 'Do I keep the seller’s plate?',
+        answer: 'No. The seller keeps the plate. You transfer a plate you own or buy a new one.'
+      },
+      {
+        question: 'Is Michigan’s 6% tax on the price I paid?',
+        answer: 'It is on the purchase price or the vehicle’s fair market value, whichever is greater.'
+      }
+    ],
+    sources: [MI_SOURCES.transfer, MI_SOURCES.ownership, MI_SOURCES.plates, MI_SOURCES.registrationLaw]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-michigan',
+    stateKey: 'michigan',
+    title: 'How to Gift a Car in Michigan',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Michigan',
+    metaDescription:
+      'How to give or receive a car as a gift in Michigan: which relatives are exempt from the 6% tax, which are not, documenting the relationship, and transferring the title within 15 days.',
+    cardDescription: 'Which relatives are tax-exempt, proof, and the title transfer.',
+    intro: [
+      'Michigan does not charge its 6% tax when the new owner is a close relative of the previous owner. Other relatives, such as cousins, aunts, and uncles, still pay it.',
+      'Here is how to transfer a car within the family.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Michigan Secretary of State',
+    steps: [
+      {
+        title: 'Check that the relationship qualifies',
+        body: [
+          'The exemption applies when the new owner is the previous owner’s spouse, parent, child, brother or sister (including half-siblings), grandparent, grandchild, stepparent, stepchild, stepbrother or stepsister, father-, mother-, brother-, sister-, son-, or daughter-in-law, legal ward, or legal guardian.'
+        ]
+      },
+      {
+        title: 'Keep proof of the relationship',
+        body: [
+          'The Michigan Department of Treasury makes the final decision and may ask you to document the relationship. An unsupported claim can bring penalties of up to 175% of the tax.'
+        ]
+      },
+      {
+        title: 'Complete the title',
+        body: ['The previous owner completes and signs their portion of the title, with the odometer reading.']
+      },
+      {
+        title: 'Get Michigan No-Fault insurance',
+        body: ['You need proof of a Michigan No-Fault policy to register the vehicle.']
+      },
+      {
+        title: 'Transfer within 15 days',
+        body: [
+          'Transfer the title at a Secretary of State office within 15 days. The $15 title fee and registration still apply.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'Relatives who are not exempt',
+        items: ['Cousins', 'Aunts and uncles', 'Nieces and nephews', 'Step-grandparents and great-grandchildren']
+      }
+    ],
+    checklist: [
+      'The title, signed by the previous owner, with the odometer reading',
+      'Documents showing the family relationship, in case Treasury asks',
+      'Proof of Michigan No-Fault insurance',
+      'Your driver’s license or ID',
+      'Payment for the $15 title fee and registration'
+    ],
+    calculatorNote: 'For an exempt family transfer, enter $0 as the price. The calculator then shows the title and registration costs.',
+    faqs: [
+      {
+        question: 'Which family transfers are tax-free in Michigan?',
+        answer:
+          'Transfers to a spouse, parent, child, sibling or half-sibling, grandparent, grandchild, step-relative, most in-laws, legal ward, or legal guardian of the previous owner.'
+      },
+      {
+        question: 'Are aunts, uncles, or cousins exempt?',
+        answer: 'No. Cousins, aunts, uncles, nieces, and nephews pay the 6% tax.'
+      },
+      {
+        question: 'Do I need proof of the relationship?',
+        answer: 'Treasury may ask for it, and penalties for an unsupported claim can reach 175% of the tax.'
+      }
+    ],
+    sources: [MI_SOURCES.transfer, MI_SOURCES.titles, MI_SOURCES.ownership]
+  },
+  {
+    slug: 'titling-a-car-in-michigan-after-moving-from-another-state',
+    stateKey: 'michigan',
+    title: 'Titling a Car in Michigan After Moving From Another State',
+    shortTitle: 'Title a car after moving to Michigan',
+    metaTitle: 'Titling Your Car After Moving to Michigan',
+    metaDescription:
+      'New to Michigan? Title and register your car as soon as you establish residency; there is no grace period. Covers No-Fault insurance, your out-of-state title, and lienholder-held titles.',
+    cardDescription: 'No grace period, No-Fault insurance, and your out-of-state title.',
+    intro: [
+      'Michigan gives new residents no grace period: you title and register your vehicle as soon as you establish residency.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Michigan Secretary of State',
+    steps: [
+      {
+        title: 'Act as soon as you move',
+        body: ['Schedule a Secretary of State office visit as soon as you establish residency. Michigan law provides no grace period.']
+      },
+      {
+        title: 'Get Michigan No-Fault insurance',
+        body: ['You need proof of a Michigan No-Fault policy. An out-of-state policy cannot be used to register in Michigan.']
+      },
+      {
+        title: 'Bring your title and ID',
+        body: [
+          'Bring your out-of-state title and proof of identity. All owners named on the title must come, or bring an appointment-of-agent form for any who cannot.'
+        ]
+      },
+      {
+        title: 'If a lienholder holds your title',
+        body: [
+          'Bring your out-of-state registration (expired less than 90 days) or proof of the out-of-state title. Michigan issues a “Foreign Ownership, Registration Only” registration so you can get plates; the out-of-state title stays the ownership document.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration fees',
+        body: [
+          'The title fee is $15. Registration for 1984 and newer cars is set by the original list price and the vehicle’s age.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title (or registration and proof of title if a lienholder holds it)',
+      'Proof of Michigan No-Fault insurance',
+      'Proof of identity',
+      'All owners present, or an appointment-of-agent form',
+      'Payment for the title and registration fees'
+    ],
+    calculatorNote:
+      'Enter $0 as the price and your car’s original list price to see the title and registration costs.',
+    faqs: [
+      {
+        question: 'How long do I have to register my car after moving to Michigan?',
+        answer: 'There is no grace period. Apply as soon as you establish residency.'
+      },
+      {
+        question: 'Can I keep my out-of-state insurance?',
+        answer: 'No. You need a Michigan No-Fault policy to register in Michigan.'
+      },
+      {
+        question: 'What if my lender has my title?',
+        answer: 'Michigan issues a Foreign Ownership, Registration Only registration, and your out-of-state title remains the ownership document.'
+      }
+    ],
+    sources: [MI_SOURCES.newResident, MI_SOURCES.titles, MI_SOURCES.plates]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-minnesota',
+    stateKey: 'minnesota',
+    title: 'How to Title a Private Car Sale in Minnesota',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Minnesota',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Minnesota: the title assignment, the 10-day transfer, 6.875% tax, $36 in title fees, and plates that stay with the car.',
+    cardDescription: 'The title assignment, 10-day transfer, 6.875% tax, and fees.',
+    intro: [
+      'When you buy a car from a private seller in Minnesota, you transfer the title at a deputy registrar office and pay the 6.875% Motor Vehicle Sales Tax there. The plates and registration stay with the car.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Minnesota DVS and Minnesota Revenue',
+    steps: [
+      {
+        title: 'Check the title before you pay',
+        body: [
+          'Make sure the owner’s name on the front of the title is the seller and the VIN on the dashboard matches the title. Get a signed lien release card or notarized lien release for every lienholder listed.'
+        ]
+      },
+      {
+        title: 'Complete the title together',
+        body: [
+          'The seller hand-prints and signs their name in the assignment area, enters the sale date and price in the sales tax declaration, and completes the odometer disclosure (2011 and newer) and damage disclosure.',
+          'You complete the assignment and application portions with your full name, date of birth, residential address, and signature.'
+        ]
+      },
+      {
+        title: 'Transfer within 10 days',
+        body: ['The transfer must be made on the title within 10 days of the sale. A $2 late penalty applies after 20 calendar days.']
+      },
+      {
+        title: 'Pay the tax and title fees',
+        body: [
+          'The tax is 6.875% of the price. A vehicle 10 or more years old that sells for under $3,000 (with an average value under $3,000) pays a $10 tax instead.',
+          'Title fees total $36: $8.25 title, $12 filing, $2.25 technology surcharge, $10 transfer tax, and $3.50 public safety vehicle fee. A lien adds $2, and a deputy registrar adds a $1 surcharge.'
+        ]
+      },
+      {
+        title: 'Keep the plates',
+        body: [
+          'The plates and registration taxes are assigned to you. You pay the registration tax at the next renewal, based on the car’s original MSRP and age.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, with the seller’s signature, sale date, and price completed',
+      'The odometer disclosure (2011 and newer) and damage disclosure, completed by the seller',
+      'Lien release cards or notarized lien releases, if there were loans',
+      'Your completed assignment and application on the title',
+      'Payment for the 6.875% tax and $36 in title fees'
+    ],
+    calculatorNote:
+      'The registration line is the tax you pay at the next renewal. Enter the original MSRP for a closer estimate.',
+    faqs: [
+      {
+        question: 'How long do I have to transfer the title in Minnesota?',
+        answer: 'The transfer must be made within 10 days of the sale. A $2 late penalty applies after 20 calendar days.'
+      },
+      {
+        question: 'Do the plates stay with the car?',
+        answer: 'Yes. The plates and registration taxes are assigned to the new owner.'
+      },
+      {
+        question: 'Is there a break for older, cheaper cars?',
+        answer: 'Yes. A vehicle 10 or more years old that sells for under $3,000, with an average value under $3,000, pays a $10 tax instead of 6.875%.'
+      }
+    ],
+    sources: [MN_SOURCES.buyingSelling, MN_SOURCES.fees, MN_SOURCES.salesTax, MN_SOURCES.misc]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-minnesota',
+    stateKey: 'minnesota',
+    title: 'How to Gift a Car in Minnesota',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Minnesota',
+    metaDescription:
+      'How to give or receive a car as a gift in Minnesota: tax-free gifts between spouses, parents and children, and grandparents and grandchildren, how other gifts are taxed, and the title fees.',
+    cardDescription: 'Tax-free family gifts, other gifts, and title fees.',
+    intro: [
+      'Minnesota does not tax a gift between spouses, between parents and a child, or between grandparents and a grandchild, and no affidavit is required. Other gifts are taxed on the car’s fair market value.',
+      'Here is how to transfer a gifted car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Minnesota DVS and Minnesota Revenue',
+    steps: [
+      {
+        title: 'Check whether the gift is tax-free',
+        body: [
+          'Gifts between spouses, between parents and a child, and between grandparents and a grandchild are not taxed. No affidavit is required.'
+        ]
+      },
+      {
+        title: 'Know how other gifts are taxed',
+        body: ['A gift to anyone else is taxed at 6.875% of the vehicle’s fair market value at the time of the gift.']
+      },
+      {
+        title: 'Complete the title',
+        body: [
+          'The giver signs the assignment and completes the disclosures. You complete the assignment and application portions of the title.'
+        ]
+      },
+      {
+        title: 'Transfer within 10 days',
+        body: ['Transfer the title at a deputy registrar office within 10 days.']
+      },
+      {
+        title: 'Pay the title fees',
+        body: [
+          'Title fees still apply: $36 in total ($8.25 title, $12 filing, $2.25 technology surcharge, $10 transfer tax, and $3.50 public safety vehicle fee).'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'Other transfers Minnesota does not tax',
+        items: [
+          'Inheritance, including a vehicle inherited at death',
+          'From joint tenancy to one of the joint tenants, with no payment',
+          'From an individual into their revocable trust',
+          'Between husband and wife in a divorce proceeding'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over by the giver with the disclosures completed',
+      'Your completed assignment and application on the title, with your full name, date of birth, and residential address',
+      'A signed lien release card or notarized lien release, if the vehicle has a loan',
+      'The odometer disclosure (2011 and newer) and damage disclosure',
+      'Payment for the $36 in title fees, plus tax if the gift is not exempt'
+    ],
+    calculatorNote:
+      'For a tax-free family gift, enter $0 as the price. For other gifts, enter the car’s fair market value.',
+    faqs: [
+      {
+        question: 'Which gifts are tax-free in Minnesota?',
+        answer: 'Gifts between spouses, between parents and a child, and between grandparents and a grandchild. No affidavit is required.'
+      },
+      {
+        question: 'Is a gift to a sibling taxed?',
+        answer: 'Yes. Gifts outside the exempt relationships are taxed at 6.875% of the fair market value.'
+      },
+      {
+        question: 'Do I still pay title fees on a gift?',
+        answer: 'Yes. The $36 in title fees still applies.'
+      }
+    ],
+    sources: [MN_SOURCES.nontaxable, MN_SOURCES.misc, MN_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-minnesota-after-moving-from-another-state',
+    stateKey: 'minnesota',
+    title: 'Titling a Car in Minnesota After Moving From Another State',
+    shortTitle: 'Title a car after moving to Minnesota',
+    metaTitle: 'Titling Your Car After Moving to Minnesota',
+    metaDescription:
+      'New to Minnesota? Register your car within 60 days. Covers the documents, when sales tax is due, credit for tax paid elsewhere, and how the registration tax is set.',
+    cardDescription: 'The 60-day deadline, documents, tax, and registration tax.',
+    intro: [
+      'New Minnesota residents have 60 days to register a passenger vehicle or motorcycle, as long as its current registration has not expired.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Minnesota DVS and Minnesota Revenue',
+    steps: [
+      {
+        title: 'Mark the 60-day deadline',
+        body: [
+          'Register within 60 days of moving. If your current registration has expired, register right away.'
+        ]
+      },
+      {
+        title: 'Gather your documents',
+        body: [
+          'Bring your current title, the names and addresses of any lienholders, the current odometer reading, valid identification, and your insurance company, policy number, and expiration date.'
+        ]
+      },
+      {
+        title: 'If a lender has your title',
+        body: [
+          'You can register with your most recent registration card (expired less than a year), a copy of the title marked “COPY,” or a confirmation of ownership. Minnesota issues a title only when the current out-of-state title is submitted.'
+        ]
+      },
+      {
+        title: 'Check whether tax is due',
+        body: [
+          'If you bought and titled the vehicle in your name in the other state at least 60 days before, no tax is due. Otherwise you pay 6.875%, with credit for sales tax paid to the other state.'
+        ]
+      },
+      {
+        title: 'Register in person or by mail',
+        body: [
+          'Register at a deputy registrar office or mail the application to Driver and Vehicle Services. The registration tax is $10 plus 1.575% of the original MSRP, reduced by age, and $30 from the 11th year.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your current out-of-state title (or the alternatives if a lender holds it)',
+      'Lienholder names and addresses',
+      'Current odometer reading',
+      'Valid identification',
+      'Insurance company, policy number, and expiration date',
+      'Payment for title fees, registration tax, and any sales tax due'
+    ],
+    calculatorNote:
+      'If no tax is due, enter $0 as the price and your car’s original MSRP to see the title fees and registration tax.',
+    faqs: [
+      {
+        question: 'How long do I have to register my car after moving to Minnesota?',
+        answer: '60 days, unless your current registration has expired, in which case right away.'
+      },
+      {
+        question: 'Do I pay Minnesota sales tax on a car I already own?',
+        answer:
+          'Not if you bought and titled it in your name in the other state at least 60 days before. Otherwise you pay 6.875%, with credit for tax paid to the other state.'
+      },
+      {
+        question: 'How is the registration tax figured?',
+        answer: '$10 plus 1.575% of the original MSRP, reduced as the vehicle ages, and $30 from its 11th year.'
+      }
+    ],
+    sources: [MN_SOURCES.newResident, MN_SOURCES.registration, MN_SOURCES.nontaxable, MN_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-oklahoma',
+    stateKey: 'oklahoma',
+    title: 'How to Title a Private Car Sale in Oklahoma',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Oklahoma',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Oklahoma: the notarized title, excise and sales tax, the $29.50 in title fees, registration, and the 2-month deadline.',
+    cardDescription: 'The notarized title, excise and sales tax, and fees.',
+    intro: [
+      'When you buy a car from a private seller in Oklahoma, you title it at Service Oklahoma or a licensed operator and pay the excise tax and sales tax there.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Service Oklahoma',
+    steps: [
+      {
+        title: 'Get the notarized title',
+        body: [
+          'The seller assigns the Oklahoma title to you, and it must be notarized. If the car has an electronic title, use Form 718 (Bill of Sale of an Electronic Title).'
+        ]
+      },
+      {
+        title: 'Document the price',
+        body: [
+          'Bring a purchase contract, bill of sale, or Form 722-1 (Declaration of Vehicle Purchase Price). For 2011 and newer vehicles, an odometer disclosure is required, usually on the title.'
+        ]
+      },
+      {
+        title: 'Get Oklahoma insurance',
+        body: ['You need verification of liability insurance that meets Oklahoma requirements.']
+      },
+      {
+        title: 'Title within 2 months',
+        body: [
+          'Service Oklahoma requires the title to be applied for within 2 months of getting ownership. Bring your driver’s license and any lien release.'
+        ]
+      },
+      {
+        title: 'Pay the taxes and fees',
+        body: [
+          'A used vehicle pays an excise tax of $20 on the first $1,500 of value and 3.25% of the rest, plus 1.25% sales tax. On a $15,000 car that is $458.75 plus $187.50.',
+          'Title fees are $29.50 ($11 title, $17 transfer, $1.50 insurance fee), plus a tire tax. Registration is $96 a year for a vehicle in its first 4 years, dropping to $26 from year 17.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'Oklahoma registration by registration year',
+        items: [
+          'Years 1 to 4: $96 ($99 for motorcycles)',
+          'Years 5 to 8: $86 ($89)',
+          'Years 9 to 12: $66 ($69)',
+          'Years 13 to 16: $46 ($49)',
+          'Year 17 and later: $26 ($29)'
+        ]
+      }
+    ],
+    checklist: [
+      'The notarized Oklahoma title, or Form 718 for an electronic title',
+      'A bill of sale, purchase contract, or Form 722-1',
+      'Odometer disclosure for 2011 and newer vehicles',
+      'Your driver’s license',
+      'Verification of Oklahoma liability insurance',
+      'Lien release, if there was a loan'
+    ],
+    calculatorNote:
+      'The calculator includes the excise tax, the 1.25% sales tax, the $29.50 in title fees, and registration by the vehicle’s age. It does not add the tire tax.',
+    faqs: [
+      {
+        question: 'How much is tax on a used car in Oklahoma?',
+        answer: 'An excise tax of $20 on the first $1,500 of value and 3.25% of the rest, plus 1.25% sales tax on the price.'
+      },
+      {
+        question: 'How long do I have to title the car?',
+        answer: 'Service Oklahoma requires the title to be applied for within 2 months of getting ownership.'
+      },
+      {
+        question: 'Can I move my plate to the new car?',
+        answer: 'Yes. Bring a plate assigned to you with unexpired tags to get credit for the time left, if you are not changing registration type.'
+      }
+    ],
+    sources: [OK_SOURCES.titles, OK_SOURCES.fees, OK_SOURCES.procedure]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-oklahoma',
+    stateKey: 'oklahoma',
+    title: 'How to Gift a Car in Oklahoma',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Oklahoma',
+    metaDescription:
+      'How to give or receive a car as a gift in Oklahoma: the family excise tax exemption with Form 794, who qualifies, divorce transfers, and the title fees that still apply.',
+    cardDescription: 'The Form 794 family exemption, who qualifies, and fees.',
+    intro: [
+      'Oklahoma exempts a gift between spouses, or between a parent or stepparent and a child or stepchild, from excise tax with Form 794. Siblings and grandparents do not qualify.',
+      'Here is how to transfer a gifted car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Service Oklahoma',
+    steps: [
+      {
+        title: 'Check that the transfer qualifies',
+        body: [
+          'The family exemption covers transfers between spouses and between a parent or stepparent and a child or stepchild. It does not cover siblings, grandparents, or other relatives.'
+        ]
+      },
+      {
+        title: 'Make sure it is a gift',
+        body: ['The vehicle must be given, not sold. If anything of value is exchanged, the exemption does not apply.']
+      },
+      {
+        title: 'Complete Form 794',
+        body: ['The giver, as the registered owner on the title, completes Form 794, the Family Affidavit, with supporting documentation. It goes in with the title.']
+      },
+      {
+        title: 'Transfer the title',
+        body: [
+          'Bring the assigned, notarized title (or Form 718 for an electronic title), your driver’s license, and proof of Oklahoma insurance to Service Oklahoma or a licensed operator.'
+        ]
+      },
+      {
+        title: 'Pay the title fees',
+        body: ['Title fees of $29.50 and registration still apply.']
+      }
+    ],
+    sections: [
+      {
+        heading: 'Other excise tax exemptions',
+        items: [
+          'Divorce: a transfer to either former spouse under a divorce decree that names the spouse and includes the VIN',
+          'Dropping a name from a title (adding a name is taxed unless another exemption applies)',
+          'Transfers between a trust and its trustee'
+        ]
+      }
+    ],
+    checklist: [
+      'The assigned, notarized title, or Form 718 for an electronic title',
+      'Form 794 (Family Affidavit), completed by the giver, with supporting documentation',
+      'Your driver’s license',
+      'Verification of Oklahoma liability insurance',
+      'Payment for title fees and registration'
+    ],
+    calculatorNote:
+      'For an exempt family gift, enter $0 as the price. The calculator then shows the title and registration costs.',
+    faqs: [
+      {
+        question: 'Who can gift a car tax-free in Oklahoma?',
+        answer: 'Spouses, and a parent or stepparent and a child or stepchild, with Form 794. Siblings and grandparents do not qualify.'
+      },
+      {
+        question: 'Can a family member sell me the car and still use the exemption?',
+        answer: 'No. The vehicle must be a gift, not a sale.'
+      },
+      {
+        question: 'Do I still pay title fees?',
+        answer: 'Yes. Title fees and registration still apply.'
+      }
+    ],
+    sources: [OK_SOURCES.fees, OK_SOURCES.familyAffidavit, OK_SOURCES.titles]
+  },
+  {
+    slug: 'titling-a-car-in-oklahoma-after-moving-from-another-state',
+    stateKey: 'oklahoma',
+    title: 'Titling a Car in Oklahoma After Moving From Another State',
+    shortTitle: 'Title a car after moving to Oklahoma',
+    metaTitle: 'Titling Your Car After Moving to Oklahoma',
+    metaDescription:
+      'New to Oklahoma? Transfer your out-of-state title and register your car with Service Oklahoma. Covers Form 701-6, Oklahoma insurance, the VIN inspection, and fees.',
+    cardDescription: 'Form 701-6, insurance, the VIN inspection, and fees.',
+    intro: [
+      'After moving to Oklahoma, you process your tag, title, and tax at Service Oklahoma (N Classen in Oklahoma City) or a licensed operator.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Service Oklahoma',
+    steps: [
+      {
+        title: 'Get Oklahoma insurance',
+        body: ['You need proof of Oklahoma insurance to register.']
+      },
+      {
+        title: 'Complete Form 701-6',
+        body: ['Fill out Form 701-6, the Application for Oklahoma Certificate of Title.']
+      },
+      {
+        title: 'Bring the vehicle for a VIN inspection',
+        body: [
+          'A vehicle titled in another state usually needs a VIN inspection by a Service Oklahoma agent (N Classen location only) or a licensed operator. The fee is $4.'
+        ]
+      },
+      {
+        title: 'Visit Service Oklahoma or a licensed operator',
+        body: [
+          'Bring your out-of-state title, Form 701-6, your driver’s license, proof of Oklahoma insurance, and the vehicle. Your fees are finalized at the visit, and you receive a standard plate and decal.'
+        ]
+      },
+      {
+        title: 'Know where your title goes',
+        body: ['If there is a lien, the Oklahoma title is sent to your lienholder. Otherwise it is mailed to you.']
+      }
+    ],
+    checklist: [
+      'Your out-of-state title',
+      'Form 701-6 (Application for Oklahoma Certificate of Title)',
+      'Your driver’s license',
+      'Proof of Oklahoma insurance',
+      'The vehicle, for the VIN inspection'
+    ],
+    calculatorNote:
+      'Service Oklahoma estimates any taxes due with its Sales and Excise Tax Calculator. Enter $0 as the price here to see the title and registration costs.',
+    faqs: [
+      {
+        question: 'Where do I title my car after moving to Oklahoma?',
+        answer: 'At Service Oklahoma on N Classen in Oklahoma City, or at a licensed operator.'
+      },
+      {
+        question: 'Does my car need an inspection?',
+        answer: 'Usually a VIN inspection, by a Service Oklahoma agent or a licensed operator. The fee is $4.'
+      },
+      {
+        question: 'Who gets my Oklahoma title?',
+        answer: 'Your lienholder, if you have a loan. Otherwise it is mailed to you.'
+      }
+    ],
+    sources: [OK_SOURCES.outOfState, OK_SOURCES.titles, OK_SOURCES.fees]
   }
 ];
 
