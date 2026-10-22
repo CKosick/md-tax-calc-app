@@ -46,7 +46,10 @@ const GUIDE_STATES = {
   florida: { label: 'Florida', agency: 'FLHSMV and Florida DOR', hosts: ['www.flhsmv.gov', 'floridarevenue.com'] },
   'new-york': { label: 'New York', agency: 'NYS DMV and NYS Tax Department', hosts: ['dmv.ny.gov', 'www.tax.ny.gov'] },
   illinois: { label: 'Illinois', agency: 'Illinois SOS and IDOR', hosts: ['tax.illinois.gov', 'www.ilsos.gov'] },
-  ohio: { label: 'Ohio', agency: 'Ohio BMV and Ohio Department of Taxation', hosts: ['tax.ohio.gov', 'bmv.ohio.gov', 'www.bmv.ohio.gov', 'codes.ohio.gov'] }
+  ohio: { label: 'Ohio', agency: 'Ohio BMV and Ohio Department of Taxation', hosts: ['tax.ohio.gov', 'bmv.ohio.gov', 'www.bmv.ohio.gov', 'codes.ohio.gov'] },
+  michigan: { label: 'Michigan', agency: 'Michigan Secretary of State', hosts: ['www.michigan.gov', 'www.legislature.mi.gov'] },
+  minnesota: { label: 'Minnesota', agency: 'Minnesota DVS and Minnesota Revenue', hosts: ['www.revenue.state.mn.us', 'dps.mn.gov'] },
+  oklahoma: { label: 'Oklahoma', agency: 'Service Oklahoma', hosts: ['oklahoma.gov'] }
 } as const;
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
@@ -198,6 +201,26 @@ describe('Batch 4 guides (New York, Illinois, Ohio)', () => {
   });
 });
 
+describe('Batch 5 guides (Michigan, Minnesota, Oklahoma)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified Michigan, Minnesota, and Oklahoma key facts', () => {
+    const [miSale, miGift, miMove] = topics('michigan').map(text);
+    for (const fact of ['15 days', '$15 late fee', '6%', 'fair market value', '$178', 'No-Fault', 'seller keeps the plate']) expect(miSale).toContain(fact);
+    for (const fact of ['half-siblings', 'legal guardian', 'Cousins', '175%']) expect(miGift).toContain(fact);
+    for (const fact of ['no grace period', 'appointment-of-agent', 'Registration Only', '90 days']) expect(miMove).toContain(fact);
+
+    const [mnSale, mnGift, mnMove] = topics('minnesota').map(text);
+    for (const fact of ['6.875%', '10 days', '20 calendar days', '$36', '$8.25', '$3.50', '$10 tax', 'assigned to you']) expect(mnSale).toContain(fact);
+    for (const fact of ['grandparents and a grandchild', 'No affidavit is required', 'fair market value', 'revocable trust']) expect(mnGift).toContain(fact);
+    for (const fact of ['60 days', 'COPY', '1.575%', '$30']) expect(mnMove).toContain(fact);
+
+    const [okSale, okGift, okMove] = topics('oklahoma').map(text);
+    for (const fact of ['notarized', 'Form 718', 'Form 722-1', '2 months', '$20 on the first $1,500', '1.25%', '$29.50', '$96']) expect(okSale).toContain(fact);
+    for (const fact of ['Form 794', 'stepparent', 'siblings', 'divorce decree']) expect(okGift).toContain(fact);
+    for (const fact of ['Form 701-6', 'N Classen', '$4', 'lienholder']) expect(okMove).toContain(fact);
+  });
+});
+
 describe('Guide links and discovery', () => {
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', async () => {
     for (const [state, { label }] of Object.entries(GUIDE_STATES)) {
@@ -209,7 +232,7 @@ describe('Guide links and discovery', () => {
       cleanup();
     }
 
-    const mi = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'michigan-private-sale-tax-calculator' }) }));
+    const mi = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'louisiana-private-sale-tax-calculator' }) }));
     expect(mi.container.querySelector('#state-guides')).toBeNull();
   });
 
@@ -240,6 +263,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('Florida, New York, Illinois, and Ohio.');
+    expect(String(metadata.description)).toContain('Ohio, Michigan, Minnesota, and Oklahoma.');
   });
 });
