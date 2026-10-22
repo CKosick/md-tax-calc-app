@@ -2,6 +2,28 @@ import { CalculatorInputs, CostBreakdown, StateRule } from './types';
 import { RATES_VERIFIED_YEAR } from './constants';
 
 /**
+ * Annual registration by original list price (Michigan brackets, Minnesota fixed + rate), reduced
+ * by the year's factor. Michigan reduces the fee itself; Minnesota reduces the value taxed.
+ */
+function listPriceRegistrationFee(
+  reg: NonNullable<StateRule['registration']['listPriceRegistration']>,
+  listPrice: number,
+  registrationYear: number
+): number {
+  if (reg.flatFromYear && registrationYear >= reg.flatFromYear.year) return reg.flatFromYear.fee;
+  const factor = reg.yearFactors[Math.min(registrationYear, reg.yearFactors.length) - 1];
+  if (reg.brackets && reg.brackets.length > 0) {
+    const top = reg.brackets[reg.brackets.length - 1];
+    const bracket = reg.brackets.find((b) => listPrice <= b.maxPrice);
+    const firstYear = bracket
+      ? bracket.fee
+      : top.fee + Math.ceil((listPrice - top.maxPrice) / 1000) * (reg.perThousandOverTop ?? 0);
+    return Math.round(firstYear * factor * 100) / 100;
+  }
+  return Math.round(((reg.fixed ?? 0) + (reg.rate ?? 0) * listPrice * factor) * 100) / 100;
+}
+
+/**
  * Pure calculation engine for vehicle tax, tags, and titling costs across US states.
  * Consumes state rules without per-state code branches.
  */
@@ -129,6 +151,28 @@ export function calculateVehicleCosts(
     }
   }
 
+  // Older, low-priced vehicles pay a flat tax instead (Minnesota: $10), and used vehicle excise
+  // floors replace the plain rate (Oklahoma: $20 on the first $1,500, then 3.25%)
+  let specialTaxDetail = '';
+  const older = rule.olderVehicleFlatTax;
+  const olderFlatTaxApplied = Boolean(
+    !rule.flatTaxTable && older && price > 0 && vehicleAge >= older.minAge && taxableBase < older.maxPrice
+  );
+  if (older && olderFlatTaxApplied) {
+    exciseTax = older.tax;
+    specialTaxDetail = `$${older.tax} flat tax for a vehicle ${older.minAge} or more years old sold for under $${older.maxPrice.toLocaleString()}`;
+  } else if (!rule.flatTaxTable && rule.usedVehicleExcise && taxableBase > 0) {
+    const { flatTax, flatTaxCovers } = rule.usedVehicleExcise;
+    exciseTax = Math.round((flatTax + Math.max(0, taxableBase - flatTaxCovers) * rule.exciseTaxRate) * 100) / 100;
+    specialTaxDetail = `Excise tax $${flatTax} on the first $${flatTaxCovers.toLocaleString()} + ${Number((rule.exciseTaxRate * 100).toFixed(2))}% of the rest ($${exciseTax.toFixed(2)})`;
+  }
+  let additionalSalesTax = 0;
+  if (rule.additionalSalesTaxRate && taxableBase > 0 && !olderFlatTaxApplied) {
+    additionalSalesTax = Math.round(taxableBase * rule.additionalSalesTaxRate * 100) / 100;
+    exciseTax = Math.round((exciseTax + additionalSalesTax) * 100) / 100;
+    specialTaxDetail = `${specialTaxDetail || `Excise tax ${Number((rule.exciseTaxRate * 100).toFixed(2))}%`} + ${Number((rule.additionalSalesTaxRate * 100).toFixed(2))}% sales tax ($${additionalSalesTax.toFixed(2)})`;
+  }
+
   // 2. Title Certificate Fee
   const titleFee = rule.titleFee;
 
@@ -139,7 +183,21 @@ export function calculateVehicleCosts(
   const term = inputs.registrationTerm;
   let baseRegistrationFee = 0;
 
-  if (inputs.vehicleType === 'motorcycle') {
+  // The registration year counts the model year as year 1 (Oklahoma, Michigan, Minnesota)
+  const registrationYear = vehicleAge + 1;
+  const feesByYear = rule.registration.feesByRegistrationYear;
+  const listPriceReg = rule.registration.listPriceRegistration;
+  let listPriceUsed: number | undefined;
+
+  if (feesByYear) {
+    const table = inputs.vehicleType === 'motorcycle' ? feesByYear.motorcycle : feesByYear.passenger;
+    const row = table.find((r) => r.maxYear === undefined || registrationYear <= r.maxYear);
+    baseRegistrationFee = (row?.fee ?? 0) * term;
+  } else if (listPriceReg && inputs.vehicleType === 'passenger') {
+    const entered = Number(inputs.listPrice);
+    listPriceUsed = Number.isFinite(entered) && entered > 0 ? entered : listPriceReg.defaultListPrice;
+    baseRegistrationFee = Math.round(listPriceRegistrationFee(listPriceReg, listPriceUsed, registrationYear) * term * 100) / 100;
+  } else if (inputs.vehicleType === 'motorcycle') {
     const motoRule = rule.registration.motorcycle;
     if (typeof motoRule === 'object' && motoRule !== null) {
       const rates = motoRule as Record<string, number>;
@@ -308,6 +366,8 @@ export function calculateVehicleCosts(
     taxDescription = `State tax ${formatCurrencyLocal(exciseTax)} + Local tax (varies by county) ${formatCurrencyLocal(localTaxMin)}–${formatCurrencyLocal(localTaxMax)}${
       localTaxBase < taxableBase ? ` on the first ${formatCurrencyLocal(localTaxBase)}` : ''
     }`;
+  } else if (specialTaxDetail) {
+    taxDescription = specialTaxDetail;
   } else if (flatTaxApplied) {
     taxDescription = flatTaxDetail;
   } else if (tierApplied) {
@@ -433,6 +493,7 @@ export function calculateVehicleCosts(
     transportationImprovementFee,
     registrationTotal,
     ...(plateFees ? { initialRegistrationFee, newPlateFee } : {}),
+    ...(listPriceUsed !== undefined ? { listPriceUsed } : {}),
     totalFirstYearCost,
     totalFirstYearCostMin,
     totalFirstYearCostMax,

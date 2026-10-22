@@ -39,6 +39,9 @@ export function VehicleInputForm({
   const weightSplitLabel = (rule.registration.passengerWeightSplitLbs ?? 3700).toLocaleString('en-US');
   // Weight chart states (New York) ask for the weight in lbs instead of a weight class
   const weightChart = rule.registration.passengerWeightChart;
+  // List price states (Michigan, Minnesota) ask for the MSRP; age-based states (Oklahoma) ask nothing
+  const listPriceReg = rule.registration.listPriceRegistration;
+  const feeNotByWeight = Boolean(listPriceReg || rule.registration.feesByRegistrationYear);
   // Maryland book value rule applies to vehicles under the configured age limit
   const bookValueAgeLimit = rule.bookValueAssessment?.maxVehicleAge;
   const inBookValueWindow = bookValueAgeLimit !== undefined && vehicleAge < bookValueAgeLimit;
@@ -395,8 +398,45 @@ export function VehicleInputForm({
           </div>
         )}
 
+        {/* Original list price (passenger cars in list price states, e.g. Michigan, Minnesota) */}
+        {inputs.vehicleType === 'passenger' && listPriceReg && (
+          <div>
+            <div className="flex items-center justify-between">
+              <label
+                htmlFor="list-price-input"
+                className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300"
+              >
+                Original MSRP (List Price)
+              </label>
+              <span className="text-[11px] text-slate-400">Sets the registration fee</span>
+            </div>
+            <div className="relative mt-2">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+                <span className="text-base font-bold text-slate-400">$</span>
+              </div>
+              <input
+                type="number"
+                id="list-price-input"
+                min="0"
+                step="500"
+                value={inputs.listPrice || ''}
+                onChange={(e) => {
+                  const n = parseFloat(e.target.value);
+                  updateField('listPrice', Number.isFinite(n) && n > 0 ? n : undefined);
+                }}
+                placeholder={`${listPriceReg.defaultListPrice.toLocaleString('en-US')} if unknown`}
+                className="block w-full min-h-[44px] rounded-2xl border border-slate-200 bg-white py-3 pl-8 pr-4 text-base font-bold text-slate-900 shadow-xs transition-all focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+              />
+            </div>
+            <p id="list-price-help" className="mt-1.5 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
+              {rule.label} bases registration on the price when new, reduced as the vehicle ages.
+              {!inputs.listPrice && ` Blank uses $${listPriceReg.defaultListPrice.toLocaleString('en-US')}.`}
+            </p>
+          </div>
+        )}
+
         {/* Weight Class (Passenger Cars only; hidden when the state's fee does not depend on weight) */}
-        {inputs.vehicleType === 'passenger' && !weightChart && passengerFeeVariesByWeight && (
+        {inputs.vehicleType === 'passenger' && !weightChart && !feeNotByWeight && passengerFeeVariesByWeight && (
           <div>
             <div className="flex items-center justify-between">
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">

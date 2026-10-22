@@ -360,14 +360,14 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(544.75);
   });
 
-  it('Michigan: exact worked test ($15,000 -> $1,065.00)', () => {
+  it('Michigan: exact worked test ($15,000 -> $1,044.76, 2019 model at the $30,000 list price default)', () => {
     const rule = allRules.michigan;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'michigan' }, 2026);
     expect(res.exciseTax).toBe(900.00); // 6.0% of 15000
     expect(res.titleFee).toBe(15.00);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(150.00);
-    expect(res.totalFirstYearCost).toBe(1065.00);
+    expect(res.registrationTotal).toBe(129.76); // MCL 257.801: $178 at $30,000 list price x 72.9% (4th+ registration)
+    expect(res.totalFirstYearCost).toBe(1044.76);
   });
 
   it('Batch 1 trade-in deductibility verification (NC allows trade-in; TX, CA & NY do not)', () => {
@@ -519,14 +519,14 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
   });
 
   // Batch 3 mid-sized states acceptance tests
-  it('Minnesota: exact worked test ($15,000 -> $1,105.25)', () => {
+  it('Minnesota: exact worked test ($15,000 -> $1,266.25, 2019 model at the $30,000 list price default)', () => {
     const rule = allRules.minnesota;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'minnesota' }, 2026);
     expect(res.exciseTax).toBe(1031.25); // 6.875% of 15000
-    expect(res.titleFee).toBe(23.50);
+    expect(res.titleFee).toBe(36.00); // $8.25 title + $12 filing + $2.25 tech + $10 transfer tax + $3.50 PSV
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(50.50);
-    expect(res.totalFirstYearCost).toBe(1105.25);
+    expect(res.registrationTotal).toBe(199.00); // $10 + 1.575% x $30,000 x 40% (8th year of life)
+    expect(res.totalFirstYearCost).toBe(1266.25);
   });
 
   it('South Carolina: exact worked test with $500 IMF cap ($15,000 -> $535.00)', () => {
@@ -588,14 +588,14 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(164.00);
   });
 
-  it('Oklahoma: exact worked test ($15,000 -> $584.50)', () => {
+  it('Oklahoma: exact worked test ($15,000 -> $761.75)', () => {
     const rule = allRules.oklahoma;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'oklahoma' }, 2026);
-    expect(res.exciseTax).toBe(487.50); // 3.25% of 15000
-    expect(res.titleFee).toBe(11.00);
+    expect(res.exciseTax).toBe(646.25); // $20 on the first $1,500 + 3.25% of $13,500 ($458.75) + 1.25% sales tax ($187.50)
+    expect(res.titleFee).toBe(29.50); // $11 title + $17 transfer + $1.50 insurance
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(86.00); // 5-year-old vehicle in 2026
-    expect(res.totalFirstYearCost).toBe(584.50);
+    expect(res.registrationTotal).toBe(86.00); // 8th registration year (2019 model in 2026)
+    expect(res.totalFirstYearCost).toBe(761.75);
   });
 
   it('Connecticut: exact worked test ($15,000 -> $1,017.50)', () => {
@@ -630,7 +630,7 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(777.50);
   });
 
-  it('Batch 3 trade-in deductibility verification (SC & KY allow trade-in; MN & CT do not)', () => {
+  it('Batch 3 trade-in deductibility verification (SC, KY & MN allow trade-in; CT does not)', () => {
     // South Carolina: $15,000 price - $7,000 trade-in = $8,000 taxable base * 5% = $400.00 (under $500 cap)
     const scTrade = calculateVehicleCosts(allRules['south-carolina'], {
       ...std1Yr,
@@ -653,16 +653,16 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(kyTrade.tradeInIgnored).toBe(false);
     expect(kyTrade.exciseTax).toBe(600.00);
 
-    // Minnesota: trade-in is IGNORED on private sales
+    // Minnesota: a trade-in allowance reduces the price when the seller takes a vehicle in trade (re-checked Oct 2026)
     const mnTrade = calculateVehicleCosts(allRules.minnesota, {
       ...std1Yr,
       state: 'minnesota',
       purchasePrice: 15000,
       tradeInValue: 5000
     }, 2026);
-    expect(mnTrade.tradeInDeducted).toBe(0);
-    expect(mnTrade.tradeInIgnored).toBe(true);
-    expect(mnTrade.exciseTax).toBe(1031.25);
+    expect(mnTrade.tradeInDeducted).toBe(5000);
+    expect(mnTrade.tradeInIgnored).toBe(false);
+    expect(mnTrade.exciseTax).toBe(687.5);
 
     // Connecticut: trade-in is IGNORED on private sales
     const ctTrade = calculateVehicleCosts(allRules.connecticut, {

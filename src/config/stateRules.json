@@ -1391,63 +1391,180 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 150
+          "1": 178
         },
         "over3700lbs": {
-          "1": 170
+          "1": 178
         }
       },
       "motorcycle": {
         "1": 25
       },
-      "evSurchargeAnnual": 140
+      "evSurchargeAnnual": 267,
+      "phevSurchargeAnnual": 113,
+      "listPriceRegistration": {
+        "defaultListPrice": 30000,
+        "brackets": [
+          {
+            "maxPrice": 6000,
+            "fee": 36
+          },
+          {
+            "maxPrice": 7000,
+            "fee": 40
+          },
+          {
+            "maxPrice": 8000,
+            "fee": 46
+          },
+          {
+            "maxPrice": 9000,
+            "fee": 52
+          },
+          {
+            "maxPrice": 10000,
+            "fee": 58
+          },
+          {
+            "maxPrice": 11000,
+            "fee": 64
+          },
+          {
+            "maxPrice": 12000,
+            "fee": 70
+          },
+          {
+            "maxPrice": 13000,
+            "fee": 76
+          },
+          {
+            "maxPrice": 14000,
+            "fee": 82
+          },
+          {
+            "maxPrice": 15000,
+            "fee": 88
+          },
+          {
+            "maxPrice": 16000,
+            "fee": 94
+          },
+          {
+            "maxPrice": 17000,
+            "fee": 100
+          },
+          {
+            "maxPrice": 18000,
+            "fee": 106
+          },
+          {
+            "maxPrice": 19000,
+            "fee": 112
+          },
+          {
+            "maxPrice": 20000,
+            "fee": 118
+          },
+          {
+            "maxPrice": 21000,
+            "fee": 124
+          },
+          {
+            "maxPrice": 22000,
+            "fee": 130
+          },
+          {
+            "maxPrice": 23000,
+            "fee": 136
+          },
+          {
+            "maxPrice": 24000,
+            "fee": 142
+          },
+          {
+            "maxPrice": 25000,
+            "fee": 148
+          },
+          {
+            "maxPrice": 26000,
+            "fee": 154
+          },
+          {
+            "maxPrice": 27000,
+            "fee": 160
+          },
+          {
+            "maxPrice": 28000,
+            "fee": 166
+          },
+          {
+            "maxPrice": 29000,
+            "fee": 172
+          },
+          {
+            "maxPrice": 30000,
+            "fee": 178
+          }
+        ],
+        "perThousandOverTop": 6,
+        "yearFactors": [
+          1,
+          0.9,
+          0.81,
+          0.729
+        ]
+      }
     },
-    "localTaxNote": "Michigan does not permit local option sales taxes; the 6.0% use tax is uniform statewide.",
+    "localTaxNote": "Michigan’s 6% tax applies statewide, on the full purchase price or the vehicle’s fair market value, whichever is greater. The Secretary of State collects it when you transfer the title.",
     "notes": [
-      "Michigan assesses a uniform 6.0% state sales/use tax on motor vehicle transactions.",
-      "Title fee is $15.00; annual passenger registration is MSRP-based (MCL 257.801), averaging $150.00 for typical vehicles.",
-      "Trade-in deduction is not permitted on private party sales per Michigan law."
+      "Michigan charges 6% on the full purchase price or fair market value, whichever is greater.",
+      "The title transfer fee is $15. Transfer the title within 15 days of the sale or pay a $15 late fee.",
+      "Registration for 1984 and newer cars is set by the original list price (MSRP) and drops 10% a year for three years."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Michigan Department of Treasury or Michigan Secretary of State.",
-      "Michigan assesses 6.0% use tax on the purchase price or fair retail value (whichever is greater).",
-      "Private party vehicle transactions do not qualify for trade-in allowance tax credits in Michigan.",
-      "Michigan vehicle registration fees are based on the original manufacturer's suggested retail price (MSRP) of the vehicle."
+      "Estimates only, not tax or legal advice. Verify with the Michigan Secretary of State or the Michigan Department of Treasury.",
+      "Michigan charges 6% on the full purchase price or fair market value, whichever is greater. The estimate uses the price you enter.",
+      "Registration shown is the statutory registration tax for the list price entered (MCL 257.801), assuming the vehicle was first registered in its model year. Plate, plate transfer ($10 to $15), and processing fees are added at the office.",
+      "Electric vehicles pay $267 a year more and plug-in hybrids $113.",
+      "The seller keeps the plate. You transfer a plate you own or buy a new one."
     ],
     "faqs": [
       {
         "question": "What is the sales tax rate on a private vehicle purchase in Michigan?",
-        "answer": "Michigan imposes a 6.0% use tax on private-party vehicle sales. The tax is collected by the Michigan Secretary of State at the time of titling. Michigan does not have local or county sales taxes."
+        "answer": "Michigan charges 6% on the full purchase price or the vehicle’s fair market value, whichever is greater. You pay it to the Secretary of State when you transfer the title."
       },
       {
         "question": "How much does a title transfer cost in Michigan?",
-        "answer": "The Michigan certificate of title transfer fee is $15.00. Lien filing is noted on the title application without an additional recording fee."
+        "answer": "The title transfer fee is $15. If you transfer the title more than 15 days after the sale, a $15 late fee is added."
       },
       {
         "question": "Does Michigan allow trade-in deductions on private car sales?",
-        "answer": "No. Under Michigan MCL 205.92, trade-in tax credits only apply when purchasing a vehicle from a licensed motor vehicle dealership. Private sales are taxed on the full transaction price."
+        "answer": "A private sale is taxed on the full purchase price or fair market value, whichever is greater."
       },
       {
         "question": "How are vehicle registration fees calculated in Michigan?",
-        "answer": "In Michigan, registration fees for passenger vehicles (model year 1984 and newer) are determined by the vehicle's original manufacturer's suggested retail price (MSRP) when new, averaging approximately $140.00 to $180.00 per year."
+        "answer": "For 1984 and newer cars, the registration tax is set by the original list price (MSRP): $36 up to $6,000, rising to $178 at $30,000, plus $6 for each $1,000 above that. It drops 10% a year for the next three years, then stays level. Electric vehicles add $267 a year and plug-in hybrids $113."
       },
       {
         "question": "Do I pay Michigan vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Michigan, the state generally assesses its applicable vehicle sales or use tax (6.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Michigan motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. When you title the vehicle in Michigan, you pay the 6% tax on the full purchase price or fair market value, whichever is greater."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Michigan?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Michigan DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "No tax is due when the new owner is the previous owner’s spouse, parent, child, brother or sister (including half-siblings), grandparent, grandchild, stepparent, stepchild, stepbrother or stepsister, father-, mother-, brother-, sister-, son-, or daughter-in-law, legal ward, or legal guardian. Cousins, aunts, uncles, nieces, and nephews do not qualify. The Department of Treasury may ask for proof of the relationship."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Michigan?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Michigan's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Michigan motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Transfer the title within 15 days of the sale. After that, a $15 late fee applies. New residents must title and register their vehicles as soon as they establish residency; there is no grace period."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://www.michigan.gov/treasury/taxes/business-taxes/sales-use-tax",
-      "https://www.michigan.gov/sos/vehicle/pricing"
+      "https://www.michigan.gov/sos/all-services/title-transfer-and-vehicle-registration",
+      "https://www.michigan.gov/sos/vehicle/ownership",
+      "https://www.michigan.gov/sos/faqs/vehicles/titles",
+      "https://www.michigan.gov/sos/vehicle/license-plates/plates-and-tabs",
+      "https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-257-801"
     ]
   },
   "new-jersey": {
@@ -2135,74 +2252,105 @@
     "minExciseTax": null,
     "maxExciseTax": null,
     "taxBase": "price",
-    "titleFee": 23.5,
+    "titleFee": 36,
     "lienFilingFee": 2,
-    "tradeInDeductible": false,
+    "tradeInDeductible": true,
     "registration": {
       "terms": [
         1
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 50.5
+          "1": 482.5
         },
         "over3700lbs": {
-          "1": 50.5
+          "1": 482.5
         }
       },
       "motorcycle": {
-        "1": 25.5
+        "1": 10
       },
-      "evSurchargeAnnual": 150
+      "evSurchargeAnnual": 150,
+      "phevSurchargeAnnual": 75,
+      "listPriceRegistration": {
+        "defaultListPrice": 30000,
+        "fixed": 10,
+        "rate": 0.01575,
+        "yearFactors": [
+          1,
+          0.95,
+          0.9,
+          0.8,
+          0.7,
+          0.6,
+          0.5,
+          0.4,
+          0.25,
+          0.1
+        ],
+        "flatFromYear": {
+          "year": 11,
+          "fee": 30
+        }
+      }
     },
-    "localTaxNote": "Minnesota Motor Vehicle Sales Tax (MVST) is 6.875% statewide under Minn. Stat. § 297B.02. Local option sales taxes do not apply to motor vehicles.",
+    "localTaxNote": "Minnesota’s 6.875% Motor Vehicle Sales Tax applies statewide; local sales taxes do not apply to vehicles. Some cities and counties charge a $20 local vehicle excise tax, and many counties add a wheelage tax at registration.",
     "notes": [
-      "Minnesota imposes a 6.875% Motor Vehicle Sales Tax (MVST) under Minn. Stat. § 297B.02 in lieu of general sales tax.",
-      "Total statutory titling fees are $23.50 ($8.25 base title + $2.25 technology surcharge + $12.00 filing fee + $1.00 transfer fee per Minn. Stat. § 168A.29 and § 168.33).",
-      "Trade-in deduction is not permitted on private-party sales under Minn. Stat. § 297B.01 subd. 14(b); trade-in credit is strictly restricted to licensed dealer purchases.",
-      "Vehicles 10 years or older with purchase price under $3,000 qualify for a flat $10 in-lieu tax (Minn. Stat. § 297B.025)."
+      "Minnesota’s Motor Vehicle Sales Tax is 6.875% of the price, paid when the title is transferred.",
+      "A title transfer costs $36: $8.25 title fee, $12 filing fee, $2.25 technology surcharge, $10 transfer tax, and $3.50 public safety vehicle fee. Recording a lien adds $2.",
+      "Vehicles 10 or more years old that sell for under $3,000 (and have an average value under $3,000) pay a $10 tax instead."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Minnesota Driver and Vehicle Services (DVS) or Department of Revenue.",
-      "Minnesota Motor Vehicle Sales Tax is 6.875% of purchase price or fair market value.",
-      "Trade-in credit is not available for private party sales in Minnesota; tax is paid on the full purchase price.",
-      "Annual registration tax is based on vehicle MSRP and age, with an additional $150 annual fee for all-electric vehicles."
+      "Estimates only, not tax or legal advice. Verify with Minnesota Driver and Vehicle Services (DVS) or the Minnesota Department of Revenue.",
+      "Minnesota’s Motor Vehicle Sales Tax is 6.875%. A trade-in allowance reduces the taxable price when the seller takes a vehicle in trade.",
+      "Plates and registration stay with the vehicle and pass to you, so the registration tax shown is what you pay at the next renewal: $10 plus 1.575% of the original MSRP, reduced by the vehicle’s age ($30 from its 11th year). Renewal filing fees and any county wheelage tax are extra.",
+      "Electric vehicles pay at least $150 a year more and plug-in hybrids at least $75, or more based on the MSRP and age.",
+      "A deputy registrar office adds a $1 local office surcharge to title transactions."
     ],
     "faqs": [
       {
         "question": "What is the vehicle sales tax rate on a private car purchase in Minnesota?",
-        "answer": "Minnesota levies a 6.875% Motor Vehicle Sales Tax (MVST) under Minn. Stat. § 297B.02. Unlike general merchandise, motor vehicles are not subject to local city or county sales taxes in Minnesota."
+        "answer": "Minnesota’s Motor Vehicle Sales Tax is 6.875% of the price, paid to a deputy registrar or Driver and Vehicle Services when the title is transferred. Local sales taxes do not apply to vehicles. A vehicle 10 or more years old that sells for under $3,000 (with an average value under $3,000) pays a $10 tax instead."
       },
       {
         "question": "Can I deduct my trade-in on a private car sale in Minnesota?",
-        "answer": "No. Under Minnesota Statute § 297B.01 subd. 14(b), trade-in deductions are exclusively permitted when trading a vehicle to a licensed motor vehicle dealer. Private-to-private transactions are taxed on the full purchase price."
+        "answer": "Yes. The Department of Revenue subtracts a trade-in allowance from the price when the seller takes a motor vehicle in trade."
       },
       {
         "question": "How much does a title transfer cost in Minnesota?",
-        "answer": "Standard Minnesota certificate of title transfer fees total $23.50, including the $8.25 base title fee, $2.25 technology surcharge, $12.00 DVS filing fee, and $1.00 public safety transfer fee. If financed, a $2.00 lien recording fee is added."
+        "answer": "A title transfer is $36: the $8.25 title fee, $12 filing fee, $2.25 technology surcharge, $10 transfer tax, and $3.50 public safety vehicle fee. Recording a lien adds $2, and a deputy registrar office adds a $1 surcharge."
       },
       {
         "question": "How is Minnesota vehicle registration calculated?",
-        "answer": "Minnesota annual vehicle registration tax is determined by the vehicle's original manufacturer suggested retail price (MSRP) and its age, plus a $15.50 plate fee and filing fees. All-electric vehicles pay an additional $150.00 annual surcharge."
+        "answer": "Plates and registration stay with the vehicle. At renewal, the registration tax is $10 plus 1.575% of the original MSRP, reduced by age (95% in year 2 down to 10% in year 10), and $30 from the 11th year. Motorcycles are $10. Electric vehicles add at least $150 and plug-in hybrids at least $75."
       },
       {
         "question": "Do I pay Minnesota vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Minnesota, the state generally assesses its applicable vehicle sales or use tax (6.88%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Minnesota motor vehicle agency to verify documentation requirements."
+        "answer": "If you bought and titled the vehicle in your name in the other state at least 60 days before, no tax is due when you register it in Minnesota. Otherwise you pay Minnesota’s 6.875% tax, with credit for sales tax paid to the other state."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Minnesota?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Minnesota DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A gift between spouses, between parents and a child, or between grandparents and a grandchild is not taxed, and no affidavit is required. Inheritances and transfers between spouses in a divorce are not taxed either. Other gifts are taxed on the vehicle’s fair market value."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Minnesota?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Minnesota's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Minnesota motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "The ownership transfer must be made on the title within 10 days of the sale. A $2 late transfer penalty applies after 20 calendar days. New residents have 60 days to register their vehicles."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://www.revenue.state.mn.us/motor-vehicle-sales-tax",
-      "https://dps.mn.gov/divisions/dvs/fees/Pages/default.aspx"
-    ]
+      "https://www.revenue.state.mn.us/guide/motor-vehicle-sales",
+      "https://www.revenue.state.mn.us/guide/nontaxable-transactions-0",
+      "https://www.revenue.state.mn.us/guide/miscellaneous-motor-vehicle-sales",
+      "https://dps.mn.gov/divisions/dvs/vehicle/vehicle-fees",
+      "https://dps.mn.gov/divisions/dvs/vehicle/vehicle-registration",
+      "https://www.revisor.mn.gov/statutes/cite/168.013"
+    ],
+    "olderVehicleFlatTax": {
+      "minAge": 10,
+      "maxPrice": 3000,
+      "tax": 10
+    }
   },
   "south-carolina": {
     "label": "South Carolina",
@@ -2610,7 +2758,7 @@
     "minExciseTax": null,
     "maxExciseTax": null,
     "taxBase": "price",
-    "titleFee": 11,
+    "titleFee": 29.5,
     "lienFilingFee": 10,
     "tradeInDeductible": false,
     "registration": {
@@ -2619,66 +2767,117 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 86
+          "1": 96
         },
         "over3700lbs": {
-          "1": 86
+          "1": 96
         }
       },
       "motorcycle": {
-        "1": 86
+        "1": 99
       },
-      "evSurchargeAnnual": 110,
-      "phevSurchargeAnnual": 82
+      "evSurchargeAnnual": 210,
+      "phevSurchargeAnnual": 112,
+      "feesByRegistrationYear": {
+        "passenger": [
+          {
+            "maxYear": 4,
+            "fee": 96
+          },
+          {
+            "maxYear": 8,
+            "fee": 86
+          },
+          {
+            "maxYear": 12,
+            "fee": 66
+          },
+          {
+            "maxYear": 16,
+            "fee": 46
+          },
+          {
+            "fee": 26
+          }
+        ],
+        "motorcycle": [
+          {
+            "maxYear": 4,
+            "fee": 99
+          },
+          {
+            "maxYear": 8,
+            "fee": 89
+          },
+          {
+            "maxYear": 12,
+            "fee": 69
+          },
+          {
+            "maxYear": 16,
+            "fee": 49
+          },
+          {
+            "fee": 29
+          }
+        ]
+      }
     },
-    "localTaxNote": "Oklahoma levies a 3.25% Motor Vehicle Excise Tax on used vehicles under 68 O.S. § 2103. A 1.25% state sales tax applies to new vehicle retail sales.",
+    "localTaxNote": "Oklahoma charges a motor vehicle excise tax of $20 on the first $1,500 of a used vehicle’s value and 3.25% of the rest, plus a 1.25% sales tax on the price. Both are statewide and paid when the title is transferred.",
     "notes": [
-      "Oklahoma levies a 3.25% Motor Vehicle Excise Tax under 68 O.S. § 2103 on the purchase price or taxable value of used vehicles.",
-      "Title fee is $11.00 through Service Oklahoma; lien filing fee is $10.00.",
-      "Annual registration fees are age-based: $96.00 for years 1–4, $86.00 for years 5–8, $66.00 for years 9–12, and $46.00 for years 13–16.",
-      "Trade-in deduction is not permitted on private party sales under 68 O.S. § 2103."
+      "Used vehicles pay an excise tax of $20 on the first $1,500 of value and 3.25% of the rest, plus a 1.25% sales tax on the price.",
+      "A title transfer costs $29.50: $11 title fee, $17 transfer fee, and $1.50 insurance fee. Recording a lien costs $10.",
+      "Registration depends on how many years the vehicle has been registered: $96 in years 1 to 4, down to $26 from year 17."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Service Oklahoma or an authorized licensed operator.",
-      "Oklahoma charges a 3.25% Motor Vehicle Excise Tax on the purchase price of used vehicles transferred between individuals.",
-      "Trade-in tax deductions are not available for private party vehicle sales in Oklahoma.",
-      "Annual registration tag fees decrease as the vehicle ages according to Oklahoma statutory age brackets."
+      "Estimates only, not tax or legal advice. Verify with Service Oklahoma or a licensed operator.",
+      "Oklahoma taxes a used vehicle at $20 on the first $1,500 of value and 3.25% of the rest (excise tax), plus 1.25% sales tax on the price.",
+      "Registration shown assumes the vehicle was first registered in its model year. A tire tax (for cars, $2.90 per tire) and, for vehicles titled in another state, a $4 VIN inspection fee are extra.",
+      "Electric vehicles pay $210 a year more and plug-in hybrids $112."
     ],
     "faqs": [
       {
         "question": "What is the vehicle tax rate in Oklahoma for private sales?",
-        "answer": "In Oklahoma, used vehicle transfers between private parties are subject to a 3.25% Motor Vehicle Excise Tax under 68 O.S. § 2103, assessed on the actual purchase price or fair market value."
+        "answer": "A used vehicle pays an excise tax of $20 on the first $1,500 of value and 3.25% of the rest, plus a 1.25% sales tax on the price. On a $15,000 car that is $458.75 excise tax plus $187.50 sales tax."
       },
       {
         "question": "Can I deduct my trade-in on a private vehicle sale in Oklahoma?",
-        "answer": "No. Oklahoma law does not allow trade-in credit deductions on private-party vehicle transactions. Motor vehicle excise tax must be paid on the full purchase price."
+        "answer": "Service Oklahoma figures the excise tax on the purchase price or taxable value. A private sale has no trade-in credit to apply."
       },
       {
         "question": "How much does a title transfer cost in Oklahoma?",
-        "answer": "The standard Service Oklahoma certificate of title fee is $11.00 (plus an optional $17.00 ownership transfer fee at licensed operators). Lien recordation costs $10.00."
+        "answer": "A title transfer costs $29.50: the $11 title fee, $17 transfer fee, and $1.50 insurance fee. Recording a lien costs $10. A vehicle titled in another state also needs a $4 VIN inspection."
       },
       {
         "question": "How are vehicle registration fees calculated in Oklahoma?",
-        "answer": "Oklahoma uses a flat age-based annual registration schedule: $96.00 for vehicles 1 to 4 years old, $86.00 for 5 to 8 years old, $66.00 for 9 to 12 years old, $46.00 for 13 to 16 years old, and $26.00 for 17+ years."
+        "answer": "Registration depends on how many years the vehicle has been registered: $96 for years 1 to 4, $86 for years 5 to 8, $66 for years 9 to 12, $46 for years 13 to 16, and $26 after that. Motorcycles are $3 more in each band. Electric vehicles add $210 a year and plug-in hybrids $112."
       },
       {
         "question": "Do I pay Oklahoma vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Oklahoma, the state generally assesses its applicable vehicle sales or use tax (3.25%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Oklahoma motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. Take the assigned out-of-state title, Form 701-6, your driver license, proof of Oklahoma insurance, the purchase agreement or Form 722-1, and the vehicle to Service Oklahoma or a licensed operator. You pay the same excise and sales taxes, and the vehicle needs a VIN inspection."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Oklahoma?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Oklahoma DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A gift between spouses, or between a parent or stepparent and a child or stepchild, is exempt from excise tax with Form 794 (Family Affidavit). It must be a gift, not a sale, and siblings and grandparents do not qualify. Transfers under a divorce decree are also exempt."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Oklahoma?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Oklahoma's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Oklahoma motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Service Oklahoma requires the title to be applied for within 2 months of obtaining ownership."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://oklahoma.gov/service/all-services/vehicle-registration.html",
-      "https://oksenate.gov/legislation/oklahoma-statutes"
-    ]
+      "https://oklahoma.gov/service/all-services/auto-vehicle/fees.html",
+      "https://oklahoma.gov/service/all-services/auto-vehicle/vehicle-titles.html",
+      "https://oklahoma.gov/service/all-services/auto-vehicle/title-transfers.html",
+      "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+      "https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/tax-credits/579.pdf"
+    ],
+    "usedVehicleExcise": {
+      "flatTax": 20,
+      "flatTaxCovers": 1500
+    },
+    "additionalSalesTaxRate": 0.0125
   },
   "connecticut": {
     "label": "Connecticut",

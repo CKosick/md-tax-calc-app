@@ -22,7 +22,7 @@ const renderCard = (key: string) => {
 
 describe('Per-state last verified dates', () => {
   it('every state has a Month YYYY date; re-checked states are October 2026 and the rest September 2026', () => {
-    const reverified = ['maryland', 'virginia', 'pennsylvania', 'texas', 'california', 'florida', 'new-york', 'illinois', 'ohio'];
+    const reverified = ['maryland', 'virginia', 'pennsylvania', 'texas', 'california', 'florida', 'new-york', 'illinois', 'ohio', 'michigan', 'minnesota', 'oklahoma'];
     for (const [key, rule] of Object.entries(rules)) {
       expect(rule.lastVerified).toMatch(/^(January|February|March|April|May|June|July|August|September|October|November|December) \d{4}$/);
       expect(rule.lastVerified).toBe(reverified.includes(key) ? 'October 2026' : 'September 2026');
@@ -67,12 +67,12 @@ describe('Known-dead source links are hidden', () => {
   });
 
   it('a state with only dead links shows a plain "being updated" note and no links', () => {
-    const { container } = renderCard('michigan');
+    const { container } = renderCard('louisiana');
     expect(container.querySelectorAll('#state-sources a')).toHaveLength(0);
     expect(container.querySelector('#state-sources')?.textContent).toContain(
-      'Official source links for Michigan are being updated.'
+      'Official source links for Louisiana are being updated.'
     );
-    expect(container.querySelector('#state-sources')?.textContent).toContain('Michigan rates last verified: September 2026');
+    expect(container.querySelector('#state-sources')?.textContent).toContain('Louisiana rates last verified: September 2026');
   });
 
   it('no rendered calculator card links to a hidden URL', () => {
