@@ -70,6 +70,9 @@ export function CostSummaryCard({
           url.searchParams.set('appraisal', String(inputs.appraisedValue));
         }
       }
+      if (rule.registration.newPlateFees && inputs.hasPlateToTransfer) {
+        url.searchParams.set('plate', 'yes');
+      }
       if (rule.registration.passengerWeightChart && inputs.vehicleWeight && inputs.vehicleWeight > 0) {
         url.searchParams.set('lbs', String(inputs.vehicleWeight));
       }
@@ -179,6 +182,7 @@ export function CostSummaryCard({
           <p className="mt-2 text-xs text-slate-300">
             {rule.label === 'Delaware' ? 'Document Fee' : 'Sales/Excise Tax'}
             {breakdown.hasLocalTax ? ' (State + Local Range)' : ''} + Title Certificate + Tags &amp; Registration {breakdown.lienFilingFee > 0 ? '+ Lien Fee' : ''}
+            {(breakdown.initialRegistrationFee ?? 0) > 0 ? ' + Initial Registration + New Plate' : ''}
           </p>
         </div>
 
@@ -283,6 +287,44 @@ export function CostSummaryCard({
                 {formatCurrency(breakdown.registrationTotal)}
               </span>
             </div>
+
+            {/* 5 and 6. One-time fees when there is no plate to transfer (Florida) */}
+            {(breakdown.initialRegistrationFee ?? 0) > 0 && (
+              <div id="initial-registration-fee" className="flex items-center justify-between py-3">
+                <div className="pr-4">
+                  <div className="flex items-center gap-1.5">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[11px] font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                      5
+                    </span>
+                    <span className="font-semibold text-slate-800 dark:text-slate-200">Initial Registration Fee</span>
+                  </div>
+                  <p className="mt-0.5 pl-6.5 text-xs text-slate-500 dark:text-slate-400">
+                    One-time fee when you have no plate of your own to transfer
+                  </p>
+                </div>
+                <span className="flex-shrink-0 font-bold text-slate-900 dark:text-white">
+                  {formatCurrency(breakdown.initialRegistrationFee ?? 0)}
+                </span>
+              </div>
+            )}
+            {(breakdown.newPlateFee ?? 0) > 0 && (
+              <div id="new-plate-fee" className="flex items-center justify-between py-3">
+                <div className="pr-4">
+                  <div className="flex items-center gap-1.5">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[11px] font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                      6
+                    </span>
+                    <span className="font-semibold text-slate-800 dark:text-slate-200">New License Plate</span>
+                  </div>
+                  <p className="mt-0.5 pl-6.5 text-xs text-slate-500 dark:text-slate-400">
+                    New metal plate when you have no plate to transfer
+                  </p>
+                </div>
+                <span className="flex-shrink-0 font-bold text-slate-900 dark:text-white">
+                  {formatCurrency(breakdown.newPlateFee ?? 0)}
+                </span>
+              </div>
+            )}
           </div>
         </div>
 

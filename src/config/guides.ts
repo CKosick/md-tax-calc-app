@@ -1580,7 +1580,7 @@ export const GUIDES: Guide[] = [
       'Payment for sales tax, title, and registration fees (plus $225 and $28 if you have no plate to transfer)'
     ],
     calculatorNote:
-      'The calculator includes the 6% state tax but not the county surtax (at most 2% of the first $5,000) or the $225 initial registration fee.',
+      'The calculator includes the 6% state tax and the county surtax range (none to 2% of the first $5,000). Answer the plate question to include or drop the $225 initial registration fee and $28 plate.',
     faqs: [
       {
         question: 'How long do I have to title a car I bought privately in Florida?',
@@ -1665,7 +1665,7 @@ export const GUIDES: Guide[] = [
       'Photo ID',
       'Payment for title and registration fees'
     ],
-    calculatorNote: 'For a gift, enter $0 as the price. The calculator then shows only the title and registration costs.',
+    calculatorNote: 'For a gift, enter $0 as the price. The calculator then shows the title and registration costs, plus the $225 and $28 fees if you have no plate to transfer.',
     faqs: [
       {
         question: 'Who can I gift a car to tax-free in Florida?',
@@ -1744,7 +1744,7 @@ export const GUIDES: Guide[] = [
       'Payment for title and registration fees, the $225 initial registration fee if it applies, and any use tax'
     ],
     calculatorNote:
-      'If no use tax applies, enter $0 as the price. The calculator shows the $75.25 transfer title fee; a first-time Florida title is $85.25, and the $225 initial registration fee is extra.',
+      'If no use tax applies, enter $0 as the price. The calculator shows the $75.25 transfer title fee; a first-time Florida title is $85.25. Answer No to the plate question to include the $225 initial registration fee and $28 plate.',
     faqs: [
       {
         question: 'How long do I have to register my car after moving to Florida?',

@@ -672,6 +672,59 @@ export function VehicleInputForm({
           </div>
         </div>
 
+        {/* Plate to transfer (states with one-time new plate fees, e.g. Florida) */}
+        {rule.registration.newPlateFees && (
+          <div>
+            <div className="flex items-center justify-between">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                Do you have a {rule.label} plate to transfer?
+              </label>
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                id="plate-transfer-no"
+                aria-pressed={!inputs.hasPlateToTransfer}
+                onClick={() => updateField('hasPlateToTransfer', false)}
+                className={`min-h-[44px] rounded-2xl border p-3 text-left transition-all cursor-pointer ${
+                  !inputs.hasPlateToTransfer
+                    ? 'border-indigo-500 bg-indigo-50/50 dark:border-indigo-500 dark:bg-indigo-950/40'
+                    : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-900 dark:text-white">No</span>
+                  <span className="text-[11px] font-semibold text-indigo-600 dark:text-indigo-400">
+                    +${rule.registration.newPlateFees.initialRegistrationFee + rule.registration.newPlateFees.plateFee}
+                  </span>
+                </div>
+                <p className="mt-0.5 text-[11px] text-slate-500 dark:text-slate-400">
+                  ${rule.registration.newPlateFees.initialRegistrationFee} initial registration + ${rule.registration.newPlateFees.plateFee} plate
+                </p>
+              </button>
+              <button
+                type="button"
+                id="plate-transfer-yes"
+                aria-pressed={Boolean(inputs.hasPlateToTransfer)}
+                onClick={() => updateField('hasPlateToTransfer', true)}
+                className={`min-h-[44px] rounded-2xl border p-3 text-left transition-all cursor-pointer ${
+                  inputs.hasPlateToTransfer
+                    ? 'border-emerald-500 bg-emerald-50/50 dark:border-emerald-500 dark:bg-emerald-950/40'
+                    : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-900 dark:text-white">Yes</span>
+                  <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">$0</span>
+                </div>
+                <p className="mt-0.5 text-[11px] text-slate-500 dark:text-slate-400">
+                  A plate registered in your name
+                </p>
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* Trade-In Input with State-Specific Statute Notice (Item 5: Disabled for Maryland) */}
         <div className={`rounded-2xl border p-4 transition-all ${
           isMaryland

@@ -39,6 +39,14 @@ export interface StateRegistrationRules {
    * Registration fees that scale with the vehicle's value (California). On a private-party
    * transfer the value is the purchase price, so they are estimated from the price entered.
    */
+  /**
+   * One-time fees when the buyer has no plate of their own to transfer (Florida: $225 initial
+   * registration fee and $28 for a new plate). The form asks; the default answer is no plate.
+   */
+  newPlateFees?: {
+    initialRegistrationFee: number;
+    plateFee: number;
+  };
   valueBasedFees?: {
     /** Annual license fee as a share of value (California VLF: 0.0065). */
     licenseFeeRate: number;
@@ -84,6 +92,8 @@ export interface StateRule {
   maxExciseTax?: number | null;
   localTaxMinRate?: number;
   localTaxMaxRate?: number;
+  /** Local tax applies only to this much of the taxable base (Florida surtax: first $5,000). */
+  localTaxBaseCap?: number;
   luxuryTaxThreshold?: number | null;
   luxuryTaxRate?: number | null;
   priceTiers?: PriceTier[];
@@ -150,6 +160,8 @@ export interface CalculatorInputs {
   presumptiveValue?: number;
   /** Optional certified appraisal value that replaces the presumptive value test. */
   appraisedValue?: number;
+  /** True when the buyer has a plate of their own to transfer (states with newPlateFees). */
+  hasPlateToTransfer?: boolean;
 }
 
 export interface ItemizedCostItem {
@@ -178,6 +190,10 @@ export interface CostBreakdown {
   /** Value-tiered transportation improvement fee (California TIF), included in registrationTotal. */
   transportationImprovementFee?: number;
   registrationTotal: number;
+  /** One-time initial registration fee when there is no plate to transfer (Florida $225). */
+  initialRegistrationFee?: number;
+  /** New plate fee when there is no plate to transfer (Florida $28). */
+  newPlateFee?: number;
   totalFirstYearCost: number;
   totalFirstYearCostMin?: number;
   totalFirstYearCostMax?: number;

@@ -243,14 +243,20 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(1022.25);
   });
 
-  it('Florida: exact worked test ($15,000 -> $1,010.85)', () => {
+  it('Florida: exact worked test ($15,000 -> $1,263.85 to $1,363.85, no plate to transfer)', () => {
     const rule = allRules.florida;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'florida' }, 2026);
     expect(res.exciseTax).toBe(900.00); // 6.0% of 15000
     expect(res.titleFee).toBe(75.25);
     expect(res.lienFilingFee).toBe(0.00);
     expect(res.registrationTotal).toBe(35.60); // 2,500 to 3,499 lbs, HSMV 83140 (re-checked Oct 2026)
-    expect(res.totalFirstYearCost).toBe(1010.85);
+    expect(res.initialRegistrationFee).toBe(225); // default answer: no plate to transfer
+    expect(res.newPlateFee).toBe(28);
+    expect(res.totalFirstYearCost).toBe(1263.85);
+    // County surtax 0% to 2% of the first $5,000 only ($0 to $100)
+    expect(res.localTaxMin).toBe(0);
+    expect(res.localTaxMax).toBe(100);
+    expect(res.totalFirstYearCostMax).toBe(1363.85);
   });
 
   it('New York: exact worked test ($15,000 -> $706.50, 2-yr term)', () => {

@@ -134,7 +134,7 @@ describe('Work Order Acceptance Tests', () => {
         'delaware',
         'district-of-columbia',
         'texas',
-        'florida',
+        // Florida now shows its county surtax range (none to 2% of the first $5,000)
         'north-carolina',
         'michigan',
         'new-jersey'

@@ -234,11 +234,14 @@ export function calculateVehicleCosts(
     typeof rule.localTaxMaxRate === 'number' &&
     taxableBase > 0;
 
+  // Some local taxes apply only up to a cap (Florida surtax: first $5,000 of the price)
+  const localTaxBase =
+    typeof rule.localTaxBaseCap === 'number' ? Math.min(taxableBase, rule.localTaxBaseCap) : taxableBase;
   const localTaxMin = hasLocalTax
-    ? Math.round(taxableBase * rule.localTaxMinRate! * 100) / 100
+    ? Math.round(localTaxBase * rule.localTaxMinRate! * 100) / 100
     : undefined;
   const localTaxMax = hasLocalTax
-    ? Math.round(taxableBase * rule.localTaxMaxRate! * 100) / 100
+    ? Math.round(localTaxBase * rule.localTaxMaxRate! * 100) / 100
     : undefined;
 
   const combinedTaxMin = hasLocalTax
@@ -248,7 +251,13 @@ export function calculateVehicleCosts(
     ? Math.round((exciseTax + (localTaxMax || 0)) * 100) / 100
     : undefined;
 
-  const otherFees = titleFee + lienFilingFee + registrationTotal;
+  // One-time fees when the buyer has no plate to transfer (Florida), shown as their own lines
+  const plateFees = rule.registration.newPlateFees;
+  const needsNewPlate = Boolean(plateFees) && !inputs.hasPlateToTransfer;
+  const initialRegistrationFee = needsNewPlate ? plateFees!.initialRegistrationFee : 0;
+  const newPlateFee = needsNewPlate ? plateFees!.plateFee : 0;
+
+  const otherFees = titleFee + lienFilingFee + registrationTotal + initialRegistrationFee + newPlateFee;
   const totalFirstYearCost =
     Math.round((exciseTax + otherFees) * 100) / 100;
 
@@ -296,7 +305,9 @@ export function calculateVehicleCosts(
       ? `State tax: Exempt (purchase price under tier threshold) + Local tax (varies by county) ${formatCurrencyLocal(localTaxMin)}–${formatCurrencyLocal(localTaxMax)}`
       : `Exempt from state vehicle sales tax (purchase price under tier threshold)`;
   } else if (hasLocalTax && localTaxMin !== undefined && localTaxMax !== undefined) {
-    taxDescription = `State tax ${formatCurrencyLocal(exciseTax)} + Local tax (varies by county) ${formatCurrencyLocal(localTaxMin)}–${formatCurrencyLocal(localTaxMax)}`;
+    taxDescription = `State tax ${formatCurrencyLocal(exciseTax)} + Local tax (varies by county) ${formatCurrencyLocal(localTaxMin)}–${formatCurrencyLocal(localTaxMax)}${
+      localTaxBase < taxableBase ? ` on the first ${formatCurrencyLocal(localTaxBase)}` : ''
+    }`;
   } else if (flatTaxApplied) {
     taxDescription = flatTaxDetail;
   } else if (tierApplied) {
@@ -376,6 +387,22 @@ export function calculateVehicleCosts(
           .filter(Boolean)
           .join(' + ')
     },
+    ...(needsNewPlate
+      ? [
+          {
+            id: 'initial-registration-fee',
+            label: 'Initial Registration Fee',
+            amount: initialRegistrationFee,
+            description: 'One-time fee when you have no plate of your own to transfer'
+          },
+          {
+            id: 'new-plate-fee',
+            label: 'New License Plate',
+            amount: newPlateFee,
+            description: 'New metal plate when you have no plate to transfer'
+          }
+        ]
+      : []),
     {
       id: 'total-cost',
       label: 'Total First-Year Out-of-Pocket Cost',
@@ -405,6 +432,7 @@ export function calculateVehicleCosts(
     vehicleLicenseFee,
     transportationImprovementFee,
     registrationTotal,
+    ...(plateFees ? { initialRegistrationFee, newPlateFee } : {}),
     totalFirstYearCost,
     totalFirstYearCostMin,
     totalFirstYearCostMax,

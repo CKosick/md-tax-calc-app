@@ -622,9 +622,13 @@
         "1": 24.1,
         "2": 48.2
       },
-      "passengerWeightSplitLbs": 3499
+      "passengerWeightSplitLbs": 3499,
+      "newPlateFees": {
+        "initialRegistrationFee": 225,
+        "plateFee": 28
+      }
     },
-    "localTaxNote": "Most Florida counties add a discretionary sales surtax (0.5% to 2%, by county of residence) on the first $5,000 of the price. It is not included in this estimate.",
+    "localTaxNote": "Most Florida counties add a discretionary sales surtax of 0.5% to 2% (Citrus and Collier have none), based on the buyer’s county of residence. It applies only to the first $5,000 of the price, so it adds at most $100.",
     "notes": [
       "Florida state sales tax is 6%.",
       "Title transfer is $75.25 for an electronic title ($77.75 for paper); $85.25 for a used vehicle titled in Florida for the first time.",
@@ -632,8 +636,8 @@
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with the Florida Department of Revenue or FLHSMV.",
-      "Florida sales tax is 6%. Most counties add a discretionary surtax of 0.5% to 2% on the first $5,000, based on the buyer’s county of residence (not included).",
-      "A $225 initial registration fee and $28 metal plate fee apply when the buyer has no Florida plate to transfer (not included).",
+      "Florida sales tax is 6%. Most counties add a discretionary surtax of 0.5% to 2% on the first $5,000, based on the buyer’s county of residence. The estimate shows the range from no surtax to 2%.",
+      "A $225 initial registration fee and $28 metal plate fee apply when the buyer has no Florida plate to transfer. They are included unless you answer Yes to the plate question.",
       "Registration shown is for cars of 2,500 to 3,499 lbs ($35.60) and 3,500 lbs and up ($45.60). Cars under 2,500 lbs pay $27.60.",
       "A trade-in between individuals reduces the taxable price only when vehicles are traded in a single transaction, documented on the bill of sale and titles."
     ],
@@ -673,7 +677,10 @@
       "https://www.flhsmv.gov/safety-center/consumer-education/buying-vehicle-florida/buying-private-sale/",
       "https://www.flhsmv.gov/motor-vehicles-tags-titles/license-plates-registration/motor-vehicle-registrations/",
       "https://floridarevenue.com/Forms_library/gt800030.pdf"
-    ]
+    ],
+    "localTaxMinRate": 0,
+    "localTaxMaxRate": 0.02,
+    "localTaxBaseCap": 5000
   },
   "new-york": {
     "label": "New York",
