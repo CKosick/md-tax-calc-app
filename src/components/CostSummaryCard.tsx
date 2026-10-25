@@ -73,6 +73,9 @@ export function CostSummaryCard({
       if (rule.registration.listPriceRegistration && inputs.listPrice && inputs.listPrice > 0) {
         url.searchParams.set('msrp', String(inputs.listPrice));
       }
+      if (rule.localities && inputs.localityId) {
+        url.searchParams.set('loc', inputs.localityId);
+      }
       if (rule.registration.newPlateFees && inputs.hasPlateToTransfer) {
         url.searchParams.set('plate', 'yes');
       }

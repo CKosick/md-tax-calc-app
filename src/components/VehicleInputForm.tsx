@@ -126,6 +126,44 @@ export function VehicleInputForm({
           </div>
         </div>
 
+        {/* Locality (states with a short verified list of local rates, e.g. Pennsylvania) */}
+        {rule.localities && rule.localities.length > 0 && (
+          <div>
+            <div className="flex items-center justify-between">
+              <label
+                htmlFor="locality-select"
+                className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300"
+              >
+                Where will the vehicle be registered?
+              </label>
+              <span className="text-[11px] text-slate-400">Optional</span>
+            </div>
+            <div className="relative mt-2">
+              <select
+                id="locality-select"
+                value={inputs.localityId ?? ''}
+                onChange={(e) => updateField('localityId', e.target.value || undefined)}
+                className="block w-full min-h-[44px] appearance-none rounded-2xl border border-slate-300 bg-white px-4 py-3 pr-10 text-sm font-bold text-slate-900 shadow-xs transition-all hover:border-indigo-400 focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white cursor-pointer"
+              >
+                <option value="">Not sure (show the range)</option>
+                {rule.localities.map((l) => (
+                  <option key={l.id} value={l.id}>
+                    {l.label} ({Number(((rule.exciseTaxRate + l.localRate) * 100).toFixed(3))}%)
+                  </option>
+                ))}
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5">
+                <svg className="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+            </div>
+            <p id="locality-help" className="mt-1.5 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
+              Pick a place for one exact total, or leave it blank for the range.
+            </p>
+          </div>
+        )}
+
         {/* Vehicle Type Toggle */}
         <div>
           <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">

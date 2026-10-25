@@ -183,6 +183,26 @@
     "minExciseTax": null,
     "localTaxMinRate": 0,
     "localTaxMaxRate": 0.02,
+    "localities": [
+      {
+        "id": "rest-of-pennsylvania",
+        "label": "Rest of Pennsylvania",
+        "localRate": 0,
+        "source": "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/sales-use-and-hotel-occupancy-tax"
+      },
+      {
+        "id": "allegheny-county",
+        "label": "Allegheny County",
+        "localRate": 0.01,
+        "source": "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/sales-use-and-hotel-occupancy-tax"
+      },
+      {
+        "id": "philadelphia",
+        "label": "Philadelphia",
+        "localRate": 0.02,
+        "source": "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/sales-use-and-hotel-occupancy-tax"
+      }
+    ],
     "localTaxNote": "Pennsylvania sales tax is 6% statewide. Allegheny County residents pay 7% and City of Philadelphia residents pay 8%; the range shows 6% to 8%.",
     "taxBase": "price",
     "titleFee": 72,

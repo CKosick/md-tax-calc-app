@@ -80,6 +80,10 @@ export function inputsFromSearchParams(
     presumptiveValue: parseBookValue(params.get('spv')) ?? defaults.presumptiveValue,
     appraisedValue: parseBookValue(params.get('appraisal')) ?? defaults.appraisedValue,
     ...(rule.registration.newPlateFees ? { hasPlateToTransfer: params.get('plate') === 'yes' } : {}),
+    // An unknown loc= falls back to no locality (the range)
+    ...(rule.localities
+      ? { localityId: rule.localities.some((l) => l.id === params.get('loc')) ? params.get('loc')! : undefined }
+      : {}),
     ...(rule.registration.listPriceRegistration
       ? { listPrice: parseBookValue(params.get('msrp')) ?? defaults.listPrice }
       : {}),

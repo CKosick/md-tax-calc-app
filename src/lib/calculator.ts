@@ -292,11 +292,15 @@ export function calculateVehicleCosts(
     Math.round((baseRegistrationFee + evSurcharge + vehicleLicenseFee + transportationImprovementFee) * 100) / 100;
 
   // 5. Local Tax & Total First-Year Out-Of-Pocket Cost
+  // A chosen locality (Pennsylvania) fixes the local rate, so the result is one total, not a range
+  const locality = rule.localities?.find((l) => l.id === inputs.localityId);
+  const stateExemptFromLocal = Boolean(rule.noLocalTaxWhenStateExempt && tierApplied && effectiveRate === 0);
   const hasLocalTax =
     typeof rule.localTaxMinRate === 'number' &&
     typeof rule.localTaxMaxRate === 'number' &&
     taxableBase > 0 &&
-    !(rule.noLocalTaxWhenStateExempt && tierApplied && effectiveRate === 0);
+    !stateExemptFromLocal &&
+    !locality;
 
   // Some local taxes apply only up to a cap (Florida surtax: first $5,000 of the price)
   const localTaxBase =
@@ -314,6 +318,13 @@ export function calculateVehicleCosts(
   const combinedTaxMax = hasLocalTax
     ? Math.round((exciseTax + (localTaxMax || 0)) * 100) / 100
     : undefined;
+
+  const stateTax = exciseTax;
+  let localityTax = 0;
+  if (locality && taxableBase > 0 && !stateExemptFromLocal) {
+    localityTax = Math.round(localTaxBase * locality.localRate * 100) / 100;
+    exciseTax = Math.round((exciseTax + localityTax) * 100) / 100;
+  }
 
   // One-time fees when the buyer has no plate to transfer (Florida), shown as their own lines
   const plateFees = rule.registration.newPlateFees;
@@ -368,6 +379,8 @@ export function calculateVehicleCosts(
     taxDescription = hasLocalTax && localTaxMin !== undefined && localTaxMax !== undefined
       ? `State tax: Exempt (purchase price under tier threshold) + Local tax (varies by county) ${formatCurrencyLocal(localTaxMin)}–${formatCurrencyLocal(localTaxMax)}`
       : `Exempt from state vehicle sales tax (purchase price under tier threshold)`;
+  } else if (locality) {
+    taxDescription = `State tax ${formatCurrencyLocal(stateTax)} (${rateLabel}) + ${locality.label} local tax ${formatCurrencyLocal(localityTax)} (${Number((locality.localRate * 100).toFixed(3))}%)`;
   } else if (hasLocalTax && localTaxMin !== undefined && localTaxMax !== undefined) {
     taxDescription = `State tax ${formatCurrencyLocal(exciseTax)} + Local tax (varies by county) ${formatCurrencyLocal(localTaxMin)}–${formatCurrencyLocal(localTaxMax)}${
       localTaxBase < taxableBase ? ` on the first ${formatCurrencyLocal(localTaxBase)}` : ''
@@ -409,7 +422,9 @@ export function calculateVehicleCosts(
   const itemizedList = [
     {
       id: 'excise-tax',
-      label: hasLocalTax
+      label: locality
+        ? `Vehicle Sales / Excise Tax (${Number(((effectiveRate + locality.localRate) * 100).toFixed(3))}% in ${locality.label})`
+        : hasLocalTax
         ? `Vehicle Sales / Excise Tax (${rateLabel} State + Local Range)`
         : rule.flatTaxTable
         ? `${rule.label} Vehicle Use Tax (Form RUT-50 Table)`
@@ -491,6 +506,7 @@ export function calculateVehicleCosts(
     combinedTaxMin,
     combinedTaxMax,
     hasLocalTax: Boolean(hasLocalTax),
+    ...(locality ? { localityLabel: locality.label, localityTax } : {}),
     titleFee,
     lienFilingFee,
     baseRegistrationFee,

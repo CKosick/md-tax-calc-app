@@ -126,6 +126,12 @@ export interface StateRule {
   localTaxMaxRate?: number;
   /** Local tax applies only to this much of the taxable base (Florida surtax: first $5,000). */
   localTaxBaseCap?: number;
+  /**
+   * Places with a verified local rate (Pennsylvania: rest of state, Allegheny County, Philadelphia).
+   * Choosing one fixes the local rate, so the result is one total instead of the min-max range.
+   * localRate is the local component only; source is the page it was verified against.
+   */
+  localities?: { id: string; label: string; localRate: number; source: string }[];
   /** No local tax either when a price tier exempts the sale from state tax (Arkansas under $4,000). */
   noLocalTaxWhenStateExempt?: boolean;
   /**
@@ -203,6 +209,8 @@ export interface CalculatorInputs {
   presumptiveValue?: number;
   /** Optional certified appraisal value that replaces the presumptive value test. */
   appraisedValue?: number;
+  /** Chosen locality id, for states with localities (blank shows the range). */
+  localityId?: string;
   /** Original list price (MSRP), for states with listPriceRegistration. */
   listPrice?: number;
   /** True when the buyer has a plate of their own to transfer (states with newPlateFees). */
@@ -239,6 +247,9 @@ export interface CostBreakdown {
   initialRegistrationFee?: number;
   /** New plate fee when there is no plate to transfer (Florida $28). */
   newPlateFee?: number;
+  /** The chosen locality and its local tax, included in exciseTax (states with localities). */
+  localityLabel?: string;
+  localityTax?: number;
   /** List price the registration was figured on (states with listPriceRegistration). */
   listPriceUsed?: number;
   totalFirstYearCost: number;
