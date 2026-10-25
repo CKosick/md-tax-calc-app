@@ -2,9 +2,17 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { CalculatorInputs, StateRule, FuelType } from '@/lib/types';
+import { CalculatorInputs, StateRule, FuelType, RegistrationTerm } from '@/lib/types';
 import { getCalculationYear, getModelYearPresets } from '@/lib/constants';
 import { formatVehicleAge } from '@/lib/formatters';
+import { getOfferedTerms } from '@/lib/shareParams';
+
+const TERM_LABELS: Record<RegistrationTerm, string> = {
+  1: '1-Year Term (Annual)',
+  2: '2-Year Term (Standard)',
+  3: '3-Year Term'
+};
+const TERM_WORDS: Record<RegistrationTerm, string> = { 1: 'one year', 2: 'two years', 3: 'three years' };
 
 interface StateOption {
   key: string;
@@ -42,6 +50,8 @@ export function VehicleInputForm({
   // List price states (Michigan, Minnesota) ask for the MSRP; age-based states (Oklahoma) ask nothing
   const listPriceReg = rule.registration.listPriceRegistration;
   const feeNotByWeight = Boolean(listPriceReg || rule.registration.feesByRegistrationYear);
+  // Only the registration terms the state offers (1, 2, or 3 years per its config)
+  const offeredTerms = getOfferedTerms(rule);
   // Maryland book value rule applies to vehicles under the configured age limit
   const bookValueAgeLimit = rule.bookValueAssessment?.maxVehicleAge;
   const inBookValueWindow = bookValueAgeLimit !== undefined && vehicleAge < bookValueAgeLimit;
@@ -578,43 +588,38 @@ export function VehicleInputForm({
             </label>
             <span className="text-[11px] text-slate-400">{rule.label} tag options</span>
           </div>
-          {rule.registration.terms.includes(3) ? (
-            // Three-year registration states (Connecticut) have the one term
+          {offeredTerms.length === 1 ? (
+            // A state with one registration term shows it as the only option, not a toggle
             <div className="mt-2 rounded-2xl bg-slate-100 p-1.5 dark:bg-slate-800/80">
               <div
-                id="term-3-year"
+                id={`term-${offeredTerms[0]}-year`}
                 className="flex min-h-[44px] items-center justify-center rounded-xl bg-white py-2.5 text-xs font-bold text-indigo-600 shadow-sm dark:bg-slate-900 dark:text-indigo-400"
               >
-                3-Year Term ({rule.label} registers for three years)
+                {offeredTerms[0]}-Year Term ({rule.label} registers for {TERM_WORDS[offeredTerms[0]]})
               </div>
             </div>
           ) : (
-          <div className="mt-2 grid grid-cols-2 gap-2 rounded-2xl bg-slate-100 p-1.5 dark:bg-slate-800/80">
-            <button
-              type="button"
-              id="term-1-year"
-              onClick={() => updateField('registrationTerm', 1)}
-              className={`flex min-h-[44px] items-center justify-center rounded-xl py-2.5 text-xs font-bold transition-all cursor-pointer ${
-                inputs.registrationTerm === 1
-                  ? 'bg-white text-indigo-600 shadow-sm dark:bg-slate-900 dark:text-indigo-400'
-                  : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+            <div
+              className={`mt-2 grid gap-2 rounded-2xl bg-slate-100 p-1.5 dark:bg-slate-800/80 ${
+                offeredTerms.length === 3 ? 'grid-cols-3' : 'grid-cols-2'
               }`}
             >
-              1-Year Term (Annual)
-            </button>
-            <button
-              type="button"
-              id="term-2-year"
-              onClick={() => updateField('registrationTerm', 2)}
-              className={`flex min-h-[44px] items-center justify-center rounded-xl py-2.5 text-xs font-bold transition-all cursor-pointer ${
-                inputs.registrationTerm === 2
-                  ? 'bg-white text-indigo-600 shadow-sm dark:bg-slate-900 dark:text-indigo-400'
-                  : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
-              }`}
-            >
-              2-Year Term (Standard)
-            </button>
-          </div>
+              {offeredTerms.map((term) => (
+                <button
+                  key={term}
+                  type="button"
+                  id={`term-${term}-year`}
+                  onClick={() => updateField('registrationTerm', term)}
+                  className={`flex min-h-[44px] items-center justify-center rounded-xl py-2.5 text-xs font-bold transition-all cursor-pointer ${
+                    inputs.registrationTerm === term
+                      ? 'bg-white text-indigo-600 shadow-sm dark:bg-slate-900 dark:text-indigo-400'
+                      : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                  }`}
+                >
+                  {TERM_LABELS[term]}
+                </button>
+              ))}
+            </div>
           )}
         </div>
 

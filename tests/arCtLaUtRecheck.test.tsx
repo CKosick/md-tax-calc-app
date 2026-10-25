@@ -72,8 +72,9 @@ describe('Connecticut re-check', () => {
   it('a share link cannot switch Connecticut to a 1- or 2-year term', () => {
     const parsed = inputsFromSearchParams(ct, new URLSearchParams('price=15000&term=1'), getDefaultInputs(ct, 2026));
     expect(parsed.registrationTerm).toBe(3);
+    // Arkansas offers only a 1-year term, so a 2-year link falls back to it
     const other = inputsFromSearchParams(ar, new URLSearchParams('price=15000&term=2'), getDefaultInputs(ar, 2026));
-    expect(other.registrationTerm).toBe(2);
+    expect(other.registrationTerm).toBe(1);
   });
 
   it('6.35%, or 7.75% on the whole price over $50,000; no private trade-in credit', () => {

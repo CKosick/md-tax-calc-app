@@ -18,13 +18,18 @@ export function parseBookValue(value: string | null): number | undefined {
   return Number.isFinite(n) && n > 0 ? n : undefined;
 }
 
-/**
- * The state's own default registration term: 3-year where the state registers for three years
- * (Connecticut), 1-year when that is all it offers, else 2-year.
- */
+/** The registration terms a state offers (1, 2, or 3 years), sorted; 2-year if none are configured. */
+export function getOfferedTerms(rule: StateRule): RegistrationTerm[] {
+  const offered = [...new Set(rule.registration.terms)]
+    .filter((t): t is RegistrationTerm => t === 1 || t === 2 || t === 3)
+    .sort((a, b) => a - b);
+  return offered.length > 0 ? offered : [2];
+}
+
+/** The state's own default registration term: 2-year where offered, otherwise its only term. */
 export function getDefaultTerm(rule: StateRule): RegistrationTerm {
-  if (rule.registration.terms.includes(3)) return 3;
-  return rule.registration.terms.includes(1) && !rule.registration.terms.includes(2) ? 1 : 2;
+  const offered = getOfferedTerms(rule);
+  return offered.includes(2) ? 2 : offered[0];
 }
 
 /** Fresh calculator inputs for a state, before any share-link params are applied. */
@@ -44,9 +49,9 @@ export function getDefaultInputs(rule: StateRule, calculationYear: number): Calc
 
 /**
  * Applies shared / saved calculation link params (?price=&year=&type=...) on top of the
- * defaults. Links without price, year, or type are ignored. A missing term falls back to
- * the state's default term; an explicit ?term= wins. Invalid weight= or fuel= values fall back to
- * the defaults.
+ * defaults. Links without price, year, or type are ignored. A missing term, or a term the state
+ * does not offer, falls back to the state's default term. Invalid weight= or fuel= values fall back
+ * to the defaults.
  */
 export function inputsFromSearchParams(
   rule: StateRule,
@@ -65,9 +70,9 @@ export function inputsFromSearchParams(
     // Unknown or mistyped values fall back to the defaults instead of reaching the engine
     weightClass: pickAllowed(params.get('weight'), WEIGHT_CLASSES, defaults.weightClass),
     fuelType: pickAllowed(params.get('fuel'), FUEL_TYPES, defaults.fuelType),
-    // Three-year states have only the one term; elsewhere ?term=1 or 2
-    registrationTerm: params.has('term') && !rule.registration.terms.includes(3)
-      ? Number(params.get('term')) === 1 ? 1 : 2
+    // A ?term= the state does not offer falls back to the state's default term
+    registrationTerm: params.has('term') && getOfferedTerms(rule).includes(Number(params.get('term')) as RegistrationTerm)
+      ? (Number(params.get('term')) as RegistrationTerm)
       : getDefaultTerm(rule),
     isFinanced: params.get('financed') === 'true',
     tradeInValue: params.has('tradeIn') ? Math.max(0, Number(params.get('tradeIn')) || 0) : defaults.tradeInValue,
