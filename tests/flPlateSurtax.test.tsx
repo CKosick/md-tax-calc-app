@@ -48,6 +48,17 @@ describe('Florida plate to transfer', () => {
     expect(ids).not.toContain('new-plate-fee');
   });
 
+  it('acceptance: $15,000 car, surtax on $5,000, and Yes drops the total by exactly $253', () => {
+    const no = calc(15000);
+    const yes = calc(15000, { hasPlateToTransfer: true });
+    // Surtax is figured on the first $5,000 only: 0% to 2% of $5,000
+    expect(no.localTaxMin).toBe(0);
+    expect(no.localTaxMax).toBe(5000 * 0.02);
+    expect(no.totalFirstYearCost - yes.totalFirstYearCost).toBeCloseTo(253, 2);
+    expect((no.totalFirstYearCostMin ?? 0) - (yes.totalFirstYearCostMin ?? 0)).toBeCloseTo(253, 2);
+    expect((no.totalFirstYearCostMax ?? 0) - (yes.totalFirstYearCostMax ?? 0)).toBeCloseTo(253, 2);
+  });
+
   it('only Florida has the question; other states are unchanged by the answer', () => {
     const others = Object.entries(rules).filter(([k, r]) => k !== 'florida' && r.registration.newPlateFees);
     expect(others).toEqual([]);
@@ -62,7 +73,7 @@ describe('Florida plate to transfer', () => {
 
   it('the form asks, defaults to No, and the card lines follow the answer', () => {
     const { container } = render(<Calculator initialRule={fl} />);
-    expect(container.textContent).toContain('Do you have a Florida plate to transfer?');
+    expect(container.textContent).toContain('Do you have a Florida license plate to transfer?');
     expect(container.querySelector('#plate-transfer-no')?.getAttribute('aria-pressed')).toBe('true');
     expect(container.querySelector('#initial-registration-fee')?.textContent).toContain('$225.00');
     expect(container.querySelector('#new-plate-fee')?.textContent).toContain('$28.00');
@@ -83,6 +94,10 @@ describe('Florida plate to transfer', () => {
     const defaults = getDefaultInputs(fl, 2026);
     expect(inputsFromSearchParams(fl, new URLSearchParams('price=15000&plate=yes'), defaults).hasPlateToTransfer).toBe(true);
     expect(inputsFromSearchParams(fl, new URLSearchParams('price=15000'), defaults).hasPlateToTransfer).toBe(false);
+    // Invalid values fall back to the default (No)
+    for (const bad of ['true', 'YES', '1', 'maybe']) {
+      expect(inputsFromSearchParams(fl, new URLSearchParams(`price=15000&plate=${bad}`), defaults).hasPlateToTransfer).toBe(false);
+    }
 
     const { container, getByRole } = render(<Calculator initialRule={fl} />);
     fireEvent.click(container.querySelector('#plate-transfer-yes')!);

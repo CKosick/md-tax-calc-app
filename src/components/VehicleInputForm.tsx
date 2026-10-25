@@ -677,7 +677,7 @@ export function VehicleInputForm({
           <div>
             <div className="flex items-center justify-between">
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-                Do you have a {rule.label} plate to transfer?
+                Do you have a {rule.label} license plate to transfer?
               </label>
             </div>
             <div className="mt-2 grid grid-cols-2 gap-2">
