@@ -164,6 +164,42 @@ const OK_SOURCES = {
   familyAffidavit: { label: 'Service Oklahoma Form 794: Family Affidavit', url: 'https://oklahoma.gov/content/dam/service-oklahoma/Documents/mv-forms/2023/794%20Family%20Affidavit%20R01-2023.pdf' }
 };
 
+const AR_SOURCES = {
+  faqs: { label: 'Arkansas DFA: Motor Vehicle FAQs', url: 'https://www.dfa.arkansas.gov/office/motor-vehicle/faqs-for-dsmv/' },
+  lawChanges: { label: 'Arkansas DFA: Recent Changes in the Law (Act 1013 used vehicle rates)', url: 'https://www.dfa.arkansas.gov/office/motor-vehicle/recent-changes-in-the-law/' },
+  credit: { label: 'Arkansas DFA: Sales Tax Credit for Sale of a Used Vehicle', url: 'https://www.dfa.arkansas.gov/office/taxes/tax-credits-special-refunds/sales-tax-credit-for-sale-of-a-used-vehicle/' },
+  salesTaxFaqs: { label: 'Arkansas DFA: Sales and Use Tax FAQs (local tax cap)', url: 'https://www.dfa.arkansas.gov/office/taxes/excise-tax-administration/sales-use-tax/sales-and-use-tax-faqs/' },
+  fees: { label: 'Arkansas DFA: Motor Vehicle Registration Fee Schedule', url: 'https://www.dfa.arkansas.gov/wp-content/uploads/MyDMV_Fee_Schedule.pdf' },
+  giftRule: { label: 'Code of Arkansas Rules 26 CAR 30-701: Sale of Motor Vehicles', url: 'https://codeofarrules.arkansas.gov/Rules/Rule?levelType=section&titleID=26&chapterID=33&subChapterID=241&partID=971&subPartID=9365&sectionID=62989' }
+};
+
+const CT_SOURCES = {
+  salesTax: { label: 'Connecticut DMV: Sales Tax on Registrations', url: 'https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations' },
+  fees: { label: 'Connecticut DMV: Fees', url: 'https://portal.ct.gov/dmv/resources/dmv-fees' },
+  ownership: { label: 'Connecticut DMV: Transfer Car Ownership', url: 'https://portal.ct.gov/dmv/vehicle-services/transfer-vehicle-ownership' },
+  outOfState: { label: 'Connecticut DMV: Transfer Your Registration From Out of State', url: 'https://portal.ct.gov/dmv/vehicle-services/transfer-registration-ct' },
+  statute: { label: 'Connecticut General Statutes, Chapter 246 (Sec. 14-49 registration fees)', url: 'https://www.cga.ct.gov/current/pub/chap_246.htm' }
+};
+
+const LA_SOURCES = {
+  fees: { label: 'Louisiana OMV: Vehicle Registration, Title and Plate Fees', url: 'https://expresslane.la.gov/omv/vehicles/vehicle-registration-title-plate-fees/' },
+  used: { label: 'Louisiana OMV: Used Title and Registration', url: 'https://expresslane.la.gov/omv/vehicles/title-and-registration/used-title-registration/' },
+  rate: { label: 'Louisiana Department of Revenue: State Sales Tax Rate', url: 'https://revenue.louisiana.gov/tax-education-and-faqs/faqs/sales-tax-reform/what-is-the-state-sales-tax-rate/' },
+  parish: { label: 'Louisiana OMV: Parish Tax Table', url: 'https://taxes.mfn.dps.la.gov/' },
+  donation: { label: 'Louisiana OMV Policy 52.00: Act of Donation / Manual Gift', url: 'https://public.powerdms.com/ladpsc/documents/371013' },
+  outOfState: { label: 'Louisiana OMV Policy 48.00: Out-of-State Transfers', url: 'https://public.powerdms.com/ladpsc/documents/370218' },
+  penalty: { label: 'Louisiana OMV Policy 55.00: Penalty and Interest', url: 'https://public.powerdms.com/ladpsc/documents/371017' }
+};
+
+const UT_SOURCES = {
+  fees: { label: 'Utah DMV: Registration Taxes and Fees', url: 'https://dmv.utah.gov/register/registration-taxes-fees/' },
+  uniform: { label: 'Utah DMV: 2026 Uniform Fees', url: 'https://dmv.utah.gov/register/registration-taxes-fees/uniform-fees/' },
+  transfer: { label: 'Utah DMV: Transfer a Utah Title', url: 'https://dmv.utah.gov/titles-overview/transfer-utah-title/' },
+  outOfState: { label: 'Utah DMV: Transfer an Out-of-State Title', url: 'https://dmv.utah.gov/titles-overview/transfer-outofstate/' },
+  registering: { label: 'Utah DMV: Registering Your Vehicle in Utah', url: 'https://dmv.utah.gov/register/registering-your-vehicle/' },
+  rates: { label: 'Utah State Tax Commission: Combined Sales and Use Tax Rates, October 2026', url: 'https://files.tax.utah.gov/tax/salestax/rate/26q4combined.pdf' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -3157,6 +3193,900 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [OK_SOURCES.outOfState, OK_SOURCES.titles, OK_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-arkansas',
+    stateKey: 'arkansas',
+    title: 'How to Title a Private Car Sale in Arkansas',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Arkansas',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Arkansas: the title assignment, the 60-day deadline, the used vehicle tax tiers, local tax on the first $2,500, and fees.',
+    cardDescription: 'The title assignment, 60-day deadline, tax tiers, and fees.',
+    intro: [
+      'When you buy a used car from a private seller in Arkansas, you register it at a State Revenue Office within 60 days and pay the sales tax there.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Arkansas DFA',
+    steps: [
+      {
+        title: 'Complete the title assignment',
+        body: [
+          'The seller prints your name in the assignment section on the back of the title. You and the seller both sign and print your names in the right places.'
+        ]
+      },
+      {
+        title: 'Get a bill of sale and odometer statement',
+        body: ['Bring a bill of sale and an odometer statement. If you financed the car, bring the lien contract too.']
+      },
+      {
+        title: 'Have proof of assessment, property tax, and insurance',
+        body: [
+          'Registration requires proof that the vehicle was assessed and that personal property taxes were paid in your county, plus proof of insurance.'
+        ]
+      },
+      {
+        title: 'Register within 60 days',
+        body: [
+          'You have 60 days from the date of purchase. After that, a penalty of 10% of the sales tax due applies, plus $3 for each 10 days the car is not registered.'
+        ]
+      },
+      {
+        title: 'Pay the tax and fees',
+        body: [
+          'Used vehicles under $4,000 owe no sales tax. From $4,000 to $9,999 the state rate is 3.5%, and at $10,000 and up it is 6.5%. City and county taxes (0% to 6.125%) are not reduced and apply to the first $2,500 of the price.',
+          'The title is $10 and a lien is $0.50. Registration is by weight: $17 for 3,000 lbs or less, $25 for 3,001 to 4,500 lbs, $30 above that, plus a $2.50 validation decal.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'Selling your old car lowers the tax',
+        items: [
+          'If you sell your old vehicle within 60 days before or after buying, you pay tax only on the difference, as with a trade-in.',
+          'Bring the bill of sale for the vehicle you sold when you register.',
+          'If you sell after registering, the sale must be within 45 days of the purchase and you claim a refund.',
+          'A gift or an insurance settlement does not count as a sale.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, with the assignment completed and signed by you and the seller',
+      'Bill of sale',
+      'Odometer statement',
+      'Lien contract, if financed',
+      'Proof of assessment and proof of personal property taxes paid',
+      'Proof of insurance'
+    ],
+    calculatorNote:
+      'Enter the car’s weight for the registration fee. The calculator applies the price tiers and local tax on the first $2,500; county property tax is not included.',
+    faqs: [
+      {
+        question: 'How long do I have to register a car in Arkansas?',
+        answer: '60 days from the date of purchase. After that, a 10% sales tax penalty and $3 for each 10 days late apply.'
+      },
+      {
+        question: 'Is there sales tax on a cheap used car?',
+        answer: 'No sales tax is due on a used vehicle under $4,000. From $4,000 to $9,999 the state rate is 3.5%.'
+      },
+      {
+        question: 'Does local tax apply to the full price?',
+        answer: 'No. City and county taxes apply to the first $2,500 of a vehicle licensed for highway use.'
+      }
+    ],
+    sources: [AR_SOURCES.faqs, AR_SOURCES.lawChanges, AR_SOURCES.salesTaxFaqs, AR_SOURCES.credit, AR_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-arkansas',
+    stateKey: 'arkansas',
+    title: 'How to Gift a Car in Arkansas',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Arkansas',
+    metaDescription:
+      'How to give or receive a car as a gift in Arkansas: when a gift is not taxed, the affidavit both of you sign, the title assignment, and registering within 60 days.',
+    cardDescription: 'When a gift is tax-free, the affidavit, and registering.',
+    intro: [
+      'Arkansas does not tax a gifted vehicle when the giver and the recipient sign an affidavit attesting to the gift, and the giver paid tax when buying it and registered it in their own name.',
+      'Here is how to transfer a gifted car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Arkansas DFA',
+    steps: [
+      {
+        title: 'Check that the gift qualifies',
+        body: [
+          'The giver must have paid sales or use tax when buying the vehicle and registered it in their own name.'
+        ]
+      },
+      {
+        title: 'Sign the gift affidavit',
+        body: ['You and the giver both sign an affidavit attesting to the gift.']
+      },
+      {
+        title: 'Complete the title assignment',
+        body: [
+          'The giver prints your name in the assignment section of the title, and you both sign and print your names.'
+        ]
+      },
+      {
+        title: 'Gather the registration documents',
+        body: [
+          'Bring the title, an odometer statement, proof of assessment, proof of personal property taxes paid, and proof of insurance.'
+        ]
+      },
+      {
+        title: 'Register within 60 days',
+        body: [
+          'Register at a State Revenue Office within 60 days. The $10 title fee and registration by weight still apply.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, with the assignment completed and signed',
+      'The gift affidavit signed by you and the giver',
+      'Odometer statement',
+      'Proof of assessment and proof of personal property taxes paid',
+      'Proof of insurance',
+      'Payment for the title and registration fees'
+    ],
+    calculatorNote: 'For a qualifying gift, enter $0 as the price. The calculator then shows only the title and registration costs.',
+    faqs: [
+      {
+        question: 'Is a gifted car taxed in Arkansas?',
+        answer:
+          'Not when both of you sign an affidavit attesting to the gift and the giver paid tax when buying the vehicle and registered it in their own name.'
+      },
+      {
+        question: 'Can a gift count toward the sold-vehicle tax credit?',
+        answer: 'No. A vehicle transferred as a gift is not a sale, so it does not qualify for that credit.'
+      },
+      {
+        question: 'Do I still pay title and registration fees?',
+        answer: 'Yes. The $10 title fee and registration by weight still apply.'
+      }
+    ],
+    sources: [AR_SOURCES.giftRule, AR_SOURCES.credit, AR_SOURCES.faqs, AR_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-arkansas-after-moving-from-another-state',
+    stateKey: 'arkansas',
+    title: 'Titling a Car in Arkansas After Moving From Another State',
+    shortTitle: 'Title a car after moving to Arkansas',
+    metaTitle: 'Titling Your Car After Moving to Arkansas',
+    metaDescription:
+      'New to Arkansas? Title and register your car at a State Revenue Office. Covers the documents DFA asks for, lienholder-held titles, and title and registration fees.',
+    cardDescription: 'The documents, lienholder-held titles, and fees.',
+    intro: [
+      'When you move to Arkansas with a car, you title and register it at a State Revenue Office.',
+      'Here is what to bring and what it costs.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Arkansas DFA',
+    steps: [
+      {
+        title: 'Find your title',
+        body: ['Bring your out-of-state title and an odometer statement.']
+      },
+      {
+        title: 'If a lienholder has your title',
+        body: ['Bring your out-of-state registration instead of the title.']
+      },
+      {
+        title: 'Get insurance',
+        body: ['Registration requires proof of insurance.']
+      },
+      {
+        title: 'Visit a State Revenue Office',
+        body: ['Apply for the Arkansas title and registration at any State Revenue Office.']
+      },
+      {
+        title: 'Pay the fees',
+        body: [
+          'The title is $10. Registration is by weight: $17, $25, or $30, plus a $2.50 decal. Electric vehicles add $200 a year, plug-in hybrids $100, and hybrids $50.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title',
+      'Your out-of-state registration, if a lienholder holds the title',
+      'Odometer statement',
+      'Proof of insurance',
+      'Payment for the title and registration fees'
+    ],
+    calculatorNote:
+      'Enter $0 as the price and your car’s weight to see the title and registration costs. Ask the State Revenue Office whether any tax applies to your vehicle.',
+    faqs: [
+      {
+        question: 'What do I need to register my car after moving to Arkansas?',
+        answer: 'Your title and an odometer statement, or your out-of-state registration if a lienholder holds the title.'
+      },
+      {
+        question: 'How much does registration cost?',
+        answer: 'It is set by weight: $17 for 3,000 lbs or less, $25 for 3,001 to 4,500 lbs, and $30 above, plus a $2.50 decal.'
+      },
+      {
+        question: 'How much is the title?',
+        answer: 'The Arkansas title fee is $10.'
+      }
+    ],
+    sources: [AR_SOURCES.faqs, AR_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-connecticut',
+    stateKey: 'connecticut',
+    title: 'How to Title a Private Car Sale in Connecticut',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Connecticut',
+    metaDescription:
+      'Step-by-step guide to registering a car bought from a private seller in Connecticut: Form H-13B, sales tax on the higher of price or NADA value, three-year registration, and emissions.',
+    cardDescription: 'Form H-13B, the tax base, three-year registration, and emissions.',
+    intro: [
+      'When you buy a car from a private seller in Connecticut, you register it by appointment at a DMV office and pay the sales tax there.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Connecticut DMV and DRS',
+    steps: [
+      {
+        title: 'Get the assigned title and a bill of sale',
+        body: ['The seller assigns the Certificate of Title to you. Get a bill of sale (Form H-31) with the price.']
+      },
+      {
+        title: 'Complete Form H-13B',
+        body: ['Fill out the Application for Registration and Title (Form H-13B) and write the purchase price on it.']
+      },
+      {
+        title: 'Get Connecticut insurance',
+        body: ['You need a current Connecticut insurance card for the vehicle and acceptable identification.']
+      },
+      {
+        title: 'Register by appointment and pay',
+        body: [
+          'The tax is 6.35% (7.75% for a vehicle over $50,000) on the NADA average trade-in value or the price, whichever is higher.',
+          'The title is $25. Registration is $120 for three years, plus a $15 Clean Air Act fee, $24 Passport to the Parks fee, and $10 administrative fee. New plates add $5, and vehicles four model years old or newer pay a $40 emissions exemption fee.'
+        ]
+      },
+      {
+        title: 'Get the emissions test',
+        body: [
+          'If the car was registered in Connecticut before, you can register it first and then have it emissions tested within 30 days to avoid a late fee. You will not get a reminder.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'Town property tax',
+        items: [
+          'Connecticut vehicles are subject to local property tax, whether or not they are registered.',
+          'Your town’s tax collector computes and bills it each year.',
+          'A vehicle with delinquent property tax cannot be transferred tax-free within a family.'
+        ]
+      }
+    ],
+    checklist: [
+      'The Certificate of Title, assigned to you by the seller',
+      'Bill of sale (Form H-31)',
+      'Application for Registration and Title (Form H-13B), with the price',
+      'Connecticut insurance card',
+      'Acceptable identification',
+      'Payment for sales tax, the title fee, and registration'
+    ],
+    calculatorNote:
+      'Connecticut taxes the higher of the price or the NADA average trade-in value; enter the higher figure. The calculator shows the three-year registration and does not include town property tax.',
+    faqs: [
+      {
+        question: 'Is Connecticut sales tax on the price I paid?',
+        answer: 'It is on the NADA average trade-in value or the bill of sale price, whichever is higher.'
+      },
+      {
+        question: 'How long is a Connecticut registration?',
+        answer: 'Passenger registrations are for three years: $120, plus the Clean Air Act, Passport to the Parks, and administrative fees.'
+      },
+      {
+        question: 'When do I need an emissions test?',
+        answer: 'If the car was registered in Connecticut before, within 30 days of registering it.'
+      }
+    ],
+    sources: [CT_SOURCES.salesTax, CT_SOURCES.fees, CT_SOURCES.ownership, CT_SOURCES.statute]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-connecticut',
+    stateKey: 'connecticut',
+    title: 'How to Gift a Car in Connecticut',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Connecticut',
+    metaDescription:
+      'How to give or receive a car as a gift in Connecticut: the gift declaration (AU-463), the immediate family exemption and its 60-day rule, and registering with Form H-13B.',
+    cardDescription: 'The AU-463 gift declaration, the family exemption, and registering.',
+    intro: [
+      'Connecticut does not charge sales tax on a vehicle received as a gift, with a gift declaration signed by the giver. Sales between immediate family members are also tax-free, with conditions.',
+      'Here is how to transfer a car you are giving or receiving.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Connecticut DMV and DRS',
+    steps: [
+      {
+        title: 'For a gift, get the gift declaration',
+        body: [
+          'The giver signs a Motor Vehicle or Vessel Gift Declaration (AU-463). The giver cannot receive anything in return: no cash, property, services, or taking over a loan.'
+        ]
+      },
+      {
+        title: 'For a family transfer, check the conditions',
+        body: [
+          'No tax is due on a transfer or sale between spouses or civil union partners, parents and children, or brothers and sisters (including through adoption).',
+          'The vehicle must have been registered in the family member’s name for at least 60 days and taxed on its last sale.'
+        ]
+      },
+      {
+        title: 'Complete Form H-13B',
+        body: ['Fill out the Application for Registration and Title (Form H-13B). For the family exemption, complete section 5.']
+      },
+      {
+        title: 'Clear any delinquent tax',
+        body: [
+          'A tax-exempt vehicle cannot be transferred if delinquent tax is owed on it, or within a family if the registration is suspended.'
+        ]
+      },
+      {
+        title: 'Register by appointment',
+        body: [
+          'Bring the assigned title, Form H-13B, a Connecticut insurance card, and identification. The $25 title fee and three-year registration still apply.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'Connecticut gift tax',
+        items: [
+          'A giver may be subject to the Connecticut gift tax, which is measured by taxable gifts for the calendar year as defined for federal gift tax purposes.',
+          'Contact the Department of Revenue Services with questions.'
+        ]
+      }
+    ],
+    checklist: [
+      'The Certificate of Title, assigned to you',
+      'Gift Declaration (AU-463) signed by the giver, for a gift',
+      'Form H-13B, with section 5 completed for a family transfer',
+      'Connecticut insurance card and identification',
+      'Payment for the title fee and registration'
+    ],
+    calculatorNote: 'For a gift or exempt family transfer, enter $0 as the price. The calculator then shows only the title and registration costs.',
+    faqs: [
+      {
+        question: 'Do I pay sales tax on a gifted car in Connecticut?',
+        answer: 'No, with a Gift Declaration (AU-463) signed by the giver, as long as the giver receives nothing in return.'
+      },
+      {
+        question: 'Who counts as immediate family?',
+        answer: 'Spouses and civil union partners, parents and children, and brothers and sisters, including through adoption.'
+      },
+      {
+        question: 'Is there a waiting period for family transfers?',
+        answer: 'Yes. The vehicle must have been registered in the family member’s name for at least 60 days and taxed on its last sale.'
+      }
+    ],
+    sources: [CT_SOURCES.salesTax, CT_SOURCES.ownership, CT_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-connecticut-after-moving-from-another-state',
+    stateKey: 'connecticut',
+    title: 'Titling a Car in Connecticut After Moving From Another State',
+    shortTitle: 'Title a car after moving to Connecticut',
+    metaTitle: 'Titling Your Car After Moving to Connecticut',
+    metaDescription:
+      'New to Connecticut? Transfer your registration within 90 days. Covers the emissions test or VIN verification, your out-of-state title, courtesy registrations, and when sales tax is due.',
+    cardDescription: 'The 90-day deadline, emissions or VIN check, title, and tax.',
+    intro: [
+      'Once you establish residency in Connecticut, you have 90 days to transfer your vehicle registration. It is done by appointment only.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Connecticut DMV and DRS',
+    steps: [
+      {
+        title: 'Mark the 90-day deadline',
+        body: ['Transfer your registration within 90 days of establishing residency, by appointment at a DMV hub office or the Enfield branch.']
+      },
+      {
+        title: 'Get an emissions test or VIN verification',
+        body: [
+          'Vehicles older than four model years need an emissions test. Newer vehicles need a VIN verification instead. You get a vehicle inspection report either way.'
+        ]
+      },
+      {
+        title: 'Locate your title',
+        body: [
+          'Connecticut needs the original out-of-state title. If a lienholder has it and sends a photocopy of the front and back, you can get a courtesy registration, valid up to six months, while the original is mailed to the DMV.'
+        ]
+      },
+      {
+        title: 'Check whether sales tax applies',
+        body: [
+          'No sales tax is due if the vehicle was registered in your name in another state for at least 30 days before you established residency. Claim it in section 5 of Form H-13B.'
+        ]
+      },
+      {
+        title: 'Bring your documents to the appointment',
+        body: [
+          'Bring identification, proof of insurance, Form H-13B, and the vehicle inspection report. Registration is $120 for three years plus the Clean Air Act, Passport to the Parks, and administrative fees.'
+        ]
+      }
+    ],
+    checklist: [
+      'Original out-of-state title (or a lienholder photocopy for a courtesy registration)',
+      'Vehicle inspection report from the emissions test or VIN verification',
+      'Form H-13B, with section 5 completed if you claim the tax exemption',
+      'Proof of insurance',
+      'Identification',
+      'Payment for fees'
+    ],
+    calculatorNote:
+      'If no sales tax is due, enter $0 as the price. The calculator then shows the title and three-year registration costs.',
+    faqs: [
+      {
+        question: 'How long do I have to register my car after moving to Connecticut?',
+        answer: '90 days after establishing residency.'
+      },
+      {
+        question: 'Do I pay Connecticut sales tax on a car I already own?',
+        answer: 'Not if it was registered in your name in another state for at least 30 days before you became a Connecticut resident.'
+      },
+      {
+        question: 'What if my lender has my title?',
+        answer: 'With a photocopy of the front and back, you can get a courtesy registration valid up to six months while the lender mails the original to the DMV.'
+      }
+    ],
+    sources: [CT_SOURCES.outOfState, CT_SOURCES.salesTax, CT_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-louisiana',
+    stateKey: 'louisiana',
+    title: 'How to Title a Private Car Sale in Louisiana',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Louisiana',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Louisiana: the notarized title, 5% state tax plus parish tax, the 40-day tax deadline, and plates based on the sale price.',
+    cardDescription: 'The notarized title, state and parish tax, and the 40-day deadline.',
+    intro: [
+      'When you buy a car from a private seller in Louisiana, you title it with the Office of Motor Vehicles (OMV), in an office, at a Public Tag Agent, or by mail, and pay the sales tax there.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Louisiana OMV and LDR',
+    steps: [
+      {
+        title: 'Have the title assigned before a notary',
+        body: [
+          'The seller assigns the current title to you before a notary, with any lien properly released. If the title has no odometer disclosure, add a supplemental odometer statement.'
+        ]
+      },
+      {
+        title: 'Get a notarized bill of sale',
+        body: [
+          'You need an original notarized bill of sale showing the price and a full description of the vehicle, unless the price is written in the title assignment.'
+        ]
+      },
+      {
+        title: 'Complete the vehicle application',
+        body: [
+          'Fill out the Vehicle Application (DPSMV 1799). For a plate, add a copy of each owner’s photo ID and proof of liability insurance.'
+        ]
+      },
+      {
+        title: 'Pay the tax within 40 days',
+        body: [
+          'Sales tax is due by the 40th day after the sale: the 5% state rate plus parish and municipal tax (2% to 8.5%) where the vehicle is domiciled. Late payment adds a penalty of 5% of the tax for each 30 days, up to 25%, plus interest.'
+        ]
+      },
+      {
+        title: 'Pay the title and plate fees',
+        body: [
+          'The title is $68.50, plus an $8 handling fee and a local fee of up to $6. The plate is 0.1% of the sale price per year (minimum value $10,000), sold for two years: $30 on a $15,000 car.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'Louisiana plates by sale price (two years)',
+        items: [
+          '$10,000 to $10,499: $20 (the minimum)',
+          '$14,500 to $15,499: $30',
+          '$19,500 to $20,499: $40',
+          '$29,500 to $30,499: $60'
+        ]
+      }
+    ],
+    checklist: [
+      'Vehicle Application (DPSMV 1799)',
+      'The current title, assigned before a notary',
+      'Notarized bill of sale (unless the price is on the title assignment)',
+      'Odometer statement, if not on the title',
+      'Copy of each owner’s photo ID and proof of liability insurance, for a plate',
+      'Payment for sales tax, the title, handling, and plate fees'
+    ],
+    calculatorNote:
+      'The calculator includes the $68.50 title fee, the $8 handling fee, and the two-year plate, and shows parish tax as a range from 2% to 8.5%.',
+    faqs: [
+      {
+        question: 'Does the title need to be notarized in Louisiana?',
+        answer: 'Yes. The seller assigns the title before a notary, and the bill of sale must be notarized unless the price is on the title assignment.'
+      },
+      {
+        question: 'When is the sales tax due?',
+        answer: 'By the 40th day after the sale. After that, penalty and interest apply.'
+      },
+      {
+        question: 'How much is a Louisiana license plate?',
+        answer: 'For a car, 0.1% of the sale price per year with a $10,000 minimum value, sold for two years, so at least $20.'
+      }
+    ],
+    sources: [LA_SOURCES.used, LA_SOURCES.fees, LA_SOURCES.rate, LA_SOURCES.parish, LA_SOURCES.penalty]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-louisiana',
+    stateKey: 'louisiana',
+    title: 'How to Gift a Car in Louisiana',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Louisiana',
+    metaDescription:
+      'How to give or receive a car as a gift in Louisiana: the act of donation signed before a notary and two witnesses, why no sales tax is due, and the fees that still apply.',
+    cardDescription: 'The act of donation, no sales tax, and the fees that apply.',
+    intro: [
+      'In Louisiana, a car given as a gift is transferred by an act of donation, signed before a notary and two witnesses. No sales or use tax is due on an act of donation.',
+      'Here is how to transfer a donated car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Louisiana OMV and LDR',
+    steps: [
+      {
+        title: 'Complete the act of donation',
+        body: [
+          'Fill out the Act of Donation form (DPSMV1699) in its entirety and sign it before a notary and two witnesses. No money changes hands.'
+        ]
+      },
+      {
+        title: 'Assign the title before a notary',
+        body: ['The giver assigns the current title to you before a notary, with any lien released.']
+      },
+      {
+        title: 'Complete the vehicle application',
+        body: ['You complete and sign the Vehicle Application (DPSMV1799), and add an odometer statement if required.']
+      },
+      {
+        title: 'Add ID and insurance for a plate',
+        body: ['For a plate, include a copy of your driver’s license or ID card and proof of current liability insurance.']
+      },
+      {
+        title: 'Pay the fees',
+        body: ['No sales tax is due on the act of donation, but the title fee, handling fee, and plate fee still apply.']
+      }
+    ],
+    sections: [
+      {
+        heading: 'Other transfers with no sales or use tax',
+        items: ['Transfer by an affidavit of heirship', 'Transfer by a divorce decree', 'Transfer by a judgment of possession']
+      }
+    ],
+    checklist: [
+      'Act of Donation (DPSMV1699), notarized, with two witnesses',
+      'The current title, assigned before a notary',
+      'Vehicle Application (DPSMV1799), signed by you',
+      'Odometer statement, if required',
+      'Copy of your ID and proof of insurance, for a plate',
+      'Payment for the title, handling, and plate fees'
+    ],
+    calculatorNote: 'For a donation, enter $0 as the price. The calculator then shows the title fees and the minimum two-year plate.',
+    faqs: [
+      {
+        question: 'Is a donated car taxed in Louisiana?',
+        answer: 'No. Sales and use tax is not due on an act of donation signed before a notary and two witnesses.'
+      },
+      {
+        question: 'Can I just hand over the car as a manual gift?',
+        answer: 'OMV accepts a manual gift only when it is submitted with a vehicle transaction by a Louisiana Motor Vehicle Commission licensee.'
+      },
+      {
+        question: 'Do I still pay title fees?',
+        answer: 'Yes. The title, handling, and plate fees still apply.'
+      }
+    ],
+    sources: [LA_SOURCES.donation, LA_SOURCES.used, LA_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-louisiana-after-moving-from-another-state',
+    stateKey: 'louisiana',
+    title: 'Titling a Car in Louisiana After Moving From Another State',
+    shortTitle: 'Title a car after moving to Louisiana',
+    metaTitle: 'Titling Your Car After Moving to Louisiana',
+    metaDescription:
+      'New to Louisiana? Title and register your car with OMV. Covers the out-of-state declaration, the $90 use tax limit for qualifying new residents, the 40-day tax deadline, and fees.',
+    cardDescription: 'The out-of-state declaration, the $90 use tax limit, and fees.',
+    intro: [
+      'Louisiana requires road use tax on vehicles brought into the state for use on its highways, paid before a Louisiana title or registration is issued. Many new residents pay no more than $90.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Louisiana OMV and LDR',
+    steps: [
+      {
+        title: 'Complete the vehicle application',
+        body: [
+          'Fill out the Vehicle Application (DPSMV1799), including Section F, the Out-of-State Declaration, with the date the vehicle came into Louisiana.'
+        ]
+      },
+      {
+        title: 'Bring your out-of-state title',
+        body: [
+          'Bring the original out-of-state title if there is no lien. If a lienholder holds it, bring a copy of the title or a registration showing the lienholder.'
+        ]
+      },
+      {
+        title: 'Check whether the $90 limit applies',
+        body: [
+          'State and local use tax is capped at $90 if you paid sales or use tax in another state, the vehicle was registered in your name there, it is mainly for personal use, and you register it within 90 days of bringing it into Louisiana.'
+        ]
+      },
+      {
+        title: 'Pay within 40 days',
+        body: [
+          'Tax is due within 40 days of the date the vehicle came into the state, or penalty and interest apply. Otherwise road use tax is based on the vehicle’s value, not its price.'
+        ]
+      },
+      {
+        title: 'Bring ID and Louisiana-authorized insurance',
+        body: [
+          'Bring each owner’s driver’s license or ID (front and back for out-of-state cards) and, for a plate, proof of insurance from a company authorized in Louisiana. Fees are the $68.50 title, $8 handling, and the plate.'
+        ]
+      }
+    ],
+    checklist: [
+      'Vehicle Application (DPSMV1799), with Section F completed',
+      'Original out-of-state title, or a copy or registration if a lienholder holds it',
+      'Copy of each owner’s driver’s license or ID',
+      'Proof of insurance from a company authorized in Louisiana',
+      'Payment for road use tax, the title, handling, and plate fees'
+    ],
+    calculatorNote:
+      'If the $90 limit applies, enter $0 as the price and add $90. The calculator then shows the title fees and plate.',
+    faqs: [
+      {
+        question: 'Do new residents pay Louisiana tax on a car they already own?',
+        answer:
+          'Road use tax applies, but it is capped at $90 if you paid tax in another state, the car was registered in your name there, it is for personal use, and you register it within 90 days.'
+      },
+      {
+        question: 'When is the tax due?',
+        answer: 'Within 40 days of the date the vehicle came into Louisiana, as shown on the Out-of-State Declaration.'
+      },
+      {
+        question: 'Can I use my old insurance?',
+        answer: 'For a plate, the insurance company must be authorized to do business in Louisiana.'
+      }
+    ],
+    sources: [LA_SOURCES.outOfState, LA_SOURCES.fees, LA_SOURCES.penalty]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-utah',
+    stateKey: 'utah',
+    title: 'How to Title a Private Car Sale in Utah',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Utah',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Utah: the signed title, Form TC-656, sales tax on the price you paid, emissions, and the age-based uniform fee.',
+    cardDescription: 'The signed title, TC-656, sales tax, emissions, and the uniform fee.',
+    intro: [
+      'When you buy a car from a private seller in Utah, you can transfer the title online with the Utah Person to Person service or at a DMV office, and pay sales tax on the price you paid.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Utah DMV and Tax Commission',
+    steps: [
+      {
+        title: 'Check the title',
+        body: [
+          'The seller gives you the original title or a completed Application for Utah Duplicate Title (TC-123). Make sure the VIN matches the vehicle, the seller has signed, any lienholder has released the lien, and the purchase date and price are filled in.'
+        ]
+      },
+      {
+        title: 'Complete the odometer disclosure',
+        body: [
+          'For a vehicle less than 20 years old, the odometer section must be completed, or use an Odometer Disclosure Statement (TC-891) signed by both of you.'
+        ]
+      },
+      {
+        title: 'Fill out Form TC-656',
+        body: [
+          'You complete the Application for Utah Title and Registration (TC-656). Every owner on the application needs government-issued ID.'
+        ]
+      },
+      {
+        title: 'Get an emissions test if your county requires it',
+        body: ['If you live in Salt Lake, Davis, Weber, Cache, or Utah county, an emissions inspection may be required.']
+      },
+      {
+        title: 'Pay the tax and fees',
+        body: [
+          'Sales tax is the combined rate where you will register the car (6.35% to 10.05%) on the price you actually paid. Underreporting can bring a fraud penalty of 100% of the tax or $500, whichever is greater.',
+          'The title is $6. Registration is $72.50 plus the uniform age-based fee: $150 for model years 2024 to 2026 down to $10 for 2014 and older.'
+        ]
+      }
+    ],
+    sections: [
+      {
+        heading: 'Utah’s uniform fee (2026, passenger vehicles)',
+        intro: 'Charged at each registration in place of property tax:',
+        items: [
+          'Model years 2024 to 2026: $150',
+          '2021 to 2023: $110',
+          '2018 to 2020: $80',
+          '2015 to 2017: $50',
+          '2014 and older: $10'
+        ]
+      }
+    ],
+    checklist: [
+      'The original title (or TC-123), signed by the seller, with the lien released',
+      'Odometer disclosure (or TC-891) for vehicles under 20 years old',
+      'Application for Utah Title and Registration (TC-656)',
+      'Government-issued ID for every owner',
+      'Emissions certificate, if your county requires one',
+      'Payment for sales tax, the title fee, and registration'
+    ],
+    calculatorNote:
+      'The calculator includes the $72.50 registration fee and the uniform fee for the model year. County corridor and air pollution control fees may add a few dollars.',
+    faqs: [
+      {
+        question: 'Can I transfer a Utah title online?',
+        answer: 'Yes. Utah Person to Person (UPP) handles in-state title transfers online.'
+      },
+      {
+        question: 'Is Utah sales tax on the price I paid?',
+        answer: 'Yes, on the price you actually paid, including any loan payoff or trade, at the rate where you will register the vehicle.'
+      },
+      {
+        question: 'What is the uniform fee?',
+        answer: 'An age-based fee charged at each registration in place of property tax, from $150 for 2024 to 2026 models down to $10 for 2014 and older.'
+      }
+    ],
+    sources: [UT_SOURCES.transfer, UT_SOURCES.fees, UT_SOURCES.uniform, UT_SOURCES.rates]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-utah',
+    stateKey: 'utah',
+    title: 'How to Gift a Car in Utah',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Utah',
+    metaDescription:
+      'How to transfer a car within the family in Utah: why family sales are taxed, what counts as payment, the title paperwork, and the fees that apply.',
+    cardDescription: 'Family sales are taxed, what counts as payment, and the paperwork.',
+    intro: [
+      'Utah has no sales tax exemption for family-to-family vehicle purchases. Tax is due on sales between family members, on what was actually paid.',
+      'Here is how to transfer a car within the family.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Utah DMV and Tax Commission',
+    steps: [
+      {
+        title: 'Know what counts as payment',
+        body: [
+          'The taxable price includes anything of value given: cash, paying off the loan, or a trade. A trade only reduces the price when it is a vehicle-for-vehicle trade in the same transaction.'
+        ]
+      },
+      {
+        title: 'Report the real price',
+        body: [
+          'The price on your documents must be what was actually paid. The Tax Commission reviews it, and underreporting can lead to an audit and a fraud penalty of 100% of the tax or $500, whichever is greater.'
+        ]
+      },
+      {
+        title: 'Transfer the title',
+        body: [
+          'The family member signs the title over to you with the purchase date and price filled in, and any lien released.'
+        ]
+      },
+      {
+        title: 'Fill out Form TC-656',
+        body: ['Complete the Application for Utah Title and Registration (TC-656), with ID for each owner.']
+      },
+      {
+        title: 'Register and pay',
+        body: [
+          'Get an emissions test if your county requires one. Pay the $6 title fee, the registration fee, the uniform fee, and sales tax on any amount paid.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you, with the date and price filled in',
+      'Odometer disclosure, if the vehicle is under 20 years old',
+      'Application for Utah Title and Registration (TC-656)',
+      'ID for every owner',
+      'Emissions certificate, if your county requires one'
+    ],
+    calculatorNote: 'Enter what was actually paid, including any loan payoff. Utah taxes family sales like any other sale.',
+    faqs: [
+      {
+        question: 'Is a family car sale taxed in Utah?',
+        answer: 'Yes. Utah has no sales tax exemption for family-to-family vehicle purchases.'
+      },
+      {
+        question: 'Does paying off the loan count as payment?',
+        answer: 'Yes. Loan payoffs, cash, and trades are all part of the taxable price.'
+      },
+      {
+        question: 'What if I write a lower price?',
+        answer: 'The Tax Commission reviews the price. Underreporting can bring an audit and a fraud penalty of 100% of the tax or $500, whichever is greater.'
+      }
+    ],
+    sources: [UT_SOURCES.fees, UT_SOURCES.registering, UT_SOURCES.transfer]
+  },
+  {
+    slug: 'titling-a-car-in-utah-after-moving-from-another-state',
+    stateKey: 'utah',
+    title: 'Titling a Car in Utah After Moving From Another State',
+    shortTitle: 'Title a car after moving to Utah',
+    metaTitle: 'Titling Your Car After Moving to Utah',
+    metaDescription:
+      'New to Utah? Transfer your title and registration within 60 days. Covers the VIN inspection, emissions, Form TC-656, and the registration and uniform fees.',
+    cardDescription: 'The 60-day deadline, VIN inspection, emissions, and fees.',
+    intro: [
+      'New Utah residents have 60 days to transfer their titles and registrations.',
+      'Here is what to do and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Utah DMV and Tax Commission',
+    steps: [
+      {
+        title: 'Mark the 60-day deadline',
+        body: ['Transfer your title and registration within 60 days of moving to Utah.']
+      },
+      {
+        title: 'Gather ownership documents',
+        body: [
+          'Bring your original out-of-state title or out-of-state registration. Either is enough to get started, and lets you get a temporary permit while you gather the rest.'
+        ]
+      },
+      {
+        title: 'Get the VIN inspected',
+        body: ['A VIN inspection is required for every vehicle titled in Utah for the first time.']
+      },
+      {
+        title: 'Get an emissions test if your county requires it',
+        body: ['If you live in Salt Lake, Davis, Weber, Cache, or Utah county, an emissions inspection may be required.']
+      },
+      {
+        title: 'Apply and pay the fees',
+        body: [
+          'Complete Form TC-656 with ID for each owner. Fees include the $6 title, the $72.50 registration fee, and the uniform age-based fee for your model year. Electric vehicles add a $180 road usage charge for 2026.'
+        ]
+      }
+    ],
+    checklist: [
+      'Original out-of-state title or out-of-state registration',
+      'VIN inspection',
+      'Emissions certificate, if your county requires one',
+      'Application for Utah Title and Registration (TC-656)',
+      'Your driver’s license',
+      'Payment for the title and registration fees'
+    ],
+    calculatorNote:
+      'Enter $0 as the price to see the title, registration, and uniform fees for your model year.',
+    faqs: [
+      {
+        question: 'How long do I have to register my car after moving to Utah?',
+        answer: '60 days to transfer your title and registration.'
+      },
+      {
+        question: 'Does my car need an inspection?',
+        answer: 'A VIN inspection is required for a vehicle titled in Utah for the first time, and an emissions test may be required in Salt Lake, Davis, Weber, Cache, or Utah county.'
+      },
+      {
+        question: 'Do I pay a property tax on my car in Utah?',
+        answer: 'Instead of property tax, Utah charges a uniform age-based fee at each registration: $150 for 2024 to 2026 models down to $10 for 2014 and older.'
+      }
+    ],
+    sources: [UT_SOURCES.outOfState, UT_SOURCES.registering, UT_SOURCES.uniform, UT_SOURCES.fees]
   }
 ];
 

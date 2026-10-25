@@ -49,7 +49,11 @@ const GUIDE_STATES = {
   ohio: { label: 'Ohio', agency: 'Ohio BMV and Ohio Department of Taxation', hosts: ['tax.ohio.gov', 'bmv.ohio.gov', 'www.bmv.ohio.gov', 'codes.ohio.gov'] },
   michigan: { label: 'Michigan', agency: 'Michigan Secretary of State', hosts: ['www.michigan.gov', 'www.legislature.mi.gov'] },
   minnesota: { label: 'Minnesota', agency: 'Minnesota DVS and Minnesota Revenue', hosts: ['www.revenue.state.mn.us', 'dps.mn.gov'] },
-  oklahoma: { label: 'Oklahoma', agency: 'Service Oklahoma', hosts: ['oklahoma.gov'] }
+  oklahoma: { label: 'Oklahoma', agency: 'Service Oklahoma', hosts: ['oklahoma.gov'] },
+  arkansas: { label: 'Arkansas', agency: 'Arkansas DFA', hosts: ['www.dfa.arkansas.gov', 'codeofarrules.arkansas.gov'] },
+  connecticut: { label: 'Connecticut', agency: 'Connecticut DMV and DRS', hosts: ['portal.ct.gov', 'www.cga.ct.gov'] },
+  louisiana: { label: 'Louisiana', agency: 'Louisiana OMV and LDR', hosts: ['expresslane.la.gov', 'revenue.louisiana.gov', 'taxes.mfn.dps.la.gov', 'public.powerdms.com'] },
+  utah: { label: 'Utah', agency: 'Utah DMV and Tax Commission', hosts: ['dmv.utah.gov', 'files.tax.utah.gov'] }
 } as const;
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
@@ -221,6 +225,31 @@ describe('Batch 5 guides (Michigan, Minnesota, Oklahoma)', () => {
   });
 });
 
+describe('Batch 6 guides (Arkansas, Connecticut, Louisiana, Utah)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified Arkansas, Connecticut, Louisiana, and Utah key facts', () => {
+    const [arSale, arGift, arMove] = topics('arkansas').map(text);
+    for (const fact of ['60 days', '$4,000', '3.5%', '6.5%', 'first $2,500', '$17', '$25', '$30', '$2.50', 'proof of assessment', '45 days']) expect(arSale.toLowerCase()).toContain(fact.toLowerCase());
+    for (const fact of ['affidavit', 'paid sales or use tax', 'own name']) expect(arGift).toContain(fact);
+    for (const fact of ['odometer statement', 'lienholder', '$10']) expect(arMove.toLowerCase()).toContain(fact.toLowerCase());
+
+    const [ctSale, ctGift, ctMove] = topics('connecticut').map(text);
+    for (const fact of ['H-13B', 'H-31', 'NADA average trade-in', '7.75%', '$120 for three years', '$24 Passport to the Parks', '30 days', 'property tax']) expect(ctSale).toContain(fact);
+    for (const fact of ['AU-463', 'civil union', '60 days', 'section 5', 'gift tax']) expect(ctGift).toContain(fact);
+    for (const fact of ['90 days', 'VIN verification', 'courtesy registration', '30 days']) expect(ctMove).toContain(fact);
+
+    const [laSale, laGift, laMove] = topics('louisiana').map(text);
+    for (const fact of ['notary', 'DPSMV 1799', '5% state rate', '8.5%', '40th day', '$68.50', '$8 handling', '0.1%']) expect(laSale).toContain(fact);
+    for (const fact of ['DPSMV1699', 'two witnesses', 'affidavit of heirship']) expect(laGift).toContain(fact);
+    for (const fact of ['Section F', '$90', '90 days', '40 days']) expect(laMove).toContain(fact);
+
+    const [utSale, utGift, utMove] = topics('utah').map(text);
+    for (const fact of ['TC-656', 'TC-891', 'Person to Person', 'Salt Lake', '$72.50', '$150', '$10', '$500']) expect(utSale).toContain(fact);
+    for (const fact of ['no sales tax exemption for family', 'loan', 'vehicle-for-vehicle']) expect(utGift).toContain(fact);
+    for (const fact of ['60 days', 'VIN inspection', '$180']) expect(utMove).toContain(fact);
+  });
+});
+
 describe('Guide links and discovery', () => {
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', async () => {
     for (const [state, { label }] of Object.entries(GUIDE_STATES)) {
@@ -232,7 +261,7 @@ describe('Guide links and discovery', () => {
       cleanup();
     }
 
-    const mi = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'louisiana-private-sale-tax-calculator' }) }));
+    const mi = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'nevada-private-sale-tax-calculator' }) }));
     expect(mi.container.querySelector('#state-guides')).toBeNull();
   });
 
@@ -263,6 +292,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('Ohio, Michigan, Minnesota, and Oklahoma.');
+    expect(String(metadata.description)).toContain('Oklahoma, Arkansas, Connecticut, Louisiana, and Utah.');
   });
 });
