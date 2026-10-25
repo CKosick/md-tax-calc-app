@@ -8,26 +8,6 @@
       "finding": "Page not found"
     },
     {
-      "state": "arkansas",
-      "url": "https://www.dfa.arkansas.gov/excise-tax/sales-and-use-tax/motor-vehicle-tax/",
-      "finding": "Page not found"
-    },
-    {
-      "state": "arkansas",
-      "url": "https://www.dfa.arkansas.gov/driver-services/fees/",
-      "finding": "Page not found"
-    },
-    {
-      "state": "connecticut",
-      "url": "https://portal.ct.gov/dmv/vehicle-services/fees-dmv-services",
-      "finding": "404"
-    },
-    {
-      "state": "connecticut",
-      "url": "https://portal.ct.gov/drs/sales-tax/sales-and-use-tax",
-      "finding": "Redirects to a 404 error page"
-    },
-    {
       "state": "district-of-columbia",
       "url": "https://dmv.dc.gov/service/vehicle-excise-tax",
       "finding": "Page not found"
@@ -63,16 +43,6 @@
       "finding": "Redirects to a 404 page"
     },
     {
-      "state": "louisiana",
-      "url": "https://omv.dps.louisiana.gov/Fee_Schedule.aspx",
-      "finding": "Site did not load (script and browser)"
-    },
-    {
-      "state": "louisiana",
-      "url": "https://revenue.louisiana.gov/SalesTax",
-      "finding": "Page not found"
-    },
-    {
       "state": "massachusetts",
       "url": "https://www.mass.gov/info-details/motor-vehicle-sales-and-use-tax",
       "finding": "Not found"
@@ -106,16 +76,6 @@
       "state": "south-carolina",
       "url": "https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration",
       "finding": "Page not found"
-    },
-    {
-      "state": "utah",
-      "url": "https://dmv.utah.gov/taxes-fees/fees",
-      "finding": "Redirects to an unrelated page (Impound Fees)"
-    },
-    {
-      "state": "utah",
-      "url": "https://dmv.utah.gov/taxes-fees/sales-tax",
-      "finding": "404"
     },
     {
       "state": "washington",
@@ -265,6 +225,26 @@
       "state": "oklahoma",
       "on": "2026-10-22",
       "note": "Dead Service Oklahoma and statute links replaced with the Service Oklahoma fees, titles, and out-of-state transfer pages, the title transfer procedure, and OTC Form 579; rates and fees re-checked."
+    },
+    {
+      "state": "arkansas",
+      "on": "2026-10-25",
+      "note": "Dead DFA motor vehicle tax and fee links replaced with the DFA motor vehicle FAQs, law changes, used-vehicle credit, sales tax FAQs, the October to December 2026 local rate table, and the MyDMV fee schedule; rates and fees re-checked."
+    },
+    {
+      "state": "connecticut",
+      "on": "2026-10-25",
+      "note": "Dead DMV fee and DRS links replaced with the DMV sales tax, fees, ownership transfer, and out-of-state registration pages and C.G.S. chapter 246; rates and fees re-checked."
+    },
+    {
+      "state": "louisiana",
+      "on": "2026-10-25",
+      "note": "Dead OMV fee schedule and LDR links replaced with the OMV fee and used title pages, the LDR state rate page, the OMV parish tax table, and OMV policies 52.00 and 48.00; rates and fees re-checked."
+    },
+    {
+      "state": "utah",
+      "on": "2026-10-25",
+      "note": "Dead DMV links replaced with the DMV registration fees, uniform fees, title transfer, and registration pages, the October 2026 Tax Commission rate chart, the 2026 fee schedule, and the road usage charge site; rates and fees re-checked."
     }
   ]
 }

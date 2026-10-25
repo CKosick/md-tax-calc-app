@@ -5,7 +5,7 @@ export type WeightClass =
   | 'under3700lbs'
   | 'over3700lbs';
 export type FuelType = 'gasoline' | 'ev' | 'phev';
-export type RegistrationTerm = 1 | 2;
+export type RegistrationTerm = 1 | 2 | 3;
 export type TaxBaseType = 'price' | 'fairMarketValue' | 'bookValue';
 
 export interface StateRegistrationRules {
@@ -58,6 +58,11 @@ export interface StateRegistrationRules {
     /** A flat amount from this registration year on (Minnesota: $30 from the 11th year). */
     flatFromYear?: { year: number; fee: number };
   };
+  /**
+   * Passenger plate priced from the sale price (Louisiana): ratePerYear x the price rounded to the
+   * nearest roundTo, but never less than minValue, for each year of the term.
+   */
+  salePricePlate?: { ratePerYear: number; minValue: number; roundTo: number };
   /**
    * Annual passenger and motorcycle fees by registration year (Oklahoma), replacing the weight
    * tiers. The registration year is the vehicle's age plus one.
@@ -121,6 +126,8 @@ export interface StateRule {
   localTaxMaxRate?: number;
   /** Local tax applies only to this much of the taxable base (Florida surtax: first $5,000). */
   localTaxBaseCap?: number;
+  /** No local tax either when a price tier exempts the sale from state tax (Arkansas under $4,000). */
+  noLocalTaxWhenStateExempt?: boolean;
   /**
    * Used vehicle excise floor (Oklahoma): a flat tax covers the first part of the value and the
    * excise rate applies only above it ($20 on the first $1,500, then 3.25%).

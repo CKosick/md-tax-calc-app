@@ -22,7 +22,7 @@ const renderCard = (key: string) => {
 
 describe('Per-state last verified dates', () => {
   it('every state has a Month YYYY date; re-checked states are October 2026 and the rest September 2026', () => {
-    const reverified = ['maryland', 'virginia', 'pennsylvania', 'texas', 'california', 'florida', 'new-york', 'illinois', 'ohio', 'michigan', 'minnesota', 'oklahoma'];
+    const reverified = ['maryland', 'virginia', 'pennsylvania', 'texas', 'california', 'florida', 'new-york', 'illinois', 'ohio', 'michigan', 'minnesota', 'oklahoma', 'arkansas', 'connecticut', 'louisiana', 'utah'];
     for (const [key, rule] of Object.entries(rules)) {
       expect(rule.lastVerified).toMatch(/^(January|February|March|April|May|June|July|August|September|October|November|December) \d{4}$/);
       expect(rule.lastVerified).toBe(reverified.includes(key) ? 'October 2026' : 'September 2026');
@@ -66,8 +66,18 @@ describe('Known-dead source links are hidden', () => {
     expect(links).not.toContain('https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates-7-25.htm');
   });
 
+  it('no state is left with only dead links (batch 6 repaired the last four)', () => {
+    for (const rule of Object.values(rules)) {
+      expect(getVisibleSources(rule).length).toBeGreaterThan(0);
+    }
+  });
+
   it('a state with only dead links shows a plain "being updated" note and no links', () => {
-    const { container } = renderCard('louisiana');
+    // No real state is left in this situation, so hide Louisiana's links for the test
+    const deadUrl = sourceLinkStatus.hidden[0].url;
+    const rule = { ...(rules.louisiana as StateRule), lastVerified: 'September 2026', sources: [deadUrl] };
+    const breakdown = calculateVehicleCosts(rule, getDefaultInputs(rule, 2026), 2026);
+    const { container } = render(<CostSummaryCard breakdown={breakdown} rule={rule} purchasePrice={15000} />);
     expect(container.querySelectorAll('#state-sources a')).toHaveLength(0);
     expect(container.querySelector('#state-sources')?.textContent).toContain(
       'Official source links for Louisiana are being updated.'

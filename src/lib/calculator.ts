@@ -197,6 +197,11 @@ export function calculateVehicleCosts(
     const entered = Number(inputs.listPrice);
     listPriceUsed = Number.isFinite(entered) && entered > 0 ? entered : listPriceReg.defaultListPrice;
     baseRegistrationFee = Math.round(listPriceRegistrationFee(listPriceReg, listPriceUsed, registrationYear) * term * 100) / 100;
+  } else if (rule.registration.salePricePlate && inputs.vehicleType === 'passenger') {
+    // Louisiana: the plate is a share of the sale price, rounded to the nearest $1,000, $10,000 minimum
+    const plate = rule.registration.salePricePlate;
+    const value = Math.max(plate.minValue, Math.round(price / plate.roundTo) * plate.roundTo);
+    baseRegistrationFee = Math.round(value * plate.ratePerYear * term * 100) / 100;
   } else if (inputs.vehicleType === 'motorcycle') {
     const motoRule = rule.registration.motorcycle;
     if (typeof motoRule === 'object' && motoRule !== null) {
@@ -290,7 +295,8 @@ export function calculateVehicleCosts(
   const hasLocalTax =
     typeof rule.localTaxMinRate === 'number' &&
     typeof rule.localTaxMaxRate === 'number' &&
-    taxableBase > 0;
+    taxableBase > 0 &&
+    !(rule.noLocalTaxWhenStateExempt && tierApplied && effectiveRate === 0);
 
   // Some local taxes apply only up to a cap (Florida surtax: first $5,000 of the price)
   const localTaxBase =

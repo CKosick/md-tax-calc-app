@@ -558,14 +558,14 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(338.00);
   });
 
-  it('Louisiana: exact worked test ($15,000 -> $746.00)', () => {
+  it('Louisiana: exact worked test ($15,000 -> $856.50, 2-year plate)', () => {
     const rule = allRules.louisiana;
-    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'louisiana' }, 2026);
-    expect(res.exciseTax).toBe(667.50); // 4.45% of 15000
-    expect(res.titleFee).toBe(68.50);
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'louisiana', registrationTerm: 2 }, 2026);
+    expect(res.exciseTax).toBe(750.00); // 5% state rate from January 1, 2025
+    expect(res.titleFee).toBe(76.50); // $68.50 title + $8 handling
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(10.00);
-    expect(res.totalFirstYearCost).toBe(746.00);
+    expect(res.registrationTotal).toBe(30.00); // 0.1% of $15,000 x 2 years
+    expect(res.totalFirstYearCost).toBe(856.50);
   });
 
   it('Kentucky: exact worked test ($15,000 -> $930.00)', () => {
@@ -598,36 +598,36 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(761.75);
   });
 
-  it('Connecticut: exact worked test ($15,000 -> $1,017.50)', () => {
+  it('Connecticut: exact worked test ($15,000 -> $1,146.50, 3-year registration)', () => {
     const rule = allRules.connecticut;
-    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'connecticut' }, 2026);
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'connecticut', registrationTerm: 3 }, 2026);
     expect(res.exciseTax).toBe(952.50); // 6.35% of 15000
     expect(res.luxuryTaxApplied).toBe(false);
     expect(res.titleFee).toBe(25.00);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(40.00);
-    expect(res.totalFirstYearCost).toBe(1017.50);
+    expect(res.registrationTotal).toBe(169.00); // $120 + $15 Clean Air + $24 Passport to the Parks + $10 admin
+    expect(res.totalFirstYearCost).toBe(1146.50);
   });
 
   it('Connecticut: luxury tier over $50,000 assesses 7.75% ($60,000 -> $4,650 tax)', () => {
     const rule = allRules.connecticut;
-    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'connecticut', purchasePrice: 60000 }, 2026);
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'connecticut', purchasePrice: 60000, registrationTerm: 3 }, 2026);
     expect(res.exciseTax).toBe(4650.00); // 7.75% of 60000
     expect(res.luxuryTaxApplied).toBe(true);
     expect(res.titleFee).toBe(25.00);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(40.00);
-    expect(res.totalFirstYearCost).toBe(4715.00);
+    expect(res.registrationTotal).toBe(169.00);
+    expect(res.totalFirstYearCost).toBe(4844.00);
   });
 
-  it('Utah: exact worked test ($15,000 -> $777.50)', () => {
+  it('Utah: exact worked test ($15,000 -> $886.00)', () => {
     const rule = allRules.utah;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'utah' }, 2026);
     expect(res.exciseTax).toBe(727.50); // 4.85% of 15000
     expect(res.titleFee).toBe(6.00);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(44.00);
-    expect(res.totalFirstYearCost).toBe(777.50);
+    expect(res.registrationTotal).toBe(152.50); // $72.50 registration + $80 uniform fee (2018 to 2020 models)
+    expect(res.totalFirstYearCost).toBe(886.00);
   });
 
   it('Batch 3 trade-in deductibility verification (SC, KY & MN allow trade-in; CT does not)', () => {

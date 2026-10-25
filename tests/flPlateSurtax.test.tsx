@@ -111,11 +111,11 @@ describe('Florida plate to transfer', () => {
 });
 
 describe('Florida county surtax on the first $5,000 only', () => {
-  it('config: none to 2%, capped at $5,000; only Florida has a cap', () => {
+  it('config: none to 2%, capped at $5,000; only Florida and Arkansas have a cap', () => {
     expect(fl.localTaxMinRate).toBe(0);
     expect(fl.localTaxMaxRate).toBe(0.02);
     expect(fl.localTaxBaseCap).toBe(5000);
-    const others = Object.entries(rules).filter(([k, r]) => k !== 'florida' && r.localTaxBaseCap !== undefined);
+    const others = Object.entries(rules).filter(([k, r]) => !['florida', 'arkansas'].includes(k) && r.localTaxBaseCap !== undefined);
     expect(others).toEqual([]);
   });
 

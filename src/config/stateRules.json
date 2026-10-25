@@ -2514,85 +2514,91 @@
   "louisiana": {
     "label": "Louisiana",
     "slug": "louisiana-private-sale-tax-calculator",
-    "exciseTaxRate": 0.0445,
+    "exciseTaxRate": 0.05,
     "minExciseTax": null,
     "maxExciseTax": null,
     "taxBase": "price",
-    "titleFee": 68.5,
+    "titleFee": 76.5,
     "lienFilingFee": 10,
     "tradeInDeductible": false,
     "registration": {
       "terms": [
-        1,
         2
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 10,
-          "2": 20
+          "2": 30
         },
         "over3700lbs": {
-          "1": 10,
-          "2": 20
+          "2": 30
         }
       },
       "motorcycle": {
-        "1": 6,
         "2": 12
       },
       "evSurchargeAnnual": 110,
-      "phevSurchargeAnnual": 60
+      "phevSurchargeAnnual": 60,
+      "salePricePlate": {
+        "ratePerYear": 0.001,
+        "minValue": 10000,
+        "roundTo": 1000
+      }
     },
-    "localTaxNote": "Louisiana state sales tax is 4.45% (La. R.S. § 47:302). Local parish and municipal sales taxes add 2.0% to 7.0%, bringing total effective sales tax to 6.45%–11.45% depending on your parish.",
+    "localTaxNote": "Louisiana’s 5% state sales tax plus parish and municipal tax, from 2% to 8.5% in the OMV parish tax table (October 2026), is due based on where the vehicle is domiciled.",
     "notes": [
-      "Louisiana imposes a 4.45% state sales and use tax on private party motor vehicle transfers (La. R.S. § 47:302).",
-      "Title fee is $68.50; an $8.00 state handling fee and notary fees typically apply at the Office of Motor Vehicles (OMV).",
-      "Passenger license plates are issued for 2-year terms based on vehicle value ($20.00 minimum for 2 years = $10.00/year).",
-      "Trade-in deduction is not permitted on private casual sales under La. R.S. 47:303; dealer purchases only."
+      "Louisiana’s state sales tax is 5% (from January 1, 2025, through 2029). Parish and municipal taxes add 2% to 8.5%.",
+      "Title fees are $68.50 plus an $8 handling fee. A local fee of up to $6 may apply.",
+      "Passenger plates cost 0.1% of the sale price per year (minimum value $10,000) and are sold for two years."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Louisiana Office of Motor Vehicles (OMV) or Department of Revenue.",
-      "Louisiana state sales tax is 4.45%; parish and city sales taxes (2.0%–7.0%) are collected at titling.",
-      "Private-party sales do not receive trade-in tax credits in Louisiana; tax is assessed on full purchase price.",
-      "Louisiana requires the bill of sale or title assignment to be notarized by an authorized notary public."
+      "Estimates only, not tax or legal advice. Verify with the Louisiana Office of Motor Vehicles (OMV) or the Louisiana Department of Revenue.",
+      "Sales tax is the 5% state rate plus parish and municipal tax (2% to 8.5%) where the vehicle is domiciled, due by the 40th day after the sale.",
+      "The title shown includes the $68.50 title fee and $8 handling fee. A local fee of up to $6 may apply.",
+      "The plate is 0.1% of the sale price per year, with a $10,000 minimum value, sold for two years ($20 minimum). A motorcycle plate is $12 and lasts four years.",
+      "Electric vehicles owe a $110 road usage fee and hybrids $60 for each year, billed later by notice.",
+      "The title assignment must be signed before a notary."
     ],
     "faqs": [
       {
         "question": "What is the vehicle sales tax rate in Louisiana for private sales?",
-        "answer": "The Louisiana state sales tax rate is 4.45%. However, local parish and municipal taxes add between 2.0% and 7.0%, meaning buyers generally pay between 6.45% and 11.45% total sales tax when registering the vehicle."
+        "answer": "The state rate is 5% (from January 1, 2025, through 2029). Parish and municipal taxes add 2% to 8.5% depending on where the vehicle is domiciled, for a combined 7% to 13.5%."
       },
       {
         "question": "Can I deduct my trade-in on a private car sale in Louisiana?",
-        "answer": "No. Under Louisiana law (La. R.S. 47:303), trade-in credits are strictly limited to transactions conducted through licensed motor vehicle dealers. Private casual sales are taxed on the full purchase price."
+        "answer": "Trade-in credit applies when you buy from a dealer with a qualifying trade-in. In an even trade between two individuals, tax is due only on the difference in value."
       },
       {
         "question": "Does Louisiana require a notarized bill of sale?",
-        "answer": "Yes. Louisiana law requires that vehicle title assignments and acts of sale be signed in the presence of a notary public before the transfer can be processed by the Office of Motor Vehicles (OMV)."
+        "answer": "The title must be assigned before a notary by the seller. A bill of sale showing the price must be notarized too, unless the price is written in the title assignment."
       },
       {
         "question": "How much does a vehicle title cost in Louisiana?",
-        "answer": "The standard Louisiana OMV title fee is $68.50 (plus an $8.00 handling fee). If the vehicle is financed, a $10.00 lien recordation fee applies."
+        "answer": "The title fee is $68.50, plus an $8 handling fee and a local fee of up to $6. Recording a lien costs $10, or $15 with a UCC-1 financing statement."
       },
       {
         "question": "Do I pay Louisiana vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Louisiana, the state generally assesses its applicable vehicle sales or use tax (4.45%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Louisiana motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. Tax is assessed on the sale price when you title the vehicle in Louisiana. If you buy from an out-of-state seller, show proof the seller lives out of state (such as a copy of their license or a document notarized out of state), or OMV may process it as more than one transfer."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Louisiana?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Louisiana DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "No sales or use tax is due on an act of donation, which is signed before a notary and two witnesses (Form DPSMV1699). Transfers by affidavit of heirship, divorce decree, or judgment of possession are also not taxed. Title, handling, and plate fees still apply."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Louisiana?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Louisiana's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Louisiana motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Sales tax is due by the 40th day after the sale. After that, a penalty of 5% of the tax for each 30 days applies (up to 25%), plus interest."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://omv.dps.louisiana.gov/Fee_Schedule.aspx",
-      "https://revenue.louisiana.gov/SalesTax"
+      "https://expresslane.la.gov/omv/vehicles/vehicle-registration-title-plate-fees/",
+      "https://expresslane.la.gov/omv/vehicles/title-and-registration/used-title-registration/",
+      "https://revenue.louisiana.gov/tax-education-and-faqs/faqs/sales-tax-reform/what-is-the-state-sales-tax-rate/",
+      "https://taxes.mfn.dps.la.gov/",
+      "https://public.powerdms.com/ladpsc/documents/371013",
+      "https://public.powerdms.com/ladpsc/documents/370218"
     ],
     "localTaxMinRate": 0.02,
-    "localTaxMaxRate": 0.07
+    "localTaxMaxRate": 0.085
   },
   "kentucky": {
     "label": "Kentucky",
@@ -2888,78 +2894,79 @@
     "luxuryTaxThreshold": 50000,
     "luxuryTaxRate": 0.0775,
     "taxBase": "fairMarketValue",
-    "bookValueRule": "Connecticut assesses 6.35% (7.75% over $50,000) on the higher of the purchase price or NADA Eastern Edition average trade-in value.",
+    "bookValueRule": "Connecticut taxes a private sale at 6.35% (7.75% over $50,000) on the higher of the purchase price or the NADA average trade-in value.",
     "titleFee": 25,
     "lienFilingFee": 10,
     "tradeInDeductible": false,
     "registration": {
       "terms": [
-        1,
-        2
+        3
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 40,
-          "2": 80
+          "1": 56.33,
+          "3": 169
         },
         "over3700lbs": {
-          "1": 40,
-          "2": 80
+          "1": 56.33,
+          "3": 169
         }
       },
       "motorcycle": {
-        "1": 21,
-        "2": 42
+        "1": 37.33,
+        "3": 112
       }
     },
-    "localTaxNote": "Connecticut sales/use tax is 6.35% (7.75% for luxury vehicles over $50,000) under C.G.S. § 12-408. Municipal personal property taxes are assessed annually by your town.",
+    "localTaxNote": "Connecticut has no local sales tax on vehicles. Your town charges property tax on the vehicle each year; it is billed by the local tax collector and is not included here.",
     "notes": [
-      "Connecticut levies a 6.35% sales and use tax (C.G.S. § 12-408) on private casual vehicle sales (7.75% luxury rate for vehicles over $50,000).",
-      "Tax is assessed on the higher of the bill of sale purchase price or NADA Eastern Edition average trade-in book value.",
-      "Title fee is $25.00 under C.G.S. § 14-192; lien filing fee is $10.00.",
-      "Trade-in deduction is not permitted on private-party sales under C.G.S. § 12-408; dealer sales only.",
-      "Base passenger registration is $120.00 for a 3-year term ($40.00/yr equivalent)."
+      "Connecticut charges 6.35% (7.75% on vehicles over $50,000) on the higher of the purchase price or the NADA average trade-in value.",
+      "The title fee is $25 and recording a lien is $10.",
+      "Passenger registration is $120 for three years, plus a $15 Clean Air Act fee, $24 Passport to the Parks fee, and $10 administrative fee."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Connecticut Department of Motor Vehicles (DMV) or DRS.",
-      "Connecticut sales tax is 6.35% on the higher of purchase price or NADA book value (7.75% on vehicles over $50,000).",
-      "Trade-in allowances from private vehicle sales cannot be deducted from taxable purchase price in Connecticut.",
-      "Municipal property tax on motor vehicles is billed separately each year by your local city or town tax collector."
+      "Estimates only, not tax or legal advice. Verify with the Connecticut DMV or the Department of Revenue Services.",
+      "A private sale is taxed at 6.35% (7.75% over $50,000) on the higher of the price or the NADA average trade-in value. The estimate uses the price you enter.",
+      "Trade-in credit applies only to purchases from a licensed dealer. Swapped vehicles are taxed on their average trade-in value.",
+      "Registration shown is for three years: $120 ($63 for motorcycles) plus the $15 Clean Air Act, $24 Passport to the Parks, and $10 administrative fees. A plate fee ($5 for new plates) and, for vehicles four model years old or newer, a $40 emissions exemption fee may apply.",
+      "Your town bills property tax on the vehicle every year. It is not included here."
     ],
     "faqs": [
       {
         "question": "What is the vehicle sales tax rate in Connecticut for private sales?",
-        "answer": "Connecticut charges a standard 6.35% sales and use tax on private party motor vehicle purchases. If the vehicle purchase price or book value exceeds $50,000, a luxury tax rate of 7.75% applies instead."
+        "answer": "Connecticut charges 6.35% on a private-party purchase, or 7.75% on a vehicle over $50,000. There is no local sales tax, but your town bills property tax on the vehicle each year."
       },
       {
         "question": "How is the tax base determined for private sales in Connecticut?",
-        "answer": "Under Connecticut DMV regulations, use tax is calculated on either the purchase price stated on the bill of sale or the NADA Official Used Car Guide (Eastern Edition) average trade-in value, whichever is higher."
+        "answer": "The tax is based on the NADA average trade-in value or the bill of sale price, whichever is higher. Write the purchase price on Form H-13B."
       },
       {
         "question": "Can I deduct my trade-in on a private vehicle sale in Connecticut?",
-        "answer": "No. Under Connecticut General Statutes § 12-408, trade-in credits are strictly restricted to transactions with licensed motor vehicle dealers. Private casual sales are taxed on the full purchase price or book value."
+        "answer": "No. Full trade-in credit applies only when you buy from a licensed dealer. When two people swap vehicles, both pay tax on the average trade-in value."
       },
       {
         "question": "How much are Connecticut vehicle title and registration fees?",
-        "answer": "The Connecticut DMV title certificate fee is $25.00. Standard passenger registration is $120.00 for a three-year cycle ($40.00/year equivalent), plus mandatory state Clean Air and Passport to the Parks fees."
+        "answer": "The title fee is $25, and a lien adds $10. Passenger registration is $120 for three years ($63 for motorcycles), plus a $15 Clean Air Act fee, $24 Passport to the Parks fee, and $10 administrative fee. New plates add $5, and vehicles four model years old or newer pay a $40 emissions exemption fee."
       },
       {
         "question": "Do I pay Connecticut vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Connecticut, the state generally assesses its applicable vehicle sales or use tax (6.35%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Connecticut motor vehicle agency to verify documentation requirements."
+        "answer": "Yes, at 6.35% (7.75% over $50,000) when you register. You get credit for sales tax paid to another state if you show the purchase invoice and tax receipt, and pay any difference."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Connecticut?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Connecticut DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "No tax is due on a transfer or sale between spouses or civil union partners, parents and children, or brothers and sisters (including through adoption), if the vehicle was registered in the family member’s name for at least 60 days and was taxed on its last sale. A gift from anyone is also tax-free with a Motor Vehicle or Vessel Gift Declaration (AU-463) signed by the giver."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Connecticut?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Connecticut's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Connecticut motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Registration is by appointment at a DMV office. If the vehicle was registered in Connecticut before, get its emissions test within 30 days of registering to avoid a late fee. New residents have 90 days after establishing residency to transfer their registration."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://portal.ct.gov/dmv/vehicle-services/fees-dmv-services",
-      "https://portal.ct.gov/drs/sales-tax/sales-and-use-tax"
+      "https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations",
+      "https://portal.ct.gov/dmv/resources/dmv-fees",
+      "https://portal.ct.gov/dmv/vehicle-services/transfer-vehicle-ownership",
+      "https://portal.ct.gov/dmv/vehicle-services/transfer-registration-ct",
+      "https://www.cga.ct.gov/current/pub/chap_246.htm"
     ]
   },
   "utah": {
@@ -2971,76 +2978,124 @@
     "taxBase": "price",
     "titleFee": 6,
     "lienFilingFee": 0,
-    "tradeInDeductible": false,
+    "tradeInDeductible": true,
     "registration": {
       "terms": [
         1
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 44
+          "1": 222.5
         },
         "over3700lbs": {
-          "1": 44
+          "1": 222.5
         }
       },
       "motorcycle": {
-        "1": 27.5
+        "1": 168.25
       },
-      "evSurchargeAnnual": 138.5,
-      "phevSurchargeAnnual": 56.5
+      "evSurchargeAnnual": 180,
+      "phevSurchargeAnnual": 56.5,
+      "feesByRegistrationYear": {
+        "passenger": [
+          {
+            "maxYear": 3,
+            "fee": 222.5
+          },
+          {
+            "maxYear": 6,
+            "fee": 182.5
+          },
+          {
+            "maxYear": 9,
+            "fee": 152.5
+          },
+          {
+            "maxYear": 12,
+            "fee": 122.5
+          },
+          {
+            "fee": 82.5
+          }
+        ],
+        "motorcycle": [
+          {
+            "maxYear": 3,
+            "fee": 168.25
+          },
+          {
+            "maxYear": 6,
+            "fee": 143.25
+          },
+          {
+            "maxYear": 9,
+            "fee": 123.25
+          },
+          {
+            "maxYear": 12,
+            "fee": 108.25
+          },
+          {
+            "fee": 83.25
+          }
+        ]
+      }
     },
-    "localTaxNote": "Utah state sales tax base is 4.85% (Utah Code § 59-12-103). Local county, city, and transit taxes add 1.25% to 4.20%, making total combined sales tax between 6.10% and 9.05% depending on your residence.",
+    "localTaxNote": "Utah’s 4.85% state rate plus local taxes gives combined rates from 6.35% to 10.05% (October 2026). The rate is the one for where the vehicle will be registered.",
     "notes": [
-      "Utah imposes a 4.85% state sales and use tax base on private party motor vehicle sales under Utah Code § 59-12-103.",
-      "Title fee is $6.00 under Utah Code § 41-1a-1201; lien notation is included on the standard title application.",
-      "Base passenger vehicle registration is $44.00 under Utah Code § 41-1a-1206, plus an age-based statewide uniform fee ($10–$150).",
-      "Trade-in deduction is not permitted on private-party sales under Utah Code § 59-12-102; dealer purchases only.",
-      "Electric vehicles pay an additional $138.50 annual road usage fee ($56.50 for plug-in hybrids)."
+      "Utah’s state sales tax is 4.85%; local taxes bring the combined rate to between 6.35% and 10.05%.",
+      "The title fee is $6.",
+      "Registration includes an age-based uniform fee, charged in place of property tax: $150 for model years 2024 to 2026 down to $10 for 2014 and older."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Utah State Tax Commission and Utah DMV.",
-      "Utah charges 4.85% state sales tax; local county and transit taxes increase the total rate to between 6.10% and 9.05%.",
-      "Trade-in deductions are not available for private party vehicle sales in Utah.",
-      "An age-based uniform fee ($10.00 to $150.00) is collected at registration in lieu of personal property tax."
+      "Estimates only, not tax or legal advice. Verify with the Utah DMV or the Utah State Tax Commission.",
+      "Sales tax is based on the price you actually paid, at the combined rate (6.35% to 10.05%) where the vehicle will be registered. Utah has no family exemption.",
+      "Registration shown is the $72.50 registration fee ($73.25 for motorcycles) plus the 2026 uniform age-based fee, which replaces property tax. Some counties add a $10 corridor fee or a $2 to $3 air pollution control fee.",
+      "Electric vehicles pay a $180 road usage charge for 2026. Plug-in hybrids pay at least $56.50, adjusted each year for inflation.",
+      "A trade lowers the price only for a vehicle-for-vehicle trade in the same transaction."
     ],
     "faqs": [
       {
         "question": "What is the vehicle sales tax rate in Utah for private sales?",
-        "answer": "Utah levies a 4.85% state sales tax on motor vehicles. Combined with local city, county, and transit taxes, total effective tax rates range from 6.10% to 9.05% depending on the buyer's home address where the vehicle is registered."
+        "answer": "Utah’s state rate is 4.85%. With local taxes, combined rates run from 6.35% to 10.05% (October 2026). You pay the rate for where the vehicle will be registered, on the price you actually paid."
       },
       {
         "question": "Can I deduct my trade-in on a private vehicle sale in Utah?",
-        "answer": "No. Under Utah Code § 59-12-102, trade-in allowances only reduce sales tax when trading a vehicle to a licensed motor vehicle dealer. Private sales are taxed on the full purchase price."
+        "answer": "Only for a vehicle-for-vehicle trade that happens at the same time and is documented in the same transaction. Other trades are valued and taxed."
       },
       {
         "question": "How much does a vehicle title cost in Utah?",
-        "answer": "The Utah DMV certificate of title fee is $6.00. Lien recordation is included directly on the standard title application without extra fees."
+        "answer": "A new title is $6."
       },
       {
         "question": "What is the Utah age-based vehicle fee?",
-        "answer": "Utah charges an annual age-based uniform fee at registration in place of ad valorem property taxes. The fee scales from $150.00 for vehicles less than 3 years old down to $10.00 for vehicles 12 or more years old, added to the $44.00 base registration fee."
+        "answer": "Utah charges a uniform age-based fee at each registration in place of property tax. For 2026, passenger vehicles pay $150 for model years 2024 to 2026, $110 for 2021 to 2023, $80 for 2018 to 2020, $50 for 2015 to 2017, and $10 for 2014 and older. Motorcycles pay $95 down to $10."
       },
       {
         "question": "Do I pay Utah vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Utah, the state generally assesses its applicable vehicle sales or use tax (4.85%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Utah motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. Sales tax is calculated at the rate for where the vehicle will be registered in Utah, on the purchase price. A VIN inspection is required for a vehicle titled in Utah for the first time."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Utah?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Utah DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "Utah has no sales tax exemption for family-to-family vehicle purchases. Tax is due on sales between family members, on the price actually paid."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Utah?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Utah's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Utah motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "The DMV gives no fixed deadline for a private sale, but you need the title transfer and registration before driving. New residents have 60 days to transfer their titles and registrations."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://dmv.utah.gov/taxes-fees/sales-tax",
-      "https://dmv.utah.gov/taxes-fees/fees"
+      "https://dmv.utah.gov/register/registration-taxes-fees/",
+      "https://dmv.utah.gov/register/registration-taxes-fees/uniform-fees/",
+      "https://dmv.utah.gov/titles-overview/transfer-utah-title/",
+      "https://dmv.utah.gov/register/registering-your-vehicle/",
+      "https://files.tax.utah.gov/tax/salestax/rate/26q4combined.pdf",
+      "https://files.tax.utah.gov/mved/media/temporarypermitfees-07-2026.pdf",
+      "https://roadusagecharge.utah.gov/"
     ],
-    "localTaxMinRate": 0.0125,
-    "localTaxMaxRate": 0.042
+    "localTaxMinRate": 0.015,
+    "localTaxMaxRate": 0.052
   },
   "iowa": {
     "label": "Iowa",
@@ -3225,62 +3280,84 @@
         }
       },
       "motorcycle": {
-        "1": 12.5
+        "1": 9.5
       },
       "evSurchargeAnnual": 200,
-      "phevSurchargeAnnual": 100
+      "phevSurchargeAnnual": 100,
+      "passengerWeightChart": {
+        "termYears": 1,
+        "defaultWeightLbs": 3500,
+        "tiers": [
+          {
+            "maxLbs": 3000,
+            "fee": 19.5
+          },
+          {
+            "maxLbs": 4500,
+            "fee": 27.5
+          },
+          {
+            "fee": 32.5
+          }
+        ]
+      }
     },
-    "localTaxNote": "Arkansas cities and counties levy local sales taxes between 1.0% and 3.5%, bringing total sales tax to 7.5%–11.5%. Local sales taxes apply even to vehicles under $4,000 where state tax is exempt.",
+    "localTaxNote": "City and county sales taxes in Arkansas run from 0% to 6.125% (October to December 2026) and apply only to the first $2,500 of a vehicle’s price. A used vehicle under $4,000 owes no sales tax.",
     "notes": [
-      "Under Ark. Code § 26-52-510, vehicles under $4,000 are exempt from state sales tax; $4,000–$9,999.99 are taxed at 3.5%; $10,000+ are taxed at 6.5%.",
-      "Arkansas SB49 (2025) to modify tiers failed to pass upon Sine Die adjournment on May 5, 2025; codified brackets remain in full effect.",
-      "Arkansas permits trade-in credit on private sales if replacement vehicle is purchased within 60 days of selling prior vehicle.",
-      "Certificate of title fee is $10.00; lien recordation fee is $0.50.",
-      "Passenger registration is $25.00 weight fee (3,001–4,500 lbs) plus a $2.50 validation decal = $27.50."
+      "Used vehicles under $4,000 owe no sales tax. From $4,000 to $9,999 the state rate is 3.5%; at $10,000 and up it is 6.5%.",
+      "City and county taxes are not reduced and apply to the first $2,500 of the price.",
+      "Selling your old vehicle within 60 days before or after the purchase reduces the tax, the same way a trade-in does.",
+      "The title fee is $10 and recording a lien costs $0.50."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Arkansas DFA.",
-      "Motor vehicles under $4,000 purchase price are exempt from Arkansas state sales tax under Ark. Code § 26-52-510, while $4,000–$9,999 pay 3.5% and $10,000+ pay 6.5%.",
-      "City and county local sales taxes may apply even when exempt from state sales tax.",
-      "Trade-in sales tax credit is available if you sell your old vehicle within 60 days with bill of sale proof."
+      "Estimates only, not tax or legal advice. Verify with the Arkansas Department of Finance and Administration (DFA).",
+      "Used vehicles under $4,000 owe no sales tax. From $4,000 to $9,999 the state rate is 3.5% and from $10,000 it is 6.5%. City and county taxes (0% to 6.125%) apply to the first $2,500 only.",
+      "Registration shown is the DFA fee by weight ($17 for 3,000 lbs or less, $25 for 3,001 to 4,500 lbs, $30 above) plus the $2.50 validation decal. Electric vehicles add $200, plug-in hybrids $100, and hybrids $50.",
+      "To register, you also need proof that the vehicle was assessed and that personal property taxes were paid in your county. County property tax is not included."
     ],
     "faqs": [
       {
         "question": "What is the vehicle sales tax rate in Arkansas?",
-        "answer": "Under Ark. Code § 26-52-510, state sales tax is tiered: vehicles under $4,000 are 0% (exempt); vehicles priced from $4,000 to $9,999.99 are taxed at a reduced 3.5% rate; vehicles $10,000 and above are taxed at 6.5%."
+        "answer": "For a used vehicle, there is no sales tax under $4,000. From $4,000 to $9,999 the state rate is 3.5%, and at $10,000 and up it is 6.5%. City and county taxes, from 0% to 6.125%, are not reduced and apply to the first $2,500 of the price."
       },
       {
         "question": "Did Arkansas change vehicle sales tax rates in 2025?",
-        "answer": "Senate Bill 49 of 2025 proposed altering the vehicle brackets, but the bill died in committee upon Sine Die adjournment on May 5, 2025. The existing $4,000 and $10,000 thresholds under Ark. Code § 26-52-510 remain the law."
+        "answer": "The used-vehicle tiers that took effect January 1, 2022 (no tax under $4,000, 3.5% from $4,000 to $9,999, 6.5% from $10,000) are the rates DFA lists for 2026."
       },
       {
         "question": "Can I deduct a trade-in on a private vehicle sale in Arkansas?",
-        "answer": "Yes. Arkansas allows a 'sale in lieu of trade-in' tax credit on private party transactions if you sell your previous vehicle within 60 days before or after purchasing the replacement vehicle and submit bill of sale documentation to the DFA."
+        "answer": "Yes, in effect. If you sell your old vehicle within 60 days before or after buying the new one, you pay tax only on the difference, as with a trade-in. Bring the bill of sale for the vehicle you sold when you register. If you sell after registering, the sale must be within 45 days of the purchase and you claim a refund. A gift or an insurance settlement does not count as a sale."
       },
       {
         "question": "How much are Arkansas title and tag fees?",
-        "answer": "The Arkansas certificate of title fee is $10.00, lien recording is $0.50, and standard passenger vehicle registration is $27.50 (including the $25.00 weight fee and $2.50 validation decal)."
+        "answer": "The title fee is $10 and a lien costs $0.50. Registration is by weight: $17 for 3,000 lbs or less, $25 for 3,001 to 4,500 lbs, and $30 above that, plus a $2.50 validation decal. Electric vehicles pay $200 more, plug-in hybrids $100, and hybrids $50."
       },
       {
         "question": "Do I pay Arkansas vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Arkansas, the state generally assesses its applicable vehicle sales or use tax (6.50%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Arkansas motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. Arkansas sales tax is paid when you register the vehicle and apply for the title, at the rates for the location where you register it."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Arkansas?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Arkansas DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A gift is not taxed when the giver and the recipient sign an affidavit attesting to the gift, and the giver paid sales or use tax when buying the vehicle and registered it in their own name."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Arkansas?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Arkansas's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Arkansas motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "You have 60 days from the date of purchase to register. After that, a penalty of 10% of the sales tax due applies, plus $3 for each 10 days the vehicle is not registered."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://www.dfa.arkansas.gov/excise-tax/sales-and-use-tax/motor-vehicle-tax/",
-      "https://www.dfa.arkansas.gov/driver-services/fees/"
+      "https://www.dfa.arkansas.gov/office/motor-vehicle/faqs-for-dsmv/",
+      "https://www.dfa.arkansas.gov/office/motor-vehicle/recent-changes-in-the-law/",
+      "https://www.dfa.arkansas.gov/office/taxes/tax-credits-special-refunds/sales-tax-credit-for-sale-of-a-used-vehicle/",
+      "https://www.dfa.arkansas.gov/office/taxes/excise-tax-administration/sales-use-tax/sales-and-use-tax-faqs/",
+      "https://www.dfa.arkansas.gov/wp-content/uploads/cityCountyTaxTable_Oct_Dec_2026.pdf",
+      "https://www.dfa.arkansas.gov/wp-content/uploads/MyDMV_Fee_Schedule.pdf"
     ],
-    "localTaxMinRate": 0.01,
-    "localTaxMaxRate": 0.035
+    "localTaxMinRate": 0,
+    "localTaxMaxRate": 0.06125,
+    "localTaxBaseCap": 2500,
+    "noLocalTaxWhenStateExempt": true
   },
   "mississippi": {
     "label": "Mississippi",

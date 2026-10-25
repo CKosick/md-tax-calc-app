@@ -1,4 +1,4 @@
-import { CalculatorInputs, FuelType, StateRule, WeightClass } from './types';
+import { CalculatorInputs, FuelType, RegistrationTerm, StateRule, WeightClass } from './types';
 import { getDefaultModelYear } from './constants';
 
 type SearchParamsLike = Pick<URLSearchParams, 'get' | 'has'>;
@@ -18,8 +18,12 @@ export function parseBookValue(value: string | null): number | undefined {
   return Number.isFinite(n) && n > 0 ? n : undefined;
 }
 
-/** The state's own default registration term: 1-year when that is all it offers, else 2-year. */
-export function getDefaultTerm(rule: StateRule): 1 | 2 {
+/**
+ * The state's own default registration term: 3-year where the state registers for three years
+ * (Connecticut), 1-year when that is all it offers, else 2-year.
+ */
+export function getDefaultTerm(rule: StateRule): RegistrationTerm {
+  if (rule.registration.terms.includes(3)) return 3;
   return rule.registration.terms.includes(1) && !rule.registration.terms.includes(2) ? 1 : 2;
 }
 
@@ -61,7 +65,8 @@ export function inputsFromSearchParams(
     // Unknown or mistyped values fall back to the defaults instead of reaching the engine
     weightClass: pickAllowed(params.get('weight'), WEIGHT_CLASSES, defaults.weightClass),
     fuelType: pickAllowed(params.get('fuel'), FUEL_TYPES, defaults.fuelType),
-    registrationTerm: params.has('term')
+    // Three-year states have only the one term; elsewhere ?term=1 or 2
+    registrationTerm: params.has('term') && !rule.registration.terms.includes(3)
       ? Number(params.get('term')) === 1 ? 1 : 2
       : getDefaultTerm(rule),
     isFinanced: params.get('financed') === 'true',

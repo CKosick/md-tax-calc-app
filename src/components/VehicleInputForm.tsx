@@ -578,6 +578,17 @@ export function VehicleInputForm({
             </label>
             <span className="text-[11px] text-slate-400">{rule.label} tag options</span>
           </div>
+          {rule.registration.terms.includes(3) ? (
+            // Three-year registration states (Connecticut) have the one term
+            <div className="mt-2 rounded-2xl bg-slate-100 p-1.5 dark:bg-slate-800/80">
+              <div
+                id="term-3-year"
+                className="flex min-h-[44px] items-center justify-center rounded-xl bg-white py-2.5 text-xs font-bold text-indigo-600 shadow-sm dark:bg-slate-900 dark:text-indigo-400"
+              >
+                3-Year Term ({rule.label} registers for three years)
+              </div>
+            </div>
+          ) : (
           <div className="mt-2 grid grid-cols-2 gap-2 rounded-2xl bg-slate-100 p-1.5 dark:bg-slate-800/80">
             <button
               type="button"
@@ -604,6 +615,7 @@ export function VehicleInputForm({
               2-Year Term (Standard)
             </button>
           </div>
+          )}
         </div>
 
         {/* Fuel Type / EV Surcharge Option */}

@@ -47,8 +47,8 @@ describe('New York registration by weight (DMV 2-year fee chart)', () => {
     expect(calc(ny, { vehicleType: 'motorcycle' }).registrationTotal).toBe(35);
   });
 
-  it('only New York uses a weight chart', () => {
-    const others = Object.entries(rules).filter(([k, r]) => k !== 'new-york' && r.registration.passengerWeightChart);
+  it('only New York and Arkansas use a weight chart', () => {
+    const others = Object.entries(rules).filter(([k, r]) => !['new-york', 'arkansas'].includes(k) && r.registration.passengerWeightChart);
     expect(others).toEqual([]);
   });
 
