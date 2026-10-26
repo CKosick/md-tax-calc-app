@@ -104,7 +104,7 @@ describe('Florida plate to transfer', () => {
     const writeText = vi.fn().mockResolvedValue(undefined);
     Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
     await act(async () => {
-      fireEvent.click(getByRole('button', { name: /save or share calculation result/i }));
+      fireEvent.click(getByRole('button', { name: /save \/ share result/i }));
     });
     expect(writeText).toHaveBeenCalledWith(expect.stringContaining('plate=yes'));
   });

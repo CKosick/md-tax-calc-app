@@ -207,7 +207,7 @@ describe('CarTaxHub UI Pass Acceptance Tests', () => {
         />
       );
 
-      const shareBtn = screen.getByRole('button', { name: /save or share calculation result/i });
+      const shareBtn = screen.getByRole('button', { name: /save \/ share result/i });
       expect(shareBtn).toBeDefined();
 
       fireEvent.click(shareBtn);
@@ -244,7 +244,7 @@ describe('CarTaxHub UI Pass Acceptance Tests', () => {
         />
       );
 
-      const shareBtn = screen.getByRole('button', { name: /save or share calculation result/i });
+      const shareBtn = screen.getByRole('button', { name: /save \/ share result/i });
       fireEvent.click(shareBtn);
 
       await waitFor(() => {

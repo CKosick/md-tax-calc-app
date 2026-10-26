@@ -266,7 +266,7 @@ export function VehicleTaxComparisonTables({
                     key={row.key}
                     className="transition-colors hover:bg-slate-50/70 dark:hover:bg-slate-800/40"
                   >
-                    <td className="whitespace-nowrap px-4 py-3 text-xs font-bold text-slate-400 dark:text-slate-500">
+                    <td className="whitespace-nowrap px-4 py-3 text-xs font-bold text-slate-500 dark:text-slate-400">
                       #{row.rank}
                     </td>
                     <td className="whitespace-nowrap px-4 py-3 font-semibold text-slate-900 dark:text-white">
@@ -276,7 +276,7 @@ export function VehicleTaxComparisonTables({
                       >
                         {row.label}
                       </Link>
-                      <span className="row-verified mt-0.5 block text-[11px] font-normal text-slate-400 dark:text-slate-500">
+                      <span className="row-verified mt-0.5 block text-[11px] font-normal text-slate-500 dark:text-slate-400">
                         Verified {row.lastVerified}
                       </span>
                     </td>
@@ -372,7 +372,7 @@ export function VehicleTaxComparisonTables({
                     key={row.key}
                     className="transition-colors hover:bg-slate-50/70 dark:hover:bg-slate-800/40"
                   >
-                    <td className="whitespace-nowrap px-4 py-3 text-xs font-bold text-slate-400 dark:text-slate-500">
+                    <td className="whitespace-nowrap px-4 py-3 text-xs font-bold text-slate-500 dark:text-slate-400">
                       #{row.rank}
                     </td>
                     <td className="whitespace-nowrap px-4 py-3 font-semibold text-slate-900 dark:text-white">
@@ -382,7 +382,7 @@ export function VehicleTaxComparisonTables({
                       >
                         {row.label}
                       </Link>
-                      <span className="row-verified mt-0.5 block text-[11px] font-normal text-slate-400 dark:text-slate-500">
+                      <span className="row-verified mt-0.5 block text-[11px] font-normal text-slate-500 dark:text-slate-400">
                         Verified {row.lastVerified}
                       </span>
                     </td>
@@ -487,7 +487,7 @@ export function VehicleTaxComparisonTables({
                     key={row.key}
                     className="transition-colors hover:bg-slate-50/70 dark:hover:bg-slate-800/40"
                   >
-                    <td className="whitespace-nowrap px-4 py-3 text-xs font-bold text-slate-400 dark:text-slate-500">
+                    <td className="whitespace-nowrap px-4 py-3 text-xs font-bold text-slate-500 dark:text-slate-400">
                       #{row.rank}
                     </td>
                     <td className="whitespace-nowrap px-4 py-3 font-semibold text-slate-900 dark:text-white">
@@ -497,7 +497,7 @@ export function VehicleTaxComparisonTables({
                       >
                         {row.label}
                       </Link>
-                      <span className="row-verified mt-0.5 block text-[11px] font-normal text-slate-400 dark:text-slate-500">
+                      <span className="row-verified mt-0.5 block text-[11px] font-normal text-slate-500 dark:text-slate-400">
                         Verified {row.lastVerified}
                       </span>
                     </td>

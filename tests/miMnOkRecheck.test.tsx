@@ -146,7 +146,7 @@ describe('Weight labels (repair batch check)', () => {
     const writeText = vi.fn().mockResolvedValue(undefined);
     Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
     await act(async () => {
-      fireEvent.click(getByRole('button', { name: /save or share calculation result/i }));
+      fireEvent.click(getByRole('button', { name: /save \/ share result/i }));
     });
     expect(writeText).toHaveBeenCalledWith(expect.stringContaining('msrp=45000'));
     const parsed = inputsFromSearchParams(mi, new URLSearchParams('price=15000&msrp=45000'), getDefaultInputs(mi, 2026));

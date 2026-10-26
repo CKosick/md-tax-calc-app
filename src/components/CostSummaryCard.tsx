@@ -166,7 +166,6 @@ export function CostSummaryCard({
               type="button"
               onClick={handleShare}
               className="inline-flex min-h-[44px] shrink-0 items-center justify-center gap-1.5 rounded-xl border border-indigo-300/30 bg-white/10 px-3.5 py-2.5 text-xs font-bold text-white shadow-xs backdrop-blur-sm transition-all hover:bg-white/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-indigo-300 cursor-pointer"
-              aria-label="Save or share calculation result"
             >
               {copied ? (
                 <>
@@ -262,7 +261,7 @@ export function CostSummaryCard({
                     : 'Unfinanced / cash purchase (waived $0.00)'}
                 </p>
               </div>
-              <span className={`flex-shrink-0 font-bold ${breakdown.lienFilingFee > 0 ? 'text-slate-900 dark:text-white' : 'text-slate-400 dark:text-slate-500'}`}>
+              <span className={`flex-shrink-0 font-bold ${breakdown.lienFilingFee > 0 ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
                 {formatCurrency(breakdown.lienFilingFee)}
               </span>
             </div>
@@ -343,9 +342,9 @@ export function CostSummaryCard({
                 <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-blue-700 dark:bg-blue-950/60 dark:text-blue-300">
                   Informational Only
                 </span>
-                <h4 className="mt-1 text-xs font-bold text-slate-900 dark:text-white">
+                <h3 className="mt-1 text-xs font-bold text-slate-900 dark:text-white">
                   VEIP Vehicle Emissions Inspection
-                </h4>
+                </h3>
                 <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
                   Required every 2 years in designated MD counties (${breakdown.veipFee}.00 full station / $26 kiosk). Not included in the MVA titling total.
                 </p>

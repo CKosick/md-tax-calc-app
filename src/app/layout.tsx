@@ -194,7 +194,7 @@ export default function RootLayout({
             <p className="mt-4">
               © {new Date().getFullYear()} CarTaxHub.com. Estimates only. Not affiliated with or endorsed by any state DMV, MVA, or DOT agency.
             </p>
-            <p className="mt-1 text-[11px] text-slate-400 dark:text-slate-500">
+            <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
               Calculations based on published 2025–2026 statutory fee schedules and vehicle excise/sales tax codes.
             </p>
           </div>
