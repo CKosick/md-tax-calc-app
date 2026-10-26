@@ -290,7 +290,7 @@ export default function VehicleTaxByStatePage() {
           {/* Section 6: "No Statewide Tax" Callout Section */}
           <section className="mt-16 rounded-3xl border border-emerald-200 bg-emerald-50/60 p-6 sm:p-8 dark:border-emerald-900/60 dark:bg-emerald-950/30">
             <div className="flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-600 text-white font-bold text-sm shadow-xs">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-700 text-white font-bold text-sm shadow-xs">
                 0%
               </span>
               <div>

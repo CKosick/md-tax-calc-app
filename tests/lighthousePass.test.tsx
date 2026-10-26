@@ -74,5 +74,9 @@ describe('accessibility audit fixes', () => {
     for (const p of ['src/app/layout.tsx', 'src/components/CostSummaryCard.tsx', 'src/components/VehicleTaxComparisonTables.tsx']) {
       expect(readFileSync(p, 'utf8'), p).not.toContain('text-slate-400 dark:text-slate-500');
     }
+    // The comparison page's "0%" badge: white on emerald-700 (emerald-600 was 3.65:1)
+    const comparison = readFileSync('src/app/vehicle-tax-by-state/page.tsx', 'utf8');
+    expect(comparison).not.toContain('bg-emerald-600 text-white');
+    expect(comparison).toContain('bg-emerald-700 text-white');
   });
 });
