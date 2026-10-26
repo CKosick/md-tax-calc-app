@@ -30,6 +30,8 @@ export interface StateComparisonRow {
   totalCost: number;
   breakdown: CostBreakdown;
   rule: StateRule;
+  /** Month and year this state's figures were last verified (from its config). */
+  lastVerified: string;
 }
 
 export interface TaxRateRow {
@@ -42,6 +44,7 @@ export interface TaxRateRow {
   exciseTaxRate: number;
   estimatedTax: number;
   taxBase: string;
+  lastVerified: string;
 }
 
 export interface TitleFeeRow {
@@ -52,6 +55,7 @@ export interface TitleFeeRow {
   titleFee: number;
   lienFilingFee: number;
   registrationFee: number;
+  lastVerified: string;
 }
 
 export interface KeyFindingsStats {
@@ -69,6 +73,7 @@ export interface ComparisonDataset {
   titleFeeRows: TitleFeeRow[];
   stats: KeyFindingsStats;
   standardScenario: typeof STANDARD_SCENARIO_INPUTS;
+  /** Span of the per-state verified dates, e.g. "September 2026 to October 2026". */
   lastVerifiedDate: string;
 }
 
@@ -106,7 +111,8 @@ export function getComparisonDataset(): ComparisonDataset {
       registrationFee: breakdown.registrationTotal,
       totalCost: breakdown.totalFirstYearCost,
       breakdown,
-      rule
+      rule,
+      lastVerified: rule.lastVerified ?? LAST_VERIFIED_DATE
     });
   }
 
@@ -141,7 +147,8 @@ export function getComparisonDataset(): ComparisonDataset {
     rateDisplay: row.isFlatTable ? 'Flat Table (RUT-50)' : row.rateDisplay,
     exciseTaxRate: row.exciseTaxRate,
     estimatedTax: row.salesTaxAmount,
-    taxBase: row.rule.taxBase
+    taxBase: row.rule.taxBase,
+    lastVerified: row.lastVerified
   }));
 
   // 3. Title Fee Table: Ranked by certificate of title fee descending
@@ -158,7 +165,8 @@ export function getComparisonDataset(): ComparisonDataset {
     slug: row.slug,
     titleFee: row.titleFee,
     lienFilingFee: row.rule.lienFilingFee,
-    registrationFee: row.registrationFee
+    registrationFee: row.registrationFee,
+    lastVerified: row.lastVerified
   }));
 
   // 4. Compute Key Findings dynamically
@@ -210,7 +218,7 @@ export function getComparisonDataset(): ComparisonDataset {
     titleFeeRows,
     stats,
     standardScenario: STANDARD_SCENARIO_INPUTS,
-    lastVerifiedDate: LAST_VERIFIED_DATE
+    lastVerifiedDate: verifiedDateSpan(rawRows.map((r) => r.lastVerified))
   };
 }
 
@@ -244,4 +252,11 @@ export function generateComparisonCsv(rows: StateComparisonRow[]): string {
   }
 
   return lines.join('\n');
+}
+
+/** "September 2026 to October 2026" for mixed dates, or the single date when all rows match. */
+export function verifiedDateSpan(dates: string[]): string {
+  const unique = [...new Set(dates)].sort((a, b) => Date.parse(`1 ${a}`) - Date.parse(`1 ${b}`));
+  if (unique.length === 0) return LAST_VERIFIED_DATE;
+  return unique.length === 1 ? unique[0] : `${unique[0]} to ${unique[unique.length - 1]}`;
 }

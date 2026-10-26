@@ -276,6 +276,9 @@ export function VehicleTaxComparisonTables({
                       >
                         {row.label}
                       </Link>
+                      <span className="row-verified mt-0.5 block text-[11px] font-normal text-slate-400 dark:text-slate-500">
+                        Verified {row.lastVerified}
+                      </span>
                     </td>
                     <td className="whitespace-nowrap px-4 py-3 text-right">
                       <span className="font-mono text-xs font-medium text-slate-700 dark:text-slate-300">
@@ -379,6 +382,9 @@ export function VehicleTaxComparisonTables({
                       >
                         {row.label}
                       </Link>
+                      <span className="row-verified mt-0.5 block text-[11px] font-normal text-slate-400 dark:text-slate-500">
+                        Verified {row.lastVerified}
+                      </span>
                     </td>
                     <td className="whitespace-nowrap px-4 py-3 text-right">
                       {row.isFlatTable ? (
@@ -491,6 +497,9 @@ export function VehicleTaxComparisonTables({
                       >
                         {row.label}
                       </Link>
+                      <span className="row-verified mt-0.5 block text-[11px] font-normal text-slate-400 dark:text-slate-500">
+                        Verified {row.lastVerified}
+                      </span>
                     </td>
                     <td className="whitespace-nowrap px-4 py-3 text-right font-mono text-sm font-bold text-slate-900 dark:text-white">
                       {formatFee(row.titleFee)}

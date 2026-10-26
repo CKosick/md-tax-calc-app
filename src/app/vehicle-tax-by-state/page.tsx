@@ -191,7 +191,7 @@ export default function VehicleTaxByStatePage() {
           <header className="border-b border-slate-200/80 pb-8 dark:border-slate-800">
             <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-3.5 py-1 text-xs font-semibold text-indigo-700 dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
               <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-              <span>{`Last verified: ${lastVerifiedDate} • All 50 States + DC`}</span>
+              <span>{`Verified ${lastVerifiedDate} • All 50 States + DC`}</span>
             </div>
 
             <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
@@ -277,6 +277,9 @@ export default function VehicleTaxByStatePage() {
 
           {/* Sections 3, 4, 5: Interactive Tables (Server-rendered HTML + client sorting & CSV download) */}
           <div className="mt-14">
+            <p id="rolling-recheck-note" className="mb-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              We re-check states against official sources on a rolling basis. The date under each state shows when its figures were last verified.
+            </p>
             <VehicleTaxComparisonTables
               initialHeroRows={heroRows}
               initialTaxRateRows={taxRateRows}
@@ -434,7 +437,7 @@ export default function VehicleTaxByStatePage() {
               </p>
 
               <p>
-                <strong>Freshness &amp; Verification:</strong> Data last reviewed and audited in <strong>{lastVerifiedDate}</strong>. When legislative bodies enact fee adjustments or tax modifications, CarTaxHub automatically updates its computational model.
+                <strong>Freshness &amp; Verification:</strong> Each state is re-checked against official sources on a rolling basis, and each row shows that state&apos;s own verified date. Current data was verified <strong>{lastVerifiedDate}</strong>.
               </p>
 
               <p className="text-xs text-slate-500 dark:text-slate-400">
