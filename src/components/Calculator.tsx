@@ -3,8 +3,8 @@
 import React, { Suspense, useState, useMemo } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { StateRule, StateRulesConfig, CalculatorInputs } from '@/lib/types';
-import stateRulesData from '@/config/stateRules.json';
+import { StateRule, CalculatorInputs } from '@/lib/types';
+import type { StateOption } from '@/lib/stateOptions';
 import { calculateVehicleCosts } from '@/lib/calculator';
 import { formatFee } from '@/lib/formatters';
 import { RATES_VERIFIED_YEAR, getCalculationYear } from '@/lib/constants';
@@ -28,6 +28,11 @@ interface CalculatorProps {
   embedded?: boolean;
   /** How-to guides for this state, listed in a Guides block on the calculator page. */
   guides?: GuideLink[];
+  /**
+   * Every state's key, label, and slug for the state menu and related links (getStateOptions on
+   * the server). Passed in so the full stateRules.json stays out of the browser bundle.
+   */
+  allStates?: StateOption[];
 }
 
 export interface GuideLink {
@@ -35,14 +40,6 @@ export interface GuideLink {
   title: string;
   description: string;
 }
-
-const ALL_STATES = Object.entries(stateRulesData as StateRulesConfig)
-  .map(([key, rule]) => ({
-    key,
-    label: rule.label,
-    slug: rule.slug
-  }))
-  .sort((a, b) => a.label.localeCompare(b.label));
 
 // Featured popular states for internal topical mesh
 const POPULAR_SLUGS = [
@@ -101,7 +98,8 @@ function CalculatorView({
   initialInputs,
   calculationYear,
   embedded = false,
-  guides = []
+  guides = [],
+  allStates = []
 }: CalculatorViewProps) {
   const [inputs, setInputs] = useState<CalculatorInputs>(initialInputs);
 
@@ -127,7 +125,7 @@ function CalculatorView({
     : `${rateFormatted}% ${taxName}`;
 
   // Filter sibling states for internal link topical mesh (excluding current state)
-  const relatedStates = ALL_STATES.filter(
+  const relatedStates = allStates.filter(
     (st) => st.slug !== initialRule.slug && POPULAR_SLUGS.includes(st.slug)
   ).slice(0, 6);
 
@@ -202,7 +200,7 @@ function CalculatorView({
             inputs={inputs}
             onChange={setInputs}
             rule={initialRule}
-            allStates={ALL_STATES}
+            allStates={allStates}
             calculationYear={calculationYear}
           />
 

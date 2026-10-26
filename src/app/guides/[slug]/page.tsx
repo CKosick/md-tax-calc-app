@@ -5,6 +5,7 @@ import stateRulesData from '@/config/stateRules.json';
 import { StateRule, StateRulesConfig } from '@/lib/types';
 import { GUIDES, getGuideBySlug, getGuidesForState } from '@/config/guides';
 import { Calculator } from '@/components/Calculator';
+import { getStateOptions } from '@/lib/stateOptions';
 import { FaqSection } from '@/components/FaqSection';
 import { resolvePartnerHrefs } from '@/lib/partnerLinks';
 
@@ -197,7 +198,7 @@ export default async function GuidePage({ params }: PageProps) {
                 </svg>
               </Link>
             </div>
-            <Calculator initialRule={{ ...rule, faqs: [] }} partnerHrefs={resolvePartnerHrefs()} embedded />
+            <Calculator initialRule={{ ...rule, faqs: [] }} partnerHrefs={resolvePartnerHrefs()} embedded allStates={getStateOptions()} />
           </section>
 
           <div className="mx-auto max-w-3xl">
