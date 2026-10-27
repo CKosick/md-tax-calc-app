@@ -1,43 +1,53 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
-import { CalculatorInputs, CostBreakdown, StateRule } from '@/lib/types';
-import { buildEstimatePayload, sendEstimate } from '@/lib/emailEstimate';
+import { CalculatorInputs, StateRule } from '@/lib/types';
+import { buildShareSearchParams } from '@/lib/shareParams';
+
+export const EMAIL_ESTIMATE_ENDPOINT = '/api/email-estimate';
+
+const noopSubscribe = () => () => {};
 
 interface EmailEstimateProps {
-  /** Formspree form ID, resolved on the server (getFormspreeFormId). */
-  formId: string;
   rule: StateRule;
-  breakdown: CostBreakdown;
   purchasePrice: number;
   inputs?: CalculatorInputs;
 }
 
 /**
- * "Email me this estimate": posts the address and this estimate to Formspree without leaving the
- * page. Success replaces the form with a confirmation; failure keeps the typed address.
+ * "Email me this estimate": sends the address with this estimate's share-link params to our route,
+ * which recalculates and emails it via Resend, without leaving the page. Success replaces the form
+ * with a confirmation; failure keeps the typed address.
  */
-export function EmailEstimate({ formId, rule, breakdown, purchasePrice, inputs }: EmailEstimateProps) {
+export function EmailEstimate({ rule, purchasePrice, inputs }: EmailEstimateProps) {
   const [email, setEmail] = useState('');
-  // Formspree honeypot: people never see or fill it, so a value marks the submission as spam
+  // Honeypot: people never see or fill it, so a value marks the submission as spam
   const [gotcha, setGotcha] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  // Send stays disabled until hydration, so the browser never submits the form natively and puts the
+  // address in the page URL
+  const ready = useSyncExternalStore(noopSubscribe, () => true, () => false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (status === 'sending') return;
     setStatus('sending');
-    const payload = buildEstimatePayload({
-      email: email.trim(),
-      rule,
-      breakdown,
-      purchasePrice,
-      inputs,
-      pageUrl: window.location.href
-    });
-    if (gotcha) payload._gotcha = gotcha;
-    setStatus((await sendEstimate(formId, payload)) ? 'sent' : 'error');
+    try {
+      const res = await fetch(EMAIL_ESTIMATE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.trim(),
+          slug: rule.slug,
+          params: buildShareSearchParams(rule, purchasePrice, inputs).toString(),
+          ...(gotcha ? { _gotcha: gotcha } : {})
+        })
+      });
+      setStatus(res.ok ? 'sent' : 'error');
+    } catch {
+      setStatus('error');
+    }
   };
 
   if (status === 'sent') {
@@ -52,7 +62,7 @@ export function EmailEstimate({ formId, rule, breakdown, purchasePrice, inputs }
 
   return (
     <div id="email-estimate" className="mt-6 rounded-2xl border border-slate-200/60 bg-slate-50/70 p-4 dark:border-slate-800 dark:bg-slate-800/40">
-      <form onSubmit={handleSubmit}>
+      <form method="post" onSubmit={handleSubmit}>
         <label htmlFor="email-estimate-input" className="block text-xs font-bold text-slate-900 dark:text-white">
           Email me this estimate
         </label>
@@ -80,15 +90,15 @@ export function EmailEstimate({ formId, rule, breakdown, purchasePrice, inputs }
           />
           <button
             type="submit"
-            disabled={status === 'sending'}
+            disabled={!ready || status === 'sending'}
             className="min-h-[44px] shrink-0 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-bold text-white hover:bg-indigo-700 disabled:opacity-60 cursor-pointer"
           >
             {status === 'sending' ? 'Sending…' : 'Send'}
           </button>
         </div>
         <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
-          We email this estimate to the address you enter and use the address for nothing else. No newsletter, no
-          marketing.{' '}
+          We email you this estimate and keep your address only for follow-ups about it. No newsletter, and no
+          marketing unless you sign up for it separately.{' '}
           <Link href="/privacy" className="font-semibold text-indigo-600 hover:underline dark:text-indigo-400">
             Privacy
           </Link>

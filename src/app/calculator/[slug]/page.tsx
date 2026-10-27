@@ -5,7 +5,7 @@ import { StateRule, StateRulesConfig } from '@/lib/types';
 import { formatFee } from '@/lib/formatters';
 import { Calculator } from '@/components/Calculator';
 import { getStateOptions } from '@/lib/stateOptions';
-import { getFormspreeFormId } from '@/lib/emailEstimate';
+import { isEmailEstimateEnabled } from '@/lib/emailEstimate';
 import { resolvePartnerHrefs } from '@/lib/partnerLinks';
 import { getGuidesForState } from '@/config/guides';
 import { getPublishedFaqs } from '@/lib/faqs';
@@ -153,7 +153,7 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
       />
 
       <main className="min-h-screen bg-slate-50/50 dark:bg-slate-950">
-        <Calculator initialRule={{ ...rule, faqs: getPublishedFaqs(rule) }} partnerHrefs={resolvePartnerHrefs()} guides={guideLinks} allStates={getStateOptions()} emailFormId={getFormspreeFormId()} />
+        <Calculator initialRule={{ ...rule, faqs: getPublishedFaqs(rule) }} partnerHrefs={resolvePartnerHrefs()} guides={guideLinks} allStates={getStateOptions()} emailEnabled={isEmailEstimateEnabled()} />
       </main>
     </>
   );

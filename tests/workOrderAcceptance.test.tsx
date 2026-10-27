@@ -304,7 +304,7 @@ describe('Work Order Acceptance Tests', () => {
       const headings = [...container.querySelectorAll('h2')].map((h) => h.textContent?.trim());
       expect(headings).toEqual([
         '1. Calculator Inputs and Data Storage',
-        '2. Emailing Yourself an Estimate (Formspree)',
+        '2. Emailing Yourself an Estimate (Resend)',
         '3. Cookies and Tracking Technologies',
         '4. Affiliate Relationships & Commercial Disclosures',
         "5. Children's Online Privacy Protection",

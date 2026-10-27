@@ -57,13 +57,13 @@ export default function PrivacyPolicyPage() {
 
           <section id="email-estimate-processor" className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-              2. Emailing Yourself an Estimate (Formspree)
+              2. Emailing Yourself an Estimate (Resend)
             </h2>
             <p className="text-sm sm:text-base">
-              If you use &quot;Email me this estimate&quot; on a calculator, the email address you enter and that estimate&apos;s details (the state, vehicle price, tax, fees, total, any locality you chose, and the link back to the estimate) are sent to Formspree, the form service that processes this feature for us.
+              If you use &quot;Email me this estimate&quot; on a calculator, we send the email address you enter and that estimate&apos;s details (the state, vehicle price, tax, fees, total, any locality you chose, and the link back to the estimate) to Resend, the email service that delivers the estimate to you for us.
             </p>
             <p className="text-sm sm:text-base">
-              We use your address only to send you the estimate you asked for. It is not used for marketing or newsletters, and it is not shared with anyone beyond Formspree as the processor. Nothing is sent unless you submit the form.
+              Resend also keeps your address in our contact list there. We use that list only for follow-ups about the estimate you asked for. We do not send you marketing or newsletters unless you sign up for them separately, and we do not share your address with anyone beyond Resend as the processor. Nothing is sent unless you submit the form.
             </p>
           </section>
 

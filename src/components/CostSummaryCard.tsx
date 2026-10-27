@@ -18,8 +18,8 @@ interface CostSummaryCardProps {
   partnerHrefs?: PartnerHrefs;
   /** Show the affiliate disclosure line (only while a partner offer is visible on the page). */
   showPartnerDisclosure?: boolean;
-  /** Formspree form ID for "Email me this estimate"; the block is hidden without it. */
-  emailFormId?: string;
+  /** True when Resend is configured on the server; "Email me this estimate" is hidden otherwise. */
+  emailEnabled?: boolean;
 }
 
 export function CostSummaryCard({
@@ -29,7 +29,7 @@ export function CostSummaryCard({
   inputs,
   partnerHrefs,
   showPartnerDisclosure = false,
-  emailFormId
+  emailEnabled
 }: CostSummaryCardProps) {
   const [copied, setCopied] = useState(false);
   const visibleSources = getVisibleSources(rule);
@@ -307,12 +307,10 @@ export function CostSummaryCard({
           </div>
         </div>
 
-        {/* Email me this estimate (only when a Formspree form is configured) */}
-        {emailFormId && (
+        {/* Email me this estimate (only when Resend is configured on the server) */}
+        {emailEnabled && (
           <EmailEstimate
-            formId={emailFormId}
             rule={rule}
-            breakdown={breakdown}
             purchasePrice={purchasePrice}
             inputs={inputs}
           />
