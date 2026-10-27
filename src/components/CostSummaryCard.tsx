@@ -6,6 +6,8 @@ import { PartnerDisclosure, PartnerSlot } from './PartnerSlot';
 import { PartnerHrefs } from '@/lib/partnerLinks';
 import { LAST_VERIFIED_DATE } from '@/lib/constants';
 import { getVisibleSources } from '@/lib/sources';
+import { buildShareSearchParams } from '@/lib/shareParams';
+import { EmailEstimate } from './EmailEstimate';
 
 interface CostSummaryCardProps {
   breakdown: CostBreakdown;
@@ -16,6 +18,8 @@ interface CostSummaryCardProps {
   partnerHrefs?: PartnerHrefs;
   /** Show the affiliate disclosure line (only while a partner offer is visible on the page). */
   showPartnerDisclosure?: boolean;
+  /** Formspree form ID for "Email me this estimate"; the block is hidden without it. */
+  emailFormId?: string;
 }
 
 export function CostSummaryCard({
@@ -24,7 +28,8 @@ export function CostSummaryCard({
   purchasePrice,
   inputs,
   partnerHrefs,
-  showPartnerDisclosure = false
+  showPartnerDisclosure = false,
+  emailFormId
 }: CostSummaryCardProps) {
   const [copied, setCopied] = useState(false);
   const visibleSources = getVisibleSources(rule);
@@ -53,39 +58,7 @@ export function CostSummaryCard({
     if (typeof window === 'undefined') return;
 
     const url = new URL(window.location.origin + window.location.pathname);
-    url.searchParams.set('price', String(purchasePrice));
-    if (inputs) {
-      url.searchParams.set('year', String(inputs.vehicleYear));
-      url.searchParams.set('type', inputs.vehicleType);
-      url.searchParams.set('weight', inputs.weightClass);
-      url.searchParams.set('fuel', inputs.fuelType);
-      url.searchParams.set('term', String(inputs.registrationTerm));
-      url.searchParams.set('financed', String(inputs.isFinanced));
-      if (rule.bookValueAssessment && inputs.bookValue && inputs.bookValue > 0) {
-        url.searchParams.set('book', String(inputs.bookValue));
-      }
-      if (rule.presumptiveValueRule && inputs.presumptiveValue && inputs.presumptiveValue > 0) {
-        url.searchParams.set('spv', String(inputs.presumptiveValue));
-        if (inputs.appraisedValue && inputs.appraisedValue > 0) {
-          url.searchParams.set('appraisal', String(inputs.appraisedValue));
-        }
-      }
-      if (rule.registration.listPriceRegistration && inputs.listPrice && inputs.listPrice > 0) {
-        url.searchParams.set('msrp', String(inputs.listPrice));
-      }
-      if (rule.localities && inputs.localityId) {
-        url.searchParams.set('loc', inputs.localityId);
-      }
-      if (rule.registration.newPlateFees && inputs.hasPlateToTransfer) {
-        url.searchParams.set('plate', 'yes');
-      }
-      if (rule.registration.passengerWeightChart && inputs.vehicleWeight && inputs.vehicleWeight > 0) {
-        url.searchParams.set('lbs', String(inputs.vehicleWeight));
-      }
-      if (inputs.tradeInValue > 0) {
-        url.searchParams.set('tradeIn', String(inputs.tradeInValue));
-      }
-    }
+    url.search = buildShareSearchParams(rule, purchasePrice, inputs).toString();
     const shareUrl = url.toString();
 
     const title = `${rule.label} Car Tax & Fee Estimate`;
@@ -333,6 +306,17 @@ export function CostSummaryCard({
             )}
           </div>
         </div>
+
+        {/* Email me this estimate (only when a Formspree form is configured) */}
+        {emailFormId && (
+          <EmailEstimate
+            formId={emailFormId}
+            rule={rule}
+            breakdown={breakdown}
+            purchasePrice={purchasePrice}
+            inputs={inputs}
+          />
+        )}
 
         {/* Informational VEIP Section (Maryland only if veipFee > 0) */}
         {breakdown.veipFee > 0 && (

@@ -92,3 +92,48 @@ export function inputsFromSearchParams(
       : defaults.vehicleWeight
   };
 }
+
+/**
+ * The share-link query for this exact estimate (the reverse of inputsFromSearchParams). Used by
+ * the share button and the "Email me this estimate" payload so both carry the same link.
+ */
+export function buildShareSearchParams(
+  rule: StateRule,
+  purchasePrice: number,
+  inputs?: CalculatorInputs
+): URLSearchParams {
+  const params = new URLSearchParams();
+  params.set('price', String(purchasePrice));
+  if (!inputs) return params;
+  params.set('year', String(inputs.vehicleYear));
+  params.set('type', inputs.vehicleType);
+  params.set('weight', inputs.weightClass);
+  params.set('fuel', inputs.fuelType);
+  params.set('term', String(inputs.registrationTerm));
+  params.set('financed', String(inputs.isFinanced));
+  if (rule.bookValueAssessment && inputs.bookValue && inputs.bookValue > 0) {
+    params.set('book', String(inputs.bookValue));
+  }
+  if (rule.presumptiveValueRule && inputs.presumptiveValue && inputs.presumptiveValue > 0) {
+    params.set('spv', String(inputs.presumptiveValue));
+    if (inputs.appraisedValue && inputs.appraisedValue > 0) {
+      params.set('appraisal', String(inputs.appraisedValue));
+    }
+  }
+  if (rule.registration.listPriceRegistration && inputs.listPrice && inputs.listPrice > 0) {
+    params.set('msrp', String(inputs.listPrice));
+  }
+  if (rule.localities && inputs.localityId) {
+    params.set('loc', inputs.localityId);
+  }
+  if (rule.registration.newPlateFees && inputs.hasPlateToTransfer) {
+    params.set('plate', 'yes');
+  }
+  if (rule.registration.passengerWeightChart && inputs.vehicleWeight && inputs.vehicleWeight > 0) {
+    params.set('lbs', String(inputs.vehicleWeight));
+  }
+  if (inputs.tradeInValue > 0) {
+    params.set('tradeIn', String(inputs.tradeInValue));
+  }
+  return params;
+}

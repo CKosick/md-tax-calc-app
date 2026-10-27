@@ -304,10 +304,11 @@ describe('Work Order Acceptance Tests', () => {
       const headings = [...container.querySelectorAll('h2')].map((h) => h.textContent?.trim());
       expect(headings).toEqual([
         '1. Calculator Inputs and Data Storage',
-        '2. Cookies and Tracking Technologies',
-        '3. Affiliate Relationships & Commercial Disclosures',
-        "4. Children's Online Privacy Protection",
-        '5. Privacy Contact Information'
+        '2. Emailing Yourself an Estimate (Formspree)',
+        '3. Cookies and Tracking Technologies',
+        '4. Affiliate Relationships & Commercial Disclosures',
+        "5. Children's Online Privacy Protection",
+        '6. Privacy Contact Information'
       ]);
       expect(text).toContain('Google Analytics, Cloudflare Web Analytics, and Vercel Analytics');
       expect(text).toContain('Last Updated: October 2026');

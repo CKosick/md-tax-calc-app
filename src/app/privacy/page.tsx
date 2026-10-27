@@ -51,13 +51,25 @@ export default function PrivacyPolicyPage() {
               At CarTaxHub, we believe financial estimators should not require sacrificing personal privacy. All vehicle purchase prices, trade-in valuations, model years, weight classifications, and financing selections entered into our calculators are processed strictly inside your web browser using client-side JavaScript.
             </p>
             <p className="text-sm sm:text-base font-medium text-slate-900 dark:text-slate-100">
-              Your calculator inputs never leave your browser. We do not transmit, log, sell, or store your private vehicle purchase numbers on our servers or in any external database.
+              Your calculator inputs never leave your browser unless you choose to email yourself an estimate (see section 2). We do not log, sell, or store your private vehicle purchase numbers on our servers or in any external database.
+            </p>
+          </section>
+
+          <section id="email-estimate-processor" className="space-y-3">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+              2. Emailing Yourself an Estimate (Formspree)
+            </h2>
+            <p className="text-sm sm:text-base">
+              If you use &quot;Email me this estimate&quot; on a calculator, the email address you enter and that estimate&apos;s details (the state, vehicle price, tax, fees, total, any locality you chose, and the link back to the estimate) are sent to Formspree, the form service that processes this feature for us.
+            </p>
+            <p className="text-sm sm:text-base">
+              We use your address only to send you the estimate you asked for. It is not used for marketing or newsletters, and it is not shared with anyone beyond Formspree as the processor. Nothing is sent unless you submit the form.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-              2. Cookies and Tracking Technologies
+              3. Cookies and Tracking Technologies
             </h2>
             <p className="text-sm sm:text-base">
               CarTaxHub uses standard first-party and third-party cookies, web beacons, and similar tracking technologies to ensure site functionality and understand audience engagement.
@@ -74,7 +86,7 @@ export default function PrivacyPolicyPage() {
 
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-              3. Affiliate Relationships &amp; Commercial Disclosures
+              4. Affiliate Relationships &amp; Commercial Disclosures
             </h2>
             <p className="text-sm sm:text-base">
               CarTaxHub is supported in part through affiliate marketing relationships. When you click on outbound recommendation links or promotional banners on our site and make a purchase or request a quote, we may receive a commission or referral fee at zero additional cost to you.
@@ -100,7 +112,7 @@ export default function PrivacyPolicyPage() {
 
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-              4. Children&apos;s Online Privacy Protection
+              5. Children&apos;s Online Privacy Protection
             </h2>
             <p className="text-sm sm:text-base">
               CarTaxHub is directed toward vehicle buyers of legal driving and contracting age. We do not knowingly collect or solicit personal information from individuals under the age of 13.
@@ -109,7 +121,7 @@ export default function PrivacyPolicyPage() {
 
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-              5. Privacy Contact Information
+              6. Privacy Contact Information
             </h2>
             <p className="text-sm sm:text-base">
               If you have any questions or feedback regarding this Privacy Policy, our data handling practices, or cookie disclosures, please contact us by email:

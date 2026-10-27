@@ -21,6 +21,8 @@ interface CalculatorProps {
   initialRule: StateRule;
   /** Partner URLs resolved on the server (see resolvePartnerHrefs). */
   partnerHrefs?: PartnerHrefs;
+  /** Formspree form ID resolved on the server (getFormspreeFormId); hides the email block when unset. */
+  emailFormId?: string;
   /**
    * Embedded in another page (e.g. a guide): renders only the form, results, disclaimers, and
    * partner offers. The host page supplies its own H1, breadcrumb, FAQ, and links.
@@ -95,6 +97,7 @@ interface CalculatorViewProps extends CalculatorProps {
 function CalculatorView({
   initialRule,
   partnerHrefs,
+  emailFormId,
   initialInputs,
   calculationYear,
   embedded = false,
@@ -233,6 +236,7 @@ function CalculatorView({
             inputs={inputs}
             partnerHrefs={partnerHrefs}
             showPartnerDisclosure={hasVisiblePartner && !hasVisibleAboveResults}
+            emailFormId={emailFormId}
           />
 
           {/* Mobile Disclaimers: rendered below results on mobile so user sees results first */}
