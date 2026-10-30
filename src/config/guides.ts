@@ -200,6 +200,38 @@ const UT_SOURCES = {
   rates: { label: 'Utah State Tax Commission: Combined Sales and Use Tax Rates, October 2026', url: 'https://files.tax.utah.gov/tax/salestax/rate/26q4combined.pdf' }
 };
 
+const GA_SOURCES = {
+  casualSale: { label: 'Georgia DOR: Title and Register a Vehicle Purchased in a Casual Sale', url: 'https://dor.georgia.gov/motor-vehicles/title-motor-vehicles/title-and-register-vehicle-purchased-casual-sale' },
+  tavt: { label: 'Georgia DOR: Vehicle Taxes (TAVT and Annual Ad Valorem Tax)', url: 'https://dor.georgia.gov/motor-vehicles/vehicle-taxes-title-ad-valorem-tax-tavt-and-annual-ad-valorem-tax' },
+  tavtFaq: { label: 'Georgia DOR: Title Ad Valorem Tax (TAVT) FAQ', url: 'https://dor.georgia.gov/title-ad-valorem-tax-tavt-faq' },
+  fees: { label: 'Georgia DOR: Motor Vehicles Fees, Fines, and Penalties', url: 'https://dor.georgia.gov/motor-vehicles-fees-fines-and-penalties' },
+  mv16: { label: 'Georgia DOR Form MV-16: Affidavit to Certify Immediate Family Relationship', url: 'https://dor.georgia.gov/document/document-document/mv-16-affidavit-certify-immediate-family-relationship/download' },
+  newResident: { label: 'Georgia DOR: New to Georgia?', url: 'https://dor.georgia.gov/motor-vehicles/vehicle-registration-license-plates/new-georgia' },
+  afv: { label: 'Georgia DOR: Alternative Fuel Vehicle Annual Licensing Fees, July 2026', url: 'https://dor.georgia.gov/alternative-fuel-and-low-speed-vehicles-annual-licensing-fees-july-2026' }
+};
+
+const NC_DMV = 'https://www.ncdot.gov/dmv';
+const NC_SOURCES = {
+  titles: { label: 'NCDMV: Vehicle Titles', url: `${NC_DMV}/title-registration/vehicle/Pages/default.aspx` },
+  forms: { label: 'NCDMV: Title Documents & Forms', url: `${NC_DMV}/title-registration/vehicle/Pages/documents-forms.aspx` },
+  fees: { label: 'NCDMV: Title & Registration Fees', url: `${NC_DMV}/title-registration/vehicle/Pages/fees.aspx` },
+  hut: { label: 'NCDMV: Highway-Use Tax', url: `${NC_DMV}/title-registration/taxes/Pages/default.aspx` },
+  newResident: { label: 'NCDMV: Moving to North Carolina', url: `${NC_DMV}/help/moving/Pages/new-residents.aspx` },
+  retailValue: { label: 'N.C. G.S. 105-187.3: Highway use tax base', url: 'https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-187.3.html' },
+  exemptions: { label: 'N.C. G.S. 105-187.6: Highway use tax exemptions and caps', url: 'https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-187.6.html' }
+};
+
+const NJ_MVC = 'https://www.nj.gov/mvc';
+const NJ_SOURCES = {
+  transfer: { label: 'NJ MVC: Transferring Vehicle Ownership', url: `${NJ_MVC}/vehicles/transowner.htm` },
+  title: { label: 'NJ MVC: How to Get a Title', url: `${NJ_MVC}/vehicles/titlenew.htm` },
+  register: { label: 'NJ MVC: Vehicle Registration', url: `${NJ_MVC}/vehicles/reginitial.htm` },
+  fees: { label: 'NJ MVC: Registration and Title Fees', url: `${NJ_MVC}/vehicles/regfees.htm` },
+  exempt: { label: 'NJ MVC: Vehicles Exempt from Sales Tax', url: `${NJ_MVC}/vehicletopics/taxexempt.htm` },
+  moving: { label: 'NJ MVC: Out of State/Foreign Transfers', url: `${NJ_MVC}/drivertopics/movetonj.htm` },
+  casualSales: { label: 'NJ Division of Taxation: Motor Vehicle Casual Sales FAQ', url: 'https://www.nj.gov/treasury/taxation/moveqa.shtml' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -4087,6 +4119,639 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [UT_SOURCES.outOfState, UT_SOURCES.registering, UT_SOURCES.uniform, UT_SOURCES.fees]
+  }
+,
+  {
+    slug: 'how-to-title-a-private-car-sale-in-georgia',
+    stateKey: 'georgia',
+    title: 'How to Title a Private Car Sale in Georgia',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Georgia',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Georgia: the signed title, Form MV-1, insurance, emissions, and the 7% TAVT on the state’s fair market value.',
+    cardDescription: 'The signed title, MV-1, emissions, and TAVT on fair market value.',
+    intro: [
+      'When you buy a car from a private seller in Georgia, you title and register it at the County Tag Office in the county where you live, and pay the one-time Title Ad Valorem Tax (TAVT) there.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Georgia Department of Revenue',
+    steps: [
+      {
+        title: 'Check the title assignment',
+        body: [
+          'The seller completes the assignment on the back of the title in blue or black ink, with your full legal name as it appears on your Georgia license or ID, the sale date, and the odometer reading. Both of you sign, and any recorded lien must be released on the title.',
+          'Never accept a title signed over with the buyer’s name left blank. Georgia law makes that a misdemeanor.'
+        ]
+      },
+      {
+        title: 'Get insurance and, if needed, an emissions test',
+        body: [
+          'Your insurer files your coverage electronically with the Department of Revenue, or you bring an insurance binder. Residents of Cherokee, Clayton, Cobb, Coweta, DeKalb, Douglas, Fayette, Forsyth, Fulton, Gwinnett, Henry, Paulding, and Rockdale counties need an emissions inspection certificate.'
+        ]
+      },
+      {
+        title: 'Fill out Form MV-1',
+        body: ['Complete the MV-1 Title/Tag Application. You can print it at home or have the County Tag Office print it for you to sign.']
+      },
+      {
+        title: 'Go to the County Tag Office quickly',
+        body: [
+          'The Department of Revenue’s private sale page says to title and register within 7 days of the purchase date. Its fee schedule adds a $10 penalty if you do not apply for the title within 30 days, and TAVT paid late on a private sale carries a 10% penalty after day 30 plus 1% a month.'
+        ]
+      },
+      {
+        title: 'Pay TAVT and fees',
+        body: [
+          'TAVT is 7.0% of the vehicle’s fair market value. For a used vehicle, that is the value in the state assessment manual, not the price you paid, and a private sale gets no trade-in reduction. You can look up the value with the Department of Revenue’s TAVT estimator.',
+          'The title is $18 and the license plate is $20. All-electric vehicles also pay a $238.59 alternative fuel fee each year.'
+        ]
+      }
+    ],
+    checklist: [
+      'The original title, signed by you and the seller, with any lien released',
+      'Your Georgia driver’s license or ID',
+      'MV-1 Title/Tag Application',
+      'Insurance filed electronically, or an insurance binder',
+      'Emissions certificate, if your county requires one',
+      'Payment for TAVT, the $18 title, and the $20 plate'
+    ],
+    calculatorNote:
+      'The calculator applies 7% to the price you enter. Georgia taxes the assessment manual value instead, so for the Department of Revenue’s figure, enter the value from its TAVT estimator as the price.',
+    faqs: [
+      {
+        question: 'Is Georgia TAVT based on the price I paid?',
+        answer: 'No. For a used vehicle the Department of Revenue uses the fair market value in the state assessment manual, which can be higher or lower than the price.'
+      },
+      {
+        question: 'Do I need a bill of sale?',
+        answer: 'The title assignment is the proof of ownership. A bill of sale is needed for a 1985 or older vehicle that does not require a title.'
+      },
+      {
+        question: 'Does a trade-in lower TAVT on a private sale?',
+        answer: 'No. The trade-in reduction applies only when a dealer makes the sale.'
+      }
+    ],
+    sources: [GA_SOURCES.casualSale, GA_SOURCES.tavtFaq, GA_SOURCES.tavt, GA_SOURCES.fees, GA_SOURCES.afv]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-georgia',
+    stateKey: 'georgia',
+    title: 'How to Gift a Car in Georgia',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Georgia',
+    metaDescription:
+      'How to transfer a car within the family in Georgia: the 0.5% family TAVT rate, Form MV-16, which relatives qualify, and the title paperwork.',
+    cardDescription: 'The 0.5% family TAVT rate, Form MV-16, and the paperwork.',
+    intro: [
+      'Georgia does not tax a family transfer at the full 7%. When the previous owner paid TAVT, an immediate family member can pay 0.5% of the vehicle’s fair market value instead.',
+      'Here is who qualifies and how to transfer the car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Georgia Department of Revenue',
+    steps: [
+      {
+        title: 'Check that you are immediate family',
+        body: [
+          'Form MV-16 covers transfers between a spouse, parent, child, stepchild, sibling, grandparent, or grandchild, whether the car is gifted, sold, or inherited.'
+        ]
+      },
+      {
+        title: 'Sign Form MV-16 before a notary',
+        body: [
+          'Both of you sign the Affidavit to Certify Immediate Family Relationship (MV-16), each before a notary. Falsifying it can bring penalties of up to $2,500 state and $2,500 local.'
+        ]
+      },
+      {
+        title: 'Know which tax applies',
+        body: [
+          'If the car is already in the TAVT system (the previous owner paid TAVT), you pay 0.5% of fair market value.',
+          'If the car is still in the older annual ad valorem system, you can stay in that system or pay full TAVT. MV-16 has a box for that choice.'
+        ]
+      },
+      {
+        title: 'Transfer the title',
+        body: [
+          'Your family member signs the title over to you with your full legal name, the date, and the odometer reading. Any lien must be released on the title.'
+        ]
+      },
+      {
+        title: 'Apply at the County Tag Office',
+        body: [
+          'Bring the title, MV-16, MV-1, your Georgia license or ID, insurance, and an emissions certificate if your county requires one. Pay the $18 title, the $20 plate, and the reduced TAVT.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you, with any lien released',
+      'Form MV-16, signed by both of you before a notary',
+      'MV-1 Title/Tag Application',
+      'Your Georgia driver’s license or ID',
+      'Insurance filed electronically, or an insurance binder',
+      'Emissions certificate, if your county requires one'
+    ],
+    calculatorNote:
+      'The calculator shows the full 7% TAVT. A qualifying family transfer pays 0.5% of fair market value instead, so the title and plate fees are the part of the estimate that carries over.',
+    faqs: [
+      {
+        question: 'Which relatives get Georgia’s 0.5% rate?',
+        answer: 'A spouse, parent, child, stepchild, sibling, grandparent, or grandchild, with Form MV-16, when the previous owner paid TAVT.'
+      },
+      {
+        question: 'What about an inherited car?',
+        answer: 'Use Form T-20 (Affidavit of Inheritance). A car in the TAVT system pays 0.5% of fair market value.'
+      },
+      {
+        question: 'Does a gift to a friend get the reduced rate?',
+        answer: 'No. The 0.5% rate is for the immediate family members listed on Form MV-16.'
+      }
+    ],
+    sources: [GA_SOURCES.tavt, GA_SOURCES.mv16, GA_SOURCES.casualSale, GA_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-georgia-after-moving-from-another-state',
+    stateKey: 'georgia',
+    title: 'Titling a Car in Georgia After Moving From Another State',
+    shortTitle: 'Title a car after moving to Georgia',
+    metaTitle: 'Titling Your Car After Moving to Georgia',
+    metaDescription:
+      'New to Georgia? Register within 30 days. Covers the Georgia license you need first, emissions counties, insurance, Form MV-1, and the 3% new resident TAVT.',
+    cardDescription: 'The 30-day deadline, the 3% TAVT, emissions, and what to bring.',
+    intro: [
+      'New Georgia residents must register their vehicles within 30 days of moving, at the County Tag Office.',
+      'New residents pay TAVT at 3% of fair market value instead of 7%.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Georgia Department of Revenue',
+    steps: [
+      {
+        title: 'Get your Georgia license first',
+        body: ['Once you have a valid Georgia driver’s license or ID, you can title and register your vehicles. Names and spellings must match on every document.']
+      },
+      {
+        title: 'Gather ownership documents',
+        body: [
+          'Bring your original out-of-state title. A 1986 or newer vehicle from a state that does not issue titles needs that state’s registration instead. If you have a loan or lease, bring that information too.'
+        ]
+      },
+      {
+        title: 'Get an emissions test if your county requires it',
+        body: [
+          'Residents of Cherokee, Clayton, Cobb, Coweta, DeKalb, Douglas, Fayette, Forsyth, Fulton, Gwinnett, Henry, Paulding, and Rockdale counties need an emissions inspection before registering.'
+        ]
+      },
+      {
+        title: 'Get Georgia insurance',
+        body: ['Your insurer files Georgia liability coverage electronically, or you bring an insurance binder.']
+      },
+      {
+        title: 'Apply and pay',
+        body: [
+          'Complete Form MV-1 at the County Tag Office. Pay TAVT at 3% of fair market value, the $18 title, and the $20 annual registration. All-electric vehicles add the $238.59 alternative fuel fee.'
+        ]
+      }
+    ],
+    checklist: [
+      'Georgia driver’s license or ID',
+      'Original out-of-state title (or registration from a non-title state)',
+      'Loan or lease information, if any',
+      'Emissions certificate, if your county requires one',
+      'Georgia insurance, filed electronically or on a binder',
+      'MV-1 Title/Tag Application'
+    ],
+    calculatorNote:
+      'The calculator uses the 7% rate for purchases. As a new resident you pay 3% of fair market value, so multiply your vehicle’s assessed value by 3% for the tax and use the calculator for the $18 title and $20 plate.',
+    faqs: [
+      {
+        question: 'How long do I have to register my car after moving to Georgia?',
+        answer: '30 days from the date you moved.'
+      },
+      {
+        question: 'What tax do new residents pay?',
+        answer: 'TAVT at 3% of the vehicle’s fair market value, under a law effective July 1, 2019.'
+      },
+      {
+        question: 'Do I need an emissions test?',
+        answer: 'Only if you live in one of the 13 metro Atlanta counties that require it.'
+      }
+    ],
+    sources: [GA_SOURCES.newResident, GA_SOURCES.tavt, GA_SOURCES.fees, GA_SOURCES.afv]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-north-carolina',
+    stateKey: 'north-carolina',
+    title: 'How to Title a Private Car Sale in North Carolina',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in North Carolina',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in North Carolina: the notarized title, Forms MVR-1, MVR-180, and MVR-181, insurance, and the 3% highway use tax.',
+    cardDescription: 'The notarized title, MVR-1, insurance, and the 3% highway use tax.',
+    intro: [
+      'When you buy a car from a private seller in North Carolina, you title it at a license plate agency or by mail and pay the 3% highway use tax instead of sales tax.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'NCDMV',
+    steps: [
+      {
+        title: 'Complete the back of the title',
+        body: [
+          'You and the seller fill in the buyer’s name and address, the date of sale, the seller’s signature and printed name, the odometer reading if required, and the damage disclosure. A North Carolina title must be notarized. If liens are shown, get a lien release.'
+        ]
+      },
+      {
+        title: 'Fill out the forms',
+        body: [
+          'Complete the Title Application (MVR-1), which must be notarized, and the Damage Disclosure Statement (MVR-181). For a vehicle less than 10 years old, also complete the Odometer Disclosure Statement (MVR-180).'
+        ]
+      },
+      {
+        title: 'Get North Carolina insurance',
+        body: ['Liability insurance from a North Carolina-licensed provider is required before plates are issued. Out-of-state policies are not accepted.']
+      },
+      {
+        title: 'Apply within 28 days',
+        body: [
+          'Submit the title transfer within 28 days of the sale or delivery date, whichever is later, to avoid a $20 late penalty. Bring your North Carolina driver’s license or ID.'
+        ]
+      },
+      {
+        title: 'Pay the tax and fees',
+        body: [
+          'The highway use tax is 3% of the vehicle’s market value, which NCDMV sets from its value schedule, less any trade-in allowance the seller gives you. There is no cap on a passenger vehicle bought in a sale.',
+          'The title is $66.75 and registration is $46.25 a year. Electric vehicles add $214.50 and plug-in hybrids $107.25. Wake, Durham, and Orange counties add $17 in registration taxes. County property tax can be paid at registration or deferred for 60 days.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, completed by you and the seller (notarized if it is a North Carolina title)',
+      'Lien release, if liens are shown',
+      'Title Application (MVR-1), notarized',
+      'Odometer Disclosure Statement (MVR-180), for vehicles under 10 years old',
+      'Damage Disclosure Statement (MVR-181)',
+      'North Carolina driver’s license or ID and North Carolina insurance'
+    ],
+    calculatorNote:
+      'The calculator applies 3% to the price you enter. North Carolina uses its own market value for a private sale, so the tax at the agency may differ. County registration taxes and property tax are not included.',
+    faqs: [
+      {
+        question: 'Is the highway use tax capped at $2,000?',
+        answer: 'Not for a passenger vehicle. The $2,000 maximum is for commercial vehicles over 26,000 pounds.'
+      },
+      {
+        question: 'Does a trade-in lower the tax on a private sale?',
+        answer: 'Yes. The tax is figured on market value less any allowance the seller gives for a vehicle you trade.'
+      },
+      {
+        question: 'How long does a title take?',
+        answer: 'Title applications take 10 to 15 business days. NCDMV also offers instant titles at some agencies for $126.'
+      }
+    ],
+    sources: [NC_SOURCES.titles, NC_SOURCES.forms, NC_SOURCES.fees, NC_SOURCES.hut, NC_SOURCES.retailValue]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-north-carolina',
+    stateKey: 'north-carolina',
+    title: 'How to Gift a Car in North Carolina',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in North Carolina',
+    metaDescription:
+      'How to gift a car within the family in North Carolina: the highway use tax exemption for spouses, parents, children, and stepchildren, Form MVR-613, and the title paperwork.',
+    cardDescription: 'The family exemption, Form MVR-613, and the title paperwork.',
+    intro: [
+      'A gift between spouses, a parent and child, or a stepparent and stepchild is exempt from North Carolina’s highway use tax.',
+      'Here is how to use the exemption and transfer the car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'NCDMV',
+    steps: [
+      {
+        title: 'Check that the exemption applies',
+        body: [
+          'The exemption covers gifts between spouses, a parent and child, or a stepparent and stepchild. It applies to a North Carolina title transferred from one North Carolina resident to another.',
+          'Other gifts are taxed at 3% of the vehicle’s market value.'
+        ]
+      },
+      {
+        title: 'Complete the title',
+        body: ['Your family member fills in the back of the title with your name and address, the date, the odometer reading if required, and the damage disclosure, and signs before a notary.']
+      },
+      {
+        title: 'Fill out the forms',
+        body: [
+          'Complete the Highway-Use Tax Exemption Certificate (MVR-613) and the Title Application (MVR-1), both notarized, plus MVR-181 and, for a vehicle under 10 years old, MVR-180.'
+        ]
+      },
+      {
+        title: 'Get North Carolina insurance if you will drive it',
+        body: ['Insurance is needed only if you are also registering the car. It must come from a North Carolina-licensed provider; out-of-state policies are not accepted.']
+      },
+      {
+        title: 'Title and register',
+        body: [
+          'Apply at a license plate agency or by mail. Pay the $66.75 title fee and, if you are registering the car, the $46.25 registration.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you and notarized',
+      'Highway-Use Tax Exemption Certificate (MVR-613), notarized',
+      'Title Application (MVR-1), notarized',
+      'MVR-180 (under 10 years old) and MVR-181',
+      'Your North Carolina driver’s license or ID',
+      'North Carolina insurance, if registering'
+    ],
+    calculatorNote:
+      'For an exempt family gift, enter $0 as the price to see the title and registration fees. For any other gift, the tax is 3% of market value.',
+    faqs: [
+      {
+        question: 'Which family gifts are exempt in North Carolina?',
+        answer: 'Gifts between a husband and wife, a parent and child, or a stepparent and stepchild (G.S. 105-187.6).'
+      },
+      {
+        question: 'Is a gift to a sibling or grandchild exempt?',
+        answer: 'No. Those relationships are not on the list, so the 3% tax applies on market value.'
+      },
+      {
+        question: 'What about an inherited car?',
+        answer: 'A vehicle transferred by will or intestacy is exempt from the highway use tax.'
+      }
+    ],
+    sources: [NC_SOURCES.titles, NC_SOURCES.forms, NC_SOURCES.exemptions, NC_SOURCES.hut, NC_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-north-carolina-after-moving-from-another-state',
+    stateKey: 'north-carolina',
+    title: 'Titling a Car in North Carolina After Moving From Another State',
+    shortTitle: 'Title a car after moving to North Carolina',
+    metaTitle: 'Titling Your Car After Moving to North Carolina',
+    metaDescription:
+      'New to North Carolina? Get your license first, then title and register within 60 days. Covers the $250 highway use tax cap, Forms MVR-1 and MVR-180, and insurance.',
+    cardDescription: 'The license first, the $250 tax cap, and what to bring.',
+    intro: [
+      'Within 60 days of establishing a permanent residence in North Carolina, you must get a North Carolina driver’s license and title and register your vehicles.',
+      'If your vehicle has been titled in your name in another state for at least 90 days, the highway use tax is capped at $250.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'NCDMV',
+    steps: [
+      {
+        title: 'Get your North Carolina license first',
+        body: [
+          'You must get a license or ID before titling and registering. NCDMV also says to register when you take a job in North Carolina or when your prior state’s reciprocity period ends (usually 30 days), whichever comes first.'
+        ]
+      },
+      {
+        title: 'Get North Carolina insurance',
+        body: ['Coverage must come from a provider licensed in North Carolina. Out-of-state policies are not accepted.']
+      },
+      {
+        title: 'Gather the documents',
+        body: [
+          'Bring your title (or your registration card if a lender holds the title), the Title Application (MVR-1), and the Odometer Disclosure (MVR-180) if the vehicle is less than 10 years old.'
+        ]
+      },
+      {
+        title: 'Pay the tax and fees',
+        body: [
+          'If the vehicle has been titled in your name in another state for at least 90 days, the highway use tax is 3% of its value up to $250. Owned less than 90 days, you get credit for tax paid to another state with proof of payment.',
+          'The title is $66.75 and registration is $46.25 a year.'
+        ]
+      },
+      {
+        title: 'Plan for the inspection at renewal',
+        body: ['You can register at first without an inspection, but the vehicle needs one before you renew.']
+      }
+    ],
+    checklist: [
+      'North Carolina driver’s license (or out-of-state license with a North Carolina Temporary Driving Certificate)',
+      'Your title, or registration card if a lender holds it',
+      'Title Application (MVR-1)',
+      'Odometer Disclosure (MVR-180), for vehicles under 10 years old',
+      'North Carolina insurance information'
+    ],
+    calculatorNote:
+      'The calculator does not apply the $250 cap. For a vehicle you have owned at least 90 days, the tax is 3% of value up to $250; use the calculator for the title and registration fees.',
+    faqs: [
+      {
+        question: 'How long do I have after moving to North Carolina?',
+        answer: '60 days after establishing residence to get a license and title and register your vehicles, or sooner if you take a job here or your reciprocity period ends.'
+      },
+      {
+        question: 'Do I pay the full 3% highway use tax?',
+        answer: 'Not if the vehicle has been titled in your name in another state for at least 90 days. Then the tax is capped at $250.'
+      },
+      {
+        question: 'Do I need an inspection to register?',
+        answer: 'Not for the first registration. An inspection is required before renewal.'
+      }
+    ],
+    sources: [NC_SOURCES.newResident, NC_SOURCES.hut, NC_SOURCES.exemptions, NC_SOURCES.fees, NC_SOURCES.titles]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-new-jersey',
+    stateKey: 'new-jersey',
+    title: 'How to Title a Private Car Sale in New Jersey',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in New Jersey',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in New Jersey: the signed title, bill of sale, Form BA-49, the 10-working-day deadline, and 6.625% sales tax.',
+    cardDescription: 'The signed title, BA-49, the 10-day deadline, and 6.625% sales tax.',
+    intro: [
+      'When you buy a car from a private seller in New Jersey, you transfer the title in person at a Motor Vehicle Commission agency and pay 6.625% sales tax on the price there.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'NJ MVC and Division of Taxation',
+    steps: [
+      {
+        title: 'Get the signed title and a bill of sale',
+        body: [
+          'The seller signs the seller’s section on the back of the title and gives you a bill of sale with your name and address, the sale date, the odometer reading, and the price. The seller keeps the plates.'
+        ]
+      },
+      {
+        title: 'Sign the buyer’s section',
+        body: ['Sign the buyer’s section on the back of the title and enter your driver’s license number.']
+      },
+      {
+        title: 'Make an appointment within 10 working days',
+        body: [
+          'Title transfers are done in person at a motor vehicle agency, not by mail. Transfer within 10 working days of the sale to avoid a $25 penalty.'
+        ]
+      },
+      {
+        title: 'Bring your documents',
+        body: ['Bring the title, your license or other ID, your New Jersey insurance card or policy details, and the Vehicle Registration Application (BA-49).']
+      },
+      {
+        title: 'Pay the tax and fees',
+        body: [
+          'Sales tax is 6.625% of the purchase price, with no trade-in credit on a private sale. The Division of Taxation may send a questionnaire if the price looks low and can use NADA values if you do not respond.',
+          'The title is $60, or $85 with one lien. Registration is $46.50 under 3,500 lbs and $71.50 over, or $59 and $84 if the model year is within 2 years.',
+          'Zero emission vehicles also pay an annual fee set by statute: $250 from July 1, 2024, rising $10 each July. By that schedule it is $270 for July 2026 to June 2027; the MVC has not published that figure itself.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the seller and by you with your license number',
+      'Bill of sale with the price, date, and odometer reading',
+      'Driver’s license or other ID',
+      'New Jersey insurance card or policy details',
+      'Vehicle Registration Application (BA-49)',
+      'An MVC appointment within 10 working days of the sale'
+    ],
+    calculatorNote:
+      'The calculator includes 6.625% sales tax on the price, the title fee, and registration by weight and model year. The zero emission vehicle fee shown ($270) is worked out from the statutory schedule.',
+    faqs: [
+      {
+        question: 'Can I transfer a New Jersey title by mail?',
+        answer: 'No. Ownership transfers are done only in person at a motor vehicle agency.'
+      },
+      {
+        question: 'Do I keep the seller’s plates?',
+        answer: 'No. The seller removes them and surrenders them or moves them to another vehicle. You get plates at the agency.'
+      },
+      {
+        question: 'What if I report a low price?',
+        answer: 'The Division of Taxation’s Casual Sales Unit may send a questionnaire and a Notice of Adjustment if more tax is due.'
+      }
+    ],
+    sources: [NJ_SOURCES.transfer, NJ_SOURCES.register, NJ_SOURCES.title, NJ_SOURCES.fees, NJ_SOURCES.casualSales]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-new-jersey',
+    stateKey: 'new-jersey',
+    title: 'How to Gift a Car in New Jersey',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in New Jersey',
+    metaDescription:
+      'How to gift a car in New Jersey without sales tax: writing GIFT on the title, what happens when the car has a loan, and the title transfer paperwork.',
+    cardDescription: 'Writing GIFT on the title, loans, and the transfer paperwork.',
+    intro: [
+      'A genuine gift of a car is exempt from New Jersey sales tax. The purchase price line on the title must say “GIFT.”',
+      'Here is how to transfer a gifted car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'NJ MVC and Division of Taxation',
+    steps: [
+      {
+        title: 'Write GIFT as the price',
+        body: [
+          'The giver signs the seller’s section of the title and writes “GIFT” on the purchase price line. If the entry looks altered, the MVC may ask for more documentation.'
+        ]
+      },
+      {
+        title: 'Check for a loan',
+        body: [
+          'A gift free of liens is exempt. If the car still has a loan, sales tax is due on the loan amount you take over, unless you were already a co-owner on the original title.'
+        ]
+      },
+      {
+        title: 'Answer any Division of Taxation questionnaire',
+        body: ['The Division of Taxation may send a questionnaire about the transfer. The giver completes the Seller’s Affidavit to confirm the gift.']
+      },
+      {
+        title: 'Get New Jersey insurance',
+        body: ['Bring your New Jersey insurance card, or the company name and policy number, to register the car.']
+      },
+      {
+        title: 'Transfer the title in person',
+        body: [
+          'Within 10 working days, bring the title, your ID, New Jersey insurance, and Form BA-49 to a motor vehicle agency. Pay the $60 title fee and registration.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the giver, with “GIFT” on the price line',
+      'Your driver’s license or other ID',
+      'New Jersey insurance card or policy details',
+      'Vehicle Registration Application (BA-49)',
+      'Loan payoff or lienholder information, if the car has a loan'
+    ],
+    calculatorNote: 'For a gift free of liens, enter $0 as the price to see the title and registration fees.',
+    faqs: [
+      {
+        question: 'Is a gifted car taxed in New Jersey?',
+        answer: 'Not if it is a genuine gift free of liens, with “GIFT” on the title’s price line.'
+      },
+      {
+        question: 'Does it have to be a family member?',
+        answer: 'The MVC’s exemption is for a vehicle that was a gift. It does not limit it to family.'
+      },
+      {
+        question: 'What about an inherited car?',
+        answer: 'A vehicle acquired by an heir, legatee, or trust beneficiary is exempt from sales tax.'
+      }
+    ],
+    sources: [NJ_SOURCES.exempt, NJ_SOURCES.casualSales, NJ_SOURCES.transfer, NJ_SOURCES.register]
+  },
+  {
+    slug: 'titling-a-car-in-new-jersey-after-moving-from-another-state',
+    stateKey: 'new-jersey',
+    title: 'Titling a Car in New Jersey After Moving From Another State',
+    shortTitle: 'Title a car after moving to New Jersey',
+    metaTitle: 'Titling Your Car After Moving to New Jersey',
+    metaDescription:
+      'New to New Jersey? Transfer your title and registration within 60 days. Covers the sales tax exemption for cars bought out of state, Forms OS/SS-UTA and BA-49, and fees.',
+    cardDescription: 'The 60-day deadline, no sales tax, and the forms to bring.',
+    intro: [
+      'New residents must transfer their vehicle title and registration within 60 days of moving to New Jersey (120 days during a Public Health Emergency).',
+      'A vehicle you bought, titled, and registered in another state while you lived there is exempt from New Jersey sales tax.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'NJ MVC and Division of Taxation',
+    steps: [
+      {
+        title: 'Get New Jersey insurance',
+        body: ['Arrange New Jersey insurance before you visit, and bring the card or policy details.']
+      },
+      {
+        title: 'Fill out the forms',
+        body: [
+          'Complete the Universal Title Application (OS/SS-UTA) and the Vehicle Registration Application (BA-49). A financed or leased vehicle also needs Form OS/SS-54.'
+        ]
+      },
+      {
+        title: 'Visit a motor vehicle agency',
+        body: ['Bring your ID (usually your driver’s license), the original title, and your insurance information. Schedule an appointment first.']
+      },
+      {
+        title: 'Pay the title and registration fees',
+        body: [
+          'The title is $60, or $85 with one lien. Registration is $46.50 under 3,500 lbs and $71.50 over, or $59 and $84 for model years within 2 years. Zero emission vehicles add the statutory annual fee, which works out to $270 for July 2026 to June 2027.'
+        ]
+      },
+      {
+        title: 'Follow the temporary inspection card',
+        body: ['You receive a temporary inspection card with your plates and registration. The MVC’s inspection pages explain the next step.']
+      }
+    ],
+    checklist: [
+      'Driver’s license or other ID',
+      'Original out-of-state title',
+      'New Jersey insurance information',
+      'Universal Title Application (OS/SS-UTA)',
+      'Vehicle Registration Application (BA-49)',
+      'Form OS/SS-54, if the vehicle is financed or leased'
+    ],
+    calculatorNote:
+      'Enter $0 as the price to see the title and registration fees. A vehicle bought, titled, and registered in another state while you lived there owes no New Jersey sales tax.',
+    faqs: [
+      {
+        question: 'How long do I have after moving to New Jersey?',
+        answer: '60 days to transfer your title and registration, or 120 days during a Public Health Emergency.'
+      },
+      {
+        question: 'Do I pay New Jersey sales tax on my car?',
+        answer: 'Not if you bought, titled, and registered it in another state while you were not a New Jersey resident.'
+      },
+      {
+        question: 'Is the $270 EV fee an official figure?',
+        answer: 'It is worked out from the statutory schedule ($250 from July 2024, plus $10 each July). The MVC publishes the schedule but not the 2026 amount.'
+      }
+    ],
+    sources: [NJ_SOURCES.moving, NJ_SOURCES.exempt, NJ_SOURCES.fees, NJ_SOURCES.register]
   }
 ];
 
