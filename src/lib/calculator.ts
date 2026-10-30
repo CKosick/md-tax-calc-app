@@ -265,6 +265,12 @@ export function calculateVehicleCosts(
     } else if (typeof passRule === 'number') {
       baseRegistrationFee = term === 1 ? passRule / 2 : passRule;
     }
+
+    // Recent model years pay a higher tier (New Jersey: within 2 years)
+    const recent = rule.registration.recentModelYearExtra;
+    if (recent && vehicleAge <= recent.withinYears) {
+      baseRegistrationFee = Math.round((baseRegistrationFee + recent.annualFee * term) * 100) / 100;
+    }
   }
 
   // EV / PHEV surcharges (if state levies annual surcharge)

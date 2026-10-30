@@ -18,11 +18,6 @@
       "finding": "Page not found"
     },
     {
-      "state": "georgia",
-      "url": "https://dor.georgia.gov/motor-vehicles/vehicle-registration-and-licensing",
-      "finding": "Page not found"
-    },
-    {
       "state": "indiana",
       "url": "https://www.in.gov/bmv/registration-plates/vehicle-registration-fees/",
       "finding": "Page not found"
@@ -58,19 +53,9 @@
       "finding": "404"
     },
     {
-      "state": "new-jersey",
-      "url": "https://www.nj.gov/treasury/taxation/sales_use_tax.shtml",
-      "finding": "404 Page Not Found"
-    },
-    {
       "state": "new-mexico",
       "url": "https://www.mvd.newmexico.gov/vehicles/taxes-fees/",
       "finding": "404 Not Found"
-    },
-    {
-      "state": "north-carolina",
-      "url": "https://www.ncdot.gov/dmv/title-registration/taxes/Pages/highway-use-tax.aspx",
-      "finding": "Redirects to a page-not-found page"
     },
     {
       "state": "south-carolina",
@@ -245,6 +230,21 @@
       "state": "utah",
       "on": "2026-10-25",
       "note": "Dead DMV links replaced with the DMV registration fees, uniform fees, title transfer, and registration pages, the October 2026 Tax Commission rate chart, the 2026 fee schedule, and the road usage charge site; rates and fees re-checked."
+    },
+    {
+      "state": "georgia",
+      "on": "2026-10-29",
+      "note": "Dead DOR registration link replaced with the TAVT FAQ and vehicle tax pages, the casual sale page, the fee schedules, the July 2026 alternative fuel fee bulletin, and the new resident page; TAVT basis, fees, and FAQs re-checked."
+    },
+    {
+      "state": "north-carolina",
+      "on": "2026-10-29",
+      "note": "Dead highway use tax link replaced with the current NCDMV tax, fee, title, forms, and new resident pages and G.S. 105-187.3 and 105-187.6; title, registration, EV and plug-in hybrid fees updated, passenger tax cap removed."
+    },
+    {
+      "state": "new-jersey",
+      "on": "2026-10-29",
+      "note": "Dead Division of Taxation sales tax link replaced with the casual sales FAQ and MVC transfer, title, fee, registration, exemption, and new resident pages; registration by weight and model year age, ZEV fee updated."
     }
   ]
 }

@@ -196,9 +196,9 @@ describe('UI Component Unit Tests', () => {
     expect(screen.queryByText(/\$75\.25\.00/)).toBeNull();
     expect(screen.getAllByText(/\$75\.25/).length).toBeGreaterThanOrEqual(1);
 
-    // Check North Carolina lien fee is $21.50, NOT $21.5.00
-    expect(screen.queryByText(/\$21\.5\.00/)).toBeNull();
-    expect(screen.getAllByText(/\$21\.50/).length).toBeGreaterThanOrEqual(1);
+    // Check New Jersey lien fee is $25.00, NOT $25.00.00
+    expect(screen.queryByText(/\$25\.00\.00/)).toBeNull();
+    expect(screen.getAllByText(/\$25\.00/).length).toBeGreaterThanOrEqual(1);
 
     // Check Illinois has Flat Table (RUT-50) badge
     expect(screen.getByText(/Flat Table \(RUT-50\)/i)).toBeDefined();

@@ -350,14 +350,14 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(1088.00);
   });
 
-  it('North Carolina: exact worked test ($15,000 -> $544.75)', () => {
+  it('North Carolina: exact worked test ($15,000 -> $563.00)', () => {
     const rule = allRules['north-carolina'];
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'north-carolina' }, 2026);
     expect(res.exciseTax).toBe(450.00); // 3.0% HUT of 15000
-    expect(res.titleFee).toBe(56.00);
+    expect(res.titleFee).toBe(66.75);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(38.75);
-    expect(res.totalFirstYearCost).toBe(544.75);
+    expect(res.registrationTotal).toBe(46.25);
+    expect(res.totalFirstYearCost).toBe(563.00);
   });
 
   it('Michigan: exact worked test ($15,000 -> $1,044.76, 2019 model at the $30,000 list price default)', () => {

@@ -1272,53 +1272,58 @@
       },
       "evSurchargeAnnual": 238.59
     },
-    "localTaxNote": "Georgia Title Ad Valorem Tax (TAVT) is a uniform 7.0% statewide tax that replaces all sales tax and annual ad valorem property taxes.",
+    "localTaxNote": "Georgia charges a one-time Title Ad Valorem Tax (TAVT) of 7.0% in place of sales tax and annual property tax. The rate is the same in every county.",
     "notes": [
-      "Georgia Title Ad Valorem Tax (TAVT) is 7.0% (O.C.G.A. § 48-5C-1) assessed on the Georgia Department of Revenue fair market value.",
-      "Title fee is $18.00; standard annual license plate registration is $20.00.",
-      "Non-commercial Alternative Fuel Vehicle (AFV/EV) annual registration fee is $238.59.",
-      "Trade-in deduction is not allowed on private party sales."
+      "TAVT is 7.0% of the vehicle’s fair market value. On a private sale, the Department of Revenue uses the value in the state assessment manual, not the price you paid.",
+      "The title fee is $18, and a lien is recorded with it at no extra charge. The license plate is $20 a year, for cars and motorcycles alike.",
+      "All-electric vehicles pay a $238.59 alternative fuel fee each year (July 2026 to June 2027). Plug-in hybrids pay it only if they choose the alternative fuel plate."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Georgia Department of Revenue or County Tag Office.",
-      "Georgia assesses Title Ad Valorem Tax (TAVT) at 7.0% on the state assessment manual fair market value (or purchase price if higher).",
-      "Trade-in deductions are not available for private party sales in Georgia (only purchases from licensed Georgia dealers receive trade-in deductions).",
-      "Annual tag renewal in Georgia is $20.00; all-electric vehicles pay an annual alternative fuel fee ($238.59 in 2026)."
+      "Estimates only, not tax or legal advice. Verify with the Georgia Department of Revenue or your County Tag Office.",
+      "Georgia taxes a private sale on the fair market value from the state assessment manual, which can be more or less than the price you paid. The estimate uses the price you enter. To match the Department of Revenue, look up the value with its TAVT estimator and enter that value as the price.",
+      "A trade-in lowers TAVT only on a dealer sale. Private sales get no trade-in reduction.",
+      "New Georgia residents pay 3% instead of 7%. A transfer between immediate family members can pay 0.5% if the previous owner paid TAVT (Form MV-16).",
+      "Registration shown is the $20 annual plate fee. All-electric vehicles add the $238.59 alternative fuel fee."
     ],
     "faqs": [
       {
         "question": "What is the Georgia Title Ad Valorem Tax (TAVT)?",
-        "answer": "Georgia's Title Ad Valorem Tax (TAVT) is a one-time 7.0% tax applied to vehicle purchases upon titling. TAVT replaced the old annual 'birthday tax' and general sales tax, applying uniformly across all Georgia counties."
+        "answer": "A one-time 7.0% tax paid when you title a vehicle, in place of sales tax and annual property tax. It is due with the title application at the County Tag Office in the county where you live."
       },
       {
-        "question": "How is the tax base determined for private sales in Georgia?",
-        "answer": "For private-party sales, Georgia assesses TAVT on the state's vehicle assessment manual fair market value (based on DOR valuation tables), or on the actual purchase price if the purchase price is higher."
+        "question": "Is TAVT based on the price I paid in a private sale?",
+        "answer": "No. For a used vehicle, the Department of Revenue uses the fair market value in the state assessment manual, which averages wholesale and retail values. You can look it up with the DOR’s TAVT estimator."
       },
       {
         "question": "Can I deduct a trade-in on a private vehicle sale in Georgia?",
-        "answer": "No. Under Georgia law (O.C.G.A. § 48-5C-1), trade-in allowances only reduce TAVT when purchasing a vehicle from a licensed Georgia motor vehicle dealer. Private sales do not receive trade-in credit."
+        "answer": "No. The Department of Revenue reduces TAVT for a trade-in only when the sale is made by a dealer."
       },
       {
-        "question": "How much are Georgia vehicle title and tag fees?",
-        "answer": "The Georgia certificate of title fee is $18.00. Annual license plate registration is $20.00. Lien recordation is included on the standard title application."
+        "question": "How much are Georgia title and tag fees?",
+        "answer": "The title is $18, and adding a lien is included in that fee. The license plate is $20 a year for a passenger car or a motorcycle."
       },
       {
-        "question": "Do I pay Georgia vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Georgia, the state generally assesses its applicable vehicle sales or use tax (7.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Georgia motor vehicle agency to verify documentation requirements."
+        "question": "I am moving to Georgia. What do I pay?",
+        "answer": "New residents pay TAVT at 3% of fair market value, plus the $18 title and $20 plate. Register within 30 days of moving, after getting a Georgia driver’s license or ID."
       },
       {
-        "question": "Is a vehicle transfer between family members taxable in Georgia?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Georgia DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "question": "Is a vehicle transfer between family members taxed in Georgia?",
+        "answer": "A transfer between immediate family members (spouse, parent, child, stepchild, sibling, grandparent, grandchild) can pay 0.5% of fair market value if the previous owner paid TAVT. Both sides sign Form MV-16 before a notary."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in Georgia?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Georgia's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Georgia motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "How long do I have to title a private vehicle purchase in Georgia?",
+        "answer": "The Department of Revenue’s private sale page says to title and register within 7 days of purchase. Its fee schedule adds a $10 penalty if you do not apply for the title within 30 days, and TAVT paid late on a private sale carries a 10% penalty after day 30."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
       "https://dor.georgia.gov/title-ad-valorem-tax-tavt-faq",
-      "https://dor.georgia.gov/motor-vehicles/vehicle-registration-and-licensing"
+      "https://dor.georgia.gov/motor-vehicles/vehicle-taxes-title-ad-valorem-tax-tavt-and-annual-ad-valorem-tax",
+      "https://dor.georgia.gov/motor-vehicles/title-motor-vehicles/title-and-register-vehicle-purchased-casual-sale",
+      "https://dor.georgia.gov/motor-vehicles-fees-fines-and-penalties",
+      "https://dor.georgia.gov/document/instructions/schedule-motor-vehicle-license-plates-and-fees/download",
+      "https://dor.georgia.gov/alternative-fuel-and-low-speed-vehicles-annual-licensing-fees-july-2026",
+      "https://dor.georgia.gov/motor-vehicles/vehicle-registration-license-plates/new-georgia"
     ]
   },
   "north-carolina": {
@@ -1326,10 +1331,9 @@
     "slug": "north-carolina-private-sale-tax-calculator",
     "exciseTaxRate": 0.03,
     "minExciseTax": null,
-    "maxExciseTax": 2000,
-    "taxBase": "price",
-    "titleFee": 56,
-    "lienFilingFee": 21.5,
+    "taxBase": "fairMarketValue",
+    "titleFee": 66.75,
+    "lienFilingFee": 0,
     "tradeInDeductible": true,
     "registration": {
       "terms": [
@@ -1337,63 +1341,71 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 38.75
+          "1": 46.25
         },
         "over3700lbs": {
-          "1": 38.75
+          "1": 46.25
         }
       },
       "motorcycle": {
-        "1": 24
+        "1": 29.5
       },
-      "evSurchargeAnnual": 140
+      "evSurchargeAnnual": 214.5,
+      "phevSurchargeAnnual": 107.25
     },
-    "localTaxNote": "North Carolina levies a 3.0% Highway Use Tax (HUT) capped at $2,000 for standard passenger vehicles; no local sales taxes apply.",
+    "localTaxNote": "North Carolina charges a 3% highway use tax in place of sales tax, with no local rate. Some counties add a small registration tax (up to $17 in Wake, Durham, and Orange).",
     "notes": [
-      "North Carolina levies a 3.0% Highway Use Tax (HUT) in lieu of general sales tax, with a maximum cap of $2,000 for passenger vehicles.",
-      "Title fee is $56.00; lien recordation fee is $21.50.",
-      "Trade-in deduction is permitted if documented on bill of sale and title."
+      "The highway use tax is 3%. On a private sale it is figured on the vehicle’s market value from the NCDMV schedule, less any trade-in the seller allows.",
+      "The title fee is $66.75. Private passenger registration is $46.25 a year ($29.50 for motorcycles).",
+      "Electric vehicles add $214.50 a year and plug-in hybrids add $107.25.",
+      "Wake, Durham, and Orange counties add $17 a year in county and regional registration taxes; Randolph adds $2."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with NCDMV.",
-      "North Carolina charges a 3.0% Highway Use Tax (HUT) instead of general sales tax, with a maximum tax cap of $2,000 on passenger vehicles.",
-      "Trade-in allowance reduces the Highway Use Tax if you trade a vehicle with the private seller and record it properly on the title.",
-      "Standard passenger vehicle registration is $38.75 annually; electric vehicles pay an additional $140.00 annual EV fee."
+      "Estimates only, not tax or legal advice. Verify with NCDMV.",
+      "On a private sale, North Carolina figures the 3% highway use tax on market value from the NCDMV value schedule, which may not match the price you paid. The estimate uses the price you enter.",
+      "There is no cap for passenger vehicles. The $250 maximum applies only to a vehicle already titled in your name in another state for at least 90 days, and the $2,000 maximum only to commercial vehicles over 26,000 pounds.",
+      "Registration shown is the $46.25 passenger fee ($29.50 for motorcycles) plus any EV ($214.50) or plug-in hybrid ($107.25) fee. County and regional registration taxes, and the county property tax collected with registration, are not included.",
+      "A lien listed on your title application is recorded with the title. NCDMV charges $25 to add a lien to an existing title later."
     ],
     "faqs": [
       {
         "question": "What is the vehicle tax rate in North Carolina?",
-        "answer": "North Carolina assesses a 3.0% Highway Use Tax (HUT) on the retail value or purchase price of motor vehicles in lieu of general state and local sales taxes. For private passenger vehicles, HUT is capped at a maximum of $2,000."
+        "answer": "North Carolina charges a 3% highway use tax instead of sales tax each time a title is transferred. There is no local rate."
       },
       {
-        "question": "How much is a title certificate in North Carolina?",
-        "answer": "The NCDMV certificate of title fee is $56.00. If the vehicle is financed, a $21.50 lien recording fee is also required."
+        "question": "Is the highway use tax based on the price I paid in a private sale?",
+        "answer": "Not necessarily. For a sale by someone who is not a dealer, the tax is figured on the vehicle’s market value, which NCDMV sets from its value schedule, less any trade-in allowance the seller gives you."
       },
       {
-        "question": "Does North Carolina allow trade-in credit on private sales?",
-        "answer": "Yes. If you trade a vehicle with the seller as partial payment, North Carolina allows the trade-in allowance to reduce the taxable price subject to Highway Use Tax, provided the trade is properly detailed on the title assignment."
+        "question": "Is the North Carolina highway use tax capped?",
+        "answer": "Not for a passenger vehicle bought in a sale. A $250 maximum applies when you bring a vehicle that has been titled in your name in another state for at least 90 days. The $2,000 maximum is only for commercial vehicles over 26,000 pounds."
       },
       {
-        "question": "How much does license plate registration cost in North Carolina?",
-        "answer": "Annual registration for a private passenger car is $38.75. Fully electric vehicles are assessed an additional $140.00 annual fee ($70.00 for plug-in hybrids)."
+        "question": "How much are North Carolina title and registration fees?",
+        "answer": "The title is $66.75. Registration for a private passenger vehicle is $46.25 a year and $29.50 for a motorcycle. Electric vehicles add $214.50 and plug-in hybrids $107.25. Some counties add up to $17 in registration taxes."
       },
       {
-        "question": "Do I pay North Carolina vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into North Carolina, the state generally assesses its applicable vehicle sales or use tax (3.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the North Carolina motor vehicle agency to verify documentation requirements."
+        "question": "I am moving to North Carolina. What do I pay?",
+        "answer": "If the vehicle has been titled in your name in another state for at least 90 days, the highway use tax is capped at $250. You have 60 days after moving to get a North Carolina license and then title and register the vehicle."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in North Carolina?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the North Carolina DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A gift between spouses, a parent and child, or a stepparent and stepchild is exempt from the highway use tax with Form MVR-613. The exemption applies to a North Carolina title transferred between North Carolina residents."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in North Carolina?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond North Carolina's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the North Carolina motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "How long do I have to title a private vehicle purchase in North Carolina?",
+        "answer": "Apply within 28 days of the sale or delivery date, whichever is later, to avoid a $20 late penalty."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://www.ncdot.gov/dmv/title-registration/taxes/Pages/highway-use-tax.aspx",
-      "https://www.ncdot.gov/dmv/title-registration/vehicle/Pages/fees.aspx"
+      "https://www.ncdot.gov/dmv/title-registration/vehicle/Pages/fees.aspx",
+      "https://www.ncdot.gov/dmv/title-registration/taxes/Pages/default.aspx",
+      "https://www.ncdot.gov/dmv/title-registration/vehicle/Pages/default.aspx",
+      "https://www.ncdot.gov/dmv/title-registration/vehicle/Pages/documents-forms.aspx",
+      "https://www.ncdot.gov/dmv/help/moving/Pages/new-residents.aspx",
+      "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-187.3.html",
+      "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-187.6.html"
     ]
   },
   "michigan": {
@@ -1610,57 +1622,65 @@
       "motorcycle": {
         "1": 65
       },
-      "evSurchargeAnnual": 250
+      "evSurchargeAnnual": 270,
+      "passengerWeightSplitLbs": 3500,
+      "recentModelYearExtra": {
+        "withinYears": 2,
+        "annualFee": 12.5
+      }
     },
-    "localTaxNote": "New Jersey does not permit local option sales taxes; the 6.625% sales and use tax is uniform statewide.",
+    "localTaxNote": "New Jersey’s 6.625% sales tax is the same statewide; there is no local vehicle sales tax.",
     "notes": [
-      "New Jersey levies a uniform 6.625% sales and use tax on private party motor vehicle purchases.",
-      "Title fee is $60.00 for clean title ($85.00 with lien; $25 lien recording fee).",
-      "Registration is based on vehicle weight and age: $46.50/yr for vehicles older than 2 years under 3,500 lbs ($71.50 if over 3,500 lbs).",
-      "Zero Emission Vehicles (ZEVs) are subject to a $250 annual registration surcharge effective July 1, 2024.",
-      "Trade-in tax credits are restricted to licensed dealer purchases; private sales do not receive trade-in deductions."
+      "Private sales are taxed at 6.625% of the purchase price, paid at the Motor Vehicle Commission when you transfer the title.",
+      "The title fee is $60, or $85 with one lien.",
+      "Passenger registration is $46.50 under 3,500 lbs and $71.50 over 3,500 lbs, or $59 and $84 if the model year is within 2 years. Motorcycles are $65.",
+      "Zero emission vehicles pay an extra annual fee set by a statutory schedule: $250 from July 1, 2024, rising $10 each July to $290. That schedule puts it at $270 for July 2026 to June 2027; the MVC has not published that figure itself."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with New Jersey Motor Vehicle Commission (MVC) and Division of Taxation.",
-      "Sales tax is paid directly to the NJ MVC at the time of titling and registration.",
-      "The NJ Division of Taxation monitors casual sales and may assess tax based on N.A.D.A. book value if purchase price is deemed below market value.",
-      "Trade-in allowances only reduce taxable value when purchasing from a licensed motor vehicle dealership."
+      "Estimates only, not tax or legal advice. Verify with the New Jersey Motor Vehicle Commission or the Division of Taxation.",
+      "Sales tax is 6.625% of the price you paid. The Division of Taxation’s Casual Sales Unit may question a price well below market value and use NADA values if you do not respond.",
+      "There is no trade-in credit on a private sale. Swapping vehicles is taxed on fair market value.",
+      "Registration shown uses MVC’s weight classes and the higher fee for model years within 2 years. The $270 zero emission vehicle fee is worked out from the statutory schedule ($250 in July 2024 plus $10 a year), not a figure the MVC publishes."
     ],
     "faqs": [
       {
         "question": "What is the sales tax on a private car sale in New Jersey?",
-        "answer": "New Jersey levies a 6.625% sales and use tax on private party motor vehicle transactions. The tax is paid directly to the New Jersey Motor Vehicle Commission (MVC) when the buyer applies for title and registration."
+        "answer": "6.625% of the purchase price, paid at a Motor Vehicle Commission agency when you transfer the title."
       },
       {
         "question": "How much does a title transfer cost in New Jersey?",
-        "answer": "The standard certificate of title fee in New Jersey is $60.00. If the vehicle has an active lien (is financed), the title fee is $85.00 ($60 title fee plus $25 lien recording fee)."
+        "answer": "The title is $60, or $85 for a financed vehicle with one lien ($110 with two liens)."
       },
       {
-        "question": "Does New Jersey allow a trade-in tax credit for private sales?",
-        "answer": "No. Under New Jersey sales tax regulations, trade-in deductions are exclusively permitted when trading in a vehicle with a registered motor vehicle dealer. Private party sales are taxed on the full agreed purchase price."
+        "question": "Does New Jersey allow a trade-in credit on a private sale?",
+        "answer": "No. Anything of value traded for a car is taxable, and a swap between private parties is taxed on fair market value."
       },
       {
-        "question": "How does New Jersey verify private party vehicle sale prices?",
-        "answer": "The New Jersey Division of Taxation audits casual motor vehicle sales. If the reported purchase price appears significantly below fair market value, the state may issue a casual sales inquiry and assess sales tax based on standard N.A.D.A. book values unless proof of condition or purchase price is provided."
+        "question": "How much is New Jersey registration?",
+        "answer": "For a passenger car, $46.50 under 3,500 lbs and $71.50 over, or $59 and $84 if the model year is within 2 years. Motorcycles are $65. Zero emission vehicles also pay an annual fee: the statute sets $250 from July 2024 rising $10 a year, which works out to $270 for July 2026 to June 2027."
       },
       {
-        "question": "Do I pay New Jersey vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into New Jersey, the state generally assesses its applicable vehicle sales or use tax (6.63%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the New Jersey motor vehicle agency to verify documentation requirements."
+        "question": "I am moving to New Jersey. Do I pay sales tax on my car?",
+        "answer": "Not if you bought, titled, and registered it in another state while you lived there. Transfer the title and registration within 60 days of moving."
       },
       {
-        "question": "Is a vehicle transfer between family members taxable in New Jersey?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the New Jersey DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "question": "Is a gifted car taxed in New Jersey?",
+        "answer": "No, if it is a genuine gift: the purchase price line on the title must say “GIFT.” If the car still has a loan, tax is due on the loan amount you take over, unless you were already a co-owner."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in New Jersey?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond New Jersey's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the New Jersey motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "How long do I have to transfer a title after buying from a private seller?",
+        "answer": "Within 10 working days of the sale, in person at a motor vehicle agency, to avoid a $25 penalty."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://www.nj.gov/treasury/taxation/sales_use_tax.shtml",
+      "https://www.nj.gov/treasury/taxation/moveqa.shtml",
+      "https://www.nj.gov/mvc/vehicles/transowner.htm",
       "https://www.nj.gov/mvc/vehicles/titlenew.htm",
-      "https://www.nj.gov/mvc/regfee/"
+      "https://www.nj.gov/mvc/vehicles/regfees.htm",
+      "https://www.nj.gov/mvc/vehicles/reginitial.htm",
+      "https://www.nj.gov/mvc/vehicletopics/taxexempt.htm",
+      "https://www.nj.gov/mvc/drivertopics/movetonj.htm"
     ]
   },
   "washington": {

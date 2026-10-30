@@ -6,12 +6,12 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 142 across 51 jurisdictions
-- Hidden on the site (dead or unreachable): 17
+- Source links configured now: 156 across 51 jurisdictions
+- Hidden on the site (dead or unreachable): 14
 - Working but only an agency homepage, not a specific page: 16
 - States showing no source link ("Official source links ... are being updated"): 0
-- States with some links hidden: 16
-- States re-verified since the check: Arkansas (October 2026), California (October 2026), Connecticut (October 2026), Florida (October 2026), Illinois (October 2026), Louisiana (October 2026), Maryland (October 2026), Michigan (October 2026), Minnesota (October 2026), New York (October 2026), Ohio (October 2026), Oklahoma (October 2026), Pennsylvania (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026)
+- States with some links hidden: 13
+- States re-verified since the check: Arkansas (October 2026), California (October 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Louisiana (October 2026), Maryland (October 2026), Michigan (October 2026), Minnesota (October 2026), New Jersey (October 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Pennsylvania (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
 
@@ -34,6 +34,9 @@ All other states keep their September 2026 verified date until their rates are r
 | Connecticut | 2026-10-25 | Dead DMV fee and DRS links replaced with the DMV sales tax, fees, ownership transfer, and out-of-state registration pages and C.G.S. chapter 246; rates and fees re-checked. |
 | Louisiana | 2026-10-25 | Dead OMV fee schedule and LDR links replaced with the OMV fee and used title pages, the LDR state rate page, the OMV parish tax table, and OMV policies 52.00 and 48.00; rates and fees re-checked. |
 | Utah | 2026-10-25 | Dead DMV links replaced with the DMV registration fees, uniform fees, title transfer, and registration pages, the October 2026 Tax Commission rate chart, the 2026 fee schedule, and the road usage charge site; rates and fees re-checked. |
+| Georgia | 2026-10-29 | Dead DOR registration link replaced with the TAVT FAQ and vehicle tax pages, the casual sale page, the fee schedules, the July 2026 alternative fuel fee bulletin, and the new resident page; TAVT basis, fees, and FAQs re-checked. |
+| North Carolina | 2026-10-29 | Dead highway use tax link replaced with the current NCDMV tax, fee, title, forms, and new resident pages and G.S. 105-187.3 and 105-187.6; title, registration, EV and plug-in hybrid fees updated, passenger tax cap removed. |
+| New Jersey | 2026-10-29 | Dead Division of Taxation sales tax link replaced with the casual sales FAQ and MVC transfer, title, fee, registration, exemption, and new resident pages; registration by weight and model year age, ZEV fee updated. |
 
 ## Priority: states with no working source link
 
@@ -46,7 +49,6 @@ All other states keep their September 2026 verified date until their rates are r
 | Arizona | https://azdor.gov/transaction-privilege-tax | Page not found |
 | District of Columbia | https://dmv.dc.gov/service/vehicle-excise-tax | Page not found |
 | District of Columbia | https://dmv.dc.gov/service/vehicle-registration-fees | Page not found |
-| Georgia | https://dor.georgia.gov/motor-vehicles/vehicle-registration-and-licensing | Page not found |
 | Indiana | https://www.in.gov/bmv/registration-plates/vehicle-registration-fees/ | Page not found |
 | Iowa | https://iowadot.gov/mvd/buyingselling/registering-a-vehicle | Page not found |
 | Kansas | https://www.ksrevenue.gov/prtaxrates.html | Redirects to a 404 page |
@@ -54,9 +56,7 @@ All other states keep their September 2026 verified date until their rates are r
 | Massachusetts | https://www.mass.gov/info-details/motor-vehicle-sales-and-use-tax | Not found |
 | Nebraska | https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling | 404 Not Found |
 | Nevada | https://dmv.nv.gov/fees.htm | 404 |
-| New Jersey | https://www.nj.gov/treasury/taxation/sales_use_tax.shtml | 404 Page Not Found |
 | New Mexico | https://www.mvd.newmexico.gov/vehicles/taxes-fees/ | 404 Not Found |
-| North Carolina | https://www.ncdot.gov/dmv/title-registration/taxes/Pages/highway-use-tax.aspx | Redirects to a page-not-found page |
 | South Carolina | https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration | Page not found |
 | Washington | https://dol.wa.gov/vehicles-and-boats/vehicle-registration-tabs-and-plates/renew-vehicle-tabs/calculate-vehicle-tab-fees | 404 Page Not Found |
 | Wisconsin | https://www.revenue.wi.gov/Pages/FAQS/pcs-motorveh.aspx | Redirects to a page-not-found page |

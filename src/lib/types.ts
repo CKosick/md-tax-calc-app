@@ -26,6 +26,11 @@ export interface StateRegistrationRules {
    */
   passengerWeightSplitLbs?: number;
   /**
+   * Extra annual passenger fee for recent model years (New Jersey: $12.50 more at either weight
+   * when the model year is within 2 years). Applies when the vehicle's age is at most withinYears.
+   */
+  recentModelYearExtra?: { withinYears: number; annualFee: number };
+  /**
    * Passenger fee chart by vehicle weight (New York). When present it replaces the weight
    * classes: the form asks for the weight in lbs and the first tier whose maxLbs is at or above
    * it applies (a tier without maxLbs covers everything heavier). Fees are for termYears.
