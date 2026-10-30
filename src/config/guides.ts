@@ -232,6 +232,48 @@ const NJ_SOURCES = {
   casualSales: { label: 'NJ Division of Taxation: Motor Vehicle Casual Sales FAQ', url: 'https://www.nj.gov/treasury/taxation/moveqa.shtml' }
 };
 
+const WA_DOL = 'https://dol.wa.gov';
+const WA_SOURCES = {
+  buy: { label: 'WA DOL: Buy and Register a Vehicle', url: `${WA_DOL}/vehicles-and-boats/vehicles/buying-and-selling-vehicle/buy-and-register-vehicle` },
+  useTax: { label: 'WA DOL: Use Tax', url: `${WA_DOL}/vehicles-and-boats/vehicles/taxes-and-fees/use-tax` },
+  tabFees: { label: 'WA DOL: Calculate Vehicle Tab Fees', url: `${WA_DOL}/vehicles-and-boats/vehicles/vehicle-registration/calculate-vehicle-tab-fees` },
+  moving: { label: 'WA DOL: Moving to Washington, Vehicle Registration and Plates', url: `${WA_DOL}/moving-washington/vehicle-registration-and-plates` },
+  useTaxFacts: { label: 'WA DOR: Use Tax Facts for Vehicle Transactions', url: 'https://dor.wa.gov/sites/default/files/2022-02/usetaxfactsforvehicletransactions.pdf' },
+  motorVehicleTax: { label: 'WA DOR: Motor Vehicle Sales/Use Tax', url: 'https://dor.wa.gov/taxes-rates/other-taxes/motor-vehicle-salesuse-tax' },
+  luxuryTax: { label: 'WA DOR: Luxury Motor Vehicle Tax', url: 'https://dor.wa.gov/taxes-rates/other-taxes/luxury-motor-vehicle-tax' },
+  localRates: { label: 'WA DOR: Local Sales & Use Tax Rates', url: 'https://dor.wa.gov/taxes-rates/sales-use-tax-rates/local-sales-use-tax' },
+  feeStatutes: { label: 'RCW 46.17: Vehicle Fees', url: 'https://app.leg.wa.gov/RCW/default.aspx?cite=46.17' },
+  newResidentExemption: { label: 'RCW 82.12.0251: Use tax exemption for new residents', url: 'https://app.leg.wa.gov/RCW/default.aspx?cite=82.12.0251' }
+};
+
+const AZ_SOURCES = {
+  useTax: { label: 'Arizona DOR: Understanding Use Tax', url: 'https://azdor.gov/individual-income-tax-filing-assistance/understanding-use-tax' },
+  fees: { label: 'A.R.S. 28-2003: Title and registration fees', url: 'https://www.azleg.gov/ars/28/02003.htm' },
+  vlt: { label: 'A.R.S. 28-5801: Vehicle license tax rate', url: 'https://www.azleg.gov/ars/28/05801.htm' },
+  airQuality: { label: 'A.R.S. 49-551: Air quality fee', url: 'https://www.azleg.gov/ars/49/00551.htm' },
+  transfer: { label: 'A.R.S. 28-2058: Transfer of title', url: 'https://www.azleg.gov/ars/28/02058.htm' },
+  titleApplication: { label: 'A.R.S. 28-2051: Application for certificate of title', url: 'https://www.azleg.gov/ars/28/02051.htm' },
+  titleContents: { label: 'A.R.S. 28-2055: Certificate of title; transfer on death', url: 'https://www.azleg.gov/ars/28/02055.htm' },
+  registration: { label: 'A.R.S. 28-2153: Registration requirement', url: 'https://www.azleg.gov/ars/28/02153.htm' },
+  emissions: { label: 'A.R.S. 49-542: Emissions inspection program', url: 'https://www.azleg.gov/ars/49/00542.htm' }
+};
+
+const TN_REVENUE = 'https://www.tn.gov/content/tn/revenue/title-and-registration';
+const TN_HELP = 'https://revenue.support.tn.gov/hc/en-us/articles';
+const TN_SOURCES = {
+  titling: { label: 'Tennessee DOR: Titling a Vehicle (Current Residents)', url: `${TN_REVENUE}/vehicle-titling/titling-a-vehicle.html` },
+  taxation: { label: 'Tennessee DOR: Taxation of Car and Boat Sales', url: `${TN_REVENUE}/vehicle-titling/taxation-cars-boats.html` },
+  lien: { label: 'Tennessee DOR: Lien Notation', url: `${TN_REVENUE}/vehicle-titling/lien-notation.html` },
+  initialRegistration: { label: 'Tennessee DOR: Initial Registration', url: 'https://www.tn.gov/revenue/title-and-registration/vehicle-registration/initial-registration.html' },
+  clerkManual: { label: 'Tennessee DOR: Sales and Use Tax Guidance for County Clerks, Automobiles and Boats (June 2025)', url: 'https://www.tn.gov/content/dam/tn/revenue/documents/tax_manuals/june-2025/County-Clerk-Tax-Manual.pdf' },
+  rates: { label: 'Tennessee DOR: Sales Tax Due Dates and Tax Rates', url: 'https://www.tn.gov/revenue/taxes/sales-and-use-tax/due-dates-and-tax-rates.html' },
+  plateFees: { label: 'Tennessee DOR help: VR-4 Registration Fees', url: `${TN_HELP}/360060097432--VR-4-Registration-Fees` },
+  evFees: { label: 'Tennessee DOR help: VR-5 Registration Fees for Hybrid or Electric Vehicles', url: `${TN_HELP}/360060541291-VR-5-Registration-Fees-for-Hybrid-or-Electric-Vehicles` },
+  newResident30: { label: 'Tennessee DOR help: VR-6 New Residents Should Register Within 30 Days', url: `${TN_HELP}/360060097552-VR-6-New-Residents-Should-Register-Within-30-Days` },
+  newResidentPlate: { label: 'Tennessee DOR help: VTR-48 New Residents Getting a Tennessee License Plate', url: `${TN_HELP}/360059963672-VTR-48-Procedure-for-New-Residents-to-Get-a-Tennessee-License-Plate` },
+  boughtBeforeMoving: { label: 'Tennessee DOR help: VTR-38 Vehicle Purchased Out of State and Moved to TN Before Titling', url: `${TN_HELP}/360059953492-VTR-38-Sales-Tax-on-a-Vehicle-Purchased-Out-of-State-and-Moved-to-TN-Before-Titling` }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -4752,6 +4794,644 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [NJ_SOURCES.moving, NJ_SOURCES.exempt, NJ_SOURCES.fees, NJ_SOURCES.register]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-washington',
+    stateKey: 'washington',
+    title: 'How to Title a Private Car Sale in Washington',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Washington',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Washington: the signed title, bill of sale, Vehicle Title Application, the 15-day deadline, use tax, and new plates.',
+    cardDescription: 'The signed title, bill of sale, title application, use tax, and new plates.',
+    intro: [
+      'When you buy a car from a private seller in Washington, you transfer the title into your name at a vehicle licensing office and pay use tax there.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Washington DOL and DOR',
+    steps: [
+      {
+        title: 'Check the title before you pay',
+        body: [
+          'The seller gives you the current title, signed by everyone listed on it. DOL suggests calling 360-902-3770 to confirm the title is valid and clear of liens.',
+          'DOL recommends meeting the seller at a vehicle licensing office to do the paperwork. If you will drive the car without plates before then, buy a 3-day trip permit in person at a vehicle licensing office first.'
+        ]
+      },
+      {
+        title: 'Complete the bill of sale and odometer disclosure',
+        body: [
+          'You and the seller fill out the Vehicle/Vessel Bill of Sale. The sale price on it is used to figure your use tax.',
+          'For a 2011 or newer model, complete the odometer disclosure on the title. Older models are exempt.'
+        ]
+      },
+      {
+        title: 'Fill out the Vehicle Title Application',
+        body: [
+          'Do not sign it until you are in front of a licensing agent, who can notarize it. If you sign it before you go, sign it in front of a notary.'
+        ]
+      },
+      {
+        title: 'Transfer the title within 15 days',
+        body: [
+          'You have 15 days after the sale. The penalty is $50 on the 16th day and $2 a day after that, up to $125.',
+          'A vehicle licensing office mails the title in 6 to 8 weeks. A Quick Title office issues it right away for $50 more.'
+        ]
+      },
+      {
+        title: 'Pay the use tax, fees, and plates',
+        body: [
+          'Use tax is the 7.0% state rate (6.5% plus the 0.5% motor vehicle tax) plus the local rate where you live, 1.1% to 4.2% from October 1 to December 31, 2026. It is figured on fair market value, but your price is accepted if it is no more than 20% below fair market value or the value is under $7,500. Above $102,000, an 8% luxury tax applies to the amount over that figure.',
+          'The title is $39.50 ($15 application, $6.50 filing, and $18 service). Tabs are $82.75 a year up to 4,000 lbs and $112.75 from 4,001 to 6,000 lbs. You need new plates: $50 per plate plus $2 per plate for reflectivity ($104 for a car), or $10 to move a plate you already own.'
+        ]
+      }
+    ],
+    checklist: [
+      'The current title, signed by everyone listed on it',
+      'Vehicle/Vessel Bill of Sale showing the price',
+      'Vehicle Title Application, unsigned until you are with the licensing agent',
+      'Odometer disclosure on the title, for 2011 and newer models',
+      'A pricing guide value, repair estimate, or appraisal, if the price is more than 20% below fair market value',
+      'Payment for the use tax, title, tabs, and plates'
+    ],
+    calculatorNote:
+      'The calculator applies the state and local rates to the price you enter and adds the title, tabs, and new plates. If the price is more than 20% below fair market value, Washington may tax the higher value. Regional transit and other local registration fees are not included.',
+    faqs: [
+      {
+        question: 'Do I need a notary to title a car in Washington?',
+        answer: 'Not if you sign the Vehicle Title Application in front of a licensing agent, who can notarize it. If you sign it before you go, sign it in front of a notary.'
+      },
+      {
+        question: 'Why does Washington say the motor vehicle tax is 0.3%?',
+        answer: 'DOL’s use tax page still shows 0.3%. The Department of Revenue lists 0.5% from January 1, 2026, so the state rate on a vehicle is 7.0%.'
+      },
+      {
+        question: 'Is there a luxury tax on expensive cars?',
+        answer: 'Yes. From July 1, 2026 to June 30, 2027, an 8% luxury motor vehicle tax applies to the part of the price above $102,000. The threshold rises 2% each July.'
+      }
+    ],
+    sources: [WA_SOURCES.buy, WA_SOURCES.useTax, WA_SOURCES.useTaxFacts, WA_SOURCES.motorVehicleTax, WA_SOURCES.luxuryTax, WA_SOURCES.localRates, WA_SOURCES.tabFees, WA_SOURCES.feeStatutes]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-washington',
+    stateKey: 'washington',
+    title: 'How to Gift a Car in Washington',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Washington',
+    metaDescription:
+      'How to gift a car in Washington: when a gift is exempt from use tax, the proof that the giver paid tax, why a loan can make it a sale, which plates can stay, and the title paperwork.',
+    cardDescription: 'When a gift is tax-free, proof of tax paid, plates, and the paperwork.',
+    intro: [
+      'A gifted car is exempt from Washington use tax when the previous owner paid Washington sales or use tax and nothing is given in return.',
+      'Here is how to check the exemption and transfer the car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Washington DOL and DOR',
+    steps: [
+      {
+        title: 'Check that the gift is tax-free',
+        body: [
+          'A gift or inheritance is exempt when the previous owner paid Washington sales or use tax and there is no consideration. If money, goods, or services are exchanged, use tax is due.',
+          'A car with a loan on it generally does not qualify. The owner must pay off the loan before the gift; otherwise it is treated as a sale and taxed on fair market value.'
+        ]
+      },
+      {
+        title: 'Check a gift from another state',
+        body: [
+          'A gift from a state or province without sales tax, such as Oregon, pays use tax. It does not if the giver owned the car for 7 years or more and lives in a state or province with sales tax.',
+          'If the car was registered in another state, credit is given for tax paid there.'
+        ]
+      },
+      {
+        title: 'Complete the title and bill of sale',
+        body: [
+          'The giver signs the title, and everyone listed on it must sign. On the Vehicle/Vessel Bill of Sale, enter zero as the price for a gift or inheritance. Complete the odometer disclosure for a 2011 or newer model.'
+        ]
+      },
+      {
+        title: 'Fill out the Vehicle Title Application',
+        body: ['Sign it in front of the licensing agent, or in front of a notary if you sign before you go. Bring proof that the giver paid sales or use tax.']
+      },
+      {
+        title: 'Transfer within 15 days',
+        body: [
+          'The 15-day deadline applies to gifts too: $50 on the 16th day, then $2 a day up to $125. The title is $39.50.',
+          'Washington plates can stay on the car when it comes from your spouse or domestic partner, or as a gift or inheritance from a family member.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by everyone listed on it',
+      'Vehicle/Vessel Bill of Sale with a price of zero',
+      'Vehicle Title Application',
+      'Proof that the giver paid sales or use tax',
+      'Odometer disclosure, for 2011 and newer models',
+      'Proof the loan is paid off, if the car had one'
+    ],
+    calculatorNote:
+      'For a tax-free gift, enter $0 as the price to see the title and registration fees. If the gift does not qualify, use tax is figured on fair market value.',
+    faqs: [
+      {
+        question: 'My parents in Oregon are giving me their car. Do I pay use tax?',
+        answer: 'Usually yes, because Oregon has no sales tax. The exception is a car the giver owned for 7 years or more in a state or province with sales tax.'
+      },
+      {
+        question: 'Is an inherited car taxed in Washington?',
+        answer: 'It is treated like a gift: exempt when the previous owner paid Washington sales or use tax and nothing is given in return. DOL may ask for an Affidavit of Inheritance/Litigation.'
+      },
+      {
+        question: 'Do I need new plates for a gifted car?',
+        answer: 'Not when the car comes from your spouse or domestic partner, or as a gift or inheritance from a family member, as long as it has Washington plates.'
+      }
+    ],
+    sources: [WA_SOURCES.useTax, WA_SOURCES.useTaxFacts, WA_SOURCES.buy]
+  },
+  {
+    slug: 'titling-a-car-in-washington-after-moving-from-another-state',
+    stateKey: 'washington',
+    title: 'Titling a Car in Washington After Moving From Another State',
+    shortTitle: 'Title a car after moving to Washington',
+    metaTitle: 'Titling Your Car After Moving to Washington',
+    metaDescription:
+      'New to Washington? Get your driver license, then register your car within 30 days. Covers the use tax exemption for cars you owned before moving, title and tab fees, and new plates.',
+    cardDescription: 'The license first, 30 days, use tax, and new plates.',
+    intro: [
+      'You have 30 days after moving to Washington to get your driver license and register your vehicle.',
+      'A car you acquired and used in your old state more than 90 days before you moved is exempt from Washington use tax.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Washington DOL and DOR',
+    steps: [
+      {
+        title: 'Get your Washington driver license first',
+        body: ['You must have a Washington driver license before you register. Driver licensing and vehicle licensing are done at separate offices.']
+      },
+      {
+        title: 'Check whether you owe use tax',
+        body: [
+          'A private vehicle is exempt if you acquired and used it as a resident of another state more than 90 days before you came to Washington. Motor homes do not qualify.',
+          'A car you bought within 90 days of moving can owe Washington use tax at the 7.0% state rate plus your local rate.'
+        ]
+      },
+      {
+        title: 'Gather your title and mileage',
+        body: [
+          'Bring your current title to any vehicle licensing office, and write down the odometer reading before you go in.',
+          'If your bank holds the title, call a vehicle licensing office for its fax number so the bank can send them a copy.'
+        ]
+      },
+      {
+        title: 'Register and get plates',
+        body: [
+          'At an office you get your plates right away. By mail, plates can take up to 3 weeks. Not every office takes cards, so check payment options first.'
+        ]
+      },
+      {
+        title: 'Pay the fees',
+        body: [
+          'The title is $39.50. Tabs are $82.75 a year up to 4,000 lbs and $112.75 from 4,001 to 6,000 lbs. New plates are $50 each plus $2 per plate for reflectivity. Plug-in vehicles that go 30 miles or more on battery pay $225 at each renewal. Local fees vary.'
+        ]
+      }
+    ],
+    checklist: [
+      'Washington driver license',
+      'Your current title, or your lender’s details if the bank holds it',
+      'The odometer reading',
+      'Your purchase records, since use tax depends on when you bought the car',
+      'Payment for the title, tabs, and plates'
+    ],
+    calculatorNote:
+      'If your car is exempt as one you owned more than 90 days before moving, enter $0 as the price to see the title, tabs, and plates. Regional transit and other local fees are not included.',
+    faqs: [
+      {
+        question: 'How long do I have after moving to Washington?',
+        answer: '30 days to get a Washington driver license and register your vehicle. The license comes first.'
+      },
+      {
+        question: 'Do I pay Washington use tax on the car I brought with me?',
+        answer: 'Not if you acquired and used it as a resident of another state more than 90 days before you came to Washington.'
+      },
+      {
+        question: 'Can I keep my old plates?',
+        answer: 'No. You register your out-of-state vehicle and get Washington plates.'
+      }
+    ],
+    sources: [WA_SOURCES.moving, WA_SOURCES.newResidentExemption, WA_SOURCES.motorVehicleTax, WA_SOURCES.tabFees, WA_SOURCES.feeStatutes]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-arizona',
+    stateKey: 'arizona',
+    title: 'How to Title a Private Car Sale in Arizona',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Arizona',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Arizona: the signed title, the 15-day deadline, no sales tax on a casual sale, the $4 title fee, and the vehicle license tax.',
+    cardDescription: 'The signed title, the 15-day deadline, no sales tax, and the VLT.',
+    intro: [
+      'Arizona does not charge sales or use tax on a casual sale between individuals. You pay the title and registration fees and the yearly vehicle license tax.',
+      'Here is the order to do it in and what it costs.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Arizona DOR and Arizona Revised Statutes',
+    steps: [
+      {
+        title: 'Get the signed title',
+        body: [
+          'The seller signs the title over to you with the assignment and warranty of title, including the odometer disclosure, and gives it to you when you take the car.'
+        ]
+      },
+      {
+        title: 'Leave the plate with the seller',
+        body: [
+          'The seller’s registration ends at the sale. The seller moves the plate to another vehicle or turns it in within 30 days, so you register the car yourself.'
+        ]
+      },
+      {
+        title: 'Apply within 15 days',
+        body: [
+          'Apply for the title and registration within 15 days after the seller signs the title over to you, at MVD or an authorized third party provider.'
+        ]
+      },
+      {
+        title: 'Check emissions testing',
+        body: ['Vehicles registered in the Phoenix (area A) and Tucson (area B) areas need an emissions inspection.']
+      },
+      {
+        title: 'Pay the fees and vehicle license tax',
+        body: [
+          'There is no sales tax on the sale. The title is $4, registration is $8 ($9 for a motorcycle), and the air quality fee is $1.50.',
+          'The vehicle license tax is paid every year. The first year it is $2.80 per $100 of 60% of the manufacturer’s base retail price. Each later year the value drops 16.25% and the rate is $2.89 per $100, with a $10 minimum.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you with the assignment and warranty',
+      'The odometer disclosure',
+      'MVD’s title and registration application',
+      'Your identification',
+      'An emissions inspection, if you live in the Phoenix or Tucson area',
+      'Payment for the title, registration, air quality fee, and vehicle license tax'
+    ],
+    calculatorNote:
+      'The calculator shows no sales tax and estimates the vehicle license tax from the list price you enter ($30,000 if blank) and the model year. MVD counts years from the first registration, so your bill can differ.',
+    faqs: [
+      {
+        question: 'Do I pay sales tax on a private car purchase in Arizona?',
+        answer: 'No. A casual sale between individuals is not subject to Arizona sales (transaction privilege) tax or use tax.'
+      },
+      {
+        question: 'Can I drive on the seller’s plate?',
+        answer: 'No. The plate stays with the seller, and the registration ends when the title is transferred.'
+      },
+      {
+        question: 'Why is my first-year cost mostly the vehicle license tax?',
+        answer: 'The fees are small ($4 title, $8 registration, $1.50 air quality). The vehicle license tax is based on the original list price, so it is larger on newer and pricier cars.'
+      }
+    ],
+    sources: [AZ_SOURCES.useTax, AZ_SOURCES.transfer, AZ_SOURCES.titleApplication, AZ_SOURCES.fees, AZ_SOURCES.airQuality, AZ_SOURCES.vlt, AZ_SOURCES.emissions]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-arizona',
+    stateKey: 'arizona',
+    title: 'How to Gift a Car in Arizona',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Arizona',
+    metaDescription:
+      'How to gift a car in Arizona: no sales tax on a transfer between individuals, signing the title over, the 15-day deadline, the fees, and naming a transfer on death beneficiary.',
+    cardDescription: 'No sales tax, the signed title, 15 days, and the fees.',
+    intro: [
+      'Arizona does not tax a transfer between individuals, so a gift costs the same as any private transfer: the title and registration fees and the vehicle license tax.',
+      'Here is how to transfer the car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Arizona DOR and Arizona Revised Statutes',
+    steps: [
+      {
+        title: 'Sign the title over',
+        body: ['The giver signs the title over to you with the assignment and warranty of title and the odometer disclosure.']
+      },
+      {
+        title: 'The giver keeps the plate',
+        body: ['The giver moves the plate to another vehicle or turns it in within 30 days. You register the car in your name.']
+      },
+      {
+        title: 'Apply within 15 days',
+        body: ['Apply for the title and registration within 15 days after the title is signed over to you.']
+      },
+      {
+        title: 'Check emissions testing',
+        body: ['Vehicles registered in the Phoenix (area A) and Tucson (area B) areas need an emissions inspection.']
+      },
+      {
+        title: 'Pay the fees',
+        body: [
+          'There is no sales tax. Pay the $4 title fee, $8 registration ($9 for a motorcycle), the $1.50 air quality fee, and the vehicle license tax.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'The odometer disclosure',
+      'MVD’s title and registration application',
+      'Your identification',
+      'An emissions inspection, if you live in the Phoenix or Tucson area',
+      'Payment for the fees and vehicle license tax'
+    ],
+    calculatorNote:
+      'Enter $0 as the price. The calculator shows the title and registration fees and estimates the vehicle license tax from the list price and model year.',
+    faqs: [
+      {
+        question: 'Is a family gift taxed in Arizona?',
+        answer: 'No. There is no sales tax on a transfer between individuals, family or not.'
+      },
+      {
+        question: 'Can I leave a car to someone without probate paperwork?',
+        answer: 'An owner can add a transfer on death beneficiary to the title by attachment.'
+      },
+      {
+        question: 'Do I still pay the vehicle license tax on a gifted car?',
+        answer: 'Yes. The vehicle license tax is charged with every registration, based on the list price and the vehicle’s age.'
+      }
+    ],
+    sources: [AZ_SOURCES.useTax, AZ_SOURCES.transfer, AZ_SOURCES.titleContents, AZ_SOURCES.fees, AZ_SOURCES.vlt, AZ_SOURCES.emissions]
+  },
+  {
+    slug: 'titling-a-car-in-arizona-after-moving-from-another-state',
+    stateKey: 'arizona',
+    title: 'Titling a Car in Arizona After Moving From Another State',
+    shortTitle: 'Title a car after moving to Arizona',
+    metaTitle: 'Titling Your Car After Moving to Arizona',
+    metaDescription:
+      'New to Arizona? Register your car in Arizona once you are a resident. Covers converting your out-of-state title, emissions testing, the fees, and the yearly vehicle license tax.',
+    cardDescription: 'Your out-of-state title, emissions, the fees, and the VLT.',
+    intro: [
+      'Once you are an Arizona resident, your car must be registered in Arizona to be driven on the highways.',
+      'Here is how to convert your title and what it costs.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Arizona DOR and Arizona Revised Statutes',
+    steps: [
+      {
+        title: 'Register once you are a resident',
+        body: ['A car must be registered in Arizona, or properly registered in the owner’s state of residence, to be driven on the highways. As a resident, that means Arizona.']
+      },
+      {
+        title: 'Convert your out-of-state title',
+        body: [
+          'Apply for an Arizona title. When you are only converting an out-of-state title and the ownership does not change, one owner can sign the application.'
+        ]
+      },
+      {
+        title: 'Check emissions testing',
+        body: ['Vehicles registered in the Phoenix (area A) and Tucson (area B) areas need an emissions inspection.']
+      },
+      {
+        title: 'Apply at MVD or a third party provider',
+        body: ['Bring your out-of-state title and identification to MVD or an authorized third party provider.']
+      },
+      {
+        title: 'Pay the fees and vehicle license tax',
+        body: [
+          'The title is $4, registration is $8 ($9 for a motorcycle), and the air quality fee is $1.50.',
+          'The vehicle license tax is paid every year: $2.89 per $100 of value after the first year, where the value starts at 60% of the base retail price and drops 16.25% a year. The minimum is $10.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title',
+      'The odometer reading',
+      'MVD’s title and registration application',
+      'Your identification',
+      'An emissions inspection, if you live in the Phoenix or Tucson area'
+    ],
+    calculatorNote:
+      'Enter $0 as the price and the car’s original list price to estimate the fees and vehicle license tax.',
+    faqs: [
+      {
+        question: 'Do both owners need to sign to convert an out-of-state title?',
+        answer: 'No. When only the title is being converted and the ownership does not change, one owner can sign.'
+      },
+      {
+        question: 'Does Arizona have an electric vehicle fee?',
+        answer: 'The registration fee statute has no separate electric vehicle fee. EVs pay the same fees and vehicle license tax.'
+      },
+      {
+        question: 'Do I need an emissions test?',
+        answer: 'Only if the vehicle will be registered in the Phoenix (area A) or Tucson (area B) area.'
+      }
+    ],
+    sources: [AZ_SOURCES.registration, AZ_SOURCES.titleApplication, AZ_SOURCES.fees, AZ_SOURCES.airQuality, AZ_SOURCES.vlt, AZ_SOURCES.emissions]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-tennessee',
+    stateKey: 'tennessee',
+    title: 'How to Title a Private Car Sale in Tennessee',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Tennessee',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Tennessee: the signed title, the county clerk, 7% sales tax plus local and single article tax, and the $14 title fee.',
+    cardDescription: 'The signed title, the county clerk, sales tax, and the fees.',
+    intro: [
+      'Tennessee taxes a private car sale the same way as a dealer sale. You pay the tax to your county clerk when you title the car.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Tennessee Department of Revenue',
+    steps: [
+      {
+        title: 'Get a properly signed title',
+        body: ['The seller signs the title over to you. Bring the valid certificate of title, properly assigned, and an odometer disclosure statement if one applies.']
+      },
+      {
+        title: 'Compare the price with the car’s value',
+        body: [
+          'If the price is under 75% of the value in a pricing guide such as NADA, you and the seller complete the Affidavit of Non-Dealer Transfers. Tax is then figured on the price you paid. Without the affidavit or an appraisal, tax is due on the full value.'
+        ]
+      },
+      {
+        title: 'Go to your county clerk',
+        body: [
+          'Title the car at the county clerk’s office with proof of identification and proof of residency. If you are moving your own plate to this car, bring a copy of its current registration.'
+        ]
+      },
+      {
+        title: 'Pay the sales tax',
+        body: [
+          'The state tax is 7% of the full price. The local rate where you live, 2.00% to 2.75%, applies only to the first $1,600. A 2.75% state single article tax applies to the part from $1,600.01 to $3,200, so at most $44.',
+          'On a $15,000 car: $1,050 state tax, $32 to $44 local tax, and $44 single article tax.'
+        ]
+      },
+      {
+        title: 'Pay the title and plate fees',
+        body: [
+          'The title is $14 ($5.50 state and $8.50 county clerk), and noting a lien is $11. The standard plate is $26.50 a year ($19.50 for a motorcycle).',
+          'All-electric vehicles add $200 ($274 for registrations in 2027), and hybrids and plug-in hybrids add $100. Many counties also charge a wheel tax.'
+        ]
+      }
+    ],
+    checklist: [
+      'Proof of identification and proof of residency',
+      'The title, properly signed over to you',
+      'Odometer disclosure statement, if applicable',
+      'Affidavit of Non-Dealer Transfers, if the price is under 75% of the value',
+      'A copy of your current registration, if transferring your plate',
+      'Payment for the tax, title, and plate'
+    ],
+    calculatorNote:
+      'The calculator applies 7% to the price, the local range to the first $1,600, and the single article tax. County wheel taxes and other clerk fees are not included.',
+    faqs: [
+      {
+        question: 'Why is the Tennessee local tax so small on a car?',
+        answer: 'The local rate applies only to the first $1,600 of a single item. Above that, a 2.75% state single article tax applies to the next $1,600.'
+      },
+      {
+        question: 'Can I deduct a trade-in on a private sale?',
+        answer: 'No. Trade-in credit applies only when a dealer takes the trade-in and credits it on the invoice.'
+      },
+      {
+        question: 'What changes for registrations in 2027?',
+        answer: 'From January 1, 2027, the all-electric vehicle fee is $274, and first-time registrations of certain vehicles need proof of U.S. citizenship, permanent residence, or authorized stay.'
+      }
+    ],
+    sources: [TN_SOURCES.titling, TN_SOURCES.clerkManual, TN_SOURCES.rates, TN_SOURCES.lien, TN_SOURCES.plateFees, TN_SOURCES.evFees, TN_SOURCES.initialRegistration]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-tennessee',
+    stateKey: 'tennessee',
+    title: 'How to Gift a Car in Tennessee',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Tennessee',
+    metaDescription:
+      'How to gift a car in Tennessee: the sales tax exemption for gifts and for transfers between spouses, siblings, and lineal relatives, the Affidavit of Non-Dealer Transfers, and the title fees.',
+    cardDescription: 'The gift and family exemptions, the affidavit, and the title fees.',
+    intro: [
+      'A true gift is exempt from Tennessee sales tax, and so are transfers between spouses, siblings, and lineal relatives.',
+      'Here is how to use the exemption and transfer the car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Tennessee Department of Revenue',
+    steps: [
+      {
+        title: 'Check that the transfer is exempt',
+        body: [
+          'Transfers between spouses, siblings, parents and children, grandparents and grandchildren, great grandparents and great grandchildren, and the spouses of those lineal relatives are exempt, as are transfers between spouses in a divorce.',
+          'A gift from one person to another is also exempt if nothing is given in return.'
+        ]
+      },
+      {
+        title: 'Make sure nothing is given in return',
+        body: [
+          'Consideration includes payment, a swap, a favor or work done in exchange, forgiving a debt, or any other benefit to the giver. With consideration, the transfer is a taxable sale.'
+        ]
+      },
+      {
+        title: 'Complete the Affidavit of Non-Dealer Transfers',
+        body: ['The family and gift exemptions require the Affidavit of Non-Dealer Transfers of Motor Vehicles and Boats.']
+      },
+      {
+        title: 'Sign the title over',
+        body: ['The giver signs the title over to you. Bring it with the odometer disclosure statement, if one applies.']
+      },
+      {
+        title: 'Title it with your county clerk',
+        body: [
+          'Bring proof of identification and proof of residency. The title is $14 and the standard plate is $26.50 a year, plus any county wheel tax.'
+        ]
+      }
+    ],
+    checklist: [
+      'Affidavit of Non-Dealer Transfers of Motor Vehicles and Boats',
+      'The title, signed over to you',
+      'Odometer disclosure statement, if applicable',
+      'Proof of identification and proof of residency',
+      'Payment for the title and plate'
+    ],
+    calculatorNote:
+      'For an exempt gift or family transfer, enter $0 as the price to see the title and registration fees.',
+    faqs: [
+      {
+        question: 'Can I give my car to a friend tax-free in Tennessee?',
+        answer: 'Yes, if it is a true gift with nothing given in return. Complete the Affidavit of Non-Dealer Transfers.'
+      },
+      {
+        question: 'Can I sell my car to my brother-in-law without sales tax?',
+        answer: 'No. The spouse rule covers spouses of lineal relatives (parents, children, grandparents, great grandparents), not spouses of siblings.'
+      },
+      {
+        question: 'Is a car transferred in a divorce taxed?',
+        answer: 'No. A transfer between spouses as a result of divorce is exempt.'
+      }
+    ],
+    sources: [TN_SOURCES.taxation, TN_SOURCES.clerkManual, TN_SOURCES.titling, TN_SOURCES.plateFees]
+  },
+  {
+    slug: 'titling-a-car-in-tennessee-after-moving-from-another-state',
+    stateKey: 'tennessee',
+    title: 'Titling a Car in Tennessee After Moving From Another State',
+    shortTitle: 'Title a car after moving to Tennessee',
+    metaTitle: 'Titling Your Car After Moving to Tennessee',
+    metaDescription:
+      'New to Tennessee? Register your car with your county clerk within 30 days. Covers the use tax exemption for a personal car you bring with you, what to bring, and the fees.',
+    cardDescription: 'Register within 30 days, no use tax on your car, and what to bring.',
+    intro: [
+      'If you move to Tennessee from another state, register your vehicle within 30 days of the move.',
+      'A personal car you bring with a genuine move is not subject to Tennessee use tax.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Tennessee Department of Revenue',
+    steps: [
+      {
+        title: 'Register within 30 days',
+        body: ['A person who moves to Tennessee from another state should register their vehicle within 30 days of the move. Students from other states are one of the limited exceptions.']
+      },
+      {
+        title: 'Know that no use tax is due on your car',
+        body: [
+          'A person relocating to Tennessee in a genuine change of residence can bring a personal vehicle without paying Tennessee use tax.',
+          'If you bought the car out of state and moved before titling it, you pay that state’s tax, plus the difference if Tennessee’s rate is higher.'
+        ]
+      },
+      {
+        title: 'Gather your documents',
+        body: [
+          'Bring proof of identification and proof of residency, your most current out-of-state registration, and your out-of-state title, or the lienholder’s name and address so the title can be requested.'
+        ]
+      },
+      {
+        title: 'Apply with your county clerk',
+        body: ['Submit the application for title and registration at your local county clerk’s office.']
+      },
+      {
+        title: 'Pay the fees',
+        body: [
+          'The title is $14 and the standard plate is $26.50 a year ($19.50 for a motorcycle). All-electric vehicles add $200 ($274 in 2027), and hybrids and plug-in hybrids add $100. Many counties add a wheel tax.'
+        ]
+      }
+    ],
+    checklist: [
+      'Proof of identification and proof of residency',
+      'Your most current out-of-state registration',
+      'Your out-of-state title, or your lienholder’s name and address',
+      'Odometer disclosure statement, if applicable',
+      'Payment for the title and plate'
+    ],
+    calculatorNote:
+      'A personal car brought with a genuine move owes no Tennessee use tax, so enter $0 as the price to see the title and registration fees. County wheel taxes are not included.',
+    faqs: [
+      {
+        question: 'How long do I have to register after moving to Tennessee?',
+        answer: 'Register within 30 days of the move.'
+      },
+      {
+        question: 'Do I pay Tennessee sales tax on the car I brought with me?',
+        answer: 'No, not on a personal vehicle you bring with a genuine change of residence.'
+      },
+      {
+        question: 'What if a lender holds my title?',
+        answer: 'Give the county clerk the lienholder’s name and address so the title can be requested.'
+      }
+    ],
+    sources: [TN_SOURCES.newResident30, TN_SOURCES.newResidentPlate, TN_SOURCES.clerkManual, TN_SOURCES.boughtBeforeMoving, TN_SOURCES.plateFees, TN_SOURCES.evFees]
   }
 ];
 
