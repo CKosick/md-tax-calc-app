@@ -3,11 +3,6 @@
   "method": "Each state source URL was requested with curl, then every non-200 or suspect result was opened in a real browser and judged by the page shown (403s and timeouts from scripts are often bot blocking, so they were not treated as dead without a browser check).",
   "hidden": [
     {
-      "state": "arizona",
-      "url": "https://azdor.gov/transaction-privilege-tax",
-      "finding": "Page not found"
-    },
-    {
       "state": "district-of-columbia",
       "url": "https://dmv.dc.gov/service/vehicle-excise-tax",
       "finding": "Page not found"
@@ -61,11 +56,6 @@
       "state": "south-carolina",
       "url": "https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration",
       "finding": "Page not found"
-    },
-    {
-      "state": "washington",
-      "url": "https://dol.wa.gov/vehicles-and-boats/vehicle-registration-tabs-and-plates/renew-vehicle-tabs/calculate-vehicle-tab-fees",
-      "finding": "404 Page Not Found"
     },
     {
       "state": "wisconsin",
@@ -245,6 +235,21 @@
       "state": "new-jersey",
       "on": "2026-10-29",
       "note": "Dead Division of Taxation sales tax link replaced with the casual sales FAQ and MVC transfer, title, fee, registration, exemption, and new resident pages; registration by weight and model year age, ZEV fee updated."
+    },
+    {
+      "state": "washington",
+      "on": "2026-10-30",
+      "note": "Dead DOL tab fee link replaced with its current address, plus DOR motor vehicle, luxury, and local tax pages, the DOR vehicle use tax facts sheet, DOL buying, use tax, and new resident pages, and RCW 46.17 and 82.12.0251; state rate 7.0% (0.5% motor vehicle tax from 2026), Q4 2026 local range, title and tab fees, new plates, and luxury tax updated."
+    },
+    {
+      "state": "arizona",
+      "on": "2026-10-30",
+      "note": "Dead ADOR TPT link replaced with the ADOR use tax page and ARS 28-2003, 28-5801, 49-551, 28-2058, and 28-2051 (azdot.gov pages are behind a bot check and were not used); motorcycle registration, air quality fee, and vehicle license tax by list price and age added; unsourced lien fee removed."
+    },
+    {
+      "state": "tennessee",
+      "on": "2026-10-30",
+      "note": "Re-checked against the DOR county clerk tax manual (June 2025), DOR titling, lien, and tax rate pages, the local rate map, and DOR help articles VR-4, VR-5, and VR-6; local tax limited to the first $1,600 with the 2.75% single article tax added; family and gift exemptions and the 75% affidavit rule stated."
     }
   ]
 }

@@ -160,7 +160,8 @@ export function CostSummaryCard({
           <p className="mt-2 text-xs text-slate-300">
             {rule.label === 'Delaware' ? 'Document Fee' : 'Sales/Excise Tax'}
             {breakdown.hasLocalTax ? ' (State + Local Range)' : ''} + Title Certificate + Tags &amp; Registration {breakdown.lienFilingFee > 0 ? '+ Lien Fee' : ''}
-            {(breakdown.initialRegistrationFee ?? 0) > 0 ? ' + Initial Registration + New Plate' : ''}
+            {(breakdown.initialRegistrationFee ?? 0) > 0 ? ' + Initial Registration' : ''}
+            {(breakdown.newPlateFee ?? 0) > 0 ? ' + Plate Fee' : ''}
           </p>
         </div>
 
@@ -267,7 +268,7 @@ export function CostSummaryCard({
               </span>
             </div>
 
-            {/* 5 and 6. One-time fees when there is no plate to transfer (Florida) */}
+            {/* 5 and 6. One-time plate fees (Florida, Washington), or the fee to transfer a plate */}
             {(breakdown.initialRegistrationFee ?? 0) > 0 && (
               <div id="initial-registration-fee" className="flex items-center justify-between py-3">
                 <div className="pr-4">
@@ -291,12 +292,16 @@ export function CostSummaryCard({
                 <div className="pr-4">
                   <div className="flex items-center gap-1.5">
                     <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[11px] font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                      6
+                      {(breakdown.initialRegistrationFee ?? 0) > 0 ? 6 : 5}
                     </span>
-                    <span className="font-semibold text-slate-800 dark:text-slate-200">New License Plate</span>
+                    <span className="font-semibold text-slate-800 dark:text-slate-200">
+                      {breakdown.plateTransferred ? 'Plate Transfer Fee' : 'New License Plate'}
+                    </span>
                   </div>
                   <p className="mt-0.5 pl-6.5 text-xs text-slate-500 dark:text-slate-400">
-                    New metal plate when you have no plate to transfer
+                    {breakdown.plateTransferred
+                      ? 'Moving a plate you already have onto this vehicle'
+                      : 'New metal plate when you have no plate to transfer'}
                   </p>
                 </div>
                 <span className="flex-shrink-0 font-bold text-slate-900 dark:text-white">

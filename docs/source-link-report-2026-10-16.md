@@ -6,12 +6,12 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 156 across 51 jurisdictions
-- Hidden on the site (dead or unreachable): 14
+- Source links configured now: 174 across 51 jurisdictions
+- Hidden on the site (dead or unreachable): 12
 - Working but only an agency homepage, not a specific page: 16
 - States showing no source link ("Official source links ... are being updated"): 0
-- States with some links hidden: 13
-- States re-verified since the check: Arkansas (October 2026), California (October 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Louisiana (October 2026), Maryland (October 2026), Michigan (October 2026), Minnesota (October 2026), New Jersey (October 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Pennsylvania (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026)
+- States with some links hidden: 11
+- States re-verified since the check: Arizona (October 2026), Arkansas (October 2026), California (October 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Louisiana (October 2026), Maryland (October 2026), Michigan (October 2026), Minnesota (October 2026), New Jersey (October 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Pennsylvania (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
 
@@ -37,6 +37,9 @@ All other states keep their September 2026 verified date until their rates are r
 | Georgia | 2026-10-29 | Dead DOR registration link replaced with the TAVT FAQ and vehicle tax pages, the casual sale page, the fee schedules, the July 2026 alternative fuel fee bulletin, and the new resident page; TAVT basis, fees, and FAQs re-checked. |
 | North Carolina | 2026-10-29 | Dead highway use tax link replaced with the current NCDMV tax, fee, title, forms, and new resident pages and G.S. 105-187.3 and 105-187.6; title, registration, EV and plug-in hybrid fees updated, passenger tax cap removed. |
 | New Jersey | 2026-10-29 | Dead Division of Taxation sales tax link replaced with the casual sales FAQ and MVC transfer, title, fee, registration, exemption, and new resident pages; registration by weight and model year age, ZEV fee updated. |
+| Washington | 2026-10-30 | Dead DOL tab fee link replaced with its current address, plus DOR motor vehicle, luxury, and local tax pages, the DOR vehicle use tax facts sheet, DOL buying, use tax, and new resident pages, and RCW 46.17 and 82.12.0251; state rate 7.0% (0.5% motor vehicle tax from 2026), Q4 2026 local range, title and tab fees, new plates, and luxury tax updated. |
+| Arizona | 2026-10-30 | Dead ADOR TPT link replaced with the ADOR use tax page and ARS 28-2003, 28-5801, 49-551, 28-2058, and 28-2051 (azdot.gov pages are behind a bot check and were not used); motorcycle registration, air quality fee, and vehicle license tax by list price and age added; unsourced lien fee removed. |
+| Tennessee | 2026-10-30 | Re-checked against the DOR county clerk tax manual (June 2025), DOR titling, lien, and tax rate pages, the local rate map, and DOR help articles VR-4, VR-5, and VR-6; local tax limited to the first $1,600 with the 2.75% single article tax added; family and gift exemptions and the 75% affidavit rule stated. |
 
 ## Priority: states with no working source link
 
@@ -46,7 +49,6 @@ All other states keep their September 2026 verified date until their rates are r
 
 | State | URL | What the browser showed |
 |---|---|---|
-| Arizona | https://azdor.gov/transaction-privilege-tax | Page not found |
 | District of Columbia | https://dmv.dc.gov/service/vehicle-excise-tax | Page not found |
 | District of Columbia | https://dmv.dc.gov/service/vehicle-registration-fees | Page not found |
 | Indiana | https://www.in.gov/bmv/registration-plates/vehicle-registration-fees/ | Page not found |
@@ -58,7 +60,6 @@ All other states keep their September 2026 verified date until their rates are r
 | Nevada | https://dmv.nv.gov/fees.htm | 404 |
 | New Mexico | https://www.mvd.newmexico.gov/vehicles/taxes-fees/ | 404 Not Found |
 | South Carolina | https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration | Page not found |
-| Washington | https://dol.wa.gov/vehicles-and-boats/vehicle-registration-tabs-and-plates/renew-vehicle-tabs/calculate-vehicle-tab-fees | 404 Page Not Found |
 | Wisconsin | https://www.revenue.wi.gov/Pages/FAQS/pcs-motorveh.aspx | Redirects to a page-not-found page |
 
 ## Working, but homepage only (replace with a specific page when convenient)

@@ -49,6 +49,11 @@ export function VehicleInputForm({
   const weightChart = rule.registration.passengerWeightChart;
   // List price states (Michigan, Minnesota) ask for the MSRP; age-based states (Oklahoma) ask nothing
   const listPriceReg = rule.registration.listPriceRegistration;
+  const plateFees = rule.registration.newPlateFees;
+  const newPlateCost =
+    plateFees && inputs.vehicleType === 'motorcycle' && plateFees.motorcyclePlateFee !== undefined
+      ? plateFees.motorcyclePlateFee
+      : plateFees?.plateFee ?? 0;
   const feeNotByWeight = Boolean(listPriceReg || rule.registration.feesByRegistrationYear);
   // Only the registration terms the state offers (1, 2, or 3 years per its config)
   const offeredTerms = getOfferedTerms(rule);
@@ -767,8 +772,8 @@ export function VehicleInputForm({
           </div>
         </div>
 
-        {/* Plate to transfer (states with one-time new plate fees, e.g. Florida) */}
-        {rule.registration.newPlateFees && (
+        {/* Plate to transfer (states with one-time new plate fees, e.g. Florida, Washington) */}
+        {plateFees && (
           <div>
             <div className="flex items-center justify-between">
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
@@ -790,11 +795,13 @@ export function VehicleInputForm({
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-slate-900 dark:text-white">No</span>
                   <span className="text-[11px] font-semibold text-indigo-600 dark:text-indigo-400">
-                    +${rule.registration.newPlateFees.initialRegistrationFee + rule.registration.newPlateFees.plateFee}
+                    +${plateFees.initialRegistrationFee + newPlateCost}
                   </span>
                 </div>
                 <p className="mt-0.5 text-[11px] text-slate-500 dark:text-slate-400">
-                  ${rule.registration.newPlateFees.initialRegistrationFee} initial registration + ${rule.registration.newPlateFees.plateFee} plate
+                  {plateFees.initialRegistrationFee > 0
+                    ? `$${plateFees.initialRegistrationFee} initial registration + $${newPlateCost} plate`
+                    : `New plates, $${newPlateCost}`}
                 </p>
               </button>
               <button
@@ -810,7 +817,7 @@ export function VehicleInputForm({
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-slate-900 dark:text-white">Yes</span>
-                  <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">$0</span>
+                  <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">${plateFees.plateTransferFee ?? 0}</span>
                 </div>
                 <p className="mt-0.5 text-[11px] text-slate-500 dark:text-slate-400">
                   A plate registered in your name

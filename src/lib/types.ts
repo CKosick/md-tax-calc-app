@@ -62,6 +62,8 @@ export interface StateRegistrationRules {
     yearFactors: number[];
     /** A flat amount from this registration year on (Minnesota: $30 from the 11th year). */
     flatFromYear?: { year: number; fee: number };
+    /** Floor for the value-based part, rate x list price x factor (Arizona VLT: $10). */
+    minValueFee?: number;
   };
   /**
    * Passenger plate priced from the sale price (Louisiana): ratePerYear x the price rounded to the
@@ -83,6 +85,10 @@ export interface StateRegistrationRules {
   newPlateFees?: {
     initialRegistrationFee: number;
     plateFee: number;
+    /** Plate fee for a motorcycle when it differs (Washington: one $20 plate plus $2). */
+    motorcyclePlateFee?: number;
+    /** Fee to move a plate you already have onto the vehicle (Washington: $10). */
+    plateTransferFee?: number;
   };
   valueBasedFees?: {
     /** Annual license fee as a share of value (California VLF: 0.0065). */
@@ -146,6 +152,16 @@ export interface StateRule {
   usedVehicleExcise?: { flatTax: number; flatTaxCovers: number };
   /** A second state tax on the same base, added to the excise tax (Oklahoma 1.25% sales tax). */
   additionalSalesTaxRate?: number;
+  /**
+   * State tax on one band of the taxable base, added to the excise tax (Tennessee single article
+   * tax: 2.75% of the part between $1,600 and $3,200).
+   */
+  singleArticleTax?: { from: number; to: number; rate: number };
+  /**
+   * Extra tax on the part of the taxable base above a threshold, added to the excise tax
+   * (Washington luxury motor vehicle tax: 8% above $102,000).
+   */
+  luxuryExcessTax?: { threshold: number; rate: number };
   /** Flat tax in place of the rate for older, low-priced vehicles (Minnesota: $10). */
   olderVehicleFlatTax?: { minAge: number; maxPrice: number; tax: number };
   luxuryTaxThreshold?: number | null;
@@ -250,8 +266,10 @@ export interface CostBreakdown {
   registrationTotal: number;
   /** One-time initial registration fee when there is no plate to transfer (Florida $225). */
   initialRegistrationFee?: number;
-  /** New plate fee when there is no plate to transfer (Florida $28). */
+  /** New plate fee when there is no plate to transfer (Florida $28), or the plate transfer fee. */
   newPlateFee?: number;
+  /** True when newPlateFee is the fee for moving the buyer's own plate. */
+  plateTransferred?: boolean;
   /** The chosen locality and its local tax, included in exciseTax (states with localities). */
   localityLabel?: string;
   localityTax?: number;

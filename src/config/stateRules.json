@@ -1686,9 +1686,109 @@
   "washington": {
     "label": "Washington",
     "slug": "washington-private-sale-tax-calculator",
-    "exciseTaxRate": 0.068,
+    "exciseTaxRate": 0.07,
     "taxBase": "fairMarketValue",
-    "titleFee": 15,
+    "titleFee": 39.5,
+    "lienFilingFee": 0,
+    "tradeInDeductible": false,
+    "luxuryExcessTax": {
+      "threshold": 102000,
+      "rate": 0.08
+    },
+    "registration": {
+      "terms": [
+        1
+      ],
+      "passenger": {
+        "under3700lbs": {
+          "1": 82.75
+        },
+        "over3700lbs": {
+          "1": 112.75
+        }
+      },
+      "motorcycle": {
+        "1": 82.75
+      },
+      "evSurchargeAnnual": 225,
+      "phevSurchargeAnnual": 75,
+      "passengerWeightSplitLbs": 4000,
+      "newPlateFees": {
+        "initialRegistrationFee": 0,
+        "plateFee": 104,
+        "motorcyclePlateFee": 22,
+        "plateTransferFee": 10
+      }
+    },
+    "localTaxNote": "Washington adds the local sales tax rate where you live: 1.1% to 4.2% from October 1 to December 31, 2026. In the Sound Transit district, the regional transit authority excise tax is also added to registration each year; it is not included here.",
+    "notes": [
+      "The state rate on a vehicle is 7.0%: the 6.5% sales and use tax plus the 0.5% motor vehicle sales and use tax (0.3% through 2025). The local rate where you live is added.",
+      "Use tax is figured on fair market value. Your price is accepted if it is no more than 20% below fair market value or the value is under $7,500. Otherwise you can document a lower value with a pricing guide, a repair estimate, or an appraisal.",
+      "From July 1, 2026 to June 30, 2027, an 8% luxury motor vehicle tax also applies to the part of the price above $102,000.",
+      "The title costs $39.50: the $15 application fee, the $6.50 filing fee, and the $18 service fee.",
+      "Annual tabs are $82.75 for a vehicle up to 4,000 lbs: the $30 license fee, the $35 weight fee, $6 filing, $11 service, and the $0.75 license service fee. The weight fee is $65 from 4,001 to 6,000 lbs, which makes $112.75.",
+      "A buyer gets new plates: $50 per plate plus $2 per plate for reflectivity, so $104 for a car and $22 for a motorcycle. Moving a plate you already own costs $10.",
+      "Vehicles that plug in and go at least 30 miles on battery pay $225 a year at renewal ($100, $50, and the $75 transportation electrification fee). Other hybrids pay $75."
+    ],
+    "disclaimers": [
+      "Estimates only, not tax or legal advice. Verify with the Washington Department of Licensing (DOL) or Department of Revenue (DOR).",
+      "The estimate uses the price you enter. Washington may tax fair market value instead when the price is more than 20% below it and the value is $7,500 or more.",
+      "Local rates change each quarter. The range shown is for October 1 to December 31, 2026.",
+      "Registration shown is the state fees for a vehicle up to 6,000 lbs. The regional transit authority excise tax, transportation benefit district fees, and other local fees are not included. DOL’s tab fee estimator gives the exact amount.",
+      "DOL’s use tax page still lists the motor vehicle tax at 0.3%. DOR lists 0.5% from January 1, 2026, and the estimate uses 0.5%."
+    ],
+    "faqs": [
+      {
+        "question": "What is the tax on a private car purchase in Washington?",
+        "answer": "You pay use tax when you transfer the title: the 7.0% state rate (6.5% plus the 0.5% motor vehicle tax) and the local rate where you live, 1.1% to 4.2% in late 2026. Above $102,000, an 8% luxury tax also applies to the amount over that figure."
+      },
+      {
+        "question": "Is Washington use tax based on the price I paid?",
+        "answer": "Usually. Washington taxes fair market value, but it accepts your price if it is no more than 20% below fair market value or the value is under $7,500. If you paid less because of the vehicle’s condition, a pricing guide value, a repair estimate, or an appraisal can support the lower price."
+      },
+      {
+        "question": "How much are Washington title and registration fees?",
+        "answer": "The title is $39.50 ($15 application, $6.50 filing, and $18 service). Tabs are $82.75 a year for a vehicle up to 4,000 lbs and $112.75 from 4,001 to 6,000 lbs. Plug-in vehicles that go 30 miles or more on battery add $225 at renewal. Local fees, including the regional transit authority tax in the Sound Transit district, are extra."
+      },
+      {
+        "question": "Do I keep the seller’s license plates in Washington?",
+        "answer": "No. A buyer gets new plates at $50 each plus $2 per plate for reflectivity ($104 for a car, $22 for a motorcycle), or moves a plate they already own for $10. The plates can stay on the vehicle when it comes from a spouse or domestic partner, or as a gift or inheritance from a family member."
+      },
+      {
+        "question": "I am moving to Washington. Do I pay use tax on my car?",
+        "answer": "Not if you acquired and used the vehicle as a resident of another state more than 90 days before you came to Washington. You have 30 days after moving to get a Washington driver license and register the vehicle, and the license comes first."
+      },
+      {
+        "question": "Is a gifted vehicle taxable in Washington?",
+        "answer": "A gift or inheritance is exempt when the previous owner paid Washington sales or use tax and nothing is given in return. A vehicle with a loan on it generally does not qualify. A gift from a place without sales tax, such as Oregon, pays use tax unless the giver owned it for at least 7 years in a state or province with sales tax."
+      },
+      {
+        "question": "How long do I have to transfer the title in Washington?",
+        "answer": "You have 15 days. The penalty is $50 on the 16th day and $2 a day after that, up to $125."
+      }
+    ],
+    "lastVerified": "October 2026",
+    "sources": [
+      "https://dor.wa.gov/taxes-rates/other-taxes/motor-vehicle-salesuse-tax",
+      "https://dor.wa.gov/taxes-rates/other-taxes/luxury-motor-vehicle-tax",
+      "https://dor.wa.gov/taxes-rates/sales-use-tax-rates/local-sales-use-tax",
+      "https://dor.wa.gov/sites/default/files/2022-02/usetaxfactsforvehicletransactions.pdf",
+      "https://dol.wa.gov/vehicles-and-boats/vehicles/taxes-and-fees/use-tax",
+      "https://dol.wa.gov/vehicles-and-boats/vehicles/buying-and-selling-vehicle/buy-and-register-vehicle",
+      "https://dol.wa.gov/vehicles-and-boats/vehicles/vehicle-registration/calculate-vehicle-tab-fees",
+      "https://dol.wa.gov/moving-washington/vehicle-registration-and-plates",
+      "https://app.leg.wa.gov/RCW/default.aspx?cite=46.17",
+      "https://app.leg.wa.gov/RCW/default.aspx?cite=82.12.0251"
+    ],
+    "localTaxMinRate": 0.011,
+    "localTaxMaxRate": 0.042
+  },
+  "arizona": {
+    "label": "Arizona",
+    "slug": "arizona-private-sale-tax-calculator",
+    "exciseTaxRate": 0,
+    "taxBase": "price",
+    "titleFee": 4,
     "lienFilingFee": 0,
     "tradeInDeductible": false,
     "registration": {
@@ -1697,142 +1797,100 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 68.25
+          "1": 9.5
         },
         "over3700lbs": {
-          "1": 78.25
+          "1": 9.5
         }
       },
       "motorcycle": {
-        "1": 49.25
+        "1": 10.5
       },
-      "evSurchargeAnnual": 225
+      "listPriceRegistration": {
+        "defaultListPrice": 30000,
+        "fixed": 9.5,
+        "rate": 1,
+        "yearFactors": [
+          0.0168,
+          0.01452225,
+          0.01216238,
+          0.010186,
+          0.00853077,
+          0.00714452,
+          0.00598354,
+          0.00501121,
+          0.00419689,
+          0.0035149,
+          0.00294373,
+          0.00246537,
+          0.00206475,
+          0.00172923,
+          0.00144823,
+          0.00121289,
+          0.0010158,
+          0.00085073,
+          0.00071249,
+          0.00059671,
+          0.00049974,
+          0.00041853,
+          0.00035052,
+          0.00029356,
+          0.00024586
+        ],
+        "minValueFee": 10
+      }
     },
-    "localTaxNote": "Washington local sales and use taxes add between 0.5% and 3.9% depending on locality. In the RTA district (King, Pierce, Snohomish counties), an additional 1.1% Regional Transit Authority motor vehicle excise tax applies.",
+    "localTaxNote": "Arizona does not charge sales or use tax on a casual sale between individuals. The yearly cost is the vehicle license tax (VLT), which is figured from the original list price and the vehicle’s age.",
     "notes": [
-      "Washington levies a 6.8% base statewide motor vehicle use tax (6.5% general use tax + 0.3% additional motor vehicle tax per RCW 82.08.020 / RCW 82.12.020).",
-      "Tax is assessed on fair market value (FMV) using industry valuation guides (Price Digests) if the declared purchase price is below market value.",
-      "Title application fee is $15.00 (additional local service/filing fees may apply at county licensing offices).",
-      "Standard passenger vehicle registration is $68.25/yr ($43.25 base license fee + $25.00 weight fee).",
-      "Electric vehicles pay a $225 annual registration surcharge ($150 EV fee + $75 electrification fee).",
-      "Trade-in deduction is not permitted on private party sales per RCW 82.08.010."
+      "A casual sale between individuals is not subject to Arizona sales (transaction privilege) tax or use tax. A vehicle bought from an out-of-state dealer can owe use tax at registration.",
+      "The title fee is $4. Registration is $8 ($9 for a motorcycle) plus the $1.50 air quality fee.",
+      "The vehicle license tax is paid every year in place of property tax. In the first year it is $2.80 per $100 of 60% of the manufacturer’s base retail price. Each later year the value drops 16.25% and the rate is $2.89 per $100, with a $10 minimum.",
+      "The plate stays with the seller, who moves it to another vehicle or turns it in within 30 days."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Washington Department of Licensing (DOL) or Department of Revenue (DOR).",
-      "Washington assesses use tax on the fair market value determined by industry pricing guides if purchase price is below fair market value.",
-      "Private party vehicle transactions do not qualify for trade-in allowance tax credits in Washington.",
-      "Local sales/use taxes (0.5%–3.9%) and RTA regional transit excise taxes (1.1%) may apply based on registered address."
+      "Estimates only, not tax or legal advice. Verify with Arizona MVD or an authorized third party provider.",
+      "The vehicle license tax is estimated from the list price you enter and the model year. MVD counts the years from the vehicle’s first registration, so your bill can differ.",
+      "Motorcycles also pay the vehicle license tax, which this estimate does not include for them.",
+      "Emissions testing fees in the Phoenix and Tucson areas are not included."
     ],
     "faqs": [
       {
-        "question": "What is the tax rate on a private vehicle sale in Washington?",
-        "answer": "Washington imposes a statewide base motor vehicle use tax of 6.8% (6.5% state use tax + 0.3% motor vehicle tax). In addition, local city and county taxes add between 0.5% and 3.9%, and residents in Sound Transit RTA areas pay an additional 1.1% motor vehicle excise tax."
+        "question": "Do I pay sales tax on a private car purchase in Arizona?",
+        "answer": "No. A casual sale between individuals is not subject to Arizona sales (transaction privilege) tax or use tax. You still pay the title and registration fees and the vehicle license tax."
       },
       {
-        "question": "How is vehicle value determined for use tax in Washington?",
-        "answer": "Under Washington DOL and DOR rules, use tax is calculated on the vehicle's fair market value. The state references industry pricing databases (such as Price Digests). If the declared purchase price is within 20% of fair market value, the purchase price is accepted; otherwise, the valuation guide is used unless proof of condition or an appraisal is provided."
+        "question": "What fees do I pay at MVD after a private purchase in Arizona?",
+        "answer": "A $4 title fee, $8 for registration ($9 for a motorcycle), the $1.50 air quality fee, and the vehicle license tax."
       },
       {
-        "question": "Can I deduct my trade-in on a private vehicle sale in Washington?",
-        "answer": "No. Under RCW 82.08.010, the trade-in tax exclusion is strictly limited to transactions where a licensed vehicle dealer or broker accepts the trade-in as part of the sale. Private party sales cannot deduct the value of another vehicle."
+        "question": "What is the Arizona vehicle license tax (VLT)?",
+        "answer": "It is a yearly tax paid with registration in place of property tax. The first year it is $2.80 per $100 of 60% of the manufacturer’s base retail price. Each later year the value is 16.25% lower and the rate is $2.89 per $100. The minimum is $10."
       },
       {
-        "question": "How much does title and registration cost in Washington?",
-        "answer": "The state certificate of title application fee is $15.00, and annual passenger vehicle registration is $68.25 ($43.25 basic license fee plus $25.00 weight fee), plus local licensing filing fees. Electric vehicles pay an additional $225 annual fee."
-      },
-      {
-        "question": "Do I pay Washington vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Washington, the state generally assesses its applicable vehicle sales or use tax (6.80%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Washington motor vehicle agency to verify documentation requirements."
-      },
-      {
-        "question": "Is a vehicle transfer between family members taxable in Washington?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Washington DMV or Department of Revenue to verify eligibility and required documentation before titling."
-      },
-      {
-        "question": "How long do I have to title and register a private vehicle purchase in Washington?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Washington's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Washington motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
-      }
-    ],
-    "lastVerified": "September 2026",
-    "sources": [
-      "https://dor.wa.gov/taxes-rates/use-tax",
-      "https://dol.wa.gov/vehicles-and-boats/vehicle-registration-tabs-and-plates/renew-vehicle-tabs/calculate-vehicle-tab-fees",
-      "https://app.leg.wa.gov/rcw/default.aspx?cite=82.12.020"
-    ],
-    "localTaxMinRate": 0.005,
-    "localTaxMaxRate": 0.039
-  },
-  "arizona": {
-    "label": "Arizona",
-    "slug": "arizona-private-sale-tax-calculator",
-    "exciseTaxRate": 0,
-    "taxBase": "price",
-    "titleFee": 4,
-    "lienFilingFee": 4,
-    "tradeInDeductible": false,
-    "registration": {
-      "terms": [
-        1
-      ],
-      "passenger": {
-        "under3700lbs": {
-          "1": 14.5
-        },
-        "over3700lbs": {
-          "1": 14.5
-        }
-      },
-      "motorcycle": {
-        "1": 14.5
-      }
-    },
-    "localTaxNote": "Private-party vehicle sales between individuals in Arizona are completely exempt from Arizona state sales tax (TPT). When titling, buyers pay title ($4), registration ($14.50), and the annual Vehicle License Tax (VLT) personal property tax.",
-    "notes": [
-      "Casual / private party vehicle sales between individuals are 100% EXEMPT from Arizona Transaction Privilege Tax (TPT) and state sales tax under A.R.S. Title 42.",
-      "Title fee is $4.00; base registration fee is $14.50 ($8.00 registration + $5.00 plate fee + $1.50 air quality fee).",
-      "Arizona assesses an annual Vehicle License Tax (VLT) personal property tax based on vehicle MSRP and age ($2.89 per $100 of assessed value for used vehicles).",
-      "Lien filing fee is $4.00 if the vehicle is financed."
-    ],
-    "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Arizona Department of Transportation (ADOT) MVD.",
-      "Private-party vehicle purchases between individuals are exempt from Arizona state sales tax (Transaction Privilege Tax).",
-      "An annual Vehicle License Tax (VLT) applies at registration, calculated on 60% of original MSRP depreciated at 16.25% per year.",
-      "Out-of-state vehicle purchases brought into Arizona may be subject to use tax if sales tax was not previously paid."
-    ],
-    "faqs": [
-      {
-        "question": "Do I have to pay sales tax on a private car purchase in Arizona?",
-        "answer": "No. In Arizona, private-party vehicle sales between private individuals (casual sales) are completely exempt from Arizona Transaction Privilege Tax (TPT) and state sales tax. You pay $0 in state sales tax on a private transaction."
-      },
-      {
-        "question": "What fees do I pay when buying a car privately in Arizona?",
-        "answer": "When titling and registering a private vehicle purchase at the Arizona MVD, you pay a $4.00 title fee, a $14.50 standard registration fee ($8 base + $5 plate + $1.50 air quality fee), and the annual Vehicle License Tax (VLT)."
-      },
-      {
-        "question": "What is the Arizona Vehicle License Tax (VLT)?",
-        "answer": "The Vehicle License Tax (VLT) is an annual personal property tax collected in lieu of ad valorem property taxes. It is calculated from 60% of the vehicle's original base MSRP, reduced by 16.25% for each year since first registration, and assessed at $2.89 per $100 of assessed value for used vehicles."
-      },
-      {
-        "question": "Does trade-in reduce tax in Arizona?",
-        "answer": "Because private party vehicle sales in Arizona are already 100% exempt from sales tax, trade-in deductions do not apply to private sales. Dealership sales do allow trade-in credit to reduce dealer TPT."
-      },
-      {
-        "question": "Do I pay Arizona vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "Because Arizona does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Arizona. Standard certificate of title fees and registration tag fees still apply upon titling."
+        "question": "Do I owe Arizona tax on a car I buy out of state?",
+        "answer": "Not from a private seller. From an out-of-state dealer, MVD checks whether tax was paid in the state of purchase. If none was paid, or it was less than Arizona’s use tax, use tax is collected when you register."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Arizona?",
-        "answer": "In Arizona, private vehicle transfers are not subject to a statewide vehicle sales tax. When transferring title between family members, you only pay standard title transfer fees and registration charges."
+        "answer": "There is no sales tax on a transfer between individuals, family or not. The new owner pays the title fee, registration, and the vehicle license tax."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in Arizona?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Arizona's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Arizona motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "How long do I have to title a private vehicle purchase in Arizona?",
+        "answer": "Apply for the title and registration within 15 days after the seller signs the title over to you."
+      },
+      {
+        "question": "Do I keep the seller’s license plate in Arizona?",
+        "answer": "No. In Arizona the plate stays with the seller, who must move it to another vehicle or turn it in within 30 days. You get a plate when you register."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://azdot.gov/mvd/services/vehicle-services/vehicle-registration",
-      "https://azdor.gov/transaction-privilege-tax"
+      "https://azdor.gov/individual-income-tax-filing-assistance/understanding-use-tax",
+      "https://www.azleg.gov/ars/28/02003.htm",
+      "https://www.azleg.gov/ars/28/05801.htm",
+      "https://www.azleg.gov/ars/49/00551.htm",
+      "https://www.azleg.gov/ars/28/02058.htm",
+      "https://www.azleg.gov/ars/28/02051.htm"
     ]
   },
   "tennessee": {
@@ -1843,6 +1901,11 @@
     "titleFee": 14,
     "lienFilingFee": 11,
     "tradeInDeductible": false,
+    "singleArticleTax": {
+      "from": 1600,
+      "to": 3200,
+      "rate": 0.0275
+    },
     "registration": {
       "terms": [
         1
@@ -1861,55 +1924,64 @@
       "evSurchargeAnnual": 200,
       "phevSurchargeAnnual": 100
     },
-    "localTaxNote": "Tennessee counties levy local option sales taxes between 1.50% and 2.75% on the first $1,600 to $3,200 of purchase price, plus a single article state tax of 2.75% on amounts between $1,600 and $3,200. Many counties also assess a local wheel tax ($10 to $100+).",
+    "localTaxNote": "Tennessee adds the local rate where you live, 2.00% to 2.75%, on the first $1,600 of the price only, plus a 2.75% state single article tax on the next $1,600. Many counties also charge a wheel tax with registration.",
     "notes": [
-      "Tennessee levies a 7.0% state sales/use tax on casual and private party motor vehicle sales collected by the County Clerk.",
-      "Title fee is $14.00 base state fee; lien notation fee is $11.00.",
-      "Standard annual passenger plate registration is $26.50/yr.",
-      "All-electric vehicles pay an additional $200.00 annual registration fee ($100.00 for hybrid vehicles).",
-      "Trade-in deduction is not permitted on private party sales per Tennessee Department of Revenue rules."
+      "A private sale is taxed like a dealer sale: 7% state tax on the full price, the local rate on the first $1,600, and the 2.75% state single article tax on the part from $1,600.01 to $3,200 (up to $44).",
+      "The title costs $14 (the $5.50 state title fee and the $8.50 county clerk fee). Noting a lien is $11.",
+      "The standard plate is $26.50 a year ($19.50 for a motorcycle). All-electric vehicles add $200 for registrations before January 1, 2027 and $274 in 2027. Hybrids and plug-in hybrids add $100.",
+      "Trade-in credit applies only when a dealer takes the trade-in and credits it on the invoice."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Tennessee Department of Revenue or your local County Clerk.",
-      "Casual and private party sales of motor vehicles in Tennessee are subject to the 7.0% state sales and use tax.",
-      "Trade-in tax credits are restricted to purchases from licensed dealers; private sales are taxed on the full purchase price.",
-      "Local option sales taxes (up to 2.75%), state single-article tax, and county wheel taxes may apply."
+      "Estimates only, not tax or legal advice. Verify with your county clerk or the Tennessee Department of Revenue.",
+      "If the price is under 75% of the vehicle’s value in a pricing guide, the buyer and seller complete the Affidavit of Non-Dealer Transfers. Without it, or an appraisal, tax is due on the full value.",
+      "County wheel taxes and other county clerk fees are not included.",
+      "The all-electric vehicle fee rises to $274 for registrations from January 1, 2027."
     ],
     "faqs": [
       {
-        "question": "What is the sales tax rate on a private car purchase in Tennessee?",
-        "answer": "Tennessee charges a 7.0% state sales and use tax on private-party vehicle transactions. Taxes and fees are collected by your local County Clerk when you apply for title and registration."
+        "question": "What is the sales tax on a private car purchase in Tennessee?",
+        "answer": "The 7% state rate on the full price, the local rate (2.00% to 2.75%) on the first $1,600, and a 2.75% state single article tax on the part from $1,600.01 to $3,200. On a $15,000 car that is $1,050 state tax, $32 to $44 local tax, and $44 single article tax."
       },
       {
-        "question": "Does Tennessee exempt casual private car sales from sales tax?",
-        "answer": "No. While Tennessee law exempts casual and isolated sales for many household goods, motor vehicles, vessels, and aircraft are explicitly excluded from the casual sale exemption and are fully taxable."
+        "question": "Are private car sales taxed in Tennessee?",
+        "answer": "Yes. Occasional sales of most goods are exempt, but a sale of a motor vehicle between individuals is taxable. The county clerk collects the tax when you title the vehicle."
       },
       {
-        "question": "Can I deduct a trade-in on a private vehicle sale in Tennessee?",
-        "answer": "No. Under Tennessee Department of Revenue regulations, trade-in allowances only reduce the taxable sales price when trading a vehicle directly with a licensed motor vehicle dealer. Private transactions are taxed on the full agreed price."
+        "question": "Can I deduct a trade-in on a private vehicle purchase in Tennessee?",
+        "answer": "No. Trade-in credit applies only when a dealer takes the trade-in and shows the credit on the invoice. A private sale is taxed on the full price."
       },
       {
         "question": "How much does a title and plate cost in Tennessee?",
-        "answer": "The state certificate of title fee is $14.00, and standard passenger plate registration is $26.50. If financed, an $11.00 lien noting fee applies. Local county clerk processing fees and county wheel taxes may also apply."
+        "answer": "The title is $14 and a lien is $11 more. The standard plate is $26.50 a year, or $19.50 for a motorcycle. All-electric vehicles add $200 ($274 from January 1, 2027), and hybrids and plug-in hybrids add $100. County wheel taxes vary."
       },
       {
-        "question": "Do I pay Tennessee vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Tennessee, the state generally assesses its applicable vehicle sales or use tax (7.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Tennessee motor vehicle agency to verify documentation requirements."
+        "question": "I am moving to Tennessee. Do I pay sales tax on my car?",
+        "answer": "No, not on a personal vehicle you bring with a genuine move to Tennessee. Register it with your county clerk within 30 days of moving."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Tennessee?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Tennessee DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "No. Transfers between spouses, siblings, parents and children, grandparents and grandchildren, great grandparents and great grandchildren, and the spouses of those lineal relatives are exempt, and so is a gift with nothing given in return. Complete the Affidavit of Non-Dealer Transfers."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in Tennessee?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Tennessee's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Tennessee motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "What if I paid much less than the car is worth in Tennessee?",
+        "answer": "If the price is under 75% of the value in a pricing guide, you and the seller complete the Affidavit of Non-Dealer Transfers, and tax is figured on the price you paid. Without the affidavit or an appraisal, tax is due on the full value."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://www.tn.gov/revenue/taxes/sales-and-use-tax.html",
-      "https://www.tn.gov/revenue/title-and-registration.html"
-    ]
+      "https://www.tn.gov/content/dam/tn/revenue/documents/tax_manuals/june-2025/County-Clerk-Tax-Manual.pdf",
+      "https://www.tn.gov/content/tn/revenue/title-and-registration/vehicle-titling/taxation-cars-boats.html",
+      "https://www.tn.gov/content/tn/revenue/title-and-registration/vehicle-titling/titling-a-vehicle.html",
+      "https://www.tn.gov/content/tn/revenue/title-and-registration/vehicle-titling/lien-notation.html",
+      "https://www.tn.gov/revenue/taxes/sales-and-use-tax/due-dates-and-tax-rates.html",
+      "https://www.tn.gov/revenue/taxes/sales-and-use-tax/local-sales-tax/local-sales-tax-rates-map.html",
+      "https://revenue.support.tn.gov/hc/en-us/articles/360060097432--VR-4-Registration-Fees",
+      "https://revenue.support.tn.gov/hc/en-us/articles/360060541291-VR-5-Registration-Fees-for-Hybrid-or-Electric-Vehicles",
+      "https://revenue.support.tn.gov/hc/en-us/articles/360060097552-VR-6-New-Residents-Should-Register-Within-30-Days"
+    ],
+    "localTaxMinRate": 0.02,
+    "localTaxMaxRate": 0.0275,
+    "localTaxBaseCap": 1600
   },
   "massachusetts": {
     "label": "Massachusetts",

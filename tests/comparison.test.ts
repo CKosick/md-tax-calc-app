@@ -175,8 +175,8 @@ describe('Vehicle Tax by State Comparison Engine & Verification', () => {
     expect(dataset.stats.highestTitleFeeState.feeDisplay).toBe('$214.50');
 
     // Cheapest state
-    expect(dataset.stats.cheapestState.label).toBe('Arizona');
-    expect(dataset.stats.cheapestState.totalDisplay).toBe('$18.50');
+    expect(dataset.stats.cheapestState.label).toBe('Hawaii');
+    expect(dataset.stats.cheapestState.totalDisplay).toBe('$56.00');
   });
 
   it('CSV generator outputs correct headers and all 51 state rows', () => {

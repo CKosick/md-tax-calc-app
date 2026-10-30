@@ -20,7 +20,8 @@ function listPriceRegistrationFee(
       : top.fee + Math.ceil((listPrice - top.maxPrice) / 1000) * (reg.perThousandOverTop ?? 0);
     return Math.round(firstYear * factor * 100) / 100;
   }
-  return Math.round(((reg.fixed ?? 0) + (reg.rate ?? 0) * listPrice * factor) * 100) / 100;
+  const valueFee = Math.max(reg.minValueFee ?? 0, (reg.rate ?? 0) * listPrice * factor);
+  return Math.round(((reg.fixed ?? 0) + valueFee) * 100) / 100;
 }
 
 /**
@@ -172,6 +173,22 @@ export function calculateVehicleCosts(
     exciseTax = Math.round((exciseTax + additionalSalesTax) * 100) / 100;
     specialTaxDetail = `${specialTaxDetail || `Excise tax ${Number((rule.exciseTaxRate * 100).toFixed(2))}%`} + ${Number((rule.additionalSalesTaxRate * 100).toFixed(2))}% sales tax ($${additionalSalesTax.toFixed(2)})`;
   }
+  // State taxes on part of the base: a band (Tennessee single article) and the amount over a
+  // threshold (Washington luxury tax). Both are included in the state tax shown.
+  const extraTaxParts: string[] = [];
+  const band = rule.singleArticleTax;
+  if (band && taxableBase > band.from) {
+    const bandTax = Math.round((Math.min(taxableBase, band.to) - band.from) * band.rate * 100) / 100;
+    exciseTax = Math.round((exciseTax + bandTax) * 100) / 100;
+    extraTaxParts.push(`${Number((band.rate * 100).toFixed(2))}% single article tax on $${band.from.toLocaleString()} to $${band.to.toLocaleString()} ($${bandTax.toFixed(2)})`);
+  }
+  const excess = rule.luxuryExcessTax;
+  if (excess && taxableBase > excess.threshold) {
+    const excessTax = Math.round((taxableBase - excess.threshold) * excess.rate * 100) / 100;
+    exciseTax = Math.round((exciseTax + excessTax) * 100) / 100;
+    extraTaxParts.push(`${Number((excess.rate * 100).toFixed(2))}% luxury tax above $${excess.threshold.toLocaleString()} ($${excessTax.toFixed(2)})`);
+  }
+  const extraTaxDetail = extraTaxParts.length > 0 ? ` (includes ${extraTaxParts.join(' and ')})` : '';
 
   // 2. Title Certificate Fee
   const titleFee = rule.titleFee;
@@ -336,7 +353,13 @@ export function calculateVehicleCosts(
   const plateFees = rule.registration.newPlateFees;
   const needsNewPlate = Boolean(plateFees) && !inputs.hasPlateToTransfer;
   const initialRegistrationFee = needsNewPlate ? plateFees!.initialRegistrationFee : 0;
-  const newPlateFee = needsNewPlate ? plateFees!.plateFee : 0;
+  const newPlateFee = !plateFees
+    ? 0
+    : needsNewPlate
+      ? inputs.vehicleType === 'motorcycle' && plateFees.motorcyclePlateFee !== undefined
+        ? plateFees.motorcyclePlateFee
+        : plateFees.plateFee
+      : plateFees.plateTransferFee ?? 0;
 
   const otherFees = titleFee + lienFilingFee + registrationTotal + initialRegistrationFee + newPlateFee;
   const totalFirstYearCost =
@@ -388,7 +411,7 @@ export function calculateVehicleCosts(
   } else if (locality) {
     taxDescription = `State tax ${formatCurrencyLocal(stateTax)} (${rateLabel}) + ${locality.label} local tax ${formatCurrencyLocal(localityTax)} (${Number((locality.localRate * 100).toFixed(3))}%)`;
   } else if (hasLocalTax && localTaxMin !== undefined && localTaxMax !== undefined) {
-    taxDescription = `State tax ${formatCurrencyLocal(exciseTax)} + Local tax (varies by county) ${formatCurrencyLocal(localTaxMin)}–${formatCurrencyLocal(localTaxMax)}${
+    taxDescription = `State tax ${formatCurrencyLocal(exciseTax)}${extraTaxDetail} + Local tax (varies by county) ${formatCurrencyLocal(localTaxMin)}–${formatCurrencyLocal(localTaxMax)}${
       localTaxBase < taxableBase ? ` on the first ${formatCurrencyLocal(localTaxBase)}` : ''
     }`;
   } else if (specialTaxDetail) {
@@ -418,6 +441,7 @@ export function calculateVehicleCosts(
   } else if (rule.taxBase === 'fairMarketValue') {
     taxDescription = `${rateLabel} assessed on vehicle Fair Market Value`;
   }
+  if (extraTaxDetail && !taxDescription.includes(extraTaxDetail)) taxDescription += extraTaxDetail;
 
   // Itemized breakdown in exact §3 order:
   // 1. Excise tax
@@ -474,19 +498,25 @@ export function calculateVehicleCosts(
           .filter(Boolean)
           .join(' + ')
     },
-    ...(needsNewPlate
+    ...(initialRegistrationFee > 0
       ? [
           {
             id: 'initial-registration-fee',
             label: 'Initial Registration Fee',
             amount: initialRegistrationFee,
             description: 'One-time fee when you have no plate of your own to transfer'
-          },
+          }
+        ]
+      : []),
+    ...(newPlateFee > 0
+      ? [
           {
             id: 'new-plate-fee',
-            label: 'New License Plate',
+            label: needsNewPlate ? 'New License Plate' : 'Plate Transfer Fee',
             amount: newPlateFee,
-            description: 'New metal plate when you have no plate to transfer'
+            description: needsNewPlate
+              ? 'New metal plate when you have no plate to transfer'
+              : 'Moving a plate you already have onto this vehicle'
           }
         ]
       : []),
@@ -520,7 +550,7 @@ export function calculateVehicleCosts(
     vehicleLicenseFee,
     transportationImprovementFee,
     registrationTotal,
-    ...(plateFees ? { initialRegistrationFee, newPlateFee } : {}),
+    ...(plateFees ? { initialRegistrationFee, newPlateFee, plateTransferred: !needsNewPlate } : {}),
     ...(listPriceUsed !== undefined ? { listPriceUsed } : {}),
     totalFirstYearCost,
     totalFirstYearCostMin,

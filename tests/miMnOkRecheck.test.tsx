@@ -111,7 +111,7 @@ describe('Only these states use the new rules', () => {
   it('list price, registration-year, excise floor, sales tax, and older-vehicle rules', () => {
     const using = (pick: (r: StateRule) => unknown) =>
       Object.entries(rules).filter(([, r]) => pick(r) !== undefined).map(([k]) => k).sort();
-    expect(using((r) => r.registration.listPriceRegistration)).toEqual(['michigan', 'minnesota']);
+    expect(using((r) => r.registration.listPriceRegistration)).toEqual(['arizona', 'michigan', 'minnesota']);
     expect(using((r) => r.registration.feesByRegistrationYear)).toEqual(['oklahoma', 'utah']);
     expect(using((r) => r.usedVehicleExcise)).toEqual(['oklahoma']);
     expect(using((r) => r.additionalSalesTaxRate)).toEqual(['oklahoma']);

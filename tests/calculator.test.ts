@@ -412,34 +412,35 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(1100.25);
   });
 
-  it('Washington: exact worked test ($15,000 -> $1,103.25)', () => {
+  it('Washington: exact worked test ($15,000 -> $1,276.25 before local tax, with new plates)', () => {
     const rule = allRules.washington;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'washington' }, 2026);
-    expect(res.exciseTax).toBe(1020.00); // 6.8% base statewide of 15000
-    expect(res.titleFee).toBe(15.00);
+    expect(res.exciseTax).toBe(1050.00); // 7.0% state (6.5% + 0.5% motor vehicle) of 15000
+    expect(res.titleFee).toBe(39.50);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(68.25);
-    expect(res.totalFirstYearCost).toBe(1103.25);
+    expect(res.registrationTotal).toBe(82.75);
+    expect(res.newPlateFee).toBe(104.00);
+    expect(res.totalFirstYearCost).toBe(1276.25);
   });
 
-  it('Arizona: exact worked test ($15,000 -> $18.50, exempt from state sales tax)', () => {
+  it('Arizona: exact worked test ($15,000 -> $163.84, no sales tax, VLT at the $30,000 list price default)', () => {
     const rule = allRules.arizona;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'arizona' }, 2026);
-    expect(res.exciseTax).toBe(0.00); // 0.0% exempt from state TPT
+    expect(res.exciseTax).toBe(0.00); // casual sale, no TPT or use tax
     expect(res.titleFee).toBe(4.00);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(14.50);
-    expect(res.totalFirstYearCost).toBe(18.50);
+    expect(res.registrationTotal).toBe(159.84); // $8 + $1.50 air quality + VLT for an 8th-year 2019 model
+    expect(res.totalFirstYearCost).toBe(163.84);
   });
 
-  it('Tennessee: exact worked test ($15,000 -> $1,090.50)', () => {
+  it('Tennessee: exact worked test ($15,000 -> $1,134.50 before local tax)', () => {
     const rule = allRules.tennessee;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'tennessee' }, 2026);
-    expect(res.exciseTax).toBe(1050.00); // 7.0% of 15000
+    expect(res.exciseTax).toBe(1094.00); // 7.0% of 15000 + $44 single article tax
     expect(res.titleFee).toBe(14.00);
     expect(res.lienFilingFee).toBe(0.00);
     expect(res.registrationTotal).toBe(26.50);
-    expect(res.totalFirstYearCost).toBe(1090.50);
+    expect(res.totalFirstYearCost).toBe(1134.50);
   });
 
   it('Massachusetts: exact worked test ($15,000 -> $1,072.50, 2-yr registration)', () => {
@@ -515,7 +516,7 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     const waTrade = calculateVehicleCosts(allRules.washington, { ...tradeInputs, state: 'washington' }, 2026);
     expect(waTrade.tradeInDeducted).toBe(0);
     expect(waTrade.tradeInIgnored).toBe(true);
-    expect(waTrade.exciseTax).toBe(1020.00);
+    expect(waTrade.exciseTax).toBe(1050.00);
   });
 
   // Batch 3 mid-sized states acceptance tests

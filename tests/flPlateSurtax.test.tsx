@@ -59,11 +59,11 @@ describe('Florida plate to transfer', () => {
     expect((no.totalFirstYearCostMax ?? 0) - (yes.totalFirstYearCostMax ?? 0)).toBeCloseTo(253, 2);
   });
 
-  it('only Florida has the question; other states are unchanged by the answer', () => {
-    const others = Object.entries(rules).filter(([k, r]) => k !== 'florida' && r.registration.newPlateFees);
+  it('only Florida and Washington have the question; other states are unchanged by the answer', () => {
+    const others = Object.entries(rules).filter(([k, r]) => !['florida', 'washington'].includes(k) && r.registration.newPlateFees);
     expect(others).toEqual([]);
     for (const [key, rule] of Object.entries(rules)) {
-      if (key === 'florida') continue;
+      if (key === 'florida' || key === 'washington') continue;
       const b = calc(15000, {}, rule);
       expect(calc(15000, { hasPlateToTransfer: true }, rule)).toEqual(b);
       expect(b.initialRegistrationFee).toBeUndefined();
@@ -111,11 +111,11 @@ describe('Florida plate to transfer', () => {
 });
 
 describe('Florida county surtax on the first $5,000 only', () => {
-  it('config: none to 2%, capped at $5,000; only Florida and Arkansas have a cap', () => {
+  it('config: none to 2%, capped at $5,000; only Florida, Arkansas, and Tennessee have a cap', () => {
     expect(fl.localTaxMinRate).toBe(0);
     expect(fl.localTaxMaxRate).toBe(0.02);
     expect(fl.localTaxBaseCap).toBe(5000);
-    const others = Object.entries(rules).filter(([k, r]) => !['florida', 'arkansas'].includes(k) && r.localTaxBaseCap !== undefined);
+    const others = Object.entries(rules).filter(([k, r]) => !['florida', 'arkansas', 'tennessee'].includes(k) && r.localTaxBaseCap !== undefined);
     expect(others).toEqual([]);
   });
 
