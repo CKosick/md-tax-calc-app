@@ -880,6 +880,10 @@ export function VehicleInputForm({
               <>
                 <strong>Maryland Statute:</strong> Maryland taxes the full agreed vehicle price. Trade-ins do not reduce the tax base on private-party sales. Trade-in deductions are legally permitted only on transactions through licensed Maryland motor vehicle dealers.
               </>
+            ) : rule.tradeInNote ? (
+              <>
+                <strong>{rule.label} Notice:</strong> {rule.tradeInNote}
+              </>
             ) : rule.tradeInDeductible ? (
               <>
                 <strong>{rule.label} Statute:</strong> {rule.label} allows trade-in value on private sales to be deducted from the purchase price before applying the {(rule.exciseTaxRate * 100).toFixed(2)}% fee.

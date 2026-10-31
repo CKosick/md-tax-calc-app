@@ -13,11 +13,6 @@
       "finding": "Page not found"
     },
     {
-      "state": "indiana",
-      "url": "https://www.in.gov/bmv/registration-plates/vehicle-registration-fees/",
-      "finding": "Page not found"
-    },
-    {
       "state": "iowa",
       "url": "https://iowadot.gov/mvd/buyingselling/registering-a-vehicle",
       "finding": "Page not found"
@@ -31,11 +26,6 @@
       "state": "kentucky",
       "url": "https://drive.ky.gov/motor-vehicle-licensing/Pages/Vehicle-Taxes.aspx",
       "finding": "Redirects to a 404 page"
-    },
-    {
-      "state": "massachusetts",
-      "url": "https://www.mass.gov/info-details/motor-vehicle-sales-and-use-tax",
-      "finding": "Not found"
     },
     {
       "state": "nebraska",
@@ -250,6 +240,21 @@
       "state": "tennessee",
       "on": "2026-10-30",
       "note": "Re-checked against the DOR county clerk tax manual (June 2025), DOR titling, lien, and tax rate pages, the local rate map, and DOR help articles VR-4, VR-5, and VR-6; local tax limited to the first $1,600 with the 2.75% single article tax added; family and gift exemptions and the 75% affidavit rule stated."
+    },
+    {
+      "state": "massachusetts",
+      "on": "2026-10-30",
+      "note": "Dead DOR motor vehicle tax link replaced with the DOR motor vehicle sales and use tax and excise guides and the RMV private purchase, fee, family/gift, and out-of-state transfer pages; book value rule, family and gift exemptions, 10-day and 7-day deadlines, and motorcycle registration ($20 a year) re-checked."
+    },
+    {
+      "state": "indiana",
+      "on": "2026-10-30",
+      "note": "Dead BMV registration fee link replaced with the BMV fee chart (revised January 1, 2026), buying and selling, fees and taxes, excise tax, and new resident pages, and DOR Form ST-108E; motorcycle registration now includes the $15 TIIF, gift and new resident exemptions and the 45-day and 60-day deadlines stated."
+    },
+    {
+      "state": "missouri",
+      "on": "2026-10-30",
+      "note": "Re-checked against the DOR titling, buying, fee, and FAQ pages, the October to December 2026 motor vehicle local tax chart, and RSMo 144.025 and 142.869; local range 1.0% to 7.263%, motorcycle $17.75, unsourced $11 lien fee removed, EV and plug-in hybrid decal added, trade-in rule conflict disclosed."
     }
   ]
 }

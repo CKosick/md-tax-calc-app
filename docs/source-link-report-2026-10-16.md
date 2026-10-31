@@ -6,12 +6,12 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 174 across 51 jurisdictions
-- Hidden on the site (dead or unreachable): 12
+- Source links configured now: 188 across 51 jurisdictions
+- Hidden on the site (dead or unreachable): 10
 - Working but only an agency homepage, not a specific page: 16
 - States showing no source link ("Official source links ... are being updated"): 0
-- States with some links hidden: 11
-- States re-verified since the check: Arizona (October 2026), Arkansas (October 2026), California (October 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Louisiana (October 2026), Maryland (October 2026), Michigan (October 2026), Minnesota (October 2026), New Jersey (October 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Pennsylvania (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026)
+- States with some links hidden: 9
+- States re-verified since the check: Arizona (October 2026), Arkansas (October 2026), California (October 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Indiana (October 2026), Louisiana (October 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Missouri (October 2026), New Jersey (October 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Pennsylvania (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
 
@@ -40,6 +40,9 @@ All other states keep their September 2026 verified date until their rates are r
 | Washington | 2026-10-30 | Dead DOL tab fee link replaced with its current address, plus DOR motor vehicle, luxury, and local tax pages, the DOR vehicle use tax facts sheet, DOL buying, use tax, and new resident pages, and RCW 46.17 and 82.12.0251; state rate 7.0% (0.5% motor vehicle tax from 2026), Q4 2026 local range, title and tab fees, new plates, and luxury tax updated. |
 | Arizona | 2026-10-30 | Dead ADOR TPT link replaced with the ADOR use tax page and ARS 28-2003, 28-5801, 49-551, 28-2058, and 28-2051 (azdot.gov pages are behind a bot check and were not used); motorcycle registration, air quality fee, and vehicle license tax by list price and age added; unsourced lien fee removed. |
 | Tennessee | 2026-10-30 | Re-checked against the DOR county clerk tax manual (June 2025), DOR titling, lien, and tax rate pages, the local rate map, and DOR help articles VR-4, VR-5, and VR-6; local tax limited to the first $1,600 with the 2.75% single article tax added; family and gift exemptions and the 75% affidavit rule stated. |
+| Massachusetts | 2026-10-30 | Dead DOR motor vehicle tax link replaced with the DOR motor vehicle sales and use tax and excise guides and the RMV private purchase, fee, family/gift, and out-of-state transfer pages; book value rule, family and gift exemptions, 10-day and 7-day deadlines, and motorcycle registration ($20 a year) re-checked. |
+| Indiana | 2026-10-30 | Dead BMV registration fee link replaced with the BMV fee chart (revised January 1, 2026), buying and selling, fees and taxes, excise tax, and new resident pages, and DOR Form ST-108E; motorcycle registration now includes the $15 TIIF, gift and new resident exemptions and the 45-day and 60-day deadlines stated. |
+| Missouri | 2026-10-30 | Re-checked against the DOR titling, buying, fee, and FAQ pages, the October to December 2026 motor vehicle local tax chart, and RSMo 144.025 and 142.869; local range 1.0% to 7.263%, motorcycle $17.75, unsourced $11 lien fee removed, EV and plug-in hybrid decal added, trade-in rule conflict disclosed. |
 
 ## Priority: states with no working source link
 
@@ -51,11 +54,9 @@ All other states keep their September 2026 verified date until their rates are r
 |---|---|---|
 | District of Columbia | https://dmv.dc.gov/service/vehicle-excise-tax | Page not found |
 | District of Columbia | https://dmv.dc.gov/service/vehicle-registration-fees | Page not found |
-| Indiana | https://www.in.gov/bmv/registration-plates/vehicle-registration-fees/ | Page not found |
 | Iowa | https://iowadot.gov/mvd/buyingselling/registering-a-vehicle | Page not found |
 | Kansas | https://www.ksrevenue.gov/prtaxrates.html | Redirects to a 404 page |
 | Kentucky | https://drive.ky.gov/motor-vehicle-licensing/Pages/Vehicle-Taxes.aspx | Redirects to a 404 page |
-| Massachusetts | https://www.mass.gov/info-details/motor-vehicle-sales-and-use-tax | Not found |
 | Nebraska | https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling | 404 Not Found |
 | Nevada | https://dmv.nv.gov/fees.htm | 404 |
 | New Mexico | https://www.mvd.newmexico.gov/vehicles/taxes-fees/ | 404 Not Found |

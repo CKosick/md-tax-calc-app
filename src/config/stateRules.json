@@ -1991,6 +1991,7 @@
     "titleFee": 75,
     "lienFilingFee": 0,
     "tradeInDeductible": false,
+    "tradeInNote": "Massachusetts gives no trade-in credit on a private sale. The tax is on the price or the clean trade-in value, whichever is higher.",
     "registration": {
       "terms": [
         2
@@ -2007,53 +2008,58 @@
         "2": 40
       }
     },
-    "localTaxNote": "Massachusetts has no local sales taxes on motor vehicles (uniform 6.25% statewide). However, your municipality will bill you an annual Motor Vehicle Excise tax at $25 per $1,000 of vehicle value based on state depreciation.",
+    "localTaxNote": "Massachusetts has no local sales tax on vehicles. Your city or town bills a separate motor vehicle excise every year: $25 per $1,000 of a value set from the original list price, not the price you paid. It is not included here.",
     "notes": [
-      "Massachusetts assesses a 6.25% sales/use tax on private party motor vehicle purchases.",
-      "Tax is assessed on the higher of the actual purchase price or NADA clean trade-in book value per Mass. Gen. Laws ch. 64I.",
-      "Title fee is $75.00; standard passenger vehicle registration is $60.00 for a 2-year term ($30.00/yr equivalent).",
-      "Trade-in deduction is strictly limited to purchases from Massachusetts registered dealers (MGL ch. 64H/64I)."
+      "A private sale is taxed at 6.25% of the price or the vehicle’s clean trade-in (book) value, whichever is higher. The book value is adjusted for mileage, but not for the vehicle’s condition.",
+      "The title is $75. Standard passenger plates are $60 for two years. A motorcycle is $20 a year, shown here as $40 for the two-year view.",
+      "A trade-in does not lower the tax on a private sale.",
+      "Title and register within 10 days of the purchase, and get a vehicle inspection sticker within 7 days of registering.",
+      "The yearly motor vehicle excise is $25 per $1,000 of value, where the value is a share of the manufacturer’s list price (90% in the model year, then 60%, 40%, 25%, and 10% from the fifth year on), with a $5 minimum."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Massachusetts RMV and Department of Revenue.",
-      "Massachusetts assesses sales tax on the higher of the purchase price or the NADA clean trade-in value.",
-      "Trade-in tax deductions are permitted only when purchasing from a registered Massachusetts motor vehicle dealer.",
-      "An annual local motor vehicle excise tax of $25 per $1,000 of assessed value is billed separately by your city or town."
+      "Estimates only, not tax or legal advice. Verify with the Massachusetts RMV or Department of Revenue.",
+      "The estimate uses the price you enter. Massachusetts taxes the clean trade-in value instead when it is higher than the price, so the tax at the RMV can be more.",
+      "The yearly motor vehicle excise billed by your city or town is not included.",
+      "Gifts recorded on Form MVU-24 have a $25 gift transfer fee, which is not included."
     ],
     "faqs": [
       {
-        "question": "What is the sales tax rate on a private car purchase in Massachusetts?",
-        "answer": "Massachusetts imposes a 6.25% sales and use tax on private party motor vehicle purchases. Tax is paid through the Massachusetts Registry of Motor Vehicles (RMV) or MassTaxConnect (Form ST-6)."
+        "question": "What is the sales tax on a private car purchase in Massachusetts?",
+        "answer": "The use tax is 6.25% of the price you paid or the vehicle’s clean trade-in value, whichever is higher. You pay it to the RMV when you register the car."
       },
       {
-        "question": "How does Massachusetts determine vehicle value for private sale tax?",
-        "answer": "Under Massachusetts law, sales tax on a private (casual) sale is calculated on the higher of the actual purchase price or the vehicle's NADA clean trade-in value. Condition does not reduce the taxable book value."
+        "question": "Can I pay tax on a lower value because the car needs work?",
+        "answer": "No. The book value is adjusted for high or low mileage, but not for mechanical or body condition. If you think the RMV used the wrong book value, you can request an abatement from the Department of Revenue. A car with a salvage title is taxed on the price."
       },
       {
-        "question": "Does Massachusetts allow a trade-in deduction on private sales?",
-        "answer": "No. Under Mass. Gen. Laws ch. 64H and 64I, trade-in tax credits are only permitted when purchasing a vehicle from a Massachusetts registered motor vehicle dealer. Private sales must pay tax on the full value without trade-in credit."
+        "question": "Does a trade-in lower the tax on a private sale in Massachusetts?",
+        "answer": "No. A trade-in reduces the taxable price only on a sale by a registered dealer or lessor."
       },
       {
-        "question": "How much are title and registration fees in Massachusetts?",
-        "answer": "The Massachusetts RMV charges $75.00 for a Certificate of Title and $60.00 for a standard 2-year passenger registration plate."
+        "question": "How much are Massachusetts title and registration fees?",
+        "answer": "The title is $75 and standard passenger plates are $60 for two years. A motorcycle registration is $20 a year. Your city or town also bills the yearly motor vehicle excise."
       },
       {
-        "question": "Do I pay Massachusetts vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Massachusetts, the state generally assesses its applicable vehicle sales or use tax (6.25%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Massachusetts motor vehicle agency to verify documentation requirements."
+        "question": "I am moving to Massachusetts. Do I pay sales tax on my car?",
+        "answer": "Not if you bought and registered it in your old state more than 6 months before, while you lived there. You must register as soon as you become a resident; there is no grace period. Complete Form MVU-29."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Massachusetts?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Massachusetts DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A transfer from a parent, spouse, child, or sibling is exempt with Form MVU-26, and a true gift is exempt with Form MVU-24, as long as the previous owner paid Massachusetts sales or use tax. Transfers from a grandparent, cousin, uncle, or aunt are not covered by the family exemption. Gifts have a $25 gift transfer fee."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in Massachusetts?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Massachusetts's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Massachusetts motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "How long do I have to title and register a private purchase in Massachusetts?",
+        "answer": "File the Registration and Title Application within 10 days of the purchase, and get an inspection sticker within 7 days of registering."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://www.mass.gov/info-details/motor-vehicle-sales-and-use-tax",
-      "https://www.mass.gov/doc/rmv-schedule-of-fees/download"
+      "https://www.mass.gov/guides/motor-vehicle-and-trailer-sales-and-use-tax",
+      "https://www.mass.gov/how-to/apply-for-a-registration-and-title-for-a-vehicle-purchased-from-an-individual",
+      "https://www.mass.gov/info-details/massachusetts-registry-of-motor-vehicles-fees",
+      "https://www.mass.gov/info-details/familygift-transfers",
+      "https://www.mass.gov/how-to/transfer-your-registration-and-title-from-out-of-state",
+      "https://www.mass.gov/guides/motor-vehicle-excise"
     ]
   },
   "indiana": {
@@ -2077,58 +2083,62 @@
         }
       },
       "motorcycle": {
-        "1": 26.35
+        "1": 41.35
       },
       "evSurchargeAnnual": 242,
       "phevSurchargeAnnual": 81
     },
-    "localTaxNote": "Indiana does not levy local option sales taxes on vehicles (uniform 7.0% statewide). However, the BMV assesses an annual Motor Vehicle Excise Tax and local County/Municipal Wheel Tax based on vehicle age and class at registration.",
+    "localTaxNote": "Indiana has no local sales tax on vehicles. The BMV collects a yearly vehicle excise tax with registration, set by the original retail price and the vehicle’s age, and some counties and cities add their own vehicle excise or wheel tax. These are not included here.",
     "notes": [
-      "Indiana assesses a uniform 7.0% state sales/use tax on private party motor vehicle purchases collected at the BMV.",
-      "Title fee is $15.00; standard passenger registration is $36.35/yr ($21.35 registration + $15.00 Transportation Infrastructure Improvement Fee).",
-      "Electric vehicles pay an additional $242.00 annual supplemental fee ($81.00 for hybrid vehicles).",
-      "Trade-in deduction is not permitted on private party sales per Indiana DOR guidelines."
+      "A private sale is taxed at 7% of the purchase price. You pay it at a BMV branch when you apply for the title.",
+      "The title is $15, with a $30 penalty if you apply more than 45 days after the purchase.",
+      "Passenger registration is $21.35 plus the $15 Transportation Infrastructure Improvement Fee, $36.35 a year. A motorcycle is $26.35 plus the $15 fee.",
+      "Electric vehicles add a $242 supplemental fee and hybrids $81.",
+      "The yearly vehicle excise tax depends on the vehicle’s class (its original retail price) and age, from $12 to $532 for a passenger vehicle."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Indiana Bureau of Motor Vehicles (BMV) and Department of Revenue.",
-      "Private-party vehicle purchases in Indiana are subject to the 7.0% state sales and use tax.",
-      "Trade-in tax deductions apply exclusively to dealership purchases; private sales are taxed on the full purchase price.",
-      "Annual motor vehicle excise taxes and local wheel taxes are billed by the BMV based on vehicle class and age."
+      "Estimates only, not tax or legal advice. Verify with the Indiana BMV or Department of Revenue.",
+      "The yearly vehicle excise tax and any county or municipal vehicle tax are not included. The BMV’s Quick Quote tool estimates them.",
+      "Registration shown is the BMV fee chart revised January 1, 2026."
     ],
     "faqs": [
       {
         "question": "What is the sales tax on a private car purchase in Indiana?",
-        "answer": "Indiana charges a 7.0% sales and use tax on private-party motor vehicle sales. The tax is collected by the Indiana Bureau of Motor Vehicles (BMV) when you title and register the vehicle."
-      },
-      {
-        "question": "Can I deduct a trade-in on a private vehicle sale in Indiana?",
-        "answer": "No. Indiana Department of Revenue regulations allow trade-in credit only when purchasing from a licensed motor vehicle dealership. Private sales cannot deduct the value of a traded vehicle."
+        "answer": "Indiana charges 7% of the purchase price. On a private sale you pay it at a BMV branch when you apply for the title."
       },
       {
         "question": "How much does it cost to title and register a car in Indiana?",
-        "answer": "The Indiana BMV charges $15.00 for a certificate of title and $36.35 for standard annual passenger registration ($21.35 base registration plus a $15.00 Transportation Infrastructure Improvement Fee)."
+        "answer": "The title is $15. Passenger registration is $21.35 plus the $15 Transportation Infrastructure Improvement Fee. Electric vehicles add $242 and hybrids $81. You also pay the yearly vehicle excise tax and any county or city vehicle tax."
       },
       {
-        "question": "What additional taxes apply to vehicles in Indiana?",
-        "answer": "In addition to sales tax at purchase, Indiana vehicle owners pay an annual Motor Vehicle Excise Tax and local county/municipal wheel taxes based on the vehicle's age and original MSRP when registering each year."
+        "question": "What is the Indiana vehicle excise tax?",
+        "answer": "It is a yearly tax paid with registration. The amount comes from a table by the vehicle’s class, set by its original retail price, and its age, from $12 up to $532 for a passenger vehicle."
       },
       {
-        "question": "Do I pay Indiana vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Indiana, the state generally assesses its applicable vehicle sales or use tax (7.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Indiana motor vehicle agency to verify documentation requirements."
+        "question": "I am moving to Indiana. Do I pay sales tax on my car?",
+        "answer": "No. New residents are not charged sales tax to transfer a vehicle bought, titled, and registered in their prior state. You have 60 days after moving to apply for an Indiana title, and the vehicle needs a VIN inspection."
       },
       {
-        "question": "Is a vehicle transfer between family members taxable in Indiana?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Indiana DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "question": "Is a gifted car taxed in Indiana?",
+        "answer": "No, if it is an outright gift or inheritance with nothing given in return (Form ST-108E, exemption 7). Taking over the loan payments counts as payment, unless you were on the original security agreement. Adding or removing a spouse, child, grandparent, parent, or sibling on the title is also exempt."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in Indiana?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Indiana's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Indiana motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "How long do I have to title a private purchase in Indiana?",
+        "answer": "Apply for the title within 45 days of the purchase to avoid the $30 late penalty."
+      },
+      {
+        "question": "Do I keep the seller’s license plate in Indiana?",
+        "answer": "No. The seller removes the plate, and you get your own registration and plate."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://www.in.gov/dor/business-tax/sales-tax/",
-      "https://www.in.gov/bmv/registration-plates/vehicle-registration-fees/"
+      "https://www.in.gov/bmv/titles/buying-and-selling",
+      "https://www.in.gov/bmv/files/Fee_Chart.pdf",
+      "https://www.in.gov/bmv/fees-taxes/vehicle-registration-fees-and-taxes",
+      "https://www.in.gov/bmv/fees-taxes/vehicle-registration-fees-and-taxes/excise-tax-information",
+      "https://www.in.gov/bmv/licenses-permits-ids/new-indiana-residents/",
+      "https://forms.in.gov/Download.aspx?id=7261"
     ]
   },
   "missouri": {
@@ -2137,8 +2147,9 @@
     "exciseTaxRate": 0.04225,
     "taxBase": "price",
     "titleFee": 17.5,
-    "lienFilingFee": 11,
+    "lienFilingFee": 0,
     "tradeInDeductible": true,
+    "tradeInNote": "Missouri credits the sale price of a vehicle you sold within 180 days before or after this purchase; enter that amount here. Department of Revenue pages also subtract a trade-in allowance, but its rule 12 CSR 10-103.350 limits trade-in allowances to purchases from a dealer.",
     "registration": {
       "terms": [
         1
@@ -2152,55 +2163,64 @@
         }
       },
       "motorcycle": {
-        "1": 17.5
-      }
+        "1": 17.75
+      },
+      "evSurchargeAnnual": 150,
+      "phevSurchargeAnnual": 75
     },
-    "localTaxNote": "Missouri municipalities and counties levy local sales taxes averaging 3.0% to 5.5% (totaling 7.5% to 10.0%). Local sales tax is based on the buyer's home residential address, not the purchase location.",
+    "localTaxNote": "Missouri adds the local sales tax of the city or county where you live, not where you bought the car: 1.0% to 7.263% on the October to December 2026 motor vehicle chart.",
     "notes": [
-      "Missouri levies a 4.225% state sales tax on motor vehicles, plus local city and county sales taxes.",
-      "Under RSMo § 144.025, trade-in allowances and replacement vehicle credits (selling a vehicle within 180 days before or after purchase) reduce the taxable purchase price for private party sales.",
-      "Title fee is $17.50 ($8.50 title fee + $9.00 title processing fee).",
-      "Registration is based on taxable horsepower: standard passenger cars (24–35 HP) pay $33.25/yr ($24.25 registration + $9.00 processing fee)."
+      "The state rate is 4.225%, plus the local rate where you live, on the purchase price less any trade-in allowance.",
+      "If you sell a vehicle within 180 days before or after the purchase, the sale price is credited against the price of the vehicle you buy. Bring the bill of sale or Notice of Sale (Form 5049).",
+      "The title is $8.50 plus a $9 processing fee. Title within 30 days: the penalty is $25 on the 31st day, $25 more for each 30 days after, up to $200.",
+      "Registration is set by taxable horsepower. Shown is the 24 to 35 horsepower fee, $24.25 plus the $9 processing fee; the range is $18.25 (under 12 horsepower or electric) to $51.25 (72 horsepower and up). A motorcycle is $8.75 plus $9.",
+      "Electric vehicles pay the yearly alternative fuel decal, $150 for 2026 and later, and plug-in hybrids pay half, $75. These are worked out from the statutory schedule ($75 and $37.50 in 2021, up 20% of that a year for five years)."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Missouri Department of Revenue (DOR).",
-      "Missouri state sales tax is 4.225%; local city and county sales taxes apply based on your residential address.",
-      "Under RSMo § 144.025, you may deduct a trade-in or a vehicle sold privately within 180 days to reduce your taxable purchase price.",
-      "A late titling penalty of $25 per 30-day period (up to $200) applies if the vehicle is not titled within 30 days of purchase."
+      "Estimates only, not tax or legal advice. Verify with the Missouri Department of Revenue.",
+      "The 2026 decal amounts ($150 and $75) are worked out from RSMo 142.869, not a figure the Department of Revenue publishes.",
+      "Department of Revenue pages apply the tax to the price less any trade-in allowance, but its rule 12 CSR 10-103.350 says a trade-in allowance applies only to purchases from a dealer. On a private sale, the 180-day sold-vehicle credit is the usual way to lower the tax.",
+      "Local rates change each quarter. The range shown is for October to December 2026."
     ],
     "faqs": [
       {
         "question": "What is the sales tax rate on a car purchase in Missouri?",
-        "answer": "Missouri charges a 4.225% state sales tax on motor vehicle purchases. In addition, local city and county sales taxes apply based on where the buyer resides, bringing total effective tax rates to between 7.5% and 10.0% in most areas."
+        "answer": "The state rate is 4.225%, plus the local sales tax of the city or county where you live. Local rates run from 1.0% to 7.263% on the October to December 2026 chart."
       },
       {
-        "question": "Does Missouri allow trade-in credit for private car sales?",
-        "answer": "Yes! Under RSMo § 144.025, Missouri permits trade-in credits on vehicle purchases. Furthermore, if you sell a vehicle privately within 180 days before or after purchasing another vehicle, you can claim a sold-vehicle tax credit and only pay sales tax on the net difference."
+        "question": "Does selling my old car lower the tax on the one I buy in Missouri?",
+        "answer": "Yes. If you sell a vehicle within 180 days before or after you buy, the sale price is credited against the purchase price. Bring the bill of sale or Notice of Sale (Form 5049) when you title. Only one sold vehicle can be credited per purchase."
       },
       {
         "question": "How much does titling and registration cost in Missouri?",
-        "answer": "Titling a vehicle in Missouri costs $17.50 ($8.50 title fee plus $9.00 processing fee). Annual passenger registration for typical 24–35 taxable horsepower cars costs $33.25 ($24.25 plate fee plus $9.00 processing fee)."
+        "answer": "The title is $8.50 plus a $9 processing fee. Registration is set by taxable horsepower, from $18.25 to $51.25 a year plus $9 processing; a typical 24 to 35 horsepower car is $33.25. Electric vehicles also pay the $150 alternative fuel decal and plug-in hybrids $75."
       },
       {
         "question": "How long do I have to title a car in Missouri after a private purchase?",
-        "answer": "You have 30 days from the purchase date to title and register your vehicle. Titling on or after day 31 incurs a $25.00 late penalty, which increases by $25 for every subsequent 30 days up to a maximum of $200.00."
+        "answer": "You have 30 days. The penalty is $25 on the 31st day and $25 more for each 30 days after that, up to $200."
       },
       {
-        "question": "Do I pay Missouri vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Missouri, the state generally assesses its applicable vehicle sales or use tax (4.23%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Missouri motor vehicle agency to verify documentation requirements."
+        "question": "I am moving to Missouri. Do I pay sales tax on my car?",
+        "answer": "Not if the vehicle was titled in your name in another state for more than 90 days. You have 30 days after becoming a resident to title it, with a safety inspection (unless exempt), an emissions inspection in the St. Louis area, and a statement of non-assessment from your county assessor."
       },
       {
-        "question": "Is a vehicle transfer between family members taxable in Missouri?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Missouri DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "question": "Is a gifted vehicle taxed in Missouri?",
+        "answer": "No. A vehicle that was previously titled and taxed can be given without sales tax. The person giving it completes a gift statement for you to present when you title."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
       "https://dor.mo.gov/motor-vehicle/titling-registration/",
+      "https://dor.mo.gov/motor-vehicle/titling-registration/buying-vehicle.html",
+      "https://dor.mo.gov/motor-vehicle/titling-registration/fees.html",
+      "https://dor.mo.gov/faq/motor-vehicle/titling-registration.html",
+      "https://dor.mo.gov/forms/MV%20-%20Local%20Sales%20Tax.pdf",
+      "https://revisor.mo.gov/main/OneSection.aspx?section=144.025",
+      "https://revisor.mo.gov/main/OneSection.aspx?section=142.869",
       "https://sa.dor.mo.gov/mv/stc/"
     ],
-    "localTaxMinRate": 0.03,
-    "localTaxMaxRate": 0.055
+    "localTaxMinRate": 0.01,
+    "localTaxMaxRate": 0.07263
   },
   "wisconsin": {
     "label": "Wisconsin",

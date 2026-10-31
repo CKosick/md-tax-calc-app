@@ -171,6 +171,8 @@ export interface StateRule {
   titleFee: number;
   lienFilingFee: number;
   tradeInDeductible: boolean;
+  /** State-specific trade-in notice under the trade-in field, in place of the generic one (Missouri, Massachusetts). */
+  tradeInNote?: string;
   bookValueRule?: string;
   /**
    * Book value assessment: when the vehicle is younger than maxVehicleAge and the price is more
