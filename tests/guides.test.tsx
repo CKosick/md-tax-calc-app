@@ -59,7 +59,10 @@ const GUIDE_STATES = {
   'new-jersey': { label: 'New Jersey', agency: 'NJ MVC and Division of Taxation', hosts: ['www.nj.gov'] },
   washington: { label: 'Washington', agency: 'Washington DOL and DOR', hosts: ['dol.wa.gov', 'dor.wa.gov', 'app.leg.wa.gov'] },
   arizona: { label: 'Arizona', agency: 'Arizona DOR and Arizona Revised Statutes', hosts: ['azdor.gov', 'www.azleg.gov'] },
-  tennessee: { label: 'Tennessee', agency: 'Tennessee Department of Revenue', hosts: ['www.tn.gov', 'revenue.support.tn.gov'] }
+  tennessee: { label: 'Tennessee', agency: 'Tennessee Department of Revenue', hosts: ['www.tn.gov', 'revenue.support.tn.gov'] },
+  massachusetts: { label: 'Massachusetts', agency: 'Massachusetts RMV and DOR', hosts: ['www.mass.gov'] },
+  indiana: { label: 'Indiana', agency: 'Indiana BMV and DOR', hosts: ['www.in.gov', 'forms.in.gov'] },
+  missouri: { label: 'Missouri', agency: 'Missouri Department of Revenue', hosts: ['dor.mo.gov', 'revisor.mo.gov'] }
 } as const;
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
@@ -304,6 +307,30 @@ describe('Batch 8 guides (Washington, Arizona, Tennessee)', () => {
   });
 });
 
+describe('Batch 9 guides (Massachusetts, Indiana, Missouri)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified Massachusetts, Indiana, and Missouri key facts', () => {
+    const [maSale, maGift, maMove] = topics('massachusetts').map(text);
+    for (const fact of ['RTA form', '10 days', '7 days', '6.25%', 'clean trade-in value', 'mileage', '$75', '$60 for two years', 'abatement', '$25 per $1,000']) expect(maSale).toContain(fact);
+    for (const fact of ['MVU-26', 'MVU-24', 'grandparent', '$25 non-refundable gift transfer fee', '"Gift"']) expect(maGift).toContain(fact);
+    for (const fact of ['MVU-29', 'no grace period', 'more than 6 months', 'Montana']) expect(maMove).toContain(fact);
+
+    const [inSale, inGift, inMove] = topics('indiana').map(text);
+    for (const fact of ['45 days', '$30', '7%', '$15', '$21.35', '$242', '$81', '$532']) expect(inSale).toContain(fact);
+    for (const fact of ['ST-108E', 'Exemption 7', 'security agreement', 'exemption 11', 'sibling']) expect(inGift).toContain(fact);
+    for (const fact of ['60 days', 'Form 1014', 'VIN inspection', '39530', 'exemption 8']) expect(inMove).toContain(fact);
+
+    const [moSale, moGift, moMove] = topics('missouri').map(text);
+    for (const fact of ['Form 108', '30 days', '$200', '4.225%', '7.263%', '180 days', 'Form 5049', '150,000 miles', '$8.50', '$150', 'dealer']) expect(moSale).toContain(fact);
+    for (const fact of ['gift statement', 'Form 4809', 'executor']) expect(moGift).toContain(fact);
+    for (const fact of ['30 days', '90 days', 'Form 5834', 'non-assessment', 'ID/odometer']) expect(moMove).toContain(fact);
+  });
+
+  it('no em dashes in the batch 9 guides', () => {
+    for (const state of ['massachusetts', 'indiana', 'missouri']) for (const t of topics(state).map(text)) expect(t).not.toContain('—');
+  });
+});
+
 describe('Guide links and discovery', () => {
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', async () => {
     for (const [state, { label }] of Object.entries(GUIDE_STATES)) {
@@ -346,6 +373,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('New Jersey, Washington, Arizona, and Tennessee.');
+    expect(String(metadata.description)).toContain('Tennessee, Massachusetts, Indiana, and Missouri.');
   });
 });

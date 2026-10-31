@@ -274,6 +274,37 @@ const TN_SOURCES = {
   boughtBeforeMoving: { label: 'Tennessee DOR help: VTR-38 Vehicle Purchased Out of State and Moved to TN Before Titling', url: `${TN_HELP}/360059953492-VTR-38-Sales-Tax-on-a-Vehicle-Purchased-Out-of-State-and-Moved-to-TN-Before-Titling` }
 };
 
+const MA = 'https://www.mass.gov';
+const MA_SOURCES = {
+  salesTax: { label: 'Mass. DOR: Motor Vehicle and Trailer Sales and Use Tax', url: `${MA}/guides/motor-vehicle-and-trailer-sales-and-use-tax` },
+  privatePurchase: { label: 'Mass. RMV: Registration and Title for a Vehicle Purchased from an Individual', url: `${MA}/how-to/apply-for-a-registration-and-title-for-a-vehicle-purchased-from-an-individual` },
+  fees: { label: 'Mass. RMV: Registry of Motor Vehicles Fees', url: `${MA}/info-details/massachusetts-registry-of-motor-vehicles-fees` },
+  familyGift: { label: 'Mass. RMV: Family/Gift Transfers', url: `${MA}/info-details/familygift-transfers` },
+  outOfState: { label: 'Mass. RMV: Transfer Your Registration and Title from Out of State', url: `${MA}/how-to/transfer-your-registration-and-title-from-out-of-state` },
+  excise: { label: 'Mass. DOR: Motor Vehicle Excise', url: `${MA}/guides/motor-vehicle-excise` }
+};
+
+const IN_BMV = 'https://www.in.gov/bmv';
+const IN_SOURCES = {
+  buying: { label: 'Indiana BMV: Buying & Selling a Vehicle', url: `${IN_BMV}/titles/buying-and-selling` },
+  feeChart: { label: 'Indiana BMV: Fee Chart (revised January 1, 2026)', url: `${IN_BMV}/files/Fee_Chart.pdf` },
+  feesTaxes: { label: 'Indiana BMV: Vehicle Registration Fees & Taxes', url: `${IN_BMV}/fees-taxes/vehicle-registration-fees-and-taxes` },
+  excise: { label: 'Indiana BMV: Excise Tax Information', url: `${IN_BMV}/fees-taxes/vehicle-registration-fees-and-taxes/excise-tax-information` },
+  newResidents: { label: 'Indiana BMV: New Indiana Residents', url: `${IN_BMV}/licenses-permits-ids/new-indiana-residents/` },
+  st108e: { label: 'Indiana DOR Form ST-108E: Certificate of Gross Retail or Use Tax Exemption', url: 'https://forms.in.gov/Download.aspx?id=7261' }
+};
+
+const MO_DOR = 'https://dor.mo.gov';
+const MO_SOURCES = {
+  titling: { label: 'Missouri DOR: Titling and Registration', url: `${MO_DOR}/motor-vehicle/titling-registration/` },
+  buying: { label: 'Missouri DOR: Buying a Vehicle', url: `${MO_DOR}/motor-vehicle/titling-registration/buying-vehicle.html` },
+  fees: { label: 'Missouri DOR: Motor Vehicle Fees', url: `${MO_DOR}/motor-vehicle/titling-registration/fees.html` },
+  faq: { label: 'Missouri DOR: Motor Vehicle Licensing FAQs', url: `${MO_DOR}/faq/motor-vehicle/titling-registration.html` },
+  localRates: { label: 'Missouri DOR: Motor Vehicle Sales Tax Rate Chart (October to December 2026)', url: `${MO_DOR}/forms/MV%20-%20Local%20Sales%20Tax.pdf` },
+  tradeIn: { label: 'RSMo 144.025: Trade-ins and the 180-day sold-vehicle credit', url: 'https://revisor.mo.gov/main/OneSection.aspx?section=144.025' },
+  decal: { label: 'RSMo 142.869: Alternative fuel decal fee', url: 'https://revisor.mo.gov/main/OneSection.aspx?section=142.869' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -5432,6 +5463,615 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [TN_SOURCES.newResident30, TN_SOURCES.newResidentPlate, TN_SOURCES.clerkManual, TN_SOURCES.boughtBeforeMoving, TN_SOURCES.plateFees, TN_SOURCES.evFees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-massachusetts',
+    stateKey: 'massachusetts',
+    title: 'How to Title a Private Car Sale in Massachusetts',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Massachusetts',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Massachusetts: the RTA form, the signed title, the 10-day deadline, 6.25% tax on the price or book value, and inspection.',
+    cardDescription: 'Insurance and the RTA form, 10 days, 6.25% tax, and inspection.',
+    intro: [
+      'When you buy a car from a private seller in Massachusetts, you register and title it through an insurance agent and the RMV and pay the 6.25% tax there.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Massachusetts RMV and DOR',
+    steps: [
+      {
+        title: 'Get the signed title and the price in writing',
+        body: [
+          'The seller gives you the certificate of title. Both of you sign, hand print your names, and date the transfer, and the seller states the mileage.',
+          'If the title has a space for the sale price, fill it in. If not, get a bill of sale showing the price. For a vehicle exempt from title because of its age, you need the seller’s registration and a bill of sale.'
+        ]
+      },
+      {
+        title: 'Get insurance and the RTA form',
+        body: [
+          'Go to a licensed Massachusetts insurance agent. The agent completes, stamps, and signs the Registration and Title Application (RTA form). Make sure any lienholder information is complete.'
+        ]
+      },
+      {
+        title: 'Register within 10 days',
+        body: [
+          'File the application and pay the tax within 10 days of the purchase. Take it to an RMV Service Center (appointments are prioritized) or work through your insurance agent.'
+        ]
+      },
+      {
+        title: 'Pay the tax and fees',
+        body: [
+          'The tax is 6.25% of the price or the vehicle’s clean trade-in value (NADA book value), whichever is higher. The book value is adjusted for mileage, not for condition, and a trade-in does not lower the tax on a private sale.',
+          'The title is $75 and standard passenger plates are $60 for two years. You receive your registration, plates, and a decal; the title arrives in about 6 to 8 weeks.'
+        ]
+      },
+      {
+        title: 'Get the car inspected within 7 days',
+        body: ['You must get a vehicle inspection sticker within 7 days of the registration date.']
+      }
+    ],
+    checklist: [
+      'The seller’s certificate of title, signed and dated by both of you with the mileage',
+      'A bill of sale, if the title has no space for the price',
+      'Registration and Title Application (RTA form), stamped by your insurance agent',
+      'Proof of identity',
+      'Payment for the tax, $75 title, and registration',
+      'An inspection within 7 days of registering'
+    ],
+    calculatorNote:
+      'The calculator applies 6.25% to the price you enter. If the clean trade-in value is higher, the RMV taxes that instead. The yearly motor vehicle excise from your city or town is not included.',
+    faqs: [
+      {
+        question: 'Why is my Massachusetts sales tax higher than 6.25% of what I paid?',
+        answer: 'On a private sale the tax is figured on the price or the clean trade-in value, whichever is higher. If you believe the book value was wrong, you can request an abatement from the Department of Revenue.'
+      },
+      {
+        question: 'Does the car’s condition lower the book value?',
+        answer: 'No. Only mileage adjustments apply. A car with a salvage title is the exception: it is taxed on the price.'
+      },
+      {
+        question: 'What other tax will I pay each year?',
+        answer: 'Your city or town bills the motor vehicle excise: $25 per $1,000 of a value set from the original list price, with a $5 minimum.'
+      }
+    ],
+    sources: [MA_SOURCES.privatePurchase, MA_SOURCES.salesTax, MA_SOURCES.fees, MA_SOURCES.excise]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-massachusetts',
+    stateKey: 'massachusetts',
+    title: 'How to Gift a Car in Massachusetts',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Massachusetts',
+    metaDescription:
+      'How to gift a car in Massachusetts: the family exemption (Form MVU-26) for parents, spouses, children, and siblings, the gift exemption (Form MVU-24), the $25 gift fee, and the title paperwork.',
+    cardDescription: 'Forms MVU-26 and MVU-24, the $25 gift fee, and the paperwork.',
+    intro: [
+      'A car transferred from a parent, spouse, child, or sibling, or given as a true gift, is exempt from Massachusetts sales tax when the previous owner paid the tax.',
+      'Here is how to claim the exemption and register the car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Massachusetts RMV and DOR',
+    steps: [
+      {
+        title: 'Pick the right exemption',
+        body: [
+          'A transfer from a father, mother, brother, sister, husband, wife, son, or daughter uses Form MVU-26. The family exemption does not cover a grandparent, cousin, uncle, or aunt.',
+          'Any other true gift uses Form MVU-24. In both cases the previous owner must have paid Massachusetts sales or use tax.'
+        ]
+      },
+      {
+        title: 'Make sure it is really a gift',
+        body: [
+          'For the gift exemption, neither of you may pay or promise payment, neither may take on a debt tied to the transfer, and the giver must intend it as a gift.'
+        ]
+      },
+      {
+        title: 'Complete the title',
+        body: ['On the back of the title, fill in the date transferred, the odometer reading, and "Gift" as the price. You and the previous owner both sign.']
+      },
+      {
+        title: 'Get insurance and the RTA form',
+        body: ['Your insurance company stamps the Registration and Title Application, and you sign it. The previous owner completes and signs the MVU-26 or MVU-24.']
+      },
+      {
+        title: 'Register in person and get an inspection',
+        body: [
+          'Take everything to an RMV Service Center (not Natick). Pay the $75 title fee, the registration fee, and the $25 non-refundable gift transfer fee. Get an inspection sticker within 7 days.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by both of you with the date, odometer reading, and "Gift"',
+      'Form MVU-26 (family) or MVU-24 (gift), completed and signed by the previous owner',
+      'Registration and Title Application, signed by you and stamped by your insurer',
+      'Payment for the $75 title, registration, and $25 gift transfer fee',
+      'An inspection within 7 days of registering'
+    ],
+    calculatorNote:
+      'For an exempt family or gift transfer, enter $0 as the price to see the title and registration fees. The $25 gift transfer fee is not included.',
+    faqs: [
+      {
+        question: 'Is a car from my grandmother exempt in Massachusetts?',
+        answer: 'Not under the family exemption, which covers parents, spouses, children, and siblings. It can still qualify as a gift on Form MVU-24 if nothing is paid and no debt is taken on.'
+      },
+      {
+        question: 'Can I take over the loan on a gifted car?',
+        answer: 'Not and keep the gift exemption. Assuming a debt tied to the transfer disqualifies it.'
+      },
+      {
+        question: 'What if the giver never paid Massachusetts sales tax?',
+        answer: 'The exemptions require that the previous owner paid any Massachusetts sales or use tax due. The RMV’s gift page says the giver must have met the tax laws of the state where they registered it.'
+      }
+    ],
+    sources: [MA_SOURCES.familyGift, MA_SOURCES.salesTax, MA_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-massachusetts-after-moving-from-another-state',
+    stateKey: 'massachusetts',
+    title: 'Titling a Car in Massachusetts After Moving From Another State',
+    shortTitle: 'Title a car after moving to Massachusetts',
+    metaTitle: 'Titling Your Car After Moving to Massachusetts',
+    metaDescription:
+      'New to Massachusetts? Register as soon as you become a resident. Covers the sales tax exemption on Form MVU-29, insurance and the RTA form, the $75 title, and inspection within 7 days.',
+    cardDescription: 'Register right away, Form MVU-29, insurance, and inspection.',
+    intro: [
+      'You must register your vehicle in Massachusetts as soon as you become a resident. There is no grace period.',
+      'A car you bought and registered in your old state more than 6 months before, while you lived there, is exempt from Massachusetts sales tax.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Massachusetts RMV and DOR',
+    steps: [
+      {
+        title: 'Complete Form MVU-29',
+        body: [
+          'Fill out the affidavit for a motor vehicle purchased outside Massachusetts (MVU-29). A vehicle bought and registered in your prior state more than 6 months before, while you lived there, is exempt.',
+          'If you bought it within the last 6 months and paid tax to a state that gives Massachusetts the same credit, you pay only the difference up to 6.25%.'
+        ]
+      },
+      {
+        title: 'Get Massachusetts insurance',
+        body: ['A licensed Massachusetts insurance agent completes, stamps, and signs the Registration and Title Application. Sign it after checking the information.']
+      },
+      {
+        title: 'Gather proof of ownership',
+        body: [
+          'Bring your out-of-state title. If a lienholder holds it, bring your out-of-state registration and a copy of the title showing the lien, the security agreement, or a recent printout of owner information. Vehicles from New York, Kentucky, Minnesota, Maryland, Missouri, and Montana need the physical title.'
+        ]
+      },
+      {
+        title: 'Register at an RMV Service Center',
+        body: ['Schedule an appointment (walk-ins are welcome). You leave with a registration, plates, and a decal. The title is mailed in about 6 to 8 weeks.']
+      },
+      {
+        title: 'Pay the fees and get an inspection',
+        body: [
+          'The title is $75 and standard passenger plates are $60 for two years. Get an inspection sticker within 7 days of registering. Your city or town will bill the yearly motor vehicle excise.'
+        ]
+      }
+    ],
+    checklist: [
+      'Form MVU-29',
+      'Registration and Title Application, stamped by your Massachusetts insurance agent',
+      'Your out-of-state title, or registration plus lien documents',
+      'Payment for the $75 title and registration',
+      'An inspection within 7 days of registering'
+    ],
+    calculatorNote:
+      'If your car is exempt, enter $0 as the price to see the title and registration fees. The yearly motor vehicle excise is not included.',
+    faqs: [
+      {
+        question: 'How long do I have to register after moving to Massachusetts?',
+        answer: 'None. You must register as soon as you become a resident.'
+      },
+      {
+        question: 'Do I pay Massachusetts sales tax on my car?',
+        answer: 'Not if you bought and registered it in your old state more than 6 months before, while you lived there.'
+      },
+      {
+        question: 'My lender holds my title. What do I bring?',
+        answer: 'Your out-of-state registration and a copy of the title showing the lien, the security agreement, or an owner printout dated within 30 days. Titles from New York, Kentucky, Minnesota, Maryland, Missouri, and Montana must be the physical title.'
+      }
+    ],
+    sources: [MA_SOURCES.outOfState, MA_SOURCES.salesTax, MA_SOURCES.fees, MA_SOURCES.excise]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-indiana',
+    stateKey: 'indiana',
+    title: 'How to Title a Private Car Sale in Indiana',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Indiana',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Indiana: the completed title, the 45-day deadline, 7% sales tax paid at the BMV, the $15 title, and the yearly excise tax.',
+    cardDescription: 'The completed title, 45 days, 7% sales tax, and the fees.',
+    intro: [
+      'When you buy a car from a private seller in Indiana, you pay the 7% sales tax at a BMV branch when you apply for the title.',
+      'Here is the order to do it in and what it costs.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Indiana BMV and DOR',
+    steps: [
+      {
+        title: 'Check the title before you leave',
+        body: ['Make sure the seller has completed both the seller and purchaser sections of the certificate of title before you go to a branch. Any lienholder must have released its interest.']
+      },
+      {
+        title: 'Leave the plate with the seller',
+        body: ['The seller removes the license plate at the sale. You get your own title, registration, and plate.']
+      },
+      {
+        title: 'Apply within 45 days',
+        body: ['Apply for the certificate of title within 45 days of the purchase. After that, the BMV charges a $30 administrative penalty.']
+      },
+      {
+        title: 'Pay the sales tax at the branch',
+        body: ['A private sale is taxed at 7% of the purchase price, paid at the branch when you apply for the title.']
+      },
+      {
+        title: 'Pay the title, registration, and excise tax',
+        body: [
+          'The title is $15. Passenger registration is $21.35 plus the $15 Transportation Infrastructure Improvement Fee. Electric vehicles add $242 and hybrids $81.',
+          'You also pay the yearly vehicle excise tax, set by the vehicle’s original retail price and age, and any county or municipal vehicle tax where you live.'
+        ]
+      }
+    ],
+    checklist: [
+      'The certificate of title, with the seller and purchaser sections completed',
+      'Lien release, if a lien was recorded',
+      'Proof of identity and Indiana address',
+      'Payment for the 7% sales tax and the fees',
+      'Payment for the vehicle excise tax and any local vehicle tax'
+    ],
+    calculatorNote:
+      'The calculator shows the 7% sales tax, title, and registration. The yearly vehicle excise tax and any county or city vehicle tax are not included; the BMV’s Quick Quote tool estimates them.',
+    faqs: [
+      {
+        question: 'What happens if I title the car late in Indiana?',
+        answer: 'Applying more than 45 days after the purchase adds a $30 administrative penalty.'
+      },
+      {
+        question: 'How much is the Indiana vehicle excise tax?',
+        answer: 'It comes from a table by class (the original retail price) and age, from $12 to $532 a year for a passenger vehicle. It is paid with every registration.'
+      },
+      {
+        question: 'Can I keep the seller’s plate?',
+        answer: 'No. The seller removes it and may move it to another vehicle they own.'
+      }
+    ],
+    sources: [IN_SOURCES.buying, IN_SOURCES.feeChart, IN_SOURCES.feesTaxes, IN_SOURCES.excise]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-indiana',
+    stateKey: 'indiana',
+    title: 'How to Gift a Car in Indiana',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Indiana',
+    metaDescription:
+      'How to gift a car in Indiana: the sales tax exemption for an outright gift on Form ST-108E, why taking over a loan counts as payment, adding family to a title, and the title paperwork.',
+    cardDescription: 'The gift exemption on Form ST-108E, loans, and the paperwork.',
+    intro: [
+      'A car given outright, with nothing in return, is exempt from Indiana sales tax. You claim the exemption on Form ST-108E.',
+      'Here is how to do it and what still costs money.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Indiana BMV and DOR',
+    steps: [
+      {
+        title: 'Check that it is a true gift',
+        body: [
+          'Exemption 7 covers a vehicle transferred from one person to another with no consideration, as an outright gift or inheritance.',
+          'Taking over the loan payments counts as payment, so it is not exempt, unless you were listed on the original security agreement. In that case, include a copy of the agreement.'
+        ]
+      },
+      {
+        title: 'Know the family title exemption',
+        body: ['Adding or removing a spouse, child, grandparent, parent, or sibling of the owner on the title is exempt under exemption 11. Complete the Direct Relative Identification section of the form.']
+      },
+      {
+        title: 'Complete Form ST-108E',
+        body: ['Fill in the purchase price lines and your Social Security number or taxpayer ID, which the form requires for every exemption, and write the exemption number.']
+      },
+      {
+        title: 'Get the title signed over',
+        body: ['The giver completes the seller section of the title and you complete the purchaser section. Any lien must be released first.']
+      },
+      {
+        title: 'Apply within 45 days',
+        body: ['Apply at a BMV branch within 45 days. Pay the $15 title fee, registration, and the yearly vehicle excise tax.']
+      }
+    ],
+    checklist: [
+      'Form ST-108E with the exemption number',
+      'The title, signed over to you',
+      'A copy of the original security agreement, if you are taking over a loan you were already on',
+      'Proof of identity and Indiana address',
+      'Payment for the title, registration, and excise tax'
+    ],
+    calculatorNote:
+      'For an exempt gift, enter $0 as the price to see the title and registration fees. The vehicle excise tax is not included.',
+    faqs: [
+      {
+        question: 'Is a sale between family members exempt in Indiana?',
+        answer: 'Not just because you are related. The exemption is for an outright gift with nothing in return, or for adding or removing a close relative on the title.'
+      },
+      {
+        question: 'Is an inherited car taxed?',
+        answer: 'No. An inheritance falls under the same exemption as a gift (ST-108E, exemption 7).'
+      },
+      {
+        question: 'Do I still pay the excise tax on a gifted car?',
+        answer: 'Yes. The yearly vehicle excise tax is paid with every registration.'
+      }
+    ],
+    sources: [IN_SOURCES.st108e, IN_SOURCES.buying, IN_SOURCES.feeChart, IN_SOURCES.excise]
+  },
+  {
+    slug: 'titling-a-car-in-indiana-after-moving-from-another-state',
+    stateKey: 'indiana',
+    title: 'Titling a Car in Indiana After Moving From Another State',
+    shortTitle: 'Title a car after moving to Indiana',
+    metaTitle: 'Titling Your Car After Moving to Indiana',
+    metaDescription:
+      'New to Indiana? You have 60 days to title your vehicles. Covers the VIN inspection, the new resident sales tax exemption, lien-held titles and Form 1014, and the fees.',
+    cardDescription: '60 days, the VIN inspection, no sales tax, and the fees.',
+    intro: [
+      'When you move to Indiana, you have 60 days to apply for a title for each vehicle with an out-of-state title, or to submit a Request for Title (State Form 1014).',
+      'New residents are not charged sales tax to transfer their vehicles.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Indiana BMV and DOR',
+    steps: [
+      {
+        title: 'Apply within 60 days',
+        body: ['Apply for an Indiana title, or submit State Form 1014, within 60 days of moving. Otherwise the BMV charges an administrative penalty. You also have 60 days to get an Indiana driver’s license.']
+      },
+      {
+        title: 'Get the VIN inspected',
+        body: [
+          'Bring the vehicle to the branch for a free VIN inspection. If you cannot, a law enforcement officer can complete State Form 39530, and may charge up to $5.'
+        ]
+      },
+      {
+        title: 'Handle a lien-held title',
+        body: ['If your lender holds the out-of-state title, complete Form 1014 at a branch. The BMV requests the title and contacts you when it arrives.']
+      },
+      {
+        title: 'Claim the new resident exemption',
+        body: ['A vehicle bought, titled, and registered in your prior state while you lived there is exempt from Indiana sales tax (ST-108E, exemption 8, with the New Resident Statement).']
+      },
+      {
+        title: 'Pay the fees',
+        body: [
+          'The title is $15. Passenger registration is $21.35 plus the $15 TIIF, and electric vehicles add $242 and hybrids $81. You also pay the yearly vehicle excise tax and any local vehicle tax.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state certificate of title (or Form 1014 if a lender holds it)',
+      'The vehicle, for the VIN inspection, or State Form 39530',
+      'Proof of address dated within the last 60 days, unless your license shows the correct address',
+      'Form ST-108E with the New Resident Statement, if asked',
+      'Payment for the title, registration, and excise tax'
+    ],
+    calculatorNote:
+      'New residents pay no sales tax on a vehicle brought with them, so enter $0 as the price to see the title and registration fees. The excise tax is not included.',
+    faqs: [
+      {
+        question: 'How long do I have after moving to Indiana?',
+        answer: '60 days to apply for your vehicle titles (or submit Form 1014) and to get an Indiana driver’s license.'
+      },
+      {
+        question: 'Do I pay Indiana sales tax on my car?',
+        answer: 'No. New residents are not charged sales tax when transferring a title from their prior state.'
+      },
+      {
+        question: 'Where do I get the VIN inspection?',
+        answer: 'At any BMV branch or certified service provider at no charge, or from a law enforcement officer for up to $5.'
+      }
+    ],
+    sources: [IN_SOURCES.newResidents, IN_SOURCES.buying, IN_SOURCES.st108e, IN_SOURCES.feeChart, IN_SOURCES.excise]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-missouri',
+    stateKey: 'missouri',
+    title: 'How to Title a Private Car Sale in Missouri',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Missouri',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Missouri: the signed title, Form 108, inspections, the 30-day deadline, 4.225% plus local tax, and the 180-day sold-vehicle credit.',
+    cardDescription: 'The title, Form 108, inspections, 30 days, and the tax.',
+    intro: [
+      'When you buy a car from a private seller in Missouri, you title it at a license office within 30 days and pay state and local sales tax there.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Missouri Department of Revenue',
+    steps: [
+      {
+        title: 'Get the title signed over',
+        body: [
+          'The seller signs the certificate of title over to you. Complete an Odometer Disclosure Statement (Form 3019) if it applies, and get a notarized lien release (Form 4809) if a lien is shown. The seller’s plates do not go with the car.'
+        ]
+      },
+      {
+        title: 'Get the inspections you need',
+        body: [
+          'A safety inspection no more than 60 days old is required unless the vehicle is in its first ten years after the model year and has under 150,000 miles. In St. Louis City and St. Louis, St. Charles, and Jefferson counties, you also need an emissions inspection.',
+          'If the title is from another state, you need an ID/odometer inspection; a safety inspection counts.'
+        ]
+      },
+      {
+        title: 'Fill out Form 108',
+        body: ['Sign the Application for Missouri Title and License (Form 108). For new plates, bring a paid personal property tax receipt or a statement of non-assessment for the previous year and proof of insurance.']
+      },
+      {
+        title: 'Title within 30 days',
+        body: ['You have 30 days from the purchase. The penalty is $25 on the 31st day and $25 more for each 30 days after, up to $200.']
+      },
+      {
+        title: 'Pay the tax and fees',
+        body: [
+          'The tax is 4.225% plus the local rate where you live (1.0% to 7.263% on the October to December 2026 chart). If you sold a vehicle within 180 days before or after this purchase, its sale price is credited; bring the bill of sale or Form 5049.',
+          'The title is $8.50 plus $9 processing. Plates are set by taxable horsepower ($33.25 a year for 24 to 35 horsepower, with processing). Electric vehicles also owe the yearly $150 alternative fuel decal, and plug-in hybrids $75.'
+        ]
+      }
+    ],
+    checklist: [
+      'The certificate of title, signed over to you',
+      'Application for Missouri Title and License (Form 108)',
+      'Safety inspection, emissions inspection, or ID/odometer inspection, as applicable',
+      'Personal property tax receipt or statement of non-assessment, for new plates',
+      'Proof of insurance',
+      'Bill of sale or Form 5049 for a vehicle you sold, to claim the 180-day credit'
+    ],
+    calculatorNote:
+      'The calculator applies 4.225% plus the local range to the price less any amount you enter as a trade-in. Use that field for the sale price of a vehicle you sold within 180 days. Registration shown is for 24 to 35 taxable horsepower.',
+    faqs: [
+      {
+        question: 'Does a trade-in lower the tax on a private sale in Missouri?',
+        answer: 'The Department of Revenue’s rule says a trade-in allowance applies only to purchases from a dealer. On a private sale, the 180-day credit for a vehicle you sold yourself is the way to lower the tax.'
+      },
+      {
+        question: 'Is the $150 EV decal an official figure?',
+        answer: 'It is worked out from RSMo 142.869: $75 in 2021, raised by 20% of that each year for five years. The Department of Revenue does not list the 2026 amount on its fee page.'
+      },
+      {
+        question: 'Can I drive the car before I title it?',
+        answer: 'You can buy a 30-day temporary permit at a license office ($5 plus a $9 processing fee) with the signed title, a safety inspection if required, and proof of insurance.'
+      }
+    ],
+    sources: [MO_SOURCES.buying, MO_SOURCES.titling, MO_SOURCES.fees, MO_SOURCES.localRates, MO_SOURCES.faq, MO_SOURCES.tradeIn, MO_SOURCES.decal]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-missouri',
+    stateKey: 'missouri',
+    title: 'How to Gift a Car in Missouri',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Missouri',
+    metaDescription:
+      'How to gift a car in Missouri: no sales tax on a gift of a previously titled and taxed vehicle, the gift statement, inspections, the 30-day deadline, and the title fees.',
+    cardDescription: 'No sales tax, the gift statement, inspections, and the fees.',
+    intro: [
+      'No Missouri sales tax is due when a previously titled and taxed vehicle is given as a gift. The giver completes a gift statement for you.',
+      'Here is how to transfer the car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Missouri Department of Revenue',
+    steps: [
+      {
+        title: 'Get a gift statement from the giver',
+        body: ['The person giving the vehicle completes a gift statement for you to present when you title it. With it, no sales tax is due.']
+      },
+      {
+        title: 'Get the title signed over',
+        body: ['The giver signs the title over to you. If a lien is shown, you need a notarized lien release (Form 4809).']
+      },
+      {
+        title: 'Get the inspections you need',
+        body: ['A safety inspection is required unless the vehicle is in its first ten years after the model year with under 150,000 miles. In the St. Louis area, you also need an emissions inspection.']
+      },
+      {
+        title: 'Fill out Form 108',
+        body: ['Sign the Application for Missouri Title and License (Form 108), and bring proof of insurance and, for new plates, your personal property tax receipt or statement of non-assessment.']
+      },
+      {
+        title: 'Title within 30 days',
+        body: ['Title the vehicle within 30 days to avoid the $25 penalty. Pay the $8.50 title fee, the $9 processing fee, and registration.']
+      }
+    ],
+    checklist: [
+      'Gift statement from the giver',
+      'The title, signed over to you',
+      'Form 108',
+      'Safety and emissions inspections, if required',
+      'Proof of insurance and a personal property tax receipt or statement of non-assessment'
+    ],
+    calculatorNote: 'For a gift, enter $0 as the price to see the title and registration fees.',
+    faqs: [
+      {
+        question: 'Does the gift have to be from family in Missouri?',
+        answer: 'No. The rule covers a previously titled and taxed vehicle given to another person, related or not.'
+      },
+      {
+        question: 'What about a car from an estate?',
+        answer: 'The administrator, executor, or personal representative can give it as a gift if the decedent paid the taxes and a gift affidavit is presented. No sales tax is due.'
+      },
+      {
+        question: 'Is there a deadline for a gifted car?',
+        answer: 'Yes. Title it within 30 days to avoid the late penalty.'
+      }
+    ],
+    sources: [MO_SOURCES.faq, MO_SOURCES.titling, MO_SOURCES.buying, MO_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-missouri-after-moving-from-another-state',
+    stateKey: 'missouri',
+    title: 'Titling a Car in Missouri After Moving From Another State',
+    shortTitle: 'Title a car after moving to Missouri',
+    metaTitle: 'Titling Your Car After Moving to Missouri',
+    metaDescription:
+      'New to Missouri? Title your vehicle within 30 days. Covers the 90-day sales tax rule, inspections, the statement of non-assessment, lien-held titles (Form 5834), and the fees.',
+    cardDescription: '30 days, the 90-day tax rule, inspections, and the fees.',
+    intro: [
+      'You have 30 days from becoming a Missouri resident to title your vehicle.',
+      'If it was titled in your name in another state for more than 90 days, no Missouri sales tax is due.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Missouri Department of Revenue',
+    steps: [
+      {
+        title: 'Check whether you owe sales tax',
+        body: [
+          'No sales tax is due if you owned and operated the vehicle in another state for at least 90 days. If you owned it for less, you get credit for tax paid to the other state and pay any difference.'
+        ]
+      },
+      {
+        title: 'Get your out-of-state title',
+        body: [
+          'If your lender holds it, send them the Owner Out-of-State Title Request (Form 5834). If the lender will not release it, you can still get a one-year registration with their written statement and proof of ownership.'
+        ]
+      },
+      {
+        title: 'Get the inspections',
+        body: [
+          'Every vehicle previously titled in another state needs an ID/odometer inspection; a Missouri safety inspection counts. You need a safety inspection unless exempt, and an emissions inspection in St. Louis City or St. Louis, St. Charles, or Jefferson counties.'
+        ]
+      },
+      {
+        title: 'Get a statement of non-assessment',
+        body: ['Your county assessor (or the City of St. Louis) issues a statement showing you owe no Missouri personal property tax.']
+      },
+      {
+        title: 'Title and register',
+        body: [
+          'Bring Form 108, proof of insurance, and your documents to a license office. Pay the $8.50 title fee and $9 processing fee and registration by taxable horsepower.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title, or Form 5834 and your lender’s statement',
+      'Application for Missouri Title and License (Form 108)',
+      'ID/odometer, safety, and emissions inspections, as applicable',
+      'Statement of non-assessment from your county assessor',
+      'Proof of insurance'
+    ],
+    calculatorNote:
+      'If you owned the vehicle in another state for at least 90 days, enter $0 as the price to see the title and registration fees.',
+    faqs: [
+      {
+        question: 'How long do I have after moving to Missouri?',
+        answer: '30 days from becoming a resident to title your vehicle.'
+      },
+      {
+        question: 'Do I pay Missouri sales tax on my car?',
+        answer: 'Not if it was titled in your name in another state for more than 90 days. Otherwise you get credit for tax paid there and pay the difference.'
+      },
+      {
+        question: 'What is a statement of non-assessment?',
+        answer: 'A statement from your county assessor (or the City of St. Louis) showing you do not owe Missouri personal property tax. New residents need it to title and register.'
+      }
+    ],
+    sources: [MO_SOURCES.titling, MO_SOURCES.faq, MO_SOURCES.fees, MO_SOURCES.buying]
   }
 ];
 
