@@ -2229,7 +2229,7 @@
     "taxBase": "price",
     "titleFee": 214.5,
     "lienFilingFee": 10,
-    "tradeInDeductible": false,
+    "tradeInDeductible": true,
     "registration": {
       "terms": [
         1
@@ -2248,56 +2248,57 @@
       "evSurchargeAnnual": 175,
       "phevSurchargeAnnual": 75
     },
-    "localTaxNote": "Most Wisconsin counties levy a 0.5% county sales tax, bringing the effective sales tax rate to 5.5%. Milwaukee County levies an additional 0.4% county sales tax (total 5.9%) and the City of Milwaukee levies a 2.0% municipal sales tax (total 7.9%). Local wheel taxes ($10 to $40) may also apply.",
+    "localTaxNote": "Wisconsin adds the county tax where the vehicle is kept: 0.5% in most counties, none in Waukesha and Winnebago, and 0.9% in Milwaukee County, plus the 2% City of Milwaukee tax inside the city. Local wheel taxes are not included.",
     "notes": [
-      "Wisconsin assesses a 5.0% state sales/use tax on private party motor vehicle purchases, plus county taxes (usually 0.5%).",
-      "Title fee is $214.50 for original or transferred title (WisDOT).",
-      "Standard automobile registration is $85.00/yr.",
-      "Electric vehicles pay an additional $175.00 annual registration surcharge ($75.00 for hybrid vehicles).",
-      "Trade-in deduction is not permitted on private party sales per Wisconsin Department of Revenue rules."
+      "The state tax is 5% of the purchase price, which WisDOT defines as the money paid minus any trade-in allowance. An even trade with no money exchanged is exempt.",
+      "The title is $214.50 and a lien is $10 more. Automobile registration is $85 a year; a motorcycle is $23 for two years.",
+      "Electric vehicles add a $175 surcharge and hybrids $75.",
+      "Apply for a title right away after you buy, and display plates or a temporary plate within two business days to drive the car."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Wisconsin Department of Transportation (WisDOT) and Department of Revenue.",
-      "Wisconsin assesses a 5.0% state sales/use tax; most counties assess an additional 0.5% county sales tax.",
-      "Trade-in deductions are only permitted when purchasing from a licensed motor vehicle dealer; private party sales pay tax on full price.",
-      "Buyers must title and register within two business days of purchase."
+      "Estimates only, not tax or legal advice. Verify with the Wisconsin DMV or Department of Revenue.",
+      "Local wheel taxes, charged where the vehicle is kept, are not included.",
+      "The family and gift exemptions are claimed on the title application. The family exemption applies only to a vehicle with a current Wisconsin title."
     ],
     "faqs": [
       {
-        "question": "What is the sales tax rate on a private car sale in Wisconsin?",
-        "answer": "Wisconsin levies a 5.0% state sales and use tax on private-party vehicle purchases. In addition, most Wisconsin counties levy a 0.5% county sales tax, making the standard effective rate 5.5% (higher in Milwaukee County and the City of Milwaukee)."
+        "question": "What is the sales tax on a private car purchase in Wisconsin?",
+        "answer": "The state rate is 5% of the purchase price, plus the county tax where the car is kept: 0.5% in most counties, none in Waukesha and Winnebago, and 0.9% in Milwaukee County. Inside the City of Milwaukee, a 2% city tax is added."
+      },
+      {
+        "question": "Does a trade-in lower the tax on a private sale in Wisconsin?",
+        "answer": "WisDOT defines the purchase price as the money paid minus any trade-in allowance, and an even trade of personal property with no money exchanged is exempt."
       },
       {
         "question": "Why is the Wisconsin title fee so high?",
-        "answer": "Under Wisconsin state law, the standard certificate of title fee for passenger vehicles is $214.50. This statutory fee is collected by the Wisconsin Department of Transportation (WisDOT) on all original titles and title transfers."
-      },
-      {
-        "question": "Can I deduct a trade-in on a private vehicle sale in Wisconsin?",
-        "answer": "No. According to the Wisconsin Department of Revenue, trade-in tax credits are only allowed when trading in a vehicle as part of a transaction with a licensed retailer. Private sales do not receive a trade-in deduction."
+        "answer": "The title fee for an original title or a transfer is $214.50. Transfers to a surviving spouse, registered domestic partner, or qualifying family member have no title fee."
       },
       {
         "question": "How much is car registration in Wisconsin?",
-        "answer": "Standard annual registration for an automobile in Wisconsin is $85.00. Electric vehicles pay an additional $175.00 annual surcharge ($75.00 for hybrids), and local municipal/county wheel taxes ($10 to $40) may apply depending on your location."
+        "answer": "Automobile registration is $85 a year. A motorcycle is $23 for two years. Electric vehicles add $175 and hybrids $75, and your municipality or county may add a wheel tax."
       },
       {
-        "question": "Do I pay Wisconsin vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Wisconsin, the state generally assesses its applicable vehicle sales or use tax (5.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Wisconsin motor vehicle agency to verify documentation requirements."
+        "question": "I am moving to Wisconsin. Do I pay sales tax on my car?",
+        "answer": "Not if you bought it outside Wisconsin, as a nonresident, for your personal use at least 90 days before you moved here with it. New residents must apply for a Wisconsin title right away."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Wisconsin?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Wisconsin DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A transfer from a spouse, ex-spouse (with the divorce decree), parent, child or child’s spouse, mother-in-law or father-in-law, stepparent, or stepchild is exempt, as are gifts and inheritances. The family exemption applies only to a vehicle with a current Wisconsin title."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in Wisconsin?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Wisconsin's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Wisconsin motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "How long do I have to title a private vehicle purchase in Wisconsin?",
+        "answer": "Apply for the title immediately. To drive the car, you must display Wisconsin plates or a temporary plate within two business days of the purchase."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
+      "https://wisconsindot.gov/pages/dmv/vehicles/title-plates/titles.aspx",
       "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/fee-chart.aspx",
-      "https://www.revenue.wi.gov/Pages/FAQS/pcs-motorveh.aspx"
+      "https://wisconsindot.gov/Pages/online-srvcs/title-vehicle/emvpublicdefault.aspx",
+      "https://wisconsindot.gov/Pages/online-srvcs/title-vehicle/faqs-purchase-price.aspx",
+      "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx"
     ],
-    "localTaxMinRate": 0.005,
+    "localTaxMinRate": 0,
     "localTaxMaxRate": 0.029
   },
   "colorado": {
@@ -2306,73 +2307,96 @@
     "exciseTaxRate": 0.029,
     "taxBase": "price",
     "titleFee": 7.2,
-    "lienFilingFee": 5,
-    "tradeInDeductible": false,
+    "lienFilingFee": 40,
+    "tradeInDeductible": true,
     "registration": {
       "terms": [
         1
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 53.5
+          "1": 67.19
         },
         "over3700lbs": {
-          "1": 63.5
+          "1": 67.19
         }
       },
       "motorcycle": {
-        "1": 25
+        "1": 37.19
       },
-      "evSurchargeAnnual": 54
+      "evSurchargeAnnual": 89.05,
+      "phevSurchargeAnnual": 76.05,
+      "feesByRegistrationYear": {
+        "passenger": [
+          {
+            "maxYear": 7,
+            "fee": 67.19
+          },
+          {
+            "maxYear": 10,
+            "fee": 65.19
+          },
+          {
+            "fee": 62.19
+          }
+        ],
+        "motorcycle": [
+          {
+            "fee": 37.19
+          }
+        ]
+      }
     },
-    "localTaxNote": "Colorado counties, cities, and special districts (such as RTD) levy local sales and use taxes ranging from 1.0% to over 6.0%, bringing total effective sales tax to between 4.0% and 9.5% depending on your residence. An annual Specific Ownership Tax (SOT) also applies at registration based on vehicle MSRP.",
+    "localTaxNote": "Colorado adds the local sales or use taxes of the city, county, and special districts (such as RTD) where you live and register the car. The 1.0% to 6.0% range shown is carried over from the earlier check and has not been re-verified; look up your address with the Colorado Sales Tax Lookup Tool. Home-rule cities that collect their own tax set their own rates.",
     "notes": [
-      "Colorado assesses a 2.9% state sales/use tax base on private party motor vehicle purchases.",
-      "Title fee is $7.20 (state application fee); lien filing fee is $5.00.",
-      "Standard passenger vehicle registration averages $53.50/yr ($25.00 weight fee + $28.50 FASTER road safety fee).",
-      "Electric vehicles pay a $54.00 annual EV registration fee ($50 EV fee + $4 road safety).",
-      "Trade-in deduction is not permitted on private party sales per Colorado Department of Revenue rules."
+      "On a private sale, you pay the 2.9% state tax and the local taxes to the county clerk when you register. The fair market value of a vehicle you trade in as part of the purchase is excluded from the taxable price.",
+      "The title transfer fee is $7.20. A lender adding a lien pays $40 in lien filing fees.",
+      "Registration shown is the statewide fees for a car between 2,001 and 5,000 lbs, with the weight-based base fee (C.R.S. 42-3-306) figured at 3,500 lbs: the road safety ($19.30) and bridge ($18) surcharges, the clerk, emergency medical, emissions, insurance database, and peace officer training fees, the year tab, and the age fee ($12 under 7 years, $10 from 7 to 9, $7 at 10 and older).",
+      "Plug-in electric vehicles pay a $63.05 road usage fee, plus the electric motor vehicle road usage fee of $26 ($13 for plug-in hybrids) from July 1, 2026 to June 30, 2027.",
+      "The yearly specific ownership tax is figured from 85% of the original MSRP: 2.1% in the first year, then 1.5%, 1.2%, 0.9%, 0.45% for years five through nine, and $3 from the tenth year."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Colorado Department of Revenue (CDOR) and your county motor vehicle office.",
-      "Colorado state sales tax is 2.9%; local county, city, and RTD taxes significantly increase total tax depending on where you register.",
-      "Trade-in tax deductions are restricted to purchases from licensed dealers; private sales are taxed on the full purchase price.",
-      "An annual Specific Ownership Tax (SOT) personal property tax applies at registration, calculated from vehicle MSRP and age."
+      "Estimates only, not tax or legal advice. Verify with your county motor vehicle office or the Colorado Department of Revenue.",
+      "The local tax range has not been re-verified and depends on your address. Use the Colorado Sales Tax Lookup Tool for your rate.",
+      "The specific ownership tax, county fees, emissions-area fee, and license plate materials are not included. The DMV’s registration fee estimator gives your total.",
+      "Whether plug-in hybrids pay the $63.05 road usage fee is not spelled out on the DMV page; the estimate includes it."
     ],
     "faqs": [
       {
-        "question": "What is the sales tax rate on a private car purchase in Colorado?",
-        "answer": "Colorado imposes a 2.9% state sales and use tax on private party motor vehicle purchases. However, local city, county, and special district taxes (like RTD) usually add 2% to 6%, making total sales tax between 4.0% and 9.5% in most areas."
+        "question": "What is the sales tax on a private car purchase in Colorado?",
+        "answer": "The state rate is 2.9%, plus the city, county, and special district taxes where you live and register the car. On a private sale, you pay them all to the county clerk at registration."
       },
       {
-        "question": "Can I deduct my trade-in on a private car sale in Colorado?",
-        "answer": "No. Under Colorado Department of Revenue regulations, trade-in tax allowances are only permitted on purchases from licensed automobile dealers. Private party sales are taxed on the full purchase price."
+        "question": "Does a trade-in lower the tax in Colorado?",
+        "answer": "Yes. If you trade in a vehicle you own as part of buying another, its fair market value is excluded from the taxable price, as long as the traded vehicle is subject to registration."
       },
       {
         "question": "How much does a title transfer cost in Colorado?",
-        "answer": "The state certificate of title fee in Colorado is $7.20. If the vehicle is financed, an additional $5.00 lien filing fee applies. Transactions are processed by your local County Clerk & Recorder's office."
+        "answer": "The title transfer fee is $7.20. A lender adding a lien pays $40 in lien filing fees plus the title fee."
       },
       {
-        "question": "What is the Colorado Specific Ownership Tax (SOT)?",
-        "answer": "The Specific Ownership Tax (SOT) is an annual personal property tax paid at registration in lieu of ad valorem property taxes. It is based on 85% of the vehicle's original manufacturer suggested retail price (MSRP) and depreciates annually as the vehicle ages."
+        "question": "What is the Colorado specific ownership tax?",
+        "answer": "It is a yearly tax paid with registration, in place of property tax. It is figured from 85% of the original MSRP: 2.1% in the first year, 1.5% in the second, 1.2% in the third, 0.9% in the fourth, 0.45% in years five through nine, and $3 from the tenth year."
       },
       {
-        "question": "Do I pay Colorado vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Colorado, the state generally assesses its applicable vehicle sales or use tax (2.90%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Colorado motor vehicle agency to verify documentation requirements."
+        "question": "I am moving to Colorado. Do I pay sales tax on my car?",
+        "answer": "No use tax applies to a vehicle you acquired outside Colorado and brought with you when you became a resident. Register it within 90 days, with a VIN inspection for an out-of-state title."
       },
       {
-        "question": "Is a vehicle transfer between family members taxable in Colorado?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Colorado DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "question": "Is a gifted vehicle taxed in Colorado?",
+        "answer": "The person receiving a gift owes no sales or use tax, but the giver must have paid tax on their own purchase, and the county clerk needs the receipts before registering it. Taking over a loan on the vehicle is a taxable sale."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in Colorado?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Colorado's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Colorado motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "How long do I have to register a private vehicle purchase in Colorado?",
+        "answer": "Register within 60 days of the sale. After that, late fees are $25 for each month, up to $100."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://tax.colorado.gov/sales-use-tax",
-      "https://dmv.colorado.gov/taxes-and-fees"
+      "https://dmv.colorado.gov/title",
+      "https://dmv.colorado.gov/taxes-and-fees",
+      "https://tax.colorado.gov/sales-use-tax-topics-motor-vehicle-sales",
+      "https://tax.colorado.gov/DR1002"
     ],
     "localTaxMinRate": 0.01,
     "localTaxMaxRate": 0.06
@@ -2490,77 +2514,77 @@
     "exciseTaxRate": 0.05,
     "minExciseTax": null,
     "maxExciseTax": 500,
-    "taxBase": "price",
+    "taxBase": "fairMarketValue",
     "titleFee": 15,
     "lienFilingFee": 0,
     "tradeInDeductible": true,
     "registration": {
       "terms": [
-        1,
         2
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 20,
           "2": 40
         },
         "over3700lbs": {
-          "1": 20,
           "2": 40
         }
       },
       "motorcycle": {
-        "1": 10,
-        "2": 20
+        "2": 10
       },
-      "evSurchargeAnnual": 60
+      "evSurchargeAnnual": 60,
+      "phevSurchargeAnnual": 30
     },
-    "localTaxNote": "South Carolina assesses an Infrastructure Maintenance Fee (IMF) of 5.0% capped at a strict statutory maximum of $500.00 (S.C. Code § 56-3-627), replacing sales tax. County property taxes are billed separately.",
+    "localTaxNote": "South Carolina charges a one-time 5% Infrastructure Maintenance Fee (IMF), up to $500, instead of sales tax. Before you can register, you pay the county property tax on the vehicle, which is not included here.",
     "notes": [
-      "South Carolina replaces general vehicle sales tax with an Infrastructure Maintenance Fee (IMF) of 5.0% under S.C. Code Ann. § 56-3-627.",
-      "The IMF has a strict statutory cap of $500.00 — any purchase of $10,000 or greater pays exactly $500.00.",
-      "Trade-in allowance reduces the net purchase price before the 5% IMF is applied under S.C. Code § 56-3-627.",
-      "Title fee is $15.00; standard passenger vehicle registration is $40.00 biennial ($20.00/yr)."
+      "On a private sale, the IMF is 5% of fair market value, up to $500. Fair market value is the price less any trade-in, or the value in a used-vehicle guide the SCDMV uses, less any trade-in.",
+      "Transfers to immediate family (spouse, parents, children, brothers, sisters, grandparents, and grandchildren) and to heirs are excluded from the IMF.",
+      "The title is $15. Registration for most passenger cars is $40 for two years ($36 at age 65 or with a disability); motorcycles are $10. Electric vehicles add $120 and hybrids $60 every two years.",
+      "Register within 45 days of the purchase. You must pay the county property tax and bring the paid receipt to the SCDMV first."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with South Carolina Department of Motor Vehicles (SCDMV).",
-      "South Carolina IMF is 5.0% of the purchase price minus trade-in, capped at a maximum of $500.00.",
-      "Trade-in deductions are permitted for private party transactions when documented on the bill of sale and title assignment.",
-      "Annual county personal property taxes are assessed separately by your county treasurer before vehicle registration renewal."
+      "Estimates only, not tax or legal advice. Verify with the SCDMV.",
+      "The estimate uses the price you enter. The SCDMV may use a used-vehicle guide value instead, so the fee can differ.",
+      "County vehicle property tax, due before registration, is not included.",
+      "A vehicle first titled in another state pays a $250 IMF instead when registered here, which the estimate does not apply."
     ],
     "faqs": [
       {
-        "question": "What is the car tax rate in South Carolina?",
-        "answer": "South Carolina does not charge general sales tax on vehicle purchases. Instead, the SCDMV levies an Infrastructure Maintenance Fee (IMF) of 5% of the purchase price, capped at a strict maximum of $500.00 pursuant to S.C. Code § 56-3-627."
+        "question": "What is the car tax in South Carolina?",
+        "answer": "South Carolina charges a 5% Infrastructure Maintenance Fee (IMF) instead of sales tax when you first title or register a vehicle, up to $500."
       },
       {
-        "question": "Does South Carolina have a maximum cap on vehicle tax?",
-        "answer": "Yes! South Carolina law limits the Infrastructure Maintenance Fee to a maximum of $500.00 regardless of how high the vehicle's purchase price is. Any vehicle priced at $10,000 or higher incurs the $500.00 cap."
+        "question": "Does South Carolina have a maximum on the vehicle fee?",
+        "answer": "Yes. The IMF is capped at $500, which a vehicle valued at $10,000 or more reaches."
       },
       {
-        "question": "Does a trade-in reduce tax on private vehicle sales in South Carolina?",
-        "answer": "Yes. South Carolina law defines total purchase price as net of trade-in allowance. If your trade-in brings the net purchase price below $10,000, you pay 5% on the net amount; otherwise, the $500 maximum cap applies."
+        "question": "Does a trade-in reduce the IMF on a private sale in South Carolina?",
+        "answer": "Yes. Fair market value for the fee is the price, or a used-vehicle guide value, less any trade-in."
       },
       {
         "question": "How much are title and registration fees in South Carolina?",
-        "answer": "The SCDMV certificate of title fee is $15.00. Standard passenger registration is $40.00 for a two-year plate ($20.00/year equivalent). Electric vehicles pay an additional $120.00 biennial road fee ($60.00/year)."
+        "answer": "The title is $15. Registration for most passenger cars is $40 for two years, $10 for a motorcycle. Electric vehicles add $120 and hybrids $60 every two years. You also pay county property tax before registering."
       },
       {
-        "question": "Do I pay South Carolina vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into South Carolina, the state generally assesses its applicable vehicle sales or use tax (5.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the South Carolina motor vehicle agency to verify documentation requirements."
+        "question": "I am moving to South Carolina. What do I pay?",
+        "answer": "For most passenger cars, $305 at the SCDMV: the $250 IMF, the $15 title fee, and the $40 registration. You pay the county property tax first and bring the paid receipt."
       },
       {
-        "question": "Is a vehicle transfer between family members taxable in South Carolina?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the South Carolina DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "question": "Is a vehicle transfer between family members taxed in South Carolina?",
+        "answer": "A transfer to a spouse, parent, child, brother, sister, grandparent, or grandchild is excluded from the IMF, and so is a transfer to an heir."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in South Carolina?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond South Carolina's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the South Carolina motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "How long do I have to register a private vehicle purchase in South Carolina?",
+        "answer": "Register within 45 days of the purchase date. Late registration penalties start at $10 from day 46 and rise to $75 after 135 days."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "October 2026",
     "sources": [
-      "https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration",
+      "https://dmv.sc.gov/fees",
+      "https://dmv.sc.gov/vehicle-owners/buying-or-selling-a-car",
+      "https://dmv.sc.gov/vehicle-owners/titles",
+      "https://dmv.sc.gov/vehicle-owners/moving-to-sc",
       "https://www.scstatehouse.gov/code/t56c003.php"
     ]
   },

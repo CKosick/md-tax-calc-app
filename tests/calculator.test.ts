@@ -483,14 +483,14 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(1049.50);
   });
 
-  it('Colorado: exact worked test ($15,000 -> $495.70)', () => {
+  it('Colorado: exact worked test ($15,000 -> $507.39 before local tax)', () => {
     const rule = allRules.colorado;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'colorado' }, 2026);
     expect(res.exciseTax).toBe(435.00); // 2.9% of 15000
     expect(res.titleFee).toBe(7.20);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(53.50);
-    expect(res.totalFirstYearCost).toBe(495.70);
+    expect(res.registrationTotal).toBe(65.19); // statewide fees, age fee for a 7-year-old car
+    expect(res.totalFirstYearCost).toBe(507.39);
   });
 
   it('Batch 2 trade-in deductibility verification (MO allows trade-in; NJ & WA do not)', () => {

@@ -41,16 +41,6 @@
       "state": "new-mexico",
       "url": "https://www.mvd.newmexico.gov/vehicles/taxes-fees/",
       "finding": "404 Not Found"
-    },
-    {
-      "state": "south-carolina",
-      "url": "https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration",
-      "finding": "Page not found"
-    },
-    {
-      "state": "wisconsin",
-      "url": "https://www.revenue.wi.gov/Pages/FAQS/pcs-motorveh.aspx",
-      "finding": "Redirects to a page-not-found page"
     }
   ],
   "homepageOnly": [
@@ -255,6 +245,21 @@
       "state": "missouri",
       "on": "2026-10-30",
       "note": "Re-checked against the DOR titling, buying, fee, and FAQ pages, the October to December 2026 motor vehicle local tax chart, and RSMo 144.025 and 142.869; local range 1.0% to 7.263%, motorcycle $17.75, unsourced $11 lien fee removed, EV and plug-in hybrid decal added, trade-in rule conflict disclosed."
+    },
+    {
+      "state": "wisconsin",
+      "on": "2026-10-31",
+      "note": "Dead DOR motor vehicle FAQ link replaced with the DOR tax rate chart (January 2026) and WisDOT title fee, fee schedule, title application, and purchase price FAQ pages; county tax range 0% to 2.9% (none in Waukesha and Winnebago, Milwaukee County 0.9%, City of Milwaukee 2%), trade-in and family, gift, and new resident exemptions re-checked."
+    },
+    {
+      "state": "colorado",
+      "on": "2026-10-31",
+      "note": "Partly re-checked against the DMV title and taxes and fees pages and the Taxation motor vehicle sales guide: title $7.20, lien filing $40, registration rebuilt from the statewide fees by vehicle age, EV and plug-in hybrid road usage fees, trade-in credit allowed, specific ownership tax described. The local tax range was not re-verified, so the verified date stays September 2026."
+    },
+    {
+      "state": "south-carolina",
+      "on": "2026-10-31",
+      "note": "Dead SCDMV link replaced with the dmv.sc.gov fee, buying and selling, title, and moving pages and S.C. Code 56-3-627; registration is biennial only, plug-in hybrid fee added, IMF on fair market value less trade-in with family and heir exclusions and the $250 new resident fee stated."
     }
   ]
 }

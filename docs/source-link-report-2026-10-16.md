@@ -6,12 +6,12 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 188 across 51 jurisdictions
-- Hidden on the site (dead or unreachable): 10
+- Source links configured now: 196 across 51 jurisdictions
+- Hidden on the site (dead or unreachable): 8
 - Working but only an agency homepage, not a specific page: 16
 - States showing no source link ("Official source links ... are being updated"): 0
-- States with some links hidden: 9
-- States re-verified since the check: Arizona (October 2026), Arkansas (October 2026), California (October 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Indiana (October 2026), Louisiana (October 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Missouri (October 2026), New Jersey (October 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Pennsylvania (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026)
+- States with some links hidden: 7
+- States re-verified since the check: Arizona (October 2026), Arkansas (October 2026), California (October 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Indiana (October 2026), Louisiana (October 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Missouri (October 2026), New Jersey (October 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Pennsylvania (October 2026), South Carolina (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026), Wisconsin (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
 
@@ -43,6 +43,9 @@ All other states keep their September 2026 verified date until their rates are r
 | Massachusetts | 2026-10-30 | Dead DOR motor vehicle tax link replaced with the DOR motor vehicle sales and use tax and excise guides and the RMV private purchase, fee, family/gift, and out-of-state transfer pages; book value rule, family and gift exemptions, 10-day and 7-day deadlines, and motorcycle registration ($20 a year) re-checked. |
 | Indiana | 2026-10-30 | Dead BMV registration fee link replaced with the BMV fee chart (revised January 1, 2026), buying and selling, fees and taxes, excise tax, and new resident pages, and DOR Form ST-108E; motorcycle registration now includes the $15 TIIF, gift and new resident exemptions and the 45-day and 60-day deadlines stated. |
 | Missouri | 2026-10-30 | Re-checked against the DOR titling, buying, fee, and FAQ pages, the October to December 2026 motor vehicle local tax chart, and RSMo 144.025 and 142.869; local range 1.0% to 7.263%, motorcycle $17.75, unsourced $11 lien fee removed, EV and plug-in hybrid decal added, trade-in rule conflict disclosed. |
+| Wisconsin | 2026-10-31 | Dead DOR motor vehicle FAQ link replaced with the DOR tax rate chart (January 2026) and WisDOT title fee, fee schedule, title application, and purchase price FAQ pages; county tax range 0% to 2.9% (none in Waukesha and Winnebago, Milwaukee County 0.9%, City of Milwaukee 2%), trade-in and family, gift, and new resident exemptions re-checked. |
+| Colorado | 2026-10-31 | Partly re-checked against the DMV title and taxes and fees pages and the Taxation motor vehicle sales guide: title $7.20, lien filing $40, registration rebuilt from the statewide fees by vehicle age, EV and plug-in hybrid road usage fees, trade-in credit allowed, specific ownership tax described. The local tax range was not re-verified, so the verified date stays September 2026. |
+| South Carolina | 2026-10-31 | Dead SCDMV link replaced with the dmv.sc.gov fee, buying and selling, title, and moving pages and S.C. Code 56-3-627; registration is biennial only, plug-in hybrid fee added, IMF on fair market value less trade-in with family and heir exclusions and the $250 new resident fee stated. |
 
 ## Priority: states with no working source link
 
@@ -60,8 +63,6 @@ All other states keep their September 2026 verified date until their rates are r
 | Nebraska | https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling | 404 Not Found |
 | Nevada | https://dmv.nv.gov/fees.htm | 404 |
 | New Mexico | https://www.mvd.newmexico.gov/vehicles/taxes-fees/ | 404 Not Found |
-| South Carolina | https://www.scdmvonline.com/Vehicle-Owners/Titles-and-Registration | Page not found |
-| Wisconsin | https://www.revenue.wi.gov/Pages/FAQS/pcs-motorveh.aspx | Redirects to a page-not-found page |
 
 ## Working, but homepage only (replace with a specific page when convenient)
 
