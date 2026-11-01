@@ -6,9 +6,9 @@ import { useSearchParams } from 'next/navigation';
 import { StateRule, CalculatorInputs } from '@/lib/types';
 import type { StateOption } from '@/lib/stateOptions';
 import { calculateVehicleCosts } from '@/lib/calculator';
-import { formatFee } from '@/lib/formatters';
+import { formatFee, formatTermPhrase, ratePercent } from '@/lib/formatters';
 import { RATES_VERIFIED_YEAR, getCalculationYear } from '@/lib/constants';
-import { getDefaultInputs, inputsFromSearchParams } from '@/lib/shareParams';
+import { getDefaultInputs, getOfferedTerms, inputsFromSearchParams } from '@/lib/shareParams';
 import { getPublishedFaqs } from '@/lib/faqs';
 import { VehicleInputForm } from './VehicleInputForm';
 import { CostSummaryCard } from './CostSummaryCard';
@@ -122,7 +122,7 @@ function CalculatorView({
     ? 'SUT (Sales and Use Tax)'
     : 'excise/sales tax';
 
-  const rateFormatted = Number((initialRule.exciseTaxRate * 100).toFixed(2));
+  const rateFormatted = ratePercent(initialRule.exciseTaxRate);
   const taxPhrase = initialRule.flatTaxTable
     ? 'Form RUT-50 statutory use tax tables'
     : `${rateFormatted}% ${taxName}`;
@@ -189,7 +189,7 @@ function CalculatorView({
           {initialRule.label} Private Party Car Tax Calculator
         </h1>
         <p className="mt-2 sm:mt-3 max-w-3xl text-xs sm:text-sm lg:text-base leading-relaxed text-slate-600 dark:text-slate-300">
-          Calculate your true first-year out-of-pocket costs for a private vehicle sale in {initialRule.label}. Accurately accounts for {taxPhrase}, {formatFee(initialRule.titleFee)} certificate of title fee, 1 or 2-year tag registration, and state-specific regulations.
+          Calculate your true first-year out-of-pocket costs for a private vehicle sale in {initialRule.label}. Accurately accounts for {taxPhrase}, {formatFee(initialRule.titleFee)} certificate of title fee, {formatTermPhrase(getOfferedTerms(initialRule))} tag registration, and state-specific regulations.
         </p>
       </header>
       </>

@@ -1,5 +1,6 @@
 import { CalculatorInputs, CostBreakdown, StateRule } from './types';
 import { RATES_VERIFIED_YEAR } from './constants';
+import { ratePercent } from './formatters';
 
 /**
  * Annual registration by original list price (Michigan brackets, Minnesota fixed + rate), reduced
@@ -165,13 +166,13 @@ export function calculateVehicleCosts(
   } else if (!rule.flatTaxTable && rule.usedVehicleExcise && taxableBase > 0) {
     const { flatTax, flatTaxCovers } = rule.usedVehicleExcise;
     exciseTax = Math.round((flatTax + Math.max(0, taxableBase - flatTaxCovers) * rule.exciseTaxRate) * 100) / 100;
-    specialTaxDetail = `Excise tax $${flatTax} on the first $${flatTaxCovers.toLocaleString()} + ${Number((rule.exciseTaxRate * 100).toFixed(2))}% of the rest ($${exciseTax.toFixed(2)})`;
+    specialTaxDetail = `Excise tax $${flatTax} on the first $${flatTaxCovers.toLocaleString()} + ${ratePercent(rule.exciseTaxRate)}% of the rest ($${exciseTax.toFixed(2)})`;
   }
   let additionalSalesTax = 0;
   if (rule.additionalSalesTaxRate && taxableBase > 0 && !olderFlatTaxApplied) {
     additionalSalesTax = Math.round(taxableBase * rule.additionalSalesTaxRate * 100) / 100;
     exciseTax = Math.round((exciseTax + additionalSalesTax) * 100) / 100;
-    specialTaxDetail = `${specialTaxDetail || `Excise tax ${Number((rule.exciseTaxRate * 100).toFixed(2))}%`} + ${Number((rule.additionalSalesTaxRate * 100).toFixed(2))}% sales tax ($${additionalSalesTax.toFixed(2)})`;
+    specialTaxDetail = `${specialTaxDetail || `Excise tax ${ratePercent(rule.exciseTaxRate)}%`} + ${ratePercent(rule.additionalSalesTaxRate)}% sales tax ($${additionalSalesTax.toFixed(2)})`;
   }
   // State taxes on part of the base: a band (Tennessee single article) and the amount over a
   // threshold (Washington luxury tax). Both are included in the state tax shown.
@@ -180,13 +181,13 @@ export function calculateVehicleCosts(
   if (band && taxableBase > band.from) {
     const bandTax = Math.round((Math.min(taxableBase, band.to) - band.from) * band.rate * 100) / 100;
     exciseTax = Math.round((exciseTax + bandTax) * 100) / 100;
-    extraTaxParts.push(`${Number((band.rate * 100).toFixed(2))}% single article tax on $${band.from.toLocaleString()} to $${band.to.toLocaleString()} ($${bandTax.toFixed(2)})`);
+    extraTaxParts.push(`${ratePercent(band.rate)}% single article tax on $${band.from.toLocaleString()} to $${band.to.toLocaleString()} ($${bandTax.toFixed(2)})`);
   }
   const excess = rule.luxuryExcessTax;
   if (excess && taxableBase > excess.threshold) {
     const excessTax = Math.round((taxableBase - excess.threshold) * excess.rate * 100) / 100;
     exciseTax = Math.round((exciseTax + excessTax) * 100) / 100;
-    extraTaxParts.push(`${Number((excess.rate * 100).toFixed(2))}% luxury tax above $${excess.threshold.toLocaleString()} ($${excessTax.toFixed(2)})`);
+    extraTaxParts.push(`${ratePercent(excess.rate)}% luxury tax above $${excess.threshold.toLocaleString()} ($${excessTax.toFixed(2)})`);
   }
   const extraTaxDetail = extraTaxParts.length > 0 ? ` (includes ${extraTaxParts.join(' and ')})` : '';
 
@@ -391,8 +392,7 @@ export function calculateVehicleCosts(
     : luxuryTaxApplied && typeof rule.luxuryTaxRate === 'number'
       ? rule.luxuryTaxRate
       : rule.exciseTaxRate;
-  const ratePercent = Number((appliedRate * 100).toFixed(2));
-  const rateLabel = `${ratePercent}%`;
+  const rateLabel = `${ratePercent(appliedRate)}%`;
 
   const formatCurrencyLocal = (val: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -491,7 +491,7 @@ export function calculateVehicleCosts(
             : `${rule.label} license plates and tag registration`,
           evSurcharge > 0 ? `EV/PHEV surcharge ($${evSurcharge.toFixed(2)})` : '',
           vehicleLicenseFee > 0
-            ? `vehicle license fee ($${vehicleLicenseFee.toFixed(2)}, ${Number(((valueFees?.licenseFeeRate ?? 0) * 100).toFixed(2))}% of price)`
+            ? `vehicle license fee ($${vehicleLicenseFee.toFixed(2)}, ${ratePercent(valueFees?.licenseFeeRate ?? 0)}% of price)`
             : '',
           transportationImprovementFee > 0 ? `transportation improvement fee ($${transportationImprovementFee.toFixed(2)})` : ''
         ]

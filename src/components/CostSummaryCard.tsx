@@ -7,6 +7,7 @@ import { PartnerHrefs } from '@/lib/partnerLinks';
 import { LAST_VERIFIED_DATE } from '@/lib/constants';
 import { getVisibleSources } from '@/lib/sources';
 import { buildShareSearchParams } from '@/lib/shareParams';
+import { ratePercent } from '@/lib/formatters';
 import { EmailEstimate } from './EmailEstimate';
 
 interface CostSummaryCardProps {
@@ -43,8 +44,7 @@ export function CostSummaryCard({
     }).format(val);
   };
 
-  const ratePercent = Number((rule.exciseTaxRate * 100).toFixed(2));
-  const rateLabel = `${ratePercent}%`;
+  const rateLabel = `${ratePercent(rule.exciseTaxRate)}%`;
 
   const totalFormatted =
     breakdown.hasLocalTax &&

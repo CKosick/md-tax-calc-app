@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import stateRulesData from '@/config/stateRules.json';
 import { StateRule, StateRulesConfig } from '@/lib/types';
-import { formatFee } from '@/lib/formatters';
+import { formatFee, formatTermPhrase, ratePercent } from '@/lib/formatters';
+import { getOfferedTerms } from '@/lib/shareParams';
 import { Calculator } from '@/components/Calculator';
 import { getStateOptions } from '@/lib/stateOptions';
 import { isEmailEstimateEnabled } from '@/lib/emailEstimate';
@@ -41,10 +42,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   // Concise title (<= 60 chars with "| CarTaxHub" template)
   const title = `${rule.label} Car Tax Calculator (2026)`;
-  const rateFormatted = Number((rule.exciseTaxRate * 100).toFixed(2));
+  const rateFormatted = ratePercent(rule.exciseTaxRate);
   const taxName = rule.label === 'Delaware' ? 'document fee' : rule.label === 'Virginia' ? 'SUT' : 'sales/use tax';
   const taxDetail = rule.flatTaxTable ? 'Form RUT-50 statutory tax tables' : `${rateFormatted}% ${taxName}`;
-  const description = `Calculate your true first-year costs for a private car purchase in ${rule.label}. Accurate calculation for ${taxDetail}, ${formatFee(rule.titleFee)} title fee, 1 or 2-year tag registration, and book-value rules.`;
+  const description = `Calculate your true first-year costs for a private car purchase in ${rule.label}. Accurate calculation for ${taxDetail}, ${formatFee(rule.titleFee)} title fee, ${formatTermPhrase(getOfferedTerms(rule))} tag registration, and book-value rules.`;
 
   return {
     title,

@@ -10,11 +10,37 @@ export interface SourceLink {
   label: string;
 }
 
+/** Formats the pattern's match in text, or undefined when it does not match. */
+const cite = (text: string | null | undefined, pattern: RegExp, format: (m: RegExpMatchArray) => string) => {
+  const m = (text ?? '').match(pattern);
+  return m ? format(m) : undefined;
+};
+
+/**
+ * Statute and code links get the citation as their page name, since their URLs end in codes
+ * like "02003" or a query string: https://www.azleg.gov/ars/28/02003.htm -> "A.R.S. 28-2003".
+ */
+const STATUTE_LABELS: { host: RegExp; label: (url: URL) => string | undefined }[] = [
+  { host: /(^|\.)azleg\.gov$/, label: (u) => cite(u.pathname, /\/ars\/(\d+)\/0*(\d+)\.htm$/i, (m) => `A.R.S. ${m[1]}-${m[2]}`) },
+  { host: /^app\.leg\.wa\.gov$/, label: (u) => cite(u.searchParams.get('cite'), /^([\d.]+)$/, (m) => `RCW ${m[1]}`) },
+  { host: /^revisor\.mo\.gov$/, label: (u) => cite(u.searchParams.get('section'), /^([\d.]+)$/, (m) => `RSMo ${m[1]}`) },
+  { host: /(^|\.)revisor\.mn\.gov$/, label: (u) => cite(u.pathname, /\/statutes\/cite\/([\d.]+)/, (m) => `Minn. Stat. ${m[1]}`) },
+  { host: /(^|\.)ncleg\.gov$/, label: (u) => cite(u.pathname, /GS_([\d.-]+)\.html$/i, (m) => `N.C.G.S. ${m[1]}`) },
+  { host: /^codes\.ohio\.gov$/, label: (u) => cite(u.pathname, /section-([\d.]+)$/, (m) => `Ohio Rev. Code ${m[1]}`) },
+  { host: /(^|\.)legislature\.mi\.gov$/, label: (u) => cite(u.searchParams.get('objectName'), /^mcl-(\d+)-(\w+)$/i, (m) => `MCL ${m[1]}.${m[2]}`) },
+  { host: /(^|\.)scstatehouse\.gov$/, label: (u) => cite(u.pathname, /\/code\/t(\d+)c0*(\d+)\.php$/i, (m) => `S.C. Code Title ${Number(m[1])}, Chapter ${m[2]}`) },
+  { host: /(^|\.)cga\.ct\.gov$/, label: (u) => cite(u.pathname, /chap_0*(\d+)\.htm$/i, (m) => `Conn. Gen. Stat. Chapter ${m[1]}`) },
+  { host: /^delcode\.delaware\.gov$/, label: (u) => cite(u.pathname, /title(\d+)\/c0*(\d+)/i, (m) => `Del. Code Title ${m[1]}, Chapter ${m[2]}`) }
+];
+
 /** e.g. https://mva.maryland.gov/title-registration/fees-payment-options -> "mva.maryland.gov: fees payment options" */
 export function labelForSource(url: string): string {
   try {
-    const { hostname, pathname } = new URL(url);
+    const parsed = new URL(url);
+    const { hostname, pathname } = parsed;
     const host = hostname.replace(/^www\./, '');
+    const statute = STATUTE_LABELS.find((s) => s.host.test(hostname))?.label(parsed);
+    if (statute) return `${host}: ${statute}`;
     const segments = pathname.split('/').filter(Boolean);
     let page = segments[segments.length - 1] ?? '';
     if (/^(default|index)\.\w+$/i.test(page) || page.toLowerCase() === 'download') page = segments[segments.length - 2] ?? '';

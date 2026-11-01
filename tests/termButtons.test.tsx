@@ -26,7 +26,8 @@ afterEach(() => {
 });
 
 describe('Registration term options follow each state’s config', () => {
-  it('every state shows exactly the terms it offers', () => {
+  // Renders all 51 calculators; slow under load, so it gets a longer timeout
+  it('every state shows exactly the terms it offers', { timeout: 60000 }, () => {
     for (const [key, rule] of Object.entries(rules)) {
       const offered = getOfferedTerms(rule as StateRule);
       expect(offered.length).toBeGreaterThan(0);

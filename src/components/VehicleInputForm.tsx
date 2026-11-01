@@ -4,7 +4,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import { CalculatorInputs, StateRule, FuelType, RegistrationTerm } from '@/lib/types';
 import { getCalculationYear, getModelYearPresets } from '@/lib/constants';
-import { formatVehicleAge } from '@/lib/formatters';
+import { formatVehicleAge, ratePercent } from '@/lib/formatters';
 import { getOfferedTerms } from '@/lib/shareParams';
 
 const TERM_LABELS: Record<RegistrationTerm, string> = {
@@ -220,7 +220,7 @@ export function VehicleInputForm({
             <span className="text-[11px] text-slate-400">
               {rule.flatTaxTable
                 ? `${rule.label} Form RUT-50 Tax Table`
-                : `${rule.label} ${Number((rule.exciseTaxRate * 100).toFixed(2))}% ${rule.label === 'Delaware' ? 'fee base' : 'tax base'}`}
+                : `${rule.label} ${ratePercent(rule.exciseTaxRate)}% ${rule.label === 'Delaware' ? 'fee base' : 'tax base'}`}
             </span>
           </div>
           <div className="relative mt-2">
@@ -886,7 +886,7 @@ export function VehicleInputForm({
               </>
             ) : rule.tradeInDeductible ? (
               <>
-                <strong>{rule.label} Statute:</strong> {rule.label} allows trade-in value on private sales to be deducted from the purchase price before applying the {(rule.exciseTaxRate * 100).toFixed(2)}% fee.
+                <strong>{rule.label} Statute:</strong> {rule.label} allows trade-in value on private sales to be deducted from the purchase price before applying the {ratePercent(rule.exciseTaxRate)}% fee.
               </>
             ) : rule.exciseTaxRate === 0 ? (
               <>

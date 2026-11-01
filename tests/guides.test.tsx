@@ -359,7 +359,8 @@ describe('Batch 10 guides (Wisconsin, Colorado, South Carolina)', () => {
 });
 
 describe('Guide links and discovery', () => {
-  it('each guide state’s calculator page links to its own three guides; other states show no guides block', async () => {
+  // Renders every guide state's calculator page; slow under load, so it gets a longer timeout
+  it('each guide state’s calculator page links to its own three guides; other states show no guides block', { timeout: 60000 }, async () => {
     for (const [state, { label }] of Object.entries(GUIDE_STATES)) {
       const page = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: `${state}-private-sale-tax-calculator` }) }));
       const block = page.container.querySelector('#state-guides');

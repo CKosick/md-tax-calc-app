@@ -1,0 +1,51 @@
+[
+  {
+    "state": "washington",
+    "figure": "Local sales tax range 1.1% to 4.2% (DOR rate chart for October 1 to December 31, 2026)",
+    "staleOn": "2027-01-01",
+    "contains": "1.1% to 4.2%",
+    "alsoCheck": "Washington guides"
+  },
+  {
+    "state": "missouri",
+    "figure": "Local sales tax range 1.0% to 7.263% (DOR motor vehicle chart for October to December 2026)",
+    "staleOn": "2027-01-01",
+    "contains": "1.0% to 7.263%",
+    "alsoCheck": "Missouri guides"
+  },
+  {
+    "state": "tennessee",
+    "figure": "$200 all-electric vehicle fee (registrations before January 1, 2027; $274 in 2027)",
+    "staleOn": "2027-01-01",
+    "contains": "$200",
+    "alsoCheck": "Tennessee guides"
+  },
+  {
+    "state": "colorado",
+    "figure": "Electric motor vehicle road usage fees, $26 battery electric and $13 plug-in hybrid (July 1, 2026 to June 30, 2027)",
+    "staleOn": "2027-07-01",
+    "contains": "$26 ($13 for plug-in hybrids)",
+    "alsoCheck": "evSurchargeAnnual and phevSurchargeAnnual"
+  },
+  {
+    "state": "washington",
+    "figure": "Luxury motor vehicle tax threshold $102,000 (July 1, 2026 to June 30, 2027)",
+    "staleOn": "2027-07-01",
+    "contains": "$102,000",
+    "alsoCheck": "luxuryExcessTax.threshold and Washington guides"
+  },
+  {
+    "state": "georgia",
+    "figure": "$238.59 alternative fuel vehicle fee (July 2026 to June 2027)",
+    "staleOn": "2027-07-01",
+    "contains": "238.59",
+    "alsoCheck": "evSurchargeAnnual and Georgia guides"
+  },
+  {
+    "state": "colorado",
+    "figure": "$19.30 road safety surcharge (until August 31, 2027; $23 from September 1, 2027)",
+    "staleOn": "2027-09-01",
+    "contains": "$19.30",
+    "alsoCheck": "feesByRegistrationYear"
+  }
+]

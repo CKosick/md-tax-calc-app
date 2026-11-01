@@ -3,6 +3,7 @@ import Link from 'next/link';
 import stateRulesData from '@/config/stateRules.json';
 import { StateRulesConfig } from '@/lib/types';
 import { RATES_VERIFIED_YEAR } from '@/lib/constants';
+import { formatPercent, formatPercentValue } from '@/lib/formatters';
 
 const rules = stateRulesData as StateRulesConfig;
 
@@ -98,7 +99,7 @@ export default function CalculatorHubPage() {
 
           <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {stateList.map((st) => {
-              const taxPct = (st.exciseTaxRate * 100).toFixed(2);
+              const taxPct = formatPercentValue(st.exciseTaxRate);
               const rateBadge = st.flatTaxTable
                 ? 'Flat Table (RUT-50)'
                 : st.exciseTaxRate === 0
@@ -202,7 +203,7 @@ export default function CalculatorHubPage() {
                       </Link>
                     </td>
                     <td className="px-4 py-3 font-semibold text-slate-800 dark:text-slate-200">
-                      {st.flatTaxTable ? 'Form RUT-50 Table' : `${(st.exciseTaxRate * 100).toFixed(2)}%`}
+                      {st.flatTaxTable ? 'Form RUT-50 Table' : formatPercent(st.exciseTaxRate)}
                     </td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-400 capitalize">
                       {st.taxBase === 'fairMarketValue' ? 'Fair Market Value (NADA)' : st.taxBase}

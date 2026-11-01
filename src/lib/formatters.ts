@@ -11,8 +11,28 @@ export function formatFee(amount: number): string {
   }).format(amount);
 }
 
+/**
+ * A rate as a percent number, kept to three decimals so rates like Missouri's 4.225% and
+ * New Jersey's 6.625% are never rounded (0.04225 -> 4.225, 0.06 -> 6).
+ */
+export function ratePercent(rate: number): number {
+  return Number((rate * 100).toFixed(3));
+}
+
+/** A rate for tables and badges: at least two decimals, up to three (6.00, 4.225). No % sign. */
+export function formatPercentValue(rate: number): string {
+  return (rate * 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 3, useGrouping: false });
+}
+
 export function formatPercent(rate: number): string {
-  return `${(rate * 100).toFixed(2)}%`;
+  return `${formatPercentValue(rate)}%`;
+}
+
+/** Registration term phrase from the terms a state offers: [1] -> "1-year", [1, 2] -> "1 or 2-year". */
+export function formatTermPhrase(terms: number[]): string {
+  const sorted = [...terms].sort((a, b) => a - b);
+  if (sorted.length <= 1) return `${sorted[0] ?? 1}-year`;
+  return `${sorted.slice(0, -1).join(', ')} or ${sorted[sorted.length - 1]}-year`;
 }
 
 /**

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import stateRulesData from '@/config/stateRules.json';
 import { StateRulesConfig } from '@/lib/types';
-import { formatFee } from '@/lib/formatters';
+import { formatFee, formatPercentValue } from '@/lib/formatters';
 import { HomeStateSelector } from '@/components/HomeStateSelector';
 import { GUIDES } from '@/config/guides';
 import { RATES_VERIFIED_YEAR } from '@/lib/constants';
@@ -189,7 +189,7 @@ export default function HomePage() {
 
           <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {featuredStates.map((st) => {
-              const taxPct = (st.exciseTaxRate * 100).toFixed(2);
+              const taxPct = formatPercentValue(st.exciseTaxRate);
               const rateBadge = st.flatTaxTable
                 ? 'RUT-50 Flat Table'
                 : st.exciseTaxRate === 0
