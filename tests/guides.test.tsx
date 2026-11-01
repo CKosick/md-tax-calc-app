@@ -62,7 +62,10 @@ const GUIDE_STATES = {
   tennessee: { label: 'Tennessee', agency: 'Tennessee Department of Revenue', hosts: ['www.tn.gov', 'revenue.support.tn.gov'] },
   massachusetts: { label: 'Massachusetts', agency: 'Massachusetts RMV and DOR', hosts: ['www.mass.gov'] },
   indiana: { label: 'Indiana', agency: 'Indiana BMV and DOR', hosts: ['www.in.gov', 'forms.in.gov'] },
-  missouri: { label: 'Missouri', agency: 'Missouri Department of Revenue', hosts: ['dor.mo.gov', 'revisor.mo.gov'] }
+  missouri: { label: 'Missouri', agency: 'Missouri Department of Revenue', hosts: ['dor.mo.gov', 'revisor.mo.gov'] },
+  wisconsin: { label: 'Wisconsin', agency: 'Wisconsin DMV and DOR', hosts: ['wisconsindot.gov', 'www.revenue.wi.gov'] },
+  colorado: { label: 'Colorado', agency: 'Colorado DMV and Department of Revenue', hosts: ['dmv.colorado.gov', 'tax.colorado.gov'] },
+  'south-carolina': { label: 'South Carolina', agency: 'SCDMV', hosts: ['dmv.sc.gov', 'www.scstatehouse.gov'] }
 } as const;
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
@@ -331,6 +334,30 @@ describe('Batch 9 guides (Massachusetts, Indiana, Missouri)', () => {
   });
 });
 
+describe('Batch 10 guides (Wisconsin, Colorado, South Carolina)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified Wisconsin, Colorado, and South Carolina key facts', () => {
+    const [wiSale, wiGift, wiMove] = topics('wisconsin').map(text);
+    for (const fact of ['eMV Public', 'Form MV1', 'two business days', '5%', 'trade-in allowance', '0.9%', '2%', 'Waukesha', '$214.50', '$10', '$85', '$175']) expect(wiSale).toContain(fact);
+    for (const fact of ['ex-spouse', 'stepchild', 'current Wisconsin title', 'estate is taxable', 'MV2790']) expect(wiGift).toContain(fact);
+    for (const fact of ['immediately', '90 days', 'Paid to Seller']) expect(wiMove).toContain(fact);
+
+    const [coSale, coGift, coMove] = topics('colorado').map(text);
+    for (const fact of ['DR 2841', '60 days', '$25 a month', '$100', '2.9%', 'fair market value', '$7.20', '$40', 'specific ownership tax', 'VIN inspection']) expect(coSale).toContain(fact);
+    for (const fact of ['receipts', 'taxable sale', 'joint tenancy']) expect(coGift).toContain(fact);
+    for (const fact of ['90 days', 'no Colorado use tax', 'DR 2504']) expect(coMove).toContain(fact);
+
+    const [scSale, scGift, scMove] = topics('south-carolina').map(text);
+    for (const fact of ['Form 400', 'TI-006C', 'property tax', '45 days', '$75', '5%', '$500', 'guide value', '$15', '$40', 'Form 416']) expect(scSale).toContain(fact);
+    for (const fact of ['grandparents', 'heir', 'certified mail']) expect(scGift).toContain(fact);
+    for (const fact of ['$305', '$250', 'National Motor Vehicle Title Information System', 'active duty']) expect(scMove.toLowerCase()).toContain(fact.toLowerCase());
+  });
+
+  it('no em dashes in the batch 10 guides', () => {
+    for (const state of ['wisconsin', 'colorado', 'south-carolina']) for (const t of topics(state).map(text)) expect(t).not.toContain('—');
+  });
+});
+
 describe('Guide links and discovery', () => {
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', async () => {
     for (const [state, { label }] of Object.entries(GUIDE_STATES)) {
@@ -373,6 +400,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('Tennessee, Massachusetts, Indiana, and Missouri.');
+    expect(String(metadata.description)).toContain('Missouri, Wisconsin, Colorado, and South Carolina.');
   });
 });

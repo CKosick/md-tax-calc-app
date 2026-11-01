@@ -305,6 +305,32 @@ const MO_SOURCES = {
   decal: { label: 'RSMo 142.869: Alternative fuel decal fee', url: 'https://revisor.mo.gov/main/OneSection.aspx?section=142.869' }
 };
 
+const WI_DMV = 'https://wisconsindot.gov/Pages';
+const WI_SOURCES = {
+  titleFees: { label: 'Wisconsin DMV: Vehicle Title Fees', url: `${WI_DMV}/dmv/vehicles/title-plates/titles.aspx` },
+  feeSchedule: { label: 'Wisconsin DMV: Fee Schedule', url: `${WI_DMV}/dmv/vehicles/title-plates/fee-chart.aspx` },
+  apply: { label: 'Wisconsin DMV: Apply for Title and/or License Plates', url: `${WI_DMV}/online-srvcs/title-vehicle/emvpublicdefault.aspx` },
+  purchasePrice: { label: 'Wisconsin DMV: Purchase Price and Sales Tax Exemption FAQs', url: `${WI_DMV}/online-srvcs/title-vehicle/faqs-purchase-price.aspx` },
+  tempPlates: { label: 'Wisconsin DMV: Temporary License Plates', url: `${WI_DMV}/dmv/vehicles/title-plates/nolaf.aspx` },
+  taxRates: { label: 'Wisconsin DOR: Tax Rates', url: 'https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx' }
+};
+
+const CO_SOURCES = {
+  title: { label: 'Colorado DMV: Vehicle Title General Information', url: 'https://dmv.colorado.gov/title' },
+  fees: { label: 'Colorado DMV: Vehicle Taxes and Fees', url: 'https://dmv.colorado.gov/taxes-and-fees' },
+  salesTax: { label: 'Colorado Department of Revenue: Sales & Use Tax Topics, Motor Vehicle Sales', url: 'https://tax.colorado.gov/sales-use-tax-topics-motor-vehicle-sales' },
+  rates: { label: 'Colorado Department of Revenue: DR 1002 Colorado Sales/Use Tax Rates', url: 'https://tax.colorado.gov/DR1002' }
+};
+
+const SC_DMV = 'https://dmv.sc.gov';
+const SC_SOURCES = {
+  fees: { label: 'SCDMV: Fees', url: `${SC_DMV}/fees` },
+  buying: { label: 'SCDMV: Buying or Selling a Car', url: `${SC_DMV}/vehicle-owners/buying-or-selling-a-car` },
+  titles: { label: 'SCDMV: Titles', url: `${SC_DMV}/vehicle-owners/titles` },
+  moving: { label: 'SCDMV: Moving to SC, Vehicle', url: `${SC_DMV}/vehicle-owners/moving-to-sc` },
+  imf: { label: 'S.C. Code 56-3-627: Infrastructure maintenance fee', url: 'https://www.scstatehouse.gov/code/t56c003.php' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -6072,6 +6098,599 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [MO_SOURCES.titling, MO_SOURCES.faq, MO_SOURCES.fees, MO_SOURCES.buying]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-wisconsin',
+    stateKey: 'wisconsin',
+    title: 'How to Title a Private Car Sale in Wisconsin',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Wisconsin',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Wisconsin: the signed title, eMV Public or Form MV1, plates within two business days, 5% tax plus county tax, and the $214.50 title.',
+    cardDescription: 'The signed title, eMV Public, plates in two days, and the tax.',
+    intro: [
+      'When you buy a car from a private seller in Wisconsin, you apply for the title yourself right away and pay the sales tax with your application.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Wisconsin DMV and DOR',
+    steps: [
+      {
+        title: 'Get a title signed by the seller',
+        body: ['Never buy a vehicle without receiving a title signed by the previous owner. Note the price you paid, less any trade-in allowance.']
+      },
+      {
+        title: 'Apply for the title right away',
+        body: [
+          'Apply online through eMV Public, in person, or by mail with the Wisconsin Title and License Plate Application (Form MV1). Use Form MV1 if you are claiming a tax exemption that eMV Public does not list.'
+        ]
+      },
+      {
+        title: 'Get plates within two business days',
+        body: [
+          'To drive the car legally, display Wisconsin plates or a temporary plate within two business days of the purchase. To get a temporary plate, you must pay the regular registration fee.'
+        ]
+      },
+      {
+        title: 'Pay the sales tax',
+        body: [
+          'The state tax is 5% of the purchase price, which is the money paid minus any trade-in allowance. Add the county tax where the car is kept: 0.5% in most counties, none in Waukesha and Winnebago, 0.9% in Milwaukee County, plus 2% inside the City of Milwaukee.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration fees',
+        body: [
+          'The title is $214.50 and listing a lien is $10. Automobile registration is $85 a year. Electric vehicles add $175 and hybrids $75, and your municipality or county may add a wheel tax.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the seller',
+      'The purchase price, less any trade-in allowance',
+      'eMV Public application or Form MV1',
+      'Lienholder information, if you financed the car',
+      'Payment for the tax, $214.50 title, and registration'
+    ],
+    calculatorNote:
+      'The calculator applies 5% to the price less any trade-in, plus the county and city range. Local wheel taxes are not included.',
+    faqs: [
+      {
+        question: 'Do I pay county tax on a car in Wisconsin?',
+        answer: 'Yes, where the car is customarily kept: 0.5% in most counties, 0.9% in Milwaukee County, and none in Waukesha and Winnebago counties. The City of Milwaukee adds 2%.'
+      },
+      {
+        question: 'Does a trade-in lower the tax on a private sale?',
+        answer: 'WisDOT defines the purchase price as the money paid minus any trade-in allowance. An even trade with no money exchanged is exempt.'
+      },
+      {
+        question: 'Can I get a temporary plate?',
+        answer: 'Yes. Temporary plates are issued for 5 to 90 days, but you must pay the regular registration fee to get one.'
+      }
+    ],
+    sources: [WI_SOURCES.apply, WI_SOURCES.purchasePrice, WI_SOURCES.titleFees, WI_SOURCES.feeSchedule, WI_SOURCES.taxRates, WI_SOURCES.tempPlates]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-wisconsin',
+    stateKey: 'wisconsin',
+    title: 'How to Gift a Car in Wisconsin',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Wisconsin',
+    metaDescription:
+      'How to gift a car in Wisconsin: the sales tax exemptions for gifts, heirs, and family transfers, which relatives qualify, the current Wisconsin title rule, and the title paperwork.',
+    cardDescription: 'Gift, heir, and family exemptions and the title paperwork.',
+    intro: [
+      'A gift with no money exchanged is exempt from Wisconsin sales tax, and so is a transfer from a close family member on a current Wisconsin title.',
+      'Here is how to claim the exemption and title the car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Wisconsin DMV and DOR',
+    steps: [
+      {
+        title: 'Find the exemption that fits',
+        body: [
+          'Family transfers are exempt from a spouse, an ex-spouse (with the divorce decree, if the ex-spouse was the only owner), a parent, a child or child’s spouse, a mother-in-law or father-in-law, a stepparent, or a stepchild.',
+          'A gift with no money exchanged and an inheritance are also exempt. Buying a vehicle from an estate is taxable.'
+        ]
+      },
+      {
+        title: 'Check the title is from Wisconsin',
+        body: ['The family exemption applies only to a vehicle with a current Wisconsin title. A transfer on an out-of-state title cannot use it.']
+      },
+      {
+        title: 'Get the title signed over',
+        body: ['The giver signs the title over to you. Enter a purchase price of zero if no money, property, or services were exchanged.']
+      },
+      {
+        title: 'Apply and claim the exemption',
+        body: [
+          'Apply through eMV Public and choose the exemption reason, or use Form MV1. If the owner has died, mail your application to WisDOT instead of using eMV Public. The Department of Revenue reviews every exemption.'
+        ]
+      },
+      {
+        title: 'Pay the fees',
+        body: [
+          'The title is $214.50, but transfers to a surviving spouse, registered domestic partner, or qualifying family member have no title fee. Registration is $85 a year if you will drive the car.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'eMV Public application with the exemption reason, or Form MV1',
+      'The divorce decree, for a transfer from an ex-spouse who was the only owner',
+      'Trustee Statement (Form MV2790), for a transfer from a trust',
+      'Payment for any title and registration fees'
+    ],
+    calculatorNote: 'For an exempt gift or family transfer, enter $0 as the price to see the title and registration fees.',
+    faqs: [
+      {
+        question: 'Is a car from my grandparent exempt in Wisconsin?',
+        answer: 'Grandparents are not on the family exemption list. A true gift with no money exchanged is still exempt.'
+      },
+      {
+        question: 'What about a car from a parent’s trust?',
+        answer: 'A transfer from a parent’s trust to a child is taxable, unless the parents title the vehicle in their own names first and then transfer it to the child as family.'
+      },
+      {
+        question: 'Who checks the exemption?',
+        answer: 'The Department of Revenue reviews all tax exemptions, and fraudulent entries can be penalized.'
+      }
+    ],
+    sources: [WI_SOURCES.purchasePrice, WI_SOURCES.apply, WI_SOURCES.titleFees, WI_SOURCES.feeSchedule]
+  },
+  {
+    slug: 'titling-a-car-in-wisconsin-after-moving-from-another-state',
+    stateKey: 'wisconsin',
+    title: 'Titling a Car in Wisconsin After Moving From Another State',
+    shortTitle: 'Title a car after moving to Wisconsin',
+    metaTitle: 'Titling Your Car After Moving to Wisconsin',
+    metaDescription:
+      'New to Wisconsin? Apply for a Wisconsin title right away. Covers the new resident sales tax exemption (bought 90 days or more before moving), the $214.50 title, and registration.',
+    cardDescription: 'Apply right away, the 90-day exemption, and the fees.',
+    intro: [
+      'When you become a Wisconsin resident, you must apply for a Wisconsin title for your vehicle right away.',
+      'A car you bought outside Wisconsin as a nonresident at least 90 days before moving is exempt from sales tax.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Wisconsin DMV and DOR',
+    steps: [
+      {
+        title: 'Apply right away',
+        body: ['New Wisconsin residents must immediately apply for a Certificate of Title in their name. eMV Public has a new resident option, or you can apply in person or by mail.']
+      },
+      {
+        title: 'Claim the new resident exemption',
+        body: ['Choose the New Wisconsin Resident exemption if you bought the vehicle outside Wisconsin, as a nonresident, for personal use, 90 days or more before moving here with it.']
+      },
+      {
+        title: 'Know when tax is due',
+        body: ['A vehicle bought within 90 days of moving can owe Wisconsin tax. Tax you paid to someone who is not a licensed dealer can be listed under the Paid to Seller exemption with a receipt.']
+      },
+      {
+        title: 'Get Wisconsin plates',
+        body: ['Register the car for Wisconsin plates. Automobile registration is $85 a year; electric vehicles add $175 and hybrids $75.']
+      },
+      {
+        title: 'Pay the title fee',
+        body: ['The title is $214.50, and a lien listed on the title is $10.']
+      }
+    ],
+    checklist: [
+      'Your out-of-state title',
+      'eMV Public application or Form MV1',
+      'The purchase date and place, for the new resident exemption',
+      'Lienholder information, if any',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'If your car qualifies for the new resident exemption, enter $0 as the price to see the title and registration fees.',
+    faqs: [
+      {
+        question: 'How long do I have after moving to Wisconsin?',
+        answer: 'WisDOT says new residents must apply for a title immediately.'
+      },
+      {
+        question: 'Do I pay Wisconsin sales tax on my car?',
+        answer: 'Not if you bought it outside Wisconsin as a nonresident, for personal use, 90 days or more before moving here with it.'
+      },
+      {
+        question: 'Can I use the family exemption on my out-of-state title?',
+        answer: 'No. The family transfer exemption applies only to vehicles with a current Wisconsin title.'
+      }
+    ],
+    sources: [WI_SOURCES.apply, WI_SOURCES.purchasePrice, WI_SOURCES.titleFees, WI_SOURCES.feeSchedule]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-colorado',
+    stateKey: 'colorado',
+    title: 'How to Title a Private Car Sale in Colorado',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'How to Title a Private Car Sale in Colorado',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Colorado: the endorsed title and odometer, ID, the 60-day deadline, state and local sales tax at the county, and registration.',
+    cardDescription: 'The endorsed title, ID, 60 days, and the tax at the county.',
+    intro: [
+      'When you buy a car from a private seller in Colorado, you transfer the title at your county motor vehicle office and pay the state and local sales taxes there.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Colorado DMV and Department of Revenue',
+    steps: [
+      {
+        title: 'Check the title endorsement',
+        body: [
+          'The seller prints their name as it appears on the title, signs, and completes the odometer disclosure (required for 2011 and newer models in their first 20 years). Make sure the reading matches the odometer.',
+          'Print your name as it appears on your ID and sign. The date of sale and price go on the back of the title, or on a bill of sale.'
+        ]
+      },
+      {
+        title: 'Gather your documents',
+        body: [
+          'Bring the endorsed title, secure and verifiable ID (DR 2841), and a bill of sale (required if the price is not on the title). A vehicle coming from out of state needs a VIN inspection.'
+        ]
+      },
+      {
+        title: 'Register within 60 days',
+        body: ['Register within 60 days of the sale at your county motor vehicle office. After that, late fees are $25 a month, up to $100.']
+      },
+      {
+        title: 'Pay the sales taxes',
+        body: [
+          'You pay the 2.9% state tax and the city, county, and special district taxes for your address to the county clerk. If you traded in a vehicle you own as part of the purchase, its fair market value is excluded.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title transfer is $7.20; a lien adds $40 in filing fees. Registration combines the specific ownership tax (based on the original MSRP and age), a weight-based fee, road and bridge safety surcharges, an age fee, and smaller fees. The DMV’s fee estimator gives your total.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, endorsed by the seller with the odometer disclosure',
+      'Secure and verifiable ID (DR 2841)',
+      'A bill of sale, if the price is not on the title',
+      'VIN inspection, for a vehicle from out of state',
+      'Payment for the taxes, title, and registration'
+    ],
+    calculatorNote:
+      'The calculator shows the 2.9% state tax plus a rough local range that has not been re-verified; your local taxes depend on your address (use the Colorado Sales Tax Lookup Tool). Registration shown is the statewide fees by vehicle age; the specific ownership tax and county fees are not included.',
+    faqs: [
+      {
+        question: 'Who collects the tax on a private sale in Colorado?',
+        answer: 'The county clerk, when you register. A private seller generally does not collect it.'
+      },
+      {
+        question: 'What if the seller’s printed name does not match the title?',
+        answer: 'A Statement of One and the Same (DR 2421) is required. A first initial and last name is not accepted.'
+      },
+      {
+        question: 'How much is the specific ownership tax?',
+        answer: 'It is figured from 85% of the original MSRP: 2.1% in the first year, falling to 0.45% for years five through nine, and $3 from the tenth year.'
+      }
+    ],
+    sources: [CO_SOURCES.title, CO_SOURCES.fees, CO_SOURCES.salesTax, CO_SOURCES.rates]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-colorado',
+    stateKey: 'colorado',
+    title: 'How to Gift a Car in Colorado',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Colorado',
+    metaDescription:
+      'How to gift a car in Colorado: why the recipient owes no sales tax, the giver’s tax receipts the county needs, why taking over a loan is a sale, and the title and registration steps.',
+    cardDescription: 'No tax for the recipient, the giver’s receipts, and the steps.',
+    intro: [
+      'The person receiving a gifted vehicle in Colorado owes no sales or use tax. The giver must have paid tax when they acquired it, and the county needs proof.',
+      'Here is how to transfer the car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Colorado DMV and Department of Revenue',
+    steps: [
+      {
+        title: 'Collect the giver’s tax receipts',
+        body: ['The county clerk cannot register a gifted vehicle without receipts showing the giver paid the applicable tax on their own acquisition.']
+      },
+      {
+        title: 'Do not take over the loan',
+        body: ['Assuming the loan on a vehicle is a taxable sale. The taxable price is the debt you take on plus anything else you pay.']
+      },
+      {
+        title: 'Endorse the title',
+        body: ['The giver signs the title over to you and completes the odometer disclosure if required. The date and price go on the back of the title unless you include a bill of sale.']
+      },
+      {
+        title: 'Bring your ID',
+        body: ['Bring secure and verifiable ID (DR 2841), and a VIN inspection if the vehicle has an out-of-state title.']
+      },
+      {
+        title: 'Register within 60 days',
+        body: ['Register at your county motor vehicle office within 60 days of the transfer. Pay the $7.20 title fee and registration.']
+      }
+    ],
+    checklist: [
+      'The title, endorsed to you',
+      'Receipts showing the giver paid tax on the vehicle',
+      'Secure and verifiable ID (DR 2841)',
+      'VIN inspection, for an out-of-state title',
+      'Payment for the title and registration'
+    ],
+    calculatorNote: 'For a gift, enter $0 as the price to see the title and the statewide registration fees.',
+    faqs: [
+      {
+        question: 'Does the gift have to be from family?',
+        answer: 'No. Colorado’s rule covers any vehicle transferred as a gift, as long as the giver paid tax on it.'
+      },
+      {
+        question: 'Can I add a family member to my title?',
+        answer: 'Yes. The current owners sign the title over to the new combination of owners, and you choose joint tenancy or tenancy in common.'
+      },
+      {
+        question: 'What if the owner has died?',
+        answer: 'Bring the death certificate and letters of testamentary, administration, or a small estate affidavit showing who can sign. A surviving joint tenant can sign with the death certificate.'
+      }
+    ],
+    sources: [CO_SOURCES.salesTax, CO_SOURCES.title, CO_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-colorado-after-moving-from-another-state',
+    stateKey: 'colorado',
+    title: 'Titling a Car in Colorado After Moving From Another State',
+    shortTitle: 'Title a car after moving to Colorado',
+    metaTitle: 'Titling Your Car After Moving to Colorado',
+    metaDescription:
+      'New to Colorado? Register within 90 days of becoming a resident. Covers the use tax rule for cars you bring, the VIN inspection, ID, late fees, and the specific ownership tax.',
+    cardDescription: '90 days, no use tax on your car, the VIN inspection, and fees.',
+    intro: [
+      'New Colorado residents have 90 days after becoming a resident to register their vehicles.',
+      'No use tax applies to a vehicle you acquired outside Colorado and brought with you when you became a resident.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'Colorado DMV and Department of Revenue',
+    steps: [
+      {
+        title: 'Register within 90 days',
+        body: ['Register within 90 days after becoming a Colorado resident. Late fees are $25 a month, up to $100.']
+      },
+      {
+        title: 'Get a VIN inspection',
+        body: ['A vehicle coming in from out of state needs a VIN inspection before the title transfer.']
+      },
+      {
+        title: 'Gather your documents',
+        body: ['Bring your out-of-state title and secure and verifiable ID (DR 2841). If the vehicle has a lien, the Colorado title is mailed to your lienholder.']
+      },
+      {
+        title: 'Know that no use tax is due',
+        body: ['A vehicle you acquired outside Colorado and brought in when you became a resident owes no Colorado use tax.']
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $7.20. Registration includes the specific ownership tax, figured from 85% of the original MSRP and the vehicle’s age, plus statewide and county fees.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title, or your lienholder’s information',
+      'Secure and verifiable ID (DR 2841)',
+      'VIN inspection',
+      'Proof of when you became a Colorado resident (see form DR 2504)',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'A car you brought with you owes no use tax, so enter $0 as the price to see the title and statewide registration fees. The specific ownership tax is not included.',
+    faqs: [
+      {
+        question: 'How long do I have after moving to Colorado?',
+        answer: '90 days after becoming a resident to register your vehicle.'
+      },
+      {
+        question: 'Do I pay Colorado use tax on the car I brought?',
+        answer: 'No, not on a vehicle you acquired outside Colorado and brought with you when you became a resident.'
+      },
+      {
+        question: 'What does registration cost?',
+        answer: 'It depends on the vehicle’s weight, age, original MSRP, and your county. The DMV’s online registration fee estimator gives a total.'
+      }
+    ],
+    sources: [CO_SOURCES.fees, CO_SOURCES.salesTax, CO_SOURCES.title]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-south-carolina',
+    stateKey: 'south-carolina',
+    title: 'How to Title a Private Car Sale in South Carolina',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in South Carolina',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in South Carolina: the completed title, Form 400, county property tax first, the 45-day deadline, and the 5% IMF up to $500.',
+    cardDescription: 'The title, Form 400, property tax, 45 days, and the IMF.',
+    intro: [
+      'When you buy a car from a private seller in South Carolina, you title and register it at the SCDMV within 45 days and pay a one-time Infrastructure Maintenance Fee instead of sales tax.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'SCDMV',
+    steps: [
+      {
+        title: 'Complete the back of the title',
+        body: [
+          'Fill in the buyer’s name and address, any lienholder, the odometer reading, the sales price, the date of sale, and both signatures. If the title has no space for the price, bring a bill of sale.'
+        ]
+      },
+      {
+        title: 'Fill out Form 400',
+        body: ['Complete the Title Application (SCDMV Form 400). If you do not have an SC license or ID, also complete the Statement of Vehicle Operation (Form TI-006C).']
+      },
+      {
+        title: 'Pay the county property tax',
+        body: ['To get plates, contact your county office to have a property tax bill generated, pay it, and bring the paid receipt in your name to the SCDMV.']
+      },
+      {
+        title: 'Register within 45 days',
+        body: ['South Carolina requires you to register within 45 days of the purchase. Late penalties start at $10 from day 46 and rise to $75 after 135 days.']
+      },
+      {
+        title: 'Pay the IMF and fees',
+        body: [
+          'The IMF is 5% of fair market value, up to $500. Fair market value is the price less any trade-in, or a used-vehicle guide value less any trade-in.',
+          'The title is $15. Registration for most passenger cars is $40 for two years; electric vehicles add $120 and hybrids $60.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, completed and signed by you and the seller',
+      'A bill of sale, if the title has no space for the price',
+      'Title Application (SCDMV Form 400)',
+      'Paid county property tax receipt',
+      'Payment for the IMF, $15 title, and registration'
+    ],
+    calculatorNote:
+      'The calculator applies 5% to the price less any trade-in, capped at $500. County property tax is not included.',
+    faqs: [
+      {
+        question: 'Can I use the seller’s license plate?',
+        answer: 'No. Plates cannot transfer from one person to another. You can move a plate you already own, noted on Form 400.'
+      },
+      {
+        question: 'Is the IMF based on what I paid?',
+        answer: 'It is based on fair market value: the price less any trade-in, or a used-vehicle guide value less any trade-in.'
+      },
+      {
+        question: 'What does the seller do?',
+        answer: 'The seller completes the Notice of Vehicle Sold (Form 416) and surrenders the plate if they will not move it to another vehicle.'
+      }
+    ],
+    sources: [SC_SOURCES.buying, SC_SOURCES.titles, SC_SOURCES.fees, SC_SOURCES.imf]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-south-carolina',
+    stateKey: 'south-carolina',
+    title: 'How to Gift a Car in South Carolina',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in South Carolina',
+    metaDescription:
+      'How to gift a car in South Carolina: the IMF exclusion for immediate family and heirs, which relatives qualify, the title paperwork, county property tax, and the fees.',
+    cardDescription: 'The family and heir exclusion, the title, and the fees.',
+    intro: [
+      'A transfer to an immediate family member or an heir is excluded from South Carolina’s Infrastructure Maintenance Fee.',
+      'Here is how to transfer the car.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'SCDMV',
+    steps: [
+      {
+        title: 'Check that the exclusion applies',
+        body: [
+          'Immediate family means a spouse, parents, children, sisters, brothers, grandparents, and grandchildren. Transfers to a legal heir, legatee, or distributee are also excluded.',
+          'Other transfers pay the IMF on fair market value, which can be a used-vehicle guide value.'
+        ]
+      },
+      {
+        title: 'Complete the title',
+        body: ['The giver completes the back of the title with your name and address, the odometer reading, the date, and the signatures.']
+      },
+      {
+        title: 'Fill out Form 400',
+        body: ['Complete the Title Application (SCDMV Form 400).']
+      },
+      {
+        title: 'Pay the county property tax',
+        body: ['To register the car, have your county generate a property tax bill, pay it, and bring the paid receipt.']
+      },
+      {
+        title: 'Title and register',
+        body: ['Pay the $15 title fee and the $40 two-year registration at an SCDMV branch, or mail the documents by certified mail.']
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'Title Application (SCDMV Form 400)',
+      'Paid county property tax receipt',
+      'Your SC license or ID, or Form TI-006C if you have neither',
+      'Payment for the title and registration'
+    ],
+    calculatorNote: 'For a family transfer, enter $0 as the price to see the title and registration fees.',
+    faqs: [
+      {
+        question: 'Is a car from my grandparent excluded?',
+        answer: 'Yes. Grandparents and grandchildren are on South Carolina’s immediate family list.'
+      },
+      {
+        question: 'What about a car from a friend?',
+        answer: 'The family exclusion does not cover friends. The IMF is 5% of fair market value, up to $500.'
+      },
+      {
+        question: 'Is an inherited car charged the IMF?',
+        answer: 'No. Transfers to a legal heir, legatee, or distributee are excluded.'
+      }
+    ],
+    sources: [SC_SOURCES.imf, SC_SOURCES.buying, SC_SOURCES.titles, SC_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-south-carolina-after-moving-from-another-state',
+    stateKey: 'south-carolina',
+    title: 'Titling a Car in South Carolina After Moving From Another State',
+    shortTitle: 'Title a car after moving to South Carolina',
+    metaTitle: 'Titling Your Car After Moving to South Carolina',
+    metaDescription:
+      'New to South Carolina? Pay county property tax first, then title and register at the SCDMV. Most passenger cars pay $305: the $250 IMF, $15 title, and $40 registration.',
+    cardDescription: 'Property tax first, then $305: the $250 IMF, title, and plate.',
+    intro: [
+      'When you move to South Carolina, you transfer your vehicle’s title and registration after paying the county property tax.',
+      'Most passenger cars pay $305 at the SCDMV: the $250 IMF, the $15 title fee, and the $40 registration.'
+    ],
+    lastVerified: 'October 2026',
+    agency: 'SCDMV',
+    steps: [
+      {
+        title: 'Update your insurance',
+        body: ['Give your insurance company your new SC address. The company must be licensed to do business in South Carolina.']
+      },
+      {
+        title: 'Pay the county property tax',
+        body: ['Contact your county auditor’s office with the vehicle’s VIN and your most recent registration card. Pay the property tax bill to the county treasurer and keep the original paid receipt.']
+      },
+      {
+        title: 'Gather your documents',
+        body: [
+          'Bring the Title Application (SCDMV Form 400), your out-of-state title or registration, acceptable ID, your insurance company information, and the paid property tax receipt. If there is a lien, bring the lienholder’s name and address.'
+        ]
+      },
+      {
+        title: 'Pay the IMF and fees',
+        body: [
+          'A vehicle first titled in another state pays a $250 IMF once. With the $15 title and $40 registration, most passenger cars pay $305. Active duty military members and their spouses and dependents do not pay the $250 IMF.'
+        ]
+      },
+      {
+        title: 'Wait for the title check',
+        body: ['You get your registration right away. Your SC title is mailed after your out-of-state title clears the National Motor Vehicle Title Information System.']
+      }
+    ],
+    checklist: [
+      'Title Application (SCDMV Form 400)',
+      'Your out-of-state title and/or registration',
+      'Acceptable identification',
+      'Insurance company information',
+      'Original paid property tax receipt'
+    ],
+    calculatorNote:
+      'The calculator does not apply the $250 new resident IMF. Enter $0 as the price for the title and registration, and add the $250 IMF and county property tax.',
+    faqs: [
+      {
+        question: 'How much does it cost to bring a car to South Carolina?',
+        answer: 'Most passenger cars pay $305 at the SCDMV ($250 IMF, $15 title, $40 registration), plus county property tax.'
+      },
+      {
+        question: 'Do I pay the 5% IMF on my car?',
+        answer: 'No. A vehicle first titled in another state pays a flat $250 when registered in South Carolina.'
+      },
+      {
+        question: 'Why has my title not arrived?',
+        answer: 'Your SC title is mailed only after your out-of-state title clears the National Motor Vehicle Title Information System.'
+      }
+    ],
+    sources: [SC_SOURCES.moving, SC_SOURCES.imf, SC_SOURCES.fees, SC_SOURCES.titles]
   }
 ];
 
