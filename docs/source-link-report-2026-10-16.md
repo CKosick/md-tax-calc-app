@@ -6,12 +6,12 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 196 across 51 jurisdictions
-- Hidden on the site (dead or unreachable): 8
+- Source links configured now: 212 across 51 jurisdictions
+- Hidden on the site (dead or unreachable): 7
 - Working but only an agency homepage, not a specific page: 16
 - States showing no source link ("Official source links ... are being updated"): 0
-- States with some links hidden: 7
-- States re-verified since the check: Arizona (October 2026), Arkansas (October 2026), California (October 2026), Colorado (November 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Indiana (October 2026), Louisiana (October 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Missouri (October 2026), New Jersey (October 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Pennsylvania (October 2026), South Carolina (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026), Wisconsin (October 2026)
+- States with some links hidden: 6
+- States re-verified since the check: Alabama (November 2026), Arizona (October 2026), Arkansas (October 2026), California (October 2026), Colorado (November 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Indiana (October 2026), Kentucky (November 2026), Louisiana (October 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Missouri (October 2026), New Jersey (October 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Oregon (November 2026), Pennsylvania (October 2026), South Carolina (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026), Wisconsin (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
 
@@ -47,6 +47,9 @@ All other states keep their September 2026 verified date until their rates are r
 | Colorado | 2026-10-31 | Partly re-checked against the DMV title and taxes and fees pages and the Taxation motor vehicle sales guide: title $7.20, lien filing $40, registration rebuilt from the statewide fees by vehicle age, EV and plug-in hybrid road usage fees, trade-in credit allowed, specific ownership tax described. The local tax range was not re-verified, so the verified date stays September 2026. |
 | South Carolina | 2026-10-31 | Dead SCDMV link replaced with the dmv.sc.gov fee, buying and selling, title, and moving pages and S.C. Code 56-3-627; registration is biennial only, plug-in hybrid fee added, IMF on fair market value less trade-in with family and heir exclusions and the $250 new resident fee stated. |
 | Colorado | 2026-11-03 | Local range re-checked against the July 2026 DR 1002 (state-collected city and county taxes, home-rule cities, and special districts): 0% to 8.3% (highest: Winter Park 7% plus Grand County 1.3%), replacing the carried-over 1% to 6%; verified date moved to November 2026. |
+| Alabama | 2026-11-04 | Re-checked against the ALDOR casual sales tax, local rate file (November 2026), registration fee, title fee, and FAQ pages and Ala. Code 40-23-101 and 40-23-103; local range 1% to 4% -> 0% to 5.25% (highest combination that can be matched to one place), trade-in now deducted, EV $200 -> $203 and plug-in hybrid $100 -> $103, 30-day new resident rule and gift treatment stated, ad valorem tax described, not modeled. |
+| Kentucky | 2026-11-04 | Dead DRIVE vehicle taxes link replaced with the DOR usage tax page and 2025 guide, the DRIVE titling and new resident pages, and KRS 186A.130, 64.012, 186.050, 186.040, and 138.475; lien $22 -> $12, registration $21 -> $20.50, motorcycle $15 -> $18, plug-in hybrid fee $60 -> $120 (same fee as electric vehicles), affidavit floor, family exemptions, gift valuation, and new resident credit stated. |
+| Oregon | 2026-11-04 | Re-checked against the Oregon DMV fee, title and registration, and moving pages and the DOR vehicle use tax page; registration is two years only, 20 to 39 MPG tier used ($106 title, $136 registration), motorcycle $48 -> $88, electric vehicle registration $376, county fees, late title fees, and the current-plates rule stated. |
 
 ## Priority: states with no working source link
 
@@ -60,7 +63,6 @@ All other states keep their September 2026 verified date until their rates are r
 | District of Columbia | https://dmv.dc.gov/service/vehicle-registration-fees | Page not found |
 | Iowa | https://iowadot.gov/mvd/buyingselling/registering-a-vehicle | Page not found |
 | Kansas | https://www.ksrevenue.gov/prtaxrates.html | Redirects to a 404 page |
-| Kentucky | https://drive.ky.gov/motor-vehicle-licensing/Pages/Vehicle-Taxes.aspx | Redirects to a 404 page |
 | Nebraska | https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling | 404 Not Found |
 | Nevada | https://dmv.nv.gov/fees.htm | 404 |
 | New Mexico | https://www.mvd.newmexico.gov/vehicles/taxes-fees/ | 404 Not Found |

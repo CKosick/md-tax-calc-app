@@ -54,5 +54,40 @@
     "staleOn": "2027-09-01",
     "contains": "$19.30",
     "alsoCheck": "feesByRegistrationYear"
+  },
+  {
+    "state": "kentucky",
+    "figure": "$9 title fee and the $3 registration add-on set in statute until January 1, 2027 (KRS 186A.130 and 186.040; set by regulation after)",
+    "staleOn": "2027-01-01",
+    "contains": "until January 1, 2027",
+    "alsoCheck": "titleFee, the $20.50 registration, and Kentucky guides"
+  },
+  {
+    "state": "kentucky",
+    "figure": "$120 electric vehicle ownership fee, the KRS 138.475 base; the Department of Revenue adjusts it each year and has not published a 2026 amount",
+    "staleOn": "2027-01-01",
+    "contains": "$120 statutory base",
+    "alsoCheck": "evSurchargeAnnual and phevSurchargeAnnual"
+  },
+  {
+    "state": "alabama",
+    "figure": "Local automotive rate range 0% to 5.25% (ALDOR local rate file, November 2026; updated monthly)",
+    "staleOn": "2027-05-01",
+    "contains": "0% to 5.25%",
+    "alsoCheck": "localTaxMaxRate and the Alabama private-sale guide"
+  },
+  {
+    "state": "alabama",
+    "figure": "$203 battery electric and $103 plug-in hybrid fees (since July 1, 2023; $3 more every fourth year, so next July 1, 2027)",
+    "staleOn": "2027-07-01",
+    "contains": "$203",
+    "alsoCheck": "evSurchargeAnnual, phevSurchargeAnnual, and Alabama guides"
+  },
+  {
+    "state": "oregon",
+    "figure": "$376 two-year electric vehicle registration and $192 title (Oregon DMV says EV fees change July 1, 2027)",
+    "staleOn": "2027-07-01",
+    "contains": "$376",
+    "alsoCheck": "evSurchargeAnnual and Oregon guides"
   }
 ]

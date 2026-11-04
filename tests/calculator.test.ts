@@ -549,7 +549,7 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(335.00);
   });
 
-  it('Alabama: exact worked test ($15,000 -> $338.00)', () => {
+  it('Alabama: exact worked test ($15,000 -> $338.00 before local tax)', () => {
     const rule = allRules.alabama;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'alabama' }, 2026);
     expect(res.exciseTax).toBe(300.00); // 2.0% of 15000
@@ -569,24 +569,24 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(856.50);
   });
 
-  it('Kentucky: exact worked test ($15,000 -> $930.00)', () => {
+  it('Kentucky: exact worked test ($15,000 -> $929.50)', () => {
     const rule = allRules.kentucky;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'kentucky' }, 2026);
     expect(res.exciseTax).toBe(900.00); // 6.0% of 15000
     expect(res.titleFee).toBe(9.00);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(21.00);
-    expect(res.totalFirstYearCost).toBe(930.00);
+    expect(res.registrationTotal).toBe(20.50); // $11.50 + $6 clerk + $3 (KRS 186.050, 186.040)
+    expect(res.totalFirstYearCost).toBe(929.50);
   });
 
-  it('Oregon: exact worked test with zero sales tax ($15,000 -> $164.00)', () => {
+  it('Oregon: exact worked test with zero sales tax ($15,000 -> $242.00, 20 to 39 MPG tier)', () => {
     const rule = allRules.oregon;
-    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'oregon' }, 2026);
+    const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'oregon', registrationTerm: 2 }, 2026);
     expect(res.exciseTax).toBe(0.00); // 0.0% sales tax
-    expect(res.titleFee).toBe(101.00);
+    expect(res.titleFee).toBe(106.00);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(63.00);
-    expect(res.totalFirstYearCost).toBe(164.00);
+    expect(res.registrationTotal).toBe(136.00); // two-year registration only
+    expect(res.totalFirstYearCost).toBe(242.00);
   });
 
   it('Oklahoma: exact worked test ($15,000 -> $761.75)', () => {

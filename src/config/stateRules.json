@@ -2597,7 +2597,7 @@
     "taxBase": "price",
     "titleFee": 15,
     "lienFilingFee": 15,
-    "tradeInDeductible": false,
+    "tradeInDeductible": true,
     "registration": {
       "terms": [
         1
@@ -2613,59 +2613,69 @@
       "motorcycle": {
         "1": 15
       },
-      "evSurchargeAnnual": 200,
-      "phevSurchargeAnnual": 100
+      "evSurchargeAnnual": 203,
+      "phevSurchargeAnnual": 103
     },
-    "localTaxNote": "Alabama levies a 2.0% state automotive sales tax base (Ala. Code § 40-23-2(4)). Local county and city taxes typically add 1.0% to 4.0%, making total sales tax between 3.0% and 6.0%.",
+    "localTaxNote": "Alabama charges a 2% state sales tax on a vehicle bought from a private seller, plus the county and city automotive rates where you live. The licensing official collects it when you register. ALDOR's November 2026 local rate file shows combined county and city automotive rates from 0% (Monroe County outside city limits) to 5.25% (Shorter, in Macon County) where the levies can be matched to one place. Some counties split their levies by city limits, police jurisdictions, and unabated portions, and the file does not say which combine, so a few places may be higher.",
     "notes": [
-      "Alabama levies a 2.0% statewide automotive sales/use tax on casual and private party vehicle sales (Ala. Code § 40-23-2(4) and § 40-23-61(c)).",
-      "Title application fee is $15.00 under Ala. Code § 32-8-6; lien recording is $15.00 if financed.",
-      "Trade-in deduction is not permitted on private-party sales under Ala. Code § 40-23-103; trade-in allowances are restricted to licensed dealer purchases.",
-      "Annual ad valorem property taxes are assessed by your county license commissioner at registration."
+      "The 2% state tax and the local automotive rates apply to private sales under Ala. Code 40-23-101, based on where the buyer lives. Your county licensing official collects them before issuing a plate.",
+      "A vehicle taken in trade lowers the taxed price: the tax is on the price less the trade-in credit (Ala. Code 40-23-103).",
+      "The title is $15, and recording a lien (notice of security interest) is $15. Licensing officials may add small commissions and local fees.",
+      "A passenger car plate is $23 a year plus a $1.25 issuance fee and any local fees; motorcycles are $15. Battery electric vehicles add $203 a year and plug-in hybrids $103 (since July 1, 2023).",
+      "Ad valorem (property) tax is collected with the registration. It depends on the vehicle's value and local millage rates, so it is not in the estimate.",
+      "Get a plate within 20 calendar days of buying the vehicle. Alabama does not require emissions testing."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Alabama Department of Revenue (ALDOR) or your county licensing office.",
-      "Alabama charges a 2.0% state automotive sales tax; county and municipal taxes add 1.0%–4.0% depending on residence.",
-      "Private vehicle purchases do not qualify for trade-in allowance deductions in Alabama.",
-      "Annual ad valorem personal property tax is collected at registration based on the vehicle's market value."
+      "Estimates only, not tax or legal advice. Verify with your county licensing official or the Alabama Department of Revenue (ALDOR).",
+      "The local range comes from ALDOR's November 2026 local rate file. Your county licensing official applies the exact rate for your address.",
+      "Ad valorem tax, the $1.25 issuance fee, and local issuance fees are not included.",
+      "Registration may be prorated to your renewal month, which is set by the first letter of your last name."
     ],
     "faqs": [
       {
-        "question": "What is the vehicle sales tax rate in Alabama for private sales?",
-        "answer": "Alabama charges a 2.0% state automotive sales and use tax rate. County and city governments levy additional automotive taxes that typically range from 1.0% to 4.0%, making total sales tax between 3.0% and 6.0%."
+        "question": "What is the car sales tax in Alabama for private sales?",
+        "answer": "Alabama charges a 2% state sales tax on a vehicle bought from someone who is not a licensed dealer, plus the county and city automotive rates where you live (Ala. Code 40-23-101). ALDOR's November 2026 local rate file shows combined local automotive rates from 0% to 5.25% where they can be matched to one place; a few areas that stack several county levies may be higher. You pay when you register with your county licensing official."
       },
       {
-        "question": "Can I deduct a trade-in on a private vehicle purchase in Alabama?",
-        "answer": "No. Under Ala. Code § 40-23-103, trade-in deductions are exclusively permitted when trading a vehicle to a licensed motor vehicle dealer. Private casual sales are taxed on the full agreed sales price."
+        "question": "Does a trade-in lower the tax on a private sale in Alabama?",
+        "answer": "Yes. Ala. Code 40-23-103 taxes the price less the credit for a vehicle taken in trade, and the section covers private (casual) sales. It only applies when the seller takes your vehicle as part of the payment."
       },
       {
-        "question": "How much does an Alabama vehicle title transfer cost?",
-        "answer": "The statutory Alabama application fee for a certificate of title is $15.00 (plus a local county processing fee of $1.25–$1.50). Recording a security interest or lien costs an additional $15.00."
+        "question": "How much are title and lien fees in Alabama?",
+        "answer": "ALDOR lists the certificate of title fee at $15 and a notice of security interest (lien) at $15. Designated agents and licensing officials may add a $1.50 commission each, and some counties add local fees."
       },
       {
-        "question": "How much is vehicle registration in Alabama?",
-        "answer": "The base annual state license plate fee for passenger cars is $23.00. Electric vehicles pay an additional $200.00 annual surcharge ($100.00 for plug-in hybrids) in lieu of gas tax."
+        "question": "How much does registration cost in Alabama?",
+        "answer": "A standard passenger car plate is $23 a year plus a $1.25 issuance fee; local fees and ad valorem tax may be added. Motorcycles are $15. Battery electric vehicles pay an extra $203 a year and plug-in hybrids $103, rates that took effect July 1, 2023. Regular hybrids that do not plug in pay no extra fee."
       },
       {
-        "question": "Do I pay Alabama vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Alabama, the state generally assesses its applicable vehicle sales or use tax (2.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Alabama motor vehicle agency to verify documentation requirements."
+        "question": "I am moving to Alabama. What do I pay?",
+        "answer": "ALDOR says a non-commercial vehicle with a valid registration from another state must be registered within 30 days of entering Alabama (Ala. Code 40-12-262). If the vehicle was substantially used in another state, shown by an out-of-state registration or title, no sales or use tax is due when you first register it here. You still pay the title, registration, and ad valorem tax."
       },
       {
-        "question": "Is a vehicle transfer between family members taxable in Alabama?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Alabama DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "question": "Is a vehicle transfer between family members taxed in Alabama?",
+        "answer": "Alabama's casual sales tax is on the purchase price, and ALDOR rule 810-6-1-.150 says a transfer made as a gift is not a sale. A true gift therefore owes no sales tax, but the title and registration fees and ad valorem tax still apply. A family sale with a price is taxed like any other private sale. Ask your licensing official what proof of a gift they accept."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in Alabama?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Alabama's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Alabama motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "How long do I have to register a private vehicle purchase in Alabama?",
+        "answer": "ALDOR says you must get a license plate within 20 calendar days of acquiring the vehicle. The title application must be completed before the registration can be processed, and the seller does not need to notarize the title assignment. Alabama liability insurance is required, and the seller keeps the old plate."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
-      "https://revenue.alabama.gov/motor-vehicle/",
-      "https://revenue.alabama.gov/sales-use/tax-rates/"
+      "https://www.revenue.alabama.gov/tax-types/casual-sales-tax/",
+      "https://www.revenue.alabama.gov/sales-use/local-cities-and-counties-tax-rates-text-file/",
+      "https://www.revenue.alabama.gov/tax-types/motor-vehicle-registration-fees/",
+      "https://www.revenue.alabama.gov/tax-types/motor-vehicle-certificate-of-title-fee/",
+      "https://www.revenue.alabama.gov/faqs/i-just-acquired-a-vehicle-how-many-days-do-i-have-to-title-and-register-this-vehicle/",
+      "https://www.revenue.alabama.gov/faqs/i-just-moved-to-alabama-how-long-do-i-have-before-i-must-register-my-vehicle/",
+      "https://www.revenue.alabama.gov/notice-all-local-licensing-officials/",
+      "https://alison.legislature.state.al.us/code-of-alabama?section=40-23-101",
+      "https://alison.legislature.state.al.us/code-of-alabama?section=40-23-103"
     ],
-    "localTaxMinRate": 0.01,
-    "localTaxMaxRate": 0.04
+    "localTaxMinRate": 0,
+    "localTaxMaxRate": 0.0525,
+    "tradeInNote": "Alabama taxes the price less the credit for a vehicle taken in trade, on private sales too (Ala. Code 40-23-103). Enter a trade-in only if the seller took your vehicle as part of the payment."
   },
   "louisiana": {
     "label": "Louisiana",
@@ -2764,7 +2774,7 @@
     "maxExciseTax": null,
     "taxBase": "price",
     "titleFee": 9,
-    "lienFilingFee": 22,
+    "lienFilingFee": 12,
     "tradeInDeductible": true,
     "registration": {
       "terms": [
@@ -2772,66 +2782,75 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 21
+          "1": 20.5
         },
         "over3700lbs": {
-          "1": 21
+          "1": 20.5
         }
       },
       "motorcycle": {
-        "1": 15
+        "1": 18
       },
       "evSurchargeAnnual": 120,
-      "phevSurchargeAnnual": 60
+      "phevSurchargeAnnual": 120
     },
-    "localTaxNote": "Kentucky assesses a flat 6.0% Motor Vehicle Usage Tax statewide (KRS 138.460). No local sales taxes apply to motor vehicles.",
+    "localTaxNote": "Kentucky charges a 6% motor vehicle usage tax statewide (KRS 138.460). Counties and cities add no sales tax to a vehicle purchase.",
     "notes": [
-      "Kentucky assesses a 6.0% Motor Vehicle Usage Tax (KRS 138.460) on the total consideration paid or retail value.",
-      "Title application fee is $9.00 under KRS 186A.130; lien filing fee is $22.00 under KRS 186A.190.",
-      "Trade-in deduction is permitted on private-party sales under KRS 138.450 when documented on a notarized Form TC 96-182 affidavit of total consideration.",
-      "Annual motor vehicle property taxes are assessed separately by your county clerk based on January 1 vehicle value."
+      "The 6% usage tax is on the total price shown on the notarized affidavit of total consideration (Form TC 96-182), less any trade-in allowance. It cannot be less than 50% of the trade-in value of the vehicle you buy minus the trade-in value of any vehicle traded. Without the affidavit, the tax is on the average retail value in the reference manual.",
+      "Title applications are $9 and recording a lien is $12 (KRS 186A.130 and KRS 64.012, the lien fee since July 15, 2026). The $9 title fee is set in statute until January 1, 2027, when the fee moves to regulation.",
+      "Registration is $20.50 a year for a car ($11.50 state fee, $6 clerk fee, and $3 more until January 1, 2027) and $18 for a motorcycle. A $10 wildlife contribution is added unless you opt out.",
+      "Electric vehicles, including plug-in hybrids, pay an electric vehicle ownership fee. The statute sets it at $120 ($60 for electric motorcycles) and has the Department of Revenue adjust it each year; regular hybrids pay no fee.",
+      "Kentucky also bills a yearly property tax on the vehicle you own on January 1, at local rates, with your renewal. It is not part of this estimate."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Kentucky Transportation Cabinet (KYTC) or your County Clerk.",
-      "Kentucky charges a 6.0% Motor Vehicle Usage Tax statewide upon transfer of ownership.",
-      "Trade-in credit is permitted on private vehicle sales when both parties execute a notarized affidavit (Form TC 96-182).",
-      "Standard annual registration is $21.00; electric vehicles pay an additional $120.00 annual road fee ($60.00 for hybrid)."
+      "Estimates only, not tax or legal advice. Verify with your county clerk or the Kentucky Transportation Cabinet.",
+      "The electric vehicle fee shown is the $120 statutory base. The Department of Revenue adjusts it each year, and the adjusted 2026 amount is not published on the Cabinet's fee pages.",
+      "The usage tax cannot fall below the floor set from the reference manual values, which the estimate does not apply.",
+      "Yearly vehicle property tax and the optional $10 wildlife contribution are not included."
     ],
     "faqs": [
       {
         "question": "What is the vehicle tax rate in Kentucky?",
-        "answer": "Kentucky imposes a 6.0% Motor Vehicle Usage Tax (MVUT) under KRS 138.460. Unlike general retail sales, motor vehicles in Kentucky are not subject to local city or county sales taxes."
+        "answer": "Kentucky charges a 6% motor vehicle usage tax (KRS 138.460) when a vehicle is titled. There is no county or city sales tax on top of it. Your county clerk collects it with the title application."
       },
       {
-        "question": "Does Kentucky allow trade-in credit on private vehicle sales?",
-        "answer": "Yes! Under KRS 138.450 and 138.460, trade-in allowances reduce taxable value for private transactions as long as both buyer and seller execute a notarized Affidavit of Total Consideration Given (Form TC 96-182)."
+        "question": "Does a trade-in lower the usage tax on a private sale in Kentucky?",
+        "answer": "Yes. The Department of Revenue's 2025 usage tax guide taxes the total consideration on the notarized affidavit (Form TC 96-182) less the seller's trade-in allowance. The taxed amount cannot be less than 50% of the trade-in value of the vehicle you buy minus the trade-in value of the vehicle traded."
       },
       {
         "question": "How much are Kentucky title and lien fees?",
-        "answer": "The Kentucky state certificate of title fee is $9.00. If the purchase is financed through a lender, an additional $22.00 lien filing fee is required by the County Clerk."
+        "answer": "A title application is $9 under KRS 186A.130, which sets that fee until January 1, 2027; after that the fee is set by regulation. Recording a lien is $12 under KRS 64.012, effective July 15, 2026."
       },
       {
         "question": "How much does vehicle registration cost in Kentucky?",
-        "answer": "Standard annual passenger car registration in Kentucky is $21.00. All-electric vehicles pay an additional $120.00 annual electric vehicle fee ($60.00 for hybrids)."
+        "answer": "A car is $20.50 a year: the $11.50 fee in KRS 186.050, the $6 clerk fee, and $3 more under KRS 186.040 until January 1, 2027. Motorcycles are $18. Electric vehicles and plug-in hybrids also pay an ownership fee with a $120 statutory base that the Department of Revenue adjusts each year; regular hybrids pay none."
       },
       {
-        "question": "Do I pay Kentucky vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Kentucky, the state generally assesses its applicable vehicle sales or use tax (6.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Kentucky motor vehicle agency to verify documentation requirements."
+        "question": "I am moving to Kentucky. What do I pay?",
+        "answer": "The Transportation Cabinet's new resident page says to title and register within 10 days of establishing residency, and elsewhere on the same page gives 15 days to apply for registration after bringing a vehicle in; plan on 10. The 6% usage tax is due, but you get credit for tax paid to another state with a substantially identical tax (KRS 138.460). An out-of-state title needs Form TC 96-182 and a sheriff's inspection."
       },
       {
-        "question": "Is a vehicle transfer between family members taxable in Kentucky?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Kentucky DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "question": "Is a vehicle transfer between family members taxed in Kentucky?",
+        "answer": "Transfers between spouses, parents and children (including step-relations), and grandparents and grandchildren who are Kentucky residents are exempt from the usage tax (KRS 138.470, Form 71A101). Other gifts are taxed on the average trade-in value in the reference manual (KRS 138.450)."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in Kentucky?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Kentucky's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Kentucky motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "How long do I have to title a private vehicle purchase in Kentucky?",
+        "answer": "Transfer the title and registration within 15 days. Bring the notarized signed title, proof of Kentucky insurance, and a Kentucky license, ID, or Social Security card to your county clerk. The seller keeps the plates (KRS 186.190)."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
-      "https://drive.ky.gov/motor-vehicle-licensing/Pages/Vehicle-Taxes.aspx",
-      "https://revenue.ky.gov/Property/Motor-Vehicles/Pages/default.aspx"
-    ]
+      "https://revenue.ky.gov/Property/Motor-Vehicles/Pages/Motor-Vehicle-Usage-Tax.aspx",
+      "https://revenue.ky.gov/ClerkNetwork/Documents/Motor%20Vehicle%20Usage%20Tax%20(2025).pdf",
+      "https://drive.ky.gov/Vehicles/Pages/Vehicle-Titling.aspx",
+      "https://drive.ky.gov/Drivers/Pages/New-To-Kentucky.aspx",
+      "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=57802",
+      "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=57720",
+      "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=56307",
+      "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=56142",
+      "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=55787"
+    ],
+    "tradeInNote": "Kentucky taxes the price on the notarized affidavit (Form TC 96-182) less the seller's trade-in allowance, but not below 50% of the trade-in value of the vehicle you buy minus the trade-in value of the vehicle traded."
   },
   "oregon": {
     "label": "Oregon",
@@ -2840,78 +2859,78 @@
     "minExciseTax": null,
     "maxExciseTax": null,
     "taxBase": "price",
-    "titleFee": 101,
+    "titleFee": 106,
     "lienFilingFee": 0,
     "tradeInDeductible": false,
     "registration": {
       "terms": [
-        1,
         2
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 63,
-          "2": 126
+          "2": 136
         },
         "over3700lbs": {
-          "1": 63,
-          "2": 126
+          "2": 136
         }
       },
       "motorcycle": {
-        "1": 24,
-        "2": 48
+        "2": 88
       },
-      "evSurchargeAnnual": 110
+      "evSurchargeAnnual": 120
     },
-    "localTaxNote": "Oregon has no state or local sales tax on private party motor vehicle sales (0.0%). The 0.5% vehicle use tax applies only to dealer sales of new vehicles.",
+    "localTaxNote": "Oregon has no sales tax on a private vehicle sale. The 0.5% vehicle use tax applies only to vehicles bought from a dealer.",
     "notes": [
-      "Oregon has no general sales tax and charges 0.0% tax on private party vehicle sales.",
-      "Base certificate of title fee is $101.00 under ORS 803.090 for standard passenger vehicles.",
-      "Standard passenger vehicle registration is issued on a 2-year biennial term ($126.00 base for 0–19 MPG = $63.00/yr).",
-      "Certain metropolitan counties (Multnomah, Clackamas, Washington) assess local county registration fees of $30–$56/yr."
+      "Oregon's title and registration fees follow the vehicle's combined MPG rating. The estimate uses the 20 to 39 MPG tier: a $106 title and $136 for two years of registration.",
+      "Other tiers: 0 to 19 MPG is $101 title and $126 registration; 40 MPG or more is $116 title and $216 registration; all-electric is $192 title and $376 registration. Motorcycles are $101 title and $88 registration.",
+      "If the vehicle already has current Oregon plates, registration is not due when the title transfers. Registration is due when the vehicle has no Oregon plates or its registration has expired.",
+      "Multnomah County adds $112 and Washington and Clackamas counties add $60 to a two-year registration. New plates are $26.",
+      "Apply for the title within 30 days of the sale; a late transfer costs $25 (31 to 60 days) or $50 (after 60 days)."
     ],
     "disclaimers": [
-      "Estimates only — not tax or legal advice. Verify with Oregon Driver and Motor Vehicle Services (DMV).",
-      "Oregon does not assess state or local sales tax on private vehicle transactions (0.0% tax).",
-      "Title and registration fees vary based on vehicle fuel efficiency rating (MPG) and county of residence.",
-      "Electric vehicles pay higher biennial registration fees or may opt into the per-mile OReGO program."
+      "Estimates only, not tax or legal advice. Verify with Oregon DMV.",
+      "The estimate uses the 20 to 39 MPG fee tier. Your vehicle's MPG rating sets the real title and registration fees.",
+      "For an electric vehicle, the estimate adds the electric registration fee but keeps the $106 title fee; the all-electric title fee is $192.",
+      "County registration fees, new plate fees, and DEQ emissions test fees are not included."
     ],
     "faqs": [
       {
         "question": "What is the car sales tax rate in Oregon for private sales?",
-        "answer": "Oregon does not have a general sales tax, and private-party vehicle sales between individuals are 100% tax-free (0.0% sales tax). The 0.5% Vehicle Privilege Tax only applies to licensed dealers selling new vehicles."
+        "answer": "None. Oregon has no sales tax on a private vehicle sale. The 0.5% vehicle use tax applies to vehicles bought from a dealer, such as new vehicles with 7,500 miles or less that were never registered in Oregon."
       },
       {
         "question": "How much does a title transfer cost in Oregon?",
-        "answer": "Under ORS 803.090, the base Oregon DMV certificate of title fee for standard passenger cars is $101.00. Lien notation is processed on the title application without an extra filing fee."
+        "answer": "Oregon DMV sets the title fee by MPG rating: $101 for 0 to 19 MPG, $106 for 20 to 39 MPG, $116 for 40 MPG or more, and $192 for all-electric vehicles. Motorcycles are $101. Apply within 30 days of the sale to avoid a $25 or $50 late fee."
       },
       {
         "question": "How are registration fees calculated in Oregon?",
-        "answer": "Oregon registers passenger vehicles on a two-year cycle with fees tiered by EPA fuel economy rating, starting at $126.00 for vehicles under 20 MPG ($63.00/year equivalent). Tri-county areas (Multnomah, Washington, Clackamas) add local county fees."
+        "answer": "Registration lasts two years and also follows the MPG rating: $126 for 0 to 19 MPG, $136 for 20 to 39 MPG, and $216 for 40 MPG or more (if not enrolled in OReGO). Motorcycles are $88. Multnomah County adds $112 and Washington and Clackamas counties add $60. If the vehicle already has current Oregon plates, registration is not due at the title transfer."
       },
       {
         "question": "Do electric vehicles pay extra fees in Oregon?",
-        "answer": "Yes. All-electric vehicles pay an increased biennial registration fee ($316.00 for 2 years) to compensate for untaxed motor fuel, or owners may enroll in Oregon's voluntary road usage charge program (OReGO)."
+        "answer": "Yes. An all-electric vehicle pays a $192 title fee and $376 for two years of registration, or $86 if enrolled in OReGO, the per-mile road usage charge program. Oregon DMV says electric vehicle fees change on July 1, 2027."
       },
       {
-        "question": "Do I pay Oregon vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "Because Oregon does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Oregon. Standard certificate of title fees and registration tag fees still apply upon titling."
+        "question": "I am moving to Oregon. What do I pay?",
+        "answer": "Within 30 days of becoming a resident, get an Oregon license and title and register your vehicle. There is no sales tax. A vehicle with an out-of-state title needs a $9 VIN inspection, and vehicles in the Portland and Medford areas may need a DEQ emissions test."
       },
       {
-        "question": "Is a vehicle transfer between family members taxable in Oregon?",
-        "answer": "In Oregon, private vehicle transfers are not subject to a statewide vehicle sales tax. When transferring title between family members, you only pay standard title transfer fees and registration charges."
+        "question": "Is a vehicle transfer between family members taxed in Oregon?",
+        "answer": "No. Oregon has no sales tax on private transfers, including gifts between family members. The title fee still applies, and registration is due if the vehicle lacks current Oregon plates."
       },
       {
-        "question": "How long do I have to title and register a private vehicle purchase in Oregon?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Oregon's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Oregon motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "question": "How long do I have to title a private vehicle purchase in Oregon?",
+        "answer": "Apply for the title within 30 days of the sale. A transfer between 31 and 60 days costs a $25 late fee, and after 60 days $50."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://www.oregon.gov/odot/dmv/pages/fees/vehicle.aspx",
+      "https://www.oregon.gov/odot/dmv/pages/vehicle/titlereg.aspx",
+      "https://www.oregon.gov/odot/dmv/pages/new2or/moving.aspx",
       "https://www.oregon.gov/dor/programs/businesses/Pages/vehicle-privilege-and-use-taxes.aspx"
-    ]
+    ],
+    "tradeInNote": "Oregon has no sales tax on a private sale, so a trade-in does not change the estimate."
   },
   "oklahoma": {
     "label": "Oklahoma",

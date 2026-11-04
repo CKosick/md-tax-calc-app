@@ -23,11 +23,6 @@
       "finding": "Redirects to a 404 page"
     },
     {
-      "state": "kentucky",
-      "url": "https://drive.ky.gov/motor-vehicle-licensing/Pages/Vehicle-Taxes.aspx",
-      "finding": "Redirects to a 404 page"
-    },
-    {
       "state": "nebraska",
       "url": "https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling",
       "finding": "404 Not Found"
@@ -265,6 +260,21 @@
       "state": "colorado",
       "on": "2026-11-03",
       "note": "Local range re-checked against the July 2026 DR 1002 (state-collected city and county taxes, home-rule cities, and special districts): 0% to 8.3% (highest: Winter Park 7% plus Grand County 1.3%), replacing the carried-over 1% to 6%; verified date moved to November 2026."
+    },
+    {
+      "state": "alabama",
+      "on": "2026-11-04",
+      "note": "Re-checked against the ALDOR casual sales tax, local rate file (November 2026), registration fee, title fee, and FAQ pages and Ala. Code 40-23-101 and 40-23-103; local range 1% to 4% -> 0% to 5.25% (highest combination that can be matched to one place), trade-in now deducted, EV $200 -> $203 and plug-in hybrid $100 -> $103, 30-day new resident rule and gift treatment stated, ad valorem tax described, not modeled."
+    },
+    {
+      "state": "kentucky",
+      "on": "2026-11-04",
+      "note": "Dead DRIVE vehicle taxes link replaced with the DOR usage tax page and 2025 guide, the DRIVE titling and new resident pages, and KRS 186A.130, 64.012, 186.050, 186.040, and 138.475; lien $22 -> $12, registration $21 -> $20.50, motorcycle $15 -> $18, plug-in hybrid fee $60 -> $120 (same fee as electric vehicles), affidavit floor, family exemptions, gift valuation, and new resident credit stated."
+    },
+    {
+      "state": "oregon",
+      "on": "2026-11-04",
+      "note": "Re-checked against the Oregon DMV fee, title and registration, and moving pages and the DOR vehicle use tax page; registration is two years only, 20 to 39 MPG tier used ($106 title, $136 registration), motorcycle $48 -> $88, electric vehicle registration $376, county fees, late title fees, and the current-plates rule stated."
     }
   ]
 }

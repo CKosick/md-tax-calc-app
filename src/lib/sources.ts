@@ -16,6 +16,15 @@ const cite = (text: string | null | undefined, pattern: RegExp, format: (m: RegE
   return m ? format(m) : undefined;
 };
 
+/** Kentucky Legislative Research Commission statute document ids -> citation (versions in force November 2026). */
+const KY_STATUTE_IDS: Record<string, string> = {
+  '55787': 'KRS 138.475',
+  '56142': 'KRS 186.040',
+  '56307': 'KRS 186.050',
+  '57720': 'KRS 64.012',
+  '57802': 'KRS 186A.130'
+};
+
 /**
  * Statute and code links get the citation as their page name, since their URLs end in codes
  * like "02003" or a query string: https://www.azleg.gov/ars/28/02003.htm -> "A.R.S. 28-2003".
@@ -30,7 +39,10 @@ const STATUTE_LABELS: { host: RegExp; label: (url: URL) => string | undefined }[
   { host: /(^|\.)legislature\.mi\.gov$/, label: (u) => cite(u.searchParams.get('objectName'), /^mcl-(\d+)-(\w+)$/i, (m) => `MCL ${m[1]}.${m[2]}`) },
   { host: /(^|\.)scstatehouse\.gov$/, label: (u) => cite(u.pathname, /\/code\/t(\d+)c0*(\d+)\.php$/i, (m) => `S.C. Code Title ${Number(m[1])}, Chapter ${m[2]}`) },
   { host: /(^|\.)cga\.ct\.gov$/, label: (u) => cite(u.pathname, /chap_0*(\d+)\.htm$/i, (m) => `Conn. Gen. Stat. Chapter ${m[1]}`) },
-  { host: /^delcode\.delaware\.gov$/, label: (u) => cite(u.pathname, /title(\d+)\/c0*(\d+)/i, (m) => `Del. Code Title ${m[1]}, Chapter ${m[2]}`) }
+  { host: /^delcode\.delaware\.gov$/, label: (u) => cite(u.pathname, /title(\d+)\/c0*(\d+)/i, (m) => `Del. Code Title ${m[1]}, Chapter ${m[2]}`) },
+  { host: /^alison\.legislature\.state\.al\.us$/, label: (u) => cite(u.searchParams.get('section'), /^([\d-]+)$/, (m) => `Ala. Code ${m[1]}`) },
+  // Kentucky statute links carry only a document id, so the cited ones are listed here
+  { host: /^apps\.legislature\.ky\.gov$/, label: (u) => KY_STATUTE_IDS[u.searchParams.get('id') ?? ''] }
 ];
 
 /** e.g. https://mva.maryland.gov/title-registration/fees-payment-options -> "mva.maryland.gov: fees payment options" */
