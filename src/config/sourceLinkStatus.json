@@ -260,6 +260,11 @@
       "state": "south-carolina",
       "on": "2026-10-31",
       "note": "Dead SCDMV link replaced with the dmv.sc.gov fee, buying and selling, title, and moving pages and S.C. Code 56-3-627; registration is biennial only, plug-in hybrid fee added, IMF on fair market value less trade-in with family and heir exclusions and the $250 new resident fee stated."
+    },
+    {
+      "state": "colorado",
+      "on": "2026-11-03",
+      "note": "Local range re-checked against the July 2026 DR 1002 (state-collected city and county taxes, home-rule cities, and special districts): 0% to 8.3% (highest: Winter Park 7% plus Grand County 1.3%), replacing the carried-over 1% to 6%; verified date moved to November 2026."
     }
   ]
 }

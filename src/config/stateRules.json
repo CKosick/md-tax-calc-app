@@ -2347,7 +2347,7 @@
         ]
       }
     },
-    "localTaxNote": "Colorado adds the local sales or use taxes of the city, county, and special districts (such as RTD) where you live and register the car. The 1.0% to 6.0% range shown is carried over from the earlier check and has not been re-verified; look up your address with the Colorado Sales Tax Lookup Tool. Home-rule cities that collect their own tax set their own rates.",
+    "localTaxNote": "Colorado adds the local sales or use taxes of the city, county, and special districts (such as RTD) that apply to the sale or where you register the car. On the July 2026 DR 1002 rate list, they total 0% to 8.3%: none in a county without a sales tax outside any city or district, up to Winter Park’s 7% city tax plus Grand County’s 1.3%. Look up your address with the Colorado Sales Tax Lookup Tool.",
     "notes": [
       "On a private sale, you pay the 2.9% state tax and the local taxes to the county clerk when you register. The fair market value of a vehicle you trade in as part of the purchase is excluded from the taxable price.",
       "The title transfer fee is $7.20. A lender adding a lien pays $40 in lien filing fees.",
@@ -2357,7 +2357,7 @@
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with your county motor vehicle office or the Colorado Department of Revenue.",
-      "The local tax range has not been re-verified and depends on your address. Use the Colorado Sales Tax Lookup Tool for your rate.",
+      "The local range is from the July 2026 DR 1002 and changes each January 1 and July 1. Home-rule cities collect their own tax and DR 1002 suggests confirming their rates with the city.",
       "The specific ownership tax, county fees, emissions-area fee, and license plate materials are not included. The DMV’s registration fee estimator gives your total.",
       "Whether plug-in hybrids pay the $63.05 road usage fee is not spelled out on the DMV page; the estimate includes it."
     ],
@@ -2391,15 +2391,15 @@
         "answer": "Register within 60 days of the sale. After that, late fees are $25 for each month, up to $100."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://dmv.colorado.gov/title",
       "https://dmv.colorado.gov/taxes-and-fees",
       "https://tax.colorado.gov/sales-use-tax-topics-motor-vehicle-sales",
       "https://tax.colorado.gov/DR1002"
     ],
-    "localTaxMinRate": 0.01,
-    "localTaxMaxRate": 0.06
+    "localTaxMinRate": 0,
+    "localTaxMaxRate": 0.083
   },
   "minnesota": {
     "label": "Minnesota",

@@ -53,11 +53,11 @@ describe('Wisconsin re-check', () => {
 });
 
 describe('Colorado re-check', () => {
-  it('2.9% state tax with the carried-over local range, $7.20 title, $40 lien, trade-in excluded', () => {
+  it('2.9% state tax with the 0% to 8.3% DR 1002 local range, $7.20 title, $40 lien, trade-in excluded', () => {
     const b = calc(co);
     expect(b.exciseTax).toBe(435);
-    expect(b.localTaxMin).toBe(150);
-    expect(b.localTaxMax).toBe(900);
+    expect(b.localTaxMin).toBe(0);
+    expect(b.localTaxMax).toBe(1245);
     expect(b.titleFee).toBe(7.2);
     expect(calc(co, { isFinanced: true }).lienFilingFee).toBe(40);
     expect(calc(co, { tradeInValue: 5000 }).exciseTax).toBe(290);
@@ -70,12 +70,13 @@ describe('Colorado re-check', () => {
     expect(calc(co, { vehicleType: 'motorcycle' }).registrationTotal).toBe(37.19);
     expect(calc(co, { fuelType: 'ev', vehicleYear: 2024 }).registrationTotal).toBe(156.24);
     expect(calc(co, { fuelType: 'phev', vehicleYear: 2024 }).registrationTotal).toBe(143.24);
-    expect(calc(co).totalFirstYearCostMin).toBe(657.39);
+    expect(calc(co).totalFirstYearCostMin).toBe(507.39);
+    expect(calc(co).totalFirstYearCostMax).toBe(1752.39);
   });
 
   it('copy discloses the missing local taxes, the specific ownership tax, and the deadlines', () => {
     const text = copy(co);
-    for (const fact of ['Colorado Sales Tax Lookup Tool', 'not been re-verified', 'specific ownership tax', '85%', '60 days', '90 days', '$25', 'receipts', '3,500 lbs']) expect(text).toContain(fact);
+    for (const fact of ['Colorado Sales Tax Lookup Tool', '0% to 8.3%', 'Winter Park', 'July 2026 DR 1002', 'specific ownership tax', '85%', '60 days', '90 days', '$25', 'receipts', '3,500 lbs']) expect(text).toContain(fact);
   });
 });
 
@@ -114,8 +115,8 @@ describe('Batch 10 source repair', () => {
     for (const key of ['wisconsin', 'colorado', 'south-carolina']) {
       expect(sourceLinkStatus.hidden.some((h) => h.state === key)).toBe(false);
       expect(sourceLinkStatus.repaired.some((r) => r.state === key)).toBe(true);
-      // Colorado's local range was not re-verified, so its date stays September 2026
-      expect(rules[key].lastVerified).toBe(key === 'colorado' ? 'September 2026' : 'October 2026');
+      // Colorado's local range was re-verified separately in November 2026
+      expect(rules[key].lastVerified).toBe(key === 'colorado' ? 'November 2026' : 'October 2026');
       expect(rules[key].sources.length).toBeGreaterThanOrEqual(4);
     }
   });

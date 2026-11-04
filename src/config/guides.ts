@@ -6353,7 +6353,7 @@ export const GUIDES: Guide[] = [
       'Payment for the taxes, title, and registration'
     ],
     calculatorNote:
-      'The calculator shows the 2.9% state tax plus a rough local range that has not been re-verified; your local taxes depend on your address (use the Colorado Sales Tax Lookup Tool). Registration shown is the statewide fees by vehicle age; the specific ownership tax and county fees are not included.',
+      'The calculator shows the 2.9% state tax plus the 0% to 8.3% local range from the July 2026 DR 1002; your local taxes depend on the address (use the Colorado Sales Tax Lookup Tool). Registration shown is the statewide fees by vehicle age; the specific ownership tax and county fees are not included.',
     faqs: [
       {
         question: 'Who collects the tax on a private sale in Colorado?',

@@ -22,6 +22,13 @@
   },
   {
     "state": "colorado",
+    "figure": "Local sales tax range 0% to 8.3% (July 2026 DR 1002; next edition January 1, 2027)",
+    "staleOn": "2027-01-01",
+    "contains": "0% to 8.3%",
+    "alsoCheck": "localTaxMaxRate and the Colorado private-sale guide"
+  },
+  {
+    "state": "colorado",
     "figure": "Electric motor vehicle road usage fees, $26 battery electric and $13 plug-in hybrid (July 1, 2026 to June 30, 2027)",
     "staleOn": "2027-07-01",
     "contains": "$26 ($13 for plug-in hybrids)",
