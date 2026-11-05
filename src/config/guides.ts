@@ -5781,7 +5781,7 @@ export const GUIDES: Guide[] = [
       'Payment for the vehicle excise tax and any local vehicle tax'
     ],
     calculatorNote:
-      'The calculator shows the 7% sales tax, title, and registration. The yearly vehicle excise tax and any county or city vehicle tax are not included; the BMV’s Quick Quote tool estimates them.',
+      'The calculator shows the 7% sales tax, title, registration, and a year of vehicle excise tax for the list price you enter. County or city vehicle taxes are not included; the BMV’s Quick Quote tool estimates them.',
     faqs: [
       {
         question: 'What happens if I title the car late in Indiana?',
@@ -5846,7 +5846,7 @@ export const GUIDES: Guide[] = [
       'Payment for the title, registration, and excise tax'
     ],
     calculatorNote:
-      'For an exempt gift, enter $0 as the price to see the title and registration fees. The vehicle excise tax is not included.',
+      'For an exempt gift, enter $0 as the price to see the title, registration, and vehicle excise tax.',
     faqs: [
       {
         question: 'Is a sale between family members exempt in Indiana?',
@@ -5912,7 +5912,7 @@ export const GUIDES: Guide[] = [
       'Payment for the title, registration, and excise tax'
     ],
     calculatorNote:
-      'New residents pay no sales tax on a vehicle brought with them, so enter $0 as the price to see the title and registration fees. The excise tax is not included.',
+      'New residents pay no sales tax on a vehicle brought with them, so enter $0 as the price to see the title, registration, and vehicle excise tax.',
     faqs: [
       {
         question: 'How long do I have after moving to Indiana?',
@@ -6385,7 +6385,7 @@ export const GUIDES: Guide[] = [
       'Payment for the taxes, title, and registration'
     ],
     calculatorNote:
-      'The calculator shows the 2.9% state tax plus the 0% to 8.3% local range from the July 2026 DR 1002; your local taxes depend on the address (use the Colorado Sales Tax Lookup Tool). Registration shown is the statewide fees by vehicle age; the specific ownership tax and county fees are not included.',
+      'The calculator shows the 2.9% state tax plus the 0% to 8.3% local range from the July 2026 DR 1002; your local taxes depend on the address (use the Colorado Sales Tax Lookup Tool). Registration shown is the statewide fees by vehicle age plus the specific ownership tax for the MSRP you enter; county fees are not included.',
     faqs: [
       {
         question: 'Who collects the tax on a private sale in Colorado?',
@@ -6510,7 +6510,7 @@ export const GUIDES: Guide[] = [
       'Payment for the title and registration'
     ],
     calculatorNote:
-      'A car you brought with you owes no use tax, so enter $0 as the price to see the title and statewide registration fees. The specific ownership tax is not included.',
+      'A car you brought with you owes no use tax, so enter $0 as the price to see the title, statewide registration fees, and specific ownership tax.',
     faqs: [
       {
         question: 'How long do I have after moving to Colorado?',
