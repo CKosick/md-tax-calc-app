@@ -331,6 +331,38 @@ const SC_SOURCES = {
   imf: { label: 'S.C. Code 56-3-627: Infrastructure maintenance fee', url: 'https://www.scstatehouse.gov/code/t56c003.php' }
 };
 
+const AL_REVENUE = 'https://www.revenue.alabama.gov';
+const AL_SOURCES = {
+  casualTax: { label: 'Alabama Department of Revenue: Casual Sales Tax', url: `${AL_REVENUE}/tax-types/casual-sales-tax/` },
+  localRates: { label: 'Alabama Department of Revenue: Local Cities and Counties Tax Rates File', url: `${AL_REVENUE}/sales-use/local-cities-and-counties-tax-rates-text-file/` },
+  registrationFees: { label: 'Alabama Department of Revenue: Motor Vehicle Registration Fees', url: `${AL_REVENUE}/tax-types/motor-vehicle-registration-fees/` },
+  titleFees: { label: 'Alabama Department of Revenue: Motor Vehicle Certificate of Title Fee', url: `${AL_REVENUE}/tax-types/motor-vehicle-certificate-of-title-fee/` },
+  deadline: { label: 'ALDOR FAQ: How many days do I have to title and register a vehicle?', url: `${AL_REVENUE}/faqs/i-just-acquired-a-vehicle-how-many-days-do-i-have-to-title-and-register-this-vehicle/` },
+  prerequisites: { label: 'ALDOR FAQ: Prerequisites for registering a vehicle', url: `${AL_REVENUE}/faqs/what-are-the-prerequisites-for-registering-a-vehicle-in-alabama/` },
+  notarized: { label: 'ALDOR FAQ: Does a title assignment need to be notarized?', url: `${AL_REVENUE}/faqs/is-the-assignment-of-an-mso-or-title-required-to-be-notarized/` },
+  priorTaxes: { label: 'ALDOR FAQ: Am I responsible for the previous owner’s unpaid taxes?', url: `${AL_REVENUE}/faqs/if-i-purchase-a-used-car-from-a-dealer-or-individual-owner-am-i-responsible-for-the-unpaid-taxes-of-the-previous-owner/` },
+  moving: { label: 'ALDOR FAQ: I just moved to Alabama', url: `${AL_REVENUE}/faqs/i-just-moved-to-alabama-how-long-do-i-have-before-i-must-register-my-vehicle/` },
+  usedInOtherState: { label: 'ALDOR notice: Used vehicles brought into Alabama', url: `${AL_REVENUE}/notice-all-local-licensing-officials/` },
+  tradeIn: { label: 'Ala. Code 40-23-103: Tax on the price less the trade-in credit', url: 'https://alison.legislature.state.al.us/code-of-alabama?section=40-23-103' }
+};
+
+const KY_SOURCES = {
+  usageTax: { label: 'Kentucky Department of Revenue: Motor Vehicle Usage Tax', url: 'https://revenue.ky.gov/Property/Motor-Vehicles/Pages/Motor-Vehicle-Usage-Tax.aspx' },
+  usageGuide: { label: 'Kentucky Department of Revenue: Motor Vehicle Usage Tax guide (2025)', url: 'https://revenue.ky.gov/ClerkNetwork/Documents/Motor%20Vehicle%20Usage%20Tax%20(2025).pdf' },
+  titling: { label: 'Kentucky Transportation Cabinet: Vehicle Titling', url: 'https://drive.ky.gov/Vehicles/Pages/Vehicle-Titling.aspx' },
+  newResident: { label: 'Kentucky Transportation Cabinet: New to Kentucky', url: 'https://drive.ky.gov/Drivers/Pages/New-To-Kentucky.aspx' },
+  titleFee: { label: 'KRS 186A.130: Fee for title application', url: 'https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=57802' },
+  registrationFee: { label: 'KRS 186.050: Registration fees', url: 'https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=56307' }
+};
+
+const OR_DMV = 'https://www.oregon.gov/odot/dmv/pages';
+const OR_SOURCES = {
+  fees: { label: 'Oregon DMV: Vehicle Title, Registration and Permit Fees', url: `${OR_DMV}/fees/vehicle.aspx` },
+  titleReg: { label: 'Oregon DMV: Titling and Registering Your Vehicle', url: `${OR_DMV}/vehicle/titlereg.aspx` },
+  moving: { label: 'Oregon DMV: New to Oregon', url: `${OR_DMV}/new2or/moving.aspx` },
+  useTax: { label: 'Oregon Department of Revenue: Vehicle Privilege and Use Taxes', url: 'https://www.oregon.gov/dor/programs/businesses/Pages/vehicle-privilege-and-use-taxes.aspx' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -6691,6 +6723,657 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [SC_SOURCES.moving, SC_SOURCES.imf, SC_SOURCES.fees, SC_SOURCES.titles]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-alabama',
+    stateKey: 'alabama',
+    title: 'How to Title a Private Car Sale in Alabama',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Alabama',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Alabama: the signed title, insurance, the 20-day plate deadline, 2% state tax plus local rates, and the fees.',
+    cardDescription: 'The title, 20 days, the 2% tax plus local rates, and the fees.',
+    intro: [
+      'When you buy a car from a private seller in Alabama, you apply for the title and get a plate from your county licensing official within 20 calendar days. You pay the sales tax there too.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Alabama Department of Revenue',
+    steps: [
+      {
+        title: 'Get the signed title from the seller',
+        body: [
+          'The seller assigns the title to you. Alabama does not require the title assignment to be notarized. The seller removes their license plate.'
+        ]
+      },
+      {
+        title: 'Insure the car',
+        body: [
+          'The vehicle must be covered by an Alabama liability insurance policy before it can be registered.'
+        ]
+      },
+      {
+        title: 'Apply for the title',
+        body: [
+          'The title application must be completed before the registration can be processed. The application fee is $15, plus a $1.50 commission for the designated agent; the license plate issuing official may add another $1.50 and some counties charge local fees.'
+        ]
+      },
+      {
+        title: 'Pay the sales tax',
+        body: [
+          'A purchase from someone who is not a licensed dealer is taxed at the 2% state rate plus the county and city automotive rates where you live (Ala. Code 40-23-101). ALDOR’s November 2026 local rate file shows combined local rates from 0% to 5.25% where they can be matched to one place.',
+          'If the seller took your vehicle in trade, the tax is on the price less the trade-in credit (Ala. Code 40-23-103).'
+        ]
+      },
+      {
+        title: 'Get a plate within 20 calendar days',
+        body: [
+          'A passenger car plate is $23 a year plus a $1.25 issuance fee and any local fees. Battery electric vehicles add $203 and plug-in hybrids $103. The licensing official also collects ad valorem (property) tax.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you by the seller',
+      'Proof of Alabama liability insurance',
+      'The purchase price, for the sales tax',
+      'Payment for the $15 title fee and commissions',
+      'Payment for the sales tax, the $23 plate, and ad valorem tax'
+    ],
+    calculatorNote:
+      'The calculator applies 2% plus the 0% to 5.25% local range to the price less any trade-in, with the $15 title and $23 plate. Ad valorem tax and issuance fees are not included.',
+    faqs: [
+      {
+        question: 'Does the seller have to notarize the title?',
+        answer: 'No. ALDOR says Alabama does not require the assignment of a title to be notarized.'
+      },
+      {
+        question: 'Can I keep the seller’s license plate?',
+        answer: 'No. The seller removes the plate. You can move a plate you already own to the car; the state transfer fee is $1.25, and some counties add local issuance fees.'
+      },
+      {
+        question: 'Do I owe the previous owner’s unpaid ad valorem tax?',
+        answer: 'Yes. ALDOR says ad valorem tax follows the vehicle, so a buyer pays any tax that has accrued since the vehicle was last registered, plus interest and penalties on delinquent tax.'
+      }
+    ],
+    sources: [AL_SOURCES.deadline, AL_SOURCES.casualTax, AL_SOURCES.localRates, AL_SOURCES.titleFees, AL_SOURCES.registrationFees, AL_SOURCES.notarized, AL_SOURCES.priorTaxes, AL_SOURCES.tradeIn]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-alabama',
+    stateKey: 'alabama',
+    title: 'How to Gift a Car in Alabama',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Alabama',
+    metaDescription:
+      'How to gift a car in Alabama: why a true gift owes no sales tax, the title transfer, insurance, the 20-day plate deadline, and the title, plate, and ad valorem charges that still apply.',
+    cardDescription: 'No sales tax on a true gift; the title, plate, and ad valorem tax.',
+    intro: [
+      'Alabama’s casual sales tax is on the purchase price of a vehicle, and ALDOR’s sales tax rules say a transfer made as a gift is not a sale.',
+      'Here is how to transfer a car as a gift, and what you still pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Alabama Department of Revenue',
+    steps: [
+      {
+        title: 'Confirm it is a gift',
+        body: [
+          'ALDOR rule 810-6-1-.150 treats each transfer of property as a sale except a transfer made as a gift. If you pay for the car, even a family member, it is a sale taxed on that price.',
+          'Ask your licensing official what proof of a gift they accept.'
+        ]
+      },
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver assigns the title to you. The assignment does not need to be notarized.'
+        ]
+      },
+      {
+        title: 'Insure the car',
+        body: [
+          'Get an Alabama liability insurance policy before you register the car.'
+        ]
+      },
+      {
+        title: 'Apply for the title',
+        body: [
+          'Apply through your county licensing official. The fee is $15, plus a $1.50 agent commission and any other commission or local fees the office charges.'
+        ]
+      },
+      {
+        title: 'Get a plate within 20 calendar days',
+        body: [
+          'Pay the $23 plate fee, the $1.25 issuance fee and any local fees, and the ad valorem tax.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'Proof of Alabama liability insurance',
+      'Any proof of the gift your licensing official asks for',
+      'Payment for the $15 title fee and commissions',
+      'Payment for the plate and ad valorem tax'
+    ],
+    calculatorNote:
+      'For a gift, enter $0 as the price to see the title and plate fees. Ad valorem tax is not included.',
+    faqs: [
+      {
+        question: 'Do I pay sales tax on a car given to me?',
+        answer: 'Not on a true gift. Alabama taxes the purchase price, and ALDOR’s rules say a gift is not a sale. You still pay the title fee, the plate, and ad valorem tax.'
+      },
+      {
+        question: 'Is a sale to my son or daughter taxed?',
+        answer: 'Yes. If money changes hands, it is a sale taxed at 2% plus the local rates where the buyer lives, on the price paid.'
+      },
+      {
+        question: 'How long do I have to register the car?',
+        answer: 'ALDOR says you must get a license plate within 20 calendar days of acquiring the vehicle.'
+      }
+    ],
+    sources: [AL_SOURCES.casualTax, AL_SOURCES.deadline, AL_SOURCES.titleFees, AL_SOURCES.registrationFees, AL_SOURCES.notarized]
+  },
+  {
+    slug: 'titling-a-car-in-alabama-after-moving-from-another-state',
+    stateKey: 'alabama',
+    title: 'Titling a Car in Alabama After Moving From Another State',
+    shortTitle: 'Title a car after moving to Alabama',
+    metaTitle: 'Titling Your Car After Moving to Alabama',
+    metaDescription:
+      'New to Alabama? Register within 30 days of the car entering the state. A car used in your old state owes no Alabama sales tax; you pay the title, the plate, and ad valorem tax.',
+    cardDescription: '30 days, no sales tax on a car you already used, and the fees.',
+    intro: [
+      'When you move to Alabama with a car registered in another state, you register it in the county where you live within 30 days of the car entering Alabama.',
+      'A car you already used in your old state owes no Alabama sales or use tax. Here is what to do.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Alabama Department of Revenue',
+    steps: [
+      {
+        title: 'Insure the car in Alabama',
+        body: [
+          'The vehicle must be covered by an Alabama liability insurance policy before it can be registered.'
+        ]
+      },
+      {
+        title: 'Register within 30 days',
+        body: [
+          'Ala. Code 40-12-262 gives the owner of a non-commercial vehicle with a valid out-of-state registration 30 days from the date the vehicle enters Alabama to register it.'
+        ]
+      },
+      {
+        title: 'Go to your county licensing official',
+        body: [
+          'Register in the county where you live. Your residence is judged by things like where you vote, where your license was issued, and where you work, and the official may ask for a legal resident affidavit (Form MVR-15).'
+        ]
+      },
+      {
+        title: 'Apply for an Alabama title',
+        body: [
+          'The title application comes before the registration. The fee is $15, plus a $1.50 agent commission and any other commission or local fees the office charges.'
+        ]
+      },
+      {
+        title: 'Pay the plate and ad valorem tax',
+        body: [
+          'If the car was substantially used in another state, shown by an out-of-state registration or title, no sales or use tax is due. You pay the $23 plate fee plus issuance fees and the ad valorem tax.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title or registration',
+      'Proof of Alabama liability insurance',
+      'A legal resident affidavit (Form MVR-15), if the licensing official asks',
+      'Payment for the $15 title fee and commissions',
+      'Payment for the plate and ad valorem tax'
+    ],
+    calculatorNote:
+      'A car you used in another state owes no Alabama sales tax. Enter $0 as the price to see the title and plate fees; ad valorem tax is not included.',
+    faqs: [
+      {
+        question: 'Do I pay Alabama sales tax on the car I moved here with?',
+        answer: 'No, if it was substantially used in another state. ALDOR says an out-of-state registration or title is evidence of that use.'
+      },
+      {
+        question: 'Which county do I register in?',
+        answer: 'The county where you live. A second home in another county does not change that.'
+      },
+      {
+        question: 'I am in the military and stationed in Alabama. Do I have to register here?',
+        answer: 'ALDOR’s residency rule says the registration laws do not apply to vehicles owned by military members, or their immediate family, assigned to Alabama by military orders.'
+      }
+    ],
+    sources: [AL_SOURCES.moving, AL_SOURCES.usedInOtherState, AL_SOURCES.prerequisites, AL_SOURCES.titleFees, AL_SOURCES.registrationFees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-kentucky',
+    stateKey: 'kentucky',
+    title: 'How to Title a Private Car Sale in Kentucky',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Kentucky',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Kentucky: the notarized title, insurance, the county clerk within 15 days, the 6% usage tax, and the fees.',
+    cardDescription: 'The notarized title, 15 days, the 6% usage tax, and the fees.',
+    intro: [
+      'When you buy a car from a private seller in Kentucky, the title must be transferred to you within 15 days at your county clerk’s office, where you also pay the 6% motor vehicle usage tax.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Kentucky Transportation Cabinet and DOR',
+    steps: [
+      {
+        title: 'Get the title signed and notarized',
+        body: [
+          'The seller signs the Kentucky title over to you. The signatures must be notarized. Do not use white-out or cross anything out on the title.'
+        ]
+      },
+      {
+        title: 'Get Kentucky insurance',
+        body: [
+          'Bring proof of Kentucky insurance with an issue date within 45 days.'
+        ]
+      },
+      {
+        title: 'Go to the county clerk within 15 days',
+        body: [
+          'Bring the title, the insurance, and your Kentucky driver’s license, Kentucky ID card, or Social Security card. If the transfer is late, you also complete the Affidavit of Incomplete Transfer (TC96-3).'
+        ]
+      },
+      {
+        title: 'Pay the 6% usage tax',
+        body: [
+          'The tax is 6% of the total price on the notarized affidavit of total consideration, less any trade-in allowance. It cannot be less than 50% of the trade-in value of the vehicle you buy minus the trade-in value of any vehicle traded.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration fees',
+        body: [
+          'The title is $9 and recording a lien is $12. Registration is $20.50 a year for a car and $18 for a motorcycle. Electric vehicles and plug-in hybrids also pay an ownership fee with a $120 statutory base that the Department of Revenue adjusts each year.'
+        ]
+      }
+    ],
+    checklist: [
+      'The Kentucky title, signed over to you with notarized signatures',
+      'Proof of Kentucky insurance issued within 45 days',
+      'Your Kentucky driver’s license, Kentucky ID card, or Social Security card',
+      'Form TC96-3, if more than 15 days have passed',
+      'Payment for the usage tax, $9 title, and $20.50 registration'
+    ],
+    calculatorNote:
+      'The calculator applies 6% to the price less any trade-in, with the $9 title and $20.50 registration. It does not apply the 50% floor or the yearly property tax.',
+    faqs: [
+      {
+        question: 'Can I keep the seller’s license plate?',
+        answer: 'No. In Kentucky the seller keeps the plates (KRS 186.190).'
+      },
+      {
+        question: 'Why is my usage tax more than 6% of the price?',
+        answer: 'The taxed amount cannot be less than 50% of the trade-in value of the vehicle you buy minus the trade-in value of any vehicle traded, from the reference manual. A very low price can hit that floor.'
+      },
+      {
+        question: 'What if I miss the 15 days?',
+        answer: 'Complete the Affidavit of Incomplete Transfer (TC96-3) when you apply.'
+      }
+    ],
+    sources: [KY_SOURCES.titling, KY_SOURCES.usageTax, KY_SOURCES.usageGuide, KY_SOURCES.titleFee, KY_SOURCES.registrationFee]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-kentucky',
+    stateKey: 'kentucky',
+    title: 'How to Gift a Car in Kentucky',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Kentucky',
+    metaDescription:
+      'How to gift a car in Kentucky: which family members are exempt from the 6% usage tax, Form 71A101, how other gifts are taxed, and the title and registration steps.',
+    cardDescription: 'The family exemption, Form 71A101, other gifts, and the title.',
+    intro: [
+      'Gifts between certain close family members who live in Kentucky are exempt from the 6% motor vehicle usage tax. Other gifts are taxed on the vehicle’s average trade-in value.',
+      'Here is how to transfer the car.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Kentucky Transportation Cabinet and DOR',
+    steps: [
+      {
+        title: 'Check that the exemption applies',
+        body: [
+          'Transfers between spouses, parents and children (including stepparents and stepchildren), and grandparents and grandchildren are exempt when both are Kentucky residents (KRS 138.470). Complete Form 71A101 for the exemption.',
+          'Other gifts are taxed at 6% of the average trade-in value in the reference manual (KRS 138.450).'
+        ]
+      },
+      {
+        title: 'Sign the title over and notarize it',
+        body: [
+          'The giver signs the title over to you, and the signatures must be notarized.'
+        ]
+      },
+      {
+        title: 'Get Kentucky insurance',
+        body: [
+          'Bring proof of Kentucky insurance with an issue date within 45 days.'
+        ]
+      },
+      {
+        title: 'Go to the county clerk within 15 days',
+        body: [
+          'Bring the title, the affidavit, the insurance, and your Kentucky driver’s license, ID card, or Social Security card.'
+        ]
+      },
+      {
+        title: 'Pay the fees',
+        body: [
+          'Pay the $9 title fee and the $20.50 registration, plus the usage tax if the exemption does not apply.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you with notarized signatures',
+      'Form 71A101, for an exempt family transfer',
+      'Proof of Kentucky insurance issued within 45 days',
+      'Your Kentucky driver’s license, ID card, or Social Security card',
+      'Payment for the $9 title and $20.50 registration'
+    ],
+    calculatorNote:
+      'For an exempt family transfer, enter $0 as the price to see the title and registration fees. For other gifts, enter the average trade-in value.',
+    faqs: [
+      {
+        question: 'Is a car from my brother or sister exempt?',
+        answer: 'No. Siblings are not on the list; the exemption covers spouses, parents and children (including step-relations), and grandparents and grandchildren.'
+      },
+      {
+        question: 'How is a gift from a friend taxed?',
+        answer: 'At 6% of the vehicle’s average trade-in value in the reference manual, not on a price.'
+      },
+      {
+        question: 'Does the exemption apply if my parent lives in another state?',
+        answer: 'The Department of Revenue’s guide limits the family exemption to transfers between Kentucky residents.'
+      }
+    ],
+    sources: [KY_SOURCES.usageGuide, KY_SOURCES.usageTax, KY_SOURCES.titling, KY_SOURCES.titleFee]
+  },
+  {
+    slug: 'titling-a-car-in-kentucky-after-moving-from-another-state',
+    stateKey: 'kentucky',
+    title: 'Titling a Car in Kentucky After Moving From Another State',
+    shortTitle: 'Title a car after moving to Kentucky',
+    metaTitle: 'Titling Your Car After Moving to Kentucky',
+    metaDescription:
+      'New to Kentucky? Get Kentucky insurance and a sheriff’s inspection, then title and register at the county clerk. The 6% usage tax is due, with credit for tax paid in your old state.',
+    cardDescription: 'Insurance, the sheriff’s inspection, the usage tax credit, and the clerk.',
+    intro: [
+      'When you move to Kentucky, you convert your out-of-state title to a Kentucky title before you register the car and get Kentucky plates.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Kentucky Transportation Cabinet and DOR',
+    steps: [
+      {
+        title: 'Get Kentucky insurance',
+        body: [
+          'You cannot drive the car in Kentucky until it has Kentucky insurance. Bring proof with an issue date within 45 days.'
+        ]
+      },
+      {
+        title: 'Pass the sheriff’s inspection',
+        body: [
+          'A vehicle brought into Kentucky from another state needs a passed sheriff’s inspection.'
+        ]
+      },
+      {
+        title: 'Complete Form TC 96-182',
+        body: [
+          'Fill out the Application for Kentucky Certificate of Title (TC 96-182). Bring your signed-over out-of-state title, or the registration or bill of sale if your state issues only those. The signatures must be notarized.'
+        ]
+      },
+      {
+        title: 'Go to your county clerk',
+        body: [
+          'The Cabinet’s new resident page says to title and register within 10 days of establishing residency, and elsewhere on the same page gives 15 days to apply for registration after bringing a vehicle in. Plan on 10.'
+        ]
+      },
+      {
+        title: 'Pay the usage tax and fees',
+        body: [
+          'The 6% usage tax is due, but you get credit for tax paid to another state with a substantially identical tax (KRS 138.460). The title is $9 and registration $20.50.'
+        ]
+      }
+    ],
+    checklist: [
+      'Proof of Kentucky insurance issued within 45 days',
+      'Proof of a passed sheriff’s inspection',
+      'Form TC 96-182 and your signed-over out-of-state title',
+      'Your Kentucky driver’s license, Kentucky ID card, or Social Security card',
+      'Proof of any tax paid to your old state, for the credit'
+    ],
+    calculatorNote:
+      'The calculator does not apply the credit for tax paid to another state. Subtract that tax from the 6% it shows, and add any balance to the $9 title and $20.50 registration.',
+    faqs: [
+      {
+        question: 'Do I pay the 6% usage tax again?',
+        answer: 'Only the difference. Kentucky credits tax paid to another state that has a substantially identical tax.'
+      },
+      {
+        question: 'When do I need a Kentucky driver’s license?',
+        answer: 'Within 30 days of establishing residency.'
+      },
+      {
+        question: 'I am active duty military. Do I need Kentucky insurance?',
+        answer: 'Out-of-state insurance is acceptable for active duty military members listed on the title, with proof such as an active military ID.'
+      }
+    ],
+    sources: [KY_SOURCES.newResident, KY_SOURCES.titling, KY_SOURCES.usageGuide, KY_SOURCES.titleFee]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-oregon',
+    stateKey: 'oregon',
+    title: 'How to Title a Private Car Sale in Oregon',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Oregon',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Oregon: no sales tax, the title application within 30 days, the MPG-based title fee, and when registration is due.',
+    cardDescription: 'No sales tax, 30 days, the MPG-based fees, and registration.',
+    intro: [
+      'Oregon has no sales tax on a private vehicle sale. You apply for the title at Oregon DMV within 30 days of the sale and pay a title fee set by the vehicle’s MPG rating.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Oregon DMV',
+    steps: [
+      {
+        title: 'Collect the documents from the seller',
+        body: [
+          'Get the original title signed over to you, any lien releases from earlier lenders, and an odometer disclosure if one is required.'
+        ]
+      },
+      {
+        title: 'Complete the title application',
+        body: [
+          'For a car, pickup, or SUV, use the guided DMV2U application, which also works out your fees.'
+        ]
+      },
+      {
+        title: 'Apply within 30 days',
+        body: [
+          'Mail the documents or bring them to a DMV office. A title application filed 31 to 60 days after the sale costs a $25 late fee, and after 60 days $50.'
+        ]
+      },
+      {
+        title: 'Pay the title fee',
+        body: [
+          'The fee follows the combined MPG rating: $101 for 0 to 19 MPG, $106 for 20 to 39 MPG, $116 for 40 MPG or more, and $192 for an all-electric vehicle.'
+        ]
+      },
+      {
+        title: 'Register if the plates are not current',
+        body: [
+          'Registration is due when the vehicle has no Oregon plates or its registration has expired. Two years costs $126, $136, or $216 by MPG tier, or $376 for an electric vehicle, plus county fees in Multnomah, Washington, and Clackamas counties. In the Portland and Medford areas most vehicles must pass a DEQ emissions test first.'
+        ]
+      }
+    ],
+    checklist: [
+      'A completed Title Application (DMV2U for a passenger vehicle)',
+      'The original title, signed over to you',
+      'Lien releases from any earlier lenders',
+      'An odometer disclosure, if required',
+      'Payment for the title fee and any registration and plate fees'
+    ],
+    calculatorNote:
+      'There is no sales tax to calculate. The calculator uses the 20 to 39 MPG tier: a $106 title and $136 two-year registration.',
+    faqs: [
+      {
+        question: 'Do I pay sales tax on a car from a private seller?',
+        answer: 'No. Oregon’s 0.5% vehicle use tax applies only to vehicles bought from a dealer.'
+      },
+      {
+        question: 'Do I have to pay for registration when I buy the car?',
+        answer: 'Only if the vehicle has no Oregon plates or its registration has expired.'
+      },
+      {
+        question: 'I have a loan. Who sends the title application?',
+        answer: 'Oregon DMV says your lender will probably have you give the documents to them and will submit the application.'
+      }
+    ],
+    sources: [OR_SOURCES.titleReg, OR_SOURCES.fees, OR_SOURCES.useTax]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-oregon',
+    stateKey: 'oregon',
+    title: 'How to Gift a Car in Oregon',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Oregon',
+    metaDescription:
+      'How to gift a car in Oregon: no sales tax on any private transfer, the signed title and odometer disclosure, the MPG-based title fee, and the papers for a car from a deceased owner.',
+    cardDescription: 'No tax, the title transfer, the fee, and inherited cars.',
+    intro: [
+      'Oregon has no sales tax on private vehicle transfers, so a gifted car owes only the title fee and, if needed, registration.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Oregon DMV',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs the original title over to you. Include an odometer disclosure if one is required.'
+        ]
+      },
+      {
+        title: 'Collect any lien releases',
+        body: [
+          'If an earlier lender is listed, get the original lien release.'
+        ]
+      },
+      {
+        title: 'Complete the title application',
+        body: [
+          'Use the guided DMV2U application for a passenger vehicle.'
+        ]
+      },
+      {
+        title: 'Apply within 30 days',
+        body: [
+          'DMV charges a late fee ($25, or $50 after 60 days) when a title application for an Oregon-titled vehicle comes more than 30 days after the sale. Apply within 30 days to be safe.'
+        ]
+      },
+      {
+        title: 'Pay the fees',
+        body: [
+          'Pay the title fee for the vehicle’s MPG tier ($101 to $116, or $192 for all-electric), plus registration if the plates are not current.'
+        ]
+      }
+    ],
+    checklist: [
+      'The original title, signed over to you',
+      'An odometer disclosure, if required',
+      'Lien releases from any earlier lenders',
+      'A completed Title Application',
+      'Payment for the title fee and any registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price. The calculator shows the $106 title and $136 registration for the 20 to 39 MPG tier.',
+    faqs: [
+      {
+        question: 'Is a gifted car taxed in Oregon?',
+        answer: 'No. Oregon has no sales tax on private vehicle transfers, including gifts.'
+      },
+      {
+        question: 'What if the owner has died?',
+        answer: 'DMV needs proof of death for each deceased owner. The other papers depend on whether the title shows survivorship and whether the estate is in probate.'
+      },
+      {
+        question: 'Do I need new plates?',
+        answer: 'Registration is due only if the vehicle has no Oregon plates or its registration has expired. New plates are $26.'
+      }
+    ],
+    sources: [OR_SOURCES.titleReg, OR_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-oregon-after-moving-from-another-state',
+    stateKey: 'oregon',
+    title: 'Titling a Car in Oregon After Moving From Another State',
+    shortTitle: 'Title a car after moving to Oregon',
+    metaTitle: 'Titling Your Car After Moving to Oregon',
+    metaDescription:
+      'New to Oregon? Within 30 days, title and register your car. There is no sales tax; you pay a $9 VIN inspection, the MPG-based title and registration fees, and any county fee.',
+    cardDescription: '30 days, the VIN inspection, DEQ, and the MPG-based fees.',
+    intro: [
+      'As a new Oregon resident, you title and register your vehicle within 30 days. There is no sales tax.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Oregon DMV',
+    steps: [
+      {
+        title: 'Plan for 30 days',
+        body: [
+          'Within 30 days of becoming a resident, get an Oregon driver’s license if you want to drive, and title and register your vehicle.'
+        ]
+      },
+      {
+        title: 'Get a VIN inspection',
+        body: [
+          'A vehicle with an out-of-state title needs a $9 VIN inspection, which can be done at your DMV title appointment.'
+        ]
+      },
+      {
+        title: 'Pass a DEQ test if required',
+        body: [
+          'In the Portland and Medford areas, most vehicles must pass a DEQ emissions test before they can be registered. Newer vehicles are exempt.'
+        ]
+      },
+      {
+        title: 'Complete the title application',
+        body: [
+          'Bring your out-of-state title, lien releases, and the completed application. If your lender holds the title, contact the lender first.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration fees',
+        body: [
+          'By MPG tier, the title is $101 to $116 and two years of registration $126 to $216; an all-electric vehicle is $192 and $376. Multnomah County adds $112 and Washington and Clackamas counties $60. New plates are $26.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title, or your lender’s contact if it holds the title',
+      'A completed Title Application',
+      'Payment for the $9 VIN inspection',
+      'A DEQ emissions certificate, if you live in a DEQ area',
+      'Payment for the title, registration, plates, and any county fee'
+    ],
+    calculatorNote:
+      'There is no sales tax. The calculator shows the $106 title and $136 registration for the 20 to 39 MPG tier; add the VIN inspection, plates, and any county fee.',
+    faqs: [
+      {
+        question: 'Do I pay tax on the car I moved here with?',
+        answer: 'No. Oregon’s vehicle use tax applies only to vehicles bought from a dealer, such as a new vehicle with 7,500 miles or less bought from an out-of-state dealer.'
+      },
+      {
+        question: 'Can the VIN inspection be done at DMV?',
+        answer: 'Yes. Oregon DMV says it can be done during your title appointment for $9.'
+      },
+      {
+        question: 'Who counts as a visitor instead of a resident?',
+        answer: 'Oregon DMV counts military members stationed in Oregon, students paying non-resident tuition, and people who live permanently outside Oregon as visitors.'
+      }
+    ],
+    sources: [OR_SOURCES.moving, OR_SOURCES.titleReg, OR_SOURCES.fees, OR_SOURCES.useTax]
   }
 ];
 

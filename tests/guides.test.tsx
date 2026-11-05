@@ -65,8 +65,13 @@ const GUIDE_STATES = {
   missouri: { label: 'Missouri', agency: 'Missouri Department of Revenue', hosts: ['dor.mo.gov', 'revisor.mo.gov'] },
   wisconsin: { label: 'Wisconsin', agency: 'Wisconsin DMV and DOR', hosts: ['wisconsindot.gov', 'www.revenue.wi.gov'] },
   colorado: { label: 'Colorado', agency: 'Colorado DMV and Department of Revenue', hosts: ['dmv.colorado.gov', 'tax.colorado.gov'] },
-  'south-carolina': { label: 'South Carolina', agency: 'SCDMV', hosts: ['dmv.sc.gov', 'www.scstatehouse.gov'] }
+  'south-carolina': { label: 'South Carolina', agency: 'SCDMV', hosts: ['dmv.sc.gov', 'www.scstatehouse.gov'] },
+  alabama: { label: 'Alabama', agency: 'Alabama Department of Revenue', hosts: ['www.revenue.alabama.gov', 'alison.legislature.state.al.us'] },
+  kentucky: { label: 'Kentucky', agency: 'Kentucky Transportation Cabinet and DOR', hosts: ['revenue.ky.gov', 'drive.ky.gov', 'apps.legislature.ky.gov'] },
+  oregon: { label: 'Oregon', agency: 'Oregon DMV', hosts: ['www.oregon.gov'] }
 } as const;
+// Guides re-checked in November 2026 carry that date; the rest October 2026
+const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon'].includes(stateKey) ? 'November 2026' : 'October 2026');
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
   `how-to-gift-a-car-in-${state}`,
@@ -84,7 +89,7 @@ describe('Guide content (batches 1 and 2: Maryland, Virginia, Pennsylvania)', ()
   it('each guide is complete, dated, sourced from its state agency, and has short titles', () => {
     for (const guide of GUIDES) {
       const state = GUIDE_STATES[guide.stateKey as keyof typeof GUIDE_STATES];
-      expect(guide.lastVerified).toBe('October 2026');
+      expect(guide.lastVerified).toBe(guideDate(guide.stateKey));
       expect(guide.agency).toBe(state.agency);
       expect(guide.steps.length).toBeGreaterThanOrEqual(5);
       expect(guide.checklist.length).toBeGreaterThanOrEqual(5);
@@ -148,7 +153,7 @@ describe('Guide pages', () => {
     expect(container.textContent).not.toContain(`Frequently Asked Questions: ${state.label} Vehicle Taxes`);
 
     expect(container.querySelector('#guide-last-verified')?.textContent).toBe(
-      `Last verified: October 2026 against ${state.agency} sources`
+      `Last verified: ${guideDate(guide.stateKey)} against ${state.agency} sources`
     );
     expect(container.querySelectorAll('ol > li')).toHaveLength(guide.steps.length);
     expect(screen.getByRole('heading', { name: 'What to bring' })).toBeDefined();
@@ -358,6 +363,33 @@ describe('Batch 10 guides (Wisconsin, Colorado, South Carolina)', () => {
   });
 });
 
+describe('Batch 11 guides (Alabama, Kentucky, Oregon)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified Alabama, Kentucky, and Oregon key facts', () => {
+    const [alSale, alGift, alMove] = topics('alabama').map(text);
+    for (const fact of ['20 calendar days', 'notarized', '2%', '0% to 5.25%', '40-23-103', '$15', '$1.50', '$23', '$1.25', '$203', '$103', 'ad valorem']) expect(alSale).toContain(fact);
+    for (const fact of ['810-6-1-.150', 'not a sale', '20 calendar days']) expect(alGift).toContain(fact);
+    for (const fact of ['30 days', '40-12-262', 'substantially used', 'MVR-15', 'military']) expect(alMove).toContain(fact);
+
+    const [kySale, kyGift, kyMove] = topics('kentucky').map(text);
+    for (const fact of ['15 days', 'notarized', '45 days', '6%', '50%', 'TC96-3', '$9', '$12', '$20.50', '$120', 'KRS 186.190']) expect(kySale).toContain(fact);
+    for (const fact of ['stepchildren', 'grandchildren', '71A101', 'average trade-in value', 'Siblings', 'Kentucky residents']) expect(kyGift).toContain(fact);
+    for (const fact of ['sheriff’s inspection', 'TC 96-182', '10 days', '15 days', 'substantially identical', '30 days']) expect(kyMove).toContain(fact);
+
+    const [orSale, orGift, orMove] = topics('oregon').map(text);
+    for (const fact of ['30 days', '$25', '$50', '$101', '$106', '$116', '$192', '$136', '$376', 'DEQ', 'no Oregon plates', '0.5%']) expect(orSale).toContain(fact);
+    for (const fact of ['no sales tax', 'survivorship', '$26']) expect(orGift).toContain(fact);
+    for (const fact of ['30 days', '$9 VIN inspection', 'Multnomah', '$112', '$60', '7,500 miles', 'visitors']) expect(orMove).toContain(fact);
+  });
+
+  it('batch 11 guides are dated November 2026; no em dashes', () => {
+    for (const state of ['alabama', 'kentucky', 'oregon']) {
+      for (const guide of getGuidesForState(state)) expect(guide.lastVerified).toBe('November 2026');
+      for (const t of topics(state).map(text)) expect(t).not.toContain('—');
+    }
+  });
+});
+
 describe('Guide links and discovery', () => {
   // Renders every guide state's calculator page; slow under load, so it gets a longer timeout
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', { timeout: 60000 }, async () => {
@@ -401,6 +433,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('Missouri, Wisconsin, Colorado, and South Carolina.');
+    expect(String(metadata.description)).toContain('Colorado, South Carolina, Alabama, Kentucky, and Oregon.');
   });
 });
