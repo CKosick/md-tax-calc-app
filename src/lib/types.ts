@@ -90,6 +90,26 @@ export interface StateRegistrationRules {
     /** Fee to move a plate you already have onto the vehicle (Washington: $10). */
     plateTransferFee?: number;
   };
+  /**
+   * Yearly tax on the vehicle paid with the registration, figured from the original list price
+   * (MSRP) and the registration year (the model year is year 1), for passenger vehicles. Either a
+   * class table (Indiana excise: the class is the list price bracket, one amount per year) or a
+   * rate on a share of the list price (Colorado specific ownership tax: 85% of MSRP, 2.1% in year 1),
+   * with an optional flat amount from a given year. Added to the registration for each year of the term.
+   */
+  listPriceAnnualTax?: {
+    /** Name shown in the results, e.g. "Indiana vehicle excise tax". */
+    label: string;
+    defaultListPrice: number;
+    /** Indiana: classes by list price (a class covers prices up to maxPrice; the last has none). */
+    classTable?: { maxPrice?: number; feesByYear: number[] }[];
+    /** Colorado: share of the list price that is taxed (0.85). */
+    valueShare?: number;
+    /** Colorado: rate by registration year (index 0 = first year); the last value repeats. */
+    ratesByYear?: number[];
+    /** Colorado: $3 from the tenth year. */
+    flatFromYear?: { year: number; fee: number };
+  };
   valueBasedFees?: {
     /** Annual license fee as a share of value (California VLF: 0.0065). */
     licenseFeeRate: number;
@@ -275,8 +295,10 @@ export interface CostBreakdown {
   /** The chosen locality and its local tax, included in exciseTax (states with localities). */
   localityLabel?: string;
   localityTax?: number;
-  /** List price the registration was figured on (states with listPriceRegistration). */
+  /** List price the registration was figured on (states with listPriceRegistration or listPriceAnnualTax). */
   listPriceUsed?: number;
+  /** Yearly list-price tax included in registrationTotal (Indiana excise, Colorado specific ownership tax). */
+  annualValueTax?: number;
   totalFirstYearCost: number;
   totalFirstYearCostMin?: number;
   totalFirstYearCostMax?: number;

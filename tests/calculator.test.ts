@@ -453,14 +453,16 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(1072.50);
   });
 
-  it('Indiana: exact worked test ($15,000 -> $1,101.35)', () => {
+  it('Indiana: exact worked test ($15,000 -> $1,192.35 with a year of excise tax)', () => {
     const rule = allRules.indiana;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'indiana' }, 2026);
     expect(res.exciseTax).toBe(1050.00); // 7.0% of 15000
     expect(res.titleFee).toBe(15.00);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(36.35);
-    expect(res.totalFirstYearCost).toBe(1101.35);
+    expect(res.baseRegistrationFee).toBe(36.35);
+    expect(res.annualValueTax).toBe(91.00); // class 15 ($30,000 default list price), age 7
+    expect(res.registrationTotal).toBe(127.35);
+    expect(res.totalFirstYearCost).toBe(1192.35);
   });
 
   it('Missouri: exact worked test ($15,000 -> $684.50)', () => {
@@ -483,14 +485,16 @@ describe('Batch 1 (Mega-States) Worked Acceptance Tests ($15,000 baseline)', () 
     expect(res.totalFirstYearCost).toBe(1049.50);
   });
 
-  it('Colorado: exact worked test ($15,000 -> $507.39 before local tax)', () => {
+  it('Colorado: exact worked test ($15,000 -> $622.14 before local tax)', () => {
     const rule = allRules.colorado;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'colorado' }, 2026);
     expect(res.exciseTax).toBe(435.00); // 2.9% of 15000
     expect(res.titleFee).toBe(7.20);
     expect(res.lienFilingFee).toBe(0.00);
-    expect(res.registrationTotal).toBe(65.19); // statewide fees, age fee for a 7-year-old car
-    expect(res.totalFirstYearCost).toBe(507.39);
+    expect(res.baseRegistrationFee).toBe(65.19); // statewide fees, age fee for a 7-year-old car
+    expect(res.annualValueTax).toBe(114.75); // SOT, 0.45% of 85% of the $30,000 default MSRP (8th year)
+    expect(res.registrationTotal).toBe(179.94);
+    expect(res.totalFirstYearCost).toBe(622.14);
   });
 
   it('Batch 2 trade-in deductibility verification (MO allows trade-in; NJ & WA do not)', () => {

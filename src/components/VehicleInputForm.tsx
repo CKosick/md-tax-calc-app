@@ -49,6 +49,9 @@ export function VehicleInputForm({
   const weightChart = rule.registration.passengerWeightChart;
   // List price states (Michigan, Minnesota) ask for the MSRP; age-based states (Oklahoma) ask nothing
   const listPriceReg = rule.registration.listPriceRegistration;
+  // States with a yearly list-price tax (Indiana excise, Colorado specific ownership tax) ask for it too
+  const annualTax = rule.registration.listPriceAnnualTax;
+  const listPriceDefault = (listPriceReg ?? annualTax)?.defaultListPrice ?? 0;
   const plateFees = rule.registration.newPlateFees;
   const newPlateCost =
     plateFees && inputs.vehicleType === 'motorcycle' && plateFees.motorcyclePlateFee !== undefined
@@ -452,7 +455,7 @@ export function VehicleInputForm({
         )}
 
         {/* Original list price (passenger cars in list price states, e.g. Michigan, Minnesota) */}
-        {inputs.vehicleType === 'passenger' && listPriceReg && (
+        {inputs.vehicleType === 'passenger' && (listPriceReg || annualTax) && (
           <div>
             <div className="flex items-center justify-between">
               <label
@@ -461,7 +464,7 @@ export function VehicleInputForm({
               >
                 Original MSRP (List Price)
               </label>
-              <span className="text-[11px] text-slate-400">Sets the registration fee</span>
+              <span className="text-[11px] text-slate-400">{annualTax ? 'Sets the yearly tax' : 'Sets the registration fee'}</span>
             </div>
             <div className="relative mt-2">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
@@ -477,13 +480,15 @@ export function VehicleInputForm({
                   const n = parseFloat(e.target.value);
                   updateField('listPrice', Number.isFinite(n) && n > 0 ? n : undefined);
                 }}
-                placeholder={`${listPriceReg.defaultListPrice.toLocaleString('en-US')} if unknown`}
+                placeholder={`${listPriceDefault.toLocaleString('en-US')} if unknown`}
                 className="block w-full min-h-[44px] rounded-2xl border border-slate-200 bg-white py-3 pl-8 pr-4 text-base font-bold text-slate-900 shadow-xs transition-all focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
               />
             </div>
             <p id="list-price-help" className="mt-1.5 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
-              {rule.label} bases registration on the price when new, reduced as the vehicle ages.
-              {!inputs.listPrice && ` Blank uses $${listPriceReg.defaultListPrice.toLocaleString('en-US')}.`}
+              {annualTax
+                ? `The ${annualTax.label} is figured from the price when new and drops as the vehicle ages.`
+                : `${rule.label} bases registration on the price when new, reduced as the vehicle ages.`}
+              {!inputs.listPrice && ` Blank uses $${listPriceDefault.toLocaleString('en-US')}.`}
             </p>
           </div>
         )}

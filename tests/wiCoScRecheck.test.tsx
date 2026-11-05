@@ -63,15 +63,15 @@ describe('Colorado re-check', () => {
     expect(calc(co, { tradeInValue: 5000 }).exciseTax).toBe(290);
   });
 
-  it('registration follows the age fee: $67.19 under 7 years, $65.19 at 7 to 9, $62.19 at 10 and older', () => {
-    expect(calc(co, { vehicleYear: 2024 }).registrationTotal).toBe(67.19);
-    expect(calc(co, { vehicleYear: 2019 }).registrationTotal).toBe(65.19);
-    expect(calc(co, { vehicleYear: 2015 }).registrationTotal).toBe(62.19);
+  it('registration follows the age fee ($67.19 under 7 years, $65.19 at 7 to 9, $62.19 at 10 and older) plus the specific ownership tax', () => {
+    expect(calc(co, { vehicleYear: 2024 }).registrationTotal).toBe(373.19); // $67.19 + SOT 1.2% of $25,500 (third year)
+    expect(calc(co, { vehicleYear: 2019 }).registrationTotal).toBe(179.94); // $65.19 + SOT 0.45% of $25,500
+    expect(calc(co, { vehicleYear: 2015 }).registrationTotal).toBe(65.19); // $62.19 + $3 SOT from the tenth year
     expect(calc(co, { vehicleType: 'motorcycle' }).registrationTotal).toBe(37.19);
-    expect(calc(co, { fuelType: 'ev', vehicleYear: 2024 }).registrationTotal).toBe(156.24);
-    expect(calc(co, { fuelType: 'phev', vehicleYear: 2024 }).registrationTotal).toBe(143.24);
-    expect(calc(co).totalFirstYearCostMin).toBe(507.39);
-    expect(calc(co).totalFirstYearCostMax).toBe(1752.39);
+    expect(calc(co, { fuelType: 'ev', vehicleYear: 2024 }).registrationTotal).toBe(462.24);
+    expect(calc(co, { fuelType: 'phev', vehicleYear: 2024 }).registrationTotal).toBe(449.24);
+    expect(calc(co).totalFirstYearCostMin).toBe(622.14);
+    expect(calc(co).totalFirstYearCostMax).toBe(1867.14);
   });
 
   it('copy discloses the missing local taxes, the specific ownership tax, and the deadlines', () => {

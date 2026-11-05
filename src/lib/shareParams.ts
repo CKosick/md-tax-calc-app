@@ -84,7 +84,7 @@ export function inputsFromSearchParams(
     ...(rule.localities
       ? { localityId: rule.localities.some((l) => l.id === params.get('loc')) ? params.get('loc')! : undefined }
       : {}),
-    ...(rule.registration.listPriceRegistration
+    ...(rule.registration.listPriceRegistration || rule.registration.listPriceAnnualTax
       ? { listPrice: parseBookValue(params.get('msrp')) ?? defaults.listPrice }
       : {}),
     vehicleWeight: rule.registration.passengerWeightChart
@@ -120,7 +120,7 @@ export function buildShareSearchParams(
       params.set('appraisal', String(inputs.appraisedValue));
     }
   }
-  if (rule.registration.listPriceRegistration && inputs.listPrice && inputs.listPrice > 0) {
+  if ((rule.registration.listPriceRegistration || rule.registration.listPriceAnnualTax) && inputs.listPrice && inputs.listPrice > 0) {
     params.set('msrp', String(inputs.listPrice));
   }
   if (rule.localities && inputs.localityId) {

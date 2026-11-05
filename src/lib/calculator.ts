@@ -25,6 +25,23 @@ function listPriceRegistrationFee(
   return Math.round(((reg.fixed ?? 0) + valueFee) * 100) / 100;
 }
 
+/** One year of a list-price tax (Indiana excise class table, Colorado specific ownership tax rate). */
+export function listPriceAnnualTaxFor(
+  spec: NonNullable<StateRule['registration']['listPriceAnnualTax']>,
+  listPrice: number,
+  registrationYear: number
+): number {
+  if (spec.flatFromYear && registrationYear >= spec.flatFromYear.year) return spec.flatFromYear.fee;
+  const pick = (values: number[]) => values[Math.min(registrationYear, values.length) - 1];
+  if (spec.classTable && spec.classTable.length > 0) {
+    const row =
+      spec.classTable.find((c) => c.maxPrice === undefined || listPrice <= c.maxPrice) ?? spec.classTable[spec.classTable.length - 1];
+    return pick(row.feesByYear);
+  }
+  const rate = spec.ratesByYear ? pick(spec.ratesByYear) : 0;
+  return Math.round(listPrice * (spec.valueShare ?? 1) * rate * 100) / 100;
+}
+
 /**
  * Pure calculation engine for vehicle tax, tags, and titling costs across US states.
  * Consumes state rules without per-state code branches.
@@ -205,15 +222,17 @@ export function calculateVehicleCosts(
   const registrationYear = vehicleAge + 1;
   const feesByYear = rule.registration.feesByRegistrationYear;
   const listPriceReg = rule.registration.listPriceRegistration;
+  const annualTaxSpec = rule.registration.listPriceAnnualTax;
   let listPriceUsed: number | undefined;
+  const enteredListPrice = Number(inputs.listPrice);
+  const hasEnteredListPrice = Number.isFinite(enteredListPrice) && enteredListPrice > 0;
 
   if (feesByYear) {
     const table = inputs.vehicleType === 'motorcycle' ? feesByYear.motorcycle : feesByYear.passenger;
     const row = table.find((r) => r.maxYear === undefined || registrationYear <= r.maxYear);
     baseRegistrationFee = (row?.fee ?? 0) * term;
   } else if (listPriceReg && inputs.vehicleType === 'passenger') {
-    const entered = Number(inputs.listPrice);
-    listPriceUsed = Number.isFinite(entered) && entered > 0 ? entered : listPriceReg.defaultListPrice;
+    listPriceUsed = hasEnteredListPrice ? enteredListPrice : listPriceReg.defaultListPrice;
     baseRegistrationFee = Math.round(listPriceRegistrationFee(listPriceReg, listPriceUsed, registrationYear) * term * 100) / 100;
   } else if (rule.registration.salePricePlate && inputs.vehicleType === 'passenger') {
     // Louisiana: the plate is a share of the sale price, rounded to the nearest $1,000, $10,000 minimum
@@ -312,8 +331,15 @@ export function calculateVehicleCosts(
     transportationImprovementFee = (tier?.fee ?? 0) * term;
   }
 
+  // Yearly list-price tax paid with the registration (Indiana excise, Colorado specific ownership tax)
+  let annualValueTax = 0;
+  if (annualTaxSpec && inputs.vehicleType === 'passenger') {
+    listPriceUsed = hasEnteredListPrice ? enteredListPrice : annualTaxSpec.defaultListPrice;
+    annualValueTax = Math.round(listPriceAnnualTaxFor(annualTaxSpec, listPriceUsed, registrationYear) * term * 100) / 100;
+  }
+
   const registrationTotal =
-    Math.round((baseRegistrationFee + evSurcharge + vehicleLicenseFee + transportationImprovementFee) * 100) / 100;
+    Math.round((baseRegistrationFee + evSurcharge + vehicleLicenseFee + transportationImprovementFee + annualValueTax) * 100) / 100;
 
   // 5. Local Tax & Total First-Year Out-Of-Pocket Cost
   // A chosen locality (Pennsylvania) fixes the local rate, so the result is one total, not a range
@@ -486,14 +512,17 @@ export function calculateVehicleCosts(
       amount: registrationTotal,
       description:
         [
-          vehicleLicenseFee > 0 || transportationImprovementFee > 0 || evSurcharge > 0
+          vehicleLicenseFee > 0 || transportationImprovementFee > 0 || evSurcharge > 0 || annualValueTax > 0
             ? `Base tag fee ($${baseRegistrationFee.toFixed(2)})`
             : `${rule.label} license plates and tag registration`,
           evSurcharge > 0 ? `EV/PHEV surcharge ($${evSurcharge.toFixed(2)})` : '',
           vehicleLicenseFee > 0
             ? `vehicle license fee ($${vehicleLicenseFee.toFixed(2)}, ${ratePercent(valueFees?.licenseFeeRate ?? 0)}% of price)`
             : '',
-          transportationImprovementFee > 0 ? `transportation improvement fee ($${transportationImprovementFee.toFixed(2)})` : ''
+          transportationImprovementFee > 0 ? `transportation improvement fee ($${transportationImprovementFee.toFixed(2)})` : '',
+          annualValueTax > 0 && annualTaxSpec
+            ? `${annualTaxSpec.label} ($${annualValueTax.toFixed(2)} for a $${(listPriceUsed ?? 0).toLocaleString('en-US')} list price)`
+            : ''
         ]
           .filter(Boolean)
           .join(' + ')
@@ -552,6 +581,7 @@ export function calculateVehicleCosts(
     registrationTotal,
     ...(plateFees ? { initialRegistrationFee, newPlateFee, plateTransferred: !needsNewPlate } : {}),
     ...(listPriceUsed !== undefined ? { listPriceUsed } : {}),
+    ...(annualTaxSpec ? { annualValueTax } : {}),
     totalFirstYearCost,
     totalFirstYearCostMin,
     totalFirstYearCostMax,

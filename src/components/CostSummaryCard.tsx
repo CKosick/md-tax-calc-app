@@ -255,12 +255,14 @@ export function CostSummaryCard({
                   Base license plates &amp; tags
                   {rule.registration.passengerWeightChart && inputs?.vehicleType === 'passenger' &&
                     ` for ${(inputs.vehicleWeight || rule.registration.passengerWeightChart.defaultWeightLbs).toLocaleString('en-US')} lbs`}
-                  {breakdown.listPriceUsed !== undefined && ` for a ${formatCurrency(breakdown.listPriceUsed)} list price`}
+                  {breakdown.listPriceUsed !== undefined && !rule.registration.listPriceAnnualTax && ` for a ${formatCurrency(breakdown.listPriceUsed)} list price`}
                   {breakdown.evSurcharge > 0 && ` + ${formatCurrency(breakdown.evSurcharge)} EV surcharge`}
                   {(breakdown.vehicleLicenseFee ?? 0) > 0 &&
                     ` + ${formatCurrency(breakdown.vehicleLicenseFee ?? 0)} vehicle license fee (0.65% of price)`}
                   {(breakdown.transportationImprovementFee ?? 0) > 0 &&
                     ` + ${formatCurrency(breakdown.transportationImprovementFee ?? 0)} transportation improvement fee`}
+                  {(breakdown.annualValueTax ?? 0) > 0 && rule.registration.listPriceAnnualTax &&
+                    ` + ${formatCurrency(breakdown.annualValueTax ?? 0)} ${rule.registration.listPriceAnnualTax.label} for a ${formatCurrency(breakdown.listPriceUsed ?? 0)} list price`}
                 </p>
               </div>
               <span className="flex-shrink-0 font-bold text-slate-900 dark:text-white">

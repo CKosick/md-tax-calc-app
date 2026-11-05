@@ -45,15 +45,17 @@ describe('Massachusetts re-check', () => {
 });
 
 describe('Indiana re-check', () => {
-  it('7%, $15 title, $36.35 registration with the TIIF, motorcycle $41.35, EV $242 and hybrid $81', () => {
+  it('7%, $15 title, $36.35 registration with the TIIF plus the $91 excise tax, motorcycle $41.35, EV $242 and hybrid $81', () => {
     const b = calc(ind);
     expect(b.exciseTax).toBe(1050);
     expect(b.titleFee).toBe(15);
-    expect(b.registrationTotal).toBe(36.35);
-    expect(b.totalFirstYearCost).toBe(1101.35);
+    expect(b.baseRegistrationFee).toBe(36.35);
+    expect(b.annualValueTax).toBe(91); // class 15 ($30,000 default list price), age 7
+    expect(b.registrationTotal).toBe(127.35);
+    expect(b.totalFirstYearCost).toBe(1192.35);
     expect(calc(ind, { vehicleType: 'motorcycle' }).registrationTotal).toBe(41.35);
-    expect(calc(ind, { fuelType: 'ev' }).registrationTotal).toBe(278.35);
-    expect(calc(ind, { fuelType: 'phev' }).registrationTotal).toBe(117.35);
+    expect(calc(ind, { fuelType: 'ev' }).registrationTotal).toBe(369.35);
+    expect(calc(ind, { fuelType: 'phev' }).registrationTotal).toBe(208.35);
   });
 
   it('copy covers the 45-day and 60-day deadlines, ST-108E exemptions, and the excise tax', () => {

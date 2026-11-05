@@ -2086,19 +2086,279 @@
         "1": 41.35
       },
       "evSurchargeAnnual": 242,
-      "phevSurchargeAnnual": 81
+      "phevSurchargeAnnual": 81,
+      "listPriceAnnualTax": {
+        "label": "Indiana vehicle excise tax",
+        "defaultListPrice": 30000,
+        "classTable": [
+          {
+            "maxPrice": 1499.99,
+            "feesByYear": [
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "maxPrice": 2249.99,
+            "feesByYear": [
+              36,
+              30,
+              27,
+              24,
+              18,
+              12,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "maxPrice": 2999.99,
+            "feesByYear": [
+              50,
+              50,
+              42,
+              33,
+              24,
+              18,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "maxPrice": 3999.99,
+            "feesByYear": [
+              50,
+              50,
+              50,
+              50,
+              48,
+              36,
+              24,
+              18,
+              12,
+              12
+            ]
+          },
+          {
+            "maxPrice": 5499.99,
+            "feesByYear": [
+              66,
+              57,
+              50,
+              50,
+              50,
+              50,
+              42,
+              24,
+              12,
+              12
+            ]
+          },
+          {
+            "maxPrice": 6999.99,
+            "feesByYear": [
+              84,
+              74,
+              63,
+              52,
+              50,
+              50,
+              49,
+              30,
+              18,
+              12
+            ]
+          },
+          {
+            "maxPrice": 8499.99,
+            "feesByYear": [
+              103,
+              92,
+              77,
+              64,
+              52,
+              50,
+              50,
+              40,
+              21,
+              12
+            ]
+          },
+          {
+            "maxPrice": 9999.99,
+            "feesByYear": [
+              123,
+              110,
+              93,
+              78,
+              64,
+              50,
+              50,
+              50,
+              34,
+              12
+            ]
+          },
+          {
+            "maxPrice": 12499.99,
+            "feesByYear": [
+              150,
+              134,
+              115,
+              98,
+              82,
+              65,
+              52,
+              50,
+              40,
+              12
+            ]
+          },
+          {
+            "maxPrice": 14999.99,
+            "feesByYear": [
+              172,
+              149,
+              130,
+              112,
+              96,
+              79,
+              65,
+              53,
+              50,
+              12
+            ]
+          },
+          {
+            "maxPrice": 17999.99,
+            "feesByYear": [
+              207,
+              179,
+              156,
+              135,
+              115,
+              94,
+              78,
+              64,
+              50,
+              21
+            ]
+          },
+          {
+            "maxPrice": 21999.99,
+            "feesByYear": [
+              250,
+              217,
+              189,
+              163,
+              139,
+              114,
+              94,
+              65,
+              50,
+              26
+            ]
+          },
+          {
+            "maxPrice": 24999.99,
+            "feesByYear": [
+              300,
+              260,
+              225,
+              184,
+              150,
+              121,
+              96,
+              65,
+              50,
+              30
+            ]
+          },
+          {
+            "maxPrice": 29999.99,
+            "feesByYear": [
+              350,
+              304,
+              265,
+              228,
+              195,
+              160,
+              132,
+              91,
+              50,
+              36
+            ]
+          },
+          {
+            "maxPrice": 34999.99,
+            "feesByYear": [
+              406,
+              353,
+              307,
+              257,
+              210,
+              169,
+              134,
+              91,
+              50,
+              42
+            ]
+          },
+          {
+            "maxPrice": 42499.99,
+            "feesByYear": [
+              469,
+              407,
+              355,
+              306,
+              261,
+              214,
+              177,
+              129,
+              63,
+              49
+            ]
+          },
+          {
+            "feesByYear": [
+              532,
+              461,
+              398,
+              347,
+              296,
+              242,
+              192,
+              129,
+              63,
+              50
+            ]
+          }
+        ]
+      }
     },
-    "localTaxNote": "Indiana has no local sales tax on vehicles. The BMV collects a yearly vehicle excise tax with registration, set by the original retail price and the vehicle’s age, and some counties and cities add their own vehicle excise or wheel tax. These are not included here.",
+    "localTaxNote": "Indiana has no local sales tax on vehicles. The BMV collects a yearly vehicle excise tax with registration, set by the original retail price and the vehicle’s age; the estimate includes it. Some counties and cities add their own vehicle excise or wheel tax, which is not included.",
     "notes": [
       "A private sale is taxed at 7% of the purchase price. You pay it at a BMV branch when you apply for the title.",
       "The title is $15, with a $30 penalty if you apply more than 45 days after the purchase.",
       "Passenger registration is $21.35 plus the $15 Transportation Infrastructure Improvement Fee, $36.35 a year. A motorcycle is $26.35 plus the $15 fee.",
       "Electric vehicles add a $242 supplemental fee and hybrids $81.",
-      "The yearly vehicle excise tax depends on the vehicle’s class (its original retail price) and age, from $12 to $532 for a passenger vehicle."
+      "The yearly vehicle excise tax depends on the vehicle’s class (its original retail price) and age, from $12 to $532 for a passenger vehicle. The estimate includes a full year of it from the list price you enter ($30,000 if blank). Registering partway through your registration year, or a credit for excise paid on a vehicle you sold, can change the amount due (IC 6-6-5-7.2)."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with the Indiana BMV or Department of Revenue.",
-      "The yearly vehicle excise tax and any county or municipal vehicle tax are not included. The BMV’s Quick Quote tool estimates them.",
+      "County and municipal vehicle excise and wheel taxes are not included, and motorcycles are shown without the excise tax. The BMV’s Quick Quote tool gives your exact total.",
       "Registration shown is the BMV fee chart revised January 1, 2026."
     ],
     "faqs": [
@@ -2108,11 +2368,11 @@
       },
       {
         "question": "How much does it cost to title and register a car in Indiana?",
-        "answer": "The title is $15. Passenger registration is $21.35 plus the $15 Transportation Infrastructure Improvement Fee. Electric vehicles add $242 and hybrids $81. You also pay the yearly vehicle excise tax and any county or city vehicle tax."
+        "answer": "The title is $15. Passenger registration is $21.35 plus the $15 Transportation Infrastructure Improvement Fee. Electric vehicles add $242 and hybrids $81. You also pay the yearly vehicle excise tax, which the estimate includes, and any county or city vehicle tax, which it does not."
       },
       {
         "question": "What is the Indiana vehicle excise tax?",
-        "answer": "It is a yearly tax paid with registration. The amount comes from a table by the vehicle’s class, set by its original retail price, and its age, from $12 up to $532 for a passenger vehicle."
+        "answer": "It is a yearly tax paid with registration. The amount comes from a table by the vehicle’s class, set by its original retail price, and its age, from $12 up to $532 for a passenger vehicle. The calculator includes a full year of it for passenger vehicles, from the list price you enter."
       },
       {
         "question": "I am moving to Indiana. Do I pay sales tax on my car?",
@@ -2345,6 +2605,22 @@
             "fee": 37.19
           }
         ]
+      },
+      "listPriceAnnualTax": {
+        "label": "Colorado specific ownership tax",
+        "defaultListPrice": 30000,
+        "valueShare": 0.85,
+        "ratesByYear": [
+          0.021,
+          0.015,
+          0.012,
+          0.009,
+          0.0045
+        ],
+        "flatFromYear": {
+          "year": 10,
+          "fee": 3
+        }
       }
     },
     "localTaxNote": "Colorado adds the local sales or use taxes of the city, county, and special districts (such as RTD) that apply to the sale or where you register the car. On the July 2026 DR 1002 rate list, they total 0% to 8.3%: none in a county without a sales tax outside any city or district, up to Winter Park’s 7% city tax plus Grand County’s 1.3%. Look up your address with the Colorado Sales Tax Lookup Tool.",
@@ -2353,12 +2629,12 @@
       "The title transfer fee is $7.20. A lender adding a lien pays $40 in lien filing fees.",
       "Registration shown is the statewide fees for a car between 2,001 and 5,000 lbs, with the weight-based base fee (C.R.S. 42-3-306) figured at 3,500 lbs: the road safety ($19.30) and bridge ($18) surcharges, the clerk, emergency medical, emissions, insurance database, and peace officer training fees, the year tab, and the age fee ($12 under 7 years, $10 from 7 to 9, $7 at 10 and older).",
       "Plug-in electric vehicles pay a $63.05 road usage fee, plus the electric motor vehicle road usage fee of $26 ($13 for plug-in hybrids) from July 1, 2026 to June 30, 2027.",
-      "The yearly specific ownership tax is figured from 85% of the original MSRP: 2.1% in the first year, then 1.5%, 1.2%, 0.9%, 0.45% for years five through nine, and $3 from the tenth year."
+      "The yearly specific ownership tax is figured from 85% of the original MSRP: 2.1% in the first year, then 1.5%, 1.2%, 0.9%, 0.45% for years five through nine, and $3 from the tenth year. The estimate includes it for passenger vehicles from the MSRP you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with your county motor vehicle office or the Colorado Department of Revenue.",
       "The local range is from the July 2026 DR 1002 and changes each January 1 and July 1. Home-rule cities collect their own tax and DR 1002 suggests confirming their rates with the city.",
-      "The specific ownership tax, county fees, emissions-area fee, and license plate materials are not included. The DMV’s registration fee estimator gives your total.",
+      "County fees, the emissions-area fee, and license plate materials are not included, and motorcycles are shown without the specific ownership tax. The DMV’s registration fee estimator gives your total.",
       "Whether plug-in hybrids pay the $63.05 road usage fee is not spelled out on the DMV page; the estimate includes it."
     ],
     "faqs": [
@@ -2376,7 +2652,7 @@
       },
       {
         "question": "What is the Colorado specific ownership tax?",
-        "answer": "It is a yearly tax paid with registration, in place of property tax. It is figured from 85% of the original MSRP: 2.1% in the first year, 1.5% in the second, 1.2% in the third, 0.9% in the fourth, 0.45% in years five through nine, and $3 from the tenth year."
+        "answer": "It is a yearly tax paid with registration, in place of property tax. It is figured from 85% of the original MSRP: 2.1% in the first year, 1.5% in the second, 1.2% in the third, 0.9% in the fourth, 0.45% in years five through nine, and $3 from the tenth year. The calculator includes it for passenger vehicles from the MSRP you enter."
       },
       {
         "question": "I am moving to Colorado. Do I pay sales tax on my car?",
