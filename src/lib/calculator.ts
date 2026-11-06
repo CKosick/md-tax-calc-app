@@ -475,16 +475,17 @@ export function calculateVehicleCosts(
   // 3. Lien filing fee
   // 4. Registration/tag fee
   // 5. Total first-year cost
+  const taxLineName = rule.taxLineName ?? 'Sales / Excise Tax';
   const itemizedList = [
     {
       id: 'excise-tax',
       label: locality
-        ? `Vehicle Sales / Excise Tax (${Number(((effectiveRate + locality.localRate) * 100).toFixed(3))}% in ${locality.label})`
+        ? `Vehicle ${taxLineName} (${Number(((effectiveRate + locality.localRate) * 100).toFixed(3))}% in ${locality.label})`
         : hasLocalTax
-        ? `Vehicle Sales / Excise Tax (${rateLabel} State + Local Range)`
+        ? `Vehicle ${taxLineName} (${rateLabel} State + Local Range)`
         : rule.flatTaxTable
         ? `${rule.label} Vehicle Use Tax (Form RUT-50 Table)`
-        : `Vehicle Sales / Excise Tax (${rateLabel})`,
+        : `Vehicle ${taxLineName} (${rateLabel})`,
       amount: exciseTax,
       amountMax: combinedTaxMax,
       amountRangeFormatted: hasLocalTax && combinedTaxMin !== undefined && combinedTaxMax !== undefined

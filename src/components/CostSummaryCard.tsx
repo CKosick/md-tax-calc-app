@@ -158,7 +158,7 @@ export function CostSummaryCard({
             </button>
           </div>
           <p className="mt-2 text-xs text-slate-300">
-            {rule.label === 'Delaware' ? 'Document Fee' : 'Sales/Excise Tax'}
+            {rule.label === 'Delaware' ? 'Document Fee' : rule.taxLineName ?? 'Sales/Excise Tax'}
             {breakdown.hasLocalTax ? ' (State + Local Range)' : ''} + Title Certificate + Tags &amp; Registration {breakdown.lienFilingFee > 0 ? '+ Lien Fee' : ''}
             {(breakdown.initialRegistrationFee ?? 0) > 0 ? ' + Initial Registration' : ''}
             {(breakdown.newPlateFee ?? 0) > 0 ? ' + Plate Fee' : ''}
@@ -181,7 +181,7 @@ export function CostSummaryCard({
                     1
                   </span>
                   <span className="font-semibold text-slate-800 dark:text-slate-200">
-                    {breakdown.itemizedList[0]?.label || (rule.label === 'Delaware' ? `Document Fee (${rateLabel})` : `Vehicle Sales / Excise Tax (${rateLabel})`)}
+                    {breakdown.itemizedList[0]?.label || (rule.label === 'Delaware' ? `Document Fee (${rateLabel})` : `Vehicle ${rule.taxLineName ?? 'Sales / Excise Tax'} (${rateLabel})`)}
                   </span>
                 </div>
                 <p className="mt-0.5 pl-6.5 text-xs text-slate-500 dark:text-slate-400">

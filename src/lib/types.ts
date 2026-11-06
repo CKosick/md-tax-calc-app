@@ -150,6 +150,11 @@ export interface PriceTier {
 export interface StateRule {
   label: string;
   slug: string;
+  /**
+   * Name of the tax on the sale in the results, when the default "Sales / Excise Tax" would mislead
+   * (Indiana: the vehicle excise tax is a separate yearly charge, so this line is "Sales Tax").
+   */
+  taxLineName?: string;
   exciseTaxRate: number;
   minExciseTax?: number | null;
   maxExciseTax?: number | null;

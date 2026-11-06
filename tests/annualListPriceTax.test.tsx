@@ -97,6 +97,28 @@ describe('List price input and sharing', () => {
   });
 });
 
+describe('Tax line name', () => {
+  it('Indiana calls the tax on the sale a sales tax, so it cannot be read as the vehicle excise tax', () => {
+    expect(calc(ind).itemizedList[0].label).toBe('Vehicle Sales Tax (7%)');
+    const { container } = render(<Calculator initialRule={ind} />);
+    fireEvent.change(container.querySelector('#list-price-input') as HTMLInputElement, { target: { value: '40000' } });
+    const text = container.querySelector('#calculator-results')?.textContent ?? '';
+    expect(text).toContain('Vehicle Sales Tax (7%)');
+    expect(text).toContain('Sales Tax + Title Certificate');
+    expect(text).not.toContain('Sales/Excise');
+    expect(text).not.toContain('Sales / Excise');
+    expect(text).toContain('Indiana vehicle excise tax');
+    expect(container.textContent).toContain('Accurately accounts for 7% sales tax,');
+    expect(container.textContent).not.toContain('excise/sales tax');
+  });
+
+  it('other states keep the default name', () => {
+    expect(calc(co).itemizedList[0].label).toContain('Vehicle Sales / Excise Tax');
+    const named = Object.entries(rules).filter(([, r]) => r.taxLineName).map(([k]) => k);
+    expect(named).toEqual(['indiana']);
+  });
+});
+
 describe('Copy matches the estimate', () => {
   it('Indiana and Colorado no longer say the yearly tax is left out', () => {
     expect(copy(ind)).not.toMatch(/yearly vehicle excise tax and any county or municipal vehicle tax are not included/);

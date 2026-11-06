@@ -120,7 +120,7 @@ function CalculatorView({
     ? 'document fee'
     : initialRule.label === 'Virginia'
     ? 'SUT (Sales and Use Tax)'
-    : 'excise/sales tax';
+    : initialRule.taxLineName?.toLowerCase() ?? 'excise/sales tax';
 
   const rateFormatted = ratePercent(initialRule.exciseTaxRate);
   const taxPhrase = initialRule.flatTaxTable

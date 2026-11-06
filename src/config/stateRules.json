@@ -2065,6 +2065,7 @@
   "indiana": {
     "label": "Indiana",
     "slug": "indiana-private-sale-tax-calculator",
+    "taxLineName": "Sales Tax",
     "exciseTaxRate": 0.07,
     "taxBase": "price",
     "titleFee": 15,
