@@ -1,5 +1,10 @@
 # All-state annual-tax check, 2026-11-05 (report only, for Cliff's ruling)
 
+**Corrections made during the six-state build:**
+- Problem 2 below is wrong that Iowa's copy omits the value-based fee. A note and an FAQ described it. The $50 figure was still the problem.
+- The pending bills are settled: Wyoming's 2026 session laws do not change the county fee rates, and Nebraska LB714 was indefinitely postponed. Idaho H0533 is still unchecked.
+- Iowa's figure depends on how model years are counted; see `annual-tax-six-states-notes-2026-11-05.md`.
+
 The question, from Cliff's annual-tax ruling: which states collect a value-based tax at registration from a published table or rate? No calculator changes for any new state come from this report.
 
 **Result across 51 jurisdictions**
