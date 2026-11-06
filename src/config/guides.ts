@@ -4944,7 +4944,7 @@ export const GUIDES: Guide[] = [
       'Payment for the use tax, title, tabs, and plates'
     ],
     calculatorNote:
-      'The calculator applies the state and local rates to the price you enter and adds the title, tabs, and new plates. If the price is more than 20% below fair market value, Washington may tax the higher value. Regional transit and other local registration fees are not included.',
+      'The calculator applies the state and local rates to the price you enter and adds the title, tabs, and new plates. If the price is more than 20% below fair market value, Washington may tax the higher value. The regional transit authority excise tax in the Sound Transit district and other local registration fees are not included.',
     faqs: [
       {
         question: 'Do I need a notary to title a car in Washington?',
@@ -5090,7 +5090,7 @@ export const GUIDES: Guide[] = [
       'Payment for the title, tabs, and plates'
     ],
     calculatorNote:
-      'If your car is exempt as one you owned more than 90 days before moving, enter $0 as the price to see the title, tabs, and plates. Regional transit and other local fees are not included.',
+      'If your car is exempt as one you owned more than 90 days before moving, enter $0 as the price to see the title, tabs, and plates. The regional transit authority excise tax in the Sound Transit district and other local fees are not included.',
     faqs: [
       {
         question: 'How long do I have after moving to Washington?',
