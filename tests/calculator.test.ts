@@ -695,20 +695,20 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     tradeInValue: 0
   };
 
-  it('1. Iowa (IA) worked invariant: $15,000 purchase price yields $750.00 tax and $835.00 total', () => {
+  it('1. Iowa (IA) worked invariant: $15,000 purchase price yields $750.00 tax and $1,099.00 total', () => {
     const res = calculateVehicleCosts(allRules.iowa, { ...std1Yr, state: 'iowa' }, 2026);
     expect(res.exciseTax).toBe(750.00);
     expect(res.titleFee).toBe(35.00);
-    expect(res.registrationTotal).toBe(50.00);
-    expect(res.totalFirstYearCost).toBe(835.00);
+    expect(res.registrationTotal).toBe(314.00); // 1% of the $30,000 default list price + $14 weight part
+    expect(res.totalFirstYearCost).toBe(1099.00);
   });
 
-  it('2. Nevada (NV) worked invariant: $15,000 purchase price yields $0.00 tax (NRS 372.320 exempt) and $61.25 total', () => {
+  it('2. Nevada (NV) worked invariant: $15,000 purchase price yields $0.00 tax (NRS 372.320 exempt) and $208.25 total', () => {
     const res = calculateVehicleCosts(allRules.nevada, { ...std1Yr, state: 'nevada' }, 2026);
     expect(res.exciseTax).toBe(0.00);
     expect(res.titleFee).toBe(28.25);
-    expect(res.registrationTotal).toBe(33.00);
-    expect(res.totalFirstYearCost).toBe(61.25);
+    expect(res.registrationTotal).toBe(180.00); // $33 + $147 GST on the $30,000 default MSRP at age 7
+    expect(res.totalFirstYearCost).toBe(208.25);
     const taxItem = res.itemizedList.find(i => i.id === 'excise-tax');
     expect(taxItem?.label).toContain('0%');
     expect(taxItem?.description).toContain('occasional sales are not taxed');
@@ -774,12 +774,12 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     expect(res.totalFirstYearCost).toBe(639.00);
   });
 
-  it('7. Nebraska (NE) worked invariant: $15,000 purchase price yields $825.00 tax (5.5%) and $858.20 total', () => {
+  it('7. Nebraska (NE) worked invariant: $15,000 purchase price yields $825.00 tax (5.5%) and $1,037.20 total', () => {
     const res = calculateVehicleCosts(allRules.nebraska, { ...std1Yr, state: 'nebraska' }, 2026);
     expect(res.exciseTax).toBe(825.00);
     expect(res.titleFee).toBe(10.00);
-    expect(res.registrationTotal).toBe(23.20);
-    expect(res.totalFirstYearCost).toBe(858.20);
+    expect(res.registrationTotal).toBe(202.20); // $23.20 + $165 tax + $14 fee on the $30,000 default, 8th year
+    expect(res.totalFirstYearCost).toBe(1037.20);
   });
 
   it('8. Idaho (ID) worked invariant: $15,000 purchase price yields $900.00 tax and $959.00 total', () => {
@@ -869,22 +869,22 @@ describe('Batch 5 Worked Acceptance Tests (HI, NH, ME, MT, RI, SD, ND, AK, VT, W
     expect(res.totalFirstYearCost).toBe(56.00);
   });
 
-  it('New Hampshire: exact worked test ($15,000 -> $83.00, 0% state sales tax)', () => {
+  it('New Hampshire: exact worked test ($15,000 -> $173.00, 0% state sales tax)', () => {
     const rule = allRules['new-hampshire'];
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'new-hampshire' }, 2026);
     expect(res.exciseTax).toBe(0.00);
     expect(res.titleFee).toBe(35.00);
-    expect(res.registrationTotal).toBe(48.00);
-    expect(res.totalFirstYearCost).toBe(83.00);
+    expect(res.registrationTotal).toBe(138.00); // $48 + $90 permit fee on the $30,000 default
+    expect(res.totalFirstYearCost).toBe(173.00);
   });
 
-  it('Maine: exact worked test ($15,000 -> $893.00, 5.5% tax)', () => {
+  it('Maine: exact worked test ($15,000 -> $1,013.00, 5.5% tax)', () => {
     const rule = allRules.maine;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'maine' }, 2026);
     expect(res.exciseTax).toBe(825.00); // 5.5% of 15000
     expect(res.titleFee).toBe(33.00);
-    expect(res.registrationTotal).toBe(35.00);
-    expect(res.totalFirstYearCost).toBe(893.00);
+    expect(res.registrationTotal).toBe(155.00); // $35 + $120 excise on the $30,000 default
+    expect(res.totalFirstYearCost).toBe(1013.00);
   });
 
   it('Montana: exact worked test ($15,000 -> $99.00, 0% sales tax, $87 age-based 5-10yr reg)', () => {
@@ -941,13 +941,13 @@ describe('Batch 5 Worked Acceptance Tests (HI, NH, ME, MT, RI, SD, ND, AK, VT, W
     expect(res.totalFirstYearCost).toBe(1033.00);
   });
 
-  it('Wyoming: exact worked test ($15,000 -> $645.00, 4.0% state tax)', () => {
+  it('Wyoming: exact worked test ($15,000 -> $780.00, 4.0% state tax)', () => {
     const rule = allRules.wyoming;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'wyoming' }, 2026);
     expect(res.exciseTax).toBe(600.00); // 4.0% of 15000
     expect(res.titleFee).toBe(15.00);
-    expect(res.registrationTotal).toBe(30.00);
-    expect(res.totalFirstYearCost).toBe(645.00);
+    expect(res.registrationTotal).toBe(165.00); // $30 + $135 county fee on the $30,000 default
+    expect(res.totalFirstYearCost).toBe(780.00);
   });
 
   it('Batch 5 trade-in deductibility verification (ME, SD, VT allow; RI, ND, WY do not)', () => {

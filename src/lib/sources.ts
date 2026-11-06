@@ -40,6 +40,11 @@ const STATUTE_LABELS: { host: RegExp; label: (url: URL) => string | undefined }[
   { host: /(^|\.)scstatehouse\.gov$/, label: (u) => cite(u.pathname, /\/code\/t(\d+)c0*(\d+)\.php$/i, (m) => `S.C. Code Title ${Number(m[1])}, Chapter ${m[2]}`) },
   { host: /(^|\.)cga\.ct\.gov$/, label: (u) => cite(u.pathname, /chap_0*(\d+)\.htm$/i, (m) => `Conn. Gen. Stat. Chapter ${m[1]}`) },
   { host: /^delcode\.delaware\.gov$/, label: (u) => cite(u.pathname, /title(\d+)\/c0*(\d+)/i, (m) => `Del. Code Title ${m[1]}, Chapter ${m[2]}`) },
+  { host: /(^|\.)nebraskalegislature\.gov$/, label: (u) => cite(u.searchParams.get('statute'), /^([\d-]+,[\d,]+)$/, (m) => `Neb. Rev. Stat. ${m[1]}`) },
+  { host: /^legislature\.maine\.gov$/, label: (u) => cite(u.pathname, /title(\d+)sec(\d+)\.html$/i, (m) => `${m[1]} M.R.S. ${m[2]}`) },
+  { host: /^law\.lis\.virginia\.gov$/, label: (u) => cite(u.pathname, /section([\d.:-]+)\/?$/i, (m) => `Va. Code ${m[1]}`) },
+  { host: /^mca\.legmt\.gov$/, label: (u) => cite(u.pathname, /\/(0610)-(0030)-(0050)-(0370)\.html$/, () => 'MCA 61-3-537') },
+  { host: /^(www\.)?wyoleg\.gov$/, label: (u) => cite(u.pathname, /compress\/title(\d+)\.pdf$/i, (m) => `Wyo. Stat. Title ${m[1]}`) },
   { host: /^alison\.legislature\.state\.al\.us$/, label: (u) => cite(u.searchParams.get('section'), /^([\d-]+)$/, (m) => `Ala. Code ${m[1]}`) },
   // Kentucky statute links carry only a document id, so the cited ones are listed here
   { host: /^apps\.legislature\.ky\.gov$/, label: (u) => KY_STATUTE_IDS[u.searchParams.get('id') ?? ''] }

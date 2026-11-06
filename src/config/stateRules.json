@@ -136,7 +136,8 @@
       "Estimates only, not tax or legal advice. Verify with the Virginia DMV.",
       "Virginia taxes the gross sales price. Trade-ins do not reduce the Motor Vehicle Sales and Use Tax.",
       "Vehicles under 5 model years old need Form SUT-1A if the sale price is not within $1,500 of the NADA trade-in value.",
-      "A Highway Use Fee may apply in addition to registration. The calculator includes it only for electric vehicles."
+      "A Highway Use Fee may apply in addition to registration. The calculator includes it only for electric vehicles.",
+      "Your county, city, or town can also levy a personal property tax on the vehicle (Va. Code 58.1-3506). It is not included. Ask the commissioner of the revenue where the vehicle is kept."
     ],
     "faqs": [
       {
@@ -173,7 +174,8 @@
       "https://www.dmv.virginia.gov/vehicles/taxes-fees/sut",
       "https://www.dmv.virginia.gov/sites/default/files/forms/dmv201.pdf",
       "https://www.dmv.virginia.gov/vehicles/registration",
-      "https://www.dmv.virginia.gov/vehicles/buy-sell"
+      "https://www.dmv.virginia.gov/vehicles/buy-sell",
+      "https://law.lis.virginia.gov/vacode/title58.1/chapter35/section58.1-3506/"
     ]
   },
   "pennsylvania": {
@@ -1751,6 +1753,10 @@
         "answer": "The title is $39.50 ($15 application, $6.50 filing, and $18 service). Tabs are $82.75 a year for a vehicle up to 4,000 lbs and $112.75 from 4,001 to 6,000 lbs. Plug-in vehicles that go 30 miles or more on battery add $225 at renewal. Local fees, including the regional transit authority tax in the Sound Transit district, are extra."
       },
       {
+        "question": "What is the regional transit authority tax in Washington?",
+        "answer": "If you live in the Sound Transit district, in parts of King, Pierce, and Snohomish counties, the regional transit authority (RTA) excise tax is added to your tabs each year: 1.1% of the MSRP, reduced by a state depreciation schedule as the vehicle ages. It is not in the estimate. Sound Transit’s address tool shows whether you are in the district."
+      },
+      {
         "question": "Do I keep the seller’s license plates in Washington?",
         "answer": "No. A buyer gets new plates at $50 each plus $2 per plate for reflectivity ($104 for a car, $22 for a motorcycle), or moves a plate they already own for $10. The plates can stay on the vehicle when it comes from a spouse or domestic partner, or as a gift or inheritance from a family member."
       },
@@ -1778,7 +1784,8 @@
       "https://dol.wa.gov/vehicles-and-boats/vehicles/vehicle-registration/calculate-vehicle-tab-fees",
       "https://dol.wa.gov/moving-washington/vehicle-registration-and-plates",
       "https://app.leg.wa.gov/RCW/default.aspx?cite=46.17",
-      "https://app.leg.wa.gov/RCW/default.aspx?cite=82.12.0251"
+      "https://app.leg.wa.gov/RCW/default.aspx?cite=82.12.0251",
+      "https://dol.wa.gov/vehicles-and-boats/vehicles/taxes-and-fees/regional-transit-authority-rta-tax"
     ],
     "localTaxMinRate": 0.011,
     "localTaxMaxRate": 0.042
@@ -2441,7 +2448,8 @@
       "Estimates only, not tax or legal advice. Verify with the Missouri Department of Revenue.",
       "The 2026 decal amounts ($150 and $75) are worked out from RSMo 142.869, not a figure the Department of Revenue publishes.",
       "Department of Revenue pages apply the tax to the price less any trade-in allowance, but its rule 12 CSR 10-103.350 says a trade-in allowance applies only to purchases from a dealer. On a private sale, the 180-day sold-vehicle credit is the usual way to lower the tax.",
-      "Local rates change each quarter. The range shown is for October to December 2026."
+      "Local rates change each quarter. The range shown is for October to December 2026.",
+      "County personal property tax is not included. To buy new plates you also need a paid personal property tax receipt or a statement of non-assessment from your county for the prior year."
     ],
     "faqs": [
       {
@@ -3563,29 +3571,54 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 50
+          "1": 14
         },
         "over3700lbs": {
-          "1": 50
+          "1": 14
         }
       },
       "motorcycle": {
         "1": 20
       },
       "evSurchargeAnnual": 130,
-      "phevSurchargeAnnual": 65
+      "phevSurchargeAnnual": 65,
+      "listPriceAnnualTax": {
+        "label": "Iowa value-based registration fee",
+        "defaultListPrice": 30000,
+        "ratesByYear": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.0075,
+          0.0075,
+          0.005,
+          0.005
+        ],
+        "flatFromYear": {
+          "year": 13,
+          "fee": 36
+        },
+        "minAmount": 36,
+        "roundToDollar": true
+      }
     },
     "localTaxNote": "Iowa levies the 5% Fee for New Registration statewide in lieu of retail sales tax; local option sales taxes (LOST) do not apply to motor vehicles.",
     "notes": [
       "Iowa assesses a 5% Fee for New Registration (FNR) on vehicle purchase price under Iowa Code § 321.105A.",
       "Certificate of title fee is $35.00 (increased Jan 1, 2025 from $25.00); lien notation is $20.00.",
       "Private party sales do not qualify for trade-in tax credits in Iowa; full purchase price is taxed.",
-      "Annual registration combines weight and list price depreciation formula with a $50 minimum floor."
+      "Annual registration is 1% of the list price plus 40 cents per 100 lbs (Iowa Code 321.109). The value part drops to 75% after 7 model years and 50% after 9, with a $50 minimum, and the fee is a flat $50 from 12 model years (Iowa Code 321.113). The estimate uses the list price you enter ($30,000 if blank) and an assumed 3,500 lbs, which is $14 of the fee."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Iowa DOT or county treasurer.",
       "Trade-in deductions are not permitted on private-party vehicle sales in Iowa.",
-      "Certificate of title fee is $35.00 effective 2025."
+      "Certificate of title fee is $35.00 effective 2025.",
+      "The weight part of registration assumes 3,500 lbs; every 500 lbs more or less changes the fee by $2. The value part is for passenger vehicles; motorcycles are shown at their $20 fee. The Iowa DOT fee calculator gives the exact amount."
     ],
     "faqs": [
       {
@@ -3602,7 +3635,7 @@
       },
       {
         "question": "How are Iowa annual registration fees determined?",
-        "answer": "Annual registration is calculated based on vehicle weight ($0.40 per 100 lbs) plus a percentage of the original list price that scales down as the car ages, subject to a $50.00 minimum floor for older vehicles."
+        "answer": "Annual registration is 1% of the vehicle’s list price plus $0.40 per 100 lbs. The value part drops to 75% after 7 model years and 50% after 9, with a $50 minimum, and the fee is a flat $50 once the vehicle is 12 model years old. The calculator figures it from the list price you enter."
       },
       {
         "question": "Do I pay Iowa vehicle tax if I buy a car from an out-of-state private seller?",
@@ -3620,7 +3653,9 @@
     "lastVerified": "September 2026",
     "sources": [
       "https://iowadot.gov/mvd/buyingselling/registering-a-vehicle",
-      "https://iowatreasurers.org"
+      "https://iowatreasurers.org",
+      "https://www.legis.iowa.gov/docs/code/321.109.pdf",
+      "https://www.legis.iowa.gov/docs/code/2026/321.pdf"
     ]
   },
   "nevada": {
@@ -3647,19 +3682,37 @@
         "1": 33
       },
       "evSurchargeAnnual": 125,
-      "phevSurchargeAnnual": 75
+      "phevSurchargeAnnual": 75,
+      "listPriceAnnualTax": {
+        "label": "Nevada Governmental Services Tax",
+        "defaultListPrice": 30000,
+        "valueShare": 0.35,
+        "ratesByYear": [
+          0.04,
+          0.038,
+          0.034,
+          0.03,
+          0.026,
+          0.022,
+          0.018,
+          0.014,
+          0.01,
+          0.006
+        ],
+        "minAmount": 16
+      }
     },
-    "localTaxNote": "Private party vehicle sales in Nevada are 100% exempt from sales and use tax under NRS 372.320 ('occasional sale' exemption). However, an annual Governmental Services Tax (GST) based on the vehicle's depreciated original MSRP is collected upon registration.",
+    "localTaxNote": "Private party vehicle sales in Nevada are 100% exempt from sales and use tax under NRS 372.320 ('occasional sale' exemption). However, an annual Governmental Services Tax (GST) based on the vehicle's depreciated original MSRP is collected upon registration. The estimate includes it.",
     "notes": [
       "Nevada exempts private party vehicle sales from sales and use tax under NRS 372.320 ('occasional sale' exemption).",
       "Certificate of title fee is $28.25 under Nevada DMV fee schedule.",
       "Base registration tag fee is $33.00 for passenger vehicles.",
-      "Nevada collects an annual Governmental Services Tax (GST) based on 35% of the vehicle's original MSRP depreciated by age."
+      "Nevada collects an annual Governmental Services Tax (GST): 4% of a value set at 35% of the original MSRP. That value drops with age to 95%, 85%, 75%, 65%, 55%, 45%, 35%, 25%, then 15%, and the minimum tax is $16 (NRS 371.040 to 371.060). The estimate includes it for passenger vehicles from the MSRP you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Nevada DMV.",
       "Private party vehicle sales are exempt from Nevada sales tax under NRS 372.320.",
-      "Registration includes an annual Governmental Services Tax (GST) calculated from the vehicle's original MSRP and age."
+      "The estimate includes a full year of the basic GST for passenger vehicles. The 1% Supplemental GST in Clark and Churchill counties is not included, and motorcycles are shown without the GST. The DMV’s fee calculator gives your total."
     ],
     "faqs": [
       {
@@ -3668,11 +3721,11 @@
       },
       {
         "question": "What fees do I pay when buying a car privately in Nevada?",
-        "answer": "While exempt from sales tax, you must pay a $28.25 certificate of title fee, a $33.00 base passenger registration fee, and the annual Governmental Services Tax (GST) based on the vehicle's depreciated original MSRP."
+        "answer": "While exempt from sales tax, you must pay a $28.25 certificate of title fee, a $33.00 base passenger registration fee, and the annual Governmental Services Tax (GST) based on the vehicle's depreciated original MSRP. The estimate includes the GST for passenger vehicles."
       },
       {
         "question": "How is the Nevada Governmental Services Tax (GST) calculated?",
-        "answer": "The GST is calculated by taking 35% of the vehicle's original Manufacturer's Suggested Retail Price (MSRP), applying an annual depreciation percentage based on age, and multiplying by the 4% state GST rate (plus 1% optional supplemental county GST in Clark and Washoe counties)."
+        "answer": "The GST is calculated by taking 35% of the vehicle's original Manufacturer's Suggested Retail Price (MSRP), applying an annual depreciation percentage based on age, and multiplying by the 4% GST rate. Clark and Churchill counties add a 1% Supplemental GST on the same value, which the estimate does not include."
       },
       {
         "question": "Do trade-in credits apply to private car sales in Nevada?",
@@ -3680,11 +3733,11 @@
       },
       {
         "question": "Do I pay Nevada vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "Because Nevada does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Nevada. Standard certificate of title fees and registration tag fees still apply upon titling."
+        "answer": "Because Nevada does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Nevada. Standard certificate of title fees and registration tag fees still apply upon titling. The yearly Governmental Services Tax also applies at registration."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Nevada?",
-        "answer": "In Nevada, private vehicle transfers are not subject to a statewide vehicle sales tax. When transferring title between family members, you only pay standard title transfer fees and registration charges."
+        "answer": "In Nevada, private vehicle transfers are not subject to a statewide vehicle sales tax. When transferring title between family members, you only pay standard title transfer fees and registration charges. The yearly Governmental Services Tax also applies at registration."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Nevada?",
@@ -3694,7 +3747,9 @@
     "lastVerified": "September 2026",
     "sources": [
       "https://dmv.nv.gov/fees.htm",
-      "https://tax.nv.gov"
+      "https://tax.nv.gov",
+      "https://dmv.nv.gov/regfees.htm",
+      "https://www.leg.state.nv.us/nrs/nrs-371.html"
     ]
   },
   "arkansas": {
@@ -4061,21 +4116,976 @@
       "motorcycle": {
         "1": 14.2
       },
-      "evSurchargeAnnual": 150
+      "evSurchargeAnnual": 150,
+      "listPriceAnnualTax": {
+        "label": "Nebraska motor vehicle tax and fee",
+        "defaultListPrice": 30000,
+        "classTable": [
+          {
+            "maxPrice": 3999.99,
+            "feesByYear": [
+              30,
+              27.5,
+              25,
+              22.5,
+              20,
+              17.75,
+              15.5,
+              13.25,
+              11,
+              8.75,
+              8.75,
+              6.75,
+              6.75,
+              5
+            ]
+          },
+          {
+            "maxPrice": 5999.99,
+            "feesByYear": [
+              40,
+              36.5,
+              33,
+              29.5,
+              26,
+              22.85,
+              19.7,
+              16.55,
+              13.4,
+              10.25,
+              10.25,
+              7.45,
+              7.45,
+              5
+            ]
+          },
+          {
+            "maxPrice": 7999.99,
+            "feesByYear": [
+              50,
+              45.5,
+              41,
+              36.5,
+              32,
+              27.95,
+              23.9,
+              19.85,
+              15.8,
+              11.75,
+              11.75,
+              8.15,
+              8.15,
+              5
+            ]
+          },
+          {
+            "maxPrice": 9999.99,
+            "feesByYear": [
+              65,
+              59,
+              53,
+              47,
+              41,
+              35.6,
+              30.2,
+              24.8,
+              19.4,
+              14,
+              14,
+              9.2,
+              9.2,
+              5
+            ]
+          },
+          {
+            "maxPrice": 11999.99,
+            "feesByYear": [
+              105,
+              95,
+              85,
+              75,
+              65,
+              56,
+              47,
+              38,
+              29,
+              20,
+              20,
+              12,
+              12,
+              5
+            ]
+          },
+          {
+            "maxPrice": 13999.99,
+            "feesByYear": [
+              145,
+              131,
+              117,
+              103,
+              89,
+              76.4,
+              63.8,
+              51.2,
+              38.6,
+              26,
+              26,
+              14.8,
+              14.8,
+              5
+            ]
+          },
+          {
+            "maxPrice": 15999.99,
+            "feesByYear": [
+              185,
+              167,
+              149,
+              131,
+              113,
+              96.8,
+              80.6,
+              64.4,
+              48.2,
+              32,
+              32,
+              17.6,
+              17.6,
+              5
+            ]
+          },
+          {
+            "maxPrice": 17999.99,
+            "feesByYear": [
+              225,
+              203,
+              181,
+              159,
+              137,
+              117.2,
+              97.4,
+              77.6,
+              57.8,
+              38,
+              38,
+              20.4,
+              20.4,
+              5
+            ]
+          },
+          {
+            "maxPrice": 19999.99,
+            "feesByYear": [
+              265,
+              239,
+              213,
+              187,
+              161,
+              137.6,
+              114.2,
+              90.8,
+              67.4,
+              44,
+              44,
+              23.2,
+              23.2,
+              5
+            ]
+          },
+          {
+            "maxPrice": 21999.99,
+            "feesByYear": [
+              320,
+              290,
+              260,
+              230,
+              200,
+              167,
+              140,
+              113,
+              86,
+              59,
+              52,
+              28,
+              28,
+              7
+            ]
+          },
+          {
+            "maxPrice": 23999.99,
+            "feesByYear": [
+              360,
+              326,
+              292,
+              258,
+              224,
+              187.4,
+              156.8,
+              126.2,
+              95.6,
+              65,
+              58,
+              30.8,
+              30.8,
+              7
+            ]
+          },
+          {
+            "maxPrice": 25999.99,
+            "feesByYear": [
+              400,
+              362,
+              324,
+              286,
+              248,
+              207.8,
+              173.6,
+              139.4,
+              105.2,
+              71,
+              64,
+              33.6,
+              33.6,
+              7
+            ]
+          },
+          {
+            "maxPrice": 27999.99,
+            "feesByYear": [
+              440,
+              398,
+              356,
+              314,
+              272,
+              228.2,
+              190.4,
+              152.6,
+              114.8,
+              77,
+              70,
+              36.4,
+              36.4,
+              7
+            ]
+          },
+          {
+            "maxPrice": 29999.99,
+            "feesByYear": [
+              480,
+              434,
+              388,
+              342,
+              296,
+              248.6,
+              207.2,
+              165.8,
+              124.4,
+              83,
+              76,
+              39.2,
+              39.2,
+              7
+            ]
+          },
+          {
+            "maxPrice": 31999.99,
+            "feesByYear": [
+              520,
+              470,
+              420,
+              370,
+              320,
+              269,
+              224,
+              179,
+              134,
+              89,
+              82,
+              42,
+              42,
+              7
+            ]
+          },
+          {
+            "maxPrice": 33999.99,
+            "feesByYear": [
+              560,
+              506,
+              452,
+              398,
+              344,
+              289.4,
+              240.8,
+              192.2,
+              143.6,
+              95,
+              88,
+              44.8,
+              44.8,
+              7
+            ]
+          },
+          {
+            "maxPrice": 35999.99,
+            "feesByYear": [
+              600,
+              542,
+              484,
+              426,
+              368,
+              309.8,
+              257.6,
+              205.4,
+              153.2,
+              101,
+              94,
+              47.6,
+              47.6,
+              7
+            ]
+          },
+          {
+            "maxPrice": 37999.99,
+            "feesByYear": [
+              640,
+              578,
+              516,
+              454,
+              392,
+              330.2,
+              274.4,
+              218.6,
+              162.8,
+              107,
+              100,
+              50.4,
+              50.4,
+              7
+            ]
+          },
+          {
+            "maxPrice": 39999.99,
+            "feesByYear": [
+              680,
+              614,
+              548,
+              482,
+              416,
+              350.6,
+              291.2,
+              231.8,
+              172.4,
+              113,
+              106,
+              53.2,
+              53.2,
+              7
+            ]
+          },
+          {
+            "maxPrice": 41999.99,
+            "feesByYear": [
+              730,
+              660,
+              590,
+              520,
+              450,
+              378,
+              315,
+              252,
+              189,
+              126,
+              115.5,
+              59.5,
+              59.5,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 43999.99,
+            "feesByYear": [
+              770,
+              696,
+              622,
+              548,
+              474,
+              398.4,
+              331.8,
+              265.2,
+              198.6,
+              132,
+              121.5,
+              62.3,
+              62.3,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 45999.99,
+            "feesByYear": [
+              810,
+              732,
+              654,
+              576,
+              498,
+              418.8,
+              348.6,
+              278.4,
+              208.2,
+              138,
+              127.5,
+              65.1,
+              65.1,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 47999.99,
+            "feesByYear": [
+              850,
+              768,
+              686,
+              604,
+              522,
+              439.2,
+              365.4,
+              291.6,
+              217.8,
+              144,
+              133.5,
+              67.9,
+              67.9,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 49999.99,
+            "feesByYear": [
+              890,
+              804,
+              718,
+              632,
+              546,
+              459.6,
+              382.2,
+              304.8,
+              227.4,
+              150,
+              139.5,
+              70.7,
+              70.7,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 51999.99,
+            "feesByYear": [
+              930,
+              840,
+              750,
+              660,
+              570,
+              480,
+              399,
+              318,
+              237,
+              156,
+              145.5,
+              73.5,
+              73.5,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 53999.99,
+            "feesByYear": [
+              970,
+              876,
+              782,
+              688,
+              594,
+              500.4,
+              415.8,
+              331.2,
+              246.6,
+              162,
+              151.5,
+              76.3,
+              76.3,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 55999.99,
+            "feesByYear": [
+              1010,
+              912,
+              814,
+              716,
+              618,
+              520.8,
+              432.6,
+              344.4,
+              256.2,
+              168,
+              157.5,
+              79.1,
+              79.1,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 57999.99,
+            "feesByYear": [
+              1050,
+              948,
+              846,
+              744,
+              642,
+              541.2,
+              449.4,
+              357.6,
+              265.8,
+              174,
+              163.5,
+              81.9,
+              81.9,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 59999.99,
+            "feesByYear": [
+              1090,
+              984,
+              878,
+              772,
+              666,
+              561.6,
+              466.2,
+              370.8,
+              275.4,
+              180,
+              169.5,
+              84.7,
+              84.7,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 61999.99,
+            "feesByYear": [
+              1130,
+              1020,
+              910,
+              800,
+              690,
+              582,
+              483,
+              384,
+              285,
+              186,
+              175.5,
+              87.5,
+              87.5,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 63999.99,
+            "feesByYear": [
+              1170,
+              1056,
+              942,
+              828,
+              714,
+              602.4,
+              499.8,
+              397.2,
+              294.6,
+              192,
+              181.5,
+              90.3,
+              90.3,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 65999.99,
+            "feesByYear": [
+              1210,
+              1092,
+              974,
+              856,
+              738,
+              622.8,
+              516.6,
+              410.4,
+              304.2,
+              198,
+              187.5,
+              93.1,
+              93.1,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 67999.99,
+            "feesByYear": [
+              1250,
+              1128,
+              1006,
+              884,
+              762,
+              643.2,
+              533.4,
+              423.6,
+              313.8,
+              204,
+              193.5,
+              95.9,
+              95.9,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 69999.99,
+            "feesByYear": [
+              1290,
+              1164,
+              1038,
+              912,
+              786,
+              663.6,
+              550.2,
+              436.8,
+              323.4,
+              210,
+              199.5,
+              98.7,
+              98.7,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 71999.99,
+            "feesByYear": [
+              1330,
+              1200,
+              1070,
+              940,
+              810,
+              684,
+              567,
+              450,
+              333,
+              216,
+              205.5,
+              101.5,
+              101.5,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 73999.99,
+            "feesByYear": [
+              1370,
+              1236,
+              1102,
+              968,
+              834,
+              704.4,
+              583.8,
+              463.2,
+              342.6,
+              222,
+              211.5,
+              104.3,
+              104.3,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 75999.99,
+            "feesByYear": [
+              1410,
+              1272,
+              1134,
+              996,
+              858,
+              724.8,
+              600.6,
+              476.4,
+              352.2,
+              228,
+              217.5,
+              107.1,
+              107.1,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 77999.99,
+            "feesByYear": [
+              1450,
+              1308,
+              1166,
+              1024,
+              882,
+              745.2,
+              617.4,
+              489.6,
+              361.8,
+              234,
+              223.5,
+              109.9,
+              109.9,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 79999.99,
+            "feesByYear": [
+              1490,
+              1344,
+              1198,
+              1052,
+              906,
+              765.6,
+              634.2,
+              502.8,
+              371.4,
+              240,
+              229.5,
+              112.7,
+              112.7,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 81999.99,
+            "feesByYear": [
+              1530,
+              1380,
+              1230,
+              1080,
+              930,
+              786,
+              651,
+              516,
+              381,
+              246,
+              235.5,
+              115.5,
+              115.5,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 83999.99,
+            "feesByYear": [
+              1570,
+              1416,
+              1262,
+              1108,
+              954,
+              806.4,
+              667.8,
+              529.2,
+              390.6,
+              252,
+              241.5,
+              118.3,
+              118.3,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 85999.99,
+            "feesByYear": [
+              1610,
+              1452,
+              1294,
+              1136,
+              978,
+              826.8,
+              684.6,
+              542.4,
+              400.2,
+              258,
+              247.5,
+              121.1,
+              121.1,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 87999.99,
+            "feesByYear": [
+              1650,
+              1488,
+              1326,
+              1164,
+              1002,
+              847.2,
+              701.4,
+              555.6,
+              409.8,
+              264,
+              253.5,
+              123.9,
+              123.9,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 89999.99,
+            "feesByYear": [
+              1690,
+              1524,
+              1358,
+              1192,
+              1026,
+              867.6,
+              718.2,
+              568.8,
+              419.4,
+              270,
+              259.5,
+              126.7,
+              126.7,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 91999.99,
+            "feesByYear": [
+              1730,
+              1560,
+              1390,
+              1220,
+              1050,
+              888,
+              735,
+              582,
+              429,
+              276,
+              265.5,
+              129.5,
+              129.5,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 93999.99,
+            "feesByYear": [
+              1770,
+              1596,
+              1422,
+              1248,
+              1074,
+              908.4,
+              751.8,
+              595.2,
+              438.6,
+              282,
+              271.5,
+              132.3,
+              132.3,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 95999.99,
+            "feesByYear": [
+              1810,
+              1632,
+              1454,
+              1276,
+              1098,
+              928.8,
+              768.6,
+              608.4,
+              448.2,
+              288,
+              277.5,
+              135.1,
+              135.1,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 97999.99,
+            "feesByYear": [
+              1850,
+              1668,
+              1486,
+              1304,
+              1122,
+              949.2,
+              785.4,
+              621.6,
+              457.8,
+              294,
+              283.5,
+              137.9,
+              137.9,
+              10.5
+            ]
+          },
+          {
+            "maxPrice": 99999.99,
+            "feesByYear": [
+              1890,
+              1704,
+              1518,
+              1332,
+              1146,
+              969.6,
+              802.2,
+              634.8,
+              467.4,
+              300,
+              289.5,
+              140.7,
+              140.7,
+              10.5
+            ]
+          },
+          {
+            "feesByYear": [
+              1930,
+              1740,
+              1550,
+              1360,
+              1170,
+              990,
+              819,
+              648,
+              477,
+              306,
+              295.5,
+              143.5,
+              143.5,
+              10.5
+            ]
+          }
+        ]
+      }
     },
-    "localTaxNote": "Nebraska cities and counties impose local sales taxes between 0.5% and 2.5% (total 6.0% to 8.0%). In addition, an annual Motor Vehicle Tax and Motor Vehicle Fee are assessed based on age and MSRP at registration.",
+    "localTaxNote": "Nebraska cities and counties impose local sales taxes between 0.5% and 2.5% (total 6.0% to 8.0%). In addition, an annual Motor Vehicle Tax and Motor Vehicle Fee are assessed based on age and MSRP at registration. The estimate includes them.",
     "notes": [
       "Nebraska charges 5.5% state sales tax on private party motor vehicle purchases under Neb. Rev. Stat. § 77-2703.",
       "Certificate of title fee is $10.00; lien recordation is included directly on the title.",
       "Registration includes a $15.00 base passenger fee plus $8.20 license plate fee = $23.20.",
       "Trade-in deductions are not allowed on private-party sales under Nebraska regulations; dealer sales only.",
-      "County treasurers collect an annual Motor Vehicle Tax based on MSRP and vehicle age (phases out at 14 years)."
+      "County treasurers collect an annual Motor Vehicle Tax and Motor Vehicle Fee set by the value when new and the vehicle’s age (Neb. Rev. Stat. 60-3,187 and 60-3,190). The tax starts at $25 to $1,900 and ends after the 13th year; the fee is $5, $20, or $30 before age reductions. The estimate includes both for passenger vehicles from the MSRP you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Nebraska Department of Revenue and county treasurer.",
       "Nebraska charges 5.5% state sales tax; local city and county sales taxes can increase the total rate up to 8.0%.",
       "Trade-in deductions are not permitted on private-party sales.",
-      "Annual Motor Vehicle Tax and Fee based on original MSRP are assessed at registration."
+      "The estimate includes a full year of the Motor Vehicle Tax and Fee for passenger vehicles. Motorcycles are shown without them, and other local fees are not included. Your county treasurer gives the exact amount."
     ],
     "faqs": [
       {
@@ -4088,11 +5098,11 @@
       },
       {
         "question": "How much does a vehicle title and registration cost in Nebraska?",
-        "answer": "The certificate of title fee is $10.00. Standard passenger registration includes a $15.00 base fee plus $8.20 license plate fee ($23.20 total), plus annual property taxes."
+        "answer": "The certificate of title fee is $10.00. Standard passenger registration includes a $15.00 base fee plus $8.20 license plate fee ($23.20 total), plus the annual Motor Vehicle Tax and Fee, which the estimate includes."
       },
       {
         "question": "What is the Nebraska Motor Vehicle Tax?",
-        "answer": "In Nebraska, vehicle owners pay an annual Motor Vehicle Tax and Motor Vehicle Fee based on the vehicle's original MSRP and age, collected by the county treasurer at registration."
+        "answer": "In Nebraska, vehicle owners pay an annual Motor Vehicle Tax and Motor Vehicle Fee based on the vehicle's original MSRP and age, collected by the county treasurer at registration. The calculator includes them for passenger vehicles from the MSRP you enter."
       },
       {
         "question": "Do I pay Nebraska vehicle tax if I buy a car from an out-of-state private seller?",
@@ -4110,7 +5120,9 @@
     "lastVerified": "September 2026",
     "sources": [
       "https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling",
-      "https://revenue.nebraska.gov/"
+      "https://revenue.nebraska.gov/",
+      "https://nebraskalegislature.gov/laws/statutes.php?statute=60-3,187",
+      "https://nebraskalegislature.gov/laws/statutes.php?statute=60-3,190"
     ],
     "localTaxMinRate": 0.005,
     "localTaxMaxRate": 0.025
@@ -4227,7 +5239,8 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with West Virginia DMV.",
       "West Virginia charges a uniform 5% Motor Vehicle Privilege Tax statewide under W. Va. Code § 17A-3-4; no local sales taxes apply.",
-      "Trade-in deductions are restricted to licensed dealer purchases and do not apply to private party sales."
+      "Trade-in deductions are restricted to licensed dealer purchases and do not apply to private party sales.",
+      "County personal property tax is not included. It is assessed by the County Assessor and collected by the County Sheriff. The DMV asks for a personal property tax receipt when you transfer a registration or renew, or an assessor’s affidavit when you renew."
     ],
     "faqs": [
       {
@@ -4261,7 +5274,8 @@
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://transportation.wv.gov/dmv"
+      "https://transportation.wv.gov/dmv",
+      "https://dmv.wv.gov/vehicle-services/vehicles/registrations"
     ]
   },
   "hawaii": {
@@ -4358,19 +5372,32 @@
       "motorcycle": {
         "1": 24
       },
-      "evSurchargeAnnual": 100
+      "evSurchargeAnnual": 100,
+      "listPriceAnnualTax": {
+        "label": "New Hampshire municipal permit fee",
+        "defaultListPrice": 30000,
+        "ratesByYear": [
+          0.018,
+          0.015,
+          0.012,
+          0.009,
+          0.006,
+          0.003
+        ],
+        "minAmount": 5
+      }
     },
-    "localTaxNote": "New Hampshire has no state vehicle sales tax. However, under RSA 261:153, local town or city clerks collect an annual Municipal Permit Fee (personal property tax) based on vehicle MSRP and age ($18 down to $3 per $1,000) prior to state registration.",
+    "localTaxNote": "New Hampshire has no state vehicle sales tax. However, under RSA 261:153, local town or city clerks collect an annual Municipal Permit Fee (personal property tax) based on vehicle MSRP and age ($18 down to $3 per $1,000) prior to state registration. The estimate includes it.",
     "notes": [
       "New Hampshire does not impose a state sales tax on motor vehicle purchases.",
       "Certificate of title fee is $35.00 under RSA 261:20 (required for vehicles model year 2000 and newer).",
       "State passenger vehicle registration fee is $48.00 under RSA 261:141 for standard 3,001–5,000 lb vehicles.",
-      "Municipal permit fees are paid to your local town or city clerk based on original MSRP and vehicle age.",
+      "Municipal permit fees are paid to your town or city clerk: $18, $15, $12, $9, $6, then $3 per $1,000 of the maker’s list price by model year, with a $5 minimum (RSA 261:153). The estimate includes it for passenger vehicles from the list price you enter ($30,000 if blank).",
       "Electric vehicles pay an additional $100 annual state registration surcharge ($50 for plug-in hybrids)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with New Hampshire DMV and your local town/city clerk.",
-      "New Hampshire has no state vehicle sales tax; local town permit fees (property tax) apply annually based on MSRP."
+      "New Hampshire has no state vehicle sales tax. The estimate includes a full year of the municipal permit fee for passenger vehicles, but not the $3 reclamation fee or a municipal transportation fee of up to $5, and motorcycles are shown without the permit fee. Your town or city clerk gives the exact amount."
     ],
     "faqs": [
       {
@@ -4383,7 +5410,7 @@
       },
       {
         "question": "What is the New Hampshire town clerk permit fee?",
-        "answer": "Under RSA 261:153, New Hampshire towns and cities collect an annual permit fee (a local motor vehicle property tax) calculated from the manufacturer's suggested retail price (MSRP). Rates decrease from $18 per $1,000 of MSRP for new vehicles down to $3 per $1,000 for vehicles 5 model years old and older."
+        "answer": "Under RSA 261:153, New Hampshire towns and cities collect an annual permit fee (a local motor vehicle property tax) calculated from the manufacturer's suggested retail price (MSRP). Rates decrease from $18 per $1,000 of MSRP for new vehicles down to $3 per $1,000 for vehicles 5 model years old and older. The calculator includes it for passenger vehicles from the list price you enter."
       },
       {
         "question": "What is the registration process for a private sale in NH?",
@@ -4391,11 +5418,11 @@
       },
       {
         "question": "Do I pay New Hampshire vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "Because New Hampshire does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in New Hampshire. Standard certificate of title fees and registration tag fees still apply upon titling."
+        "answer": "Because New Hampshire does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in New Hampshire. Standard certificate of title fees and registration tag fees still apply upon titling. The yearly municipal permit fee also applies at registration."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in New Hampshire?",
-        "answer": "In New Hampshire, private vehicle transfers are not subject to a statewide vehicle sales tax. When transferring title between family members, you only pay standard title transfer fees and registration charges."
+        "answer": "In New Hampshire, private vehicle transfers are not subject to a statewide vehicle sales tax. When transferring title between family members, you only pay standard title transfer fees and registration charges. The yearly municipal permit fee also applies at registration."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in New Hampshire?",
@@ -4404,7 +5431,8 @@
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://www.nh.gov/safety/divisions/dmv"
+      "https://www.nh.gov/safety/divisions/dmv",
+      "https://gc.nh.gov/rsa/html/XXI/261/261-153.htm"
     ]
   },
   "maine": {
@@ -4430,19 +5458,32 @@
       "motorcycle": {
         "1": 21
       },
-      "evSurchargeAnnual": 0
+      "evSurchargeAnnual": 0,
+      "listPriceAnnualTax": {
+        "label": "Maine municipal excise tax",
+        "defaultListPrice": 30000,
+        "ratesByYear": [
+          0.024,
+          0.0175,
+          0.0135,
+          0.01,
+          0.0065,
+          0.004
+        ],
+        "minAmount": 5
+      }
     },
-    "localTaxNote": "Maine has no local sales tax. However, under 36 M.R.S. § 1482, municipalities collect an annual personal property Excise Tax based on vehicle maker's list price and age (24 mills down to 4 mills for 6th model year and older) prior to registration.",
+    "localTaxNote": "Maine has no local sales tax. However, under 36 M.R.S. § 1482, municipalities collect an annual personal property Excise Tax based on vehicle maker's list price and age (24 mills down to 4 mills for 6th model year and older) prior to registration. The estimate includes it.",
     "notes": [
       "Maine levies a 5.5% sales/use tax on casual motor vehicle sales under 36 M.R.S. § 1764 & § 1811.",
       "Trade-in deduction is permitted under 36 M.R.S. § 1765 when trading in property of the same category (car for car).",
       "Certificate of title fee is $33.00.",
       "Annual passenger vehicle registration fee is $35.00.",
-      "Local municipal excise tax must be paid to your city or town office before registering with the Bureau of Motor Vehicles (BMV)."
+      "Local municipal excise tax must be paid to your city or town office before registering with the Bureau of Motor Vehicles (BMV). The estimate includes a full year of it for passenger vehicles from the list price you enter ($30,000 if blank): 24, 17.5, 13.5, 10, 6.5, then 4 mills by model year, with a $5 minimum."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Maine Bureau of Motor Vehicles (BMV) and Maine Revenue Services.",
-      "Maine charges a 5.5% state sales tax on private vehicle sales; local municipal excise tax is paid annually at your town office.",
+      "Maine charges a 5.5% state sales tax on private vehicle sales; local municipal excise tax is paid annually at your town office. Motorcycles are shown without the excise tax. A credit for excise paid on a vehicle you transferred, or registering late in a registration year, can lower it (36 M.R.S. § 1482).",
       "Trade-in allowance reduces the taxable purchase base when exchanging comparable vehicles."
     ],
     "faqs": [
@@ -4456,7 +5497,7 @@
       },
       {
         "question": "What is the Maine municipal excise tax?",
-        "answer": "Under 36 M.R.S. § 1482, municipalities levy an annual personal property excise tax based on the vehicle's original MSRP (maker's list price). Rates scale from 24 mills ($24 per $1,000) for current model year vehicles down to 4 mills ($4 per $1,000) for vehicles 6 model years old or older."
+        "answer": "Under 36 M.R.S. § 1482, municipalities levy an annual personal property excise tax based on the vehicle's original MSRP (maker's list price). Rates scale from 24 mills ($24 per $1,000) for current model year vehicles down to 4 mills ($4 per $1,000) for vehicles 6 model years old or older. The calculator includes it for passenger vehicles from the list price you enter."
       },
       {
         "question": "How much does it cost to title and register a car in Maine?",
@@ -4478,8 +5519,10 @@
     "lastVerified": "September 2026",
     "sources": [
       "https://www.maine.gov/revenue",
-      "https://www.maine.gov/sos/bmv"
-    ]
+      "https://www.maine.gov/sos/bmv",
+      "https://legislature.maine.gov/statutes/36/title36sec1482.html"
+    ],
+    "taxLineName": "Sales Tax"
   },
   "montana": {
     "label": "Montana",
@@ -4516,7 +5559,8 @@
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Montana Motor Vehicle Division (MVD) and your county treasurer.",
-      "Montana has 0% state sales tax. Registration fees follow a statutory age-based schedule."
+      "Montana has 0% state sales tax. Registration fees follow a statutory age-based schedule.",
+      "Counties can add a local option vehicle tax if voters approve it, up to 0.7% of the vehicle’s value or a flat fee, paid with the registration fee (MCA 61-3-537). It is not included."
     ],
     "faqs": [
       {
@@ -4550,7 +5594,8 @@
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://mvdmt.gov"
+      "https://mvdmt.gov",
+      "https://mca.legmt.gov/bills/mca/title_0610/chapter_0030/part_0050/section_0370/0610-0030-0050-0370.html"
     ]
   },
   "rhode-island": {
@@ -4944,20 +5989,34 @@
       "motorcycle": {
         "1": 15
       },
-      "evSurchargeAnnual": 200
+      "evSurchargeAnnual": 200,
+      "listPriceAnnualTax": {
+        "label": "Wyoming county registration fee",
+        "defaultListPrice": 30000,
+        "valueShare": 0.03,
+        "ratesByYear": [
+          0.6,
+          0.5,
+          0.4,
+          0.3,
+          0.2,
+          0.15
+        ],
+        "minAmount": 5
+      }
     },
-    "localTaxNote": "Wyoming state sales/use tax is 4.0%. All 23 Wyoming counties impose a 1.0% to 2.0% local optional tax, making total sales tax between 5.0% and 6.0%. Under Wyo. Stat. § 31-3-102, an annual County Registration Fee (ad-valorem property tax) also applies at registration based on factory price × age × 3%.",
+    "localTaxNote": "Wyoming state sales/use tax is 4.0%. All 23 Wyoming counties impose a 1.0% to 2.0% local optional tax, making total sales tax between 5.0% and 6.0%. Under Wyo. Stat. § 31-3-101, an annual county registration fee also applies at registration, based on the factory price and the year of service. The estimate includes it.",
     "notes": [
       "Wyoming levies a 4.0% state sales/use tax on motor vehicle sales under Wyo. Stat. § 39-15-103.",
       "All counties impose a 1.0% to 2.0% optional local sales tax, bringing the effective tax to 5.0%–6.0%.",
       "State certificate of title fee is $15.00 under Wyo. Stat. § 31-3-102.",
       "State flat passenger registration fee is $30.00 under Wyo. Stat. § 31-3-101.",
       "Trade-in deduction under Wyo. Stat. § 39-15-101 applies exclusively to dealer transactions; private sales pay tax on full purchase price.",
-      "An annual County Registration Fee (ad-valorem property tax) is collected by the county treasurer based on factory cost and vehicle age."
+      "The annual county registration fee is 3% of 60%, 50%, 40%, 30%, 20%, then 15% of the factory price by year of service, with a $5 minimum. The estimate includes it for passenger vehicles from the MSRP you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Wyoming Department of Revenue and your County Clerk/Treasurer.",
-      "Wyoming charges 4% state tax plus 1% to 2% county optional tax. Annual county property fees apply at registration.",
+      "Wyoming charges 4% state tax plus 1% to 2% county optional tax. The estimate includes a full year of the county registration fee for passenger vehicles; motorcycles are shown without it.",
       "Trade-in deductions are not available for private party sales."
     ],
     "faqs": [
@@ -4971,7 +6030,7 @@
       },
       {
         "question": "How are vehicle registration fees calculated in Wyoming?",
-        "answer": "Wyoming vehicle registration consists of two fees: a flat state registration fee ($30.00 for passenger vehicles under Wyo. Stat. § 31-3-101) and an annual County Registration Fee (ad-valorem property tax) calculated from the factory price multiplied by an age depreciation percentage times 3% (30 mills)."
+        "answer": "Wyoming vehicle registration consists of two fees: a flat state registration fee ($30.00 for passenger vehicles under Wyo. Stat. § 31-3-101) and an annual county registration fee of 3% of 60%, 50%, 40%, 30%, 20%, then 15% of the factory price by year of service, with a $5 minimum. The calculator includes both for passenger vehicles."
       },
       {
         "question": "How much does a title transfer cost in Wyoming?",
@@ -4993,7 +6052,9 @@
     "lastVerified": "September 2026",
     "sources": [
       "https://revenue.wyo.gov",
-      "https://www.dot.state.wy.us"
+      "https://www.dot.state.wy.us",
+      "https://www.wyoleg.gov/statutes/compress/title31.pdf",
+      "https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Treasurer/Vehicle-Registration"
     ],
     "localTaxMinRate": 0.01,
     "localTaxMaxRate": 0.02

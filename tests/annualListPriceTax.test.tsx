@@ -72,9 +72,9 @@ describe('Colorado specific ownership tax (Class C)', () => {
 });
 
 describe('List price input and sharing', () => {
-  it('only Indiana and Colorado use the list-price annual tax', () => {
+  it('the eight annual-tax states use the list-price annual tax', () => {
     const using = Object.entries(rules).filter(([, r]) => r.registration.listPriceAnnualTax).map(([k]) => k).sort();
-    expect(using).toEqual(['colorado', 'indiana']);
+    expect(using).toEqual(['colorado', 'indiana', 'iowa', 'maine', 'nebraska', 'nevada', 'new-hampshire', 'wyoming']);
   });
 
   it('the form asks for the MSRP and the result names the tax', () => {
@@ -115,7 +115,7 @@ describe('Tax line name', () => {
   it('other states keep the default name', () => {
     expect(calc(co).itemizedList[0].label).toContain('Vehicle Sales / Excise Tax');
     const named = Object.entries(rules).filter(([, r]) => r.taxLineName).map(([k]) => k);
-    expect(named).toEqual(['indiana']);
+    expect(named).toEqual(['indiana', 'maine']);
   });
 });
 

@@ -6,7 +6,7 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 212 across 51 jurisdictions
+- Source links configured now: 226 across 51 jurisdictions
 - Hidden on the site (dead or unreachable): 7
 - Working but only an agency homepage, not a specific page: 16
 - States showing no source link ("Official source links ... are being updated"): 0

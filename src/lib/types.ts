@@ -109,6 +109,10 @@ export interface StateRegistrationRules {
     ratesByYear?: number[];
     /** Colorado: $3 from the tenth year. */
     flatFromYear?: { year: number; fee: number };
+    /** Lowest amount for a year (Nevada $16; Wyoming, New Hampshire, Maine $5; Iowa $36, which with its $14 base is the $50 floor). */
+    minAmount?: number;
+    /** Whole dollars (Iowa Code 321.110). */
+    roundToDollar?: boolean;
   };
   valueBasedFees?: {
     /** Annual license fee as a share of value (California VLF: 0.0065). */

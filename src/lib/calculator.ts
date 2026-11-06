@@ -39,7 +39,9 @@ export function listPriceAnnualTaxFor(
     return pick(row.feesByYear);
   }
   const rate = spec.ratesByYear ? pick(spec.ratesByYear) : 0;
-  return Math.round(listPrice * (spec.valueShare ?? 1) * rate * 100) / 100;
+  const amount = listPrice * (spec.valueShare ?? 1) * rate;
+  const rounded = spec.roundToDollar ? Math.round(amount) : Math.round(amount * 100) / 100;
+  return Math.max(rounded, spec.minAmount ?? 0);
 }
 
 /**

@@ -132,7 +132,7 @@ describe('Vehicle Tax by State Comparison Engine & Verification', () => {
       expect(heroRow?.rateDisplay).toBe('5.00%');
     });
 
-    it('5. New Hampshire: 0.00% tax, $35.00 title, $48.00 reg = $83.00 total', () => {
+    it('5. New Hampshire: 0.00% tax, $35.00 title, $138.00 reg (with the permit fee) = $173.00 total', () => {
       const nhRule = rules['new-hampshire'];
       const directCalc = calculateVehicleCosts(nhRule, {
         ...STANDARD_SCENARIO_INPUTS,
@@ -141,15 +141,15 @@ describe('Vehicle Tax by State Comparison Engine & Verification', () => {
 
       expect(directCalc.exciseTax).toBe(0.0);
       expect(directCalc.titleFee).toBe(35.0);
-      expect(directCalc.registrationTotal).toBe(48.0);
-      expect(directCalc.totalFirstYearCost).toBe(83.0);
+      expect(directCalc.registrationTotal).toBe(138.0);
+      expect(directCalc.totalFirstYearCost).toBe(173.0);
 
       const heroRow = dataset.heroRows.find((r) => r.key === 'new-hampshire');
       expect(heroRow).toBeDefined();
       expect(heroRow?.salesTaxAmount).toBe(0.0);
       expect(heroRow?.titleFee).toBe(35.0);
-      expect(heroRow?.registrationFee).toBe(48.0);
-      expect(heroRow?.totalCost).toBe(83.0);
+      expect(heroRow?.registrationFee).toBe(138.0);
+      expect(heroRow?.totalCost).toBe(173.0);
       expect(heroRow?.rateDisplay).toBe('0.00%');
     });
   });
