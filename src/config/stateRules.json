@@ -3684,8 +3684,6 @@
       "motorcycle": {
         "1": 33
       },
-      "evSurchargeAnnual": 125,
-      "phevSurchargeAnnual": 75,
       "listPriceAnnualTax": {
         "label": "Nevada Governmental Services Tax",
         "defaultListPrice": 30000,
@@ -3715,7 +3713,8 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Nevada DMV.",
       "Private party vehicle sales are exempt from Nevada sales tax under NRS 372.320.",
-      "The estimate includes a full year of the basic GST for passenger vehicles. The value it is figured on drops with age to 95%, 85%, 75%, 65%, 55%, 45%, 35%, 25%, then 15%, and the minimum tax is $16. The 1% Supplemental GST in Clark and Churchill counties is not included, and motorcycles are shown without the GST. The DMV’s fee calculator gives your total."
+      "The estimate includes a full year of the basic GST for passenger vehicles. The value it is figured on drops with age to 95%, 85%, 75%, 65%, 55%, 45%, 35%, 25%, then 15%, and the minimum tax is $16. The 1% Supplemental GST in Clark and Churchill counties is not included, and motorcycles are shown without the GST. The DMV’s fee calculator gives your total.",
+      "The estimate adds no electric vehicle or plug-in hybrid fee, because we found none in NRS Chapter 482 or the DMV’s fee schedule. Confirm any EV fee with the Nevada DMV."
     ],
     "faqs": [
       {
@@ -3905,7 +3904,8 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Mississippi Department of Revenue and county tax collector.",
       "Mississippi taxes private sales at 5% based on DOR true value schedules.",
-      "Counties levy annual ad valorem property taxes at registration based on local county millage rates."
+      "Counties levy annual ad valorem property taxes at registration based on local county millage rates.",
+      "The estimate uses Mississippi’s base amounts of $150 for an electric vehicle and $75 for a hybrid. The law raises them each July for inflation, and the county figure may be higher, so confirm with your county tax collector."
     ],
     "faqs": [
       {
@@ -3940,7 +3940,8 @@
     "lastVerified": "September 2026",
     "sources": [
       "https://www.dor.ms.gov",
-      "https://www.dor.ms.gov/motor-vehicle"
+      "https://www.dor.ms.gov/motor-vehicle",
+      "https://billstatus.ls.state.ms.us/documents/20181E/html/HB/0001-0099/HB0001SG.htm"
     ]
   },
   "kansas": {

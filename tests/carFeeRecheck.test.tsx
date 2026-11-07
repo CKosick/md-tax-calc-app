@@ -68,11 +68,16 @@ describe('Car EV and plug-in hybrid fee re-check, November 2026', () => {
     expect(page(state)).toContain(text);
   });
 
-  it('Nevada and Mississippi stay as they are until ruled on', () => {
-    expect(rule('nevada').registration.evSurchargeAnnual).toBe(125);
-    expect(rule('nevada').registration.phevSurchargeAnnual).toBe(75);
-    expect(rule('mississippi').registration.evSurchargeAnnual).toBe(150);
-    expect(rule('mississippi').registration.phevSurchargeAnnual).toBe(75);
+  it('Nevada charges no EV or plug-in hybrid fee and tells buyers to confirm with the DMV', () => {
+    expect(calc('nevada', { fuelType: 'ev' }).evSurcharge).toBe(0);
+    expect(calc('nevada', { fuelType: 'phev' }).evSurcharge).toBe(0);
+    expect(page('nevada')).toContain('Confirm any EV fee with the Nevada DMV');
+  });
+
+  it('Mississippi keeps its base amounts and says they adjust for inflation', () => {
+    expect(calc('mississippi', { fuelType: 'ev' }).evSurcharge).toBe(150);
+    expect(calc('mississippi', { fuelType: 'phev' }).evSurcharge).toBe(75);
+    expect(page('mississippi')).toContain('raises them each July for inflation, and the county figure may be higher');
   });
 
   it.each([
