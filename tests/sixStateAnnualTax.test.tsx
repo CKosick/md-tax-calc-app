@@ -162,13 +162,11 @@ describe('All six states', () => {
     }
   });
 
-  it('say the estimate includes the tax, with no em dash in the new sentences', () => {
+  it('say the estimate includes the tax and show the $30,000 default', () => {
     for (const key of SIX) {
       expect(copy(key)).toMatch(/estimate (includes|uses)|calculator (includes|figures)/i);
       for (const d of rule(key).disclaimers) expect(copy(key)).toContain(d);
-      const added = rule(key).notes.filter((n) => n.includes('$30,000 if blank'));
-      expect(added).toHaveLength(1);
-      expect(added[0]).not.toContain('—');
+      expect(copy(key)).toContain('Blank uses $30,000');
     }
   });
 

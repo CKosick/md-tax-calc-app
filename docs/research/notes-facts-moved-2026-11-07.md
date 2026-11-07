@@ -25,7 +25,8 @@ The other moved facts were not re-read for this branch. They come from October a
 
 - `tests/datedFigures.test.ts` now looks in the local tax note, trade-in note, disclaimers, and FAQs. All entries pass there.
 - Nine copy helpers and checks no longer include notes. Five expected strings relied on note wording and now use the rendered wording (Indiana, Colorado, Arizona, and South Carolina's "grandparent" and "an heir").
-- Em dash checks that scan notes are unchanged, because they look for an absence and match nothing.
+- One six-state check expected a note with the $30,000 default; it now checks the form's "Blank uses $30,000".
+- The remaining tests that scan notes look for an absence only (em dashes, boilerplate wording, the old Kansas text), so they are unchanged.
 - `tests/notesFactsMoved.test.tsx` renders the real page component for each moved fact.
 
 ## Found, not changed
