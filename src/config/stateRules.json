@@ -2362,12 +2362,13 @@
       "The title is $15, with a $30 penalty if you apply more than 45 days after the purchase.",
       "Passenger registration is $21.35 plus the $15 Transportation Infrastructure Improvement Fee, $36.35 a year. A motorcycle is $26.35 plus the $15 fee.",
       "Electric vehicles add a $242 supplemental fee and hybrids $81.",
-      "The yearly vehicle excise tax depends on the vehicle’s class (its original retail price) and age, from $12 to $532 for a passenger vehicle. The estimate includes a full year of it from the list price you enter ($30,000 if blank). Registering partway through your registration year, or a credit for excise paid on a vehicle you sold, can change the amount due (IC 6-6-5-7.2)."
+      "The yearly vehicle excise tax depends on the vehicle’s class (its original retail price) and age, from $12 to $532 for a passenger vehicle. The estimate includes a full year of it from the list price you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with the Indiana BMV or Department of Revenue.",
       "County and municipal vehicle excise and wheel taxes are not included, and motorcycles are shown without the excise tax. The BMV’s Quick Quote tool gives your exact total.",
-      "Registration shown is the BMV fee chart revised January 1, 2026."
+      "Registration shown is the BMV fee chart revised January 1, 2026.",
+      "The estimate shows a full year of the excise tax. Registering partway through your registration year, or a credit for excise paid on a vehicle you sold, can change the amount due (IC 6-6-5-7.2)."
     ],
     "faqs": [
       {
