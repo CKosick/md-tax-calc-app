@@ -305,7 +305,7 @@ describe('Batch 8 guides (Washington, Arizona, Tennessee)', () => {
     for (const fact of ['one owner', 'area B', '16.25%']) expect(azMove).toContain(fact);
 
     const [tnSale, tnGift, tnMove] = topics('tennessee').map(text);
-    for (const fact of ['7%', 'first $1,600', '2.75%', '$44', '75%', 'Affidavit of Non-Dealer Transfers', '$14', '$11', '$26.50', '$200', '$274', 'wheel tax']) expect(tnSale).toContain(fact);
+    for (const fact of ['7%', 'first $1,600', '2.75%', '$44', '75%', 'Affidavit of Non-Dealer Transfers', '$14', '$11', '$26.50', '$274', 'wheel tax']) expect(tnSale).toContain(fact);
     for (const fact of ['siblings', 'great grandparents', 'forgiving a debt', 'divorce', 'brother-in-law']) expect(tnGift).toContain(fact);
     for (const fact of ['30 days', 'use tax', 'lienholder', 'difference']) expect(tnMove).toContain(fact);
   });

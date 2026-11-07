@@ -5354,7 +5354,7 @@ export const GUIDES: Guide[] = [
         title: 'Pay the title and plate fees',
         body: [
           'The title is $14 ($5.50 state and $8.50 county clerk), and noting a lien is $11. The standard plate is $26.50 a year ($19.50 for a motorcycle).',
-          'All-electric vehicles add $200 ($274 for registrations in 2027), and hybrids and plug-in hybrids add $100. Many counties also charge a wheel tax.'
+          'All-electric vehicles add $274 in 2027, and hybrids and plug-in hybrids add $100. Many counties also charge a wheel tax.'
         ]
       }
     ],
@@ -5493,7 +5493,7 @@ export const GUIDES: Guide[] = [
       {
         title: 'Pay the fees',
         body: [
-          'The title is $14 and the standard plate is $26.50 a year ($19.50 for a motorcycle). All-electric vehicles add $200 ($274 in 2027), and hybrids and plug-in hybrids add $100. Many counties add a wheel tax.'
+          'The title is $14 and the standard plate is $26.50 a year ($19.50 for a motorcycle). All-electric vehicles add $274 in 2027, and hybrids and plug-in hybrids add $100. Many counties add a wheel tax.'
         ]
       }
     ],
