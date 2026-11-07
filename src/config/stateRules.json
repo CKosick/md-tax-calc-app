@@ -1929,21 +1929,21 @@
       "motorcycle": {
         "1": 19.5
       },
-      "evSurchargeAnnual": 200,
+      "evSurchargeAnnual": 274,
       "phevSurchargeAnnual": 100
     },
     "localTaxNote": "Tennessee adds the local rate where you live, 2.00% to 2.75%, on the first $1,600 of the price only, plus a 2.75% state single article tax on the next $1,600. Many counties also charge a wheel tax with registration.",
     "notes": [
       "A private sale is taxed like a dealer sale: 7% state tax on the full price, the local rate on the first $1,600, and the 2.75% state single article tax on the part from $1,600.01 to $3,200 (up to $44).",
       "The title costs $14 (the $5.50 state title fee and the $8.50 county clerk fee). Noting a lien is $11.",
-      "The standard plate is $26.50 a year ($19.50 for a motorcycle). All-electric vehicles add $200 for registrations before January 1, 2027 and $274 in 2027. Hybrids and plug-in hybrids add $100.",
+      "The standard plate is $26.50 a year ($19.50 for a motorcycle). All-electric vehicles add $274 in 2027. Hybrids and plug-in hybrids add $100. Both adjust for inflation from January 1, 2028.",
       "Trade-in credit applies only when a dealer takes the trade-in and credits it on the invoice."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with your county clerk or the Tennessee Department of Revenue.",
       "If the price is under 75% of the vehicle’s value in a pricing guide, the buyer and seller complete the Affidavit of Non-Dealer Transfers. Without it, or an appraisal, tax is due on the full value.",
       "County wheel taxes and other county clerk fees are not included.",
-      "The all-electric vehicle fee rises to $274 for registrations from January 1, 2027."
+      "All-electric vehicles pay $274 for 2027. That fee and the $100 hybrid fee adjust each year for inflation from January 1, 2028."
     ],
     "faqs": [
       {
@@ -1960,7 +1960,7 @@
       },
       {
         "question": "How much does a title and plate cost in Tennessee?",
-        "answer": "The title is $14 and a lien is $11 more. The standard plate is $26.50 a year, or $19.50 for a motorcycle. All-electric vehicles add $200 ($274 from January 1, 2027), and hybrids and plug-in hybrids add $100. County wheel taxes vary."
+        "answer": "The title is $14 and a lien is $11 more. The standard plate is $26.50 a year, or $19.50 for a motorcycle. All-electric vehicles add $274 in 2027, and hybrids and plug-in hybrids add $100. County wheel taxes vary."
       },
       {
         "question": "I am moving to Tennessee. Do I pay sales tax on my car?",
@@ -4064,7 +4064,9 @@
             "fee": 15
           }
         ]
-      }
+      },
+      "evSurchargeAnnual": 70,
+      "phevSurchargeAnnual": 35
     },
     "localTaxNote": "New Mexico's 4.0% Motor Vehicle Excise Tax applies statewide in lieu of the state and local Gross Receipts Tax (GRT); no county or municipal sales taxes apply to titled vehicles.",
     "notes": [
@@ -4080,7 +4082,7 @@
       "If your purchase price is less than 80% of NADA book value, tax may be assessed on the NADA value.",
       "Trade-in value reduces your taxable base.",
       "Registration shown assumes a shipping weight over 3,000 lbs: $70 for the first five years of registration and $56.25 after that, plus a $1.50 tire recycling fee. From 2,001 to 3,000 lbs it is $48.75, then $38.75, and at 2,000 lbs or less it is $33.75, then $26.25 (NMSA 66-6-2, raised July 1, 2026). The estimate counts the years from the model year.",
-      "From January 1, 2027, electric vehicles also pay $70 a year and plug-in hybrids pay $35 (Laws 2026, chapter 4). The estimate does not include this yet."
+      "Electric vehicles pay $70 a year in 2027, $80 in 2028, and $90 from 2029. Plug-in hybrids pay $35, $40, then $45 (Laws 2026, chapter 4). The estimate includes the 2027 amount."
     ],
     "faqs": [
       {

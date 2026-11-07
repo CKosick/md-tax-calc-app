@@ -42,9 +42,10 @@ describe('New Mexico registration (NMSA 66-6-2, Laws 2026, chapter 4)', () => {
     expect(text).not.toContain('$34');
   });
 
-  it('from January 1, 2027, electric vehicles', () => {
-    expect(calc('new-mexico', { fuelType: 'ev' }).registrationTotal).toBe(calc('new-mexico').registrationTotal);
-    expect(page('new-mexico')).toContain('The estimate does not include this yet');
+  it('electric vehicle fees for 2027', () => {
+    expect(calc('new-mexico', { fuelType: 'ev' }).registrationTotal).toBe(calc('new-mexico').registrationTotal + 70);
+    expect(calc('new-mexico', { fuelType: 'phev' }).registrationTotal).toBe(calc('new-mexico').registrationTotal + 35);
+    expect(page('new-mexico')).toContain('The estimate includes the 2027 amount');
   });
 });
 

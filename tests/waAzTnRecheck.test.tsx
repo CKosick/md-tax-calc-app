@@ -119,10 +119,10 @@ describe('Tennessee re-check', () => {
     expect(calc(tn, { purchasePrice: 2000 }).localTaxMax).toBe(44);
   });
 
-  it('$11 lien, $19.50 motorcycle, EV $200 and hybrid $100, no trade-in credit', () => {
+  it('$11 lien, $19.50 motorcycle, EV $274 and hybrid $100, no trade-in credit', () => {
     expect(calc(tn, { isFinanced: true }).lienFilingFee).toBe(11);
     expect(calc(tn, { vehicleType: 'motorcycle' }).registrationTotal).toBe(19.5);
-    expect(calc(tn, { fuelType: 'ev' }).registrationTotal).toBe(226.5);
+    expect(calc(tn, { fuelType: 'ev' }).registrationTotal).toBe(300.5);
     expect(calc(tn, { fuelType: 'phev' }).registrationTotal).toBe(126.5);
     expect(calc(tn, { tradeInValue: 5000 }).exciseTax).toBe(1094);
   });
