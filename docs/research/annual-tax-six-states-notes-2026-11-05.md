@@ -6,7 +6,7 @@ All six use `registration.listPriceAnnualTax` with the $30,000 default, for pass
 
 | State | Rule | Default car (2019, $30,000) | Registration before, after |
 |---|---|---|---|
-| Iowa | 1% of list price; 75% over 7 model years, 50% over 9, $50 floor; flat $50 from 12; plus 40 cents per 100 lbs; whole dollars | $300 + $14 | $50, $314 |
+| Iowa | 1% of list price through the 7th model year, 75% in the 8th and 9th, 50% in the 10th and 11th, $50 floor; flat $50 from the 12th; plus 40 cents per 100 lbs; whole dollars | $225 + $14 | $50, $239 |
 | Nevada | 4% of 35% of MSRP; 100, 95, 85, 75, 65, 55, 45, 35, 25, then 15% by age; $16 minimum | $147 | $33, $180 |
 | Nebraska | Base tax by value × age fraction, plus fee of $5, $20, or $30 (age cut at $20,000 and up) | $165 + $14 | $23.20, $202.20 |
 | Wyoming | 3% of 60, 50, 40, 30, 20, then 15% of factory price; $5 minimum | $135 | $30, $165 |
@@ -31,13 +31,13 @@ All six use `registration.listPriceAnnualTax` with the $30,000 default, for pass
 
 - `minAmount`: Nevada, Wyoming, New Hampshire, Maine, Iowa.
 - `roundToDollar`: Iowa only (321.110).
-- Iowa needs no weight input. Its base is a fixed $14 (3,500 lbs), and `minAmount` 36 plus `flatFromYear` {13, 36} produce the $50 floor and flat fee. The statute's floor applies after 7 model years; the engine applies it at every age, which only matters below a $3,600 list price.
+- Iowa needs no weight input. Its base is a fixed $14 (3,500 lbs), and `minAmount` 36 plus `flatFromYear` {12, 36} produce the $50 floor and flat fee. The statute's floor applies after 7 model years; the engine applies it at every age, which only matters below a $3,600 list price.
 - Nebraska needs no new code. Tax and fee are combined per bracket in `classTable`, 50 rows by 14 ages.
 - `taxLineName`: Maine, for the same reason as Indiana.
 
 ## Judgment items for review
 
-1. **Iowa age counting.** The statute says "more than seven model years old". I count 2026 minus model year, so a 2019 is 7 and pays the full rate ($314). Secondary sites say "model years 1 to 7"; if the current year counts as year 1, a 2019 is in year 8 and pays $239. I did not find an official statement, and the DOT fee calculator was not reachable.
+1. **Iowa age counting (decided, not settled).** The statute says "more than seven model years old" and does not say how to count. The [Iowa Tax & Tags fee table](https://www.iowataxandtags.org/vehicle-registration/registration-fees-by-vehicle-type/) lists "Model Years Old" as 1 to 7, 8 to 9, 10 to 11, and 12 and older, with no zero, so the current model year is treated as 1. That matches how the calculator counts everywhere else, so a 2019 in 2026 is in its 8th model year and pays 75% ($239). If Iowa subtracts instead, that car pays $314. The DOT fee calculator was not reachable, so a county treasurer or the calculator should confirm it.
 2. **Nevada age counting.** The statute gives no rule. I count 2026 minus model year. A used vehicle is never "new" in the statute's sense, so a current-model-year private sale may start at 95%, not 100%.
 3. **Nevada Supplemental GST.** It is not in the estimate and adds 25% to the GST in Clark and Churchill counties. Clark is the state's most populous county, so many buyers will pay more than shown. The disclaimer says so.
 4. **Nebraska rounding.** The statutes give no rounding rule, so amounts keep cents. County figures may round.

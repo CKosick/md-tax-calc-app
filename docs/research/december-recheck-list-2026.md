@@ -18,6 +18,7 @@ Noted, not started. Do these in December, so the figures are current before the 
 | State | Figure on the site | What to re-check | Why |
 |---|---|---|---|
 | New Mexico | $34 passenger registration ($15 motorcycle), verified September 2026 | Current passenger fee schedule on the MVD site | A [June 29, 2026 state press release](https://biz.nm.gov/newsroom/press-release-vehicle-registration-fees-weight-distance-tax-to-increas-100004574) says passenger fees rise about 25% on July 1, 2026. This came from a search summary; the release has not been opened. New Mexico's fees depend on weight and model year, so also check how $34 maps to the default car. |
+| Idaho | $45 passenger registration, verified September 2026 | Read the [final text of H0533](https://legislature.idaho.gov/sessioninfo/2026/legislation/H0533/) (Session Law Chapter 9, effective July 1, 2026) and confirm the $69, $57, and $45 age tiers in Idaho Code 49-402 did not change | Signed March 2, 2026. Its title is about eliminating registration stickers, and a search summary showed the same fee amounts, but the bill text has not been read in full. An earlier search summary said it restructured the tiers. |
 
 ## When re-checking
 
