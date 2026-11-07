@@ -3593,14 +3593,13 @@
           0.01,
           0.01,
           0.01,
-          0.01,
           0.0075,
           0.0075,
           0.005,
           0.005
         ],
         "flatFromYear": {
-          "year": 13,
+          "year": 12,
           "fee": 36
         },
         "minAmount": 36,
@@ -3618,7 +3617,7 @@
       "Estimates only — not tax or legal advice. Verify with Iowa DOT or county treasurer.",
       "Trade-in deductions are not permitted on private-party vehicle sales in Iowa.",
       "Certificate of title fee is $35.00 effective 2025.",
-      "The weight part of registration assumes 3,500 lbs; every 500 lbs more or less changes the fee by $2. The value part is for passenger vehicles; motorcycles are shown at their $20 fee. The Iowa DOT fee calculator gives the exact amount."
+      "The weight part of registration assumes 3,500 lbs; every 500 lbs more or less changes the fee by $2. The current model year counts as the first model year. The value part is for passenger vehicles; motorcycles are shown at their $20 fee. The Iowa DOT fee calculator gives the exact amount."
     ],
     "faqs": [
       {

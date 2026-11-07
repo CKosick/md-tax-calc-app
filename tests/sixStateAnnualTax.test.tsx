@@ -36,20 +36,20 @@ afterEach(() => cleanup());
 describe('Iowa value-based registration fee (Iowa Code 321.109, 321.113)', () => {
   const total = (vehicleYear: number, listPrice = 30000) => calc('iowa', { vehicleYear, listPrice }).registrationTotal;
 
-  it('is 1% of list price plus the $14 weight part through 7 model years old', () => {
+  it('is 1% of list price plus the $14 weight part through the 7th model year, the current year being the first', () => {
     expect(total(2026)).toBe(314);
-    expect(total(2019)).toBe(314);
+    expect(total(2020)).toBe(314);
   });
 
-  it('drops to 75% after 7 model years and 50% after 9', () => {
+  it('drops to 75% in the 8th and 9th model years and 50% in the 10th and 11th', () => {
+    expect(total(2019)).toBe(239);
     expect(total(2018)).toBe(239);
-    expect(total(2017)).toBe(239);
+    expect(total(2017)).toBe(164);
     expect(total(2016)).toBe(164);
-    expect(total(2015)).toBe(164);
   });
 
   it('is a flat $50 from 12 model years, and $50 is the floor', () => {
-    expect(total(2014)).toBe(50);
+    expect(total(2015)).toBe(50);
     expect(total(2000, 90000)).toBe(50);
     expect(total(2018, 3000)).toBe(50);
   });

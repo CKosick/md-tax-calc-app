@@ -695,12 +695,12 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     tradeInValue: 0
   };
 
-  it('1. Iowa (IA) worked invariant: $15,000 purchase price yields $750.00 tax and $1,099.00 total', () => {
+  it('1. Iowa (IA) worked invariant: $15,000 purchase price yields $750.00 tax and $1,024.00 total', () => {
     const res = calculateVehicleCosts(allRules.iowa, { ...std1Yr, state: 'iowa' }, 2026);
     expect(res.exciseTax).toBe(750.00);
     expect(res.titleFee).toBe(35.00);
-    expect(res.registrationTotal).toBe(314.00); // 1% of the $30,000 default list price + $14 weight part
-    expect(res.totalFirstYearCost).toBe(1099.00);
+    expect(res.registrationTotal).toBe(239.00); // 0.75% of the $30,000 default list price (8th model year) + $14 weight part
+    expect(res.totalFirstYearCost).toBe(1024.00);
   });
 
   it('2. Nevada (NV) worked invariant: $15,000 purchase price yields $0.00 tax (NRS 372.320 exempt) and $208.25 total', () => {
