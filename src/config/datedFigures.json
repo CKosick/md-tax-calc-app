@@ -96,5 +96,40 @@
     "staleOn": "2027-01-01",
     "contains": "$178",
     "alsoCheck": "evSurchargeAnnual; the $89 and $163 battery electric registration is below the gas registration the engine uses"
+  },
+  {
+    "state": "kentucky",
+    "figure": "$60 electric motorcycle ownership fee, the base before yearly adjustment (KRS 138.475)",
+    "staleOn": "2027-01-01",
+    "contains": "pays a $60 ownership fee",
+    "alsoCheck": "motorcycleFuelFees"
+  },
+  {
+    "state": "utah",
+    "figure": "Motorcycle exclusion under Utah Code 41-1a-1206; the section version is superseded January 1, 2027",
+    "staleOn": "2027-01-01",
+    "contains": "Utah Code 41-1a-1206",
+    "alsoCheck": "motorcycleFuelFees and the $280 car figure in Utah’s copy"
+  },
+  {
+    "state": "new-hampshire",
+    "figure": "Motorcycle treatment of the EV fee, which becomes weight-based January 1, 2027 (RSA 261:141-c)",
+    "staleOn": "2027-01-01",
+    "contains": "apply to motorcycles",
+    "alsoCheck": "motorcycleFuelFees"
+  },
+  {
+    "state": "minnesota",
+    "figure": "Motorcycle treatment of the EV and plug-in hybrid surcharges, whose minimums change July 1, 2027",
+    "staleOn": "2027-07-01",
+    "contains": "apply to motorcycles",
+    "alsoCheck": "motorcycleFuelFees"
+  },
+  {
+    "state": "oregon",
+    "figure": "Motorcycle $88 two-year registration and the electric add-on; fees change July 1, 2027",
+    "staleOn": "2027-07-01",
+    "contains": "motorcycle’s $88 two-year registration",
+    "alsoCheck": "motorcycleFuelFees"
   }
 ]

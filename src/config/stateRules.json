@@ -37,7 +37,15 @@
         "2": 210
       },
       "evSurchargeAnnual": 125,
-      "phevSurchargeAnnual": 100
+      "phevSurchargeAnnual": 100,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
+      }
     },
     "veipFee": 30,
     "notes": [
@@ -48,7 +56,8 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with the Maryland MVA.",
       "Vehicles under 7 years old may be assessed on book value, not your purchase price, when the price is more than $500 below NADA retail. Documentation of the lower sale price can support taxing it on your price.",
-      "Maryland taxes the full purchase price — trade-ins and rebates do not reduce excise tax."
+      "Maryland taxes the full purchase price — trade-ins and rebates do not reduce excise tax.",
+      "Maryland’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the MVA."
     ],
     "faqs": [
       {
@@ -125,7 +134,12 @@
         "2": 47.5
       },
       "evSurchargeAnnual": 135.63,
-      "passengerWeightSplitLbs": 4000
+      "passengerWeightSplitLbs": 4000,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "excluded"
+        }
+      }
     },
     "notes": [
       "Virginia levies a 4.15% Motor Vehicle Sales and Use Tax (SUT) with a $75.00 minimum.",
@@ -137,7 +151,8 @@
       "Vehicles under 5 model years old need Form SUT-1A if the sale price is not within $1,500 of the NADA trade-in value.",
       "A Highway Use Fee may apply in addition to registration. The calculator includes it only for electric vehicles.",
       "Your county, city, or town can also levy a personal property tax on the vehicle (Va. Code 58.1-3506). It is not included. Ask the commissioner of the revenue where the vehicle is kept.",
-      "A 2-year registration is $2 less in person or by mail and $3 less online."
+      "A 2-year registration is $2 less in person or by mail and $3 less online.",
+      "Virginia’s highway use fee does not apply to motorcycles (Va. Code 46.2-772), so the estimate does not add it."
     ],
     "faqs": [
       {
@@ -175,7 +190,8 @@
       "https://www.dmv.virginia.gov/sites/default/files/forms/dmv201.pdf",
       "https://www.dmv.virginia.gov/vehicles/registration",
       "https://www.dmv.virginia.gov/vehicles/buy-sell",
-      "https://law.lis.virginia.gov/vacode/title58.1/chapter35/section58.1-3506/"
+      "https://law.lis.virginia.gov/vacode/title58.1/chapter35/section58.1-3506/",
+      "https://law.lis.virginia.gov/vacode/title46.2/chapter6/section46.2-772/"
     ]
   },
   "pennsylvania": {
@@ -480,6 +496,11 @@
             "fee": 231
           }
         ]
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        }
       }
     },
     "localTaxNote": "California’s 7.25% base rate applies statewide. District taxes in many cities and counties raise the total, up to 11.75% (Lancaster and Palmdale from October 1, 2026). Use tax is based on the address where you register the vehicle.",
@@ -491,7 +512,8 @@
       "Estimates only, not tax or legal advice. Verify with the California DMV or CDTFA.",
       "Use tax is based on the purchase price and the rate where you register the vehicle, and is paid to the DMV at transfer. The statewide rate is 7.25%, and district taxes add up to 4.50%.",
       "Private-party trade-in deductions are not permitted in California.",
-      "Registration includes the $76 registration fee, the $34 CHP fee, and estimates of the value-based fees: the vehicle license fee (0.65% of the price, since the DMV bases it on the new owner’s price when a registered vehicle is transferred) and the transportation improvement fee ($33 to $231 by value). Not included: county and district fees and the smog transfer fee."
+      "Registration includes the $76 registration fee, the $34 CHP fee, and estimates of the value-based fees: the vehicle license fee (0.65% of the price, since the DMV bases it on the new owner’s price when a registered vehicle is transferred) and the transportation improvement fee ($33 to $231 by value). Not included: county and district fees and the smog transfer fee.",
+      "California’s sources do not say whether its electric vehicle fee applies to motorcycles, so the estimate leaves it out for a motorcycle. Confirm with the DMV."
     ],
     "faqs": [
       {
@@ -562,7 +584,12 @@
         "1": 30
       },
       "evSurchargeAnnual": 200,
-      "passengerWeightSplitLbs": 6000
+      "passengerWeightSplitLbs": 6000,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "excluded"
+        }
+      }
     },
     "localTaxNote": "Texas charges a flat 6.25% motor vehicle sales tax statewide; local city and county sales taxes do not apply to motor vehicles.",
     "notes": [
@@ -575,7 +602,8 @@
       "Texas charges 6.25% motor vehicle tax on the greater of the purchase price or 80% of the Standard Presumptive Value (SPV).",
       "Trade-in deductions do not apply to private-party sales in Texas.",
       "Registration shown is the $50.75 base fee (or $54 for 6,001 to 10,000 lbs) plus $1 TexasSure. Also due at registration: a $7.50 inspection program replacement fee, a $4.75 processing fee, a $2.75 emissions fee in 17 counties, and county fees of $0 to $31.50. The title fee is $33 in nonattainment counties and $28 elsewhere.",
-      "Texas no longer requires safety inspections for non-commercial vehicles (since January 1, 2025). Vehicles in 17 counties still need an emissions inspection."
+      "Texas no longer requires safety inspections for non-commercial vehicles (since January 1, 2025). Vehicles in 17 counties still need an emissions inspection.",
+      "Texas’s definition of an electric vehicle leaves out motorcycles (Transp. Code 502.360), so the estimate does not add the $200 fee."
     ],
     "faqs": [
       {
@@ -612,7 +640,8 @@
       "https://comptroller.texas.gov/taxes/motor-vehicle/private-party-spv.php",
       "https://comptroller.texas.gov/taxes/publications/96-254/gift.php",
       "https://www.txdmv.gov/motorists/register-your-vehicle",
-      "https://www.txdmv.gov/motorists/buying-or-selling-a-vehicle"
+      "https://www.txdmv.gov/motorists/buying-or-selling-a-vehicle",
+      "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.502.htm"
     ]
   },
   "florida": {
@@ -1031,7 +1060,12 @@
       "motorcycle": {
         "1": 41
       },
-      "evSurchargeAnnual": 100
+      "evSurchargeAnnual": 100,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        }
+      }
     },
     "flatTaxTable": {
       "thresholdPrice": 15000,
@@ -1128,7 +1162,8 @@
       "Estimates only, not tax or legal advice. Verify with the Illinois Department of Revenue or the Illinois Secretary of State.",
       "Illinois taxes private-party purchases on Form RUT-50 with flat amounts: Table A by vehicle age under $15,000, Table B by price at $15,000 and up, and $25 for motorcycles.",
       "Purchases from a spouse or civil union partner, parent, brother, sister, or child are taxed $15 instead.",
-      "Passenger registration is $151 a year; electric vehicles pay $100 more."
+      "Passenger registration is $151 a year; electric vehicles pay $100 more.",
+      "Illinois’s sources do not say whether its electric vehicle fee applies to motorcycles, so the estimate leaves it out for a motorcycle. Confirm with the Secretary of State."
     ],
     "faqs": [
       {
@@ -1193,7 +1228,15 @@
         "1": 30
       },
       "evSurchargeAnnual": 200,
-      "phevSurchargeAnnual": 150
+      "phevSurchargeAnnual": 150,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "excluded"
+        },
+        "phev": {
+          "outcome": "excluded"
+        }
+      }
     },
     "localTaxNote": "Ohio’s 5.75% state rate plus county tax gives combined rates from 6.50% to 8.25% (October to December 2026). The rate is set by the county where the buyer lives, and the tax is paid to the county clerk of courts when the title is transferred.",
     "notes": [
@@ -1205,7 +1248,8 @@
       "Estimates only, not tax or legal advice. Verify with the Ohio Department of Taxation, the Ohio BMV, or your county clerk of courts title office.",
       "Ohio charges 5.75% state sales tax plus county tax (combined 6.50% to 8.25%) at the rate of the county where you live, paid to the clerk of courts at title transfer.",
       "Registration shown is the $36 passenger fee ($30 for motorcycles). Also due: an $8 deputy registrar fee and any local permissive tax of up to $30. Electric vehicles add $200 a year, plug-in hybrids $150, and hybrids $100.",
-      "Some counties require an E-Check emissions certificate before you can register."
+      "Some counties require an E-Check emissions certificate before you can register.",
+      "Ohio defines battery electric and plug-in hybrid vehicles as passenger cars (R.C. 4501.01), so the estimate does not add those fees to a motorcycle."
     ],
     "faqs": [
       {
@@ -1243,7 +1287,8 @@
       "https://tax.ohio.gov/business/sales-and-use-tax/rate-tables/by-county-q4-2026",
       "https://bmv.ohio.gov/doc-fees.aspx",
       "https://bmv.ohio.gov/titles-new.aspx",
-      "https://codes.ohio.gov/ohio-revised-code/section-4505.09"
+      "https://codes.ohio.gov/ohio-revised-code/section-4505.09",
+      "https://codes.ohio.gov/ohio-revised-code/section-4501.01"
     ],
     "localTaxMinRate": 0.0075,
     "localTaxMaxRate": 0.025
@@ -1272,7 +1317,12 @@
       "motorcycle": {
         "1": 20
       },
-      "evSurchargeAnnual": 238.59
+      "evSurchargeAnnual": 238.59,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        }
+      }
     },
     "localTaxNote": "Georgia charges a one-time Title Ad Valorem Tax (TAVT) of 7.0% in place of sales tax and annual property tax. The rate is the same in every county.",
     "notes": [
@@ -1285,7 +1335,8 @@
       "Georgia taxes a private sale on the fair market value from the state assessment manual, which can be more or less than the price you paid. The estimate uses the price you enter. To match the Department of Revenue, look up the value with its TAVT estimator and enter that value as the price.",
       "A trade-in lowers TAVT only on a dealer sale. Private sales get no trade-in reduction.",
       "New Georgia residents pay 3% instead of 7%. A transfer between immediate family members can pay 0.5% if the previous owner paid TAVT (Form MV-16).",
-      "Registration shown is the $20 annual plate fee. All-electric vehicles add the $238.59 alternative fuel fee. Plug-in hybrids pay it only if they choose the alternative fuel plate."
+      "Registration shown is the $20 annual plate fee. All-electric vehicles add the $238.59 alternative fuel fee. Plug-in hybrids pay it only if they choose the alternative fuel plate.",
+      "Georgia’s sources do not say whether its electric vehicle fee applies to motorcycles, so the estimate leaves it out for a motorcycle. Confirm with your county tag office."
     ],
     "faqs": [
       {
@@ -1353,7 +1404,15 @@
         "1": 29.5
       },
       "evSurchargeAnnual": 214.5,
-      "phevSurchargeAnnual": 107.25
+      "phevSurchargeAnnual": 107.25,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "excluded"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
+      }
     },
     "localTaxNote": "North Carolina charges a 3% highway use tax in place of sales tax, with no local rate. Some counties add a small registration tax (up to $17 in Wake, Durham, and Orange).",
     "notes": [
@@ -1367,7 +1426,8 @@
       "On a private sale, North Carolina figures the 3% highway use tax on market value from the NCDMV value schedule, which may not match the price you paid. The estimate uses the price you enter.",
       "There is no cap for passenger vehicles. The $250 maximum applies only to a vehicle already titled in your name in another state for at least 90 days, and the $2,000 maximum only to commercial vehicles over 26,000 pounds.",
       "Registration shown is the $46.25 passenger fee ($29.50 for motorcycles) plus any EV ($214.50) or plug-in hybrid ($107.25) fee. County and regional registration taxes, and the county property tax collected with registration, are not included.",
-      "A lien listed on your title application is recorded with the title. NCDMV charges $25 to add a lien to an existing title later."
+      "A lien listed on your title application is recorded with the title. NCDMV charges $25 to add a lien to an existing title later.",
+      "North Carolina’s electric vehicle fee covers four-wheeled vehicles (G.S. 20-4.01(28b)), so the estimate does not add it to a motorcycle. The sources do not say whether the plug-in hybrid fee applies to motorcycles, so the estimate leaves that out too. Confirm with the NCDMV."
     ],
     "faqs": [
       {
@@ -1407,7 +1467,8 @@
       "https://www.ncdot.gov/dmv/title-registration/vehicle/Pages/documents-forms.aspx",
       "https://www.ncdot.gov/dmv/help/moving/Pages/new-residents.aspx",
       "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-187.3.html",
-      "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-187.6.html"
+      "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-187.6.html",
+      "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_20/GS_20-4.01.html"
     ]
   },
   "michigan": {
@@ -1547,6 +1608,14 @@
           0.81,
           0.729
         ]
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "excluded"
+        },
+        "phev": {
+          "outcome": "excluded"
+        }
       }
     },
     "localTaxNote": "Michigan’s 6% tax applies statewide, on the full purchase price or the vehicle’s fair market value, whichever is greater. The Secretary of State collects it when you transfer the title.",
@@ -1560,7 +1629,8 @@
       "Michigan charges 6% on the full purchase price or fair market value, whichever is greater. The estimate uses the price you enter.",
       "Registration shown is the statutory registration tax for the list price entered (MCL 257.801), assuming the vehicle was first registered in its model year. Plate, plate transfer ($10 to $15), and processing fees are added at the office.",
       "Electric vehicles pay $267 a year more and plug-in hybrids $113.",
-      "The seller keeps the plate. You transfer a plate you own or buy a new one."
+      "The seller keeps the plate. You transfer a plate you own or buy a new one.",
+      "Michigan’s electric and plug-in hybrid increases apply to vehicles using 4 or more tires (MCL 257.801(7)), so the estimate does not add them to a motorcycle."
     ],
     "faqs": [
       {
@@ -1629,6 +1699,11 @@
       "recentModelYearExtra": {
         "withinYears": 2,
         "annualFee": 12.5
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        }
       }
     },
     "localTaxNote": "New Jersey’s 6.625% sales tax is the same statewide; there is no local vehicle sales tax.",
@@ -1642,7 +1717,8 @@
       "Estimates only, not tax or legal advice. Verify with the New Jersey Motor Vehicle Commission or the Division of Taxation.",
       "Sales tax is 6.625% of the price you paid. The Division of Taxation’s Casual Sales Unit may question a price well below market value and use NADA values if you do not respond.",
       "There is no trade-in credit on a private sale. Swapping vehicles is taxed on fair market value.",
-      "Registration shown uses MVC’s weight classes and the higher fee for model years within 2 years. The $270 zero emission vehicle fee is worked out from the statutory schedule ($250 in July 2024 plus $10 a year), not a figure the MVC publishes."
+      "Registration shown uses MVC’s weight classes and the higher fee for model years within 2 years. The $270 zero emission vehicle fee is worked out from the statutory schedule ($250 in July 2024 plus $10 a year), not a figure the MVC publishes.",
+      "New Jersey’s sources do not say whether its electric vehicle fee applies to motorcycles, so the estimate leaves it out for a motorcycle. Confirm with the MVC."
     ],
     "faqs": [
       {
@@ -1720,6 +1796,15 @@
         "plateFee": 104,
         "motorcyclePlateFee": 22,
         "plateTransferFee": 10
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "charged",
+          "amount": 30
+        },
+        "phev": {
+          "outcome": "silent"
+        }
       }
     },
     "localTaxNote": "Washington adds the local sales tax rate where you live: 1.1% to 4.2% from October 1 to December 31, 2026. In the Sound Transit district, the regional transit authority excise tax is also added to registration each year; it is not included here.",
@@ -1738,7 +1823,8 @@
       "Local rates change each quarter. The range shown is for October 1 to December 31, 2026.",
       "Registration shown is the state fees for a vehicle up to 6,000 lbs. The regional transit authority excise tax, transportation benefit district fees, and other local fees are not included. DOL’s tab fee estimator gives the exact amount.",
       "DOL’s use tax page still lists the motor vehicle tax at 0.3%. DOR lists 0.5% from January 1, 2026, and the estimate uses 0.5%.",
-      "Vehicles that plug in and go at least 30 miles on battery pay $225 a year at renewal. Other hybrids pay $75."
+      "Vehicles that plug in and go at least 30 miles on battery pay $225 a year at renewal. Other hybrids pay $75.",
+      "An electric motorcycle pays a $30 fee in place of the electric vehicle fee (RCW 46.17.323), and the estimate adds that. RCW 46.17.324 also charges $75 on “a vehicle” without mentioning motorcycles, so the total could be $105. The sources do not say what a plug-in hybrid motorcycle pays, so the estimate adds nothing for one. Confirm with the Department of Licensing."
     ],
     "faqs": [
       {
@@ -1786,7 +1872,9 @@
       "https://dol.wa.gov/moving-washington/vehicle-registration-and-plates",
       "https://app.leg.wa.gov/RCW/default.aspx?cite=46.17",
       "https://app.leg.wa.gov/RCW/default.aspx?cite=82.12.0251",
-      "https://dol.wa.gov/vehicles-and-boats/vehicles/taxes-and-fees/regional-transit-authority-rta-tax"
+      "https://dol.wa.gov/vehicles-and-boats/vehicles/taxes-and-fees/regional-transit-authority-rta-tax",
+      "https://app.leg.wa.gov/rcw/default.aspx?cite=46.17.323",
+      "https://app.leg.wa.gov/rcw/default.aspx?cite=46.17.324"
     ],
     "localTaxMinRate": 0.011,
     "localTaxMaxRate": 0.042
@@ -1930,7 +2018,15 @@
         "1": 19.5
       },
       "evSurchargeAnnual": 200,
-      "phevSurchargeAnnual": 100
+      "phevSurchargeAnnual": 100,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
+      }
     },
     "localTaxNote": "Tennessee adds the local rate where you live, 2.00% to 2.75%, on the first $1,600 of the price only, plus a 2.75% state single article tax on the next $1,600. Many counties also charge a wheel tax with registration.",
     "notes": [
@@ -1943,7 +2039,8 @@
       "Estimates only, not tax or legal advice. Verify with your county clerk or the Tennessee Department of Revenue.",
       "If the price is under 75% of the vehicle’s value in a pricing guide, the buyer and seller complete the Affidavit of Non-Dealer Transfers. Without it, or an appraisal, tax is due on the full value.",
       "County wheel taxes and other county clerk fees are not included.",
-      "The all-electric vehicle fee rises to $274 for registrations from January 1, 2027."
+      "The all-electric vehicle fee rises to $274 for registrations from January 1, 2027.",
+      "Tennessee’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with your county clerk."
     ],
     "faqs": [
       {
@@ -2355,6 +2452,14 @@
             ]
           }
         ]
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "charged"
+        },
+        "phev": {
+          "outcome": "charged"
+        }
       }
     },
     "localTaxNote": "Indiana has no local sales tax on vehicles. The BMV collects a yearly vehicle excise tax with registration, set by the original retail price and the vehicle’s age; the estimate includes it. Some counties and cities add their own vehicle excise or wheel tax, which is not included.",
@@ -2369,7 +2474,8 @@
       "Estimates only, not tax or legal advice. Verify with the Indiana BMV or Department of Revenue.",
       "County and municipal vehicle excise and wheel taxes are not included, and motorcycles are shown without the excise tax. A motorcycle’s registration is $26.35 plus the $15 fee. The BMV’s Quick Quote tool gives your exact total.",
       "Registration shown is the BMV fee chart revised January 1, 2026.",
-      "The estimate shows a full year of the excise tax. Registering partway through your registration year, or a credit for excise paid on a vehicle you sold, can change the amount due (IC 6-6-5-7.2)."
+      "The estimate shows a full year of the excise tax. Registering partway through your registration year, or a credit for excise paid on a vehicle you sold, can change the amount due (IC 6-6-5-7.2).",
+      "Indiana’s supplemental fee covers each hybrid or electric vehicle that must be registered, and its exemptions name motor driven cycles but not motorcycles (IC 9-18.1-5-12), so the estimate charges a motorcycle the same fee. Confirm with the BMV."
     ],
     "faqs": [
       {
@@ -2436,7 +2542,15 @@
         "1": 17.75
       },
       "evSurchargeAnnual": 150,
-      "phevSurchargeAnnual": 75
+      "phevSurchargeAnnual": 75,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
+      }
     },
     "localTaxNote": "Missouri adds the local sales tax of the city or county where you live, not where you bought the car: 1.0% to 7.263% on the October to December 2026 motor vehicle chart.",
     "notes": [
@@ -2451,7 +2565,8 @@
       "The 2026 decal amounts ($150 and $75) are worked out from RSMo 142.869, not a figure the Department of Revenue publishes.",
       "Department of Revenue pages apply the tax to the price less any trade-in allowance, but its rule 12 CSR 10-103.350 says a trade-in allowance applies only to purchases from a dealer. On a private sale, the 180-day sold-vehicle credit is the usual way to lower the tax.",
       "Local rates change each quarter. The range shown is for October to December 2026.",
-      "County personal property tax is not included. To buy new plates you also need a paid personal property tax receipt or a statement of non-assessment from your county for the prior year."
+      "County personal property tax is not included. To buy new plates you also need a paid personal property tax receipt or a statement of non-assessment from your county for the prior year.",
+      "Missouri’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the Department of Revenue."
     ],
     "faqs": [
       {
@@ -2517,7 +2632,15 @@
         "1": 23
       },
       "evSurchargeAnnual": 175,
-      "phevSurchargeAnnual": 75
+      "phevSurchargeAnnual": 75,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "excluded"
+        },
+        "phev": {
+          "outcome": "excluded"
+        }
+      }
     },
     "localTaxNote": "Wisconsin adds the county tax where the vehicle is kept: 0.5% in most counties, none in Waukesha and Winnebago, and 0.9% in Milwaukee County, plus the 2% City of Milwaukee tax inside the city. Local wheel taxes are not included.",
     "notes": [
@@ -2529,7 +2652,8 @@
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with the Wisconsin DMV or Department of Revenue.",
       "Local wheel taxes, charged where the vehicle is kept, are not included.",
-      "The family and gift exemptions are claimed on the title application. The family exemption applies only to a vehicle with a current Wisconsin title."
+      "The family and gift exemptions are claimed on the title application. The family exemption applies only to a vehicle with a current Wisconsin title.",
+      "Wisconsin’s electric and hybrid surcharges apply to automobiles and motor trucks (Wis. Stat. 341.25(1)), so the estimate does not add them to a motorcycle."
     ],
     "faqs": [
       {
@@ -2567,7 +2691,8 @@
       "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/fee-chart.aspx",
       "https://wisconsindot.gov/Pages/online-srvcs/title-vehicle/emvpublicdefault.aspx",
       "https://wisconsindot.gov/Pages/online-srvcs/title-vehicle/faqs-purchase-price.aspx",
-      "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx"
+      "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx",
+      "https://docs.legis.wisconsin.gov/document/statutes/341.25(1)"
     ],
     "localTaxMinRate": 0,
     "localTaxMaxRate": 0.029
@@ -2632,6 +2757,14 @@
           "year": 10,
           "fee": 3
         }
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
       }
     },
     "localTaxNote": "Colorado adds the local sales or use taxes of the city, county, and special districts (such as RTD) that apply to the sale or where you register the car. On the July 2026 DR 1002 rate list, they total 0% to 8.3%: none in a county without a sales tax outside any city or district, up to Winter Park’s 7% city tax plus Grand County’s 1.3%. Look up your address with the Colorado Sales Tax Lookup Tool.",
@@ -2647,7 +2780,8 @@
       "County fees, the emissions-area fee, and license plate materials are not included, and motorcycles are shown without the specific ownership tax. The DMV’s registration fee estimator gives your total.",
       "Whether plug-in hybrids pay the $63.05 road usage fee is not spelled out on the DMV page; the estimate includes it.",
       "Registration shown is the statewide fees for a car between 2,001 and 5,000 lbs, with the weight-based base fee figured at 3,500 lbs. It includes the $19.30 road safety surcharge ($23 from September 1, 2027).",
-      "Plug-in electric vehicles pay a $63.05 road usage fee, plus the electric motor vehicle road usage fee of $26 ($13 for plug-in hybrids) from July 1, 2026 to June 30, 2027. The estimate includes both."
+      "Plug-in electric vehicles pay a $63.05 road usage fee, plus the electric motor vehicle road usage fee of $26 ($13 for plug-in hybrids) from July 1, 2026 to June 30, 2027. The estimate includes both.",
+      "Colorado’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with your county motor vehicle office."
     ],
     "faqs": [
       {
@@ -2736,6 +2870,14 @@
           "year": 11,
           "fee": 30
         }
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
       }
     },
     "localTaxNote": "Minnesota’s 6.875% Motor Vehicle Sales Tax applies statewide; local sales taxes do not apply to vehicles. Some cities and counties charge a $20 local vehicle excise tax, and many counties add a wheelage tax at registration.",
@@ -2749,7 +2891,8 @@
       "Minnesota’s Motor Vehicle Sales Tax is 6.875%. A trade-in allowance reduces the taxable price when the seller takes a vehicle in trade.",
       "Plates and registration stay with the vehicle and pass to you, so the registration tax shown is what you pay at the next renewal: $10 plus 1.575% of the original MSRP, reduced by the vehicle’s age ($30 from its 11th year). Renewal filing fees and any county wheelage tax are extra.",
       "Electric vehicles pay at least $150 a year more and plug-in hybrids at least $75, or more based on the MSRP and age.",
-      "A deputy registrar office adds a $1 local office surcharge to title transactions."
+      "A deputy registrar office adds a $1 local office surcharge to title transactions.",
+      "Minnesota’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with Driver and Vehicle Services."
     ],
     "faqs": [
       {
@@ -2822,7 +2965,15 @@
         "2": 10
       },
       "evSurchargeAnnual": 60,
-      "phevSurchargeAnnual": 30
+      "phevSurchargeAnnual": 30,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
+      }
     },
     "localTaxNote": "South Carolina charges a one-time 5% Infrastructure Maintenance Fee (IMF), up to $500, instead of sales tax. Before you can register, you pay the county property tax on the vehicle, which is not included here.",
     "notes": [
@@ -2836,7 +2987,8 @@
       "The estimate uses the price you enter. The SCDMV may use a used-vehicle guide value instead, so the fee can differ.",
       "County vehicle property tax, due before registration, is not included.",
       "A vehicle first titled in another state pays a $250 IMF instead when registered here, which the estimate does not apply.",
-      "Registration is $36 instead of $40 at age 65 or with a disability."
+      "Registration is $36 instead of $40 at age 65 or with a disability.",
+      "South Carolina’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the SCDMV."
     ],
     "faqs": [
       {
@@ -2903,7 +3055,15 @@
         "1": 15
       },
       "evSurchargeAnnual": 203,
-      "phevSurchargeAnnual": 103
+      "phevSurchargeAnnual": 103,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
+      }
     },
     "localTaxNote": "Alabama charges a 2% state sales tax on a vehicle bought from a private seller, plus the county and city automotive rates where you live. The licensing official collects it when you register. ALDOR's November 2026 local rate file shows combined county and city automotive rates from 0% (Monroe County outside city limits) to 5.25% (Shorter, in Macon County) where the levies can be matched to one place. Some counties split their levies by city limits, police jurisdictions, and unabated portions, and the file does not say which combine, so a few places may be higher.",
     "notes": [
@@ -2918,7 +3078,8 @@
       "Estimates only, not tax or legal advice. Verify with your county licensing official or the Alabama Department of Revenue (ALDOR).",
       "The local range comes from ALDOR's November 2026 local rate file. Your county licensing official applies the exact rate for your address.",
       "Ad valorem tax, the $1.25 issuance fee, and local issuance fees are not included. Licensing officials may also add small commissions.",
-      "Registration may be prorated to your renewal month, which is set by the first letter of your last name."
+      "Registration may be prorated to your renewal month, which is set by the first letter of your last name.",
+      "Alabama’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the Department of Revenue."
     ],
     "faqs": [
       {
@@ -2997,6 +3158,14 @@
         "ratePerYear": 0.001,
         "minValue": 10000,
         "roundTo": 1000
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
       }
     },
     "localTaxNote": "Louisiana’s 5% state sales tax plus parish and municipal tax, from 2% to 8.5% in the OMV parish tax table (October 2026), is due based on where the vehicle is domiciled.",
@@ -3011,7 +3180,8 @@
       "The title shown includes the $68.50 title fee and $8 handling fee. A local fee of up to $6 may apply.",
       "The plate is 0.1% of the sale price per year, with a $10,000 minimum value, sold for two years ($20 minimum). A motorcycle plate is $12 and lasts four years.",
       "Electric vehicles owe a $110 road usage fee and hybrids $60 for each year, billed later by notice.",
-      "The title assignment must be signed before a notary."
+      "The title assignment must be signed before a notary.",
+      "Louisiana’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the Office of Motor Vehicles."
     ],
     "faqs": [
       {
@@ -3081,7 +3251,17 @@
         "1": 18
       },
       "evSurchargeAnnual": 120,
-      "phevSurchargeAnnual": 120
+      "phevSurchargeAnnual": 120,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "charged",
+          "amount": 60
+        },
+        "phev": {
+          "outcome": "charged",
+          "amount": 60
+        }
+      }
     },
     "localTaxNote": "Kentucky charges a 6% motor vehicle usage tax statewide (KRS 138.460). Counties and cities add no sales tax to a vehicle purchase.",
     "notes": [
@@ -3095,7 +3275,8 @@
       "Estimates only, not tax or legal advice. Verify with your county clerk or the Kentucky Transportation Cabinet.",
       "The electric vehicle fee shown is the $120 statutory base. The Department of Revenue adjusts it each year, and the adjusted 2026 amount is not published on the Cabinet's fee pages.",
       "The usage tax cannot fall below the floor set from the reference manual values, which the estimate does not apply.",
-      "Yearly vehicle property tax and the optional $10 wildlife contribution are not included."
+      "Yearly vehicle property tax and the optional $10 wildlife contribution are not included.",
+      "An electric or plug-in hybrid motorcycle pays a $60 ownership fee instead (KRS 138.475). That is the base amount; the state adjusts it yearly, and the adjusted figure was not published when we checked."
     ],
     "faqs": [
       {
@@ -3166,7 +3347,12 @@
       "motorcycle": {
         "2": 88
       },
-      "evSurchargeAnnual": 120
+      "evSurchargeAnnual": 120,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "excluded"
+        }
+      }
     },
     "localTaxNote": "Oregon has no sales tax on a private vehicle sale. The 0.5% vehicle use tax applies only to vehicles bought from a dealer.",
     "notes": [
@@ -3180,7 +3366,8 @@
       "Estimates only, not tax or legal advice. Verify with Oregon DMV.",
       "The estimate uses the 20 to 39 MPG fee tier. Your vehicle's MPG rating sets the real title and registration fees.",
       "For an electric vehicle, the estimate adds the electric registration fee but keeps the $106 title fee; the all-electric title fee is $192.",
-      "County registration fees, new plate fees ($26), and DEQ emissions test fees are not included."
+      "County registration fees, new plate fees ($26), and DEQ emissions test fees are not included.",
+      "Oregon’s added electric vehicle registration amount is for passenger vehicles (ORS 803.420), so the estimate does not add it to a motorcycle’s $88 two-year registration."
     ],
     "faqs": [
       {
@@ -3217,7 +3404,8 @@
       "https://www.oregon.gov/odot/dmv/pages/fees/vehicle.aspx",
       "https://www.oregon.gov/odot/dmv/pages/vehicle/titlereg.aspx",
       "https://www.oregon.gov/odot/dmv/pages/new2or/moving.aspx",
-      "https://www.oregon.gov/dor/programs/businesses/Pages/vehicle-privilege-and-use-taxes.aspx"
+      "https://www.oregon.gov/dor/programs/businesses/Pages/vehicle-privilege-and-use-taxes.aspx",
+      "https://www.oregonlegislature.gov/bills_laws/ors/ors803.html"
     ],
     "tradeInNote": "Oregon has no sales tax on a private sale, so a trade-in does not change the estimate."
   },
@@ -3291,6 +3479,16 @@
             "fee": 29
           }
         ]
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "charged",
+          "amount": 100
+        },
+        "phev": {
+          "outcome": "charged",
+          "amount": 30
+        }
       }
     },
     "localTaxNote": "Oklahoma charges a motor vehicle excise tax of $20 on the first $1,500 of a used vehicle’s value and 3.25% of the rest, plus a 1.25% sales tax on the price. Both are statewide and paid when the title is transferred.",
@@ -3303,7 +3501,8 @@
       "Estimates only, not tax or legal advice. Verify with Service Oklahoma or a licensed operator.",
       "Oklahoma taxes a used vehicle at $20 on the first $1,500 of value and 3.25% of the rest (excise tax), plus 1.25% sales tax on the price.",
       "Registration shown assumes the vehicle was first registered in its model year. A tire tax (for cars, $2.90 per tire) and, for vehicles titled in another state, a $4 VIN inspection fee are extra.",
-      "Electric vehicles pay $210 a year more and plug-in hybrids $112."
+      "Electric vehicles pay $210 a year more and plug-in hybrids $112.",
+      "On our reading, a motorcycle pays only the Motor Fuels Tax Fee of $100 for electric or $30 for hybrid (47 O.S. 1132.7), because the other fee covers vehicles with at least four wheels (68 O.S. 6511). Confirm with Service Oklahoma."
     ],
     "faqs": [
       {
@@ -3341,7 +3540,8 @@
       "https://oklahoma.gov/service/all-services/auto-vehicle/vehicle-titles.html",
       "https://oklahoma.gov/service/all-services/auto-vehicle/title-transfers.html",
       "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
-      "https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/tax-credits/579.pdf"
+      "https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/tax-credits/579.pdf",
+      "https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os47.pdf"
     ],
     "usedVehicleExcise": {
       "flatTax": 20,
@@ -3503,6 +3703,14 @@
             "fee": 83.25
           }
         ]
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "excluded"
+        },
+        "phev": {
+          "outcome": "excluded"
+        }
       }
     },
     "localTaxNote": "Utah’s 4.85% state rate plus local taxes gives combined rates from 6.35% to 10.05% (October 2026). The rate is the one for where the vehicle will be registered.",
@@ -3516,7 +3724,8 @@
       "Sales tax is based on the price you actually paid, at the combined rate (6.35% to 10.05%) where the vehicle will be registered. Utah has no family exemption.",
       "Registration shown is the $72.50 registration fee ($73.25 for motorcycles) plus the 2026 uniform age-based fee, which replaces property tax. Some counties add a $10 corridor fee or a $2 to $3 air pollution control fee.",
       "Electric vehicles pay a $180 road usage charge for 2026, rising to $280 on January 1, 2027. Plug-in hybrids pay at least $56.50, adjusted each year for inflation.",
-      "A trade lowers the price only for a vehicle-for-vehicle trade in the same transaction."
+      "A trade lowers the price only for a vehicle-for-vehicle trade in the same transaction.",
+      "Utah’s electric and plug-in hybrid charges are added to the fee for vehicles other than motorcycles (Utah Code 41-1a-1206), so the estimate does not add them to a motorcycle."
     ],
     "faqs": [
       {
@@ -3556,7 +3765,8 @@
       "https://dmv.utah.gov/register/registering-your-vehicle/",
       "https://files.tax.utah.gov/tax/salestax/rate/26q4combined.pdf",
       "https://files.tax.utah.gov/mved/media/temporarypermitfees-07-2026.pdf",
-      "https://roadusagecharge.utah.gov/"
+      "https://roadusagecharge.utah.gov/",
+      "https://le.utah.gov/xcode/Title41/Chapter1A/41-1a-S1206.html"
     ],
     "localTaxMinRate": 0.015,
     "localTaxMaxRate": 0.052
@@ -3608,6 +3818,16 @@
         },
         "minAmount": 36,
         "roundToDollar": true
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "charged",
+          "amount": 9
+        },
+        "phev": {
+          "outcome": "charged",
+          "amount": 9
+        }
       }
     },
     "localTaxNote": "Iowa levies the 5% Fee for New Registration statewide in lieu of retail sales tax; local option sales taxes (LOST) do not apply to motor vehicles.",
@@ -3621,7 +3841,8 @@
       "Estimates only — not tax or legal advice. Verify with Iowa DOT or county treasurer.",
       "Trade-in deductions are not permitted on private-party vehicle sales in Iowa.",
       "Certificate of title fee is $35.00 effective 2025.",
-      "The weight part of registration assumes 3,500 lbs; every 500 lbs more or less changes the fee by $2. The current model year counts as the first model year. The value part is for passenger vehicles; motorcycles are shown at their $20 fee. The Iowa DOT fee calculator gives the exact amount."
+      "The weight part of registration assumes 3,500 lbs; every 500 lbs more or less changes the fee by $2. The current model year counts as the first model year. The value part is for passenger vehicles; motorcycles are shown at their $20 fee. The Iowa DOT fee calculator gives the exact amount.",
+      "A battery electric or plug-in hybrid motorcycle pays a $9 electric motorcycle fee instead of these fees (Iowa Code 321.117)."
     ],
     "faqs": [
       {
@@ -3809,6 +4030,14 @@
             "fee": 32.5
           }
         ]
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
       }
     },
     "localTaxNote": "City and county sales taxes in Arkansas run from 0% to 6.125% (October to December 2026) and apply only to the first $2,500 of a vehicle’s price. A used vehicle under $4,000 owes no sales tax.",
@@ -3822,7 +4051,8 @@
       "Estimates only, not tax or legal advice. Verify with the Arkansas Department of Finance and Administration (DFA).",
       "Used vehicles under $4,000 owe no sales tax. From $4,000 to $9,999 the state rate is 3.5% and from $10,000 it is 6.5%. City and county taxes (0% to 6.125%) apply to the first $2,500 only.",
       "Registration shown is the DFA fee by weight ($17 for 3,000 lbs or less, $25 for 3,001 to 4,500 lbs, $30 above) plus the $2.50 validation decal. Electric vehicles add $200, plug-in hybrids $100, and hybrids $50.",
-      "To register, you also need proof that the vehicle was assessed and that personal property taxes were paid in your county. County property tax is not included."
+      "To register, you also need proof that the vehicle was assessed and that personal property taxes were paid in your county. County property tax is not included.",
+      "Arkansas’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the Department of Finance and Administration."
     ],
     "faqs": [
       {
@@ -3892,7 +4122,15 @@
         "1": 15
       },
       "evSurchargeAnnual": 150,
-      "phevSurchargeAnnual": 75
+      "phevSurchargeAnnual": 75,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
+      }
     },
     "localTaxNote": "Mississippi levies a 5% casual sales tax statewide on private vehicle sales, but counties assess substantial annual ad valorem personal property taxes at registration based on local millage rates.",
     "notes": [
@@ -3905,7 +4143,8 @@
       "Estimates only — not tax or legal advice. Verify with Mississippi Department of Revenue and county tax collector.",
       "Mississippi taxes private sales at 5% based on DOR true value schedules.",
       "Counties levy annual ad valorem property taxes at registration based on local county millage rates.",
-      "The estimate uses Mississippi’s base amounts of $150 for an electric vehicle and $75 for a hybrid. The law raises them each July for inflation, and the county figure may be higher, so confirm with your county tax collector."
+      "The estimate uses Mississippi’s base amounts of $150 for an electric vehicle and $75 for a hybrid. The law raises them each July for inflation, and the county figure may be higher, so confirm with your county tax collector.",
+      "Mississippi’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with your county tax collector."
     ],
     "faqs": [
       {
@@ -3968,7 +4207,16 @@
         "1": 16
       },
       "evSurchargeAnnual": 165,
-      "phevSurchargeAnnual": 100
+      "phevSurchargeAnnual": 100,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "charged",
+          "amount": 14
+        },
+        "phev": {
+          "outcome": "excluded"
+        }
+      }
     },
     "localTaxNote": "Kansas cities and counties impose local sales taxes between 1.0% and 4.0%, bringing the combined sales tax rate to 7.5%–10.5% depending on the buyer's taxing jurisdiction.",
     "notes": [
@@ -3982,7 +4230,8 @@
       "Estimates only — not tax or legal advice. Verify with Kansas Department of Revenue and county treasurer.",
       "Kansas state sales tax is 6.5%; local city and county taxes increase the total rate to between 7.5% and 10.5%.",
       "If you sell a used vehicle and buy one of greater value within 120 days before or after the sale, tax applies only to the difference (K.S.A. 79-3697). Bring signed bills of sale for both vehicles.",
-      "County treasurers assess annual property taxes based on local mill levies at registration."
+      "County treasurers assess annual property taxes based on local mill levies at registration.",
+      "An all-electric motorcycle pays $30 in place of the $16 motorcycle fee, which is the +$14 on the form (K.S.A. 8-143). The plug-in hybrid fee is listed under passenger vehicles other than motorcycles, so on our reading the estimate does not add it to a motorcycle."
     ],
     "faqs": [
       {
@@ -4019,7 +4268,8 @@
       "https://www.ksrevenue.gov/",
       "https://www.ksrevenue.gov/prtaxrates.html",
       "https://ksrevisor.gov/statutes/chapters/ch79/079_036_0097.html",
-      "https://www.ksrevenue.gov/faqs-taxsales.html"
+      "https://www.ksrevenue.gov/faqs-taxsales.html",
+      "https://ksrevisor.gov/statutes/chapters/ch08/008_001_0043.html"
     ],
     "localTaxMinRate": 0.01,
     "localTaxMaxRate": 0.04,
@@ -5101,6 +5351,16 @@
             ]
           }
         ]
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "charged",
+          "amount": 75
+        },
+        "phev": {
+          "outcome": "charged",
+          "amount": 75
+        }
       }
     },
     "localTaxNote": "Nebraska cities and counties impose local sales taxes between 0.5% and 2.5% (total 6.0% to 8.0%). In addition, an annual Motor Vehicle Tax and Motor Vehicle Fee are assessed based on age and MSRP at registration. The estimate includes them.",
@@ -5116,7 +5376,7 @@
       "Nebraska charges 5.5% state sales tax; local city and county sales taxes can increase the total rate up to 8.0%.",
       "Trade-in deductions are not permitted on private-party sales.",
       "The estimate includes a full year of the Motor Vehicle Tax and Fee for passenger vehicles. The tax starts at $25 to $1,900 and ends after the 13th year; the fee is $5, $20, or $30 before age reductions. Motorcycles are shown without them, and other local fees are not included. Your county treasurer gives the exact amount.",
-      "Nebraska’s annual alternative fuel fee is $150 for an electric vehicle and $75 for a plug-in hybrid (Neb. Rev. Stat. 60-3,191)."
+      "Nebraska’s annual alternative fuel fee is $150 for an electric vehicle and $75 for a plug-in hybrid or a motorcycle (Neb. Rev. Stat. 60-3,191)."
     ],
     "faqs": [
       {
@@ -5183,7 +5443,15 @@
         "1": 19
       },
       "evSurchargeAnnual": 140,
-      "phevSurchargeAnnual": 75
+      "phevSurchargeAnnual": 75,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
+      }
     },
     "localTaxNote": "Idaho does not levy local sales tax on motor vehicles, but counties assess minor administrative and highway district registration fees.",
     "notes": [
@@ -5196,7 +5464,8 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Idaho Transportation Department (ITD) and Idaho State Tax Commission.",
       "Idaho charges 6.0% sales tax on the full purchase price; private trade-ins are not deductible.",
-      "Registration fees scale by vehicle age: $69 (1–2 yrs), $57 (3–6 yrs), $45 (7+ yrs)."
+      "Registration fees scale by vehicle age: $69 (1–2 yrs), $57 (3–6 yrs), $45 (7+ yrs).",
+      "Idaho’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with your county DMV office."
     ],
     "faqs": [
       {
@@ -5258,7 +5527,15 @@
         "1": 25
       },
       "evSurchargeAnnual": 200,
-      "phevSurchargeAnnual": 100
+      "phevSurchargeAnnual": 100,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
+      }
     },
     "localTaxNote": "West Virginia levies the 5% Motor Vehicle Privilege Tax uniformly statewide; no local, county, or city sales taxes apply to titled vehicles.",
     "notes": [
@@ -5272,7 +5549,8 @@
       "Estimates only — not tax or legal advice. Verify with West Virginia DMV.",
       "West Virginia charges a uniform 5% Motor Vehicle Privilege Tax statewide under W. Va. Code § 17A-3-4; no local sales taxes apply.",
       "Trade-in deductions are restricted to licensed dealer purchases and do not apply to private party sales.",
-      "County personal property tax is not included. It is assessed by the County Assessor and collected by the County Sheriff. The DMV asks for a personal property tax receipt when you transfer a registration or renew, or an assessor’s affidavit when you renew."
+      "County personal property tax is not included. It is assessed by the County Assessor and collected by the County Sheriff. The DMV asks for a personal property tax receipt when you transfer a registration or renew, or an assessor’s affidavit when you renew.",
+      "West Virginia’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the DMV."
     ],
     "faqs": [
       {
@@ -5333,7 +5611,12 @@
       "motorcycle": {
         "1": 35
       },
-      "evSurchargeAnnual": 50
+      "evSurchargeAnnual": 50,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        }
+      }
     },
     "localTaxNote": "Hawaii has no state sales tax or General Excise Tax (GET) on casual motor vehicle sales between private individuals. However, counties (Honolulu, Maui, Hawaii, Kauai) assess state (1.75¢/lb) and county (up to 7.0¢/lb) annual vehicle weight taxes at registration.",
     "notes": [
@@ -5347,7 +5630,8 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Hawaii Department of Transportation and your local county DMV.",
       "Hawaii does not levy sales tax or General Excise Tax on casual private vehicle sales.",
-      "Annual registration costs vary based on vehicle weight and county of residence."
+      "Annual registration costs vary based on vehicle weight and county of residence.",
+      "Hawaii’s road usage rules for electric vehicles cover three or more wheels, and its sources do not settle whether the $50 surcharge applies to a two-wheeled motorcycle, so the estimate leaves it out for one. Confirm with your county."
     ],
     "faqs": [
       {
@@ -5418,7 +5702,15 @@
         ],
         "minAmount": 5
       },
-      "phevSurchargeAnnual": 50
+      "phevSurchargeAnnual": 50,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
+      }
     },
     "localTaxNote": "New Hampshire has no state vehicle sales tax. However, under RSA 261:153, local town or city clerks collect an annual Municipal Permit Fee (personal property tax) based on vehicle MSRP and age ($18 down to $3 per $1,000) prior to state registration. The estimate includes it.",
     "notes": [
@@ -5432,7 +5724,8 @@
       "Estimates only — not tax or legal advice. Verify with New Hampshire DMV and your local town/city clerk.",
       "New Hampshire has no state vehicle sales tax. The estimate includes a full year of the municipal permit fee, which has a $5 minimum, for passenger vehicles, but not the $3 reclamation fee or a municipal transportation fee of up to $5, and motorcycles are shown without the permit fee. Your town or city clerk gives the exact amount.",
       "Registration shown is the $48 fee for vehicles of 3,001 to 5,000 lbs. Up to 3,000 lbs is $42, and 5,001 to 8,000 lbs is $66.",
-      "Battery electric vehicles pay $100 a year, and plug-in hybrids pay $50. From January 1, 2027, the battery electric fee goes by gross vehicle weight rating: $0 up to 1,000 lbs, $50 from 1,001 to 3,000 lbs, $100 from 3,001 to 8,000 lbs, and $150 over 8,000 lbs (RSA 261:141-c). Plug-in hybrids stay at $50. The estimate uses $100."
+      "Battery electric vehicles pay $100 a year, and plug-in hybrids pay $50. From January 1, 2027, the battery electric fee goes by gross vehicle weight rating: $0 up to 1,000 lbs, $50 from 1,001 to 3,000 lbs, $100 from 3,001 to 8,000 lbs, and $150 over 8,000 lbs (RSA 261:141-c). Plug-in hybrids stay at $50. The estimate uses $100.",
+      "New Hampshire’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the Division of Motor Vehicles."
     ],
     "faqs": [
       {
@@ -5585,7 +5878,14 @@
       },
       "evSurchargeAnnual": 130,
       "phevSurchargeAnnual": 70,
-      "evSurchargePassengerOnly": true
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "excluded"
+        },
+        "phev": {
+          "outcome": "excluded"
+        }
+      }
     },
     "localTaxNote": "Montana has no state sales tax. Light vehicle registration fees are flat and age-based ($217 for 0–4 yrs; $87 for 5–10 yrs; $28 for 11+ yrs). Under MCA 61-3-315, an annual $825 luxury surcharge applies to vehicles with MSRP over $150,000.",
     "notes": [
@@ -5737,7 +6037,12 @@
         "1": 18
       },
       "evSurchargeAnnual": 100,
-      "evSurchargePassengerOnly": true
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "excluded",
+          "baseAnnual": 24
+        }
+      }
     },
     "localTaxNote": "South Dakota's 4% Motor Vehicle Excise Tax is collected at the state level in lieu of general sales tax; no local city or county sales taxes apply to vehicle purchases.",
     "notes": [
@@ -5751,7 +6056,7 @@
       "Estimates only — not tax or legal advice. Verify with South Dakota Department of Revenue and county treasurer.",
       "South Dakota charges a 4% Motor Vehicle Excise Tax in lieu of sales tax. Private trade-in deductions are authorized by statute.",
       "Older vehicles (11+ years old) priced at $2,500 or less are fully exempt from excise tax.",
-      "South Dakota’s annual electric vehicle fee is $100 (SDCL 32-5-188, raised from $50 by 2026 House Bill 1227, in effect since July 1, 2026). It does not apply to an electric motorcycle licensed under SDCL 32-5-9."
+      "South Dakota’s annual electric vehicle fee is $100 (SDCL 32-5-188, raised from $50 by 2026 House Bill 1227, in effect since July 1, 2026). It does not apply to an electric motorcycle licensed under SDCL 32-5-9, whose registration is the top motorcycle fee, $24, and the estimate uses that."
     ],
     "faqs": [
       {
@@ -5787,7 +6092,8 @@
     "sources": [
       "https://dor.sd.gov/individuals/motor-vehicle",
       "https://sdlegislature.gov/Statutes/32-5-188",
-      "https://sdlegislature.gov/Statutes/2-14-16"
+      "https://sdlegislature.gov/Statutes/2-14-16",
+      "https://sdlegislature.gov/Statutes/32-5-9"
     ]
   },
   "north-dakota": {
@@ -5815,7 +6121,14 @@
       },
       "evSurchargeAnnual": 120,
       "phevSurchargeAnnual": 50,
-      "evSurchargePassengerOnly": true
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
+      }
     },
     "localTaxNote": "North Dakota's 5% Motor Vehicle Excise Tax is a uniform state levy in lieu of local sales taxes; no city or county taxes apply to vehicle purchases.",
     "notes": [
@@ -5969,7 +6282,15 @@
       },
       "evSurchargeAnnual": 87,
       "phevSurchargeAnnual": 44.5,
-      "evSurchargePassengerOnly": true
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "excluded",
+          "baseAnnual": 56
+        },
+        "phev": {
+          "outcome": "excluded"
+        }
+      }
     },
     "localTaxNote": "Vermont charges a uniform 6.0% Motor Vehicle Purchase and Use Tax statewide; no local city or county sales taxes apply. Tax is assessed on the greater of purchase price or J.D. Power clean trade-in book value.",
     "notes": [
@@ -5983,7 +6304,7 @@
       "Estimates only — not tax or legal advice. Verify with Vermont Department of Motor Vehicles (DMV).",
       "Vermont charges a 6% Purchase and Use Tax on the higher of the purchase price or J.D. Power clean trade-in book value.",
       "Trade-in credits apply to private sales if the previous vehicle was registered in Vermont and sold within 3 months.",
-      "Vermont DMV lists a battery electric car at $178 for one year or $341 for two. That is registration of $89 or $163, without the $2 a year Clean Air Fund fee, plus an $89 a year infrastructure fee, so the form’s +$87 is the difference from the $91 gas registration. A plug-in hybrid adds $44.50 a year to the gas registration, for $135.50 or $256 in all. Motorcycles do not pay the infrastructure fee. The battery electric fee is repealed on January 1, 2027 (23 V.S.A. 361)."
+      "Vermont DMV lists a battery electric car at $178 for one year or $341 for two. That is registration of $89 or $163, without the $2 a year Clean Air Fund fee, plus an $89 a year infrastructure fee, so the form’s +$87 is the difference from the $91 gas registration. A plug-in hybrid adds $44.50 a year to the gas registration, for $135.50 or $256 in all. Motorcycles do not pay the infrastructure fee, and DMV lists a battery electric motorcycle at $56 a year. The battery electric fee is repealed on January 1, 2027 (23 V.S.A. 361)."
     ],
     "faqs": [
       {
@@ -6020,7 +6341,8 @@
       "https://dmv.vermont.gov",
       "https://dmv.vermont.gov/registrations/fees",
       "https://dmv.vermont.gov/registrations/fees/ev-infrastructure-fee",
-      "https://legislature.vermont.gov/statutes/section/23/007/00361"
+      "https://legislature.vermont.gov/statutes/section/23/007/00361",
+      "https://legislature.vermont.gov/statutes/section/23/007/00362"
     ]
   },
   "wyoming": {
@@ -6048,7 +6370,6 @@
       },
       "evSurchargeAnnual": 100,
       "phevSurchargeAnnual": 50,
-      "evSurchargePassengerOnly": true,
       "listPriceAnnualTax": {
         "label": "Wyoming county registration fee",
         "defaultListPrice": 30000,
@@ -6062,6 +6383,14 @@
           0.15
         ],
         "minAmount": 5
+      },
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "excluded"
+        },
+        "phev": {
+          "outcome": "excluded"
+        }
       }
     },
     "localTaxNote": "Wyoming state sales/use tax is 4.0%. All 23 Wyoming counties impose a 1.0% to 2.0% local optional tax, making total sales tax between 5.0% and 6.0%. Under Wyo. Stat. § 31-3-101, an annual county registration fee also applies at registration, based on the factory price and the year of service. The estimate includes it.",

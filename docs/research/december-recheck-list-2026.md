@@ -13,6 +13,11 @@ Re-checked November 7, 2026; results in `december-recheck-2026-11-07.md`. The ro
 | Kentucky | $9 title fee and $3 registration add-on | Find the Transportation Cabinet regulation under KRS 186.017 that sets both. Not found on November 7. The statutes from January 1 give only the split of each fee. | `titleFee`, the $20.50 registration, and Kentucky guides |
 | Vermont | $89 battery electric infrastructure fee, $178 one-year total | 23 V.S.A. 361(b) is repealed January 1, 2027. Confirm the new DMV totals. The $44.50 plug-in hybrid fee continues under 361(c). The engine adds fees to the gas registration, so a battery electric total below it ($89 against $91) needs a decision. | `evSurchargeAnnual`, the Vermont disclaimer |
 | Kentucky | $120 electric vehicle ownership fee | Whether the Department of Revenue has published an adjusted amount (KRS 138.475) | `evSurchargeAnnual` and `phevSurchargeAnnual` |
+| Kentucky | $60 electric motorcycle ownership fee | Same adjustment (KRS 138.475) | `motorcycleFuelFees` |
+| Utah | Motorcycles excluded from the electric and plug-in hybrid charges | The current version of Utah Code 41-1a-1206 is superseded January 1, 2027. Re-read the new one. | `motorcycleFuelFees`, and the $280 car figure in Utah's copy |
+| New Hampshire | Source silent on motorcycles | The EV fee becomes weight-based January 1, 2027 (RSA 261:141-c). Re-read for motorcycles. | `motorcycleFuelFees` |
+
+Minnesota's surcharge minimums and Oregon's motorcycle and electric fees change July 1, 2027. Both are in the staleness registry for that date.
 
 ## Closed November 7, 2026
 

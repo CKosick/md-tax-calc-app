@@ -8,6 +8,18 @@ export type FuelType = 'gasoline' | 'ev' | 'phev';
 export type RegistrationTerm = 1 | 2 | 3;
 export type TaxBaseType = 'price' | 'fairMarketValue' | 'bookValue';
 
+/**
+ * A motorcycle's treatment under a state's EV or plug-in hybrid fee.
+ * - excluded: the law leaves motorcycles out, so nothing is added. baseAnnual replaces the yearly
+ *   motorcycle registration where the state sets another one for this fuel (South Dakota, Vermont).
+ * - charged: the yearly amount added, or the car amount if amount is left out (Indiana).
+ * - silent: the state's sources do not say, so nothing is added and the page discloses it.
+ */
+export type MotorcycleFuelFee =
+  | { outcome: 'excluded'; baseAnnual?: number }
+  | { outcome: 'charged'; amount?: number }
+  | { outcome: 'silent' };
+
 export interface StateRegistrationRules {
   terms: number[];
   passenger: {
@@ -20,8 +32,11 @@ export interface StateRegistrationRules {
   motorcycle: number | Record<string, number>;
   evSurchargeAnnual?: number;
   phevSurchargeAnnual?: number;
-  /** The EV and plug-in hybrid fees above are for passenger vehicles only (North Dakota, whose electric motorcycle fee is disclosed, not charged). */
-  evSurchargePassengerOnly?: boolean;
+  /**
+   * What a motorcycle pays in place of the EV and plug-in hybrid fees above. Every state with one of
+   * those fees sets this for each fee it has (tests/motorcycleEvFees.test.tsx enforces it).
+   */
+  motorcycleFuelFees?: { ev?: MotorcycleFuelFee; phev?: MotorcycleFuelFee };
   /**
    * Weight (lbs) separating the two passenger tiers for states priced as under3700lbs / over3700lbs.
    * Defaults to 3,700; Virginia splits at 4,000. Only the form labels use it.

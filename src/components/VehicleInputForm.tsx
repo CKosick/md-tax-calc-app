@@ -17,6 +17,16 @@ const TERM_WORDS: Record<RegistrationTerm, string> = { 1: 'one year', 2: 'two ye
 /** A yearly fee for the fuel buttons: whole dollars as they are, anything else with cents (+$44.50/yr). */
 const annualFeeLabel = (fee: number) => `+$${Number.isInteger(fee) ? fee : fee.toFixed(2)}/yr`;
 
+/** The line under a fuel button: the yearly fee, or for a motorcycle what the state does with it. */
+function fuelFeeLabel(rule: StateRule, fuel: 'ev' | 'phev', vehicleType: CalculatorInputs['vehicleType']): string {
+  const carFee = fuel === 'ev' ? rule.registration.evSurchargeAnnual : rule.registration.phevSurchargeAnnual;
+  const motorcycle = vehicleType === 'motorcycle' ? rule.registration.motorcycleFuelFees?.[fuel] : undefined;
+  if (motorcycle?.outcome === 'excluded') return 'Not charged';
+  if (motorcycle?.outcome === 'silent') return 'Not in estimate';
+  const fee = motorcycle?.outcome === 'charged' ? motorcycle.amount ?? carFee : carFee;
+  return fee ? annualFeeLabel(fee) : '$0 state fee';
+}
+
 interface StateOption {
   key: string;
   label: string;
@@ -60,7 +70,6 @@ export function VehicleInputForm({
     plateFees && inputs.vehicleType === 'motorcycle' && plateFees.motorcyclePlateFee !== undefined
       ? plateFees.motorcyclePlateFee
       : plateFees?.plateFee ?? 0;
-  const evFeesExcluded = Boolean(rule.registration.evSurchargePassengerOnly) && inputs.vehicleType === 'motorcycle';
   const feeNotByWeight = Boolean(listPriceReg || rule.registration.feesByRegistrationYear);
   // Only the registration terms the state offers (1, 2, or 3 years per its config)
   const offeredTerms = getOfferedTerms(rule);
@@ -689,20 +698,12 @@ export function VehicleInputForm({
               {
                 id: 'ev',
                 label: 'Battery EV',
-                sub: evFeesExcluded
-                  ? 'Not in estimate'
-                  : rule.registration.evSurchargeAnnual
-                  ? annualFeeLabel(rule.registration.evSurchargeAnnual)
-                  : '$0 state fee'
+                sub: fuelFeeLabel(rule, 'ev', inputs.vehicleType)
               },
               {
                 id: 'phev',
                 label: 'Plug-in Hybrid',
-                sub: evFeesExcluded
-                  ? 'Not in estimate'
-                  : rule.registration.phevSurchargeAnnual
-                  ? annualFeeLabel(rule.registration.phevSurchargeAnnual)
-                  : '$0 state fee'
+                sub: fuelFeeLabel(rule, 'phev', inputs.vehicleType)
               }
             ].map((f) => (
               <button
