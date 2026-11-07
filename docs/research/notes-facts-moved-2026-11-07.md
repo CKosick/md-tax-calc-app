@@ -31,6 +31,6 @@ The other moved facts were not re-read for this branch. They come from October a
 
 ## Found, not changed
 
-- **New Hampshire EV fee from January 1, 2027.** [RSA 261:141-c as amended](https://gc.nh.gov/rsa/html/XXI/261/261-141-c.htm) (2026, 235:1) sets the battery electric fee by weight: $0, $50, $100, or $150. $100 stays right for 3,001 to 8,000 lbs, and the plug-in hybrid fee stays $50. Not on the December list yet.
+- **New Hampshire EV fee from January 1, 2027.** [RSA 261:141-c as amended](https://gc.nh.gov/rsa/html/XXI/261/261-141-c.htm) (2026, 235:1) sets the battery electric fee by weight: $0, $50, $100, or $150. $100 stays right for 3,001 to 8,000 lbs, and the plug-in hybrid fee stays $50. Now on the December list and in `datedFigures.json`, stale from January 1, 2027. The staleness test also reads the form's EV and plug-in hybrid labels, because the page shows this fee only as +$100/yr.
 - **North Dakota electric motorcycles** pay a $20 road use fee (N.D.C.C. 39-04-19.2), which is not modeled.
 - **Kansas** still calls this a trade-in deduction in the FAQ question and the form. The statute covers selling instead of trading in.

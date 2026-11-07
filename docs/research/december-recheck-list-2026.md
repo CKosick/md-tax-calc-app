@@ -12,6 +12,7 @@ Noted, not started. Do these in December, so the figures are current before the 
 | Colorado | Local sales tax range 0% to 8.3% | Next DR 1002 edition, January 1, 2027 | `localTaxMaxRate` and the Colorado private-sale guide |
 | Kentucky | $9 title fee and $3 registration add-on | Set in statute until January 1, 2027, by regulation after (KRS 186A.130, 186.040) | `titleFee`, the $20.50 registration, and Kentucky guides |
 | Kentucky | $120 electric vehicle ownership fee | Whether the Department of Revenue has published an adjusted amount (KRS 138.475) | `evSurchargeAnnual` and `phevSurchargeAnnual` |
+| New Hampshire | $100 battery electric fee, shown on the form as +$100/yr | [RSA 261:141-c](https://gc.nh.gov/rsa/html/XXI/261/261-141-c.htm) sets the fee by GVWR from January 1, 2027: $0 up to 1,000 lbs, $50 for 1,001 to 3,000, $100 for 3,001 to 8,000, $150 over 8,000. The plug-in hybrid fee stays $50. | `evSurchargeAnnual`, the New Hampshire note, and whether the page should explain the weight classes |
 
 ## Added by ruling (no staleness test entry)
 
