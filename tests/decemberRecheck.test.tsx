@@ -47,3 +47,11 @@ describe('New Mexico registration (NMSA 66-6-2, Laws 2026, chapter 4)', () => {
     expect(page('new-mexico')).toContain('The estimate does not include this yet');
   });
 });
+
+describe('New Hampshire EV fee by weight (RSA 261:141-c)', () => {
+  it('explains the classes on the page and keeps the $100 class in the estimate', () => {
+    const text = page('new-hampshire');
+    for (const fact of ['$0 up to 1,000 lbs', '$50 from 1,001 to 3,000 lbs', '$100 from 3,001 to 8,000 lbs', '$150 over 8,000 lbs', 'Plug-in hybrids stay at $50', 'The estimate uses $100']) expect(text).toContain(fact);
+    expect(calc('new-hampshire', { fuelType: 'ev' }).registrationTotal).toBe(calc('new-hampshire').registrationTotal + 100);
+  });
+});

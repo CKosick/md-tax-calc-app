@@ -5420,12 +5420,13 @@
       "Certificate of title fee is $35.00 under RSA 261:20 (required for vehicles model year 2000 and newer).",
       "State passenger vehicle registration fee is $48.00 under RSA 261:141.",
       "Municipal permit fees are paid to your town or city clerk: $18, $15, $12, $9, $6, then $3 per $1,000 of the maker’s list price by model year (RSA 261:153). The estimate includes it for passenger vehicles from the list price you enter ($30,000 if blank).",
-      "Electric vehicles pay an additional $100 annual state registration surcharge ($50 for plug-in hybrids)."
+      "Electric vehicles pay an additional $100 annual state registration surcharge ($50 for plug-in hybrids). The fee goes by GVWR from January 1, 2027. The form has no GVWR question, so the estimate stays at the 3,001 to 8,000 lb class."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with New Hampshire DMV and your local town/city clerk.",
       "New Hampshire has no state vehicle sales tax. The estimate includes a full year of the municipal permit fee, which has a $5 minimum, for passenger vehicles, but not the $3 reclamation fee or a municipal transportation fee of up to $5, and motorcycles are shown without the permit fee. Your town or city clerk gives the exact amount.",
-      "Registration shown is the $48 fee for vehicles of 3,001 to 5,000 lbs. Up to 3,000 lbs is $42, and 5,001 to 8,000 lbs is $66."
+      "Registration shown is the $48 fee for vehicles of 3,001 to 5,000 lbs. Up to 3,000 lbs is $42, and 5,001 to 8,000 lbs is $66.",
+      "Battery electric vehicles pay $100 a year, and plug-in hybrids pay $50. From January 1, 2027, the battery electric fee goes by gross vehicle weight rating: $0 up to 1,000 lbs, $50 from 1,001 to 3,000 lbs, $100 from 3,001 to 8,000 lbs, and $150 over 8,000 lbs (RSA 261:141-c). Plug-in hybrids stay at $50. The estimate uses $100."
     ],
     "faqs": [
       {

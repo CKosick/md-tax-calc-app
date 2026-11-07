@@ -70,13 +70,6 @@
     "alsoCheck": "evSurchargeAnnual and phevSurchargeAnnual"
   },
   {
-    "state": "new-hampshire",
-    "figure": "$100 battery electric fee, flat until January 1, 2027; then by GVWR under RSA 261:141-c: $0 up to 1,000 lbs, $50 for 1,001 to 3,000, $100 for 3,001 to 8,000, $150 over 8,000 (plug-in hybrid stays $50)",
-    "staleOn": "2027-01-01",
-    "contains": "+$100/yr",
-    "alsoCheck": "evSurchargeAnnual, the New Hampshire note, and whether the page should explain the weight classes"
-  },
-  {
     "state": "alabama",
     "figure": "Local automotive rate range 0% to 5.25% (ALDOR local rate file, November 2026; updated monthly)",
     "staleOn": "2027-05-01",
