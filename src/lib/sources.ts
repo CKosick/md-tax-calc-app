@@ -42,6 +42,7 @@ const STATUTE_LABELS: { host: RegExp; label: (url: URL) => string | undefined }[
   { host: /^delcode\.delaware\.gov$/, label: (u) => cite(u.pathname, /title(\d+)\/c0*(\d+)/i, (m) => `Del. Code Title ${m[1]}, Chapter ${m[2]}`) },
   { host: /(^|\.)nebraskalegislature\.gov$/, label: (u) => cite(u.searchParams.get('statute'), /^([\d-]+,[\d,]+)$/, (m) => `Neb. Rev. Stat. ${m[1]}`) },
   { host: /^ksrevisor\.gov$/, label: (u) => cite(u.pathname, /\/ch(\d+)\/\d+_0*(\d+)_0*(\d+)\.html$/i, (m) => `K.S.A. ${m[1]}-${m[2]}${m[3].padStart(2, '0')}`) },
+  { host: /(^|\.)nmlegis\.gov$/, label: (u) => cite(u.pathname, /\/final\/SB0*(\d+)\.pdf$/i, (m) => `N.M. Laws 2026, SB ${m[1]}`) },
   { host: /^ndlegis\.gov$/, label: (u) => cite(u.pathname, /\/t(\d+)c0*(\d+)\.pdf$/i, (m) => `N.D.C.C. Chapter ${m[1]}-${m[2].padStart(2, '0')}`) },
   { host: /^legislature\.maine\.gov$/, label: (u) => cite(u.pathname, /title(\d+)sec(\d+)\.html$/i, (m) => `${m[1]} M.R.S. ${m[2]}`) },
   { host: /^law\.lis\.virginia\.gov$/, label: (u) => cite(u.pathname, /section([\d.:-]+)\/?$/i, (m) => `Va. Code ${m[1]}`) },

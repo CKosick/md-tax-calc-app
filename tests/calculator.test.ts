@@ -766,12 +766,12 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     expect(res.totalFirstYearCost).toBe(1015.00);
   });
 
-  it('6. New Mexico (NM) worked invariant: $15,000 purchase price yields $600.00 tax (4% MVET) and $639.00 total', () => {
+  it('6. New Mexico (NM) worked invariant: $15,000 purchase price yields $600.00 tax (4% MVET) and $662.75 total', () => {
     const res = calculateVehicleCosts(allRules['new-mexico'], { ...std1Yr, state: 'new-mexico' }, 2026);
     expect(res.exciseTax).toBe(600.00);
     expect(res.titleFee).toBe(5.00);
-    expect(res.registrationTotal).toBe(34.00);
-    expect(res.totalFirstYearCost).toBe(639.00);
+    expect(res.registrationTotal).toBe(57.75);
+    expect(res.totalFirstYearCost).toBe(662.75);
   });
 
   it('7. Nebraska (NE) worked invariant: $15,000 purchase price yields $825.00 tax (5.5%) and $1,037.20 total', () => {

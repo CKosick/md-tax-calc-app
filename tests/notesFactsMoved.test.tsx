@@ -68,7 +68,7 @@ describe('Facts moved out of notes are on the rendered page', () => {
     ['nevada', 'the minimum tax is $16'],
     ['new-hampshire', 'which has a $5 minimum'],
     ['new-hampshire', '3,001 to 5,000 lbs'],
-    ['new-mexico', 'depends on the vehicle’s weight and model year'],
+    ['new-mexico', 'shipping weight over 3,000 lbs'],
     ['oregon', 'new plate fees ($26)'],
     ['south-carolina', '$36 instead of $40 at age 65'],
     ['virginia', '$3 less online'],
