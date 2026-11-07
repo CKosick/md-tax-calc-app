@@ -11,6 +11,7 @@ Re-checked November 7, 2026; results in `december-recheck-2026-11-07.md`. The ro
 | Tennessee | $200 all-electric vehicle fee | Confirmed $274 for 2027 on VR-5. Built in the branch's January commit, to go live on or after January 1. | Tennessee guides |
 | Colorado | Local sales tax range 0% to 8.3% | Next DR 1002 edition, January 1, 2027. Not posted on November 7. | `localTaxMaxRate` and the Colorado private-sale guide |
 | Kentucky | $9 title fee and $3 registration add-on | Find the Transportation Cabinet regulation under KRS 186.017 that sets both. Not found on November 7. The statutes from January 1 give only the split of each fee. | `titleFee`, the $20.50 registration, and Kentucky guides |
+| Vermont | $89 battery electric infrastructure fee, $178 one-year total | 23 V.S.A. 361(b) is repealed January 1, 2027. Confirm the new DMV totals. The $44.50 plug-in hybrid fee continues under 361(c). The engine adds fees to the gas registration, so a battery electric total below it ($89 against $91) needs a decision. | `evSurchargeAnnual`, the Vermont disclaimer |
 | Kentucky | $120 electric vehicle ownership fee | Whether the Department of Revenue has published an adjusted amount (KRS 138.475) | `evSurchargeAnnual` and `phevSurchargeAnnual` |
 
 ## Closed November 7, 2026

@@ -4145,6 +4145,7 @@
         "1": 14.2
       },
       "evSurchargeAnnual": 150,
+      "phevSurchargeAnnual": 75,
       "listPriceAnnualTax": {
         "label": "Nebraska motor vehicle tax and fee",
         "defaultListPrice": 30000,
@@ -5113,7 +5114,8 @@
       "Estimates only — not tax or legal advice. Verify with Nebraska Department of Revenue and county treasurer.",
       "Nebraska charges 5.5% state sales tax; local city and county sales taxes can increase the total rate up to 8.0%.",
       "Trade-in deductions are not permitted on private-party sales.",
-      "The estimate includes a full year of the Motor Vehicle Tax and Fee for passenger vehicles. The tax starts at $25 to $1,900 and ends after the 13th year; the fee is $5, $20, or $30 before age reductions. Motorcycles are shown without them, and other local fees are not included. Your county treasurer gives the exact amount."
+      "The estimate includes a full year of the Motor Vehicle Tax and Fee for passenger vehicles. The tax starts at $25 to $1,900 and ends after the 13th year; the fee is $5, $20, or $30 before age reductions. Motorcycles are shown without them, and other local fees are not included. Your county treasurer gives the exact amount.",
+      "Nebraska’s annual alternative fuel fee is $150 for an electric vehicle and $75 for a plug-in hybrid (Neb. Rev. Stat. 60-3,191)."
     ],
     "faqs": [
       {
@@ -5150,7 +5152,8 @@
       "https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling",
       "https://revenue.nebraska.gov/",
       "https://nebraskalegislature.gov/laws/statutes.php?statute=60-3,187",
-      "https://nebraskalegislature.gov/laws/statutes.php?statute=60-3,190"
+      "https://nebraskalegislature.gov/laws/statutes.php?statute=60-3,190",
+      "https://nebraskalegislature.gov/laws/statutes.php?statute=60-3,191"
     ],
     "localTaxMinRate": 0.005,
     "localTaxMaxRate": 0.025
@@ -5579,7 +5582,9 @@
       "motorcycle": {
         "1": 53
       },
-      "evSurchargeAnnual": 130
+      "evSurchargeAnnual": 130,
+      "phevSurchargeAnnual": 70,
+      "evSurchargePassengerOnly": true
     },
     "localTaxNote": "Montana has no state sales tax. Light vehicle registration fees are flat and age-based ($217 for 0–4 yrs; $87 for 5–10 yrs; $28 for 11+ yrs). Under MCA 61-3-315, an annual $825 luxury surcharge applies to vehicles with MSRP over $150,000.",
     "notes": [
@@ -5592,7 +5597,8 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Montana Motor Vehicle Division (MVD) and your county treasurer.",
       "Montana has 0% state sales tax. Registration fees follow a statutory age-based schedule.",
-      "Counties can add a local option vehicle tax if voters approve it, up to 0.7% of the vehicle’s value or a flat fee, paid with the registration fee (MCA 61-3-537). It is not included."
+      "Counties can add a local option vehicle tax if voters approve it, up to 0.7% of the vehicle’s value or a flat fee, paid with the registration fee (MCA 61-3-537). It is not included.",
+      "Montana adds a yearly fee by unladen weight (MCA 61-3-572). The estimate uses the class under 6,000 lbs: $130 for an electric vehicle with at least a 20 kWh battery and $70 for a plug-in hybrid with at least a 5 kWh battery. From 6,000 to 10,000 lbs the fees are $190 and $100. The law covers vehicles with at least four wheels, so motorcycles do not pay them."
     ],
     "faqs": [
       {
@@ -5627,7 +5633,9 @@
     "lastVerified": "September 2026",
     "sources": [
       "https://mvdmt.gov",
-      "https://mca.legmt.gov/bills/mca/title_0610/chapter_0030/part_0050/section_0370/0610-0030-0050-0370.html"
+      "https://mca.legmt.gov/bills/mca/title_0610/chapter_0030/part_0050/section_0370/0610-0030-0050-0370.html",
+      "https://mca.legmt.gov/bills/mca/title_0610/chapter_0030/part_0050/section_0720/0610-0030-0050-0720.html",
+      "https://mca.legmt.gov/bills/mca/title_0610/chapter_0030/part_0050/section_0710/0610-0030-0050-0710.html"
     ]
   },
   "rhode-island": {
@@ -5727,7 +5735,8 @@
       "motorcycle": {
         "1": 18
       },
-      "evSurchargeAnnual": 50
+      "evSurchargeAnnual": 100,
+      "evSurchargePassengerOnly": true
     },
     "localTaxNote": "South Dakota's 4% Motor Vehicle Excise Tax is collected at the state level in lieu of general sales tax; no local city or county sales taxes apply to vehicle purchases.",
     "notes": [
@@ -5740,7 +5749,8 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with South Dakota Department of Revenue and county treasurer.",
       "South Dakota charges a 4% Motor Vehicle Excise Tax in lieu of sales tax. Private trade-in deductions are authorized by statute.",
-      "Older vehicles (11+ years old) priced at $2,500 or less are fully exempt from excise tax."
+      "Older vehicles (11+ years old) priced at $2,500 or less are fully exempt from excise tax.",
+      "South Dakota’s annual electric vehicle fee is $100 (SDCL 32-5-188, raised from $50 by 2026 House Bill 1227, in effect since July 1, 2026). It does not apply to an electric motorcycle licensed under SDCL 32-5-9."
     ],
     "faqs": [
       {
@@ -5774,7 +5784,9 @@
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://dor.sd.gov/individuals/motor-vehicle"
+      "https://dor.sd.gov/individuals/motor-vehicle",
+      "https://sdlegislature.gov/Statutes/32-5-188",
+      "https://sdlegislature.gov/Statutes/2-14-16"
     ]
   },
   "north-dakota": {
@@ -5954,7 +5966,9 @@
       "motorcycle": {
         "1": 58
       },
-      "evSurchargeAnnual": 89
+      "evSurchargeAnnual": 87,
+      "phevSurchargeAnnual": 44.5,
+      "evSurchargePassengerOnly": true
     },
     "localTaxNote": "Vermont charges a uniform 6.0% Motor Vehicle Purchase and Use Tax statewide; no local city or county sales taxes apply. Tax is assessed on the greater of purchase price or J.D. Power clean trade-in book value.",
     "notes": [
@@ -5967,7 +5981,8 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Vermont Department of Motor Vehicles (DMV).",
       "Vermont charges a 6% Purchase and Use Tax on the higher of the purchase price or J.D. Power clean trade-in book value.",
-      "Trade-in credits apply to private sales if the previous vehicle was registered in Vermont and sold within 3 months."
+      "Trade-in credits apply to private sales if the previous vehicle was registered in Vermont and sold within 3 months.",
+      "Vermont DMV lists a battery electric car at $178 for one year or $341 for two. That is registration of $89 or $163, without the $2 a year Clean Air Fund fee, plus an $89 a year infrastructure fee, so the form’s +$87 is the difference from the $91 gas registration. A plug-in hybrid adds $44.50 a year to the gas registration, for $135.50 or $256 in all. Motorcycles do not pay the infrastructure fee. The battery electric fee is repealed on January 1, 2027 (23 V.S.A. 361)."
     ],
     "faqs": [
       {
@@ -6001,7 +6016,10 @@
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://dmv.vermont.gov"
+      "https://dmv.vermont.gov",
+      "https://dmv.vermont.gov/registrations/fees",
+      "https://dmv.vermont.gov/registrations/fees/ev-infrastructure-fee",
+      "https://legislature.vermont.gov/statutes/section/23/007/00361"
     ]
   },
   "wyoming": {
@@ -6027,7 +6045,9 @@
       "motorcycle": {
         "1": 15
       },
-      "evSurchargeAnnual": 200,
+      "evSurchargeAnnual": 100,
+      "phevSurchargeAnnual": 50,
+      "evSurchargePassengerOnly": true,
       "listPriceAnnualTax": {
         "label": "Wyoming county registration fee",
         "defaultListPrice": 30000,
@@ -6055,7 +6075,8 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Wyoming Department of Revenue and your County Clerk/Treasurer.",
       "Wyoming charges 4% state tax plus 1% to 2% county optional tax. The estimate includes a full year of the county registration fee for passenger vehicles; motorcycles are shown without it.",
-      "Trade-in deductions are not available for private party sales."
+      "Trade-in deductions are not available for private party sales.",
+      "Wyoming’s annual electric vehicle decal is $100 for an all-electric vehicle and $50 for a plug-in hybrid, since July 1, 2026 (W.S. 31-3-102). Motorcycles do not pay it."
     ],
     "faqs": [
       {
@@ -6092,7 +6113,8 @@
       "https://revenue.wyo.gov",
       "https://www.dot.state.wy.us",
       "https://www.wyoleg.gov/statutes/compress/title31.pdf",
-      "https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Treasurer/Vehicle-Registration"
+      "https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Treasurer/Vehicle-Registration",
+      "https://wyoleg.gov/2026/Enroll/HB0145.pdf"
     ],
     "localTaxMinRate": 0.01,
     "localTaxMaxRate": 0.02

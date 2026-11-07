@@ -89,5 +89,12 @@
     "staleOn": "2027-07-01",
     "contains": "$376",
     "alsoCheck": "evSurchargeAnnual and Oregon guides"
+  },
+  {
+    "state": "vermont",
+    "figure": "$89 battery electric infrastructure fee, $178 one-year total (23 V.S.A. 361(b) is repealed January 1, 2027)",
+    "staleOn": "2027-01-01",
+    "contains": "$178",
+    "alsoCheck": "evSurchargeAnnual; the $89 and $163 battery electric registration is below the gas registration the engine uses"
   }
 ]
