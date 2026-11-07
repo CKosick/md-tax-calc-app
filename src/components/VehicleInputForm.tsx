@@ -57,6 +57,7 @@ export function VehicleInputForm({
     plateFees && inputs.vehicleType === 'motorcycle' && plateFees.motorcyclePlateFee !== undefined
       ? plateFees.motorcyclePlateFee
       : plateFees?.plateFee ?? 0;
+  const evFeesExcluded = Boolean(rule.registration.evSurchargePassengerOnly) && inputs.vehicleType === 'motorcycle';
   const feeNotByWeight = Boolean(listPriceReg || rule.registration.feesByRegistrationYear);
   // Only the registration terms the state offers (1, 2, or 3 years per its config)
   const offeredTerms = getOfferedTerms(rule);
@@ -685,14 +686,18 @@ export function VehicleInputForm({
               {
                 id: 'ev',
                 label: 'Battery EV',
-                sub: rule.registration.evSurchargeAnnual
+                sub: evFeesExcluded
+                  ? 'Not in estimate'
+                  : rule.registration.evSurchargeAnnual
                   ? `+$${rule.registration.evSurchargeAnnual}/yr`
                   : '$0 state fee'
               },
               {
                 id: 'phev',
                 label: 'Plug-in Hybrid',
-                sub: rule.registration.phevSurchargeAnnual
+                sub: evFeesExcluded
+                  ? 'Not in estimate'
+                  : rule.registration.phevSurchargeAnnual
                   ? `+$${rule.registration.phevSurchargeAnnual}/yr`
                   : '$0 state fee'
               }
@@ -843,7 +848,7 @@ export function VehicleInputForm({
               htmlFor="trade-in-input"
               className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300"
             >
-              Trade-in Value (Optional)
+              {rule.soldVehicleCredit ? 'Trade-in or Sold Vehicle Value (Optional)' : 'Trade-in Value (Optional)'}
             </label>
             {rule.tradeInDeductible ? (
               <span className="rounded-md bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">

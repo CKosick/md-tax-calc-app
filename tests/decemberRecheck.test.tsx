@@ -1,6 +1,6 @@
 import React from 'react';
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, screen, fireEvent } from '@testing-library/react';
 
 vi.mock('next/navigation', () => ({
   useRouter: () => ({ push: vi.fn() }),
@@ -53,5 +53,34 @@ describe('New Hampshire EV fee by weight (RSA 261:141-c)', () => {
     const text = page('new-hampshire');
     for (const fact of ['$0 up to 1,000 lbs', '$50 from 1,001 to 3,000 lbs', '$100 from 3,001 to 8,000 lbs', '$150 over 8,000 lbs', 'Plug-in hybrids stay at $50', 'The estimate uses $100']) expect(text).toContain(fact);
     expect(calc('new-hampshire', { fuelType: 'ev' }).registrationTotal).toBe(calc('new-hampshire').registrationTotal + 100);
+  });
+});
+
+describe('Kansas sold vehicle wording (K.S.A. 79-3697)', () => {
+  it('names a sold vehicle on the form, FAQ, and breakdown', () => {
+    const text = page('kansas');
+    for (const fact of ['Trade-in or Sold Vehicle Value', 'a used vehicle you sell instead of trading in', 'Can a trade-in or a vehicle I sold lower the tax']) expect(text).toContain(fact);
+    expect(text).not.toContain('Can I deduct my trade-in');
+  });
+
+  it('names a sold vehicle when the credit is applied', () => {
+    render(<Calculator initialRule={rule('kansas')} />);
+    fireEvent.change(screen.getByLabelText(/Trade-in or Sold Vehicle Value/i), { target: { value: '5000' } });
+    expect(document.body.textContent).toContain('Trade-in or Sold Vehicle Credit Applied');
+  });
+
+  it('other states keep the trade-in wording', () => {
+    expect(page('missouri')).toContain('Trade-in Value');
+    expect(page('missouri')).not.toContain('Sold Vehicle Value');
+    expect(calc('new-mexico', { tradeInValue: 5000 }).itemizedList[0].description).toContain('$5,000 trade-in credit');
+  });
+});
+
+describe('North Dakota electric motorcycles (N.D.C.C. 39-04-19.2)', () => {
+  it('discloses the $20 fee and leaves it out of the estimate', () => {
+    expect(page('north-dakota')).toContain('Electric motorcycles also pay a $20 road use fee');
+    const moto = { vehicleType: 'motorcycle' as const };
+    expect(calc('north-dakota', { ...moto, fuelType: 'ev' }).registrationTotal).toBe(20);
+    expect(calc('north-dakota', { fuelType: 'ev' }).registrationTotal).toBe(calc('north-dakota').registrationTotal + 120);
   });
 });

@@ -415,7 +415,7 @@ export function CostSummaryCard({
 
           {rule.tradeInDeductible && breakdown.tradeInDeducted > 0 && (
             <div className="rounded-xl border border-emerald-200/90 bg-emerald-50/90 p-3.5 text-xs text-emerald-900 dark:border-emerald-900/50 dark:bg-emerald-950/40 dark:text-emerald-200">
-              <span className="font-bold">Trade-in Credit Applied:</span> {rule.label} permits trade-in credits on private sales. {formatCurrency(breakdown.tradeInDeducted)} was deducted from your taxable base.
+              <span className="font-bold">{rule.soldVehicleCredit ? 'Trade-in or Sold Vehicle Credit Applied:' : 'Trade-in Credit Applied:'}</span> {rule.label} permits {rule.soldVehicleCredit ? 'trade-in and sold vehicle' : 'trade-in'} credits on private sales. {formatCurrency(breakdown.tradeInDeducted)} was deducted from your taxable base.
             </div>
           )}
         </div>

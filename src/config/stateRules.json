@@ -3989,8 +3989,8 @@
         "answer": "Kansas imposes a 6.5% base state sales tax on motor vehicles under K.S.A. 79-3603. Local city and county taxes typically bring the combined rate to between 7.5% and 10.5%."
       },
       {
-        "question": "Can I deduct my trade-in on a private vehicle sale in Kansas?",
-        "answer": "Yes, in effect. Under K.S.A. 79-3697, if you sell a used vehicle instead of trading it in and buy a vehicle of greater value within 120 days before or after the sale, you pay tax only on the difference. Give the county treasurer signed bills of sale for both vehicles, or ask the Department of Revenue for a refund if you already paid."
+        "question": "Can a trade-in or a vehicle I sold lower the tax on a private purchase in Kansas?",
+        "answer": "Yes. Under K.S.A. 79-3697, if you sell a used vehicle instead of trading it in and buy a vehicle of greater value within 120 days before or after the sale, you pay tax only on the difference. Give the county treasurer signed bills of sale for both vehicles, or ask the Department of Revenue for a refund if you already paid."
       },
       {
         "question": "How much does a vehicle title cost in Kansas?",
@@ -4021,7 +4021,9 @@
       "https://www.ksrevenue.gov/faqs-taxsales.html"
     ],
     "localTaxMinRate": 0.01,
-    "localTaxMaxRate": 0.04
+    "localTaxMaxRate": 0.04,
+    "soldVehicleCredit": true,
+    "tradeInNote": "Kansas also counts a used vehicle you sell instead of trading in. If you buy a vehicle of greater value within 120 days before or after the sale, tax applies only to the difference (K.S.A. 79-3697). Enter the trade-in allowance or what you received for the vehicle you sold."
   },
   "new-mexico": {
     "label": "New Mexico",
@@ -5799,7 +5801,8 @@
         "1": 20
       },
       "evSurchargeAnnual": 120,
-      "phevSurchargeAnnual": 50
+      "phevSurchargeAnnual": 50,
+      "evSurchargePassengerOnly": true
     },
     "localTaxNote": "North Dakota's 5% Motor Vehicle Excise Tax is a uniform state levy in lieu of local sales taxes; no city or county taxes apply to vehicle purchases.",
     "notes": [
@@ -5811,7 +5814,8 @@
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with North Dakota Department of Transportation (NDDOT).",
-      "North Dakota charges a 5% Motor Vehicle Excise Tax statewide. Trade-in deductions are limited to dealer sales."
+      "North Dakota charges a 5% Motor Vehicle Excise Tax statewide. Trade-in deductions are limited to dealer sales.",
+      "Electric motorcycles also pay a $20 road use fee each year (N.D.C.C. 39-04-19.2). The estimate does not include it."
     ],
     "faqs": [
       {

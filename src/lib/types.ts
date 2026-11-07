@@ -20,6 +20,8 @@ export interface StateRegistrationRules {
   motorcycle: number | Record<string, number>;
   evSurchargeAnnual?: number;
   phevSurchargeAnnual?: number;
+  /** The EV and plug-in hybrid fees above are for passenger vehicles only (North Dakota, whose electric motorcycle fee is disclosed, not charged). */
+  evSurchargePassengerOnly?: boolean;
   /**
    * Weight (lbs) separating the two passenger tiers for states priced as under3700lbs / over3700lbs.
    * Defaults to 3,700; Virginia splits at 4,000. Only the form labels use it.
@@ -202,6 +204,8 @@ export interface StateRule {
   tradeInDeductible: boolean;
   /** State-specific trade-in notice under the trade-in field, in place of the generic one (Missouri, Massachusetts). */
   tradeInNote?: string;
+  /** The credit also covers a vehicle sold instead of traded in (Kansas, K.S.A. 79-3697), so the wording names both. */
+  soldVehicleCredit?: boolean;
   bookValueRule?: string;
   /**
    * Book value assessment: when the vehicle is younger than maxVehicleAge and the price is more

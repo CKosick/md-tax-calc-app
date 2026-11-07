@@ -314,7 +314,9 @@ export function calculateVehicleCosts(
 
   // EV / PHEV surcharges (if state levies annual surcharge)
   let evSurcharge = 0;
-  if (inputs.fuelType === 'ev' && rule.registration.evSurchargeAnnual) {
+  if (rule.registration.evSurchargePassengerOnly && inputs.vehicleType === 'motorcycle') {
+    evSurcharge = 0;
+  } else if (inputs.fuelType === 'ev' && rule.registration.evSurchargeAnnual) {
     evSurcharge = rule.registration.evSurchargeAnnual * term;
   } else if (inputs.fuelType === 'phev' && rule.registration.phevSurchargeAnnual) {
     evSurcharge = rule.registration.phevSurchargeAnnual * term;
