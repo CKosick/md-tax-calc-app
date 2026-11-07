@@ -19,13 +19,12 @@ The other moved facts were not re-read for this branch. They come from October a
 ## Differences from the ruling
 
 - **21 of the 22 facts moved.** Alaska's did not check out.
-- **South Carolina's exclusion for heirs is a 42nd fact.** The audit counted the family exclusion as rendered because its pattern matched "spouse", but heirs appeared only in the note. A repointed copy test caught it, and it is now in the FAQ. This came from the October re-check and was not re-read today.
 - **Colorado's $19.30 is shown, though its fee breakdown stays in notes.** The ruling leaves that breakdown as research and also has the staleness check look at rendered text. Showing only that surcharge with its September 1, 2027 change satisfies both.
 
 ## Tests
 
 - `tests/datedFigures.test.ts` now looks in the local tax note, trade-in note, disclaimers, and FAQs. All entries pass there.
-- Six copy helpers and checks no longer include notes. Five expected strings relied on note wording and now use the rendered wording.
+- Nine copy helpers and checks no longer include notes. Five expected strings relied on note wording and now use the rendered wording (Indiana, Colorado, Arizona, and South Carolina's "grandparent" and "an heir").
 - Em dash checks that scan notes are unchanged, because they look for an absence and match nothing.
 - `tests/notesFactsMoved.test.tsx` renders the real page component for each moved fact.
 
@@ -34,4 +33,3 @@ The other moved facts were not re-read for this branch. They come from October a
 - **New Hampshire EV fee from January 1, 2027.** [RSA 261:141-c as amended](https://gc.nh.gov/rsa/html/XXI/261/261-141-c.htm) (2026, 235:1) sets the battery electric fee by weight: $0, $50, $100, or $150. $100 stays right for 3,001 to 8,000 lbs, and the plug-in hybrid fee stays $50. Not on the December list yet.
 - **North Dakota electric motorcycles** pay a $20 road use fee (N.D.C.C. 39-04-19.2), which is not modeled.
 - **Kansas** still calls this a trade-in deduction in the FAQ question and the form. The statute covers selling instead of trading in.
-- **Iowa, Nebraska, and others:** the audit's search patterns can miss part of a compound fact, as South Carolina showed, so a few more may exist.

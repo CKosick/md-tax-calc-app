@@ -2827,6 +2827,7 @@
     "localTaxNote": "South Carolina charges a one-time 5% Infrastructure Maintenance Fee (IMF), up to $500, instead of sales tax. Before you can register, you pay the county property tax on the vehicle, which is not included here.",
     "notes": [
       "On a private sale, the IMF is 5% of fair market value, up to $500. Fair market value is the price less any trade-in, or the value in a used-vehicle guide the SCDMV uses, less any trade-in.",
+      "Transfers to immediate family (spouse, parents, children, brothers, sisters, grandparents, and grandchildren) and to heirs are excluded from the IMF.",
       "The title is $15. Registration for most passenger cars is $40 for two years; motorcycles are $10. Electric vehicles add $120 and hybrids $60 every two years.",
       "Register within 45 days of the purchase. You must pay the county property tax and bring the paid receipt to the SCDMV first."
     ],
@@ -2860,7 +2861,7 @@
       },
       {
         "question": "Is a vehicle transfer between family members taxed in South Carolina?",
-        "answer": "A transfer to a spouse, parent, child, brother, sister, grandparent, or grandchild, or to an heir, is excluded from the IMF, and so is a transfer to an heir."
+        "answer": "A transfer to a spouse, parent, child, brother, sister, grandparent, or grandchild is excluded from the IMF, and so is a transfer to an heir."
       },
       {
         "question": "How long do I have to register a private vehicle purchase in South Carolina?",

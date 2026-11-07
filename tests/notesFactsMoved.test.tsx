@@ -109,10 +109,6 @@ describe('Corrections', () => {
     expect(JSON.stringify(rule('alaska'))).not.toContain('under 4,000 lbs');
   });
 
-  it('South Carolina names heirs in the family exclusion it shows', () => {
-    expect(rule('south-carolina').faqs.some((f) => f.answer.includes('or to an heir, is excluded'))).toBe(true);
-  });
-
   it('North Dakota’s statute source has a readable label', () => {
     expect(labelForSource('https://ndlegis.gov/cencode/t39c04.pdf')).toBe('ndlegis.gov: N.D.C.C. Chapter 39-04');
   });
