@@ -5384,7 +5384,8 @@
           0.003
         ],
         "minAmount": 5
-      }
+      },
+      "phevSurchargeAnnual": 50
     },
     "localTaxNote": "New Hampshire has no state vehicle sales tax. However, under RSA 261:153, local town or city clerks collect an annual Municipal Permit Fee (personal property tax) based on vehicle MSRP and age ($18 down to $3 per $1,000) prior to state registration. The estimate includes it.",
     "notes": [
@@ -5431,7 +5432,8 @@
     "lastVerified": "September 2026",
     "sources": [
       "https://www.nh.gov/safety/divisions/dmv",
-      "https://gc.nh.gov/rsa/html/XXI/261/261-153.htm"
+      "https://gc.nh.gov/rsa/html/XXI/261/261-153.htm",
+      "https://gc.nh.gov/rsa/html/XXI/261/261-141-c.htm"
     ]
   },
   "maine": {
@@ -5767,7 +5769,8 @@
       "motorcycle": {
         "1": 20
       },
-      "evSurchargeAnnual": 120
+      "evSurchargeAnnual": 120,
+      "phevSurchargeAnnual": 50
     },
     "localTaxNote": "North Dakota's 5% Motor Vehicle Excise Tax is a uniform state levy in lieu of local sales taxes; no city or county taxes apply to vehicle purchases.",
     "notes": [
@@ -5813,7 +5816,9 @@
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://www.dot.nd.gov"
+      "https://www.dot.nd.gov",
+      "https://ndlegis.gov/cencode/t39c04.pdf",
+      "https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services/mvd-2-passenger-fee-2026.pdf"
     ]
   },
   "alaska": {
