@@ -129,15 +129,15 @@
     },
     "notes": [
       "Virginia levies a 4.15% Motor Vehicle Sales and Use Tax (SUT) with a $75.00 minimum.",
-      "Virginia taxes the gross sales price; trade-in credits do not reduce it.",
-      "A $2.00 discount applies to a 2-year registration in person or by mail ($3.00 online)."
+      "Virginia taxes the gross sales price; trade-in credits do not reduce it."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with the Virginia DMV.",
       "Virginia taxes the gross sales price. Trade-ins do not reduce the Motor Vehicle Sales and Use Tax.",
       "Vehicles under 5 model years old need Form SUT-1A if the sale price is not within $1,500 of the NADA trade-in value.",
       "A Highway Use Fee may apply in addition to registration. The calculator includes it only for electric vehicles.",
-      "Your county, city, or town can also levy a personal property tax on the vehicle (Va. Code 58.1-3506). It is not included. Ask the commissioner of the revenue where the vehicle is kept."
+      "Your county, city, or town can also levy a personal property tax on the vehicle (Va. Code 58.1-3506). It is not included. Ask the commissioner of the revenue where the vehicle is kept.",
+      "A 2-year registration is $2 less in person or by mail and $3 less online."
     ],
     "faqs": [
       {
@@ -386,12 +386,11 @@
     },
     "notes": [
       "DC excise tax is assessed on vehicle Fair Market Value (NADA Eastern Region) at rates from 1.0% to 11.0% based on weight and EPA city MPG under the 2025 Act.",
-      "The 5.0% baseline rate models a standard passenger car (3,499 lbs or less, 21–25 city MPG).",
       "Trade-ins on private-party sales do not reduce the DC Fair Market Value tax base."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with the DC DMV.",
-      "DC calculates vehicle excise tax based on Fair Market Value (NADA Eastern Region) and EPA city MPG tiers ranging from 1.0% to 11.0%. Baseline estimate uses standard 5.0% tier.",
+      "DC calculates vehicle excise tax based on Fair Market Value (NADA Eastern Region) and EPA city MPG tiers ranging from 1.0% to 11.0%. The baseline 5.0% tier is for a vehicle of 3,499 lbs or less with 21 to 25 city MPG.",
       "District of Columbia taxes full Fair Market Value — private party trade-in values do not reduce excise tax."
     ],
     "faqs": [
@@ -428,7 +427,8 @@
     "sources": [
       "https://dmv.dc.gov/service/vehicle-excise-tax",
       "https://dmv.dc.gov/service/vehicle-registration-fees",
-      "https://dmv.dc.gov/node/155452"
+      "https://dmv.dc.gov/node/155452",
+      "https://dmv.dc.gov/book/dmv-fees/vehicle-title-and-excise-tax-fees"
     ]
   },
   "california": {
@@ -484,13 +484,12 @@
     },
     "localTaxNote": "California’s 7.25% base rate applies statewide. District taxes in many cities and counties raise the total, up to 11.75% (Lancaster and Palmdale from October 1, 2026). Use tax is based on the address where you register the vehicle.",
     "notes": [
-      "California’s statewide base sales and use tax rate is 7.25%; district taxes add up to 4.50%.",
       "A private-party transfer costs a $15 transfer fee plus use tax. Registration is $76 plus a $34 CHP fee, a 0.65% vehicle license fee, and a transportation improvement fee of $33 to $231 by value.",
       "Trade-in credit does not apply to private-party sales."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with the California DMV or CDTFA.",
-      "Use tax is based on the purchase price and the rate where you register the vehicle, and is paid to the DMV at transfer.",
+      "Use tax is based on the purchase price and the rate where you register the vehicle, and is paid to the DMV at transfer. The statewide rate is 7.25%, and district taxes add up to 4.50%.",
       "Private-party trade-in deductions are not permitted in California.",
       "Registration includes the $76 registration fee, the $34 CHP fee, and estimates of the value-based fees: the vehicle license fee (0.65% of the price, since the DMV bases it on the new owner’s price when a registered vehicle is transferred) and the transportation improvement fee ($33 to $231 by value). Not included: county and district fees and the smog transfer fee."
     ],
@@ -653,7 +652,7 @@
     "localTaxNote": "Most Florida counties add a discretionary sales surtax of 0.5% to 2% (Citrus and Collier have none), based on the buyer’s county of residence. It applies only to the first $5,000 of the price, so it adds at most $100.",
     "notes": [
       "Florida state sales tax is 6%.",
-      "Title transfer is $75.25 for an electronic title ($77.75 for paper); $85.25 for a used vehicle titled in Florida for the first time.",
+      "Title transfer is $75.25 for an electronic title; $85.25 for a used vehicle titled in Florida for the first time.",
       "A $225 initial registration fee (and $28 for a new metal plate) applies when the buyer has no Florida plate to transfer."
     ],
     "disclaimers": [
@@ -661,7 +660,8 @@
       "Florida sales tax is 6%. Most counties add a discretionary surtax of 0.5% to 2% on the first $5,000, based on the buyer’s county of residence. The estimate shows the range from no surtax to 2%.",
       "A $225 initial registration fee and $28 metal plate fee apply when the buyer has no Florida plate to transfer. They are included unless you answer Yes to the plate question.",
       "Registration shown is for cars of 2,500 to 3,499 lbs ($35.60) and 3,500 lbs and up ($45.60). Cars under 2,500 lbs pay $27.60.",
-      "A trade-in between individuals reduces the taxable price only when vehicles are traded in a single transaction, documented on the bill of sale and titles."
+      "A trade-in between individuals reduces the taxable price only when vehicles are traded in a single transaction, documented on the bill of sale and titles.",
+      "A paper title is $77.75 instead of $75.25."
     ],
     "faqs": [
       {
@@ -1278,14 +1278,14 @@
     "notes": [
       "TAVT is 7.0% of the vehicle’s fair market value. On a private sale, the Department of Revenue uses the value in the state assessment manual, not the price you paid.",
       "The title fee is $18, and a lien is recorded with it at no extra charge. The license plate is $20 a year, for cars and motorcycles alike.",
-      "All-electric vehicles pay a $238.59 alternative fuel fee each year (July 2026 to June 2027). Plug-in hybrids pay it only if they choose the alternative fuel plate."
+      "All-electric vehicles pay a $238.59 alternative fuel fee each year (July 2026 to June 2027)."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with the Georgia Department of Revenue or your County Tag Office.",
       "Georgia taxes a private sale on the fair market value from the state assessment manual, which can be more or less than the price you paid. The estimate uses the price you enter. To match the Department of Revenue, look up the value with its TAVT estimator and enter that value as the price.",
       "A trade-in lowers TAVT only on a dealer sale. Private sales get no trade-in reduction.",
       "New Georgia residents pay 3% instead of 7%. A transfer between immediate family members can pay 0.5% if the previous owner paid TAVT (Form MV-16).",
-      "Registration shown is the $20 annual plate fee. All-electric vehicles add the $238.59 alternative fuel fee."
+      "Registration shown is the $20 annual plate fee. All-electric vehicles add the $238.59 alternative fuel fee. Plug-in hybrids pay it only if they choose the alternative fuel plate."
     ],
     "faqs": [
       {
@@ -1730,14 +1730,15 @@
       "The title costs $39.50: the $15 application fee, the $6.50 filing fee, and the $18 service fee.",
       "Annual tabs are $82.75 for a vehicle up to 4,000 lbs: the $30 license fee, the $35 weight fee, $6 filing, $11 service, and the $0.75 license service fee. The weight fee is $65 from 4,001 to 6,000 lbs, which makes $112.75.",
       "A buyer gets new plates: $50 per plate plus $2 per plate for reflectivity, so $104 for a car and $22 for a motorcycle. Moving a plate you already own costs $10.",
-      "Vehicles that plug in and go at least 30 miles on battery pay $225 a year at renewal ($100, $50, and the $75 transportation electrification fee). Other hybrids pay $75."
+      "The $225 electric fee is $100, $50, and the $75 transportation electrification fee."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with the Washington Department of Licensing (DOL) or Department of Revenue (DOR).",
       "The estimate uses the price you enter. Washington may tax fair market value instead when the price is more than 20% below it and the value is $7,500 or more.",
       "Local rates change each quarter. The range shown is for October 1 to December 31, 2026.",
       "Registration shown is the state fees for a vehicle up to 6,000 lbs. The regional transit authority excise tax, transportation benefit district fees, and other local fees are not included. DOL’s tab fee estimator gives the exact amount.",
-      "DOL’s use tax page still lists the motor vehicle tax at 0.3%. DOR lists 0.5% from January 1, 2026, and the estimate uses 0.5%."
+      "DOL’s use tax page still lists the motor vehicle tax at 0.3%. DOR lists 0.5% from January 1, 2026, and the estimate uses 0.5%.",
+      "Vehicles that plug in and go at least 30 miles on battery pay $225 a year at renewal. Other hybrids pay $75."
     ],
     "faqs": [
       {
@@ -2018,16 +2019,16 @@
     "localTaxNote": "Massachusetts has no local sales tax on vehicles. Your city or town bills a separate motor vehicle excise every year: $25 per $1,000 of a value set from the original list price, not the price you paid. It is not included here.",
     "notes": [
       "A private sale is taxed at 6.25% of the price or the vehicle’s clean trade-in (book) value, whichever is higher. The book value is adjusted for mileage, but not for the vehicle’s condition.",
-      "The title is $75. Standard passenger plates are $60 for two years. A motorcycle is $20 a year, shown here as $40 for the two-year view.",
+      "The title is $75. Standard passenger plates are $60 for two years.",
       "A trade-in does not lower the tax on a private sale.",
-      "Title and register within 10 days of the purchase, and get a vehicle inspection sticker within 7 days of registering.",
-      "The yearly motor vehicle excise is $25 per $1,000 of value, where the value is a share of the manufacturer’s list price (90% in the model year, then 60%, 40%, 25%, and 10% from the fifth year on), with a $5 minimum."
+      "Title and register within 10 days of the purchase, and get a vehicle inspection sticker within 7 days of registering."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with the Massachusetts RMV or Department of Revenue.",
       "The estimate uses the price you enter. Massachusetts taxes the clean trade-in value instead when it is higher than the price, so the tax at the RMV can be more.",
-      "The yearly motor vehicle excise billed by your city or town is not included.",
-      "Gifts recorded on Form MVU-24 have a $25 gift transfer fee, which is not included."
+      "The yearly motor vehicle excise billed by your city or town is not included. It is $25 per $1,000 of value, where the value is a share of the manufacturer’s list price (90% in the model year, then 60%, 40%, 25%, and 10% from the fifth year on), with a $5 minimum.",
+      "Gifts recorded on Form MVU-24 have a $25 gift transfer fee, which is not included.",
+      "A motorcycle is $20 a year, shown here as $40 for the two-year view."
     ],
     "faqs": [
       {
@@ -2360,13 +2361,13 @@
     "notes": [
       "A private sale is taxed at 7% of the purchase price. You pay it at a BMV branch when you apply for the title.",
       "The title is $15, with a $30 penalty if you apply more than 45 days after the purchase.",
-      "Passenger registration is $21.35 plus the $15 Transportation Infrastructure Improvement Fee, $36.35 a year. A motorcycle is $26.35 plus the $15 fee.",
+      "Passenger registration is $21.35 plus the $15 Transportation Infrastructure Improvement Fee, $36.35 a year.",
       "Electric vehicles add a $242 supplemental fee and hybrids $81.",
       "The yearly vehicle excise tax depends on the vehicle’s class (its original retail price) and age, from $12 to $532 for a passenger vehicle. The estimate includes a full year of it from the list price you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with the Indiana BMV or Department of Revenue.",
-      "County and municipal vehicle excise and wheel taxes are not included, and motorcycles are shown without the excise tax. The BMV’s Quick Quote tool gives your exact total.",
+      "County and municipal vehicle excise and wheel taxes are not included, and motorcycles are shown without the excise tax. A motorcycle’s registration is $26.35 plus the $15 fee. The BMV’s Quick Quote tool gives your exact total.",
       "Registration shown is the BMV fee chart revised January 1, 2026.",
       "The estimate shows a full year of the excise tax. Registering partway through your registration year, or a credit for excise paid on a vehicle you sold, can change the amount due (IC 6-6-5-7.2)."
     ],
@@ -2637,15 +2638,16 @@
     "notes": [
       "On a private sale, you pay the 2.9% state tax and the local taxes to the county clerk when you register. The fair market value of a vehicle you trade in as part of the purchase is excluded from the taxable price.",
       "The title transfer fee is $7.20. A lender adding a lien pays $40 in lien filing fees.",
-      "Registration shown is the statewide fees for a car between 2,001 and 5,000 lbs, with the weight-based base fee (C.R.S. 42-3-306) figured at 3,500 lbs: the road safety ($19.30) and bridge ($18) surcharges, the clerk, emergency medical, emissions, insurance database, and peace officer training fees, the year tab, and the age fee ($12 under 7 years, $10 from 7 to 9, $7 at 10 and older).",
-      "Plug-in electric vehicles pay a $63.05 road usage fee, plus the electric motor vehicle road usage fee of $26 ($13 for plug-in hybrids) from July 1, 2026 to June 30, 2027.",
+      "Fee breakdown: the road safety ($19.30) and bridge ($18) surcharges, the clerk, emergency medical, emissions, insurance database, and peace officer training fees, the year tab, and the age fee ($12 under 7 years, $10 from 7 to 9, $7 at 10 and older). The weight-based base fee is under C.R.S. 42-3-306.",
       "The yearly specific ownership tax is figured from 85% of the original MSRP: 2.1% in the first year, then 1.5%, 1.2%, 0.9%, 0.45% for years five through nine, and $3 from the tenth year. The estimate includes it for passenger vehicles from the MSRP you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with your county motor vehicle office or the Colorado Department of Revenue.",
       "The local range is from the July 2026 DR 1002 and changes each January 1 and July 1. Home-rule cities collect their own tax and DR 1002 suggests confirming their rates with the city.",
       "County fees, the emissions-area fee, and license plate materials are not included, and motorcycles are shown without the specific ownership tax. The DMV’s registration fee estimator gives your total.",
-      "Whether plug-in hybrids pay the $63.05 road usage fee is not spelled out on the DMV page; the estimate includes it."
+      "Whether plug-in hybrids pay the $63.05 road usage fee is not spelled out on the DMV page; the estimate includes it.",
+      "Registration shown is the statewide fees for a car between 2,001 and 5,000 lbs, with the weight-based base fee figured at 3,500 lbs. It includes the $19.30 road safety surcharge ($23 from September 1, 2027).",
+      "Plug-in electric vehicles pay a $63.05 road usage fee, plus the electric motor vehicle road usage fee of $26 ($13 for plug-in hybrids) from July 1, 2026 to June 30, 2027. The estimate includes both."
     ],
     "faqs": [
       {
@@ -2825,15 +2827,15 @@
     "localTaxNote": "South Carolina charges a one-time 5% Infrastructure Maintenance Fee (IMF), up to $500, instead of sales tax. Before you can register, you pay the county property tax on the vehicle, which is not included here.",
     "notes": [
       "On a private sale, the IMF is 5% of fair market value, up to $500. Fair market value is the price less any trade-in, or the value in a used-vehicle guide the SCDMV uses, less any trade-in.",
-      "Transfers to immediate family (spouse, parents, children, brothers, sisters, grandparents, and grandchildren) and to heirs are excluded from the IMF.",
-      "The title is $15. Registration for most passenger cars is $40 for two years ($36 at age 65 or with a disability); motorcycles are $10. Electric vehicles add $120 and hybrids $60 every two years.",
+      "The title is $15. Registration for most passenger cars is $40 for two years; motorcycles are $10. Electric vehicles add $120 and hybrids $60 every two years.",
       "Register within 45 days of the purchase. You must pay the county property tax and bring the paid receipt to the SCDMV first."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with the SCDMV.",
       "The estimate uses the price you enter. The SCDMV may use a used-vehicle guide value instead, so the fee can differ.",
       "County vehicle property tax, due before registration, is not included.",
-      "A vehicle first titled in another state pays a $250 IMF instead when registered here, which the estimate does not apply."
+      "A vehicle first titled in another state pays a $250 IMF instead when registered here, which the estimate does not apply.",
+      "Registration is $36 instead of $40 at age 65 or with a disability."
     ],
     "faqs": [
       {
@@ -2858,7 +2860,7 @@
       },
       {
         "question": "Is a vehicle transfer between family members taxed in South Carolina?",
-        "answer": "A transfer to a spouse, parent, child, brother, sister, grandparent, or grandchild is excluded from the IMF, and so is a transfer to an heir."
+        "answer": "A transfer to a spouse, parent, child, brother, sister, grandparent, or grandchild, or to an heir, is excluded from the IMF, and so is a transfer to an heir."
       },
       {
         "question": "How long do I have to register a private vehicle purchase in South Carolina?",
@@ -2906,7 +2908,7 @@
     "notes": [
       "The 2% state tax and the local automotive rates apply to private sales under Ala. Code 40-23-101, based on where the buyer lives. Your county licensing official collects them before issuing a plate.",
       "A vehicle taken in trade lowers the taxed price: the tax is on the price less the trade-in credit (Ala. Code 40-23-103).",
-      "The title is $15, and recording a lien (notice of security interest) is $15. Licensing officials may add small commissions and local fees.",
+      "The title is $15, and recording a lien (notice of security interest) is $15.",
       "A passenger car plate is $23 a year plus a $1.25 issuance fee and any local fees; motorcycles are $15. Battery electric vehicles add $203 a year and plug-in hybrids $103 (since July 1, 2023).",
       "Ad valorem (property) tax is collected with the registration. It depends on the vehicle's value and local millage rates, so it is not in the estimate.",
       "Get a plate within 20 calendar days of buying the vehicle. Alabama does not require emissions testing."
@@ -2914,7 +2916,7 @@
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with your county licensing official or the Alabama Department of Revenue (ALDOR).",
       "The local range comes from ALDOR's November 2026 local rate file. Your county licensing official applies the exact rate for your address.",
-      "Ad valorem tax, the $1.25 issuance fee, and local issuance fees are not included.",
+      "Ad valorem tax, the $1.25 issuance fee, and local issuance fees are not included. Licensing officials may also add small commissions.",
       "Registration may be prorated to your renewal month, which is set by the first letter of your last name."
     ],
     "faqs": [
@@ -3170,14 +3172,14 @@
       "Oregon's title and registration fees follow the vehicle's combined MPG rating. The estimate uses the 20 to 39 MPG tier: a $106 title and $136 for two years of registration.",
       "Other tiers: 0 to 19 MPG is $101 title and $126 registration; 40 MPG or more is $116 title and $216 registration; all-electric is $192 title and $376 registration. Motorcycles are $101 title and $88 registration.",
       "If the vehicle already has current Oregon plates, registration is not due when the title transfers. Registration is due when the vehicle has no Oregon plates or its registration has expired.",
-      "Multnomah County adds $112 and Washington and Clackamas counties add $60 to a two-year registration. New plates are $26.",
+      "Multnomah County adds $112 and Washington and Clackamas counties add $60 to a two-year registration.",
       "Apply for the title within 30 days of the sale; a late transfer costs $25 (31 to 60 days) or $50 (after 60 days)."
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with Oregon DMV.",
       "The estimate uses the 20 to 39 MPG fee tier. Your vehicle's MPG rating sets the real title and registration fees.",
       "For an electric vehicle, the estimate adds the electric registration fee but keeps the $106 title fee; the all-electric title fee is $192.",
-      "County registration fees, new plate fees, and DEQ emissions test fees are not included."
+      "County registration fees, new plate fees ($26), and DEQ emissions test fees are not included."
     ],
     "faqs": [
       {
@@ -3707,12 +3709,12 @@
       "Nevada exempts private party vehicle sales from sales and use tax under NRS 372.320 ('occasional sale' exemption).",
       "Certificate of title fee is $28.25 under Nevada DMV fee schedule.",
       "Base registration tag fee is $33.00 for passenger vehicles.",
-      "Nevada collects an annual Governmental Services Tax (GST): 4% of a value set at 35% of the original MSRP. That value drops with age to 95%, 85%, 75%, 65%, 55%, 45%, 35%, 25%, then 15%, and the minimum tax is $16 (NRS 371.040 to 371.060). The estimate includes it for passenger vehicles from the MSRP you enter ($30,000 if blank)."
+      "Nevada collects an annual Governmental Services Tax (GST): 4% of a value set at 35% of the original MSRP. Figured under NRS 371.040 to 371.060. The estimate includes it for passenger vehicles from the MSRP you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Nevada DMV.",
       "Private party vehicle sales are exempt from Nevada sales tax under NRS 372.320.",
-      "The estimate includes a full year of the basic GST for passenger vehicles. The 1% Supplemental GST in Clark and Churchill counties is not included, and motorcycles are shown without the GST. The DMV’s fee calculator gives your total."
+      "The estimate includes a full year of the basic GST for passenger vehicles. The value it is figured on drops with age to 95%, 85%, 75%, 65%, 55%, 45%, 35%, 25%, then 15%, and the minimum tax is $16. The 1% Supplemental GST in Clark and Churchill counties is not included, and motorcycles are shown without the GST. The DMV’s fee calculator gives your total."
     ],
     "faqs": [
       {
@@ -3969,7 +3971,7 @@
     "localTaxNote": "Kansas cities and counties impose local sales taxes between 1.0% and 4.0%, bringing the combined sales tax rate to 7.5%–10.5% depending on the buyer's taxing jurisdiction.",
     "notes": [
       "Kansas levies a 6.5% state retail sales tax on private vehicle transactions under K.S.A. 79-3603.",
-      "Under K.S.A. 79-3602, buyers can deduct the value of a privately sold or traded vehicle if purchased within 120/180 days.",
+      "K.S.A. 79-3697 applies to used vehicles sold by an individual on or after January 1, 2025. A refund claim is due within three years of the replacement purchase.",
       "Certificate of title fee is $10.00; lien fee is $1.50.",
       "Standard passenger car registration is $30.00 under K.S.A. 8-143 for vehicles 4,500 lbs or less.",
       "County treasurers also collect personal property taxes at registration based on local mill levies."
@@ -3977,7 +3979,7 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Kansas Department of Revenue and county treasurer.",
       "Kansas state sales tax is 6.5%; local city and county taxes increase the total rate to between 7.5% and 10.5%.",
-      "You can claim a trade-in tax deduction if you sold another vehicle within 120 days.",
+      "If you sell a used vehicle and buy one of greater value within 120 days before or after the sale, tax applies only to the difference (K.S.A. 79-3697). Bring signed bills of sale for both vehicles.",
       "County treasurers assess annual property taxes based on local mill levies at registration."
     ],
     "faqs": [
@@ -3987,7 +3989,7 @@
       },
       {
         "question": "Can I deduct my trade-in on a private vehicle sale in Kansas?",
-        "answer": "Yes. Under K.S.A. 79-3602, Kansas permits a trade-in tax deduction even for private party transactions if you sell a vehicle and purchase a replacement within 120 days, paying tax only on the net difference."
+        "answer": "Yes, in effect. Under K.S.A. 79-3697, if you sell a used vehicle instead of trading it in and buy a vehicle of greater value within 120 days before or after the sale, you pay tax only on the difference. Give the county treasurer signed bills of sale for both vehicles, or ask the Department of Revenue for a refund if you already paid."
       },
       {
         "question": "How much does a vehicle title cost in Kansas?",
@@ -4013,7 +4015,9 @@
     "lastVerified": "September 2026",
     "sources": [
       "https://www.ksrevenue.gov/",
-      "https://www.ksrevenue.gov/prtaxrates.html"
+      "https://www.ksrevenue.gov/prtaxrates.html",
+      "https://ksrevisor.gov/statutes/chapters/ch79/079_036_0097.html",
+      "https://www.ksrevenue.gov/faqs-taxsales.html"
     ],
     "localTaxMinRate": 0.01,
     "localTaxMaxRate": 0.04
@@ -4049,13 +4053,14 @@
       "If purchase price is less than 80% of NADA trade-in value, NADA value is assessed.",
       "Trade-in allowance directly reduces the taxable base for MVET.",
       "Certificate of title fee is $5.00; lien filing fee is $5.00.",
-      "Standard annual passenger registration is approximately $34.00 based on vehicle weight and age."
+      "Standard annual passenger registration is approximately $34.00."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with New Mexico MVD.",
       "New Mexico charges a 4% Motor Vehicle Excise Tax statewide; local Gross Receipts Taxes do not apply.",
       "If your purchase price is less than 80% of NADA book value, tax may be assessed on the NADA value.",
-      "Trade-in value reduces your taxable base."
+      "Trade-in value reduces your taxable base.",
+      "The $34 registration is approximate. The fee depends on the vehicle’s weight and model year."
     ],
     "faqs": [
       {
@@ -5079,13 +5084,13 @@
       "Certificate of title fee is $10.00; lien recordation is included directly on the title.",
       "Registration includes a $15.00 base passenger fee plus $8.20 license plate fee = $23.20.",
       "Trade-in deductions are not allowed on private-party sales under Nebraska regulations; dealer sales only.",
-      "County treasurers collect an annual Motor Vehicle Tax and Motor Vehicle Fee set by the value when new and the vehicle’s age (Neb. Rev. Stat. 60-3,187 and 60-3,190). The tax starts at $25 to $1,900 and ends after the 13th year; the fee is $5, $20, or $30 before age reductions. The estimate includes both for passenger vehicles from the MSRP you enter ($30,000 if blank)."
+      "County treasurers collect an annual Motor Vehicle Tax and Motor Vehicle Fee set by the value when new and the vehicle’s age (Neb. Rev. Stat. 60-3,187 and 60-3,190). The estimate includes both for passenger vehicles from the MSRP you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Nebraska Department of Revenue and county treasurer.",
       "Nebraska charges 5.5% state sales tax; local city and county sales taxes can increase the total rate up to 8.0%.",
       "Trade-in deductions are not permitted on private-party sales.",
-      "The estimate includes a full year of the Motor Vehicle Tax and Fee for passenger vehicles. Motorcycles are shown without them, and other local fees are not included. Your county treasurer gives the exact amount."
+      "The estimate includes a full year of the Motor Vehicle Tax and Fee for passenger vehicles. The tax starts at $25 to $1,900 and ends after the 13th year; the fee is $5, $20, or $30 before age reductions. Motorcycles are shown without them, and other local fees are not included. Your county treasurer gives the exact amount."
     ],
     "faqs": [
       {
@@ -5392,13 +5397,14 @@
     "notes": [
       "New Hampshire does not impose a state sales tax on motor vehicle purchases.",
       "Certificate of title fee is $35.00 under RSA 261:20 (required for vehicles model year 2000 and newer).",
-      "State passenger vehicle registration fee is $48.00 under RSA 261:141 for standard 3,001–5,000 lb vehicles.",
-      "Municipal permit fees are paid to your town or city clerk: $18, $15, $12, $9, $6, then $3 per $1,000 of the maker’s list price by model year, with a $5 minimum (RSA 261:153). The estimate includes it for passenger vehicles from the list price you enter ($30,000 if blank).",
+      "State passenger vehicle registration fee is $48.00 under RSA 261:141.",
+      "Municipal permit fees are paid to your town or city clerk: $18, $15, $12, $9, $6, then $3 per $1,000 of the maker’s list price by model year (RSA 261:153). The estimate includes it for passenger vehicles from the list price you enter ($30,000 if blank).",
       "Electric vehicles pay an additional $100 annual state registration surcharge ($50 for plug-in hybrids)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with New Hampshire DMV and your local town/city clerk.",
-      "New Hampshire has no state vehicle sales tax. The estimate includes a full year of the municipal permit fee for passenger vehicles, but not the $3 reclamation fee or a municipal transportation fee of up to $5, and motorcycles are shown without the permit fee. Your town or city clerk gives the exact amount."
+      "New Hampshire has no state vehicle sales tax. The estimate includes a full year of the municipal permit fee, which has a $5 minimum, for passenger vehicles, but not the $3 reclamation fee or a municipal transportation fee of up to $5, and motorcycles are shown without the permit fee. Your town or city clerk gives the exact amount.",
+      "Registration shown is the $48 fee for vehicles of 3,001 to 5,000 lbs. Up to 3,000 lbs is $42, and 5,001 to 8,000 lbs is $66."
     ],
     "faqs": [
       {
@@ -5481,11 +5487,11 @@
       "Trade-in deduction is permitted under 36 M.R.S. § 1765 when trading in property of the same category (car for car).",
       "Certificate of title fee is $33.00.",
       "Annual passenger vehicle registration fee is $35.00.",
-      "Local municipal excise tax must be paid to your city or town office before registering with the Bureau of Motor Vehicles (BMV). The estimate includes a full year of it for passenger vehicles from the list price you enter ($30,000 if blank): 24, 17.5, 13.5, 10, 6.5, then 4 mills by model year, with a $5 minimum."
+      "Local municipal excise tax must be paid to your city or town office before registering with the Bureau of Motor Vehicles (BMV). The estimate includes a full year of it for passenger vehicles from the list price you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Maine Bureau of Motor Vehicles (BMV) and Maine Revenue Services.",
-      "Maine charges a 5.5% state sales tax on private vehicle sales; local municipal excise tax is paid annually at your town office. Motorcycles are shown without the excise tax. A credit for excise paid on a vehicle you transferred, or registering late in a registration year, can lower it (36 M.R.S. § 1482).",
+      "Maine charges a 5.5% state sales tax on private vehicle sales; local municipal excise tax is paid annually at your town office. The excise is 24, 17.5, 13.5, 10, 6.5, then 4 mills on the list price by model year, with a $5 minimum. Motorcycles are shown without it. A credit for excise paid on a vehicle you transferred, or registering late in a registration year, can lower it (36 M.R.S. § 1482).",
       "Trade-in allowance reduces the taxable purchase base when exchanging comparable vehicles."
     ],
     "faqs": [
@@ -5851,7 +5857,7 @@
     "notes": [
       "Alaska does not impose a statewide sales or use tax on motor vehicle sales.",
       "Certificate of title fee is $15.00 under AS 28.10.421.",
-      "Passenger vehicles are registered biennially (every 2 years) for $100.00 ($50/year equivalent) for vehicles under 4,000 lbs.",
+      "Passenger vehicles are registered biennially (every 2 years) for $100.00 ($50/year equivalent).",
       "Many boroughs (Anchorage, Mat-Su, Kenai Peninsula) levy an age-based local Motor Vehicle Registration Tax (MVRT).",
       "Seniors age 65 or older may be exempt from the state registration fee for one vehicle."
     ],
@@ -5892,7 +5898,8 @@
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://dmv.alaska.gov"
+      "https://dmv.alaska.gov",
+      "https://dmv.alaska.gov/media/lknb3cwi/2026-mvrt-by-location.pdf"
     ]
   },
   "vermont": {

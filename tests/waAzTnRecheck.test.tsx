@@ -68,7 +68,7 @@ describe('Washington re-check', () => {
   });
 
   it('copy states the 0.5% motor vehicle tax, the 20% rule, and the 15-day deadline', () => {
-    const text = [...wa.notes, ...wa.disclaimers, ...wa.faqs.map((f) => f.answer), wa.localTaxNote].join(' ');
+    const text = [...wa.disclaimers, ...wa.faqs.map((f) => f.answer), wa.localTaxNote].join(' ');
     expect(text).toContain('0.5%');
     expect(text).toContain('20% below');
     expect(text).toContain('$7,500');
@@ -94,8 +94,8 @@ describe('Arizona re-check', () => {
   });
 
   it('copy covers the VLT rates and the 15-day and 30-day rules', () => {
-    const text = [...az.notes, ...az.disclaimers, ...az.faqs.map((f) => f.answer)].join(' ');
-    for (const fact of ['$2.80', '$2.89', '16.25%', '$10 minimum', '15 days', '30 days', 'casual sale']) expect(text).toContain(fact);
+    const text = [...az.disclaimers, ...az.faqs.map((f) => f.answer)].join(' ');
+    for (const fact of ['$2.80', '$2.89', '16.25%', 'The minimum is $10', '15 days', '30 days', 'casual sale']) expect(text).toContain(fact);
   });
 });
 
@@ -128,7 +128,7 @@ describe('Tennessee re-check', () => {
   });
 
   it('copy covers the family and gift exemptions and the 75% affidavit rule', () => {
-    const text = [...tn.notes, ...tn.disclaimers, ...tn.faqs.map((f) => f.answer)].join(' ');
+    const text = [...tn.disclaimers, ...tn.faqs.map((f) => f.answer)].join(' ');
     for (const fact of ['siblings', 'lineal relatives', 'Affidavit of Non-Dealer Transfers', '75%', '$274', '30 days']) expect(text).toContain(fact);
   });
 });

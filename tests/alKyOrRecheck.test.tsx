@@ -23,7 +23,7 @@ const or = rules.oregon as StateRule;
 const calc = (rule: StateRule, extra: Partial<CalculatorInputs> = {}) =>
   calculateVehicleCosts(rule, { ...getDefaultInputs(rule, 2026), purchasePrice: 15000, ...extra }, 2026);
 const copy = (rule: StateRule) =>
-  [rule.localTaxNote ?? '', rule.tradeInNote ?? '', ...rule.notes, ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
+  [rule.localTaxNote ?? '', rule.tradeInNote ?? '', ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
 
 afterEach(() => cleanup());
 

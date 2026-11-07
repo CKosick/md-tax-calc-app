@@ -24,7 +24,7 @@ const calc = (rule: StateRule, extra: Partial<CalculatorInputs> = {}) =>
 afterEach(() => cleanup());
 
 const copy = (rule: StateRule) =>
-  [rule.localTaxNote ?? '', ...rule.notes, ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
+  [rule.localTaxNote ?? '', ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
 
 describe('Massachusetts re-check', () => {
   it('6.25%, $75 title, no lien fee, $60 two-year plates, no private trade-in credit', () => {

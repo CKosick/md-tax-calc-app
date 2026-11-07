@@ -11,7 +11,9 @@ describe('Dated figures', () => {
     for (const f of DATED_FIGURES) {
       expect(rules[f.state], `${f.state} must exist`).toBeDefined();
       expect(f.staleOn).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-      expect(JSON.stringify(rules[f.state]), `${f.state}: "${f.contains}" (${f.figure})`).toContain(f.contains);
+      const r = rules[f.state];
+      const shown = [r.localTaxNote ?? '', r.tradeInNote ?? '', ...r.disclaimers, ...r.faqs.map((q) => `${q.question} ${q.answer}`)].join(' ');
+      expect(shown, `${f.state}: "${f.contains}" (${f.figure}) must be in copy the page shows, not in notes`).toContain(f.contains);
     }
   });
 

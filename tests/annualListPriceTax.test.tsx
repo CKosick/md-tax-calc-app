@@ -22,7 +22,7 @@ const coTax = co.registration.listPriceAnnualTax!;
 const calc = (rule: StateRule, extra: Partial<CalculatorInputs> = {}) =>
   calculateVehicleCosts(rule, { ...getDefaultInputs(rule, 2026), purchasePrice: 15000, ...extra }, 2026);
 const copy = (rule: StateRule) =>
-  [rule.localTaxNote ?? '', ...rule.notes, ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
+  [rule.localTaxNote ?? '', ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
 
 afterEach(() => cleanup());
 
@@ -122,10 +122,10 @@ describe('Tax line name', () => {
 describe('Copy matches the estimate', () => {
   it('Indiana and Colorado no longer say the yearly tax is left out', () => {
     expect(copy(ind)).not.toMatch(/yearly vehicle excise tax and any county or municipal vehicle tax are not included/);
-    expect(copy(ind)).toContain('The estimate includes a full year of it');
+    expect(copy(ind)).toContain('The estimate shows a full year of the excise tax');
     expect(copy(ind)).toContain('IC 6-6-5-7.2');
     expect(copy(co)).not.toMatch(/The specific ownership tax, county fees/);
-    expect(copy(co)).toContain('The estimate includes it for passenger vehicles');
+    expect(copy(co)).toContain('The calculator includes it for passenger vehicles');
     for (const rule of [ind, co]) expect(JSON.stringify([rule.localTaxNote, rule.notes, rule.disclaimers, rule.faqs])).not.toContain('—');
   });
 });

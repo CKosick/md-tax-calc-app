@@ -22,7 +22,7 @@ const sc = rules['south-carolina'] as StateRule;
 const calc = (rule: StateRule, extra: Partial<CalculatorInputs> = {}) =>
   calculateVehicleCosts(rule, { ...getDefaultInputs(rule, 2026), purchasePrice: 15000, ...extra }, 2026);
 const copy = (rule: StateRule) =>
-  [rule.localTaxNote ?? '', ...rule.notes, ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
+  [rule.localTaxNote ?? '', ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
 
 afterEach(() => cleanup());
 
@@ -100,7 +100,7 @@ describe('South Carolina re-check', () => {
 
   it('copy covers the family exclusion, property tax, the $250 new resident IMF, and 45 days', () => {
     const text = copy(sc);
-    for (const fact of ['grandparents', 'heirs', 'property tax', '$250', '$305', '45 days']) expect(text).toContain(fact);
+    for (const fact of ['grandparent', 'an heir', 'property tax', '$250', '$305', '45 days']) expect(text).toContain(fact);
   });
 
   it('shows only the two-year registration term', () => {

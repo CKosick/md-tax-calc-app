@@ -42,7 +42,7 @@ describe('Georgia re-check', () => {
   });
 
   it('says the DOR taxes its assessed value, not the price, and drops the unsupported "if higher" claim', () => {
-    const text = [...ga.disclaimers, ...ga.notes, ...ga.faqs.map((f) => f.answer)].join(' ');
+    const text = [...ga.disclaimers, ...ga.faqs.map((f) => f.answer)].join(' ');
     expect(text).toContain('assessment manual');
     expect(text).toContain('TAVT estimator');
     expect(text).not.toMatch(/purchase price if higher/i);
@@ -104,7 +104,7 @@ describe('New Jersey re-check', () => {
 
   it('ZEV fee is $270, and the copy says it is derived from the statutory schedule', () => {
     expect(calc(nj, { fuelType: 'ev' }).registrationTotal).toBe(316.5);
-    const text = [...nj.notes, ...nj.disclaimers, ...nj.faqs.map((f) => f.answer)].join(' ');
+    const text = [...nj.disclaimers, ...nj.faqs.map((f) => f.answer)].join(' ');
     expect(text).toContain('statutory schedule');
     expect(text).toContain('not a figure the MVC publishes');
   });
