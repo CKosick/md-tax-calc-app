@@ -14,6 +14,9 @@ const TERM_LABELS: Record<RegistrationTerm, string> = {
 };
 const TERM_WORDS: Record<RegistrationTerm, string> = { 1: 'one year', 2: 'two years', 3: 'three years' };
 
+/** A yearly fee for the fuel buttons: whole dollars as they are, anything else with cents (+$44.50/yr). */
+const annualFeeLabel = (fee: number) => `+$${Number.isInteger(fee) ? fee : fee.toFixed(2)}/yr`;
+
 interface StateOption {
   key: string;
   label: string;
@@ -689,7 +692,7 @@ export function VehicleInputForm({
                 sub: evFeesExcluded
                   ? 'Not in estimate'
                   : rule.registration.evSurchargeAnnual
-                  ? `+$${rule.registration.evSurchargeAnnual}/yr`
+                  ? annualFeeLabel(rule.registration.evSurchargeAnnual)
                   : '$0 state fee'
               },
               {
@@ -698,7 +701,7 @@ export function VehicleInputForm({
                 sub: evFeesExcluded
                   ? 'Not in estimate'
                   : rule.registration.phevSurchargeAnnual
-                  ? `+$${rule.registration.phevSurchargeAnnual}/yr`
+                  ? annualFeeLabel(rule.registration.phevSurchargeAnnual)
                   : '$0 state fee'
               }
             ].map((f) => (
