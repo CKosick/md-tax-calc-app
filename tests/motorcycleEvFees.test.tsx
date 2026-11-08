@@ -113,7 +113,8 @@ describe('Motorcycle EV and plug-in hybrid fees (Option D)', () => {
     ['north-carolina', 'Not charged', 'Not in estimate'],
     ['washington', '+$30/yr', 'Not in estimate'],
     ['nebraska', '+$75/yr', '+$75/yr'],
-    ['indiana', '+$242/yr', '+$81/yr']
+    ['indiana', '+$242/yr', '+$81/yr'],
+    ['nevada', 'Not in estimate', 'Not in estimate']
   ])('%s form labels for a motorcycle', (key, ev, phev) => {
     const { container } = render(<Calculator initialRule={rule(key)} />);
     fireEvent.click(screen.getByText('Motorcycle'));

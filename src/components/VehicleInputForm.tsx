@@ -22,7 +22,7 @@ function fuelFeeLabel(rule: StateRule, fuel: 'ev' | 'phev', vehicleType: Calcula
   const carFee = fuel === 'ev' ? rule.registration.evSurchargeAnnual : rule.registration.phevSurchargeAnnual;
   const motorcycle = vehicleType === 'motorcycle' ? rule.registration.motorcycleFuelFees?.[fuel] : undefined;
   if (motorcycle?.outcome === 'excluded') return 'Not charged';
-  if (motorcycle?.outcome === 'silent') return 'Not in estimate';
+  if (motorcycle?.outcome === 'silent' || rule.registration.fuelFeesUnverified) return 'Not in estimate';
   const fee = motorcycle?.outcome === 'charged' ? motorcycle.amount ?? carFee : carFee;
   return fee ? annualFeeLabel(fee) : '$0 state fee';
 }

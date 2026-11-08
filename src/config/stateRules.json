@@ -3922,7 +3922,8 @@
           0.006
         ],
         "minAmount": 16
-      }
+      },
+      "fuelFeesUnverified": true
     },
     "localTaxNote": "Private party vehicle sales in Nevada are 100% exempt from sales and use tax under NRS 372.320 ('occasional sale' exemption). However, an annual Governmental Services Tax (GST) based on the vehicle's depreciated original MSRP is collected upon registration. The estimate includes it.",
     "notes": [

@@ -37,6 +37,8 @@ export interface StateRegistrationRules {
    * those fees sets this for each fee it has (tests/motorcycleEvFees.test.tsx enforces it).
    */
   motorcycleFuelFees?: { ev?: MotorcycleFuelFee; phev?: MotorcycleFuelFee };
+  /** No EV or plug-in hybrid fee was found but none is confirmed either: the form shows "Not in estimate" instead of "$0 state fee". */
+  fuelFeesUnverified?: boolean;
   /**
    * Weight (lbs) separating the two passenger tiers for states priced as under3700lbs / over3700lbs.
    * Defaults to 3,700; Virginia splits at 4,000. Only the form labels use it.

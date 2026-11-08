@@ -74,6 +74,13 @@ describe('Car EV and plug-in hybrid fee re-check, November 2026', () => {
     expect(page('nevada')).toContain('Confirm any EV fee with the Nevada DMV');
   });
 
+  it('Nevada’s fuel buttons say Not in estimate, not $0 state fee', () => {
+    const { container } = render(<Calculator initialRule={rule('nevada')} />);
+    const label = (name: string) => [...container.querySelectorAll('button')].find((b) => b.textContent?.startsWith(name))?.textContent?.replace(name, '');
+    expect(label('Battery EV')).toBe('Not in estimate');
+    expect(label('Plug-in Hybrid')).toBe('Not in estimate');
+  });
+
   it('Mississippi keeps its base amounts and says they adjust for inflation', () => {
     expect(calc('mississippi', { fuelType: 'ev' }).evSurcharge).toBe(150);
     expect(calc('mississippi', { fuelType: 'phev' }).evSurcharge).toBe(75);
