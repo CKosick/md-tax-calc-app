@@ -30,16 +30,17 @@ Nova fills in "Date sent" for each row as it goes out, and "Reply" when an answe
 | New Hampshire | Division of Motor Vehicles | Email | REG@dos.nh.gov | Not sent | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
 | North Dakota | Department of Transportation, Motor Vehicle Division | Email | mv@nd.gov | Not sent | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
 | North Carolina | Division of Motor Vehicles | Form | https://www.ncdot.gov/contact/Pages/form.aspx?UnitName=DMV_VR&sourceUrl=/contact/ | Not sent | Whether the plug-in hybrid fee applies to a motorcycle and at what amount | |
-| Washington | Department of Licensing | Mail and phone only | Written request to any vehicle licensing office (https://fortress.wa.gov/dol/dolprod/vehoffices/); phone 360-902-3770 | Not sent | Whether the $75 in RCW 46.17.324 applies to an electric motorcycle on top of the $30; any plug-in hybrid motorcycle fee | |
+| Washington | Department of Licensing, Legislative and policy office | Email (changed 2026-11-08) | rulescoordinator@dol.wa.gov | Not sent | Whether the $75 in RCW 46.17.324 applies to an electric motorcycle on top of the $30; any plug-in hybrid motorcycle fee | |
 | Indiana | Bureau of Motor Vehicles | Form | https://mybmv.bmv.in.gov/contact.aspx | Not sent | Confirm a motorcycle pays the car amount ($242 EV, $81 hybrid) | |
 | Nevada | Department of Motor Vehicles | Form | https://dmv.nv.gov/contact.htm (Email DMV form on the page) | Not sent | Whether any EV or plug-in hybrid fee exists; if so, the amount and whether motorcycles pay it | |
 
-Routes: 5 by email, 15 by web form, 3 by mail or phone only. Louisiana and Mississippi accept a form or mail. Alabama's form needs an account.
+Routes: 6 by email, 15 by web form, 2 by mail or phone only. Louisiana and Mississippi accept a form or mail. Alabama's form needs an account.
 
 ## Notes for sending
 
 - **Web forms.** A form is submitted on the agency's site, not from Gmail. Use contact@cartaxhub.com as the reply email, and paste the state's draft as the message. Leave personal fields blank where the form allows it. New Jersey's form has fields for postal address, license number and date of birth, none of which this question needs.
-- **Mail only.** California, Idaho and Washington list no email or form for registration questions. Each draft can go as a letter to the address in the log.
+- **Mail only.** California and Idaho list no email or form for registration questions. Each draft can go as a letter to the address in the log.
+- **Washington route change, 2026-11-08.** Cliff ruled that Washington goes by email to rulescoordinator@dol.wa.gov, the Legislative and policy office, instead of a letter to a vehicle licensing office, because the RCW 46.17.324 question is a rules interpretation. The vehicle registration section of the contact page lists only phone and mail.
 - **Hawaii.** Each county registers vehicles and collects the state's $50 fee. The draft goes to Honolulu, the largest county. The Hawaii DOT contact page names no office for registration fees.
 - **Recorded date.** Each row's date is the day the message actually went out, so a reply can be matched to it.
 
@@ -51,9 +52,9 @@ Read on each agency's own site, 2026-11-08.
 - **California:** dmv.ca.gov/portal/contacting-dmv (no email or form listed).
 - **Illinois:** "License Plates and Vehicle Registration Contact Form" on ilsos.gov/contact-us.html.
 - **Georgia:** "Send a Message about Motor Vehicles" on dor.georgia.gov/motor-vehicles/how-do-i-contact-motor-vehicle-division (no general email listed).
-- **New Jersey:** "General questions on licensing, registration, title" link on nj.gov/mvc/about/contact.htm. The form has fields for postal address, license number and date of birth..
+- **New Jersey:** "General questions on licensing, registration, title" link on nj.gov/mvc/about/contact.htm. The form has fields for postal address, license number and date of birth.
 - **Tennessee:** VR-5 (the EV fee article) on revenue.support.tn.gov says to submit an information request there (no Vehicle Services email listed on tn.gov/revenue/about-us/contact-us.html).
-- **Missouri:** "Email the Motor Vehicle Team" on dor.mo.gov/contact/motor-vehicle-licensing-information.html. The mvbmail@dor.mo.gov address from the earlier search is not on that page, so it is not used..
+- **Missouri:** "Email the Motor Vehicle Team" on dor.mo.gov/contact/motor-vehicle-licensing-information.html. The mvbmail@dor.mo.gov address from the earlier search is not on that page, so it is not used.
 - **Colorado:** "Title and Registration Information Request" on dmv.colorado.gov/contact-us-dmv (no email listed).
 - **Minnesota:** dps.mn.gov/divisions/dvs/contact (no email listed).
 - **South Carolina:** dmv.sc.gov/Contact-Us opens this form.
@@ -63,11 +64,11 @@ Read on each agency's own site, 2026-11-08.
 - **Mississippi:** dor.ms.gov/contact-us and /contact-us/motor-vehicle-services.
 - **Idaho:** itd.idaho.gov/itddmv and itd.idaho.gov/contact/dmv (DMV emails listed are only for commercial vehicles, CDL and dealers).
 - **West Virginia:** dmv.wv.gov/contact-us.
-- **Hawaii:** honolulu.gov/csd/vehicle. Honolulu is one of four counties; the state DOT page names no office for registration fees..
+- **Hawaii:** honolulu.gov/csd/vehicle. Honolulu is one of four counties; the state DOT page names no office for registration fees.
 - **New Hampshire:** Registration address on dmv.nh.gov/contact-us.
 - **North Dakota:** Motor Vehicle email on dot.nd.gov/contact-us.
 - **North Carolina:** "Vehicle Registration & Titles" under "Ask NCDMV a Question" on ncdot.gov/contact (no email listed).
-- **Washington:** Vehicle and boat registration section of dol.wa.gov/about/contact-us. The page also lists rulescoordinator@dol.wa.gov for the Legislative and policy office, not used here..
+- **Washington:** Vehicle and boat registration section of dol.wa.gov/about/contact-us. The same page lists rulescoordinator@dol.wa.gov for the Legislative and policy office, which Washington now uses (see the route change above).
 - **Indiana:** "Send an Email to the BMV" on in.gov/bmv/contact (responses up to 5 business days).
 - **Nevada:** dmv.nv.gov/contact.htm (no email listed).
 
