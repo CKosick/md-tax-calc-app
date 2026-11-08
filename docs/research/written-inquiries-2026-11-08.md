@@ -2,7 +2,7 @@
 
 Cliff approved these inquiries on 2026-11-08, from the deferred list in `motorcycle-build-2026-11-07.md`. There are 23, one per state agency. Nova sends them from Cliff's Gmail under his approval of the template, with contact@cartaxhub.com as the reply address (a Porkbun forwarder to that Gmail). Nothing is sent from the repo or Resend. Any reply that settles a figure goes to Cliff as a ruling before the calculator changes.
 
-**Status: drafted, nothing sent.**
+**Status: 5 of 23 sent (the email routes, 2026-11-08, from Cliff's Gmail).**
 
 ## Send log
 
@@ -22,13 +22,13 @@ Nova fills in "Date sent" for each row as it goes out, and "Reply" when an answe
 | South Carolina | Department of Motor Vehicles | Form | https://dmv.sc.gov/form/contact | Not sent | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
 | Alabama | Department of Revenue, Motor Vehicle Division | Form (account required) | https://contact.revenue.alabama.gov/jira/servicedesk/customer/portal/6; or mail P.O. Box 327490, Montgomery, AL 36132-7490 | Not sent | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
 | Louisiana | Office of Motor Vehicles | Form or mail | https://dpsweb.dps.louisiana.gov/OMVContactUs.nsf; or mail Office of Motor Vehicles, P.O. Box 64886, Baton Rouge, LA 70896 | Not sent | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
-| Arkansas | Department of Finance and Administration, Office of Motor Vehicle | Email | MVInformation@dfa.arkansas.gov | Not sent | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
+| Arkansas | Department of Finance and Administration, Office of Motor Vehicle | Email | MVInformation@dfa.arkansas.gov | 2026-11-08 | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
 | Mississippi | Department of Revenue, Motor Vehicle Licensing Bureau | Form or mail | https://www.dor.ms.gov/contact-us (topic "Motor Vehicles Licensing (Tags)"); or mail PO Box 1033, Jackson, MS 39215 | Not sent | Current inflation-adjusted EV and hybrid amounts; whether they apply to motorcycles and at what amount | |
 | Idaho | Transportation Department, Division of Motor Vehicles | Mail and phone only | DMV Customer Contact Center, PO Box 7129, Boise, ID 83707-1129 | Not sent | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
-| West Virginia | Division of Motor Vehicles | Email | dmvcustomerservice@wv.gov | Not sent | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
-| Hawaii | City and County of Honolulu, Division of Motor Vehicles (the counties register vehicles and collect the state fee) | Email | csd@honolulu.gov | Not sent | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
-| New Hampshire | Division of Motor Vehicles | Email | REG@dos.nh.gov | Not sent | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
-| North Dakota | Department of Transportation, Motor Vehicle Division | Email | mv@nd.gov | Not sent | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
+| West Virginia | Division of Motor Vehicles | Email | dmvcustomerservice@wv.gov | 2026-11-08 | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
+| Hawaii | City and County of Honolulu, Division of Motor Vehicles (the counties register vehicles and collect the state fee) | Email | csd@honolulu.gov | 2026-11-08 | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
+| New Hampshire | Division of Motor Vehicles | Email | REG@dos.nh.gov | 2026-11-08 | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
+| North Dakota | Department of Transportation, Motor Vehicle Division | Email | mv@nd.gov | 2026-11-08 | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
 | North Carolina | Division of Motor Vehicles | Form | https://www.ncdot.gov/contact/Pages/form.aspx?UnitName=DMV_VR&sourceUrl=/contact/ | Not sent | Whether the plug-in hybrid fee applies to a motorcycle and at what amount | |
 | Washington | Department of Licensing, Legislative and policy office | Email (changed 2026-11-08) | rulescoordinator@dol.wa.gov | Not sent | Whether the $75 in RCW 46.17.324 applies to an electric motorcycle on top of the $30; any plug-in hybrid motorcycle fee | |
 | Indiana | Bureau of Motor Vehicles | Form | https://mybmv.bmv.in.gov/contact.aspx | Not sent | Confirm a motorcycle pays the car amount ($242 EV, $81 hybrid) | |
