@@ -2,7 +2,7 @@
 
 Cliff approved these inquiries on 2026-11-08, from the deferred list in `motorcycle-build-2026-11-07.md`. There are 23, one per state agency. Nova sends them from Cliff's Gmail under his approval of the template, with contact@cartaxhub.com as the reply address (a Porkbun forwarder to that Gmail). Nothing is sent from the repo or Resend. Any reply that settles a figure goes to Cliff as a ruling before the calculator changes.
 
-**Status: 5 of 23 sent (the email routes, 2026-11-08, from Cliff's Gmail).**
+**Status: 5 of 23 sent on 2026-11-08 from Cliff's Gmail (Arkansas, West Virginia, New Hampshire, North Dakota, Hawaii). Washington's email and the rest are not sent yet.**
 
 ## Send log
 
