@@ -16,7 +16,7 @@ Nova fills in "Date sent" for each row as it goes out, and "Reply" when an answe
 | Georgia | Department of Revenue, Motor Vehicle Division | Form | https://dor.georgia.gov/send-message-about-motor-vehicles | 2026-11-08 | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
 | New Jersey | Motor Vehicle Commission | Form only | https://www.nj.gov/mvc/About/ContactEmail.htm | 2026-11-08 | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
 | Tennessee | Department of Revenue, Vehicle Services Division | Form | https://revenue.support.tn.gov/hc/en-us/requests/new | 2026-11-08 (submission not confirmed) | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
-| Missouri | Department of Revenue, Motor Vehicle Bureau | Post (instead of the form) | Motor Vehicle Bureau, Missouri Department of Revenue, P.O. Box 100, Jefferson City, MO 65101-0100 (from Nova's letter) | By post: letter prepared 2026-11-08, mailing date to add | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
+| Missouri | Department of Revenue, Motor Vehicle Bureau | Post (instead of the form) | Motor Vehicle Bureau, Missouri Department of Revenue, P.O. Box 2046, Jefferson City, MO 65105-0100 (confirmed on dor.mo.gov/contact/motor-vehicle-licensing-information.html, 2026-11-09; corrected from P.O. Box 100, which came from a third-party directory) | By post: letter prepared 2026-11-08, mailing date to add | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
 | Colorado | Division of Motor Vehicles | Post (instead of the form) | Division of Motor Vehicles, Colorado Department of Revenue, P.O. Box 17087, Denver, CO 80217-0087 (from Nova's letter) | By post: letter prepared 2026-11-08, mailing date to add | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
 | Minnesota | Driver and Vehicle Services | Post (instead of the form) | Driver and Vehicle Services, Minnesota Department of Public Safety, 445 Minnesota Street, Suite 190, St. Paul, MN 55101 (from Nova's letter) | By post: letter prepared 2026-11-08, mailing date to add | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
 | South Carolina | Department of Motor Vehicles | Form | https://dmv.sc.gov/form/contact | 2026-11-08 | Whether the EV and plug-in hybrid fees apply to a motorcycle, and at what amount | |
@@ -46,7 +46,7 @@ Routes as used: 6 by email, 7 by web form, 10 by post. Maryland, Illinois, Misso
 
 ## Where each address was confirmed
 
-The postal addresses for Missouri, Colorado, Minnesota, Maryland and Illinois come from the letters Nova prepared on 2026-11-08, not from a page read in this session.
+The postal addresses for Colorado, Minnesota, Maryland and Illinois come from the letters Nova prepared on 2026-11-08, not from a page read in this session. Missouri's was corrected on 2026-11-09 to the address on the bureau's own contact page, and Nova fixed the letter.
 
 Read on each agency's own site, 2026-11-08.
 
