@@ -753,7 +753,7 @@ export function VehicleInputForm({
                 <span className="text-xs font-bold text-slate-900 dark:text-white">
                   Cash Purchase
                 </span>
-                <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-400">
                   $0 Fee
                 </span>
               </div>
