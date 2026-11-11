@@ -17,8 +17,8 @@ Checked in a browser on a local production build, for a motorcycle (gas, EV and 
 - **North Dakota:** $20 gas, $40 EV, $20 plug-in hybrid.
 - **North Carolina:** $29.50 gas, $29.50 EV, $136.75 plug-in hybrid.
 
-## For Cliff's ruling, not changed here
+## Other questions
 
-- **New Jersey car fee.** The MVC reply gives the zero emission vehicle surcharge as $250 and says it corrects the $270 in the inquiry. The calculator charges cars $270, from the statute's $250 for July 2024 rising $10 a year. That is outside this batch and needs a ruling.
+- **New Jersey car fee: raised and settled, no change.** The MVC reply gave the zero emission vehicle surcharge as $250. Cliff ruled on 2026-11-10 that the car amount stays $270: the MVC's own fee page and N.J.S.A. 39:3-8.5 put July 2026 to June 2027 at $270, so the reply's $250 is the base-year figure.
 - **Arkansas wording.** The reply's sentence reads "There is no annual fee for motorcycles." Taken literally, it would mean no registration fee at all, which would conflict with the $9.50 motorcycle registration the calculator takes from DFA sources. It is read here as no EV or plug-in hybrid fee, as adopted.
 - **North Dakota plug-in hybrid motorcycles.** The reply does not address them, so they stay silent.
