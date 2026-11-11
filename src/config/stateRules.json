@@ -1410,7 +1410,7 @@
           "outcome": "excluded"
         },
         "phev": {
-          "outcome": "silent"
+          "outcome": "charged"
         }
       }
     },
@@ -1427,7 +1427,7 @@
       "There is no cap for passenger vehicles. The $250 maximum applies only to a vehicle already titled in your name in another state for at least 90 days, and the $2,000 maximum only to commercial vehicles over 26,000 pounds.",
       "Registration shown is the $46.25 passenger fee ($29.50 for motorcycles) plus any EV ($214.50) or plug-in hybrid ($107.25) fee. County and regional registration taxes, and the county property tax collected with registration, are not included.",
       "A lien listed on your title application is recorded with the title. NCDMV charges $25 to add a lien to an existing title later.",
-      "North Carolina’s electric vehicle fee covers four-wheeled vehicles (G.S. 20-4.01(28b)), so the estimate does not add it to a motorcycle. The sources do not say whether the plug-in hybrid fee applies to motorcycles, so the estimate leaves that out too. Confirm with the NCDMV."
+      "North Carolina’s electric vehicle fee covers four-wheeled vehicles (G.S. 20-4.01(28b)), so the estimate does not add it to a motorcycle. A plug-in hybrid motorcycle pays the same $107.25 fee as a car, per the NCDMV’s written reply of November 9, 2026."
     ],
     "faqs": [
       {
@@ -1702,7 +1702,7 @@
       },
       "motorcycleFuelFees": {
         "ev": {
-          "outcome": "silent"
+          "outcome": "excluded"
         }
       }
     },
@@ -1718,7 +1718,7 @@
       "Sales tax is 6.625% of the price you paid. The Division of Taxation’s Casual Sales Unit may question a price well below market value and use NADA values if you do not respond.",
       "There is no trade-in credit on a private sale. Swapping vehicles is taxed on fair market value.",
       "Registration shown uses MVC’s weight classes and the higher fee for model years within 2 years. The $270 zero emission vehicle fee is worked out from the statutory schedule ($250 in July 2024 plus $10 a year), not a figure the MVC publishes.",
-      "New Jersey’s sources do not say whether its electric vehicle fee applies to motorcycles, so the estimate leaves it out for a motorcycle. Confirm with the MVC."
+      "New Jersey’s zero emission vehicle fee applies to four-wheel vehicles only, per the MVC’s written reply of November 10, 2026, so the estimate does not add it to a motorcycle."
     ],
     "faqs": [
       {
@@ -2021,10 +2021,10 @@
       "phevSurchargeAnnual": 100,
       "motorcycleFuelFees": {
         "ev": {
-          "outcome": "silent"
+          "outcome": "excluded"
         },
         "phev": {
-          "outcome": "silent"
+          "outcome": "excluded"
         }
       }
     },
@@ -2040,7 +2040,7 @@
       "If the price is under 75% of the vehicle’s value in a pricing guide, the buyer and seller complete the Affidavit of Non-Dealer Transfers. Without it, or an appraisal, tax is due on the full value.",
       "County wheel taxes and other county clerk fees are not included.",
       "The all-electric vehicle fee rises to $274 for registrations from January 1, 2027.",
-      "Tennessee’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with your county clerk."
+      "Tennessee collects its electric vehicle and plug-in hybrid fees only on passenger and commercial motor vehicles, per the Department of Revenue’s written reply of November 9, 2026 (citing T.C.A. 55-4-116), so the estimate does not add them to a motorcycle."
     ],
     "faqs": [
       {
@@ -4034,10 +4034,10 @@
       },
       "motorcycleFuelFees": {
         "ev": {
-          "outcome": "silent"
+          "outcome": "excluded"
         },
         "phev": {
-          "outcome": "silent"
+          "outcome": "excluded"
         }
       }
     },
@@ -4053,7 +4053,7 @@
       "Used vehicles under $4,000 owe no sales tax. From $4,000 to $9,999 the state rate is 3.5% and from $10,000 it is 6.5%. City and county taxes (0% to 6.125%) apply to the first $2,500 only.",
       "Registration shown is the DFA fee by weight ($17 for 3,000 lbs or less, $25 for 3,001 to 4,500 lbs, $30 above) plus the $2.50 validation decal. Electric vehicles add $200, plug-in hybrids $100, and hybrids $50.",
       "To register, you also need proof that the vehicle was assessed and that personal property taxes were paid in your county. County property tax is not included.",
-      "Arkansas’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the Department of Finance and Administration."
+      "Arkansas’s electric vehicle and plug-in hybrid fees do not apply to motorcycles, per the Department of Finance and Administration’s written reply of November 9, 2026, so the estimate does not add them to a motorcycle."
     ],
     "faqs": [
       {
@@ -6124,7 +6124,8 @@
       "phevSurchargeAnnual": 50,
       "motorcycleFuelFees": {
         "ev": {
-          "outcome": "silent"
+          "outcome": "charged",
+          "amount": 20
         },
         "phev": {
           "outcome": "silent"
@@ -6142,7 +6143,7 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with North Dakota Department of Transportation (NDDOT).",
       "North Dakota charges a 5% Motor Vehicle Excise Tax statewide. Trade-in deductions are limited to dealer sales.",
-      "Electric motorcycles also pay a $20 road use fee each year (N.D.C.C. 39-04-19.2). The estimate does not include it."
+      "An electric motorcycle pays a $20 road use fee each year in place of the $120 electric vehicle fee (N.D.C.C. 39-04-19.2), as the NDDOT confirmed in writing on November 9, 2026. The sources do not say whether the $50 plug-in hybrid fee applies to motorcycles, so the estimate leaves it out for a motorcycle."
     ],
     "faqs": [
       {

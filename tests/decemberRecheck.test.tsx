@@ -77,10 +77,10 @@ describe('Kansas sold vehicle wording (K.S.A. 79-3697)', () => {
 });
 
 describe('North Dakota electric motorcycles (N.D.C.C. 39-04-19.2)', () => {
-  it('discloses the $20 fee and leaves it out of the estimate', () => {
-    expect(page('north-dakota')).toContain('Electric motorcycles also pay a $20 road use fee');
+  it('charges an electric motorcycle the $20 fee, as NDDOT confirmed on November 9, 2026', () => {
+    expect(page('north-dakota')).toContain('An electric motorcycle pays a $20 road use fee each year in place of the $120');
     const moto = { vehicleType: 'motorcycle' as const };
-    expect(calc('north-dakota', { ...moto, fuelType: 'ev' }).registrationTotal).toBe(20);
+    expect(calc('north-dakota', { ...moto, fuelType: 'ev' }).registrationTotal).toBe(calc('north-dakota', moto).registrationTotal + 20);
     expect(calc('north-dakota', { fuelType: 'ev' }).registrationTotal).toBe(calc('north-dakota').registrationTotal + 120);
   });
 });

@@ -26,10 +26,10 @@ const gasTotal = (key: string) => moto(key, 'gasoline').registrationTotal;
 
 afterEach(() => cleanup());
 
-const EXCLUDED_EV = ['virginia', 'texas', 'ohio', 'north-carolina', 'michigan', 'wisconsin', 'oregon', 'utah', 'montana', 'south-dakota', 'vermont', 'wyoming'];
-const EXCLUDED_PHEV = ['ohio', 'michigan', 'wisconsin', 'utah', 'montana', 'vermont', 'wyoming', 'kansas'];
-const SILENT_EV = ['maryland', 'california', 'illinois', 'georgia', 'new-jersey', 'tennessee', 'missouri', 'colorado', 'minnesota', 'south-carolina', 'alabama', 'louisiana', 'arkansas', 'mississippi', 'idaho', 'west-virginia', 'hawaii', 'new-hampshire', 'north-dakota'];
-const SILENT_PHEV = ['maryland', 'tennessee', 'missouri', 'colorado', 'minnesota', 'south-carolina', 'alabama', 'louisiana', 'arkansas', 'mississippi', 'idaho', 'west-virginia', 'new-hampshire', 'north-dakota', 'north-carolina', 'washington'];
+const EXCLUDED_EV = ['virginia', 'texas', 'ohio', 'north-carolina', 'michigan', 'wisconsin', 'oregon', 'utah', 'montana', 'south-dakota', 'vermont', 'wyoming', 'arkansas', 'new-jersey', 'tennessee'];
+const EXCLUDED_PHEV = ['ohio', 'michigan', 'wisconsin', 'utah', 'montana', 'vermont', 'wyoming', 'kansas', 'arkansas', 'tennessee'];
+const SILENT_EV = ['maryland', 'california', 'illinois', 'georgia', 'missouri', 'colorado', 'minnesota', 'south-carolina', 'alabama', 'louisiana', 'mississippi', 'idaho', 'west-virginia', 'hawaii', 'new-hampshire'];
+const SILENT_PHEV = ['maryland', 'missouri', 'colorado', 'minnesota', 'south-carolina', 'alabama', 'louisiana', 'mississippi', 'idaho', 'west-virginia', 'new-hampshire', 'north-dakota', 'washington'];
 
 describe('Motorcycle EV and plug-in hybrid fees (Option D)', () => {
   it('every state with an EV or plug-in hybrid fee rules on motorcycles for each fee it has', () => {
@@ -73,7 +73,9 @@ describe('Motorcycle EV and plug-in hybrid fees (Option D)', () => {
     ['oklahoma', 'ev', 100],
     ['oklahoma', 'phev', 30],
     ['indiana', 'ev', 242],
-    ['indiana', 'phev', 81]
+    ['indiana', 'phev', 81],
+    ['north-dakota', 'ev', 20],
+    ['north-carolina', 'phev', 107.25]
   ] as const)('%s charges a motorcycle on %s $%d', (key, fuel, amount) => {
     expect(moto(key, fuel).evSurcharge).toBe(amount);
   });
@@ -110,11 +112,15 @@ describe('Motorcycle EV and plug-in hybrid fees (Option D)', () => {
     ['texas', 'Not charged', '$0 state fee'],
     ['ohio', 'Not charged', 'Not charged'],
     ['maryland', 'Not in estimate', 'Not in estimate'],
-    ['north-carolina', 'Not charged', 'Not in estimate'],
+    ['north-carolina', 'Not charged', '+$107.25/yr'],
     ['washington', '+$30/yr', 'Not in estimate'],
     ['nebraska', '+$75/yr', '+$75/yr'],
     ['indiana', '+$242/yr', '+$81/yr'],
-    ['nevada', 'Not in estimate', 'Not in estimate']
+    ['nevada', 'Not in estimate', 'Not in estimate'],
+    ['arkansas', 'Not charged', 'Not charged'],
+    ['new-jersey', 'Not charged', '$0 state fee'],
+    ['tennessee', 'Not charged', 'Not charged'],
+    ['north-dakota', '+$20/yr', 'Not in estimate']
   ])('%s form labels for a motorcycle', (key, ev, phev) => {
     const { container } = render(<Calculator initialRule={rule(key)} />);
     fireEvent.click(screen.getByText('Motorcycle'));
