@@ -124,7 +124,7 @@ export function PartnerSlot({
               <span className="inline-flex items-center rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-semibold text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-300">
                 {slot.badge || 'Sponsored Partner'}
               </span>
-              <span className="text-xs font-medium text-slate-400">Sponsored Link</span>
+              <span className="text-xs font-medium text-slate-500 dark:text-slate-400">Sponsored Link</span>
             </div>
 
             <h3 className="text-base font-bold tracking-tight text-slate-900 dark:text-white">

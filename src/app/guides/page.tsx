@@ -35,7 +35,7 @@ export default function GuidesIndexPage() {
           <Link href="/" className="inline-flex min-h-[44px] items-center hover:text-indigo-600 dark:hover:text-indigo-400">
             Home
           </Link>
-          <span className="text-slate-300 dark:text-slate-700">/</span>
+          <span className="text-slate-300 dark:text-slate-600">/</span>
           <span className="font-semibold text-slate-900 dark:text-white" aria-current="page">
             Guides
           </span>
@@ -68,7 +68,7 @@ export default function GuidesIndexPage() {
                   >
                     <span className="text-base font-bold text-slate-900 dark:text-white">{guide.title}</span>
                     <span className="mt-1 text-sm text-slate-600 dark:text-slate-300">{guide.cardDescription}</span>
-                    <span className="mt-2 text-xs text-slate-400">Last verified: {guide.lastVerified}</span>
+                    <span className="mt-2 text-xs text-slate-500 dark:text-slate-400">Last verified: {guide.lastVerified}</span>
                   </Link>
                 ))}
               </div>

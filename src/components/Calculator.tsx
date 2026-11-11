@@ -169,11 +169,11 @@ function CalculatorView({
         <Link href="/" className="inline-flex min-h-[44px] items-center hover:text-indigo-600 dark:hover:text-indigo-400">
           Home
         </Link>
-        <span className="text-slate-300 dark:text-slate-700">/</span>
+        <span className="text-slate-300 dark:text-slate-600">/</span>
         <Link href="/calculator" className="inline-flex min-h-[44px] items-center hover:text-indigo-600 dark:hover:text-indigo-400">
           Calculators
         </Link>
-        <span className="text-slate-300 dark:text-slate-700">/</span>
+        <span className="text-slate-300 dark:text-slate-600">/</span>
         <span className="font-semibold text-slate-900 dark:text-white" aria-current="page">
           {initialRule.label}
         </span>
@@ -331,7 +331,7 @@ function CalculatorView({
               className="flex min-h-[44px] items-center justify-between rounded-xl border border-slate-200/80 bg-white/70 p-3 text-xs font-semibold text-slate-700 transition-all hover:-translate-y-0.5 hover:border-indigo-400 hover:text-indigo-600 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:text-indigo-400"
             >
               <span>{st.label}</span>
-              <svg className="h-3.5 w-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <svg className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
               </svg>
             </Link>

@@ -111,7 +111,7 @@ export function CostSummaryCard({
             </h2>
           </div>
           <div className="text-right">
-            <span className="text-xs font-medium uppercase tracking-wider text-slate-400">
+            <span className="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">
               Jurisdiction
             </span>
             <p className="text-sm font-bold text-slate-800 dark:text-slate-200">
@@ -167,7 +167,7 @@ export function CostSummaryCard({
 
         {/* Itemized Breakdown List - Exact §3 Order */}
         <div className="space-y-4">
-          <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-400">
+          <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
             <span>Itemized Line Item</span>
             <span>Estimated Fee</span>
           </div>

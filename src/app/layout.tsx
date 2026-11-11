@@ -136,7 +136,7 @@ export default function RootLayout({
                 <span className="block text-sm font-bold tracking-tight text-slate-900 dark:text-white">
                   CarTaxHub<span className="text-indigo-600 dark:text-indigo-400">.com</span>
                 </span>
-                <span className="block text-xs font-medium text-slate-400">
+                <span className="block text-xs font-medium text-slate-500 dark:text-slate-400">
                   Private Party Vehicle Tax &amp; Tags Calculator
                 </span>
               </div>

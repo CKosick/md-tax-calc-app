@@ -174,7 +174,7 @@ export default function HomePage() {
               >
                 <span>State Rankings</span>
               </Link>
-              <span className="text-slate-300 dark:text-slate-700">•</span>
+              <span className="text-slate-300 dark:text-slate-600">•</span>
               <Link
                 href="/calculator"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400"

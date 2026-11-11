@@ -49,7 +49,7 @@ export function HomeStateSelector({ states, featuredStates }: HomeStateSelectorP
           </select>
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5">
             <svg
-              className="h-4 w-4 text-slate-400"
+              className="h-4 w-4 text-slate-500 dark:text-slate-400"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}

@@ -22,7 +22,7 @@ export default function AboutPage() {
           <Link href="/" className="inline-flex min-h-[44px] items-center hover:text-indigo-600 dark:hover:text-indigo-400">
             Home
           </Link>
-          <span className="text-slate-300 dark:text-slate-700">/</span>
+          <span className="text-slate-300 dark:text-slate-600">/</span>
           <span className="font-semibold text-slate-900 dark:text-white" aria-current="page">
             About
           </span>

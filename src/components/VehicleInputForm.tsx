@@ -140,7 +140,7 @@ export function VehicleInputForm({
               ))}
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5">
-              <svg className="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <svg className="h-4 w-4 text-slate-500 dark:text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
             </div>
@@ -157,7 +157,7 @@ export function VehicleInputForm({
               >
                 Where will the vehicle be registered?
               </label>
-              <span className="text-xs text-slate-400">Optional</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400">Optional</span>
             </div>
             <div className="relative mt-2">
               <select
@@ -174,7 +174,7 @@ export function VehicleInputForm({
                 ))}
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5">
-                <svg className="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <svg className="h-4 w-4 text-slate-500 dark:text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
               </div>
@@ -234,7 +234,7 @@ export function VehicleInputForm({
             >
               Purchase Price (Agreed Sale Price)
             </label>
-            <span className="text-xs text-slate-400">
+            <span className="text-xs text-slate-500 dark:text-slate-400">
               {rule.flatTaxTable
                 ? `${rule.label} Form RUT-50 Tax Table`
                 : `${rule.label} ${ratePercent(rule.exciseTaxRate)}% ${rule.label === 'Delaware' ? 'fee base' : 'tax base'}`}
@@ -242,7 +242,7 @@ export function VehicleInputForm({
           </div>
           <div className="relative mt-2">
             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-              <span className="text-base font-bold text-slate-400">$</span>
+              <span className="text-base font-bold text-slate-500 dark:text-slate-400">$</span>
             </div>
             <input
               type="number"
@@ -287,7 +287,7 @@ export function VehicleInputForm({
               className={`text-xs font-medium ${
                 isMaryland && inBookValueWindow
                   ? 'font-bold text-amber-600 dark:text-amber-400'
-                  : 'text-slate-400'
+                  : 'text-slate-500 dark:text-slate-400'
               }`}
             >
               {formatVehicleAge(inputs.vehicleYear, currentYear)}{' '}
@@ -340,11 +340,11 @@ export function VehicleInputForm({
               >
                 Book Value (J.D. Power)
               </label>
-              <span className="text-xs text-slate-400">Optional</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400">Optional</span>
             </div>
             <div className="relative mt-2">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-                <span className="text-base font-bold text-slate-400">$</span>
+                <span className="text-base font-bold text-slate-500 dark:text-slate-400">$</span>
               </div>
               <input
                 type="number"
@@ -378,11 +378,11 @@ export function VehicleInputForm({
               >
                 Standard Presumptive Value (SPV)
               </label>
-              <span className="text-xs text-slate-400">Optional</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400">Optional</span>
             </div>
             <div className="relative mt-2">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-                <span className="text-base font-bold text-slate-400">$</span>
+                <span className="text-base font-bold text-slate-500 dark:text-slate-400">$</span>
               </div>
               <input
                 type="number"
@@ -412,7 +412,7 @@ export function VehicleInputForm({
                 </label>
                 <div className="relative mt-2">
                   <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-                    <span className="text-base font-bold text-slate-400">$</span>
+                    <span className="text-base font-bold text-slate-500 dark:text-slate-400">$</span>
                   </div>
                   <input
                     type="number"
@@ -446,7 +446,7 @@ export function VehicleInputForm({
               >
                 Vehicle Weight (lbs)
               </label>
-              <span className="text-xs text-slate-400">Sets the registration fee</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400">Sets the registration fee</span>
             </div>
             <input
               type="number"
@@ -478,11 +478,11 @@ export function VehicleInputForm({
               >
                 Original MSRP (List Price)
               </label>
-              <span className="text-xs text-slate-400">{annualTax ? 'Sets the yearly tax' : 'Sets the registration fee'}</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400">{annualTax ? 'Sets the yearly tax' : 'Sets the registration fee'}</span>
             </div>
             <div className="relative mt-2">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-                <span className="text-base font-bold text-slate-400">$</span>
+                <span className="text-base font-bold text-slate-500 dark:text-slate-400">$</span>
               </div>
               <input
                 type="number"
@@ -514,7 +514,7 @@ export function VehicleInputForm({
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
                 Vehicle Weight Classification
               </label>
-              <span className="text-xs text-slate-400">
+              <span className="text-xs text-slate-500 dark:text-slate-400">
                 {isMaryland ? 'Class A & M Tiers (SB 362)' : 'Standard Passenger'}
               </span>
             </div>
@@ -648,7 +648,7 @@ export function VehicleInputForm({
             <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
               Registration Term
             </label>
-            <span className="text-xs text-slate-400">{rule.label} tag options</span>
+            <span className="text-xs text-slate-500 dark:text-slate-400">{rule.label} tag options</span>
           </div>
           {offeredTerms.length === 1 ? (
             // A state with one registration term shows it as the only option, not a toggle
@@ -691,7 +691,7 @@ export function VehicleInputForm({
             <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
               Powertrain / Fuel Type
             </label>
-            <span className="text-xs text-slate-400">EV surcharge rules</span>
+            <span className="text-xs text-slate-500 dark:text-slate-400">EV surcharge rules</span>
           </div>
           <div className="mt-2 grid grid-cols-3 gap-2">
             {[
@@ -734,7 +734,7 @@ export function VehicleInputForm({
             <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
               Financing &amp; Lien Filing
             </label>
-            <span className="text-xs font-medium text-slate-400">
+            <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
               Lien fee: ${rule.lienFilingFee}.00
             </span>
           </div>
@@ -872,7 +872,7 @@ export function VehicleInputForm({
 
           <div className="relative mt-2">
             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5">
-              <span className={`text-sm font-bold ${isMaryland ? 'text-slate-300 dark:text-slate-600' : 'text-slate-400'}`}>$</span>
+              <span className={`text-sm font-bold ${isMaryland ? 'text-slate-300 dark:text-slate-500' : 'text-slate-500 dark:text-slate-400'}`}>$</span>
             </div>
             <input
               type="number"
@@ -885,7 +885,7 @@ export function VehicleInputForm({
               placeholder={isMaryland ? 'Disabled: Trade-ins not deductible on MD private sales' : '0'}
               className={`block w-full min-h-[44px] rounded-xl border border-slate-200 py-2.5 pl-7 pr-3 text-sm font-bold shadow-xs focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/10 dark:border-slate-700 ${
                 isMaryland
-                  ? 'cursor-not-allowed bg-slate-100/90 text-slate-400 dark:bg-slate-800/80 dark:text-slate-500'
+                  ? 'cursor-not-allowed bg-slate-100/90 text-slate-500 dark:bg-slate-800/80 dark:text-slate-500'
                   : 'bg-white text-slate-900 dark:bg-slate-900 dark:text-white'
               }`}
             />
