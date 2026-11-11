@@ -175,7 +175,7 @@ export function VehicleTaxComparisonTables({
             <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
               Total First-Year Vehicle Cost by State
             </h2>
-            <p className="mt-1 text-xs text-slate-500 sm:text-sm dark:text-slate-400">
+            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
               Ranked from cheapest to most expensive for a standard $25,000 passenger purchase (sales tax + title fee + 1-year registration). Click column headers to sort.
             </p>
           </div>
@@ -276,7 +276,7 @@ export function VehicleTaxComparisonTables({
                       >
                         {row.label}
                       </Link>
-                      <span className="row-verified mt-0.5 block text-[11px] font-normal text-slate-500 dark:text-slate-400">
+                      <span className="row-verified mt-0.5 block text-xs font-normal text-slate-500 dark:text-slate-400">
                         Verified {row.lastVerified}
                       </span>
                     </td>
@@ -311,7 +311,7 @@ export function VehicleTaxComparisonTables({
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
             State Vehicle Sales &amp; Use Tax Rates (Ranked)
           </h2>
-          <p className="mt-1 text-xs text-slate-500 sm:text-sm dark:text-slate-400">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             Ranked by statutory state-level sales, excise, or use tax rate descending. Illinois utilizes statutory Form RUT-50 flat brackets and is categorized with its official flat schedule.
           </p>
         </div>
@@ -382,7 +382,7 @@ export function VehicleTaxComparisonTables({
                       >
                         {row.label}
                       </Link>
-                      <span className="row-verified mt-0.5 block text-[11px] font-normal text-slate-500 dark:text-slate-400">
+                      <span className="row-verified mt-0.5 block text-xs font-normal text-slate-500 dark:text-slate-400">
                         Verified {row.lastVerified}
                       </span>
                     </td>
@@ -405,7 +405,7 @@ export function VehicleTaxComparisonTables({
                       )}
                     </td>
                     <td className="whitespace-nowrap px-4 py-3 text-center">
-                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-600 uppercase dark:bg-slate-800 dark:text-slate-400">
+                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600 uppercase dark:bg-slate-800 dark:text-slate-400">
                         {row.isFlatTable ? 'Flat Bracket' : row.taxBase}
                       </span>
                     </td>
@@ -426,7 +426,7 @@ export function VehicleTaxComparisonTables({
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
             Certificate of Title Fees by State (Ranked)
           </h2>
-          <p className="mt-1 text-xs text-slate-500 sm:text-sm dark:text-slate-400">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             Mandatory title issuance fees charged by state DMVs and county tax collectors upon ownership transfer, ranked from highest to lowest.
           </p>
         </div>
@@ -497,7 +497,7 @@ export function VehicleTaxComparisonTables({
                       >
                         {row.label}
                       </Link>
-                      <span className="row-verified mt-0.5 block text-[11px] font-normal text-slate-500 dark:text-slate-400">
+                      <span className="row-verified mt-0.5 block text-xs font-normal text-slate-500 dark:text-slate-400">
                         Verified {row.lastVerified}
                       </span>
                     </td>

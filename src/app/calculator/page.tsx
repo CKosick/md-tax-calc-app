@@ -68,7 +68,7 @@ export default function CalculatorHubPage() {
               <p className="mt-1 text-base font-bold text-slate-900 dark:text-white">
                 Looking to compare all 50 states + DC side-by-side?
               </p>
-              <p className="mt-0.5 text-xs text-slate-600 dark:text-slate-300 sm:text-sm">
+              <p className="mt-0.5 text-sm text-slate-600 dark:text-slate-300">
                 Explore our full ranked study of private-party vehicle sales taxes, title fees, and total first-year costs with downloadable CSV data.
               </p>
             </div>
@@ -215,7 +215,7 @@ export default function CalculatorHubPage() {
                       {formatCurrency(st.lienFilingFee)}
                     </td>
                     <td className="px-4 py-3">
-                      <span className={`inline-flex rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                      <span className={`inline-flex rounded-full px-2 py-0.5 text-xs font-bold ${
                         st.tradeInDeductible
                           ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300'
                           : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400'

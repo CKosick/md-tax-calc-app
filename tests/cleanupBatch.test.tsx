@@ -85,8 +85,9 @@ describe('Vehicle age never displays as negative', () => {
     // Default model year is the 7-year-old preset
     expect(screen.getByDisplayValue('2020')).toBeDefined();
     expect(container.textContent).toContain('7 years old');
-    // Rates badge still reflects the verified rates year
-    expect(container.textContent).toContain(`Verified for ${RATES_VERIFIED_YEAR} Maryland`);
+    // Rates badge still reflects the month the state was verified, not the current year
+    expect(container.textContent).toContain(`Maryland rates last verified: ${mdRule.lastVerified}`);
+    expect(container.textContent).not.toContain('2027 Maryland');
 
     fireEvent.change(screen.getByLabelText(/Vehicle Model Year/i), { target: { value: '2028' } });
     expect(container.textContent).toContain('Next model year');

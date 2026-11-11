@@ -42,7 +42,7 @@ describe('CarTaxHub UI Pass Acceptance Tests', () => {
   });
 
   describe('1. Mobile Results & Sticky Bottom Bar (covering tablets)', () => {
-    it('renders a summary card with estimated taxes & fees and sticky bottom bar with Recalculate button covering tablets (lg:hidden)', () => {
+    it('renders a summary card with estimated taxes & fees and sticky bottom bar with an Adjust details button covering tablets (lg:hidden)', () => {
       const { container } = render(<Calculator initialRule={mdRule} />);
 
       // Summary card heading in results
@@ -54,11 +54,12 @@ describe('CarTaxHub UI Pass Acceptance Tests', () => {
       expect(stickyBar?.className).toContain('lg:hidden');
       expect(stickyBar?.className).not.toContain('md:hidden');
 
-      // Recalculate button on sticky bar
-      const recalculateBtn = screen.getByRole('button', { name: /recalculate/i });
-      expect(recalculateBtn).toBeDefined();
+      // Adjust details button on sticky bar (the total updates live, so it does not say Recalculate)
+      const recalculateBtn = screen.getByRole('button', { name: /adjust vehicle and sale details/i });
+      expect(recalculateBtn.textContent).toContain('Adjust details');
+      expect(screen.queryByRole('button', { name: /recalculate/i })).toBeNull();
 
-      // Recalculate button click scrolls to form
+      // Adjust details button click scrolls to the form
       const scrollIntoViewMock = vi.fn();
       const formEl = document.getElementById('calculator-form');
       if (formEl) {

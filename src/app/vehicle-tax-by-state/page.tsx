@@ -170,13 +170,13 @@ export default function VehicleTaxByStatePage() {
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
               <li>
-                <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400">
+                <Link href="/" className="inline-flex min-h-[44px] items-center hover:text-indigo-600 dark:hover:text-indigo-400">
                   Home
                 </Link>
               </li>
               <li>›</li>
               <li>
-                <Link href="/calculator" className="hover:text-indigo-600 dark:hover:text-indigo-400">
+                <Link href="/calculator" className="inline-flex min-h-[44px] items-center hover:text-indigo-600 dark:hover:text-indigo-400">
                   Calculators
                 </Link>
               </li>
@@ -338,7 +338,7 @@ export default function VehicleTaxByStatePage() {
               <h2 id="all-calculators-grid" className="mt-1 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
                 Individual State Car Tax Calculators
               </h2>
-              <p className="mt-2 text-xs text-slate-500 sm:text-sm dark:text-slate-400">
+              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                 Explore dedicated statutory calculators for all 50 states + DC, featuring vehicle age adjustments, weight classes, and local tax rules:
               </p>
             </div>
@@ -357,7 +357,7 @@ export default function VehicleTaxByStatePage() {
                       <span className="font-bold text-slate-900 group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400">
                         {st.label}
                       </span>
-                      <span className="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                      <span className="rounded-md bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
                         {st.rateDisplay}
                       </span>
                     </div>

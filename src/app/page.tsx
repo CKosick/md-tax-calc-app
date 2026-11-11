@@ -163,7 +163,7 @@ export default function HomePage() {
               <h2 className="mt-1 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
                 Popular State Vehicle Tax Calculators
               </h2>
-              <p className="mt-2 text-xs text-slate-500 sm:text-sm dark:text-slate-400">
+              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                 Instant calculations tailored to state department of revenue and DMV guidelines:
               </p>
             </div>
@@ -207,7 +207,7 @@ export default function HomePage() {
                       <span className="font-bold text-slate-900 dark:text-white">
                         {st.label}
                       </span>
-                      <span className="rounded-full bg-indigo-50 px-2 py-0.5 text-[11px] font-semibold text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">
+                      <span className="rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-semibold text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">
                         {rateBadge}
                       </span>
                     </div>
@@ -238,7 +238,7 @@ export default function HomePage() {
               <h2 className="mt-1 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
                 Buying, Gifting, or Moving With a Car
               </h2>
-              <p className="mt-2 text-xs text-slate-500 sm:text-sm dark:text-slate-400">
+              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                 What to do, what to bring, and what it costs, checked against each state’s motor vehicle agency:
               </p>
             </div>
@@ -338,7 +338,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-extrabold sm:text-3xl">
               Ready to Calculate Your State&apos;s True Car Costs?
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-xs sm:text-sm text-indigo-200">
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-indigo-200">
               Access all 50 US states and Washington DC in our comprehensive fee directory with comparison tables and statutory citations.
             </p>
             <div className="mt-6">

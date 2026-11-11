@@ -7,7 +7,7 @@ import { StateRule, CalculatorInputs } from '@/lib/types';
 import type { StateOption } from '@/lib/stateOptions';
 import { calculateVehicleCosts } from '@/lib/calculator';
 import { formatFee, formatTermPhrase, ratePercent } from '@/lib/formatters';
-import { RATES_VERIFIED_YEAR, getCalculationYear } from '@/lib/constants';
+import { LAST_VERIFIED_DATE, getCalculationYear } from '@/lib/constants';
 import { getDefaultInputs, getOfferedTerms, inputsFromSearchParams } from '@/lib/shareParams';
 import { getPublishedFaqs } from '@/lib/faqs';
 import { VehicleInputForm } from './VehicleInputForm';
@@ -149,7 +149,7 @@ function CalculatorView({
       ? `${formatCurrency(breakdown.totalFirstYearCostMin)} – ${formatCurrency(breakdown.totalFirstYearCostMax)}`
       : formatCurrency(breakdown.totalFirstYearCost);
 
-  const handleRecalculate = () => {
+  const handleAdjustDetails = () => {
     const formElement = document.getElementById('calculator-form');
     if (formElement) {
       formElement.scrollIntoView({ behavior: 'smooth' });
@@ -165,12 +165,12 @@ function CalculatorView({
       {!embedded && (
       <>
       {/* Breadcrumb Navigation */}
-      <nav aria-label="Breadcrumb" className="mb-4 sm:mb-6 flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-        <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400">
+      <nav aria-label="Breadcrumb" className="mb-2 sm:mb-4 flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+        <Link href="/" className="inline-flex min-h-[44px] items-center hover:text-indigo-600 dark:hover:text-indigo-400">
           Home
         </Link>
         <span className="text-slate-300 dark:text-slate-700">/</span>
-        <Link href="/calculator" className="hover:text-indigo-600 dark:hover:text-indigo-400">
+        <Link href="/calculator" className="inline-flex min-h-[44px] items-center hover:text-indigo-600 dark:hover:text-indigo-400">
           Calculators
         </Link>
         <span className="text-slate-300 dark:text-slate-700">/</span>
@@ -183,12 +183,12 @@ function CalculatorView({
       <header className="mb-6 sm:mb-10 text-center sm:text-left">
         <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-3 py-1 text-xs font-semibold text-indigo-700 dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
           <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-          <span>Verified for {RATES_VERIFIED_YEAR} {initialRule.label} Statutory Rates</span>
+          <span>{initialRule.label} rates last verified: {initialRule.lastVerified ?? LAST_VERIFIED_DATE}</span>
         </div>
         <h1 className="mt-2 sm:mt-3 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
           {initialRule.label} Private Party Car Tax Calculator
         </h1>
-        <p className="mt-2 sm:mt-3 max-w-3xl text-xs sm:text-sm lg:text-base leading-relaxed text-slate-600 dark:text-slate-300">
+        <p className="mt-2 sm:mt-3 max-w-3xl text-sm lg:text-base leading-relaxed text-slate-600 dark:text-slate-300">
           Calculate your true first-year out-of-pocket costs for a private vehicle sale in {initialRule.label}. Accurately accounts for {taxPhrase}, {formatFee(initialRule.titleFee)} certificate of title fee, {formatTermPhrase(getOfferedTerms(initialRule))} tag registration, and state-specific regulations.
         </p>
       </header>
@@ -346,7 +346,7 @@ function CalculatorView({
       >
         <div className="mx-auto flex max-w-md items-center justify-between gap-3">
           <div className="min-w-0 flex-1">
-            <span className="block text-[10px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <span className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
               Estimated taxes &amp; fees
             </span>
             <span className="block truncate text-base font-extrabold text-slate-900 dark:text-white sm:text-lg">
@@ -355,14 +355,14 @@ function CalculatorView({
           </div>
           <button
             type="button"
-            onClick={handleRecalculate}
+            onClick={handleAdjustDetails}
             className="inline-flex min-h-[44px] shrink-0 items-center justify-center gap-1.5 rounded-xl bg-indigo-600 px-4 py-2.5 text-xs font-bold text-white shadow-xs transition-all hover:bg-indigo-700 active:scale-95 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-600 cursor-pointer"
-            aria-label="Recalculate out-of-pocket costs"
+            aria-label="Adjust vehicle and sale details"
           >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
             </svg>
-            <span>Recalculate</span>
+            <span>Adjust details</span>
           </button>
         </div>
       </div>

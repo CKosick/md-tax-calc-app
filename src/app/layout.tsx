@@ -136,22 +136,22 @@ export default function RootLayout({
                 <span className="block text-sm font-bold tracking-tight text-slate-900 dark:text-white">
                   CarTaxHub<span className="text-indigo-600 dark:text-indigo-400">.com</span>
                 </span>
-                <span className="block text-[10px] font-medium text-slate-400">
+                <span className="block text-xs font-medium text-slate-400">
                   Private Party Vehicle Tax &amp; Tags Calculator
                 </span>
               </div>
             </Link>
 
-            <nav className="flex items-center gap-3">
+            <nav className="flex items-center gap-1">
               <Link
                 href="/guides"
-                className="text-xs font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400"
+                className="inline-flex min-h-[44px] items-center px-2 text-xs font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400"
               >
                 Guides
               </Link>
               <Link
                 href="/calculator"
-                className="text-xs font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400"
+                className="inline-flex min-h-[44px] items-center px-2 text-xs font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400"
               >
                 State Directory
               </Link>
@@ -169,32 +169,32 @@ export default function RootLayout({
         {/* Footer */}
         <footer className="border-t border-slate-200 bg-white pt-8 pb-[calc(5rem+env(safe-area-inset-bottom,0.75rem))] text-center text-xs text-slate-500 dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400 lg:py-8">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap justify-center gap-4 text-xs font-medium text-slate-600 dark:text-slate-400">
-              <Link href="/calculator/maryland-private-sale-tax-calculator" className="hover:text-indigo-600">Maryland</Link>
+            <div className="flex flex-wrap items-center justify-center gap-x-1 text-xs font-medium text-slate-600 dark:text-slate-400">
+              <Link href="/calculator/maryland-private-sale-tax-calculator" className="inline-flex min-h-[44px] items-center px-2 hover:text-indigo-600">Maryland</Link>
               <span>•</span>
-              <Link href="/calculator/virginia-private-sale-tax-calculator" className="hover:text-indigo-600">Virginia</Link>
+              <Link href="/calculator/virginia-private-sale-tax-calculator" className="inline-flex min-h-[44px] items-center px-2 hover:text-indigo-600">Virginia</Link>
               <span>•</span>
-              <Link href="/calculator/pennsylvania-private-sale-tax-calculator" className="hover:text-indigo-600">Pennsylvania</Link>
+              <Link href="/calculator/pennsylvania-private-sale-tax-calculator" className="inline-flex min-h-[44px] items-center px-2 hover:text-indigo-600">Pennsylvania</Link>
               <span>•</span>
-              <Link href="/calculator/delaware-private-sale-tax-calculator" className="hover:text-indigo-600">Delaware</Link>
+              <Link href="/calculator/delaware-private-sale-tax-calculator" className="inline-flex min-h-[44px] items-center px-2 hover:text-indigo-600">Delaware</Link>
               <span>•</span>
-              <Link href="/calculator/district-of-columbia-private-sale-tax-calculator" className="hover:text-indigo-600">District of Columbia</Link>
+              <Link href="/calculator/district-of-columbia-private-sale-tax-calculator" className="inline-flex min-h-[44px] items-center px-2 hover:text-indigo-600">District of Columbia</Link>
               <span>•</span>
-              <Link href="/calculator" className="hover:text-indigo-600 font-bold">All Calculators</Link>
+              <Link href="/calculator" className="inline-flex min-h-[44px] items-center px-2 hover:text-indigo-600 font-bold">All Calculators</Link>
             </div>
-            <div className="mt-3 flex flex-wrap justify-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400">
-              <Link href="/guides" className="hover:text-indigo-600 dark:hover:text-indigo-400">Guides</Link>
+            <div className="mt-1 flex flex-wrap items-center justify-center gap-x-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+              <Link href="/guides" className="inline-flex min-h-[44px] items-center px-2 hover:text-indigo-600 dark:hover:text-indigo-400">Guides</Link>
               <span>•</span>
-              <Link href="/about" className="hover:text-indigo-600 dark:hover:text-indigo-400">About</Link>
+              <Link href="/about" className="inline-flex min-h-[44px] items-center px-2 hover:text-indigo-600 dark:hover:text-indigo-400">About</Link>
               <span>•</span>
-              <Link href="/privacy" className="hover:text-indigo-600 dark:hover:text-indigo-400">Privacy Policy</Link>
+              <Link href="/privacy" className="inline-flex min-h-[44px] items-center px-2 hover:text-indigo-600 dark:hover:text-indigo-400">Privacy Policy</Link>
               <span>•</span>
-              <Link href="/contact" className="hover:text-indigo-600 dark:hover:text-indigo-400">Contact</Link>
+              <Link href="/contact" className="inline-flex min-h-[44px] items-center px-2 hover:text-indigo-600 dark:hover:text-indigo-400">Contact</Link>
             </div>
             <p className="mt-4">
               © {new Date().getFullYear()} CarTaxHub.com. Estimates only. Not affiliated with or endorsed by any state DMV, MVA, or DOT agency.
             </p>
-            <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
               Calculations based on published 2025–2026 statutory fee schedules and vehicle excise/sales tax codes.
             </p>
           </div>

@@ -78,11 +78,11 @@ export default async function GuidePage({ params }: PageProps) {
               aria-label="Breadcrumb"
               className="mb-6 flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400"
             >
-              <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400">
+              <Link href="/" className="inline-flex min-h-[44px] items-center hover:text-indigo-600 dark:hover:text-indigo-400">
                 Home
               </Link>
               <span className="text-slate-300 dark:text-slate-700">/</span>
-              <Link href="/guides" className="hover:text-indigo-600 dark:hover:text-indigo-400">
+              <Link href="/guides" className="inline-flex min-h-[44px] items-center hover:text-indigo-600 dark:hover:text-indigo-400">
                 Guides
               </Link>
               <span className="text-slate-300 dark:text-slate-700">/</span>

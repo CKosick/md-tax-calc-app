@@ -111,7 +111,7 @@ export function CostSummaryCard({
             </h2>
           </div>
           <div className="text-right">
-            <span className="text-[11px] font-medium uppercase tracking-wider text-slate-400">
+            <span className="text-xs font-medium uppercase tracking-wider text-slate-400">
               Jurisdiction
             </span>
             <p className="text-sm font-bold text-slate-800 dark:text-slate-200">
@@ -177,7 +177,7 @@ export function CostSummaryCard({
             <div className="flex items-center justify-between py-3">
               <div className="pr-4">
                 <div className="flex items-center gap-1.5">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[11px] font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
                     1
                   </span>
                   <span className="font-semibold text-slate-800 dark:text-slate-200">
@@ -202,7 +202,7 @@ export function CostSummaryCard({
             <div className="flex items-center justify-between py-3">
               <div className="pr-4">
                 <div className="flex items-center gap-1.5">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[11px] font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
                     2
                   </span>
                   <span className="font-semibold text-slate-800 dark:text-slate-200">
@@ -222,7 +222,7 @@ export function CostSummaryCard({
             <div className="flex items-center justify-between py-3">
               <div className="pr-4">
                 <div className="flex items-center gap-1.5">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[11px] font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
                     3
                   </span>
                   <span className="font-semibold text-slate-800 dark:text-slate-200">
@@ -244,7 +244,7 @@ export function CostSummaryCard({
             <div className="flex items-center justify-between py-3">
               <div className="pr-4">
                 <div className="flex items-center gap-1.5">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[11px] font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
                     4
                   </span>
                   <span className="font-semibold text-slate-800 dark:text-slate-200">
@@ -275,7 +275,7 @@ export function CostSummaryCard({
               <div id="initial-registration-fee" className="flex items-center justify-between py-3">
                 <div className="pr-4">
                   <div className="flex items-center gap-1.5">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[11px] font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
                       5
                     </span>
                     <span className="font-semibold text-slate-800 dark:text-slate-200">Initial Registration Fee</span>
@@ -293,7 +293,7 @@ export function CostSummaryCard({
               <div id="new-plate-fee" className="flex items-center justify-between py-3">
                 <div className="pr-4">
                   <div className="flex items-center gap-1.5">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[11px] font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
                       {(breakdown.initialRegistrationFee ?? 0) > 0 ? 6 : 5}
                     </span>
                     <span className="font-semibold text-slate-800 dark:text-slate-200">
@@ -328,7 +328,7 @@ export function CostSummaryCard({
           <div className="mt-6 rounded-2xl border border-slate-200/60 bg-slate-50/70 p-4 dark:border-slate-800 dark:bg-slate-800/40">
             <div className="flex items-start justify-between gap-2">
               <div>
-                <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-blue-700 dark:bg-blue-950/60 dark:text-blue-300">
+                <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 dark:bg-blue-950/60 dark:text-blue-300">
                   Informational Only
                 </span>
                 <h3 className="mt-1 text-xs font-bold text-slate-900 dark:text-white">
@@ -422,7 +422,7 @@ export function CostSummaryCard({
 
         {/* Last Verified Date + Official Sources (known-dead links hidden) */}
         <div id="state-sources" className="mt-6 border-t border-slate-100 pt-4 text-xs dark:border-slate-800">
-          <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">
+          <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
             {rule.label} rates last verified: {rule.lastVerified ?? LAST_VERIFIED_DATE}
           </span>
           {visibleSources.length > 0 ? (
@@ -444,7 +444,7 @@ export function CostSummaryCard({
               ))}
             </ul>
           ) : (
-            <p className="mt-1.5 text-[11px] text-slate-500 dark:text-slate-400">
+            <p className="mt-1.5 text-xs text-slate-500 dark:text-slate-400">
               Official source links for {rule.label} are being updated.
             </p>
           )}
