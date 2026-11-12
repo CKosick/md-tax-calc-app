@@ -206,7 +206,7 @@ export default function CalculatorHubPage() {
                       {st.flatTaxTable ? 'Form RUT-50 Table' : formatPercent(st.exciseTaxRate)}
                     </td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-400 capitalize">
-                      {st.taxBase === 'fairMarketValue' ? 'Fair Market Value (NADA)' : st.taxBase}
+                      {st.taxBase === 'fairMarketValue' ? 'Fair Market Value' : st.taxBase}
                     </td>
                     <td className="px-4 py-3 text-slate-800 dark:text-slate-200">
                       {formatCurrency(st.titleFee)}

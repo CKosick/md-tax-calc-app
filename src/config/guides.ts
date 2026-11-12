@@ -5334,7 +5334,7 @@ export const GUIDES: Guide[] = [
       {
         title: 'Compare the price with the car’s value',
         body: [
-          'If the price is under 75% of the value in a pricing guide such as NADA, you and the seller complete the Affidavit of Non-Dealer Transfers. Tax is then figured on the price you paid. Without the affidavit or an appraisal, tax is due on the full value.'
+          'If the price is 75% or less of the value in a pricing guide such as NADA, you and the seller complete the Affidavit of Non-Dealer Transfers. Tax is then figured on the price you paid. Without the affidavit or an appraisal, tax is due on the full value.'
         ]
       },
       {
@@ -5362,7 +5362,7 @@ export const GUIDES: Guide[] = [
       'Proof of identification and proof of residency',
       'The title, properly signed over to you',
       'Odometer disclosure statement, if applicable',
-      'Affidavit of Non-Dealer Transfers, if the price is under 75% of the value',
+      'Affidavit of Non-Dealer Transfers, if the price is 75% or less of the value',
       'A copy of your current registration, if transferring your plate',
       'Payment for the tax, title, and plate'
     ],
