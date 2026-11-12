@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { StateRule, CalculatorInputs } from '@/lib/types';
 import type { StateOption } from '@/lib/stateOptions';
 import { calculateVehicleCosts } from '@/lib/calculator';
-import { formatFee, formatTermPhrase, ratePercent } from '@/lib/formatters';
+import { formatDollars, formatTermPhrase, ratePercent } from '@/lib/formatters';
 import { LAST_VERIFIED_DATE, getCalculationYear } from '@/lib/constants';
 import { getDefaultInputs, getOfferedTerms, inputsFromSearchParams } from '@/lib/shareParams';
 import { getPublishedFaqs } from '@/lib/faqs';
@@ -149,6 +149,14 @@ function CalculatorView({
       ? `${formatCurrency(breakdown.totalFirstYearCostMin)} – ${formatCurrency(breakdown.totalFirstYearCostMax)}`
       : formatCurrency(breakdown.totalFirstYearCost);
 
+  const handleSeeBreakdown = () => {
+    const results = document.getElementById('calculator-results');
+    if (results) {
+      results.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('calculator-results-heading')?.focus({ preventScroll: true });
+    }
+  };
+
   const handleAdjustDetails = () => {
     const formElement = document.getElementById('calculator-form');
     if (formElement) {
@@ -189,7 +197,7 @@ function CalculatorView({
           {initialRule.label} Private Party Car Tax Calculator
         </h1>
         <p className="mt-2 sm:mt-3 max-w-3xl text-sm lg:text-base leading-relaxed text-slate-600 dark:text-slate-300">
-          Calculate your true first-year out-of-pocket costs for a private vehicle sale in {initialRule.label}. Accurately accounts for {taxPhrase}, {formatFee(initialRule.titleFee)} certificate of title fee, {formatTermPhrase(getOfferedTerms(initialRule))} tag registration, and state-specific regulations.
+          Estimate your first-year out-of-pocket costs for a private vehicle sale in {initialRule.label}. Includes {taxPhrase}, {formatDollars(initialRule.titleFee)} certificate of title fee, {formatTermPhrase(getOfferedTerms(initialRule))} tag registration, and state-specific regulations.
         </p>
       </header>
       </>
@@ -345,14 +353,19 @@ function CalculatorView({
         style={{ paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom, 0.75rem))' }}
       >
         <div className="mx-auto flex max-w-md items-center justify-between gap-3">
-          <div className="min-w-0 flex-1">
+          <button
+            type="button"
+            onClick={handleSeeBreakdown}
+            className="min-h-[44px] min-w-0 flex-1 rounded-xl text-left focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
+            aria-label={`Estimated taxes and fees ${stickyTotalFormatted}. See the breakdown`}
+          >
             <span className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
               Estimated taxes &amp; fees
             </span>
-            <span className="block truncate text-base font-extrabold text-slate-900 dark:text-white sm:text-lg">
+            <span className="block truncate text-base font-extrabold text-slate-900 underline decoration-slate-300 underline-offset-4 dark:text-white dark:decoration-slate-600 sm:text-lg">
               {stickyTotalFormatted}
             </span>
-          </div>
+          </button>
           <button
             type="button"
             onClick={handleAdjustDetails}

@@ -108,7 +108,7 @@ describe('Tax line name', () => {
     expect(text).not.toContain('Sales/Excise');
     expect(text).not.toContain('Sales / Excise');
     expect(text).toContain('Indiana vehicle excise tax');
-    expect(container.textContent).toContain('Accurately accounts for 7% sales tax,');
+    expect(container.textContent).toContain('Includes 7% sales tax,');
     expect(container.textContent).not.toContain('excise/sales tax');
   });
 

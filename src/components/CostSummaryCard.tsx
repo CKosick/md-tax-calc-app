@@ -106,7 +106,7 @@ export function CostSummaryCard({
             <span className="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">
               Estimated taxes &amp; fees
             </span>
-            <h2 className="mt-1 text-lg font-bold tracking-tight text-slate-900 dark:text-white">
+            <h2 id="calculator-results-heading" tabIndex={-1} className="mt-1 text-lg font-bold tracking-tight text-slate-900 focus:outline-none dark:text-white">
               Estimated taxes &amp; fees
             </h2>
           </div>

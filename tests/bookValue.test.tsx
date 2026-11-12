@@ -123,10 +123,10 @@ describe('Maryland calculator UI', () => {
 
   it('shows the optional field on Maryland only', () => {
     render(<Calculator initialRule={md} />);
-    expect(screen.getByLabelText(/Book Value \(J\.D\. Power\)/i)).toBeDefined();
+    expect(screen.getByLabelText(/Book Value \(NADA Retail\)/i)).toBeDefined();
     cleanup();
     render(<Calculator initialRule={va} />);
-    expect(screen.queryByLabelText(/Book Value \(J\.D\. Power\)/i)).toBeNull();
+    expect(screen.queryByLabelText(/Book Value \(NADA Retail\)/i)).toBeNull();
   });
 
   it('explains when the tax is on book value, and shows the regular warning otherwise', () => {

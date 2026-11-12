@@ -12,6 +12,23 @@ const TERM_LABELS: Record<RegistrationTerm, string> = {
   2: '2-Year Term (Standard)',
   3: '3-Year Term'
 };
+// Purchase Price selects its whole value on focus, so typing replaces the prefilled amount.
+// The mouseup that follows a click or tap would otherwise drop the selection, so it is skipped once.
+let justFocused = false;
+const selectAllOnFocus = {
+  onFocus: (e: React.FocusEvent<HTMLInputElement>) => {
+    e.currentTarget.select();
+    justFocused = true;
+  },
+  onMouseUp: (e: React.MouseEvent<HTMLInputElement>) => {
+    if (justFocused) e.preventDefault();
+    justFocused = false;
+  },
+  onBlur: () => {
+    justFocused = false;
+  }
+};
+
 const TERM_WORDS: Record<RegistrationTerm, string> = { 1: 'one year', 2: 'two years', 3: 'three years' };
 
 /** A yearly fee for the fuel buttons: whole dollars as they are, anything else with cents (+$44.50/yr). */
@@ -131,7 +148,7 @@ export function VehicleInputForm({
               id="state-select"
               value={selectedKey}
               onChange={handleStateSelect}
-              className="block w-full min-h-[44px] appearance-none rounded-2xl border border-slate-300 bg-white px-4 py-3 pr-10 text-sm font-bold text-slate-900 shadow-xs transition-all hover:border-indigo-400 focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white cursor-pointer"
+              className="block w-full min-h-[44px] appearance-none rounded-2xl border border-slate-300 bg-white px-4 py-3 pr-10 text-base sm:text-sm font-bold text-slate-900 shadow-xs transition-all hover:border-indigo-400 focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white cursor-pointer"
             >
               {allStates.map((st) => (
                 <option key={st.key} value={st.key}>
@@ -247,6 +264,8 @@ export function VehicleInputForm({
             <input
               type="number"
               id="purchase-price-input"
+              inputMode="decimal"
+              {...selectAllOnFocus}
               min="0"
               step="100"
               value={inputs.purchasePrice || ''}
@@ -303,12 +322,13 @@ export function VehicleInputForm({
               <input
                 type="number"
                 id="model-year-input"
+                inputMode="numeric"
                 min="1970"
                 max={currentYear + 1}
                 value={inputs.vehicleYear || ''}
                 onChange={(e) => updateField('vehicleYear', parseInt(e.target.value) || currentYear)}
                 placeholder="2019"
-                className="w-full min-h-[44px] rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-900 shadow-xs focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+                className="w-full min-h-[44px] rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-base sm:text-sm font-bold text-slate-900 shadow-xs focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
               />
             </div>
             <div className="grid grid-cols-5 gap-1.5 sm:col-span-8 sm:gap-2">
@@ -338,7 +358,7 @@ export function VehicleInputForm({
                 htmlFor="book-value-input"
                 className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300"
               >
-                Book Value (J.D. Power)
+                Book Value (NADA Retail)
               </label>
               <span className="text-xs text-slate-500 dark:text-slate-400">Optional</span>
             </div>
@@ -349,6 +369,7 @@ export function VehicleInputForm({
               <input
                 type="number"
                 id="book-value-input"
+                inputMode="decimal"
                 min="0"
                 step="100"
                 value={inputs.bookValue || ''}
@@ -387,6 +408,7 @@ export function VehicleInputForm({
               <input
                 type="number"
                 id="spv-input"
+                inputMode="decimal"
                 min="0"
                 step="100"
                 value={inputs.presumptiveValue || ''}
@@ -417,6 +439,7 @@ export function VehicleInputForm({
                   <input
                     type="number"
                     id="appraisal-input"
+                    inputMode="decimal"
                     min="0"
                     step="100"
                     value={inputs.appraisedValue || ''}
@@ -451,6 +474,7 @@ export function VehicleInputForm({
             <input
               type="number"
               id="vehicle-weight-input"
+              inputMode="decimal"
               min="0"
               step="50"
               value={inputs.vehicleWeight || ''}
@@ -487,6 +511,7 @@ export function VehicleInputForm({
               <input
                 type="number"
                 id="list-price-input"
+                inputMode="decimal"
                 min="0"
                 step="500"
                 value={inputs.listPrice || ''}
@@ -877,13 +902,14 @@ export function VehicleInputForm({
             <input
               type="number"
               id="trade-in-input"
+              inputMode="decimal"
               min="0"
               step="100"
               disabled={isMaryland}
               value={isMaryland ? '' : (inputs.tradeInValue || '')}
               onChange={(e) => updateField('tradeInValue', Math.max(0, parseFloat(e.target.value) || 0))}
               placeholder={isMaryland ? 'Disabled: Trade-ins not deductible on MD private sales' : '0'}
-              className={`block w-full min-h-[44px] rounded-xl border border-slate-200 py-2.5 pl-7 pr-3 text-sm font-bold shadow-xs focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/10 dark:border-slate-700 ${
+              className={`block w-full min-h-[44px] rounded-xl border border-slate-200 py-2.5 pl-7 pr-3 text-base sm:text-sm font-bold shadow-xs focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/10 dark:border-slate-700 ${
                 isMaryland
                   ? 'cursor-not-allowed bg-slate-100/90 text-slate-500 dark:bg-slate-800/80 dark:text-slate-500'
                   : 'bg-white text-slate-900 dark:bg-slate-900 dark:text-white'

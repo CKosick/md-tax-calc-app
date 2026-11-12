@@ -11,6 +11,17 @@ export function formatFee(amount: number): string {
   }).format(amount);
 }
 
+/** A dollar amount for running copy: "$200" for whole dollars, "$15.50" otherwise. */
+export function formatDollars(amount: number): string {
+  const whole = Number.isInteger(amount);
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: whole ? 0 : 2,
+    maximumFractionDigits: whole ? 0 : 2
+  }).format(amount);
+}
+
 /**
  * A rate as a percent number, kept to three decimals so rates like Missouri's 4.225% and
  * New Jersey's 6.625% are never rounded (0.04225 -> 4.225, 0.06 -> 6).
