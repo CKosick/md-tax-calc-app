@@ -832,7 +832,7 @@ export function VehicleInputForm({
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-slate-900 dark:text-white">Yes</span>
-                  <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">${plateFees.plateTransferFee ?? 0}</span>
+                  <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-400">${plateFees.plateTransferFee ?? 0}</span>
                 </div>
                 <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
                   A plate registered in your name
