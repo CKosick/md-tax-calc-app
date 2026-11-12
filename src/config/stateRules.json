@@ -2037,7 +2037,7 @@
     ],
     "disclaimers": [
       "Estimates only, not tax or legal advice. Verify with your county clerk or the Tennessee Department of Revenue.",
-      "If the price is under 75% of the vehicle’s value in a pricing guide, the buyer and seller complete the Affidavit of Non-Dealer Transfers. Without it, or an appraisal, tax is due on the full value.",
+      "If the price is 75% or less of the vehicle’s value in a pricing guide, the buyer and seller complete the Affidavit of Non-Dealer Transfers. Without it, or an appraisal, tax is due on the full value.",
       "County wheel taxes and other county clerk fees are not included.",
       "The all-electric vehicle fee rises to $274 for registrations from January 1, 2027.",
       "Tennessee collects its electric vehicle and plug-in hybrid fees only on passenger and commercial motor vehicles, per the Department of Revenue’s written reply of November 9, 2026 (citing T.C.A. 55-4-116), so the estimate does not add them to a motorcycle."
@@ -2069,7 +2069,7 @@
       },
       {
         "question": "What if I paid much less than the car is worth in Tennessee?",
-        "answer": "If the price is under 75% of the value in a pricing guide, you and the seller complete the Affidavit of Non-Dealer Transfers, and tax is figured on the price you paid. Without the affidavit or an appraisal, tax is due on the full value."
+        "answer": "If the price is 75% or less of the value in a pricing guide, you and the seller complete the Affidavit of Non-Dealer Transfers, and tax is figured on the price you paid. Without the affidavit or an appraisal, tax is due on the full value."
       }
     ],
     "lastVerified": "October 2026",

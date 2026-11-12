@@ -9,6 +9,7 @@ vi.mock('next/navigation', () => ({
 
 import CalculatorHubPage from '../src/app/calculator/page';
 import { GUIDES } from '../src/config/guides';
+import stateRulesData from '../src/config/stateRules.json';
 
 afterEach(() => cleanup());
 
@@ -26,6 +27,13 @@ describe('Fair market value label and Tennessee threshold wording, November 2026
   it('the Tennessee guide uses the form wording, 75% or less', () => {
     const text = allStrings(GUIDES.find((g) => g.slug === 'how-to-title-a-private-car-sale-in-tennessee')).join(' ');
     expect(text.split('75% or less of the value').length - 1).toBe(2);
+    expect(text).not.toContain('under 75%');
+  });
+
+  it('the Tennessee state rules copy uses the form wording, 75% or less', () => {
+    const text = allStrings((stateRulesData as Record<string, unknown>)['tennessee']).join(' ');
+    expect(text).toContain('75% or less of the vehicle’s value in a pricing guide');
+    expect(text).toContain('75% or less of the value in a pricing guide');
     expect(text).not.toContain('under 75%');
   });
 });
