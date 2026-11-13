@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const rateFormatted = ratePercent(rule.exciseTaxRate);
   const taxName = rule.label === 'Delaware' ? 'document fee' : rule.label === 'Virginia' ? 'SUT' : 'sales/use tax';
   const taxDetail = rule.flatTaxTable ? 'Form RUT-50 statutory tax tables' : `${rateFormatted}% ${taxName}`;
-  const description = `Calculate your true first-year costs for a private car purchase in ${rule.label}. Accurate calculation for ${taxDetail}, ${formatFee(rule.titleFee)} title fee, ${formatTermPhrase(getOfferedTerms(rule))} tag registration, and book-value rules.`;
+  const description = `Estimate your first-year costs for a private car purchase in ${rule.label}. Covers ${taxDetail}, ${formatFee(rule.titleFee)} title fee, ${formatTermPhrase(getOfferedTerms(rule))} tag registration, and book-value rules.`;
 
   return {
     title,

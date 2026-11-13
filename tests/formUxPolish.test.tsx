@@ -11,6 +11,8 @@ vi.mock('next/navigation', () => ({
 import { Calculator } from '../src/components/Calculator';
 import stateRulesData from '../src/config/stateRules.json';
 import { formatDollars } from '../src/lib/formatters';
+import HomePage from '../src/app/page';
+import { generateMetadata as calculatorMetadata } from '../src/app/calculator/[slug]/page';
 import { StateRule, StateRulesConfig } from '../src/lib/types';
 
 const rules = stateRulesData as StateRulesConfig;
@@ -98,5 +100,21 @@ describe('Form UX polish, November 2026', () => {
     expect(formatDollars(1500)).toBe('$1,500');
     expect(formatDollars(75.25)).toBe('$75.25');
     expect(formatDollars(39.5)).toBe('$39.50');
+  });
+
+  it('the calculator meta descriptions and the home page hero no longer overclaim', async () => {
+    for (const key of ['maryland', 'florida', 'texas']) {
+      const meta = await calculatorMetadata({ params: Promise.resolve({ slug: rule(key).slug }) });
+      const description = String(meta.description ?? '');
+      expect(description, key).toContain(`Estimate your first-year costs for a private car purchase in ${rule(key).label}. Covers `);
+      expect(description, key).not.toContain('true first-year');
+      expect(description, key).not.toContain('Accurately');
+      expect(description, key).not.toContain('Accurate calculation');
+    }
+    const { container } = render(<HomePage />);
+    const hero = (container.textContent ?? '').replace(/\s+/g, ' ');
+    expect(hero).toContain('Estimate your first-year out-of-pocket costs in seconds. Covers vehicle sales & use taxes,');
+    expect(hero).not.toContain('true first-year');
+    expect(hero).not.toContain('Accurately');
   });
 });

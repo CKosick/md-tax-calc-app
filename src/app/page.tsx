@@ -129,7 +129,7 @@ export default function HomePage() {
               </h1>
 
               <p className="mt-2.5 text-sm leading-relaxed text-slate-600 sm:mt-5 sm:text-base lg:text-lg dark:text-slate-300">
-                Buying a car from a private seller? Calculate your true first-year out-of-pocket costs in seconds. Accurately estimates vehicle sales &amp; use taxes, DMV title certificate fees, tag registration, and trade-in exemptions.
+                Buying a car from a private seller? Estimate your first-year out-of-pocket costs in seconds. Covers vehicle sales &amp; use taxes, DMV title certificate fees, tag registration, and trade-in exemptions.
               </p>
 
               {/* State Quick-Finder */}
