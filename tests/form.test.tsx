@@ -52,7 +52,7 @@ describe('VehicleInputForm Interactive Testing', () => {
     );
 
     expect(screen.getByText(/Vehicle & Transaction Details/i)).toBeDefined();
-    expect(screen.getByText(/Enter purchase information to calculate true out-of-pocket costs in Maryland\./i)).toBeDefined();
+    expect(screen.getByText(/Enter purchase information to estimate your out-of-pocket costs in Maryland\./i)).toBeDefined();
     expect(screen.getByDisplayValue('15000')).toBeDefined();
     expect(screen.getByDisplayValue('2019')).toBeDefined();
   });

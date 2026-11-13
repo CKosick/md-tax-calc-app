@@ -125,7 +125,7 @@ export function VehicleInputForm({
           Vehicle &amp; Transaction Details
         </h2>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-          Enter purchase information to calculate true out-of-pocket costs in {rule.label}.
+          Enter purchase information to estimate your out-of-pocket costs in {rule.label}.
         </p>
       </div>
 

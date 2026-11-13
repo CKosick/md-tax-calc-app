@@ -336,7 +336,7 @@ export default function HomePage() {
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="rounded-3xl bg-gradient-to-r from-indigo-900 to-slate-900 p-8 text-center text-white shadow-xl sm:p-12">
             <h2 className="text-2xl font-extrabold sm:text-3xl">
-              Ready to Calculate Your State&apos;s True Car Costs?
+              Ready to Estimate Your State&apos;s Car Costs?
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm text-indigo-200">
               Access all 50 US states and Washington DC in our comprehensive fee directory with comparison tables and statutory citations.

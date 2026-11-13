@@ -13,6 +13,7 @@ import stateRulesData from '../src/config/stateRules.json';
 import { formatDollars } from '../src/lib/formatters';
 import HomePage, { metadata as homeMetadata } from '../src/app/page';
 import AboutPage from '../src/app/about/page';
+import CalculatorHubPage, { metadata as hubMetadata } from '../src/app/calculator/page';
 import { generateMetadata as calculatorMetadata } from '../src/app/calculator/[slug]/page';
 import { StateRule, StateRulesConfig } from '../src/lib/types';
 
@@ -143,5 +144,28 @@ describe('Form UX polish, November 2026', () => {
     const about = (render(<AboutPage />).container.textContent ?? '').replace(/\s+/g, ' ');
     expect(about).toContain('Tracks statutory rates, statutory floor minimums,');
     expect(about).not.toContain('Accurately tracks');
+  });
+
+  it('no "true out-of-pocket" or "True Car Costs" phrasing in the form, home closer or calculator directory', () => {
+    const clean = (label: string, text: string) => {
+      expect(text, label).not.toMatch(/true out-of-pocket/i);
+      expect(text, label).not.toMatch(/True Car Costs/i);
+    };
+    render(<Calculator initialRule={rule('maryland')} />);
+    const form = document.body.textContent ?? '';
+    expect(form).toContain('Enter purchase information to estimate your out-of-pocket costs in Maryland.');
+    clean('form', form);
+    cleanup();
+    const home = render(<HomePage />).container.textContent ?? '';
+    expect(home).toContain("Ready to Estimate Your State's Car Costs?");
+    clean('home', home);
+    cleanup();
+    const hubDescription = String(hubMetadata.description ?? '');
+    const hubOg = String(hubMetadata.openGraph?.description ?? '');
+    expect(hubDescription).toMatch(/^Select your state to estimate out-of-pocket costs for a private vehicle sale: /);
+    expect(hubOg).toBe('Select your state to estimate out-of-pocket costs for a private vehicle sale across US states and jurisdictions.');
+    clean('hub meta description', hubDescription);
+    clean('hub OpenGraph description', hubOg);
+    clean('hub page', render(<CalculatorHubPage />).container.textContent ?? '');
   });
 });

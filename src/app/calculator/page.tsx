@@ -9,13 +9,13 @@ const rules = stateRulesData as StateRulesConfig;
 
 export const metadata: Metadata = {
   title: 'Private Party Vehicle Tax & Title Calculators by State (2026)',
-  description: 'Select your state to calculate true out-of-pocket costs for a private vehicle sale: sales/excise tax, title certificate fees, tag registration, and lien fees across US states and jurisdictions.',
+  description: 'Select your state to estimate out-of-pocket costs for a private vehicle sale: sales/excise tax, title certificate fees, tag registration, and lien fees across US states and jurisdictions.',
   alternates: {
     canonical: '/calculator'
   },
   openGraph: {
     title: 'Private Party Vehicle Tax & Title Calculators by State (2026)',
-    description: 'Select your state to calculate true out-of-pocket costs for a private vehicle sale across US states and jurisdictions.',
+    description: 'Select your state to estimate out-of-pocket costs for a private vehicle sale across US states and jurisdictions.',
     url: '/calculator',
     type: 'website'
   }
