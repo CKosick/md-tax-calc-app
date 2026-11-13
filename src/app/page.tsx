@@ -12,7 +12,7 @@ const rules = stateRulesData as StateRulesConfig;
 export const metadata: Metadata = {
   title: 'Private Party Car Tax Calculator for All 50 States & DC',
   description:
-    'Calculate exact first-year out-of-pocket costs for a private car purchase. Fast, accurate state vehicle sales tax, certificate of title fees, and tag registration across all 50 US states and DC.',
+    'Estimate first-year out-of-pocket costs for a private car purchase. Covers state vehicle sales tax, certificate of title fees, and tag registration across all 50 US states and DC.',
   alternates: {
     canonical: '/'
   },
@@ -73,7 +73,7 @@ export default function HomePage() {
     name: 'CarTaxHub',
     url: 'https://cartaxhub.com',
     description:
-      'Fast, accurate private-party vehicle sales tax, title certificate fee, and license tag registration calculators across all 50 US states and DC.'
+      'Fast private-party vehicle sales tax, title certificate fee, and license tag registration calculators across all 50 US states and DC.'
   };
 
   const organizationSchema = {
@@ -282,7 +282,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
-                Transparent &amp; Accurate
+                Transparent &amp; Sourced
               </span>
               <h2 className="mt-1 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                 How CarTaxHub Calculates Your First-Year Costs

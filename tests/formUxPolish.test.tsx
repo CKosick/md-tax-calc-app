@@ -11,7 +11,8 @@ vi.mock('next/navigation', () => ({
 import { Calculator } from '../src/components/Calculator';
 import stateRulesData from '../src/config/stateRules.json';
 import { formatDollars } from '../src/lib/formatters';
-import HomePage from '../src/app/page';
+import HomePage, { metadata as homeMetadata } from '../src/app/page';
+import AboutPage from '../src/app/about/page';
 import { generateMetadata as calculatorMetadata } from '../src/app/calculator/[slug]/page';
 import { StateRule, StateRulesConfig } from '../src/lib/types';
 
@@ -125,5 +126,22 @@ describe('Form UX polish, November 2026', () => {
     expect(hero).toContain('Estimate your first-year out-of-pocket costs in seconds. Covers vehicle sales & use taxes,');
     expect(hero).not.toContain('true first-year');
     expect(hero).not.toContain('Accurately');
+  });
+
+  it('the home meta description, schema, eyebrow and About page drop the accuracy claims', () => {
+    const description = String(homeMetadata.description ?? '');
+    expect(description).toBe('Estimate first-year out-of-pocket costs for a private car purchase. Covers state vehicle sales tax, certificate of title fees, and tag registration across all 50 US states and DC.');
+    expect(description).not.toMatch(/exact|accurate/i);
+    const { container } = render(<HomePage />);
+    const home = (container.textContent ?? '').replace(/\s+/g, ' ');
+    expect(home).toContain('Transparent & Sourced');
+    expect(home).not.toContain('Transparent & Accurate');
+    const schemas = [...container.querySelectorAll('script[type="application/ld+json"]')].map((el) => JSON.parse(el.textContent ?? '{}'));
+    const site = schemas.find((x) => x['@type'] === 'WebSite');
+    expect(site?.description).toBe('Fast private-party vehicle sales tax, title certificate fee, and license tag registration calculators across all 50 US states and DC.');
+    cleanup();
+    const about = (render(<AboutPage />).container.textContent ?? '').replace(/\s+/g, ' ');
+    expect(about).toContain('Tracks statutory rates, statutory floor minimums,');
+    expect(about).not.toContain('Accurately tracks');
   });
 });

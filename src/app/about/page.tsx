@@ -77,7 +77,7 @@ export default function AboutPage() {
                   Statutory Tax Engines
                 </h3>
                 <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                  Accurately tracks statutory rates, statutory floor minimums, statutory caps, tiered luxury brackets, and state-specific flat-tax tables (such as Illinois Form RUT-50).
+                  Tracks statutory rates, statutory floor minimums, statutory caps, tiered luxury brackets, and state-specific flat-tax tables (such as Illinois Form RUT-50).
                 </p>
               </div>
               <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4 dark:border-slate-800 dark:bg-slate-800/40">
