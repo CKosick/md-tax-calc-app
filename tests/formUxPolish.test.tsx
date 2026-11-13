@@ -34,14 +34,23 @@ describe('Form UX polish, November 2026', () => {
     expect(document.body.textContent).not.toContain('J.D. Power');
   });
 
-  it('the state, model year, trade-in and email fields are 16px on phones and 14px from sm up', () => {
-    render(<Calculator initialRule={rule('vermont')} emailEnabled />);
-    for (const id of ['state-select', 'model-year-input', 'trade-in-input', 'email-estimate-input']) {
-      const cls = document.getElementById(id)?.className ?? '';
+  it('the state, locality, model year, trade-in, email and home state fields are 16px on phones and 14px from sm up', () => {
+    const phone16 = (id: string) => {
+      const el = document.getElementById(id);
+      expect(el, id).not.toBeNull();
+      const cls = el?.className ?? '';
       expect(cls, id).toMatch(/(^|\s)text-base(\s|$)/);
       expect(cls, id).toContain('sm:text-sm');
       expect(cls, id).not.toMatch(/(^|\s)text-sm(\s|$)/);
-    }
+    };
+    render(<Calculator initialRule={rule('vermont')} emailEnabled />);
+    for (const id of ['state-select', 'model-year-input', 'trade-in-input', 'email-estimate-input']) phone16(id);
+    cleanup();
+    render(<Calculator initialRule={rule('pennsylvania')} />);
+    phone16('locality-select');
+    cleanup();
+    render(<HomePage />);
+    phone16('home-state-select');
   });
 
   it('Purchase Price selects its whole value on focus, so typing replaces it', () => {

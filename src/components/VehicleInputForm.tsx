@@ -181,7 +181,7 @@ export function VehicleInputForm({
                 id="locality-select"
                 value={inputs.localityId ?? ''}
                 onChange={(e) => updateField('localityId', e.target.value || undefined)}
-                className="block w-full min-h-[44px] appearance-none rounded-2xl border border-slate-300 bg-white px-4 py-3 pr-10 text-sm font-bold text-slate-900 shadow-xs transition-all hover:border-indigo-400 focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white cursor-pointer"
+                className="block w-full min-h-[44px] appearance-none rounded-2xl border border-slate-300 bg-white px-4 py-3 pr-10 text-base sm:text-sm font-bold text-slate-900 shadow-xs transition-all hover:border-indigo-400 focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white cursor-pointer"
               >
                 <option value="">Not sure (show the range)</option>
                 {rule.localities.map((l) => (
