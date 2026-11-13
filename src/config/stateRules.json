@@ -3863,21 +3863,24 @@
       },
       {
         "question": "Do I pay Iowa vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Iowa, the state generally assesses its applicable vehicle sales or use tax (5.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Iowa motor vehicle agency to verify documentation requirements."
+        "answer": "Yes, the fee for new registration is due when you title the vehicle in Iowa. If you paid sales, use, or occupational tax to another state, Iowa credits it, and you pay only the difference if the Iowa fee is higher (Iowa Code 321.105A). Bring the signed-over out-of-state title."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Iowa?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Iowa DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A gift from one person to another, with nothing paid for it, is exempt from the fee for new registration (Iowa Code 321.105A). You still pay the $35 title fee and the registration. A sale between family members for a price is taxed like any other sale."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Iowa?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Iowa's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Iowa motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Within 30 calendar days after the purchase (Iowa Code 321.46), at any county treasurer’s office. A late application adds a $10 title penalty (Iowa Code 321.49), and a registration penalty also applies. New residents have 30 days from establishing residency."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://iowadot.gov/mvd/buyingselling/registering-a-vehicle",
-      "https://iowatreasurers.org",
+      "https://iowadot.gov/registration-plates/vehicle-registration-titles/register-vehicle",
+      "https://iowadot.gov/registration-plates/vehicle-registration-titles/title-vehicle",
+      "https://www.iowataxandtags.org/vehicle-registration/registration-fees-by-vehicle-type/",
+      "https://www.legis.iowa.gov/docs/code/321.105A.pdf",
+      "https://www.legis.iowa.gov/docs/code/321.46.pdf",
       "https://www.legis.iowa.gov/docs/code/321.109.pdf",
       "https://www.legis.iowa.gov/docs/code/2026/321.pdf"
     ]
@@ -3903,7 +3906,7 @@
         }
       },
       "motorcycle": {
-        "1": 33
+        "1": 39
       },
       "listPriceAnnualTax": {
         "label": "Nevada Governmental Services Tax",
@@ -3927,15 +3930,15 @@
     },
     "localTaxNote": "Private party vehicle sales in Nevada are 100% exempt from sales and use tax under NRS 372.320 ('occasional sale' exemption). However, an annual Governmental Services Tax (GST) based on the vehicle's depreciated original MSRP is collected upon registration. The estimate includes it.",
     "notes": [
-      "Nevada exempts private party vehicle sales from sales and use tax under NRS 372.320 ('occasional sale' exemption).",
-      "Certificate of title fee is $28.25 under Nevada DMV fee schedule.",
-      "Base registration tag fee is $33.00 for passenger vehicles.",
+      "Nevada exempts private party vehicle sales from sales and use tax under NRS 372.320 ('occasional sale' exemption). The DMV says sales taxes are not charged on private party vehicle sales, family sales or gifts.",
+      "Certificate of title fee is $28.25: $20 for the title and $8.25 to process a title endorsed in a sale by someone who is not a dealer (NAC 482.907). The DMV title page lists $28.50 for a change of ownership; the regulation and the fee page give $28.25.",
+      "Base registration tag fee is $33.00 for passenger vehicles. A motorcycle pays $33 plus a $6 motorcycle safety fee (NRS 482.480).",
       "Nevada collects an annual Governmental Services Tax (GST): 4% of a value set at 35% of the original MSRP. Figured under NRS 371.040 to 371.060. The estimate includes it for passenger vehicles from the MSRP you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Nevada DMV.",
       "Private party vehicle sales are exempt from Nevada sales tax under NRS 372.320.",
-      "The estimate includes a full year of the basic GST for passenger vehicles. The value it is figured on drops with age to 95%, 85%, 75%, 65%, 55%, 45%, 35%, 25%, then 15%, and the minimum tax is $16. The 1% Supplemental GST in Clark and Churchill counties is not included, and motorcycles are shown without the GST. The DMV’s fee calculator gives your total.",
+      "The estimate includes a full year of the basic GST for passenger vehicles. The value it is figured on drops with age to 95%, 85%, 75%, 65%, 55%, 45%, 35%, 25%, then 15%, and the minimum tax is $16. The 1% Supplemental GST in Clark and Churchill counties is not included, and motorcycles are shown without the GST. A motorcycle’s $39 registration is the $33 fee plus the $6 motorcycle safety fee (NRS 482.480). The DMV’s fee calculator gives your total.",
       "The estimate adds no electric vehicle or plug-in hybrid fee, because we found none in NRS Chapter 482 or the DMV’s fee schedule. Confirm any EV fee with the Nevada DMV."
     ],
     "faqs": [
@@ -3945,7 +3948,7 @@
       },
       {
         "question": "What fees do I pay when buying a car privately in Nevada?",
-        "answer": "While exempt from sales tax, you must pay a $28.25 certificate of title fee, a $33.00 base passenger registration fee, and the annual Governmental Services Tax (GST) based on the vehicle's depreciated original MSRP. The estimate includes the GST for passenger vehicles."
+        "answer": "There is no sales tax. You pay a $28.25 certificate of title fee ($20 for the title and $8.25 to process the endorsed title, NAC 482.907), a $33.00 base passenger registration fee, and the annual Governmental Services Tax (GST) based on the vehicle’s depreciated original MSRP. The estimate includes the GST for passenger vehicles."
       },
       {
         "question": "How is the Nevada Governmental Services Tax (GST) calculated?",
@@ -3957,22 +3960,26 @@
       },
       {
         "question": "Do I pay Nevada vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "Because Nevada does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Nevada. Standard certificate of title fees and registration tag fees still apply upon titling. The yearly Governmental Services Tax also applies at registration."
+        "answer": "No sales tax is due on a vehicle bought from a private seller, in Nevada or out of state. A vehicle that has never been registered or titled in Nevada needs a VIN inspection (Form VP 015) before it is registered. The title fee, registration, and yearly Governmental Services Tax still apply."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Nevada?",
-        "answer": "In Nevada, private vehicle transfers are not subject to a statewide vehicle sales tax. When transferring title between family members, you only pay standard title transfer fees and registration charges. The yearly Governmental Services Tax also applies at registration."
+        "answer": "No sales tax. The Nevada DMV says sales taxes are not charged on private party vehicle sales, family sales or gifts. The giver signs the title over, and you pay the title fee, the registration, and the yearly Governmental Services Tax. A transfer between husband and wife does not need a new emissions test."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Nevada?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Nevada's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Nevada motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "The DMV lets you drive a vehicle you just bought for up to three days with the signed-over title or a bill of sale and Nevada insurance, on a direct route home or to the DMV. After that you need a movement permit ($1 online for 30 days) or the registration. New residents must register within 30 days of becoming a resident, or when they get a Nevada driver’s license if that comes first (NRS 482.385)."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
-      "https://dmv.nv.gov/fees.htm",
-      "https://tax.nv.gov",
       "https://dmv.nv.gov/regfees.htm",
+      "https://dmv.nv.gov/registervehicle.htm",
+      "https://dmv.nv.gov/title.htm",
+      "https://dmv.nv.gov/newresident.htm",
+      "https://dmv.nv.gov/emission.htm",
+      "https://www.leg.state.nv.us/NAC/NAC-482.html",
+      "https://www.leg.state.nv.us/NRS/NRS-482.html",
       "https://www.leg.state.nv.us/nrs/nrs-371.html"
     ]
   },
@@ -4207,8 +4214,8 @@
       "motorcycle": {
         "1": 16
       },
-      "evSurchargeAnnual": 165,
-      "phevSurchargeAnnual": 100,
+      "evSurchargeAnnual": 135,
+      "phevSurchargeAnnual": 70,
       "motorcycleFuelFees": {
         "ev": {
           "outcome": "charged",
@@ -4219,25 +4226,26 @@
         }
       }
     },
-    "localTaxNote": "Kansas cities and counties impose local sales taxes between 1.0% and 4.0%, bringing the combined sales tax rate to 7.5%–10.5% depending on the buyer's taxing jurisdiction.",
+    "localTaxNote": "Kansas cities and counties add 0% to 4.25% of local sales tax at the buyer’s home address, so the combined rate is 6.5% to 10.75% (KDOR rate list effective October 1, 2026). Special taxing districts on the list are not included.",
     "notes": [
       "Kansas levies a 6.5% state retail sales tax on private vehicle transactions under K.S.A. 79-3603.",
       "K.S.A. 79-3697 applies to used vehicles sold by an individual on or after January 1, 2025. A refund claim is due within three years of the replacement purchase.",
       "Certificate of title fee is $10.00; lien fee is $1.50.",
-      "Standard passenger car registration is $30.00 under K.S.A. 8-143 for vehicles 4,500 lbs or less.",
+      "Standard passenger car registration is $30.00 under K.S.A. 8-143 for vehicles 4,500 lbs or less. An all-electric car registers for $165 and a plug-in hybrid for $100 in place of that fee.",
       "County treasurers also collect personal property taxes at registration based on local mill levies."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Kansas Department of Revenue and county treasurer.",
-      "Kansas state sales tax is 6.5%; local city and county taxes increase the total rate to between 7.5% and 10.5%.",
+      "Kansas state sales tax is 6.5%; local city and county taxes bring the total to between 6.5% and 10.75%, at the rate where you live.",
       "If you sell a used vehicle and buy one of greater value within 120 days before or after the sale, tax applies only to the difference (K.S.A. 79-3697). Bring signed bills of sale for both vehicles.",
       "County treasurers assess annual property taxes based on local mill levies at registration.",
-      "An all-electric motorcycle pays $30 in place of the $16 motorcycle fee, which is the +$14 on the form (K.S.A. 8-143). The plug-in hybrid fee is listed under passenger vehicles other than motorcycles, so on our reading the estimate does not add it to a motorcycle."
+      "An all-electric motorcycle pays $30 in place of the $16 motorcycle fee, which is the +$14 on the form (K.S.A. 8-143). The plug-in hybrid fee is listed under passenger vehicles other than motorcycles, so on our reading the estimate does not add it to a motorcycle.",
+      "An all-electric car registers for $165 and a plug-in hybrid for $100 in place of the $30 fee (K.S.A. 8-143), which is the +$135 and +$70 on the form."
     ],
     "faqs": [
       {
         "question": "What is the vehicle sales tax in Kansas?",
-        "answer": "Kansas imposes a 6.5% base state sales tax on motor vehicles under K.S.A. 79-3603. Local city and county taxes typically bring the combined rate to between 7.5% and 10.5%."
+        "answer": "Kansas imposes a 6.5% state sales tax on motor vehicles under K.S.A. 79-3603. Local city and county taxes add 0% to 4.25%, so the combined rate is 6.5% to 10.75%. On a private sale you pay the rate where you live to the county treasurer when you register."
       },
       {
         "question": "Can a trade-in or a vehicle I sold lower the tax on a private purchase in Kansas?",
@@ -4249,31 +4257,34 @@
       },
       {
         "question": "What are Kansas passenger vehicle registration fees?",
-        "answer": "Annual registration for passenger vehicles weighing 4,500 lbs or less is $30.00 under K.S.A. 8-143 ($40.00 for vehicles over 4,500 lbs), plus county personal property taxes."
+        "answer": "Annual registration for passenger vehicles weighing 4,500 lbs or less is $30.00 under K.S.A. 8-143 ($40.00 for vehicles over 4,500 lbs). An all-electric car is $165 and a plug-in hybrid $100 instead. County personal property taxes are also paid at registration."
       },
       {
         "question": "Do I pay Kansas vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Kansas, the state generally assesses its applicable vehicle sales or use tax (6.50%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Kansas motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. You pay Kansas tax at the rate where you live when you register. Kansas credits sales or use tax you legally paid to the other state, up to the Kansas amount. A vehicle with an out-of-state title, or bought out of state on a bill of sale, needs a Kansas Highway Patrol inspection (MVE-1) before you apply."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Kansas?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Kansas DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A real gift, given with nothing paid for it, is not taxed; complete the Vehicle Gift Certification on Form TR-12. A sale between immediate family members (parents, children, grandparents, and grandchildren, including step and adopted, and their spouses) is exempt with Form TR-215, the Affidavit of Relationship. Sales between brothers, sisters, aunts, uncles, nieces, nephews, and cousins are taxed."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Kansas?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Kansas's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Kansas motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Within 60 days of the purchase, weekends and holidays included (K.S.A. 8-135), at the county treasurer’s office where the vehicle is kept. A penalty applies from the 61st day. You may not drive the vehicle in that time without a temporary registration, such as a 60-day permit from the county treasurer."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://www.ksrevenue.gov/",
-      "https://www.ksrevenue.gov/prtaxrates.html",
-      "https://ksrevisor.gov/statutes/chapters/ch79/079_036_0097.html",
+      "https://www.ksrevenue.gov/dovtitleused.html",
+      "https://www.ksrevenue.gov/dovtitlefaq.html",
+      "https://www.ksrevenue.gov/pub1526.html",
+      "https://www.ksrevenue.gov/salesratechanges.html",
       "https://www.ksrevenue.gov/faqs-taxsales.html",
+      "https://ksrevisor.gov/statutes/chapters/ch79/079_036_0097.html",
+      "https://ksrevisor.gov/statutes/chapters/ch08/008_001_0035.html",
       "https://ksrevisor.gov/statutes/chapters/ch08/008_001_0043.html"
     ],
-    "localTaxMinRate": 0.01,
-    "localTaxMaxRate": 0.04,
+    "localTaxMinRate": 0,
+    "localTaxMaxRate": 0.0425,
     "soldVehicleCredit": true,
     "tradeInNote": "Kansas also counts a used vehicle you sell instead of trading in. If you buy a vehicle of greater value within 120 days before or after the sale, tax applies only to the difference (K.S.A. 79-3697). Enter the trade-in allowance or what you received for the vehicle you sold."
   },

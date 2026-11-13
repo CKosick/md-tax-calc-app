@@ -6,12 +6,12 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 259 across 51 jurisdictions
-- Hidden on the site (dead or unreachable): 7
-- Working but only an agency homepage, not a specific page: 16
+- Source links configured now: 269 across 51 jurisdictions
+- Hidden on the site (dead or unreachable): 4
+- Working but only an agency homepage, not a specific page: 14
 - States showing no source link ("Official source links ... are being updated"): 0
-- States with some links hidden: 6
-- States re-verified since the check: Alabama (November 2026), Arizona (October 2026), Arkansas (October 2026), California (October 2026), Colorado (November 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Indiana (October 2026), Kentucky (November 2026), Louisiana (October 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Missouri (October 2026), New Jersey (October 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Oregon (November 2026), Pennsylvania (October 2026), South Carolina (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026), Wisconsin (October 2026)
+- States with some links hidden: 3
+- States re-verified since the check: Alabama (November 2026), Arizona (October 2026), Arkansas (October 2026), California (October 2026), Colorado (November 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Indiana (October 2026), Kentucky (November 2026), Louisiana (October 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Missouri (October 2026), Nevada (November 2026), New Jersey (October 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Oregon (November 2026), Pennsylvania (October 2026), South Carolina (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026), Wisconsin (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
 
@@ -50,6 +50,9 @@ All other states keep their September 2026 verified date until their rates are r
 | Alabama | 2026-11-04 | Re-checked against the ALDOR casual sales tax, local rate file (November 2026), registration fee, title fee, and FAQ pages and Ala. Code 40-23-101 and 40-23-103; local range 1% to 4% -> 0% to 5.25% (highest combination that can be matched to one place), trade-in now deducted, EV $200 -> $203 and plug-in hybrid $100 -> $103, 30-day new resident rule and gift treatment stated, ad valorem tax described, not modeled. |
 | Kentucky | 2026-11-04 | Dead DRIVE vehicle taxes link replaced with the DOR usage tax page and 2025 guide, the DRIVE titling and new resident pages, and KRS 186A.130, 64.012, 186.050, 186.040, and 138.475; lien $22 -> $12, registration $21 -> $20.50, motorcycle $15 -> $18, plug-in hybrid fee $60 -> $120 (same fee as electric vehicles), affidavit floor, family exemptions, gift valuation, and new resident credit stated. |
 | Oregon | 2026-11-04 | Re-checked against the Oregon DMV fee, title and registration, and moving pages and the DOR vehicle use tax page; registration is two years only, 20 to 39 MPG tier used ($106 title, $136 registration), motorcycle $48 -> $88, electric vehicle registration $376, county fees, late title fees, and the current-plates rule stated. |
+| Nevada | 2026-11-13 | Dead DMV fees link replaced with the DMV register, title, new resident, and emissions pages, NAC 482, and NRS 482; title $28.25 confirmed from NAC 482.907 ($20 plus $8.25), motorcycle $33 -> $39 with the $6 safety fee (NRS 482.480), GST and $33 registration confirmed, 3-day drive-away and $1 movement permit and the 30-day new resident rule stated; EV fees still unverified (open written inquiry), nothing added. |
+| Iowa | 2026-11-13 | Dead DOT registering link replaced with the DOT register and title pages, the treasurers’ fee table, and Iowa Code 321.105A and 321.46; title $35, lien $20, registration formula, EV $130 and PHEV $65 confirmed; 30-day deadline, gift and new resident exemptions, and out-of-state credit stated. The $10 in the fee for new registration, the private trade-in exemption, and the $10 fee for older motorcycles wait on a ruling, so the verified date stays September 2026. |
+| Kansas | 2026-11-13 | Dead KDOR rate link and homepage replaced with the DOV used-vehicle and title FAQ pages, Pub. KS-1526, the KS-1700 rate list page, and K.S.A. 8-135 and 8-143; local range 1% to 4% -> 0% to 4.25% (October 2026 rate list), EV and plug-in hybrid fees now replace the $30 fee (+$135 and +$70), 60-day deadline, gift and family exemptions, and out-of-state credit stated. The $12.25 in registration surcharges waits on a ruling, so the verified date stays September 2026. |
 
 ## Priority: states with no working source link
 
@@ -61,10 +64,7 @@ All other states keep their September 2026 verified date until their rates are r
 |---|---|---|
 | District of Columbia | https://dmv.dc.gov/service/vehicle-excise-tax | Page not found |
 | District of Columbia | https://dmv.dc.gov/service/vehicle-registration-fees | Page not found |
-| Iowa | https://iowadot.gov/mvd/buyingselling/registering-a-vehicle | Page not found |
-| Kansas | https://www.ksrevenue.gov/prtaxrates.html | Redirects to a 404 page |
 | Nebraska | https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling | 404 Not Found |
-| Nevada | https://dmv.nv.gov/fees.htm | 404 |
 | New Mexico | https://www.mvd.newmexico.gov/vehicles/taxes-fees/ | 404 Not Found |
 
 ## Working, but homepage only (replace with a specific page when convenient)
@@ -74,11 +74,9 @@ All other states keep their September 2026 verified date until their rates are r
 | Alaska | https://dmv.alaska.gov | Agency homepage |
 | Hawaii | https://hidot.hawaii.gov | Agency homepage |
 | Hawaii | https://mvinquiry.hnl.info | Lookup tool homepage |
-| Iowa | https://iowatreasurers.org | Agency homepage |
 | Maine | https://www.maine.gov/revenue | Agency homepage |
 | Mississippi | https://www.dor.ms.gov | Agency homepage |
 | Montana | https://mvdmt.gov | Agency homepage |
-| Nevada | https://tax.nv.gov | Agency homepage |
 | New Hampshire | https://www.nh.gov/safety/divisions/dmv | Redirects to the DMV homepage |
 | North Dakota | https://www.dot.nd.gov | Agency homepage |
 | Rhode Island | https://dmv.ri.gov | Agency homepage |

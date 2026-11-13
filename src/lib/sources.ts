@@ -41,7 +41,7 @@ const STATUTE_LABELS: { host: RegExp; label: (url: URL) => string | undefined }[
   { host: /(^|\.)cga\.ct\.gov$/, label: (u) => cite(u.pathname, /chap_0*(\d+)\.htm$/i, (m) => `Conn. Gen. Stat. Chapter ${m[1]}`) },
   { host: /^delcode\.delaware\.gov$/, label: (u) => cite(u.pathname, /title(\d+)\/c0*(\d+)/i, (m) => `Del. Code Title ${m[1]}, Chapter ${m[2]}`) },
   { host: /(^|\.)nebraskalegislature\.gov$/, label: (u) => cite(u.searchParams.get('statute'), /^([\d-]+,[\d,]+)$/, (m) => `Neb. Rev. Stat. ${m[1]}`) },
-  { host: /^ksrevisor\.gov$/, label: (u) => cite(u.pathname, /\/ch(\d+)\/\d+_0*(\d+)_0*(\d+)\.html$/i, (m) => `K.S.A. ${m[1]}-${m[2]}${m[3].padStart(2, '0')}`) },
+  { host: /^ksrevisor\.gov$/, label: (u) => cite(u.pathname, /\/ch(\d+)\/\d+_0*(\d+)_0*(\d+)\.html$/i, (m) => `K.S.A. ${Number(m[1])}-${m[2]}${m[3].padStart(2, '0')}`) },
   { host: /(^|\.)nmlegis\.gov$/, label: (u) => cite(u.pathname, /\/final\/SB0*(\d+)\.pdf$/i, (m) => `N.M. Laws 2026, SB ${m[1]}`) },
   { host: /^ndlegis\.gov$/, label: (u) => cite(u.pathname, /\/t(\d+)c0*(\d+)\.pdf$/i, (m) => `N.D.C.C. Chapter ${m[1]}-${m[2].padStart(2, '0')}`) },
   { host: /^legislature\.maine\.gov$/, label: (u) => cite(u.pathname, /title(\d+)sec(\d+)\.html$/i, (m) => `${m[1]} M.R.S. ${m[2]}`) },
@@ -50,6 +50,8 @@ const STATUTE_LABELS: { host: RegExp; label: (url: URL) => string | undefined }[
   { host: /^(www\.)?wyoleg\.gov$/, label: (u) => cite(u.pathname, /compress\/title(\d+)\.pdf$/i, (m) => `Wyo. Stat. Title ${m[1]}`) ?? cite(u.pathname, /\/(\d{4})\/Enroll\/HB0*(\d+)\.pdf$/i, (m) => `${m[1]} Wyo. HB ${m[2]}`) },
   { host: /^sdlegislature\.gov$/, label: (u) => cite(u.pathname, /\/Statutes\/([\d-]+)$/i, (m) => `SDCL ${m[1]}`) },
   { host: /^legislature\.vermont\.gov$/, label: (u) => cite(u.pathname, /\/statutes\/section\/(\d+)\/\d+\/0*(\d+)$/, (m) => `${m[1]} V.S.A. ${m[2]}`) },
+  { host: /(^|\.)legis\.iowa\.gov$/, label: (u) => cite(u.pathname, /\/docs\/code\/(?:\d{4}\/)?(\d+[A-Z]?)(?:\.(\d+[A-Z]?))?\.pdf$/i, (m) => (m[2] ? `Iowa Code ${m[1]}.${m[2]}` : `Iowa Code chapter ${m[1]}`)) },
+  { host: /(^|\.)leg\.state\.nv\.us$/, label: (u) => cite(u.pathname, /\/(nrs|nac)-(\d+[A-Z]?)\.html$/i, (m) => `${m[1].toUpperCase()} Chapter ${m[2]}`) },
   { host: /^alison\.legislature\.state\.al\.us$/, label: (u) => cite(u.searchParams.get('section'), /^([\d-]+)$/, (m) => `Ala. Code ${m[1]}`) },
   // Kentucky statute links carry only a document id, so the cited ones are listed here
   { host: /^apps\.legislature\.ky\.gov$/, label: (u) => KY_STATUTE_IDS[u.searchParams.get('id') ?? ''] }

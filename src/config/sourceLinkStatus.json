@@ -13,24 +13,9 @@
       "finding": "Page not found"
     },
     {
-      "state": "iowa",
-      "url": "https://iowadot.gov/mvd/buyingselling/registering-a-vehicle",
-      "finding": "Page not found"
-    },
-    {
-      "state": "kansas",
-      "url": "https://www.ksrevenue.gov/prtaxrates.html",
-      "finding": "Redirects to a 404 page"
-    },
-    {
       "state": "nebraska",
       "url": "https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling",
       "finding": "404 Not Found"
-    },
-    {
-      "state": "nevada",
-      "url": "https://dmv.nv.gov/fees.htm",
-      "finding": "404"
     },
     {
       "state": "new-mexico",
@@ -55,11 +40,6 @@
       "finding": "Lookup tool homepage"
     },
     {
-      "state": "iowa",
-      "url": "https://iowatreasurers.org",
-      "finding": "Agency homepage"
-    },
-    {
       "state": "maine",
       "url": "https://www.maine.gov/revenue",
       "finding": "Agency homepage"
@@ -72,11 +52,6 @@
     {
       "state": "montana",
       "url": "https://mvdmt.gov",
-      "finding": "Agency homepage"
-    },
-    {
-      "state": "nevada",
-      "url": "https://tax.nv.gov",
       "finding": "Agency homepage"
     },
     {
@@ -275,6 +250,21 @@
       "state": "oregon",
       "on": "2026-11-04",
       "note": "Re-checked against the Oregon DMV fee, title and registration, and moving pages and the DOR vehicle use tax page; registration is two years only, 20 to 39 MPG tier used ($106 title, $136 registration), motorcycle $48 -> $88, electric vehicle registration $376, county fees, late title fees, and the current-plates rule stated."
+    },
+    {
+      "state": "nevada",
+      "on": "2026-11-13",
+      "note": "Dead DMV fees link replaced with the DMV register, title, new resident, and emissions pages, NAC 482, and NRS 482; title $28.25 confirmed from NAC 482.907 ($20 plus $8.25), motorcycle $33 -> $39 with the $6 safety fee (NRS 482.480), GST and $33 registration confirmed, 3-day drive-away and $1 movement permit and the 30-day new resident rule stated; EV fees still unverified (open written inquiry), nothing added."
+    },
+    {
+      "state": "iowa",
+      "on": "2026-11-13",
+      "note": "Dead DOT registering link replaced with the DOT register and title pages, the treasurers’ fee table, and Iowa Code 321.105A and 321.46; title $35, lien $20, registration formula, EV $130 and PHEV $65 confirmed; 30-day deadline, gift and new resident exemptions, and out-of-state credit stated. The $10 in the fee for new registration, the private trade-in exemption, and the $10 fee for older motorcycles wait on a ruling, so the verified date stays September 2026."
+    },
+    {
+      "state": "kansas",
+      "on": "2026-11-13",
+      "note": "Dead KDOR rate link and homepage replaced with the DOV used-vehicle and title FAQ pages, Pub. KS-1526, the KS-1700 rate list page, and K.S.A. 8-135 and 8-143; local range 1% to 4% -> 0% to 4.25% (October 2026 rate list), EV and plug-in hybrid fees now replace the $30 fee (+$135 and +$70), 60-day deadline, gift and family exemptions, and out-of-state credit stated. The $12.25 in registration surcharges waits on a ruling, so the verified date stays September 2026."
     }
   ]
 }

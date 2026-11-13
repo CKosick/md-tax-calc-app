@@ -25,7 +25,7 @@ describe('Per-state last verified dates', () => {
     const reverified = ['maryland', 'virginia', 'pennsylvania', 'texas', 'california', 'florida', 'new-york', 'illinois', 'ohio', 'michigan', 'minnesota', 'oklahoma', 'arkansas', 'connecticut', 'louisiana', 'utah', 'georgia', 'north-carolina', 'new-jersey', 'washington', 'arizona', 'tennessee', 'massachusetts', 'indiana', 'missouri', 'wisconsin', 'south-carolina'];
     for (const [key, rule] of Object.entries(rules)) {
       expect(rule.lastVerified).toMatch(/^(January|February|March|April|May|June|July|August|September|October|November|December) \d{4}$/);
-      const november = ['colorado', 'alabama', 'kentucky', 'oregon'];
+      const november = ['colorado', 'alabama', 'kentucky', 'oregon', 'nevada'];
       expect(rule.lastVerified).toBe(november.includes(key) ? 'November 2026' : reverified.includes(key) ? 'October 2026' : 'September 2026');
     }
   });

@@ -131,5 +131,12 @@
     "staleOn": "2027-07-01",
     "contains": "motorcycle’s $88 two-year registration",
     "alsoCheck": "motorcycleFuelFees"
+  },
+  {
+    "state": "kansas",
+    "figure": "Local sales tax range 0% to 4.25% (KDOR Pub. KS-1700 rate list effective October 1, 2026; updated quarterly)",
+    "staleOn": "2027-04-01",
+    "contains": "0% to 4.25%",
+    "alsoCheck": "localTaxMaxRate and the Kansas private-sale guide"
   }
 ]
