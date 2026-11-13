@@ -363,6 +363,39 @@ const OR_SOURCES = {
   useTax: { label: 'Oregon Department of Revenue: Vehicle Privilege and Use Taxes', url: 'https://www.oregon.gov/dor/programs/businesses/Pages/vehicle-privilege-and-use-taxes.aspx' }
 };
 
+const NV_DMV = 'https://dmv.nv.gov';
+const NV_SOURCES = {
+  register: { label: 'Nevada DMV: Register a Vehicle', url: `${NV_DMV}/registervehicle.htm` },
+  title: { label: 'Nevada DMV: Vehicle Title and Ownership', url: `${NV_DMV}/title.htm` },
+  fees: { label: 'Nevada DMV: Registration Fees and Taxes', url: `${NV_DMV}/regfees.htm` },
+  newResident: { label: 'Nevada DMV: New Resident Guide', url: `${NV_DMV}/newresident.htm` },
+  emission: { label: 'Nevada DMV: Emission Control Program', url: `${NV_DMV}/emission.htm` },
+  titleFees: { label: 'NAC 482.907: Title fees', url: 'https://www.leg.state.nv.us/NAC/NAC-482.html' },
+  residency: { label: 'NRS 482.385: Registration after becoming a resident', url: 'https://www.leg.state.nv.us/NRS/NRS-482.html' }
+};
+
+const IA_DOT = 'https://iowadot.gov/registration-plates/vehicle-registration-titles';
+const IA_CODE = 'https://www.legis.iowa.gov/docs/code';
+const IA_SOURCES = {
+  register: { label: 'Iowa DOT: Register a Vehicle', url: `${IA_DOT}/register-vehicle` },
+  title: { label: 'Iowa DOT: Title a Vehicle', url: `${IA_DOT}/title-vehicle` },
+  fees: { label: 'Iowa County Treasurers: Registration Fees by Vehicle Type', url: 'https://www.iowataxandtags.org/vehicle-registration/registration-fees-by-vehicle-type/' },
+  newRegistrationFee: { label: 'Iowa Code 321.105A: Fee for new registration', url: `${IA_CODE}/321.105A.pdf` },
+  transfer: { label: 'Iowa Code 321.46: New title and registration on transfer', url: `${IA_CODE}/321.46.pdf` },
+  chapter: { label: 'Iowa Code chapter 321 (2026), including 321.49 and 321.113', url: `${IA_CODE}/2026/321.pdf` }
+};
+
+const KS_DOV = 'https://www.ksrevenue.gov';
+const KS_SOURCES = {
+  used: { label: 'Kansas Division of Vehicles: Titling a Used Vehicle', url: `${KS_DOV}/dovtitleused.html` },
+  faq: { label: 'Kansas Division of Vehicles: Titling a Vehicle FAQ', url: `${KS_DOV}/dovtitlefaq.html` },
+  pub1526: { label: 'KDOR Pub. KS-1526: Business Taxes for Motor Vehicle Transactions', url: `${KS_DOV}/pdf/pub1526.pdf` },
+  rates: { label: 'KDOR: Local Sales Tax Information (rate lists)', url: `${KS_DOV}/salesratechanges.html` },
+  soldVehicle: { label: 'K.S.A. 79-3697: Credit for a vehicle sold', url: 'https://ksrevisor.gov/statutes/chapters/ch79/079_036_0097.html' },
+  transfer: { label: 'K.S.A. 8-135: Transfer of ownership, title fee, and the 60-day rule', url: 'https://ksrevisor.gov/statutes/chapters/ch08/008_001_0035.html' },
+  registrationFees: { label: 'K.S.A. 8-143: Registration fees', url: 'https://ksrevisor.gov/statutes/chapters/ch08/008_001_0043.html' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -7374,6 +7407,667 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [OR_SOURCES.moving, OR_SOURCES.titleReg, OR_SOURCES.fees, OR_SOURCES.useTax]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-nevada',
+    stateKey: 'nevada',
+    title: 'How to Title a Private Car Sale in Nevada',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Nevada',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Nevada: no sales tax, the signed title, Nevada insurance, VIN and emissions checks, the $28.25 title fee, and the GST.',
+    cardDescription: 'No sales tax, the title, insurance, emissions, and the GST.',
+    intro: [
+      'Nevada charges no sales tax on a private vehicle sale. You pay a $28.25 title fee, the $33 registration, and the yearly Governmental Services Tax (GST), and you need Nevada insurance before you register.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Nevada DMV',
+    steps: [
+      {
+        title: 'Get the signed title from the seller',
+        body: [
+          'The seller must give you the title, signed over to you. The DMV does not accept a bill of sale by itself, and any loan on the vehicle must be paid off first. For a 2011 or newer vehicle, the odometer reading must be filled in on the title.',
+          'If the title lists two owners joined by AND, both must sign. If they are joined by OR, either one can sign.'
+        ]
+      },
+      {
+        title: 'Buy Nevada insurance first',
+        body: [
+          'The policy must come from a Nevada-licensed insurer, in the exact names that will be on the title and registration, and start on or before the registration date. Out-of-state insurance is not accepted.'
+        ]
+      },
+      {
+        title: 'Drive it home, or get a movement permit',
+        body: [
+          'You can drive the vehicle for up to three days after the purchase, straight home or to the DMV, with the signed title or a bill of sale and your Nevada insurance card. After that you need a movement permit, $1 online for 30 days, or the registration. The seller keeps the license plates.'
+        ]
+      },
+      {
+        title: 'Get the inspections that apply',
+        body: [
+          'A vehicle never registered or titled in Nevada needs a VIN inspection (Form VP 015), which costs $1 at a DMV inspection station.',
+          'In the urban parts of Clark and Washoe counties, most gasoline vehicles need a passing emissions test, and in a private sale getting it is the buyer’s job. A test from the last 90 days covers the transfer. New vehicles are exempt for their first three registrations, hybrids for five model years, and electric vehicles and motorcycles always.'
+        ]
+      },
+      {
+        title: 'Register and pay',
+        body: [
+          'Register online with Rapid Registration or at a DMV office. There is no sales tax. You pay the $28.25 title fee, the $33 registration, and the GST: 4% of 35% of the original MSRP, reduced as the vehicle ages, with a $16 minimum. Clark and Churchill counties add a 1% Supplemental GST on the same value.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you, with the odometer reading for a 2011 or newer vehicle',
+      'Nevada Evidence of Insurance in your name',
+      'A Vehicle Inspection Certificate (VP 015), if the vehicle was never registered or titled in Nevada',
+      'A Nevada emissions inspection report, if required where the vehicle is based',
+      'The current odometer reading',
+      'Payment for the title fee, registration, and GST'
+    ],
+    calculatorNote:
+      'There is no sales tax to calculate. The calculator shows the $28.25 title, the $33 registration, and a year of the basic GST from the MSRP you enter; add the 1% Supplemental GST in Clark or Churchill County.',
+    faqs: [
+      {
+        question: 'Do I pay sales tax on a car from a private seller?',
+        answer: 'No. The Nevada DMV says sales taxes are not charged on private party vehicle sales, family sales or gifts.'
+      },
+      {
+        question: 'Why is the title fee $28.25?',
+        answer: 'It is the $20 title fee plus $8.25 to process a title endorsed in a sale by someone who is not a dealer (NAC 482.907).'
+      },
+      {
+        question: 'What happens to the license plates?',
+        answer: 'The seller keeps them, and can surrender them or use them on another vehicle.'
+      }
+    ],
+    sources: [NV_SOURCES.register, NV_SOURCES.fees, NV_SOURCES.title, NV_SOURCES.emission, NV_SOURCES.titleFees]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-nevada',
+    stateKey: 'nevada',
+    title: 'How to Gift a Car in Nevada',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Nevada',
+    metaDescription:
+      'How to gift a car in Nevada: no sales tax on family sales or gifts, the signed title, insurance in the new owner’s name, the emissions rule for spouses, and inherited vehicles.',
+    cardDescription: 'No tax, the title, the emissions rule, and inherited cars.',
+    intro: [
+      'Nevada charges no sales tax on gifts or family sales. The new owner pays the title fee, the registration, and the yearly Governmental Services Tax (GST).',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Nevada DMV',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs the title over to you. Any loan on the vehicle must be paid off first. For a 2011 or newer vehicle, fill in the odometer reading.'
+        ]
+      },
+      {
+        title: 'Get Nevada insurance in your name',
+        body: [
+          'The insurance must come from a Nevada-licensed insurer, in the exact names that will be on the new title and registration.'
+        ]
+      },
+      {
+        title: 'Check the emissions rule',
+        body: [
+          'In the Clark and Washoe emissions areas, a transfer needs a passing test unless the last one is less than 90 days old. A transfer between husband and wife is exempt.'
+        ]
+      },
+      {
+        title: 'Get a VIN inspection if needed',
+        body: [
+          'Only a vehicle never registered or titled in Nevada needs one (Form VP 015).'
+        ]
+      },
+      {
+        title: 'Register and pay',
+        body: [
+          'Register online with Rapid Registration or at a DMV office. You pay the $28.25 title fee, the $33 registration, and the GST. There is no sales tax.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'Nevada Evidence of Insurance in your name',
+      'A Nevada emissions inspection report, if required',
+      'The current odometer reading',
+      'Payment for the title fee, registration, and GST'
+    ],
+    calculatorNote:
+      'Enter $0 as the price. The calculator shows the $28.25 title, the $33 registration, and the GST from the MSRP you enter.',
+    faqs: [
+      {
+        question: 'Is a gifted car taxed in Nevada?',
+        answer: 'No sales tax applies. The GST is a yearly tax on the vehicle, so it is due at registration as for any other vehicle.'
+      },
+      {
+        question: 'What if the owner has died?',
+        answer: 'The vehicle usually passes through a family trust or probate. Without either, heirs can use the Affidavit for Transfer of Title for Estates Without Probate (Form VP 024), once any loan is paid off.'
+      },
+      {
+        question: 'Can I name someone to get my car when I die?',
+        answer: 'Yes. Nevada lets owners name a Transfer on Death beneficiary ahead of time.'
+      }
+    ],
+    sources: [NV_SOURCES.register, NV_SOURCES.title, NV_SOURCES.emission, NV_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-nevada-after-moving-from-another-state',
+    stateKey: 'nevada',
+    title: 'Titling a Car in Nevada After Moving From Another State',
+    shortTitle: 'Title a car after moving to Nevada',
+    metaTitle: 'Titling Your Car After Moving to Nevada',
+    metaDescription:
+      'New to Nevada? Register your car within 30 days of becoming a resident, or when you get a Nevada license if sooner. Bring a VIN inspection, Nevada insurance, and your old plates.',
+    cardDescription: '30 days, the VIN inspection, insurance, emissions, and plates.',
+    intro: [
+      'As a new Nevada resident, you register your vehicle within 30 days of becoming a resident, or when you get your Nevada driver’s license if that comes first.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Nevada DMV',
+    steps: [
+      {
+        title: 'Know your deadline',
+        body: [
+          'NRS 482.385 gives you 30 days after becoming a resident, or until you get a Nevada driver’s license, whichever is earlier. Starting a job in Nevada or enrolling a child in a public school also starts a 30-day clock.'
+        ]
+      },
+      {
+        title: 'Switch to Nevada insurance',
+        body: [
+          'Out-of-state insurance is not accepted. Get a policy from a Nevada-licensed insurer in the names that will be on the registration.'
+        ]
+      },
+      {
+        title: 'Get a VIN inspection',
+        body: [
+          'At the Carson City, Henderson, Las Vegas, and Reno offices, go to the inspection station outside the main building before your appointment. A sworn officer or an authorized business can also do it on Form VP 015.'
+        ]
+      },
+      {
+        title: 'Pass emissions if required',
+        body: [
+          'Vehicles based in the urban parts of Clark and Washoe counties need a passing emissions test before they are registered, unless they are exempt.'
+        ]
+      },
+      {
+        title: 'Register and turn in your old plates',
+        body: [
+          'Bring your current registration (or a title in your name), the odometer reading, your out-of-state plates, the VIN inspection, Nevada insurance, and any emissions report. If you have not switched your driver’s license yet, you must go to an office in person.',
+          'You pay the $33 registration and the GST. Moving an out-of-state title to Nevada with no change of owner costs $20.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your current out-of-state registration, or a title in your name',
+      'Your out-of-state license plates',
+      'A Vehicle Inspection Certificate (VP 015)',
+      'Nevada Evidence of Insurance',
+      'A Nevada emissions inspection report, if required',
+      'The current odometer reading'
+    ],
+    calculatorNote:
+      'Enter $0 as the price, since you are not buying the vehicle. The calculator shows the $28.25 title fee for a sale; a title moved from another state with no change of owner is $20. It adds the $33 registration and the GST.',
+    faqs: [
+      {
+        question: 'Do I pay sales tax on the car I bring with me?',
+        answer: 'Nevada charges no sales tax on private sales. The DMV does collect sales tax on many out-of-state dealer sales, so if you bought from a dealer shortly before moving, ask the DMV.'
+      },
+      {
+        question: 'I am in the military. Do I have to switch?',
+        answer: 'Active duty members, spouses, and dependents do not have to transfer their driver’s license, and nonresidents stationed in Nevada may qualify for a GST exemption.'
+      },
+      {
+        question: 'Are there GST exemptions?',
+        answer: 'The county assessor approves exemptions for some veterans, disabled veterans and their surviving spouses, and blind residents. Bring the exemption to registration; the DMV does not apply exemptions afterward.'
+      }
+    ],
+    sources: [NV_SOURCES.newResident, NV_SOURCES.register, NV_SOURCES.title, NV_SOURCES.emission, NV_SOURCES.residency]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-iowa',
+    stateKey: 'iowa',
+    title: 'How to Title a Private Car Sale in Iowa',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Iowa',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Iowa: the 30-day deadline, the $10 plus 5% fee for new registration, the $35 title fee, and the forms to bring.',
+    cardDescription: '30 days, the 5% fee, the title, and the forms.',
+    intro: [
+      'In Iowa you title and register a car bought from a private seller at any county treasurer’s office within 30 calendar days. Instead of sales tax, you pay the fee for new registration: $10 plus 5% of the purchase price.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Iowa DOT and county treasurers',
+    steps: [
+      {
+        title: 'Get the signed title and a bill of sale',
+        body: [
+          'The seller signs the title over to you. A bill of sale on the Iowa title, or a purchase agreement, shows the price. If an old lien shows on the front of the title, get a Cancellation of Security Interest (Form 411168).'
+        ]
+      },
+      {
+        title: 'Complete the disclosures',
+        body: [
+          'Record the odometer reading on the back of the title, or on Form 411099 for a 2011 or newer vehicle without it. A vehicle 8 years old or newer also needs a Damage Disclosure Statement (Form 411108).'
+        ]
+      },
+      {
+        title: 'Fill out the title application',
+        body: [
+          'Complete the Application for Certificate of Title and/or Registration (Form 411007), signed by every owner. If you have a loan, note the lien on the application.'
+        ]
+      },
+      {
+        title: 'Apply within 30 calendar days',
+        body: [
+          'Take everything to any county treasurer’s office within 30 calendar days of the purchase (Iowa Code 321.46). A late application adds a $10 penalty (Iowa Code 321.49), and a registration penalty also applies.'
+        ]
+      },
+      {
+        title: 'Pay the fees',
+        body: [
+          'You pay the fee for new registration ($10 plus 5% of the price), the $35 title fee, $20 for each lien, and the annual registration, prorated for the months left in the registration year.',
+          'Registration is 1% of the list price plus 40 cents per 100 lbs, reduced to 75% after 7 model years and 50% after 9, with a $50 minimum and a flat $50 from 12 model years. A battery electric vehicle adds $130 a year and a plug-in hybrid $65.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'A bill of sale or purchase agreement showing the price',
+      'Form 411007, signed by all owners',
+      'The odometer statement, and Form 411108 for a vehicle 8 years old or newer',
+      'Form 411168, if an old lien shows on the title',
+      'Payment for the fee for new registration, title, lien, and registration'
+    ],
+    calculatorNote:
+      'The calculator shows the 5% of the price but not the flat $10 in the fee for new registration, so add $10. It shows the $35 title and a full year of registration from the list price you enter; the treasurer prorates the registration to the months left.',
+    faqs: [
+      {
+        question: 'Is there sales tax on a private car sale in Iowa?',
+        answer: 'Not sales tax. Iowa charges the fee for new registration instead: $10 plus 5% of the purchase price, paid to the county treasurer (Iowa Code 321.105A).'
+      },
+      {
+        question: 'Can I get credit for the registration on a car I sold?',
+        answer: 'Yes, for the unexpired months of its registration, if you claim it within six months of the sale and the credit is at least $10 (Iowa Code 321.46).'
+      },
+      {
+        question: 'Does the registration fee drop as the car ages?',
+        answer: 'Yes. The part based on value drops to 75% after 7 model years and 50% after 9, and the fee is a flat $50 from 12 model years (Iowa Code 321.113).'
+      }
+    ],
+    sources: [IA_SOURCES.title, IA_SOURCES.register, IA_SOURCES.transfer, IA_SOURCES.newRegistrationFee, IA_SOURCES.fees, IA_SOURCES.chapter]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-iowa',
+    stateKey: 'iowa',
+    title: 'How to Gift a Car in Iowa',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Iowa',
+    metaDescription:
+      'How to gift a car in Iowa: a gift between individuals is exempt from the fee for new registration, but you still title it within 30 days and pay the $35 title fee and registration.',
+    cardDescription: 'No 5% fee, 30 days, the title, and the forms.',
+    intro: [
+      'A vehicle given from one person to another, with nothing paid for it, is exempt from Iowa’s fee for new registration (Iowa Code 321.105A). You still title and register it within 30 calendar days.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Iowa DOT and county treasurers',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs the title over to you, with the odometer reading. If an old lien shows on the title, get a Cancellation of Security Interest (Form 411168).'
+        ]
+      },
+      {
+        title: 'Make sure it is a true gift',
+        body: [
+          'The exemption covers a gift from one individual to another in which no consideration is present. If you pay anything for the vehicle, the fee is due on the price.'
+        ]
+      },
+      {
+        title: 'Complete the application and the exemption affidavit',
+        body: [
+          'Fill out Form 411007, signed by every owner. The gift exemption applies when a valid affidavit is filed with the county treasurer at the time of application, so ask the treasurer for it.'
+        ]
+      },
+      {
+        title: 'Add the disclosures',
+        body: [
+          'A vehicle 8 years old or newer needs a Damage Disclosure Statement (Form 411108).'
+        ]
+      },
+      {
+        title: 'Apply within 30 calendar days and pay',
+        body: [
+          'At any county treasurer’s office, pay the $35 title fee and the registration. A late application adds a $10 penalty.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'Form 411007, signed by all owners',
+      'The exemption affidavit for a gift',
+      'Form 411108 for a vehicle 8 years old or newer',
+      'Payment for the title fee and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price. The calculator then shows no fee for new registration, the $35 title, and a year of registration from the list price you enter.',
+    faqs: [
+      {
+        question: 'Is a gift between family members exempt?',
+        answer: 'A gift between any two individuals is exempt if nothing is paid. A sale between family members for a price is taxed like any other sale.'
+      },
+      {
+        question: 'What about a vehicle I inherit?',
+        answer: 'A vehicle transferred by operation of law under Iowa Code 321.47, such as on the owner’s death, is exempt from the fee for new registration.'
+      },
+      {
+        question: 'Is a transfer into a trust taxed?',
+        answer: 'Not if there is no consideration. Transfers to or from a revocable or irrevocable trust with nothing paid are exempt.'
+      }
+    ],
+    sources: [IA_SOURCES.newRegistrationFee, IA_SOURCES.title, IA_SOURCES.transfer, IA_SOURCES.register]
+  },
+  {
+    slug: 'titling-a-car-in-iowa-after-moving-from-another-state',
+    stateKey: 'iowa',
+    title: 'Titling a Car in Iowa After Moving From Another State',
+    shortTitle: 'Title a car after moving to Iowa',
+    metaTitle: 'Titling Your Car After Moving to Iowa',
+    metaDescription:
+      'New to Iowa? Title and register your car within 30 days of establishing residency. A vehicle bought for use in your old state is exempt from the fee for new registration.',
+    cardDescription: '30 days, the fee exemption, the credit, and fees.',
+    intro: [
+      'As a new Iowa resident, you title and register your vehicle at a county treasurer’s office within 30 days of establishing residency, even if your old plates are still valid.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Iowa DOT and county treasurers',
+    steps: [
+      {
+        title: 'Plan for 30 days',
+        body: [
+          'Iowa DOT says to title and register within 30 days of establishing residency. Iowa registration is required even when your out-of-state plates have not expired.'
+        ]
+      },
+      {
+        title: 'Check whether the fee for new registration applies',
+        body: [
+          'A vehicle you bought for use in the state you moved from, and not for use in Iowa, is exempt (Iowa Code 321.105A). If you did buy it for use in Iowa, Iowa credits sales, use, or occupational tax you paid to another state and collects only any difference.'
+        ]
+      },
+      {
+        title: 'Gather your documents',
+        body: [
+          'Bring your out-of-state title, a sales tax receipt, bill of sale, or purchase agreement if you bought the vehicle recently, the odometer statement, and a Damage Disclosure Statement (Form 411108) for a vehicle 8 years old or newer.'
+        ]
+      },
+      {
+        title: 'Complete Form 411007',
+        body: [
+          'Fill out the Application for Certificate of Title and/or Registration, signed by every owner. The treasurer may ask for your driver’s license, state ID, or Social Security card.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration fees',
+        body: [
+          'You pay the $35 title fee and the annual registration: 1% of the list price plus 40 cents per 100 lbs, less for older vehicles, with a $50 minimum. A battery electric vehicle adds $130 and a plug-in hybrid $65.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title',
+      'A sales tax receipt, bill of sale, or purchase agreement, if needed',
+      'Form 411007, signed by all owners',
+      'Form 411108 for a vehicle 8 years old or newer',
+      'Your driver’s license, state ID, or Social Security card',
+      'Payment for the title fee and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price if the vehicle is exempt. The calculator then shows the $35 title and a year of registration from the list price you enter.',
+    faqs: [
+      {
+        question: 'Do I pay the 5% fee on a car I already own?',
+        answer: 'Not if you bought it for use in your old state. If you do owe it, tax you paid to another state is credited.'
+      },
+      {
+        question: 'My plates are still valid. Do I need Iowa plates?',
+        answer: 'Yes. Iowa DOT says Iowa registration is required even though your plates may still be valid in another state.'
+      },
+      {
+        question: 'What if I move to another Iowa county later?',
+        answer: 'Report the address change to your former county treasurer within 10 days of the move.'
+      }
+    ],
+    sources: [IA_SOURCES.register, IA_SOURCES.title, IA_SOURCES.newRegistrationFee, IA_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-kansas',
+    stateKey: 'kansas',
+    title: 'How to Title a Private Car Sale in Kansas',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Kansas',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Kansas: the 60-day deadline, sales tax at your home rate, the $10 title fee, registration, and what to bring.',
+    cardDescription: '60 days, your home tax rate, the title, and fees.',
+    intro: [
+      'In Kansas you title and register a car bought from a private seller at the county treasurer’s office where it will be kept, within 60 days. You pay sales tax there at the rate where you live: the 6.5% state rate plus 0% to 4.25% local.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Kansas Department of Revenue',
+    steps: [
+      {
+        title: 'Get the assigned title',
+        body: [
+          'The seller completes the back of the title with the purchase price, date of sale, odometer reading, and the printed names and signatures of the sellers and buyers. Most title assignments do not need a notary.',
+          'If a lien is recorded, you also need a lien release: on the title, on a notarized Form TR-150, or in a letter from the lender.'
+        ]
+      },
+      {
+        title: 'Get insurance',
+        body: [
+          'Bring current proof of insurance. If you are not moving a plate over from another vehicle, ask your agent for a binder that shows the new vehicle.'
+        ]
+      },
+      {
+        title: 'Get an inspection if the title is from another state',
+        body: [
+          'A vehicle with an out-of-state title, or bought out of state on a bill of sale, needs a Kansas Highway Patrol inspection and an MVE-1 receipt before you apply. Kansas has no safety or emissions inspection.'
+        ]
+      },
+      {
+        title: 'Apply within 60 days',
+        body: [
+          'Go to the county treasurer in the county where the vehicle will be kept within 60 days of the purchase, weekends and holidays included (K.S.A. 8-135). A penalty applies from the 61st day. Do not drive the vehicle in the meantime without a temporary registration, such as a 60-day permit from the county treasurer.'
+        ]
+      },
+      {
+        title: 'Pay the tax and fees',
+        body: [
+          'The treasurer figures sales tax from the price on the title, at the rate where you live. A vehicle you trade to the seller reduces the taxable price by its fair market value.',
+          'You also pay the $10 title fee, $1.50 if there is a lien, the registration ($30 at 4,500 lbs or less, $40 over, $165 for an all-electric car, $100 for a plug-in hybrid), the county service fees and state surcharges, and the property tax on the vehicle.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, assigned to you with the price, date, odometer reading, and signatures',
+      'A lien release, if a lien is recorded',
+      'Current proof of insurance',
+      'An MVE-1 inspection receipt, if the title is from another state',
+      'Signed bills of sale for both vehicles, if you claim the credit for a vehicle you sold',
+      'Payment for the sales tax, title, registration, and property tax'
+    ],
+    calculatorNote:
+      'The calculator shows the 6.5% state tax and a range for local tax, the $10 title, and the $30 registration, or $165 for an all-electric car. The county service fees, state surcharges, and property tax are extra.',
+    faqs: [
+      {
+        question: 'What sales tax rate do I pay?',
+        answer: 'The rate where you live, not where you bought the car: 6.5% state plus your city and county rate of 0% to 4.25%, for a total of 6.5% to 10.75%.'
+      },
+      {
+        question: 'Does a car I sold lower the tax?',
+        answer: 'If you sell a used vehicle instead of trading it in and buy one of greater value within 120 days before or after the sale, you pay tax only on the difference (K.S.A. 79-3697). Bring signed bills of sale for both.'
+      },
+      {
+        question: 'Who keeps the license plate?',
+        answer: 'The seller removes it. If you move a plate over from a vehicle you sold or traded, the transfer is $1.50, and the old vehicle must be disposed of before the purchase or within 60 days after it.'
+      }
+    ],
+    sources: [KS_SOURCES.used, KS_SOURCES.faq, KS_SOURCES.pub1526, KS_SOURCES.rates, KS_SOURCES.transfer, KS_SOURCES.registrationFees, KS_SOURCES.soldVehicle]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-kansas',
+    stateKey: 'kansas',
+    title: 'How to Gift a Car in Kansas',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Kansas',
+    metaDescription:
+      'How to gift a car in Kansas: a real gift is not taxed, sales between immediate family are exempt with Form TR-215, and you still title it within 60 days and pay the $10 title fee.',
+    cardDescription: 'No tax on gifts, family sales, the forms, and fees.',
+    intro: [
+      'A real gift of a vehicle, given with nothing paid for it, is not taxed in Kansas. A sale between immediate family members is also exempt. You still title and register the vehicle within 60 days.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Kansas Department of Revenue',
+    steps: [
+      {
+        title: 'Have the giver assign the title',
+        body: [
+          'The giver completes the assignment of title. Where the title asks for the purchase price, write the word gift.'
+        ]
+      },
+      {
+        title: 'Complete the gift paperwork',
+        body: [
+          'Fill out the Vehicle Gift Certification on the Affidavit to a Fact (Form TR-12). If the giver is your parent, child, grandparent, or grandchild, you can attach an Affidavit of Relationship (Form TR-215) instead.'
+        ]
+      },
+      {
+        title: 'Check that the transfer qualifies',
+        body: [
+          'To be a tax-free gift, nothing can be given in return. KDOR presumes a gift between spouses, parents, siblings, children, grandparents, aunts, uncles, nieces, and nephews when no money changes hands. Taking on a loan you must pay off can make the transfer taxable.'
+        ]
+      },
+      {
+        title: 'Get a lien release or the lender’s consent',
+        body: [
+          'If a lien is recorded, you need a lien release, or a Lienholder’s Consent to Transfer Ownership (Form TR-128) if the loan is not being paid off.'
+        ]
+      },
+      {
+        title: 'Title and register within 60 days',
+        body: [
+          'At the county treasurer’s office, pay the $10 title fee, the registration, the county service fees and state surcharges, and the property tax. The giver removes their license plate.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, assigned to you, with gift written as the price',
+      'Form TR-12 (Vehicle Gift Certification) or Form TR-215',
+      'A lien release or Form TR-128, if a lien is recorded',
+      'Current proof of insurance',
+      'An MVE-1 inspection receipt, if the title is from another state',
+      'Payment for the title fee, registration, and property tax'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for a gift or an exempt family sale. The calculator then shows no sales tax, the $10 title, and the $30 registration.',
+    faqs: [
+      {
+        question: 'Which family sales are exempt?',
+        answer: 'Sales between lineal relatives and their spouses, with Form TR-215: parents and children (including adopted and step), grandparents and grandchildren, and a son-in-law or daughter-in-law and a parent-in-law. Sales between brothers, sisters, aunts, uncles, nephews, nieces, and cousins are taxed.'
+      },
+      {
+        question: 'What if the owner has died?',
+        answer: 'Without a transfer-on-death designation, heirs can apply with a Decedent’s Title (Form TR-83a) or the Claim of Heir Affidavit (Form TR-83b) at the county treasurer’s office.'
+      },
+      {
+        question: 'Can a vehicle be titled to pass on death?',
+        answer: 'Yes. Kansas allows vehicles to be held and titled in transfer-on-death form (K.S.A. 8-135).'
+      }
+    ],
+    sources: [KS_SOURCES.faq, KS_SOURCES.pub1526, KS_SOURCES.used, KS_SOURCES.transfer]
+  },
+  {
+    slug: 'titling-a-car-in-kansas-after-moving-from-another-state',
+    stateKey: 'kansas',
+    title: 'Titling a Car in Kansas After Moving From Another State',
+    shortTitle: 'Title a car after moving to Kansas',
+    metaTitle: 'Titling Your Car After Moving to Kansas',
+    metaDescription:
+      'New to Kansas? Get a Highway Patrol inspection, then title and register at your county treasurer. Tax paid to another state is credited, and a car used out of state may owe none.',
+    cardDescription: 'The MVE-1, the use tax credit, and the fees.',
+    intro: [
+      'When you move to Kansas, you get a Kansas Highway Patrol inspection of your vehicle, then title and register it at the county treasurer’s office in the county where it is kept.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Kansas Department of Revenue',
+    steps: [
+      {
+        title: 'Know when to register',
+        body: [
+          'The Division of Vehicles requires a Kansas title and registration once a vehicle has been in Kansas for 90 days, counting weekend trips away.'
+        ]
+      },
+      {
+        title: 'Get the MVE-1 inspection',
+        body: [
+          'Take the vehicle and its title to a Kansas motor vehicle inspection station for a Motor Vehicle Examination (MVE-1). If your lender holds the title, the lender faxes the front and back to the county treasurer or the inspection station.'
+        ]
+      },
+      {
+        title: 'Check whether use tax is due',
+        body: [
+          'Kansas compensating use tax can apply to a vehicle bought outside Kansas. Tax you legally paid to another state is credited, up to the Kansas amount, and none is due if the vehicle’s first use was substantial and outside Kansas. KDOR’s example is more than six months of use in the other state.'
+        ]
+      },
+      {
+        title: 'Bring your documents to the county treasurer',
+        body: [
+          'Bring the title (or the lender’s faxed copies), the pink copy of the MVE-1, proof of insurance, and your current registration from your old state.'
+        ]
+      },
+      {
+        title: 'Pay the fees and property tax',
+        body: [
+          'You pay the $10 title fee, the registration ($30 at 4,500 lbs or less, $40 over, $165 for an all-electric car, $100 for a plug-in hybrid), the county service fees and state surcharges, and the property tax on the vehicle.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title, or your lender’s faxed copy of it',
+      'The pink copy of the MVE-1',
+      'Proof of insurance',
+      'Your current out-of-state registration',
+      'Proof of tax paid to another state, if you claim the credit',
+      'Payment for the title, registration, and property tax'
+    ],
+    calculatorNote:
+      'Enter $0 as the price if no Kansas use tax is due. The calculator then shows the $10 title and the $30 registration, or $165 for an all-electric car; property tax and county fees are extra.',
+    faqs: [
+      {
+        question: 'Do I pay Kansas tax on a car I already own?',
+        answer: 'Often not. No use tax is due if the vehicle’s first use was substantial and outside Kansas, and tax paid to another state is credited up to the Kansas amount.'
+      },
+      {
+        question: 'My lender has the title. What do I do?',
+        answer: 'The lender faxes the front and back of the title to the county treasurer or the inspection station. If the other state holds the title electronically, your current registration serves as proof of ownership while the county asks for the title.'
+      },
+      {
+        question: 'Is the MVE-1 a safety or emissions inspection?',
+        answer: 'No. It is a vehicle examination before titling. Kansas has no safety or emissions inspection program.'
+      }
+    ],
+    sources: [KS_SOURCES.faq, KS_SOURCES.used, KS_SOURCES.pub1526, KS_SOURCES.transfer, KS_SOURCES.registrationFees]
   }
 ];
 

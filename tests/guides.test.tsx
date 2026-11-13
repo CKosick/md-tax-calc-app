@@ -68,10 +68,13 @@ const GUIDE_STATES = {
   'south-carolina': { label: 'South Carolina', agency: 'SCDMV', hosts: ['dmv.sc.gov', 'www.scstatehouse.gov'] },
   alabama: { label: 'Alabama', agency: 'Alabama Department of Revenue', hosts: ['www.revenue.alabama.gov', 'alison.legislature.state.al.us'] },
   kentucky: { label: 'Kentucky', agency: 'Kentucky Transportation Cabinet and DOR', hosts: ['revenue.ky.gov', 'drive.ky.gov', 'apps.legislature.ky.gov'] },
-  oregon: { label: 'Oregon', agency: 'Oregon DMV', hosts: ['www.oregon.gov'] }
+  oregon: { label: 'Oregon', agency: 'Oregon DMV', hosts: ['www.oregon.gov'] },
+  nevada: { label: 'Nevada', agency: 'Nevada DMV', hosts: ['dmv.nv.gov', 'www.leg.state.nv.us'] },
+  iowa: { label: 'Iowa', agency: 'Iowa DOT and county treasurers', hosts: ['iowadot.gov', 'www.iowataxandtags.org', 'www.legis.iowa.gov'] },
+  kansas: { label: 'Kansas', agency: 'Kansas Department of Revenue', hosts: ['www.ksrevenue.gov', 'ksrevisor.gov'] }
 } as const;
 // Guides re-checked in November 2026 carry that date; the rest October 2026
-const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon'].includes(stateKey) ? 'November 2026' : 'October 2026');
+const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas'].includes(stateKey) ? 'November 2026' : 'October 2026');
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
   `how-to-gift-a-car-in-${state}`,
@@ -390,6 +393,38 @@ describe('Batch 11 guides (Alabama, Kentucky, Oregon)', () => {
   });
 });
 
+describe('Batch 12 guides (Nevada, Iowa, Kansas)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified Nevada, Iowa, and Kansas key facts', () => {
+    const [nvSale, nvGift, nvMove] = topics('nevada').map(text);
+    for (const fact of ['no sales tax', '$28.25', '$33', 'three days', '$1 online for 30 days', 'VP 015', 'Clark and Washoe', '90 days', '4% of 35%', '$16 minimum', 'Supplemental GST', 'NAC 482.907']) expect(nvSale).toContain(fact);
+    for (const fact of ['family sales or gifts', 'husband and wife', 'VP 024', 'Transfer on Death']) expect(nvGift).toContain(fact);
+    for (const fact of ['30 days', 'NRS 482.385', 'driver’s license', 'out-of-state plates', '$20', 'county assessor']) expect(nvMove).toContain(fact);
+
+    const [iaSale, iaGift, iaMove] = topics('iowa').map(text);
+    for (const fact of ['30 calendar days', '$10 plus 5%', '$35', '$20 for each lien', '411007', '411108', '411168', '$10 penalty', '321.49', 'prorated', '$130', '$65', 'add $10']) expect(iaSale).toContain(fact);
+    for (const fact of ['no consideration', 'affidavit', '321.47', 'trust']) expect(iaGift).toContain(fact);
+    for (const fact of ['30 days of establishing residency', 'for use in the state you moved from', 'occupational tax', '10 days']) expect(iaMove).toContain(fact);
+
+    const [ksSale, ksGift, ksMove] = topics('kansas').map(text);
+    for (const fact of ['60 days', 'K.S.A. 8-135', '61st day', '6.5%', '0% to 4.25%', '6.5% to 10.75%', 'fair market value', '$10 title', '$1.50', '$165', '$100', 'MVE-1', 'TR-150', '120 days', 'no safety or emissions']) expect(ksSale).toContain(fact);
+    for (const fact of ['TR-12', 'TR-215', 'TR-128', 'cousins are taxed', 'TR-83a', 'transfer-on-death']) expect(ksGift).toContain(fact);
+    for (const fact of ['90 days', 'MVE-1', 'first use was substantial', 'up to the Kansas amount', 'pink copy']) expect(ksMove).toContain(fact);
+  });
+
+  it('Nevada guides state no EV fee; Iowa guides leave the private trade-in rule for the ruling', () => {
+    for (const t of topics('nevada').map(text)) expect(t).not.toMatch(/electric vehicle fee|EV fee|plug-in hybrid fee|\$125|\$75/i);
+    for (const t of topics('iowa').map(text)) expect(t).not.toMatch(/trade-in|traded/i);
+  });
+
+  it('batch 12 guides are dated November 2026; no em dashes', () => {
+    for (const state of ['nevada', 'iowa', 'kansas']) {
+      for (const guide of getGuidesForState(state)) expect(guide.lastVerified).toBe('November 2026');
+      for (const t of topics(state).map(text)) expect(t).not.toContain('—');
+    }
+  });
+});
+
 describe('Guide links and discovery', () => {
   // Renders every guide state's calculator page; slow under load, so it gets a longer timeout
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', { timeout: 60000 }, async () => {
@@ -402,7 +437,7 @@ describe('Guide links and discovery', () => {
       cleanup();
     }
 
-    const mi = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'nevada-private-sale-tax-calculator' }) }));
+    const mi = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'nebraska-private-sale-tax-calculator' }) }));
     expect(mi.container.querySelector('#state-guides')).toBeNull();
   });
 
@@ -433,6 +468,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('Colorado, South Carolina, Alabama, Kentucky, and Oregon.');
+    expect(String(metadata.description)).toContain('Alabama, Kentucky, Oregon, Nevada, Iowa, and Kansas.');
   });
 });
