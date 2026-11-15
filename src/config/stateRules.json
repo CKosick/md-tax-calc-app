@@ -3778,7 +3778,7 @@
     "taxBase": "price",
     "titleFee": 35,
     "lienFilingFee": 20,
-    "tradeInDeductible": false,
+    "tradeInDeductible": true,
     "registration": {
       "terms": [
         1
@@ -3828,30 +3828,46 @@
           "outcome": "charged",
           "amount": 9
         }
+      },
+      "feesByRegistrationYear": {
+        "passenger": [
+          {
+            "fee": 14
+          }
+        ],
+        "motorcycle": [
+          {
+            "maxYear": 5,
+            "fee": 20
+          },
+          {
+            "fee": 10
+          }
+        ]
       }
     },
-    "localTaxNote": "Iowa levies the 5% Fee for New Registration statewide in lieu of retail sales tax; local option sales taxes (LOST) do not apply to motor vehicles.",
+    "localTaxNote": "Iowa levies the fee for new registration ($10 plus 5%) statewide in lieu of retail sales tax; local option sales taxes (LOST) do not apply to motor vehicles.",
     "notes": [
-      "Iowa assesses a 5% Fee for New Registration (FNR) on vehicle purchase price under Iowa Code § 321.105A.",
+      "Iowa assesses a fee for new registration of $10 plus 5% of the purchase price under Iowa Code § 321.105A.",
       "Certificate of title fee is $35.00 (increased Jan 1, 2025 from $25.00); lien notation is $20.00.",
-      "Private party sales do not qualify for trade-in tax credits in Iowa; full purchase price is taxed.",
+      "A private-party trade-in is left out of the price when the same person is on both titles (Iowa Code 321.105A).",
       "Annual registration is 1% of the list price plus 40 cents per 100 lbs (Iowa Code 321.109). The value part drops to 75% after 7 model years and 50% after 9, with a $50 minimum, and the fee is a flat $50 from 12 model years (Iowa Code 321.113). The estimate uses the list price you enter ($30,000 if blank) and an assumed 3,500 lbs, which is $14 of the fee."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Iowa DOT or county treasurer.",
-      "Trade-in deductions are not permitted on private-party vehicle sales in Iowa.",
+      "The fee for new registration is $10 plus 5% of the price; a gift entered at $0 owes neither part. A trade-in is deducted only when the same person is on both titles.",
       "Certificate of title fee is $35.00 effective 2025.",
-      "The weight part of registration assumes 3,500 lbs; every 500 lbs more or less changes the fee by $2. The current model year counts as the first model year. The value part is for passenger vehicles; motorcycles are shown at their $20 fee. The Iowa DOT fee calculator gives the exact amount.",
+      "The weight part of registration assumes 3,500 lbs; every 500 lbs more or less changes the fee by $2. The current model year counts as the first model year. The value part is for passenger vehicles; motorcycles pay $20, or $10 once more than five model years old (Iowa Code 321.117), counted the same way. The Iowa DOT fee calculator gives the exact amount.",
       "A battery electric or plug-in hybrid motorcycle pays a $9 electric motorcycle fee instead of these fees (Iowa Code 321.117)."
     ],
     "faqs": [
       {
         "question": "What is the sales tax on a private car purchase in Iowa?",
-        "answer": "In Iowa, vehicle purchases are subject to a 5% 'Fee for New Registration' collected by your county treasurer under Iowa Code § 321.105A, replacing standard retail sales tax."
+        "answer": "Iowa charges a fee for new registration instead of sales tax: $10 plus 5% of the purchase price, collected by your county treasurer under Iowa Code § 321.105A."
       },
       {
         "question": "Can I deduct my trade-in on a private vehicle purchase in Iowa?",
-        "answer": "No. Under Iowa Code § 321.105A, trade-in deductions are not allowed for private-party sales. You must pay the 5% fee on the full purchase price."
+        "answer": "Yes, when the same person is on the title of the vehicle traded and the vehicle bought. Iowa Code 321.105A leaves the trade-in value out of the price in a trade between two people who are not dealers. Trades between spouses or lineal family members (including adopted and step) also count when one of them is on both titles."
       },
       {
         "question": "How much does a vehicle title cost in Iowa?",
@@ -3874,7 +3890,7 @@
         "answer": "Within 30 calendar days after the purchase (Iowa Code 321.46), at any county treasurer’s office. A late application adds a $10 title penalty (Iowa Code 321.49), and a registration penalty also applies. New residents have 30 days from establishing residency."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://iowadot.gov/registration-plates/vehicle-registration-titles/register-vehicle",
       "https://iowadot.gov/registration-plates/vehicle-registration-titles/title-vehicle",
@@ -3883,7 +3899,12 @@
       "https://www.legis.iowa.gov/docs/code/321.46.pdf",
       "https://www.legis.iowa.gov/docs/code/321.109.pdf",
       "https://www.legis.iowa.gov/docs/code/2026/321.pdf"
-    ]
+    ],
+    "flatTaxAddOn": {
+      "amount": 10,
+      "label": "flat part of the fee for new registration"
+    },
+    "tradeInNote": "A vehicle traded toward the purchase lowers the fee: its trade-in value is left out of the price when the same person is on the title of the traded vehicle and the new one (Iowa Code 321.105A). Trades between spouses or lineal family members (including adopted and step) count when one of them is on both titles."
   },
   "nevada": {
     "label": "Nevada",
@@ -4205,14 +4226,14 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 30
+          "1": 42.25
         },
         "over3700lbs": {
-          "1": 30
+          "1": 42.25
         }
       },
       "motorcycle": {
-        "1": 16
+        "1": 28.25
       },
       "evSurchargeAnnual": 135,
       "phevSurchargeAnnual": 70,
@@ -4231,7 +4252,7 @@
       "Kansas levies a 6.5% state retail sales tax on private vehicle transactions under K.S.A. 79-3603.",
       "K.S.A. 79-3697 applies to used vehicles sold by an individual on or after January 1, 2025. A refund claim is due within three years of the replacement purchase.",
       "Certificate of title fee is $10.00; lien fee is $1.50.",
-      "Standard passenger car registration is $30.00 under K.S.A. 8-143 for vehicles 4,500 lbs or less. An all-electric car registers for $165 and a plug-in hybrid for $100 in place of that fee.",
+      "Standard passenger car registration is $30.00 under K.S.A. 8-143 for vehicles 4,500 lbs or less, plus $12.25 in fees and surcharges, $42.25 in all. An all-electric car registers for $165 and a plug-in hybrid for $100 in place of the $30.",
       "County treasurers also collect personal property taxes at registration based on local mill levies."
     ],
     "disclaimers": [
@@ -4239,8 +4260,9 @@
       "Kansas state sales tax is 6.5%; local city and county taxes bring the total to between 6.5% and 10.75%, at the rate where you live.",
       "If you sell a used vehicle and buy one of greater value within 120 days before or after the sale, tax applies only to the difference (K.S.A. 79-3697). Bring signed bills of sale for both vehicles.",
       "County treasurers assess annual property taxes based on local mill levies at registration.",
-      "An all-electric motorcycle pays $30 in place of the $16 motorcycle fee, which is the +$14 on the form (K.S.A. 8-143). The plug-in hybrid fee is listed under passenger vehicles other than motorcycles, so on our reading the estimate does not add it to a motorcycle.",
-      "An all-electric car registers for $165 and a plug-in hybrid for $100 in place of the $30 fee (K.S.A. 8-143), which is the +$135 and +$70 on the form."
+      "An all-electric motorcycle pays $30 in place of the $16 motorcycle fee, which is the +$14 on the form ($42.25 with the surcharges) (K.S.A. 8-143). The plug-in hybrid fee is listed under passenger vehicles other than motorcycles, so on our reading the estimate does not add it to a motorcycle.",
+      "An all-electric car registers for $165 and a plug-in hybrid for $100 in place of the $30 fee (K.S.A. 8-143), which is the +$135 and +$70 on the form.",
+      "Every registration also pays $12.25 in fees and surcharges, which the estimate includes: a $5 county service fee (K.S.A. 8-145d), a $2 Highway Patrol surcharge (K.S.A. 8-1,176), a $1.25 surcharge (K.S.A. 8-1,177), and a $4 modernization surcharge. A car is $42.25 and a motorcycle $28.25. Counties may add a local fee of up to $5."
     ],
     "faqs": [
       {
@@ -4257,7 +4279,7 @@
       },
       {
         "question": "What are Kansas passenger vehicle registration fees?",
-        "answer": "Annual registration for passenger vehicles weighing 4,500 lbs or less is $30.00 under K.S.A. 8-143 ($40.00 for vehicles over 4,500 lbs). An all-electric car is $165 and a plug-in hybrid $100 instead. County personal property taxes are also paid at registration."
+        "answer": "Annual registration for passenger vehicles weighing 4,500 lbs or less is $30.00 under K.S.A. 8-143 ($40.00 for vehicles over 4,500 lbs). An all-electric car is $165 and a plug-in hybrid $100 instead. Every registration adds $12.25 in fees and surcharges, so a standard car is $42.25. County personal property taxes are also paid at registration."
       },
       {
         "question": "Do I pay Kansas vehicle tax if I buy a car from an out-of-state private seller?",
@@ -4272,7 +4294,7 @@
         "answer": "Within 60 days of the purchase, weekends and holidays included (K.S.A. 8-135), at the county treasurer’s office where the vehicle is kept. A penalty applies from the 61st day. You may not drive the vehicle in that time without a temporary registration, such as a 60-day permit from the county treasurer."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://www.ksrevenue.gov/dovtitleused.html",
       "https://www.ksrevenue.gov/dovtitlefaq.html",

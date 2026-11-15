@@ -208,6 +208,11 @@ export function calculateVehicleCosts(
     exciseTax = Math.round((exciseTax + excessTax) * 100) / 100;
     extraTaxParts.push(`${ratePercent(excess.rate)}% luxury tax above $${excess.threshold.toLocaleString()} ($${excessTax.toFixed(2)})`);
   }
+  const addOn = rule.flatTaxAddOn;
+  if (addOn && price > 0 && !rule.flatTaxTable && !olderFlatTaxApplied) {
+    exciseTax = Math.round((exciseTax + addOn.amount) * 100) / 100;
+    extraTaxParts.push(`the $${addOn.amount} ${addOn.label}`);
+  }
   const extraTaxDetail = extraTaxParts.length > 0 ? ` (includes ${extraTaxParts.join(' and ')})` : '';
 
   // 2. Title Certificate Fee

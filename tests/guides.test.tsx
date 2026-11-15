@@ -402,19 +402,20 @@ describe('Batch 12 guides (Nevada, Iowa, Kansas)', () => {
     for (const fact of ['30 days', 'NRS 482.385', 'driver’s license', 'out-of-state plates', '$20', 'county assessor']) expect(nvMove).toContain(fact);
 
     const [iaSale, iaGift, iaMove] = topics('iowa').map(text);
-    for (const fact of ['30 calendar days', '$10 plus 5%', '$35', '$20 for each lien', '411007', '411108', '411168', '$10 penalty', '321.49', 'prorated', '$130', '$65', 'add $10']) expect(iaSale).toContain(fact);
+    for (const fact of ['30 calendar days', '$10 plus 5%', '$35', '$20 for each lien', '411007', '411108', '411168', '$10 penalty', '321.49', 'prorated', '$130', '$65', 'same person is on the title of the traded vehicle', '321.105A']) expect(iaSale).toContain(fact);
+    expect(iaSale).not.toContain('add $10');
     for (const fact of ['no consideration', 'affidavit', '321.47', 'trust']) expect(iaGift).toContain(fact);
     for (const fact of ['30 days of establishing residency', 'for use in the state you moved from', 'occupational tax', '10 days']) expect(iaMove).toContain(fact);
 
     const [ksSale, ksGift, ksMove] = topics('kansas').map(text);
-    for (const fact of ['60 days', 'K.S.A. 8-135', '61st day', '6.5%', '0% to 4.25%', '6.5% to 10.75%', 'fair market value', '$10 title', '$1.50', '$165', '$100', 'MVE-1', 'TR-150', '120 days', 'no safety or emissions']) expect(ksSale).toContain(fact);
-    for (const fact of ['TR-12', 'TR-215', 'TR-128', 'cousins are taxed', 'TR-83a', 'transfer-on-death']) expect(ksGift).toContain(fact);
-    for (const fact of ['90 days', 'MVE-1', 'first use was substantial', 'up to the Kansas amount', 'pink copy']) expect(ksMove).toContain(fact);
+    for (const fact of ['60 days', 'K.S.A. 8-135', '61st day', '6.5%', '0% to 4.25%', '6.5% to 10.75%', 'fair market value', '$10 title', '$1.50', '$165', '$100', 'MVE-1', 'TR-150', '120 days', 'no safety or emissions', '$12.25', '$5 county service fee', '$4 modernization surcharge', '$42.25', '$177.25']) expect(ksSale).toContain(fact);
+    for (const fact of ['TR-12', 'TR-215', 'TR-128', 'cousins are taxed', 'TR-83a', 'transfer-on-death', '$42.25']) expect(ksGift).toContain(fact);
+    for (const fact of ['90 days', 'MVE-1', 'first use was substantial', 'up to the Kansas amount', 'pink copy', '$12.25', '$42.25']) expect(ksMove).toContain(fact);
+    for (const t of [ksSale, ksGift, ksMove]) expect(t).not.toContain('county service fees and state surcharges');
   });
 
-  it('Nevada guides state no EV fee; Iowa guides leave the private trade-in rule for the ruling', () => {
+  it('Nevada guides state no EV fee', () => {
     for (const t of topics('nevada').map(text)) expect(t).not.toMatch(/electric vehicle fee|EV fee|plug-in hybrid fee|\$125|\$75/i);
-    for (const t of topics('iowa').map(text)) expect(t).not.toMatch(/trade-in|traded/i);
   });
 
   it('batch 12 guides are dated November 2026; no em dashes', () => {

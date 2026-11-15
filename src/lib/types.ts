@@ -210,6 +210,11 @@ export interface StateRule {
    * (Washington luxury motor vehicle tax: 8% above $102,000).
    */
   luxuryExcessTax?: { threshold: number; rate: number };
+  /**
+   * A flat amount added to the state tax on every purchase with a price (Iowa fee for new
+   * registration: $10 plus 5%, Iowa Code 321.105A). Not added when the price is $0 (a gift).
+   */
+  flatTaxAddOn?: { amount: number; label: string };
   /** Flat tax in place of the rate for older, low-priced vehicles (Minnesota: $10). */
   olderVehicleFlatTax?: { minAge: number; maxPrice: number; tax: number };
   luxuryTaxThreshold?: number | null;

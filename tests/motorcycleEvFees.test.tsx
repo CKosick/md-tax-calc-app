@@ -83,9 +83,10 @@ describe('Motorcycle EV and plug-in hybrid fees (Option D)', () => {
   it('uses the base fee a state sets for an electric motorcycle', () => {
     expect(moto('south-dakota', 'gasoline').registrationTotal).toBe(18);
     expect(moto('south-dakota', 'ev').registrationTotal).toBe(24);
-    expect(moto('kansas', 'gasoline').registrationTotal).toBe(16);
-    expect(moto('kansas', 'ev').registrationTotal).toBe(30);
-    expect(moto('kansas', 'phev').registrationTotal).toBe(16);
+    // Kansas: $16 and $30 plus the $12.25 in fees and surcharges every registration pays
+    expect(moto('kansas', 'gasoline').registrationTotal).toBe(28.25);
+    expect(moto('kansas', 'ev').registrationTotal).toBe(42.25);
+    expect(moto('kansas', 'phev').registrationTotal).toBe(28.25);
     expect(moto('vermont', 'gasoline', 1).registrationTotal).toBe(58);
     expect(moto('vermont', 'ev', 1).registrationTotal).toBe(56);
     expect(moto('vermont', 'ev', 2).registrationTotal).toBe(112);

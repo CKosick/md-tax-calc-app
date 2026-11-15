@@ -695,12 +695,12 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     tradeInValue: 0
   };
 
-  it('1. Iowa (IA) worked invariant: $15,000 purchase price yields $750.00 tax and $1,024.00 total', () => {
+  it('1. Iowa (IA) worked invariant: $15,000 purchase price yields $760.00 fee ($10 plus 5%) and $1,034.00 total', () => {
     const res = calculateVehicleCosts(allRules.iowa, { ...std1Yr, state: 'iowa' }, 2026);
-    expect(res.exciseTax).toBe(750.00);
+    expect(res.exciseTax).toBe(760.00); // $10 plus 5% of 15000 (Iowa Code 321.105A)
     expect(res.titleFee).toBe(35.00);
     expect(res.registrationTotal).toBe(239.00); // 0.75% of the $30,000 default list price (8th model year) + $14 weight part
-    expect(res.totalFirstYearCost).toBe(1024.00);
+    expect(res.totalFirstYearCost).toBe(1034.00);
   });
 
   it('2. Nevada (NV) worked invariant: $15,000 purchase price yields $0.00 tax (NRS 372.320 exempt) and $208.25 total', () => {
@@ -758,12 +758,12 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     expect(res.totalFirstYearCost).toBe(788.00);
   });
 
-  it('5. Kansas (KS) worked invariant: $15,000 purchase price yields $975.00 tax and $1,015.00 total', () => {
+  it('5. Kansas (KS) worked invariant: $15,000 purchase price yields $975.00 tax and $1,027.25 total', () => {
     const res = calculateVehicleCosts(allRules.kansas, { ...std1Yr, state: 'kansas' }, 2026);
     expect(res.exciseTax).toBe(975.00);
     expect(res.titleFee).toBe(10.00);
-    expect(res.registrationTotal).toBe(30.00);
-    expect(res.totalFirstYearCost).toBe(1015.00);
+    expect(res.registrationTotal).toBe(42.25); // $30 + $12.25 fees and surcharges
+    expect(res.totalFirstYearCost).toBe(1027.25);
   });
 
   it('6. New Mexico (NM) worked invariant: $15,000 purchase price yields $600.00 tax (4% MVET) and $662.75 total', () => {

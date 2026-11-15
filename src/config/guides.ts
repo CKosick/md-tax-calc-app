@@ -7672,7 +7672,7 @@ export const GUIDES: Guide[] = [
       {
         title: 'Pay the fees',
         body: [
-          'You pay the fee for new registration ($10 plus 5% of the price), the $35 title fee, $20 for each lien, and the annual registration, prorated for the months left in the registration year.',
+          'You pay the fee for new registration ($10 plus 5% of the price), the $35 title fee, $20 for each lien, and the annual registration, prorated for the months left in the registration year. If you trade a vehicle toward the purchase, its trade-in value is left out of the price when the same person is on the title of the traded vehicle and the new one (Iowa Code 321.105A).',
           'Registration is 1% of the list price plus 40 cents per 100 lbs, reduced to 75% after 7 model years and 50% after 9, with a $50 minimum and a flat $50 from 12 model years. A battery electric vehicle adds $130 a year and a plug-in hybrid $65.'
         ]
       }
@@ -7686,7 +7686,7 @@ export const GUIDES: Guide[] = [
       'Payment for the fee for new registration, title, lien, and registration'
     ],
     calculatorNote:
-      'The calculator shows the 5% of the price but not the flat $10 in the fee for new registration, so add $10. It shows the $35 title and a full year of registration from the list price you enter; the treasurer prorates the registration to the months left.',
+      'The calculator shows the fee for new registration ($10 plus 5%, less any qualifying trade-in), the $35 title, and a full year of registration from the list price you enter; the treasurer prorates the registration to the months left.',
     faqs: [
       {
         question: 'Is there sales tax on a private car sale in Iowa?',
@@ -7893,7 +7893,7 @@ export const GUIDES: Guide[] = [
         title: 'Pay the tax and fees',
         body: [
           'The treasurer figures sales tax from the price on the title, at the rate where you live. A vehicle you trade to the seller reduces the taxable price by its fair market value.',
-          'You also pay the $10 title fee, $1.50 if there is a lien, the registration ($30 at 4,500 lbs or less, $40 over, $165 for an all-electric car, $100 for a plug-in hybrid), the county service fees and state surcharges, and the property tax on the vehicle.'
+          'You also pay the $10 title fee, $1.50 if there is a lien, the registration ($30 at 4,500 lbs or less, $40 over, $165 for an all-electric car, $100 for a plug-in hybrid), $12.25 in fees and surcharges (a $5 county service fee, a $2 Highway Patrol surcharge, a $1.25 surcharge, and a $4 modernization surcharge), and the property tax on the vehicle.'
         ]
       }
     ],
@@ -7906,7 +7906,7 @@ export const GUIDES: Guide[] = [
       'Payment for the sales tax, title, registration, and property tax'
     ],
     calculatorNote:
-      'The calculator shows the 6.5% state tax and a range for local tax, the $10 title, and the $30 registration, or $165 for an all-electric car. The county service fees, state surcharges, and property tax are extra.',
+      'The calculator shows the 6.5% state tax and a range for local tax, the $10 title, and the registration with the $12.25 in fees and surcharges: $42.25, or $177.25 for an all-electric car. Property tax and any local county fee are extra.',
     faqs: [
       {
         question: 'What sales tax rate do I pay?',
@@ -7966,7 +7966,7 @@ export const GUIDES: Guide[] = [
       {
         title: 'Title and register within 60 days',
         body: [
-          'At the county treasurer’s office, pay the $10 title fee, the registration, the county service fees and state surcharges, and the property tax. The giver removes their license plate.'
+          'At the county treasurer’s office, pay the $10 title fee, the registration with its $12.25 in fees and surcharges, and the property tax. The giver removes their license plate.'
         ]
       }
     ],
@@ -7979,7 +7979,7 @@ export const GUIDES: Guide[] = [
       'Payment for the title fee, registration, and property tax'
     ],
     calculatorNote:
-      'Enter $0 as the price for a gift or an exempt family sale. The calculator then shows no sales tax, the $10 title, and the $30 registration.',
+      'Enter $0 as the price for a gift or an exempt family sale. The calculator then shows no sales tax, the $10 title, and the $42.25 registration ($30 plus $12.25 in fees and surcharges).',
     faqs: [
       {
         question: 'Which family sales are exempt?',
@@ -8039,7 +8039,7 @@ export const GUIDES: Guide[] = [
       {
         title: 'Pay the fees and property tax',
         body: [
-          'You pay the $10 title fee, the registration ($30 at 4,500 lbs or less, $40 over, $165 for an all-electric car, $100 for a plug-in hybrid), the county service fees and state surcharges, and the property tax on the vehicle.'
+          'You pay the $10 title fee, the registration ($30 at 4,500 lbs or less, $40 over, $165 for an all-electric car, $100 for a plug-in hybrid), $12.25 in fees and surcharges (a $5 county service fee, a $2 Highway Patrol surcharge, a $1.25 surcharge, and a $4 modernization surcharge), and the property tax on the vehicle.'
         ]
       }
     ],
@@ -8052,7 +8052,7 @@ export const GUIDES: Guide[] = [
       'Payment for the title, registration, and property tax'
     ],
     calculatorNote:
-      'Enter $0 as the price if no Kansas use tax is due. The calculator then shows the $10 title and the $30 registration, or $165 for an all-electric car; property tax and county fees are extra.',
+      'Enter $0 as the price if no Kansas use tax is due. The calculator then shows the $10 title and the $42.25 registration with its $12.25 in fees and surcharges, or $177.25 for an all-electric car; property tax and any local county fee are extra.',
     faqs: [
       {
         question: 'Do I pay Kansas tax on a car I already own?',

@@ -46,19 +46,40 @@ describe('Nevada re-check (November 2026)', () => {
   });
 });
 
-describe('Iowa re-check (November 2026, figures for ruling unchanged)', () => {
-  it('keeps the figures that wait on a ruling, and the verified date, as they were', () => {
-    expect(ia.exciseTaxRate).toBe(0.05);
-    expect(ia.tradeInDeductible).toBe(false);
-    expect(calc(ia, { vehicleType: 'motorcycle', vehicleYear: 2015 }).registrationTotal).toBe(20);
-    expect(ia.lastVerified).toBe('September 2026');
+describe('Iowa re-check and rulings (November 2026)', () => {
+  it('the fee for new registration is $10 plus 5%; a $0 gift owes neither part', () => {
+    const b = calc(ia);
+    expect(b.exciseTax).toBe(760);
+    expect(b.itemizedList[0].description).toContain('includes the $10 flat part of the fee for new registration');
+    expect(calc(ia, { purchasePrice: 0 }).exciseTax).toBe(0);
+    expect(copy(ia)).toContain('$10 plus 5%');
+    expect(copy(ia)).not.toContain('not permitted');
   });
 
-  it('$35 title, $20 lien, EV $130 and plug-in hybrid $65', () => {
+  it('a private trade-in is deducted, with the same-person condition stated', () => {
+    expect(ia.tradeInDeductible).toBe(true);
+    const b = calc(ia, { tradeInValue: 4000 });
+    expect(b.exciseTax).toBe(560); // $10 + 5% of $11,000
+    expect(b.tradeInDeducted).toBe(4000);
+    expect(ia.tradeInNote).toContain('the same person is on the title of the traded vehicle and the new one (Iowa Code 321.105A)');
+    expect(copy(ia)).toContain('when the same person is on the title of the vehicle traded and the vehicle bought');
+  });
+
+  it('motorcycles: $20 for model years 1 to 5, $10 after (Iowa Code 321.117); cars keep the $14 weight part', () => {
+    for (const [vehicleYear, fee] of [[2026, 20], [2022, 20], [2021, 10], [2010, 10]]) {
+      expect(calc(ia, { vehicleType: 'motorcycle', vehicleYear }).registrationTotal, String(vehicleYear)).toBe(fee);
+    }
+    expect(calc(ia, { vehicleType: 'motorcycle', vehicleYear: 2021, fuelType: 'ev' }).registrationTotal).toBe(19);
+    expect(calc(ia).registrationTotal).toBe(239);
+    expect(copy(ia)).toContain('$10 once more than five model years old (Iowa Code 321.117)');
+  });
+
+  it('$35 title, $20 lien, EV $130 and plug-in hybrid $65; verified November 2026', () => {
     expect(calc(ia).titleFee).toBe(35);
     expect(calc(ia, { isFinanced: true }).lienFilingFee).toBe(20);
     expect(ia.registration.evSurchargeAnnual).toBe(130);
     expect(ia.registration.phevSurchargeAnnual).toBe(65);
+    expect(ia.lastVerified).toBe('November 2026');
   });
 
   it('deadline, gift, and out-of-state answers are the verified ones', () => {
@@ -75,7 +96,7 @@ describe('Iowa re-check (November 2026, figures for ruling unchanged)', () => {
   });
 });
 
-describe('Kansas re-check (November 2026, surcharges for ruling)', () => {
+describe('Kansas re-check and rulings (November 2026)', () => {
   it('6.5% state tax plus the 0% to 4.25% local range from the October 2026 rate list', () => {
     const b = calc(ks);
     expect(b.exciseTax).toBe(975);
@@ -85,18 +106,25 @@ describe('Kansas re-check (November 2026, surcharges for ruling)', () => {
     expect(copy(ks)).not.toContain('7.5%');
   });
 
-  it('an all-electric car registers for $165 and a plug-in hybrid for $100, in place of the $30 fee', () => {
-    expect(calc(ks).registrationTotal).toBe(30);
-    expect(calc(ks, { fuelType: 'ev' }).registrationTotal).toBe(165);
-    expect(calc(ks, { fuelType: 'phev' }).registrationTotal).toBe(100);
-    expect(calc(ks, { vehicleType: 'motorcycle', fuelType: 'ev' }).registrationTotal).toBe(30);
+  it('every registration adds $12.25 in fees and surcharges: car $42.25, motorcycle $28.25', () => {
+    expect(calc(ks).registrationTotal).toBe(42.25);
+    expect(calc(ks, { weightClass: 'over3700lbs' }).registrationTotal).toBe(42.25);
+    expect(calc(ks, { vehicleType: 'motorcycle' }).registrationTotal).toBe(28.25);
+    expect(calc(ks).totalFirstYearCost).toBe(1027.25);
+    for (const fact of ['$5 county service fee (K.S.A. 8-145d)', '$2 Highway Patrol surcharge (K.S.A. 8-1,176)', '$1.25 surcharge (K.S.A. 8-1,177)', '$4 modernization surcharge', 'A car is $42.25 and a motorcycle $28.25']) expect(copy(ks)).toContain(fact);
+  });
+
+  it('EV and plug-in hybrid stand as built: +$135 and +$70 over the $30 base, reaching $165 and $100 before surcharges', () => {
+    expect(calc(ks, { fuelType: 'ev' }).registrationTotal).toBe(177.25);
+    expect(calc(ks, { fuelType: 'phev' }).registrationTotal).toBe(112.25);
+    expect(calc(ks, { vehicleType: 'motorcycle', fuelType: 'ev' }).registrationTotal).toBe(42.25);
     expect(copy(ks)).toContain('which is the +$135 and +$70 on the form');
   });
 
-  it('$10 title and $1.50 lien service fee; verified date waits on the surcharge ruling', () => {
+  it('$10 title and $1.50 lien service fee; verified November 2026', () => {
     expect(calc(ks).titleFee).toBe(10);
     expect(calc(ks, { isFinanced: true }).lienFilingFee).toBe(1.5);
-    expect(ks.lastVerified).toBe('September 2026');
+    expect(ks.lastVerified).toBe('November 2026');
   });
 
   it('deadline, gift, and out-of-state answers are the verified ones', () => {

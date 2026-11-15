@@ -54,4 +54,12 @@ Working notes from the official-source re-check for guide batch 12. Items marked
 ## `lastVerified`
 
 - Nevada: November 2026. Every figure was checked; the EV question is the open written inquiry and adds nothing to the estimate.
-- Iowa and Kansas: unchanged (September 2026). The re-check found figures the estimate leaves out ($10 fee for new registration; $12.25 Kansas surcharges) that wait on a ruling, so the page should not carry a new verified date until they are settled.
+- Iowa and Kansas: held at September 2026 in d83872e while the four items below waited on a ruling; moved to November 2026 once the rulings were applied (2026-11-14).
+
+## Rulings applied (Cliff, 2026-11-14)
+
+1. **Iowa fee for new registration:** $10 plus 5% (Iowa Code 321.105A). New `flatTaxAddOn` field adds the $10 to the state tax on any purchase with a price; a gift entered at $0 owes neither part. The guide and calculator note no longer tell readers to add the $10.
+2. **Iowa private trade-ins:** deducted (`tradeInDeductible: true`), with the condition from 321.105A in the form notice, FAQ, disclaimer, and private-sale guide: the same person on the title of the traded vehicle and the new one (spouses and lineal family count when one is on both titles).
+3. **Iowa motorcycles:** $20, then $10 when more than five model years old (321.117), counted like the fee table, model year = year 1 (`feesByRegistrationYear`: years 1 to 5 $20, 6 on $10; cars keep the $14 weight part). The $9 electric motorcycle fee is still added on top.
+4. **Kansas registration surcharges:** the full $12.25 added to every registration: $5 county service fee (K.S.A. 8-145d), $2 Highway Patrol surcharge (8-1,176), $1.25 surcharge (8-1,177), and the $4 modernization surcharge. **No imposing statute was found for the $4**; it rests on Johnson County's 2026 fee page and the disposition in 8-145(d)(4). Car $42.25, motorcycle $28.25; the optional county fee of up to $5 or $2.50 is disclosed, not added. Guides now give the $12.25.
+5. **Kansas EV and plug-in hybrid:** stand as built in d83872e (+$135 and +$70 over the $30 base, reaching $165 and $100 under K.S.A. 8-143); with the surcharges an all-electric car is $177.25.

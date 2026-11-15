@@ -58,8 +58,9 @@ describe('Iowa value-based registration fee (Iowa Code 321.109, 321.113)', () =>
     expect(total(2026, 25555)).toBe(270);
   });
 
-  it('leaves the motorcycle fee alone and adds the EV fee', () => {
-    expect(calc('iowa', { vehicleType: 'motorcycle' }).registrationTotal).toBe(20);
+  it('motorcycles pay $20, or $10 after five model years, and the car EV fee is added', () => {
+    expect(calc('iowa', { vehicleType: 'motorcycle', vehicleYear: 2022 }).registrationTotal).toBe(20);
+    expect(calc('iowa', { vehicleType: 'motorcycle', vehicleYear: 2021 }).registrationTotal).toBe(10);
     expect(calc('iowa', { vehicleYear: 2026, listPrice: 30000, fuelType: 'ev' }).registrationTotal).toBe(444);
   });
 });
