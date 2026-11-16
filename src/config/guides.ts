@@ -396,6 +396,36 @@ const KS_SOURCES = {
   registrationFees: { label: 'K.S.A. 8-143: Registration fees', url: 'https://ksrevisor.gov/statutes/chapters/ch08/008_001_0043.html' }
 };
 
+const MS_DOR = 'https://www.dor.ms.gov';
+const MS_SOURCES = {
+  titles: { label: 'Mississippi DOR: Motor Vehicle Titles', url: `${MS_DOR}/motor-vehicle-titles` },
+  registration: { label: 'Mississippi DOR: Motor Vehicle Registration and Renewal', url: `${MS_DOR}/motor-vehicle/motor-vehicle-registration-and-renewal` },
+  faq: { label: 'Mississippi DOR: Motor Vehicle Frequently Asked Questions', url: `${MS_DOR}/motor-vehicle/motor-vehicle-frequently-asked-questions` },
+  businessFaq: { label: 'Mississippi DOR: Business Tax Frequently Asked Questions (casual sales of vehicles)', url: `${MS_DOR}/business/business-tax-frequently-asked-questions` },
+  adValorem: { label: 'Mississippi DOR: Motor Vehicle Ad Valorem Taxes', url: `${MS_DOR}/motor-vehicle/motor-vehicle-ad-valorem-taxes` },
+  regulation: { label: '35 Miss. Admin. Code Part IV (Sales and Use Tax), 3.02 Casual Sales', url: 'https://www.sos.ms.gov/adminsearch/ACCode/00000851c.pdf' }
+};
+
+const NM_MVD = 'https://www.mvd.newmexico.gov';
+const NM_SOURCES = {
+  buying: { label: 'New Mexico MVD: Buying a Vehicle', url: `${NM_MVD}/vehicles/vehicle-registration/buying-a-vehicle/` },
+  register: { label: 'New Mexico MVD: Register Your Vehicle', url: `${NM_MVD}/vehicles/vehicle-registration/register-your-vehicle/` },
+  titles: { label: 'New Mexico MVD: Vehicle Titles', url: `${NM_MVD}/vehicles/vehicle-registration/vehicle-titles/` },
+  manual: { label: 'New Mexico MVD Vehicle Procedures Manual, Chapter 6: Fees, Penalties and Excise Tax', url: `${NM_MVD}/chapter-6-fees-penalties-and-excise-tax/` },
+  feeManual: { label: 'New Mexico MVD Fee Manual (revised August 24, 2026)', url: `${NM_MVD}/wp-content/uploads/2020/12/MVD-Fee-Manual-Revised-08_24_26Vehicles1.pdf` }
+};
+
+const NE_DMV = 'https://dmv.nebraska.gov/dvr';
+const NE_SOURCES = {
+  transfer: { label: 'Nebraska DMV: Transfer of Ownership', url: `${NE_DMV}/title/transfer-ownership` },
+  outOfState: { label: 'Nebraska DMV: Out-of-State Titles', url: `${NE_DMV}/title/out-state-titles` },
+  fees: { label: 'Nebraska DMV: Registration Fees and Taxes', url: `${NE_DMV}/registration-fees-and-taxes` },
+  nonResident: { label: 'Nebraska DMV: Non-Resident Registration', url: `${NE_DMV}/non-resident-registration` },
+  treasurer: { label: 'Nebraska DOR: Instructions for County Treasurers, Sales and Use Tax on Motor Vehicles', url: 'https://revenue.nebraska.gov/sites/revenue.nebraska.gov/files/doc/info/6-191.pdf' },
+  rates: { label: 'Nebraska DOR: Local Sales and Use Tax Rates, effective July 1, 2026', url: 'https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2026/salestax/slstax_rates_07-01-2026.pdf' },
+  fuelFee: { label: 'Neb. Rev. Stat. 60-3,191: Alternative fuel fee', url: 'https://nebraskalegislature.gov/laws/statutes.php?statute=60-3,191' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -8068,6 +8098,660 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [KS_SOURCES.faq, KS_SOURCES.used, KS_SOURCES.pub1526, KS_SOURCES.transfer, KS_SOURCES.registrationFees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-mississippi',
+    stateKey: 'mississippi',
+    title: 'How to Title a Private Car Sale in Mississippi',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Mississippi',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Mississippi: 30 business days, the 5% casual sales tax on the state’s value, the $9 title, the tag, and ad valorem tax.',
+    cardDescription: '30 business days, the 5% tax, the title, and the tag.',
+    intro: [
+      'In Mississippi you title and register a car bought from a private seller at your county tax collector within 30 business days. You pay a 5% casual sales tax, figured on the Department of Revenue’s value for the vehicle rather than the price you paid.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Mississippi Department of Revenue',
+    steps: [
+      {
+        title: 'Get the signed title',
+        body: [
+          'The seller signs the title over to you and fills in the odometer reading. For a vehicle titled in another state, bring that state’s title and an odometer disclosure statement.'
+        ]
+      },
+      {
+        title: 'Get insurance',
+        body: [
+          'Mississippi requires liability insurance and an insurance card in the vehicle. It is not checked at registration, but you need it to drive.'
+        ]
+      },
+      {
+        title: 'Register within 30 business days',
+        body: [
+          'Go to the tax collector in the county where the vehicle is kept within 30 business days of the purchase. If you bought it outside your home county, you have 48 hours to bring it home and then the 30 business days. Registering late brings the standard penalties plus an additional $250 penalty.'
+        ]
+      },
+      {
+        title: 'Pay the casual sales tax',
+        body: [
+          'A private sale owes the 5% casual sales tax on the vehicle’s value from the Department of Revenue’s assessment schedule, not on the price you paid. No trade-in credit applies to a private sale.'
+        ]
+      },
+      {
+        title: 'Pay the title, tag, and ad valorem tax',
+        body: [
+          'The title is $9. The tag is $14 plus a $15 privilege tax for a car ($29), or $14 plus $8 for a motorcycle ($22). Ad valorem tax is set by your county’s millage on 30% of the vehicle’s original MSRP, reduced for age.',
+          'An electric vehicle also pays a yearly fee with a base of $150 and a hybrid $75. The law raises these amounts each July for inflation, so your county’s figure may be higher.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you, with the odometer reading',
+      'An odometer disclosure statement, for a vehicle from another state',
+      'Your proof of insurance',
+      'Your driver’s license',
+      'Payment for the casual sales tax, title, tag, privilege tax, and ad valorem tax'
+    ],
+    calculatorNote:
+      'The calculator applies 5% to the price you enter; use the state’s value for your vehicle if you know it. It adds the $9 title and the $29 car registration. Ad valorem tax is extra.',
+    faqs: [
+      {
+        question: 'Is the tax figured on what I paid?',
+        answer: 'No. The Department of Revenue says the casual sales tax is calculated from a set value for that kind of vehicle, and the purchase price is not used.'
+      },
+      {
+        question: 'Can I put my old tag on the car?',
+        answer: 'No. A Mississippi tag belongs to both the vehicle and the owner, so it cannot move to a new vehicle. You can turn in the old tag and use the unused registration as a credit.'
+      },
+      {
+        question: 'How long is a dealer drive-out tag good for?',
+        answer: 'Seven days from the purchase. In a private sale, plan to register within the 30 business days.'
+      }
+    ],
+    sources: [MS_SOURCES.registration, MS_SOURCES.faq, MS_SOURCES.businessFaq, MS_SOURCES.titles, MS_SOURCES.adValorem, MS_SOURCES.regulation]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-mississippi',
+    stateKey: 'mississippi',
+    title: 'How to Gift a Car in Mississippi',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Mississippi',
+    metaDescription:
+      'How to gift a car in Mississippi: transfers between spouses, parents and children, grandparents and grandchildren, and siblings owe no casual sales tax; other gifts do.',
+    cardDescription: 'Which family gifts are tax-free, the title, and fees.',
+    intro: [
+      'Mississippi does not charge casual sales tax on a vehicle passed between a husband and wife, a parent and child, a grandparent and grandchild, or siblings. A gift from anyone else, including cousins, aunts, uncles, and in-laws, owes the 5% tax.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Mississippi Department of Revenue',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs the title over to you, with the odometer reading filled in.'
+        ]
+      },
+      {
+        title: 'Check whether the relationship is exempt',
+        body: [
+          'The exempt transfers are between a husband and wife, a parent and child, a grandparent and grandchildren, and siblings, and a vehicle passed on under a will or by law when someone dies without one (35 Miss. Admin. Code Part IV, 3.02.104).'
+        ]
+      },
+      {
+        title: 'Know when the tax still applies',
+        body: [
+          'The Department of Revenue says casual sales tax is due even when a vehicle is given to you by a relative outside those relationships. It is figured on the state’s value for the vehicle.'
+        ]
+      },
+      {
+        title: 'Do not use a dealer for the transfer',
+        body: [
+          'Running the transfer through a licensed dealer voids these exemptions, and the dealer collects the sales tax.'
+        ]
+      },
+      {
+        title: 'Register within 30 business days',
+        body: [
+          'At your county tax collector, pay the $9 title fee, the tag and privilege tax, and the ad valorem tax.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'Proof of the family relationship, if the county asks',
+      'Your proof of insurance',
+      'Your driver’s license',
+      'Payment for the title, tag, privilege tax, ad valorem tax, and any casual sales tax'
+    ],
+    calculatorNote:
+      'For an exempt family transfer, enter $0 as the price; the calculator then shows the $9 title and the $29 registration. For a taxable gift, enter the state’s value for the vehicle.',
+    faqs: [
+      {
+        question: 'Is a gift from my aunt taxed?',
+        answer: 'Yes. Transfers between cousins, aunts, uncles, and in-laws owe the casual sales tax, gift or not.'
+      },
+      {
+        question: 'What about a car I inherit?',
+        answer: 'A vehicle transferred under a will, or under the law that divides the property of someone who died without a will, owes no casual sales tax.'
+      },
+      {
+        question: 'What about a transfer to my trust or my LLC?',
+        answer: 'Transfers between a trustee and a beneficiary, and between an LLC or partnership and one of its owners, are exempt with a completed Affidavit of Motor Vehicle Title Transfer.'
+      }
+    ],
+    sources: [MS_SOURCES.regulation, MS_SOURCES.businessFaq, MS_SOURCES.registration, MS_SOURCES.titles]
+  },
+  {
+    slug: 'titling-a-car-in-mississippi-after-moving-from-another-state',
+    stateKey: 'mississippi',
+    title: 'Titling a Car in Mississippi After Moving From Another State',
+    shortTitle: 'Title a car after moving to Mississippi',
+    metaTitle: 'Titling Your Car After Moving to Mississippi',
+    metaDescription:
+      'New to Mississippi? Register your car within 30 days at your county tax collector. Bring your old title and an odometer statement, and pay the $9 title, the tag, and ad valorem tax.',
+    cardDescription: '30 days, the title, the tag, and ad valorem tax.',
+    intro: [
+      'As a new Mississippi resident with a current registration from your old state, you have 30 days to register your vehicle at your county tax collector.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Mississippi Department of Revenue',
+    steps: [
+      {
+        title: 'Plan for 30 days',
+        body: [
+          'The Department of Revenue gives new residents 30 days if the vehicle has a current registration and valid plate from the previous state. Registering late brings penalties, and a vehicle never registered in your old state does not get the Legislative Tag Credit.'
+        ]
+      },
+      {
+        title: 'Gather your documents',
+        body: [
+          'Bring the title from your old state and an odometer disclosure statement. If the vehicle was never titled, bring the Manufacturer’s Certificate of Origin.'
+        ]
+      },
+      {
+        title: 'Register in the right county',
+        body: [
+          'Register at the tax collector in the county where the vehicle is kept overnight.'
+        ]
+      },
+      {
+        title: 'Pay the title and tag',
+        body: [
+          'The title is $9. The tag is $14 plus a $15 privilege tax for a car, or $8 for a motorcycle.'
+        ]
+      },
+      {
+        title: 'Pay the ad valorem tax',
+        body: [
+          'The county figures ad valorem tax from 30% of the original MSRP, reduced for age, times the local millage, less the Legislative Tag Credit.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title from your old state',
+      'An odometer disclosure statement',
+      'Your current out-of-state registration',
+      'Your proof of insurance',
+      'Payment for the title, tag, privilege tax, and ad valorem tax'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for a vehicle you already own. The calculator then shows the $9 title and the $29 car registration; ad valorem tax is extra.',
+    faqs: [
+      {
+        question: 'I bought the car out of state just before moving. Does tax paid there count?',
+        answer: 'The Department of Revenue says sales tax paid to another state is not credited toward Mississippi tax on a vehicle purchased in another state and registered here.'
+      },
+      {
+        question: 'I am in the military or a student. Do I have to register here?',
+        answer: 'Military members and full-time students who claim another state as home do not have to register in Mississippi.'
+      },
+      {
+        question: 'Can I transfer my old plates?',
+        answer: 'No. You get a Mississippi tag at registration.'
+      }
+    ],
+    sources: [MS_SOURCES.registration, MS_SOURCES.faq, MS_SOURCES.titles, MS_SOURCES.adValorem]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-new-mexico',
+    stateKey: 'new-mexico',
+    title: 'How to Title a Private Car Sale in New Mexico',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in New Mexico',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in New Mexico: 30 days, the 4% excise tax and the 80% NADA rule, the trade-in deduction, the title, and registration.',
+    cardDescription: '30 days, the 4% excise tax, NADA, and registration.',
+    intro: [
+      'In New Mexico you apply for the title within 30 calendar days of buying a car from a private seller. You pay the 4% Motor Vehicle Excise Tax instead of sales tax, on the higher of your price or 80% of the NADA average trade-in value.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'New Mexico MVD',
+    steps: [
+      {
+        title: 'Get the signed title',
+        body: [
+          'The seller signs the title over to you and fills in your name, the purchase date, the selling price, and the odometer reading. Both of you sign the odometer statement. If the title has no room for the sale details, use a Bill of Sale (MVD Form 10009).'
+        ]
+      },
+      {
+        title: 'Get insurance',
+        body: [
+          'New Mexico requires at least $25,000 per person and $50,000 per accident for injury, and $10,000 for property damage. Bring proof to MVD.'
+        ]
+      },
+      {
+        title: 'Apply within 30 calendar days',
+        body: [
+          'Take the title, the Application for Title and Registration (MVD Form 10002), proof of insurance, one proof of identity, and two proofs of New Mexico residency to an MVD office. After 30 calendar days MVD adds a $20 late transfer fee, and after 90 days a 50% penalty on the excise tax.'
+        ]
+      },
+      {
+        title: 'Pay the 4% excise tax',
+        body: [
+          'MVD taxes the higher of your price or 80% of the NADA average trade-in value. A vehicle you trade toward the purchase reduces the price; bring a copy of its title or registration. If the vehicle is worth less, you can ask for a refund later with a Request for Refund (MVD-10208) and evidence such as a repair estimate.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $5. Registration depends on the vehicle’s weight and how many years it has been registered, plus a few small fees. In Bernalillo County you also need an emissions certificate. The seller keeps the plate.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you, with the price, date, and odometer reading',
+      'Form MVD 10002, and Form MVD 10009 if the title has no room for the sale details',
+      'Proof of insurance',
+      'One proof of identity and two proofs of New Mexico residency',
+      'Proof of any trade-in, and an emissions certificate in Bernalillo County',
+      'Payment for the excise tax, title, and registration'
+    ],
+    calculatorNote:
+      'The calculator applies 4% to the price you enter less any trade-in; if 80% of the NADA average trade-in value is higher, enter that instead. It adds the $5 title and the registration for a vehicle over 3,000 lbs.',
+    faqs: [
+      {
+        question: 'Is there sales tax on a private car sale in New Mexico?',
+        answer: 'Not gross receipts tax. The 4% Motor Vehicle Excise Tax applies instead, paid when you apply for the title (NMSA 7-14-4 and 7-14-5).'
+      },
+      {
+        question: 'What if I paid less than the NADA value?',
+        answer: 'MVD still taxes 80% of the NADA average trade-in value. To be taxed on less, file a Request for Refund with evidence of the lower value; confirming the price paid is not enough.'
+      },
+      {
+        question: 'Will an electric car cost more to register?',
+        answer: 'Starting January 1, 2027, New Mexico adds a yearly fee of $70 for an electric vehicle and $35 for a plug-in hybrid. It does not apply before then.'
+      }
+    ],
+    sources: [NM_SOURCES.buying, NM_SOURCES.register, NM_SOURCES.manual, NM_SOURCES.titles, NM_SOURCES.feeManual]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-new-mexico',
+    stateKey: 'new-mexico',
+    title: 'How to Gift a Car in New Mexico',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in New Mexico',
+    metaDescription:
+      'How to gift a car in New Mexico: a real gift owes no excise tax with a notarized Affidavit of Gift (MVD-10018) signed by both people. Without it, MVD taxes the transfer as a sale.',
+    cardDescription: 'No tax with the notarized gift affidavit, plus fees.',
+    intro: [
+      'A real gift of a vehicle is not a sale in New Mexico, so no excise tax is due. MVD requires a notarized Affidavit of Gift of Motor Vehicle or Boat signed by both people.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'New Mexico MVD',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs the title over to you and completes the odometer statement with you.'
+        ]
+      },
+      {
+        title: 'Complete the Affidavit of Gift',
+        body: [
+          'Both of you sign the Affidavit of Gift of Motor Vehicle or Boat (MVD Form 10018) in front of a notary. It states under penalty of perjury that the vehicle was a gift.'
+        ]
+      },
+      {
+        title: 'Know what happens without it',
+        body: [
+          'Without the affidavit, MVD treats the transfer as a sale and taxes the higher of the price or the vehicle’s reasonable value.'
+        ]
+      },
+      {
+        title: 'Apply within 30 calendar days',
+        body: [
+          'Bring the title, the affidavit, Form MVD 10002, proof of insurance, and your identity and residency documents to MVD. A $20 late transfer fee applies after 30 calendar days.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'You pay the $5 title fee and the registration. No excise tax is due on a real gift.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'The notarized Affidavit of Gift (MVD Form 10018), signed by both of you',
+      'Form MVD 10002',
+      'Proof of insurance',
+      'One proof of identity and two proofs of New Mexico residency',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price. The calculator then shows no excise tax, the $5 title, and the registration.',
+    faqs: [
+      {
+        question: 'Does a family sale count as a gift?',
+        answer: 'Only if nothing is paid. A sale between family members for a price owes the 4% excise tax like any other sale.'
+      },
+      {
+        question: 'Do both signatures really need a notary?',
+        answer: 'Yes. MVD requires the donor’s and the recipient’s signatures on the Affidavit of Gift to be notarized.'
+      },
+      {
+        question: 'Is there a penalty for titling late?',
+        answer: 'Yes. MVD adds a $20 late transfer fee if you apply more than 30 calendar days after the transfer.'
+      }
+    ],
+    sources: [NM_SOURCES.register, NM_SOURCES.manual, NM_SOURCES.buying]
+  },
+  {
+    slug: 'titling-a-car-in-new-mexico-after-moving-from-another-state',
+    stateKey: 'new-mexico',
+    title: 'Titling a Car in New Mexico After Moving From Another State',
+    shortTitle: 'Title a car after moving to New Mexico',
+    metaTitle: 'Titling Your Car After Moving to New Mexico',
+    metaDescription:
+      'New to New Mexico? Get a VIN inspection, then title and register at MVD. A car you bought out of state at least 30 days before moving owes no excise tax.',
+    cardDescription: 'The VIN inspection, the moving-in exemption, and fees.',
+    intro: [
+      'When you move to New Mexico, you title and register your vehicle at MVD after a VIN inspection. A vehicle you bought out of state for personal use at least 30 days before moving owes no excise tax.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'New Mexico MVD',
+    steps: [
+      {
+        title: 'Get a VIN inspection',
+        body: [
+          'A vehicle coming from another state needs a VIN inspection. MVD offices do them, though not every office and some only by appointment, and certified VIN inspectors at partner offices can do them too.'
+        ]
+      },
+      {
+        title: 'Check whether excise tax applies',
+        body: [
+          'A vehicle you acquired out of state for personal use at least 30 days before moving to New Mexico is exempt from the excise tax (NMSA 7-14-6). Otherwise the 4% tax applies.'
+        ]
+      },
+      {
+        title: 'Handle a loan',
+        body: [
+          'If there is a lien and the title is in another state, MVD orders the title from your lender. Give MVD the lender’s name and address.'
+        ]
+      },
+      {
+        title: 'Bring your documents',
+        body: [
+          'Bring your out-of-state title, Form MVD 10002, proof of New Mexico insurance, one proof of identity, and two proofs of New Mexico residency. In Bernalillo County, also bring an emissions certificate.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'You pay the $5 title fee and the registration, which depends on the vehicle’s weight and age.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title, or your lender’s name and address',
+      'A completed VIN inspection',
+      'Form MVD 10002',
+      'Proof of insurance',
+      'One proof of identity and two proofs of New Mexico residency',
+      'An emissions certificate, in Bernalillo County'
+    ],
+    calculatorNote:
+      'Enter $0 as the price if your vehicle is exempt. The calculator then shows the $5 title and the registration for a vehicle over 3,000 lbs.',
+    faqs: [
+      {
+        question: 'Do I pay excise tax on the car I brought with me?',
+        answer: 'Not if you acquired it out of state for personal use at least 30 days before moving to New Mexico.'
+      },
+      {
+        question: 'Where do I get the VIN inspection?',
+        answer: 'At an MVD office that offers it, or from a certified VIN inspector at a participating partner office. Call ahead, since some offices need an appointment.'
+      },
+      {
+        question: 'Do I need an emissions test?',
+        answer: 'Only if you live in Bernalillo County.'
+      }
+    ],
+    sources: [NM_SOURCES.register, NM_SOURCES.titles, NM_SOURCES.manual]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-nebraska',
+    stateKey: 'nebraska',
+    title: 'How to Title a Private Car Sale in Nebraska',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Nebraska',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Nebraska: 30 days, sales tax at your home rate, the $10 title, Form 6, and the yearly Motor Vehicle Tax and Fee.',
+    cardDescription: '30 days, your home tax rate, the title, and Form 6.',
+    intro: [
+      'In Nebraska you title a car bought from a private seller at the county treasurer within 30 days. You pay sales tax at the rate where you live: the 5.5% state rate plus 0% to 2.0% local.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Nebraska DMV and Department of Revenue',
+    steps: [
+      {
+        title: 'Get the signed title',
+        body: [
+          'Every owner named on the title signs it in the seller’s section, and the seller completes the odometer certification. Any lien must be released on the face of the title first.',
+          'Your name, address, and signature go in the purchaser’s section at the time of the sale. A title the seller signed without the buyer’s information is an open title, and the county treasurer will confiscate it.'
+        ]
+      },
+      {
+        title: 'Get a bill of sale or Form 6',
+        body: [
+          'The seller gives you a bill of sale or a completed Nebraska Sales/Use Tax and Tire Fee Statement (DOR Form 6).'
+        ]
+      },
+      {
+        title: 'Apply within 30 days',
+        body: [
+          'Apply for the title at your county treasurer within 30 days of the purchase. Sales tax paid within 30 days owes no penalty or interest.'
+        ]
+      },
+      {
+        title: 'Pay the sales tax and title fee',
+        body: [
+          'Sales tax is 5.5% plus your local rate of up to 2.0%. The title is $10, plus $7 to note a lien.'
+        ]
+      },
+      {
+        title: 'Register the vehicle',
+        body: [
+          'Registration is $15 for a passenger vehicle, plus small fees and the plate fee. The county also collects the yearly Motor Vehicle Tax and Motor Vehicle Fee, based on the MSRP and the vehicle’s age. An electric vehicle adds a $150 alternative fuel fee and a plug-in hybrid $75.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by every owner, with your purchaser section complete',
+      'A bill of sale or DOR Form 6',
+      'Proof of insurance',
+      'Your driver’s license',
+      'Payment for the sales tax, title, registration, and Motor Vehicle Tax and Fee'
+    ],
+    calculatorNote:
+      'The calculator shows the 5.5% state tax and a range for local tax, the $10 title, the registration, and a year of the Motor Vehicle Tax and Fee from the MSRP you enter.',
+    faqs: [
+      {
+        question: 'What sales tax rate do I pay?',
+        answer: 'The 5.5% state rate plus the local rate where you live: up to 2.0% in a city, 0.5% in Dakota County outside cities with a local tax, and none elsewhere.'
+      },
+      {
+        question: 'Can my spouse sign the title for me?',
+        answer: 'No. The DMV says spouses cannot sign as an agent for one another when transferring ownership.'
+      },
+      {
+        question: 'Can I name a beneficiary on the title?',
+        answer: 'Yes. You can list a Transfer on Death beneficiary, including a trust, on the title application.'
+      }
+    ],
+    sources: [NE_SOURCES.transfer, NE_SOURCES.treasurer, NE_SOURCES.rates, NE_SOURCES.fees, NE_SOURCES.fuelFee]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-nebraska',
+    stateKey: 'nebraska',
+    title: 'How to Gift a Car in Nebraska',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Nebraska',
+    metaDescription:
+      'How to gift a car in Nebraska: a real gift is not taxed if the giver paid sales tax when they bought it. Paying off the giver’s debt counts as a sale. Title it within 30 days.',
+    cardDescription: 'When a gift is tax-free, the title, and fees.',
+    intro: [
+      'A vehicle received as a gift is not subject to Nebraska sales tax, as long as the person giving it paid the tax on their original purchase.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Nebraska DMV and Department of Revenue',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'Every owner named on the title signs it over, and any lien is released first. Fill in your purchaser section at the same time.'
+        ]
+      },
+      {
+        title: 'Make sure it is a real gift',
+        body: [
+          'The transfer must be unconditional, with nothing given in return. Consideration is not limited to money: paying off the giver’s debt in exchange for the title is a sale, taxed on the payoff amount.'
+        ]
+      },
+      {
+        title: 'Show the giver paid tax',
+        body: [
+          'The gift is tax-free when the giver paid sales tax on the original purchase. If you cannot show that, the county collects tax on the original purchase price.'
+        ]
+      },
+      {
+        title: 'Claim the gift on Form 6',
+        body: [
+          'Complete DOR Form 6, claiming the gift exemption and signing as the purchaser and the person claiming it. Claiming an exemption that does not apply carries a penalty.'
+        ]
+      },
+      {
+        title: 'Title and register within 30 days',
+        body: [
+          'At your county treasurer, pay the $10 title fee, the registration, and the Motor Vehicle Tax and Fee.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'DOR Form 6, claiming the gift exemption',
+      'Evidence the giver paid sales tax, if the county asks',
+      'Proof of insurance',
+      'Payment for the title, registration, and Motor Vehicle Tax and Fee'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for a gift. The calculator then shows no sales tax, the $10 title, the registration, and the Motor Vehicle Tax and Fee.',
+    faqs: [
+      {
+        question: 'Is a sale to my son for a small price a gift?',
+        answer: 'No. Any payment makes it a sale, taxed on the price paid. Nebraska has no separate exemption for family sales.'
+      },
+      {
+        question: 'What about a transfer into my trust?',
+        answer: 'A transfer into or out of a revocable or irrevocable trust is treated as a gift and is not taxed, provided the tax was paid when the vehicle was bought.'
+      },
+      {
+        question: 'What about an inherited vehicle?',
+        answer: 'An inherited vehicle is treated like a gift: no tax, provided the person who died paid the tax on the original purchase. A Transfer on Death title or a small estate affidavit can move it without probate.'
+      }
+    ],
+    sources: [NE_SOURCES.treasurer, NE_SOURCES.transfer, NE_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-nebraska-after-moving-from-another-state',
+    stateKey: 'nebraska',
+    title: 'Titling a Car in Nebraska After Moving From Another State',
+    shortTitle: 'Title a car after moving to Nebraska',
+    metaTitle: 'Titling Your Car After Moving to Nebraska',
+    metaDescription:
+      'New to Nebraska? A car already licensed in another state owes no Nebraska sales tax. Get a sheriff’s inspection, then title it with the county treasurer for $10.',
+    cardDescription: 'No tax on a licensed car, the inspection, and fees.',
+    intro: [
+      'A vehicle coming into Nebraska that was licensed for the road in another state owes no Nebraska sales tax. You get a sheriff’s inspection and title it with your county treasurer.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Nebraska DMV and Department of Revenue',
+    steps: [
+      {
+        title: 'Know when to register',
+        body: [
+          'The DMV requires a vehicle to be registered in Nebraska once its owner has been in the state for 30 or more continuous days, unless Nebraska has reciprocity with the old state, in which case the plates are good until they expire. A new resident also needs a Nebraska driver’s license within 30 days.'
+        ]
+      },
+      {
+        title: 'Get a sheriff’s inspection',
+        body: [
+          'Every vehicle brought into Nebraska from another state needs a sheriff’s inspection, including one that only had a registration there. Ask your county treasurer where the inspection station is.'
+        ]
+      },
+      {
+        title: 'Bring your out-of-state title',
+        body: [
+          'Surrender the title from your old state to the county treasurer. If your old state does not issue titles, bring the last registration and a bill of sale.'
+        ]
+      },
+      {
+        title: 'Check whether sales tax applies',
+        body: [
+          'No sales tax is due on a vehicle licensed for the road in another state before it came to Nebraska. If you just bought it out of state, tax you properly paid there is credited toward the Nebraska and local tax.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'You pay the $10 title fee, the registration, and the yearly Motor Vehicle Tax and Fee.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title, or the last registration and a bill of sale',
+      'The sheriff’s inspection',
+      'Proof of insurance',
+      'Your driver’s license',
+      'Proof of tax paid to another state, if you bought the vehicle recently',
+      'Payment for the title, registration, and Motor Vehicle Tax and Fee'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for a vehicle you already had licensed in another state. The calculator then shows the $10 title, the registration, and the Motor Vehicle Tax and Fee from the MSRP you enter.',
+    faqs: [
+      {
+        question: 'Do I pay Nebraska sales tax on the car I moved with?',
+        answer: 'Not if it was licensed for operation on the highways of another state, even a state with no sales tax.'
+      },
+      {
+        question: 'I am a student. Do I have to register here?',
+        answer: 'Not if you attend school full time in Nebraska and your vehicle is registered in your home state.'
+      },
+      {
+        question: 'I am in the military. Do I owe Nebraska tax?',
+        answer: 'Nonresident military members who registered the vehicle in their home state do not owe Nebraska sales or use tax.'
+      }
+    ],
+    sources: [NE_SOURCES.outOfState, NE_SOURCES.nonResident, NE_SOURCES.treasurer, NE_SOURCES.fees]
   }
 ];
 

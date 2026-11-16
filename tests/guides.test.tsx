@@ -71,10 +71,13 @@ const GUIDE_STATES = {
   oregon: { label: 'Oregon', agency: 'Oregon DMV', hosts: ['www.oregon.gov'] },
   nevada: { label: 'Nevada', agency: 'Nevada DMV', hosts: ['dmv.nv.gov', 'www.leg.state.nv.us'] },
   iowa: { label: 'Iowa', agency: 'Iowa DOT and county treasurers', hosts: ['iowadot.gov', 'www.iowataxandtags.org', 'www.legis.iowa.gov'] },
-  kansas: { label: 'Kansas', agency: 'Kansas Department of Revenue', hosts: ['www.ksrevenue.gov', 'ksrevisor.gov'] }
+  kansas: { label: 'Kansas', agency: 'Kansas Department of Revenue', hosts: ['www.ksrevenue.gov', 'ksrevisor.gov'] },
+  mississippi: { label: 'Mississippi', agency: 'Mississippi Department of Revenue', hosts: ['www.dor.ms.gov', 'www.sos.ms.gov'] },
+  'new-mexico': { label: 'New Mexico', agency: 'New Mexico MVD', hosts: ['www.mvd.newmexico.gov'] },
+  nebraska: { label: 'Nebraska', agency: 'Nebraska DMV and Department of Revenue', hosts: ['dmv.nebraska.gov', 'revenue.nebraska.gov', 'nebraskalegislature.gov'] }
 } as const;
 // Guides re-checked in November 2026 carry that date; the rest October 2026
-const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas'].includes(stateKey) ? 'November 2026' : 'October 2026');
+const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska'].includes(stateKey) ? 'November 2026' : 'October 2026');
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
   `how-to-gift-a-car-in-${state}`,
@@ -426,6 +429,42 @@ describe('Batch 12 guides (Nevada, Iowa, Kansas)', () => {
   });
 });
 
+describe('Batch 13 guides (Mississippi, New Mexico, Nebraska)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified Mississippi, New Mexico, and Nebraska key facts', () => {
+    const [msSale, msGift, msMove] = topics('mississippi').map(text);
+    for (const fact of ['30 business days', '48 hours', '$250 penalty', '5% casual sales tax', 'assessment schedule', '$9', '$29', '$22', '30% of the vehicle’s original MSRP', 'base of $150', 'hybrid $75', 'each July for inflation', 'may be higher']) expect(msSale).toContain(fact);
+    for (const fact of ['husband and wife', 'grandparent and grandchild', 'siblings', '3.02.104', 'licensed dealer', 'cousins, aunts, uncles, and in-laws', 'Affidavit of Motor Vehicle Title Transfer']) expect(msGift).toContain(fact);
+    for (const fact of ['30 days', 'odometer disclosure statement', 'Legislative Tag Credit', 'not credited']) expect(msMove).toContain(fact);
+
+    const [nmSale, nmGift, nmMove] = topics('new-mexico').map(text);
+    for (const fact of ['30 calendar days', '4% Motor Vehicle Excise Tax', '80% of the NADA average trade-in value', 'MVD-10208', '$20 late transfer fee', '50% penalty', 'MVD Form 10002', 'MVD Form 10009', '$5', 'Bernalillo County', 'two proofs of New Mexico residency']) expect(nmSale).toContain(fact);
+    for (const fact of ['MVD Form 10018', 'notary', 'reasonable value']) expect(nmGift).toContain(fact);
+    for (const fact of ['VIN inspection', 'at least 30 days before moving', 'NMSA 7-14-6', 'lender']) expect(nmMove).toContain(fact);
+
+    const [neSale, neGift, neMove] = topics('nebraska').map(text);
+    for (const fact of ['30 days', '5.5%', '0% to 2.0%', 'Form 6', 'open title', '$10', '$7 to note a lien', 'Motor Vehicle Tax and Motor Vehicle Fee', '$150', 'plug-in hybrid $75', 'Dakota County']) expect(neSale).toContain(fact);
+    for (const fact of ['paid sales tax on the original purchase', 'payoff amount', 'trust', 'no separate exemption for family sales']) expect(neGift).toContain(fact);
+    for (const fact of ['sheriff’s inspection', 'licensed for the road in another state', 'credited', '30 or more continuous days', 'reciprocity']) expect(neMove).toContain(fact);
+  });
+
+  it('New Mexico guides give the EV fees only as starting January 1, 2027, and say nothing of motorcycles; open findings stay out of the guides', () => {
+    const nm = topics('new-mexico').map(text).join(' ');
+    expect(nm).toContain('Starting January 1, 2027');
+    expect(nm).not.toMatch(/motorcycle/i);
+    expect(nm).not.toMatch(/\$76|\$62\.25|\$23\.50/);
+    for (const t of topics('nebraska').map(text)) expect(t).not.toMatch(/trade-in|traded/i);
+    for (const t of topics('mississippi').map(text)) expect(t).not.toMatch(/ten \(10\)|10 or more years|ten years/i);
+  });
+
+  it('batch 13 guides are dated November 2026; no em dashes', () => {
+    for (const state of ['mississippi', 'new-mexico', 'nebraska']) {
+      for (const guide of getGuidesForState(state)) expect(guide.lastVerified).toBe('November 2026');
+      for (const t of topics(state).map(text)) expect(t).not.toContain('—');
+    }
+  });
+});
+
 describe('Guide links and discovery', () => {
   // Renders every guide state's calculator page; slow under load, so it gets a longer timeout
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', { timeout: 60000 }, async () => {
@@ -438,7 +477,7 @@ describe('Guide links and discovery', () => {
       cleanup();
     }
 
-    const mi = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'nebraska-private-sale-tax-calculator' }) }));
+    const mi = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'wyoming-private-sale-tax-calculator' }) }));
     expect(mi.container.querySelector('#state-guides')).toBeNull();
   });
 
@@ -469,6 +508,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('Alabama, Kentucky, Oregon, Nevada, Iowa, and Kansas.');
+    expect(String(metadata.description)).toContain('Nevada, Iowa, Kansas, Mississippi, New Mexico, and Nebraska.');
   });
 });
