@@ -11,16 +11,6 @@
       "state": "district-of-columbia",
       "url": "https://dmv.dc.gov/service/vehicle-registration-fees",
       "finding": "Page not found"
-    },
-    {
-      "state": "nebraska",
-      "url": "https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling",
-      "finding": "404 Not Found"
-    },
-    {
-      "state": "new-mexico",
-      "url": "https://www.mvd.newmexico.gov/vehicles/taxes-fees/",
-      "finding": "404 Not Found"
     }
   ],
   "homepageOnly": [
@@ -42,11 +32,6 @@
     {
       "state": "maine",
       "url": "https://www.maine.gov/revenue",
-      "finding": "Agency homepage"
-    },
-    {
-      "state": "mississippi",
-      "url": "https://www.dor.ms.gov",
       "finding": "Agency homepage"
     },
     {
@@ -265,6 +250,21 @@
       "state": "kansas",
       "on": "2026-11-13",
       "note": "Dead KDOR rate link and homepage replaced with the DOV used-vehicle and title FAQ pages, Pub. KS-1526, the KS-1700 rate list page, and K.S.A. 8-135 and 8-143; local range 1% to 4% -> 0% to 4.25% (October 2026 rate list), EV and plug-in hybrid fees now replace the $30 fee (+$135 and +$70), 60-day deadline, gift and family exemptions, and out-of-state credit stated. Ruling applied 2026-11-14: $12.25 in registration fees and surcharges added (car $42.25, motorcycle $28.25); verified date moved to November 2026."
+    },
+    {
+      "state": "mississippi",
+      "on": "2026-11-15",
+      "note": "DOR homepage replaced with the DOR titles, registration, and motor vehicle FAQ pages, the business tax FAQ, and the Part IV sales tax regulation; title $9 and car registration $29 confirmed, motorcycle $15 -> $22 ($8 privilege tax), 30-business-day deadline, family exemptions, and no credit for tax paid to another state stated; EV and hybrid fees unchanged. The ten-year casual sales tax exemption waits on a ruling, so the verified date stays September 2026."
+    },
+    {
+      "state": "new-mexico",
+      "on": "2026-11-15",
+      "note": "MVD homepage and the dead taxes-fees page replaced with the MVD buying, registration, and title pages, Vehicle Procedures Manual chapter 6, and the MVD Fee Manual (revised August 24, 2026); MVET, trade-in, 80% NADA rule, gift affidavit, 30-day and 90-day penalties, and the moving-in exemption stated. The $4.50 in registration fees and the $23.50 motorcycle total wait on a ruling, so the verified date stays September 2026."
+    },
+    {
+      "state": "nebraska",
+      "on": "2026-11-15",
+      "note": "Dead DMV titling link and the DOR homepage replaced with the DMV transfer, out-of-state title, and fee pages, the DOR county treasurer instructions, and the July 2026 rate table; local range 0.5% to 2.5% -> 0% to 2.0%, lien $0 -> $7, alternative fuel fees confirmed, gift, credit, and 30-day rules stated. The $5.50 in registration fees, the motorcycle total, and the private trade-in rule wait on a ruling, so the verified date stays September 2026."
     }
   ]
 }

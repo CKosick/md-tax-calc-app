@@ -6,11 +6,11 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 269 across 51 jurisdictions
-- Hidden on the site (dead or unreachable): 4
-- Working but only an agency homepage, not a specific page: 14
+- Source links configured now: 279 across 51 jurisdictions
+- Hidden on the site (dead or unreachable): 2
+- Working but only an agency homepage, not a specific page: 13
 - States showing no source link ("Official source links ... are being updated"): 0
-- States with some links hidden: 3
+- States with some links hidden: 1
 - States re-verified since the check: Alabama (November 2026), Arizona (October 2026), Arkansas (October 2026), California (October 2026), Colorado (November 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Indiana (October 2026), Iowa (November 2026), Kansas (November 2026), Kentucky (November 2026), Louisiana (October 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Missouri (October 2026), Nevada (November 2026), New Jersey (October 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Oregon (November 2026), Pennsylvania (October 2026), South Carolina (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026), Wisconsin (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
@@ -53,6 +53,9 @@ All other states keep their September 2026 verified date until their rates are r
 | Nevada | 2026-11-13 | Dead DMV fees link replaced with the DMV register, title, new resident, and emissions pages, NAC 482, and NRS 482; title $28.25 confirmed from NAC 482.907 ($20 plus $8.25), motorcycle $33 -> $39 with the $6 safety fee (NRS 482.480), GST and $33 registration confirmed, 3-day drive-away and $1 movement permit and the 30-day new resident rule stated; EV fees still unverified (open written inquiry), nothing added. |
 | Iowa | 2026-11-13 | Dead DOT registering link replaced with the DOT register and title pages, the treasurers’ fee table, and Iowa Code 321.105A and 321.46; title $35, lien $20, registration formula, EV $130 and PHEV $65 confirmed; 30-day deadline, gift and new resident exemptions, and out-of-state credit stated. Rulings applied 2026-11-14: fee for new registration $10 plus 5%, private trade-in deducted when the same person is on both titles, motorcycles $10 after five model years; verified date moved to November 2026. |
 | Kansas | 2026-11-13 | Dead KDOR rate link and homepage replaced with the DOV used-vehicle and title FAQ pages, Pub. KS-1526, the KS-1700 rate list page, and K.S.A. 8-135 and 8-143; local range 1% to 4% -> 0% to 4.25% (October 2026 rate list), EV and plug-in hybrid fees now replace the $30 fee (+$135 and +$70), 60-day deadline, gift and family exemptions, and out-of-state credit stated. Ruling applied 2026-11-14: $12.25 in registration fees and surcharges added (car $42.25, motorcycle $28.25); verified date moved to November 2026. |
+| Mississippi | 2026-11-15 | DOR homepage replaced with the DOR titles, registration, and motor vehicle FAQ pages, the business tax FAQ, and the Part IV sales tax regulation; title $9 and car registration $29 confirmed, motorcycle $15 -> $22 ($8 privilege tax), 30-business-day deadline, family exemptions, and no credit for tax paid to another state stated; EV and hybrid fees unchanged. The ten-year casual sales tax exemption waits on a ruling, so the verified date stays September 2026. |
+| New Mexico | 2026-11-15 | MVD homepage and the dead taxes-fees page replaced with the MVD buying, registration, and title pages, Vehicle Procedures Manual chapter 6, and the MVD Fee Manual (revised August 24, 2026); MVET, trade-in, 80% NADA rule, gift affidavit, 30-day and 90-day penalties, and the moving-in exemption stated. The $4.50 in registration fees and the $23.50 motorcycle total wait on a ruling, so the verified date stays September 2026. |
+| Nebraska | 2026-11-15 | Dead DMV titling link and the DOR homepage replaced with the DMV transfer, out-of-state title, and fee pages, the DOR county treasurer instructions, and the July 2026 rate table; local range 0.5% to 2.5% -> 0% to 2.0%, lien $0 -> $7, alternative fuel fees confirmed, gift, credit, and 30-day rules stated. The $5.50 in registration fees, the motorcycle total, and the private trade-in rule wait on a ruling, so the verified date stays September 2026. |
 
 ## Priority: states with no working source link
 
@@ -64,8 +67,6 @@ All other states keep their September 2026 verified date until their rates are r
 |---|---|---|
 | District of Columbia | https://dmv.dc.gov/service/vehicle-excise-tax | Page not found |
 | District of Columbia | https://dmv.dc.gov/service/vehicle-registration-fees | Page not found |
-| Nebraska | https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling | 404 Not Found |
-| New Mexico | https://www.mvd.newmexico.gov/vehicles/taxes-fees/ | 404 Not Found |
 
 ## Working, but homepage only (replace with a specific page when convenient)
 
@@ -75,7 +76,6 @@ All other states keep their September 2026 verified date until their rates are r
 | Hawaii | https://hidot.hawaii.gov | Agency homepage |
 | Hawaii | https://mvinquiry.hnl.info | Lookup tool homepage |
 | Maine | https://www.maine.gov/revenue | Agency homepage |
-| Mississippi | https://www.dor.ms.gov | Agency homepage |
 | Montana | https://mvdmt.gov | Agency homepage |
 | New Hampshire | https://www.nh.gov/safety/divisions/dmv | Redirects to the DMV homepage |
 | North Dakota | https://www.dot.nd.gov | Agency homepage |

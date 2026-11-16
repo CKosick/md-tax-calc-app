@@ -138,5 +138,12 @@
     "staleOn": "2027-04-01",
     "contains": "0% to 4.25%",
     "alsoCheck": "localTaxMaxRate and the Kansas private-sale guide"
+  },
+  {
+    "state": "nebraska",
+    "figure": "Local sales tax range 0% to 2.0% (DOR rate tables effective July 1, 2026 and January 1, 2027; updated quarterly)",
+    "staleOn": "2027-04-01",
+    "contains": "5.5% to 7.5%",
+    "alsoCheck": "localTaxMaxRate and the Nebraska private-sale guide"
   }
 ]

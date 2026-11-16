@@ -4148,7 +4148,7 @@
         }
       },
       "motorcycle": {
-        "1": 15
+        "1": 22
       },
       "evSurchargeAnnual": 150,
       "phevSurchargeAnnual": 75,
@@ -4166,7 +4166,7 @@
       "Mississippi imposes a 5% Casual Sales Tax on private party motor vehicle purchases under Miss. Code Ann. § 27-65-201.",
       "Tax is assessed on the vehicle's true fair market value using Mississippi Department of Revenue assessment schedules.",
       "Trade-in deductions are not permitted on private-party casual sales in Mississippi.",
-      "Certificate of title fee is $9.00; base registration is $14.00 tag fee plus $15.00 road and bridge privilege tax = $29.00."
+      "Certificate of title fee is $9.00. Registration is $14.00 for the tag and decals (Miss. Code 27-19-43) plus the highway privilege tax: $15.00 for a car ($29.00) and $8.00 for a motorcycle ($22.00) (Miss. Code 27-19-5)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Mississippi Department of Revenue and county tax collector.",
@@ -4190,25 +4190,29 @@
       },
       {
         "question": "How much does it cost to title and tag a car in Mississippi?",
-        "answer": "The certificate of title fee is $9.00 and basic registration is $29.00 ($14.00 registration fee plus $15.00 road and bridge privilege tax), plus county ad valorem property taxes."
+        "answer": "The certificate of title fee is $9.00 and basic registration is $29.00 for a car ($14.00 for the tag and decals plus the $15.00 highway privilege tax) or $22.00 for a motorcycle (the privilege tax is $8.00), plus county ad valorem taxes."
       },
       {
         "question": "Do I pay Mississippi vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Mississippi, the state generally assesses its applicable vehicle sales or use tax (5.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Mississippi motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. Mississippi tax is due when you register the vehicle, and the Department of Revenue says sales tax you paid to another state is not credited toward it. Bring the title from the other state and an odometer disclosure statement to your county tax collector."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Mississippi?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Mississippi DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "Not between a husband and wife, a parent and child, a grandparent and grandchild, or siblings (35 Miss. Admin. Code Part IV, 3.02.104). A vehicle inherited under a will or by law is also exempt. A gift or sale between other relatives, such as cousins, aunts, uncles, or in-laws, owes the casual sales tax."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Mississippi?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Mississippi's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Mississippi motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Register within 30 business days of the purchase date at your county tax collector. If you bought the vehicle outside your home county, you have 48 hours to bring it home and then the 30 business days. Registering late brings the standard penalties plus an additional $250 penalty. New residents have 30 days."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://www.dor.ms.gov",
       "https://www.dor.ms.gov/motor-vehicle",
+      "https://www.dor.ms.gov/motor-vehicle-titles",
+      "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-registration-and-renewal",
+      "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-frequently-asked-questions",
+      "https://www.dor.ms.gov/business/business-tax-frequently-asked-questions",
+      "https://www.sos.ms.gov/adminsearch/ACCode/00000851c.pdf",
       "https://billstatus.ls.state.ms.us/documents/20181E/html/HB/0001-0099/HB0001SG.htm"
     ]
   },
@@ -4354,7 +4358,7 @@
     "localTaxNote": "New Mexico's 4.0% Motor Vehicle Excise Tax applies statewide in lieu of the state and local Gross Receipts Tax (GRT); no county or municipal sales taxes apply to titled vehicles.",
     "notes": [
       "New Mexico levies a 4.0% Motor Vehicle Excise Tax (MVET) on vehicle purchase price under NMSA 1978 § 66-6-20.",
-      "If purchase price is less than 80% of NADA trade-in value, NADA value is assessed.",
+      "For a used vehicle the tax base is the higher of the declared price or 80% of the NADA average trade-in value (3.11.4.14 NMAC).",
       "Trade-in allowance directly reduces the taxable base for MVET.",
       "Certificate of title fee is $5.00; lien filing fee is $5.00.",
       "Passenger registration under NMSA 66-6-2 as amended by Laws 2026, chapter 4 (SB 2), from July 1, 2026, depends on factory shipping weight and years registered. The MVD fee page still showed $27 to $62 on November 7, 2026."
@@ -4362,7 +4366,7 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with New Mexico MVD.",
       "New Mexico charges a 4% Motor Vehicle Excise Tax statewide; local Gross Receipts Taxes do not apply.",
-      "If your purchase price is less than 80% of NADA book value, tax may be assessed on the NADA value.",
+      "For a used vehicle, MVD taxes the higher of your price or 80% of the NADA average trade-in value (3.11.4.14 NMAC). You can ask for a refund later with evidence of a lower value.",
       "Trade-in value reduces your taxable base.",
       "Registration shown assumes a shipping weight over 3,000 lbs: $70 for the first five years of registration and $56.25 after that, plus a $1.50 tire recycling fee. From 2,001 to 3,000 lbs it is $48.75, then $38.75, and at 2,000 lbs or less it is $33.75, then $26.25 (NMSA 66-6-2, raised July 1, 2026). The estimate counts the years from the model year.",
       "From January 1, 2027, electric vehicles also pay $70 a year and plug-in hybrids pay $35 (Laws 2026, chapter 4). The estimate does not include this yet."
@@ -4374,7 +4378,7 @@
       },
       {
         "question": "What is the 80% NADA rule in New Mexico?",
-        "answer": "Under MVD regulations, if the stated purchase price on a private sale is less than 80% of the NADA clean trade-in book value, tax is computed on the 80% NADA value unless a notarized bill of sale or condition affidavit is accepted."
+        "answer": "For a used vehicle, MVD applies the 4% tax to the higher of the declared price or 80% of the NADA average trade-in value (3.11.4.14 NMAC). If the vehicle is worth less, you can file a Request for Refund (MVD-10208) with evidence such as a repair estimate or a dealer or appraiser’s statement of value."
       },
       {
         "question": "Does trade-in reduce tax in New Mexico private sales?",
@@ -4386,21 +4390,24 @@
       },
       {
         "question": "Do I pay New Mexico vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into New Mexico, the state generally assesses its applicable vehicle sales or use tax (4.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the New Mexico motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. The 4% Motor Vehicle Excise Tax is due when you apply for the New Mexico title, and a vehicle from another state needs a VIN inspection by MVD or a certified VIN inspector. A vehicle you bought out of state for personal use at least 30 days before moving to New Mexico is exempt (NMSA 7-14-6)."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in New Mexico?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the New Mexico DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A real gift is not a sale, so no excise tax is due, but MVD requires an Affidavit of Gift of Motor Vehicle or Boat (MVD-10018) signed by both people with the signatures notarized. Without it, MVD treats the transfer as a sale and taxes the higher of the price or the vehicle’s value. A family sale for a price is taxed like any other."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in New Mexico?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond New Mexico's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the New Mexico motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Apply for the title within 30 calendar days of the transfer, or MVD adds a $20 late transfer fee (NMSA 66-3-103). If you wait more than 90 days, a 50% penalty is added to the excise tax (NMSA 7-14-8)."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://www.mvd.newmexico.gov/",
-      "https://www.mvd.newmexico.gov/vehicles/taxes-fees/",
+      "https://www.mvd.newmexico.gov/vehicles/vehicle-registration/buying-a-vehicle/",
+      "https://www.mvd.newmexico.gov/vehicles/vehicle-registration/register-your-vehicle/",
+      "https://www.mvd.newmexico.gov/vehicles/vehicle-registration/vehicle-titles/",
+      "https://www.mvd.newmexico.gov/chapter-6-fees-penalties-and-excise-tax/",
+      "https://www.mvd.newmexico.gov/wp-content/uploads/2020/12/MVD-Fee-Manual-Revised-08_24_26Vehicles1.pdf",
       "https://www.mvd.newmexico.gov/what-is-the-fee-for-registering-my-vehicle/",
       "https://www.nmlegis.gov/Sessions/26%20Regular/final/SB0002.pdf",
       "https://biz.nm.gov/newsroom/press-release-vehicle-registration-fees-weight-distance-tax-to-increas-100004574"
@@ -4412,7 +4419,7 @@
     "exciseTaxRate": 0.055,
     "taxBase": "price",
     "titleFee": 10,
-    "lienFilingFee": 0,
+    "lienFilingFee": 7,
     "tradeInDeductible": false,
     "registration": {
       "terms": [
@@ -5397,17 +5404,17 @@
         }
       }
     },
-    "localTaxNote": "Nebraska cities and counties impose local sales taxes between 0.5% and 2.5% (total 6.0% to 8.0%). In addition, an annual Motor Vehicle Tax and Motor Vehicle Fee are assessed based on age and MSRP at registration. The estimate includes them.",
+    "localTaxNote": "Nebraska cities add 0.5% to 2.0% of local sales tax and Dakota County adds 0.5% outside cities with a local tax; elsewhere there is none, so the total is 5.5% to 7.5% (DOR rate table, July 1, 2026). In addition, an annual Motor Vehicle Tax and Motor Vehicle Fee are assessed based on age and MSRP at registration. The estimate includes them.",
     "notes": [
       "Nebraska charges 5.5% state sales tax on private party motor vehicle purchases under Neb. Rev. Stat. § 77-2703.",
-      "Certificate of title fee is $10.00; lien recordation is included directly on the title.",
+      "Certificate of title fee is $10.00; noting a lien on the title is $7.00 (DMV Title Manual).",
       "Registration includes a $15.00 base passenger fee plus $8.20 license plate fee = $23.20.",
       "Trade-in deductions are not allowed on private-party sales under Nebraska regulations; dealer sales only.",
       "County treasurers collect an annual Motor Vehicle Tax and Motor Vehicle Fee set by the value when new and the vehicle’s age (Neb. Rev. Stat. 60-3,187 and 60-3,190). The estimate includes both for passenger vehicles from the MSRP you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Nebraska Department of Revenue and county treasurer.",
-      "Nebraska charges 5.5% state sales tax; local city and county sales taxes can increase the total rate up to 8.0%.",
+      "Nebraska charges 5.5% state sales tax; local city and county sales taxes bring the total to between 5.5% and 7.5%, at the rate where you live. Some places also add a wheel tax or other local fees.",
       "Trade-in deductions are not permitted on private-party sales.",
       "The estimate includes a full year of the Motor Vehicle Tax and Fee for passenger vehicles. The tax starts at $25 to $1,900 and ends after the 13th year; the fee is $5, $20, or $30 before age reductions. Motorcycles are shown without them, and other local fees are not included. Your county treasurer gives the exact amount.",
       "Nebraska’s annual alternative fuel fee is $150 for an electric vehicle and $75 for a plug-in hybrid or a motorcycle (Neb. Rev. Stat. 60-3,191)."
@@ -5415,7 +5422,7 @@
     "faqs": [
       {
         "question": "What is the sales tax rate for cars in Nebraska?",
-        "answer": "Nebraska charges a 5.5% state sales tax on motor vehicles under Neb. Rev. Stat. § 77-2703, plus local city and county taxes that can bring the total rate up to 8.0%."
+        "answer": "Nebraska charges a 5.5% state sales tax on motor vehicles under Neb. Rev. Stat. § 77-2703, plus local city and county taxes of up to 2.0%, for a total of 5.5% to 7.5%."
       },
       {
         "question": "Can I deduct my trade-in on a private car purchase in Nebraska?",
@@ -5423,7 +5430,7 @@
       },
       {
         "question": "How much does a vehicle title and registration cost in Nebraska?",
-        "answer": "The certificate of title fee is $10.00. Standard passenger registration includes a $15.00 base fee plus $8.20 license plate fee ($23.20 total), plus the annual Motor Vehicle Tax and Fee, which the estimate includes."
+        "answer": "The certificate of title fee is $10.00, plus $7.00 to note a lien. Standard passenger registration includes a $15.00 base fee plus $8.20 for two license plates ($23.20 total), plus the annual Motor Vehicle Tax and Fee, which the estimate includes."
       },
       {
         "question": "What is the Nebraska Motor Vehicle Tax?",
@@ -5431,27 +5438,30 @@
       },
       {
         "question": "Do I pay Nebraska vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Nebraska, the state generally assesses its applicable vehicle sales or use tax (5.50%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Nebraska motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. Nebraska and local sales tax is due when you register, and sales tax you properly paid to the other state is credited, with no refund if it was more. A vehicle titled out of state also needs a sheriff’s inspection. A vehicle you already had licensed in another state before moving owes no Nebraska sales tax."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Nebraska?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Nebraska DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A real gift, with nothing given in return, is not taxed as long as the giver paid sales tax on the original purchase; otherwise tax is due on that original price. Paying off the giver’s debt in exchange for the title counts as a sale. A transfer into or out of a trust is treated as a gift. Nebraska has no separate exemption for family sales."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Nebraska?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Nebraska's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Nebraska motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Apply for the title within 30 days of the purchase at the county treasurer, with the $10 title fee. Sales tax paid within 30 days of the purchase owes no penalty or interest. The seller gives you a bill of sale or DOR Form 6, and every owner on the title must sign it over."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://dmv.nebraska.gov/dvr/title/motor-vehicle-titling",
-      "https://revenue.nebraska.gov/",
+      "https://dmv.nebraska.gov/dvr/title/transfer-ownership",
+      "https://dmv.nebraska.gov/dvr/title/out-state-titles",
+      "https://dmv.nebraska.gov/dvr/registration-fees-and-taxes",
+      "https://revenue.nebraska.gov/sites/revenue.nebraska.gov/files/doc/info/6-191.pdf",
+      "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2026/salestax/slstax_rates_07-01-2026.pdf",
       "https://nebraskalegislature.gov/laws/statutes.php?statute=60-3,187",
       "https://nebraskalegislature.gov/laws/statutes.php?statute=60-3,190",
       "https://nebraskalegislature.gov/laws/statutes.php?statute=60-3,191"
     ],
-    "localTaxMinRate": 0.005,
-    "localTaxMaxRate": 0.025
+    "localTaxMinRate": 0,
+    "localTaxMaxRate": 0.02
   },
   "idaho": {
     "label": "Idaho",

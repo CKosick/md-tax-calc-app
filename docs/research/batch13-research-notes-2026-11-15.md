@@ -1,0 +1,51 @@
+# Batch 13 research notes (MS, NM, NE), 2026-11-15
+
+Working notes from the official-source re-check for guide batch 13. Items marked **For ruling** were not changed. Items marked **not primary** rest on a secondary copy of an official text.
+
+## Mississippi (DOR, Mississippi Administrative Code, Miss. Code)
+
+- Casual sales tax: 5% on transfers by anyone who is not a licensed dealer, "based on the true value of the motor vehicle as calculated by the official motor vehicle assessment schedule" (35 Miss. Admin. Code Part IV, 3.02.103 and 11.02.1101, official PDF on sos.ms.gov). The DOR business FAQ says "The purchase price is not used to determine the value of the vehicle." Config `taxBase: fairMarketValue`; unchanged.
+- Exempt transfers (3.02.104): (1) between husband and wife, parent and child, grandparent and grandchildren, or siblings; (2) under a will or intestacy; (3) a motor vehicle ten (10) or more years old based on the date of manufacture; (4) trustee and beneficiary; (5) a section 351 corporation and shareholder; (6) a partnership or LLC and a partner or owner (4 to 6 need the Affidavit of Motor Vehicle Title Transfer). Using a licensed dealer voids these exemptions.
+  - The DOR business FAQ says casual sales tax applies even to a vehicle "given to you by a relative" outside those relationships, and applies only to vehicles "less than ten years old".
+  - The same FAQ answer still lists siblings as taxable in one line and exempt from July 1, 2019 in the next; the regulation lists siblings as exempt.
+  - **For ruling: the calculator charges 5% at every age.** A vehicle 10 or more years old owes no casual sales tax. The regulation counts age from the date of manufacture, which the form does not ask for; the model year is the nearest input. The existing `olderVehicleFlatTax` field (min age, max price, tax) could carry it with a $0 tax.
+- Out-of-state purchase (DOR motor vehicle FAQ): 5% on the net purchase price; "If you paid sales tax to another state, it will not be credited toward Mississippi tax." Title from the other state and an odometer statement.
+- Title $9 (DOR titles page). No separate lien fee found (electronic lien title $9). Fast Track title $39.
+- Registration: $14 for a tag and decals = $5 (27-19-43(3)(a)) + $4 trauma care fee (3)(c) + $5 additional fee; renewals $12.75 (Lamar County treasurer page, citing DOR). Privilege tax $15 for a private carrier of passengers, $8 for a motorcycle (Miss. Code 27-19-5, 2024 text). **Not primary:** 27-19-5 and 27-19-43 were read on Justia (2024 code); the official code is on Lexis. Car $29 confirmed. **Motorcycle $15 -> $22** ($14 + $8).
+- Deadline: register within 30 business days of the purchase; bought outside the home county, 48 hours to bring it home, then 30 business days. Failure to register within 30 days brings standard late penalties and an additional $250 penalty (DOR registration page). Dealer drive-out tags last 7 days. Tags stay with the owner and cannot be moved to another vehicle; unused registration can be credited.
+- New residents: 30 days with a current registration from the previous state (DOR). Military and full-time nonresident students claiming another home state need not register.
+- Insurance is required but not enforced at registration.
+- Ad valorem tax: 30% of MSRP depreciated over 10 years, $100 minimum assessed value, times county millage, less the 5% Legislative Tag Credit. Disclosed, not modeled, as before.
+- EV $150 and hybrid $75: the DOR FAQ says the fees are paid at initial registration and renewal and "change every year on July 1st", matching the existing disclosure. 27-19-21 (2024 text, **not primary**) still has the July 1 inflation clause. No current amount published. Nothing here changes the questions in the postal inquiry (current amounts; motorcycles). Unchanged.
+- Sources: homepage `www.dor.ms.gov` dropped; DOR titles, registration, and FAQ pages, the business FAQ, and the Part IV regulation PDF added.
+
+## New Mexico (MVD, Vehicle Procedures Manual, MVD Fee Manual)
+
+- MVET 4% of the price paid (7-14-4), paid when the title is applied for (7-14-5). A trade-in is deducted (3.11.4.13 NMAC). For a used vehicle the tax base is the higher of the declared price or 80% of the NADA average trade-in value (3.11.4.14 NMAC); motorcycles use 80% of rough trade-in. The buyer can rebut later with a Request for Refund (MVD-10208) and evidence such as a repair estimate or appraisal (Procedures Manual ch. 6 D). Copy said "unless a notarized bill of sale or condition affidavit is accepted"; corrected.
+- Gift: no sale, no MVET, with a notarized Affidavit of Gift of Motor Vehicle or Boat (MVD-10018) signed by both. Without it the transfer is taxed as a sale.
+- Exemptions (7-14-6): a vehicle acquired out of state for personal use at least 30 days before moving to New Mexico; a vehicle titled in New Mexico before and owned continuously; disability modifications; certain disabled veterans; leasing.
+- Deadlines: $20 late transfer fee if the title application comes more than 30 calendar days after the transfer (66-3-103); a 50% MVET penalty after 90 days (7-14-8).
+- Title: the Fee Manual (revised 8/24/26) lists a $2 administrative fee (66-2-16) and a $3 transaction fee (66-6-19) for a vehicle title, the $5 in config. **Lien $5: not found** in the Fee Manual or the manual pages read; unchanged.
+- Registration (MVD Fee Manual, revised 8/24/26), passenger, first five years / 6th year on: 3,001 lbs and over $70 / $56.25; 2,001 to 3,000 lbs $48.75 / $38.75; 2,000 lbs or under $33.75 / $26.25. Every registration also pays a $2 administrative fee (66-2-16), $2 additional registration fee (66-6-6.1, Mandatory Financial Responsibility Act), $0.50 beautification fee (66-6-6.2), and $1.50 tire recycling fee (66-6-2(D)). Totals for the modeled 3,001 lbs and over class: $76 / $62.25. **For ruling: config has $71.50 / $57.75 (registration plus tire fee only), $4.50 low every year.** The MVD's own web fee page still shows $27 to $62.
+- Motorcycle (Fee Manual): $20 registration (66-6-1), $2 administrative, $0.50 beautification, $1 tire recycling = $23.50. **For ruling: config $15.** The January wave-2 ruling said to leave the $15 motorcycle registration unchanged in the New Mexico EV commit; this finding is about the base amount, so it comes back for a ruling rather than folding in.
+- Electric vehicle $70 and plug-in hybrid $35 from January 1, 2027 (Laws 2026, ch. 4), motorcycles excluded: unchanged, on the retained December branch. The guides mention only the existing "from January 1, 2027" disclosure.
+- Out-of-state vehicles need a VIN inspection by MVD or a certified VIN inspector. Emissions certificate only for Bernalillo County. Minimum insurance 25/50/10. The seller removes the plate.
+- Sources: homepage and the dead taxes-fees page dropped; MVD buying, register, and titles pages, Procedures Manual chapter 6, and the Fee Manual added.
+
+## Nebraska (DMV, DOR, Neb. Rev. Stat.)
+
+- State rate 5.5%. Local rates (DOR tables effective July 1, 2026 and January 1, 2027): cities 0.5% to 2.0%, Dakota County 0.5% outside cities with a local tax, no local tax elsewhere. Highest combined 7.5%. Good Life District rates (2.75% state) apply to opted-in retailers only. **Config had 0.5% to 2.5% (6.0% to 8.0%); now 0% to 2.0% (5.5% to 7.5%).**
+- Trade-in: "When a motor vehicle is traded between individuals, the only valid trade-in allowance that may be used as a deduction when computing the tax base is that given for another motor vehicle, motorboat, or ATV/UTV", traded at the time of sale (DOR Instructions for County Treasurers 6-191, November 2021). **For ruling: config `tradeInDeductible: false` and copy says trade-ins are dealer-only.**
+- Gift or inheritance: not taxed, provided the donor paid tax on the original purchase; otherwise tax is due on the original purchase price. Transfers into or out of a trust are gifts. Consideration is not limited to money (paying off the donor's debt for the title is a sale at the payoff amount). No family-sale exemption beyond gifts was found.
+- Credit for sales tax properly paid to another state, up to the Nebraska and local tax; no refund of any excess. No sales tax on a vehicle brought in that was licensed for operation in another state (6-191). Nonresident military who registered in their home state owe no Nebraska tax.
+- Deadline: the buyer must obtain a title within 30 days of the purchase (DMV transfer page); tax is due within 30 days of purchase without penalty and interest (6-191). Seller gives a bill of sale or DOR Form 6; all titled owners sign; open titles are confiscated. Out-of-state vehicles need a sheriff's inspection.
+- Title $10. **Lien notation $7** (DMV Title Manual fee table; the manual pages carry revision dates of 2011 to 2014). **Config had $0 ("included on the title"); now $7.**
+- Registration (DMV fee page): $15 passenger (60-3,143), motorcycle $6 (60-3,153), plus on every registration $0.50, $2.00, and $1.50 (60-3,156) and $1.50 county (60-3,141), and $4.10 per new plate (60-3,102). **For ruling: config car $23.20 ($15 plus two plates) omits the $5.50; a car with new plates is $28.70. Config motorcycle $14.20; the statute gives $6 + $5.50 + one $4.10 plate = $15.60.**
+- Alternative fuel fee (60-3,191; DMV fee page): $150 electric or hydrogen passenger vehicles and trucks; $75 for electric, hydrogen, and plug-in motorcycles and plug-in passenger vehicles and trucks. Confirms the settled $75 plug-in hybrid and $75 motorcycle treatment.
+- Motor Vehicle Tax (60-3,186/187) and Fee (60-3,190) confirmed as described; some localities add wheel taxes and other local fees (DMV note).
+- New residents: a new resident's out-of-state license must be replaced within 30 days; a nonresident present 30 or more continuous days must register (DMV), with a reciprocity exception until the plates expire. No single DMV statement of a vehicle deadline for new residents was found.
+- Sources: dead DMV titling link and the DOR homepage replaced with the DMV transfer, out-of-state title, and fee pages, the DOR 6-191 instructions, and the July 2026 rate table.
+
+## `lastVerified`
+
+Unchanged (September 2026) for all three. Each state has a finding above that changes the estimate and waits on a ruling.
