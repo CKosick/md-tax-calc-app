@@ -29,16 +29,16 @@ const page = (key: string) => {
 afterEach(() => cleanup());
 
 describe('New Mexico registration (NMSA 66-6-2, Laws 2026, chapter 4)', () => {
-  it('uses the July 1, 2026 fee for a vehicle over 3,000 lbs, plus the $1.50 tire fee', () => {
-    expect(calc('new-mexico', { vehicleYear: 2026 }).registrationTotal).toBe(71.5);
-    expect(calc('new-mexico', { vehicleYear: 2022 }).registrationTotal).toBe(71.5);
-    expect(calc('new-mexico', { vehicleYear: 2021 }).registrationTotal).toBe(57.75);
-    expect(calc('new-mexico', { vehicleType: 'motorcycle' }).registrationTotal).toBe(15);
+  it('uses the July 1, 2026 fee for a vehicle over 3,000 lbs, plus the MVD Fee Manual fees ($6 in all)', () => {
+    expect(calc('new-mexico', { vehicleYear: 2026 }).registrationTotal).toBe(76);
+    expect(calc('new-mexico', { vehicleYear: 2022 }).registrationTotal).toBe(76);
+    expect(calc('new-mexico', { vehicleYear: 2021 }).registrationTotal).toBe(62.25);
+    expect(calc('new-mexico', { vehicleType: 'motorcycle' }).registrationTotal).toBe(23.5);
   });
 
   it('shows the lighter classes and no longer says $34', () => {
     const text = page('new-mexico');
-    for (const fact of ['$56.25', '$48.75', '$38.75', '$33.75', '$26.25', '$1.50 tire recycling fee']) expect(text).toContain(fact);
+    for (const fact of ['$70 or $56.25', '$76', '$62.25', '$54.75', '$44.75', '$39.75', '$32.25', '$1.50 tire recycling fee', '$23.50']) expect(text).toContain(fact);
     expect(text).not.toContain('$34');
   });
 

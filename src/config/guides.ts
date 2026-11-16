@@ -8109,7 +8109,7 @@ export const GUIDES: Guide[] = [
       'Step-by-step guide to titling a car bought from a private seller in Mississippi: 30 business days, the 5% casual sales tax on the state’s value, the $9 title, the tag, and ad valorem tax.',
     cardDescription: '30 business days, the 5% tax, the title, and the tag.',
     intro: [
-      'In Mississippi you title and register a car bought from a private seller at your county tax collector within 30 business days. You pay a 5% casual sales tax, figured on the Department of Revenue’s value for the vehicle rather than the price you paid.',
+      'In Mississippi you title and register a car bought from a private seller at your county tax collector within 30 business days. You pay a 5% casual sales tax, figured on the Department of Revenue’s value for the vehicle rather than the price you paid, unless the vehicle is 10 or more years old.',
       'Here is the order to do it in, what it costs, and what to bring.'
     ],
     lastVerified: 'November 2026',
@@ -8136,7 +8136,8 @@ export const GUIDES: Guide[] = [
       {
         title: 'Pay the casual sales tax',
         body: [
-          'A private sale owes the 5% casual sales tax on the vehicle’s value from the Department of Revenue’s assessment schedule, not on the price you paid. No trade-in credit applies to a private sale.'
+          'A private sale owes the 5% casual sales tax on the vehicle’s value from the Department of Revenue’s assessment schedule, not on the price you paid. No trade-in credit applies to a private sale.',
+          'A vehicle 10 or more years old owes no casual sales tax (35 Miss. Admin. Code Part IV, 3.02.104). The regulation counts from the date of manufacture; this site figures the age from the model year, counting the current model year as year 1.'
         ]
       },
       {
@@ -8155,7 +8156,7 @@ export const GUIDES: Guide[] = [
       'Payment for the casual sales tax, title, tag, privilege tax, and ad valorem tax'
     ],
     calculatorNote:
-      'The calculator applies 5% to the price you enter; use the state’s value for your vehicle if you know it. It adds the $9 title and the $29 car registration. Ad valorem tax is extra.',
+      'The calculator applies 5% to the price you enter, or no tax for a vehicle 10 or more model years old; use the state’s value for your vehicle if you know it. It adds the $9 title and the $29 car registration. Ad valorem tax is extra.',
     faqs: [
       {
         question: 'Is the tax figured on what I paid?',
@@ -8203,7 +8204,7 @@ export const GUIDES: Guide[] = [
       {
         title: 'Know when the tax still applies',
         body: [
-          'The Department of Revenue says casual sales tax is due even when a vehicle is given to you by a relative outside those relationships. It is figured on the state’s value for the vehicle.'
+          'The Department of Revenue says casual sales tax is due even when a vehicle is given to you by a relative outside those relationships. It is figured on the state’s value for the vehicle. A vehicle 10 or more years old owes none, whoever gives it to you.'
         ]
       },
       {
@@ -8359,7 +8360,7 @@ export const GUIDES: Guide[] = [
       {
         title: 'Pay the title and registration',
         body: [
-          'The title is $5. Registration depends on the vehicle’s weight and how many years it has been registered, plus a few small fees. In Bernalillo County you also need an emissions certificate. The seller keeps the plate.'
+          'The title is $5. Registration depends on the vehicle’s weight and how many years it has been registered. For a vehicle over 3,000 lbs it is $76 a year for the first five years and $62.25 after, including the $2 administrative, $2 insurance enforcement, $0.50 beautification, and $1.50 tire recycling fees. A motorcycle is $23.50. In Bernalillo County you also need an emissions certificate. The seller keeps the plate.'
         ]
       }
     ],
@@ -8573,13 +8574,13 @@ export const GUIDES: Guide[] = [
       {
         title: 'Pay the sales tax and title fee',
         body: [
-          'Sales tax is 5.5% plus your local rate of up to 2.0%. The title is $10, plus $7 to note a lien.'
+          'Sales tax is 5.5% plus your local rate of up to 2.0%. If you trade a motor vehicle, motorboat, or ATV/UTV to the seller at the time of the sale, its trade-in allowance comes off the taxable price. The title is $10, plus $7 to note a lien.'
         ]
       },
       {
         title: 'Register the vehicle',
         body: [
-          'Registration is $15 for a passenger vehicle, plus small fees and the plate fee. The county also collects the yearly Motor Vehicle Tax and Motor Vehicle Fee, based on the MSRP and the vehicle’s age. An electric vehicle adds a $150 alternative fuel fee and a plug-in hybrid $75.'
+          'Registration is $28.70 for a car with new plates: the $15 fee, $5.50 in fees on every registration, and $8.20 for two plates. The county also collects the yearly Motor Vehicle Tax and Motor Vehicle Fee, based on the MSRP and the vehicle’s age. An electric vehicle adds a $150 alternative fuel fee and a plug-in hybrid $75.'
         ]
       }
     ],

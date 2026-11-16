@@ -433,28 +433,25 @@ describe('Batch 13 guides (Mississippi, New Mexico, Nebraska)', () => {
   const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
   it('keeps the verified Mississippi, New Mexico, and Nebraska key facts', () => {
     const [msSale, msGift, msMove] = topics('mississippi').map(text);
-    for (const fact of ['30 business days', '48 hours', '$250 penalty', '5% casual sales tax', 'assessment schedule', '$9', '$29', '$22', '30% of the vehicle’s original MSRP', 'base of $150', 'hybrid $75', 'each July for inflation', 'may be higher']) expect(msSale).toContain(fact);
+    for (const fact of ['30 business days', '48 hours', '$250 penalty', '5% casual sales tax', 'assessment schedule', '$9', '$29', '$22', '30% of the vehicle’s original MSRP', 'base of $150', 'hybrid $75', 'each July for inflation', 'may be higher', '10 or more years old', 'from the model year']) expect(msSale).toContain(fact);
     for (const fact of ['husband and wife', 'grandparent and grandchild', 'siblings', '3.02.104', 'licensed dealer', 'cousins, aunts, uncles, and in-laws', 'Affidavit of Motor Vehicle Title Transfer']) expect(msGift).toContain(fact);
     for (const fact of ['30 days', 'odometer disclosure statement', 'Legislative Tag Credit', 'not credited']) expect(msMove).toContain(fact);
 
     const [nmSale, nmGift, nmMove] = topics('new-mexico').map(text);
-    for (const fact of ['30 calendar days', '4% Motor Vehicle Excise Tax', '80% of the NADA average trade-in value', 'MVD-10208', '$20 late transfer fee', '50% penalty', 'MVD Form 10002', 'MVD Form 10009', '$5', 'Bernalillo County', 'two proofs of New Mexico residency']) expect(nmSale).toContain(fact);
+    for (const fact of ['30 calendar days', '4% Motor Vehicle Excise Tax', '80% of the NADA average trade-in value', 'MVD-10208', '$20 late transfer fee', '50% penalty', 'MVD Form 10002', 'MVD Form 10009', '$5', 'Bernalillo County', 'two proofs of New Mexico residency', '$76', '$62.25', '$23.50']) expect(nmSale).toContain(fact);
     for (const fact of ['MVD Form 10018', 'notary', 'reasonable value']) expect(nmGift).toContain(fact);
     for (const fact of ['VIN inspection', 'at least 30 days before moving', 'NMSA 7-14-6', 'lender']) expect(nmMove).toContain(fact);
 
     const [neSale, neGift, neMove] = topics('nebraska').map(text);
-    for (const fact of ['30 days', '5.5%', '0% to 2.0%', 'Form 6', 'open title', '$10', '$7 to note a lien', 'Motor Vehicle Tax and Motor Vehicle Fee', '$150', 'plug-in hybrid $75', 'Dakota County']) expect(neSale).toContain(fact);
+    for (const fact of ['30 days', '5.5%', '0% to 2.0%', 'Form 6', 'open title', '$10', '$7 to note a lien', 'Motor Vehicle Tax and Motor Vehicle Fee', '$150', 'plug-in hybrid $75', 'Dakota County', 'motor vehicle, motorboat, or ATV/UTV', 'at the time of the sale', '$28.70']) expect(neSale).toContain(fact);
     for (const fact of ['paid sales tax on the original purchase', 'payoff amount', 'trust', 'no separate exemption for family sales']) expect(neGift).toContain(fact);
     for (const fact of ['sheriff’s inspection', 'licensed for the road in another state', 'credited', '30 or more continuous days', 'reciprocity']) expect(neMove).toContain(fact);
   });
 
-  it('New Mexico guides give the EV fees only as starting January 1, 2027, and say nothing of motorcycles; open findings stay out of the guides', () => {
+  it('New Mexico guides give the EV fees only as starting January 1, 2027, with no motorcycle EV exclusion yet', () => {
     const nm = topics('new-mexico').map(text).join(' ');
     expect(nm).toContain('Starting January 1, 2027');
-    expect(nm).not.toMatch(/motorcycle/i);
-    expect(nm).not.toMatch(/\$76|\$62\.25|\$23\.50/);
-    for (const t of topics('nebraska').map(text)) expect(t).not.toMatch(/trade-in|traded/i);
-    for (const t of topics('mississippi').map(text)) expect(t).not.toMatch(/ten \(10\)|10 or more years|ten years/i);
+    expect(nm).not.toMatch(/motorcycles? (are|is) excluded|excluded from both fees/i);
   });
 
   it('batch 13 guides are dated November 2026; no em dashes', () => {

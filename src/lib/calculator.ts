@@ -213,6 +213,14 @@ export function calculateVehicleCosts(
     exciseTax = Math.round((exciseTax + addOn.amount) * 100) / 100;
     extraTaxParts.push(`the $${addOn.amount} ${addOn.label}`);
   }
+  // No state tax once the vehicle reaches a given model year of age (Mississippi casual sales tax:
+  // 10 or more model years old). The model year counts as year 1, as in the registration rules.
+  const ageExempt = rule.taxExemptFromModelYear;
+  if (ageExempt && !rule.flatTaxTable && vehicleAge + 1 >= ageExempt.year) {
+    exciseTax = 0;
+    extraTaxParts.length = 0;
+    specialTaxDetail = ageExempt.label;
+  }
   const extraTaxDetail = extraTaxParts.length > 0 ? ` (includes ${extraTaxParts.join(' and ')})` : '';
 
   // 2. Title Certificate Fee

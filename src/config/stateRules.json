@@ -4164,13 +4164,13 @@
     "localTaxNote": "Mississippi levies a 5% casual sales tax statewide on private vehicle sales, but counties assess substantial annual ad valorem personal property taxes at registration based on local millage rates.",
     "notes": [
       "Mississippi imposes a 5% Casual Sales Tax on private party motor vehicle purchases under Miss. Code Ann. § 27-65-201.",
-      "Tax is assessed on the vehicle's true fair market value using Mississippi Department of Revenue assessment schedules.",
+      "Tax is assessed on the vehicle’s true value from the Mississippi Department of Revenue assessment schedule. A vehicle 10 or more model years old owes none; the estimate counts the age from the model year, with the current model year as year 1.",
       "Trade-in deductions are not permitted on private-party casual sales in Mississippi.",
       "Certificate of title fee is $9.00. Registration is $14.00 for the tag and decals (Miss. Code 27-19-43) plus the highway privilege tax: $15.00 for a car ($29.00) and $8.00 for a motorcycle ($22.00) (Miss. Code 27-19-5)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Mississippi Department of Revenue and county tax collector.",
-      "Mississippi taxes private sales at 5% based on DOR true value schedules.",
+      "Mississippi taxes private sales at 5% of the DOR true value, except a vehicle 10 or more years old, which owes no casual sales tax (35 Miss. Admin. Code Part IV, 3.02.104). The regulation counts from the date of manufacture; the estimate uses the model year, counting the current model year as year 1.",
       "Counties levy annual ad valorem property taxes at registration based on local county millage rates.",
       "The estimate uses Mississippi’s base amounts of $150 for an electric vehicle and $75 for a hybrid. The law raises them each July for inflation, and the county figure may be higher, so confirm with your county tax collector.",
       "Mississippi’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with your county tax collector."
@@ -4178,7 +4178,7 @@
     "faqs": [
       {
         "question": "What is the sales tax on a private car purchase in Mississippi?",
-        "answer": "Mississippi imposes a 5.0% Casual Sales Tax on private-party motor vehicle transfers under Miss. Code Ann. § 27-65-201, payable at the county tax collector's office upon registration."
+        "answer": "Mississippi imposes a 5.0% casual sales tax on private-party motor vehicle transfers under Miss. Code Ann. § 27-65-201, payable at the county tax collector’s office upon registration. A vehicle 10 or more years old owes none; the estimate figures the age from the model year."
       },
       {
         "question": "How is vehicle value determined for Mississippi sales tax?",
@@ -4205,7 +4205,7 @@
         "answer": "Register within 30 business days of the purchase date at your county tax collector. If you bought the vehicle outside your home county, you have 48 hours to bring it home and then the 30 business days. Registering late brings the standard penalties plus an additional $250 penalty. New residents have 30 days."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://www.dor.ms.gov/motor-vehicle",
       "https://www.dor.ms.gov/motor-vehicle-titles",
@@ -4214,7 +4214,11 @@
       "https://www.dor.ms.gov/business/business-tax-frequently-asked-questions",
       "https://www.sos.ms.gov/adminsearch/ACCode/00000851c.pdf",
       "https://billstatus.ls.state.ms.us/documents/20181E/html/HB/0001-0099/HB0001SG.htm"
-    ]
+    ],
+    "taxExemptFromModelYear": {
+      "year": 10,
+      "label": "No casual sales tax on a vehicle 10 or more model years old (35 Miss. Admin. Code Part IV, 3.02.104)"
+    }
   },
   "kansas": {
     "label": "Kansas",
@@ -4329,28 +4333,28 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 71.5
+          "1": 76
         },
         "over3700lbs": {
-          "1": 71.5
+          "1": 76
         }
       },
       "motorcycle": {
-        "1": 15
+        "1": 23.5
       },
       "feesByRegistrationYear": {
         "passenger": [
           {
             "maxYear": 5,
-            "fee": 71.5
+            "fee": 76
           },
           {
-            "fee": 57.75
+            "fee": 62.25
           }
         ],
         "motorcycle": [
           {
-            "fee": 15
+            "fee": 23.5
           }
         ]
       }
@@ -4361,14 +4365,14 @@
       "For a used vehicle the tax base is the higher of the declared price or 80% of the NADA average trade-in value (3.11.4.14 NMAC).",
       "Trade-in allowance directly reduces the taxable base for MVET.",
       "Certificate of title fee is $5.00; lien filing fee is $5.00.",
-      "Passenger registration under NMSA 66-6-2 as amended by Laws 2026, chapter 4 (SB 2), from July 1, 2026, depends on factory shipping weight and years registered. The MVD fee page still showed $27 to $62 on November 7, 2026."
+      "Passenger registration under NMSA 66-6-2 as amended by Laws 2026, chapter 4 (SB 2), from July 1, 2026, depends on factory shipping weight and years registered. Every registration also pays a $2 administrative fee (66-2-16), a $2 insurance enforcement fee (66-6-6.1), a $0.50 beautification fee (66-6-6.2), and the tire recycling fee (MVD Fee Manual, revised August 24, 2026). The MVD fee page still showed $27 to $62 on November 15, 2026."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with New Mexico MVD.",
       "New Mexico charges a 4% Motor Vehicle Excise Tax statewide; local Gross Receipts Taxes do not apply.",
       "For a used vehicle, MVD taxes the higher of your price or 80% of the NADA average trade-in value (3.11.4.14 NMAC). You can ask for a refund later with evidence of a lower value.",
       "Trade-in value reduces your taxable base.",
-      "Registration shown assumes a shipping weight over 3,000 lbs: $70 for the first five years of registration and $56.25 after that, plus a $1.50 tire recycling fee. From 2,001 to 3,000 lbs it is $48.75, then $38.75, and at 2,000 lbs or less it is $33.75, then $26.25 (NMSA 66-6-2, raised July 1, 2026). The estimate counts the years from the model year.",
+      "Registration shown assumes a shipping weight over 3,000 lbs: $76 for the first five years of registration and $62.25 after that. That is the $70 or $56.25 fee (NMSA 66-6-2, raised July 1, 2026) plus a $2 administrative fee, a $2 insurance enforcement fee, a $0.50 beautification fee, and a $1.50 tire recycling fee. From 2,001 to 3,000 lbs the total is $54.75, then $44.75, and at 2,000 lbs or less $39.75, then $32.25 (MVD Fee Manual). A motorcycle is $23.50. The estimate counts the years from the model year.",
       "From January 1, 2027, electric vehicles also pay $70 a year and plug-in hybrids pay $35 (Laws 2026, chapter 4). The estimate does not include this yet."
     ],
     "faqs": [
@@ -4386,7 +4390,7 @@
       },
       {
         "question": "How much is a title and registration in New Mexico?",
-        "answer": "The New Mexico title fee is $5.00 ($5.00 lien filing fee if financed). Passenger registration runs from $26.25 to $70 a year by weight and years registered, plus a $1.50 tire recycling fee."
+        "answer": "The New Mexico title fee is $5.00 ($5.00 lien filing fee if financed). Passenger registration runs from $32.25 to $76 a year by weight and years registered, including the administrative, insurance enforcement, beautification, and tire recycling fees. A motorcycle is $23.50."
       },
       {
         "question": "Do I pay New Mexico vehicle tax if I buy a car from an out-of-state private seller?",
@@ -4401,7 +4405,7 @@
         "answer": "Apply for the title within 30 calendar days of the transfer, or MVD adds a $20 late transfer fee (NMSA 66-3-103). If you wait more than 90 days, a 50% penalty is added to the excise tax (NMSA 7-14-8)."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://www.mvd.newmexico.gov/vehicles/vehicle-registration/buying-a-vehicle/",
       "https://www.mvd.newmexico.gov/vehicles/vehicle-registration/register-your-vehicle/",
@@ -4420,21 +4424,21 @@
     "taxBase": "price",
     "titleFee": 10,
     "lienFilingFee": 7,
-    "tradeInDeductible": false,
+    "tradeInDeductible": true,
     "registration": {
       "terms": [
         1
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 23.2
+          "1": 28.7
         },
         "over3700lbs": {
-          "1": 23.2
+          "1": 28.7
         }
       },
       "motorcycle": {
-        "1": 14.2
+        "1": 15.6
       },
       "evSurchargeAnnual": 150,
       "phevSurchargeAnnual": 75,
@@ -5408,16 +5412,17 @@
     "notes": [
       "Nebraska charges 5.5% state sales tax on private party motor vehicle purchases under Neb. Rev. Stat. § 77-2703.",
       "Certificate of title fee is $10.00; noting a lien on the title is $7.00 (DMV Title Manual).",
-      "Registration includes a $15.00 base passenger fee plus $8.20 license plate fee = $23.20.",
-      "Trade-in deductions are not allowed on private-party sales under Nebraska regulations; dealer sales only.",
+      "Registration is the $15.00 passenger fee (Neb. Rev. Stat. 60-3,143) plus $5.50 in fees on every registration (60-3,156 and 60-3,141) and $8.20 for two new plates (60-3,102): $28.70. A motorcycle is $6.00 (60-3,153) plus the same $5.50 and one $4.10 plate: $15.60.",
+      "In a private sale, a trade-in of a motor vehicle, motorboat, or ATV/UTV made at the time of the sale is deducted from the taxable price (DOR instructions for county treasurers).",
       "County treasurers collect an annual Motor Vehicle Tax and Motor Vehicle Fee set by the value when new and the vehicle’s age (Neb. Rev. Stat. 60-3,187 and 60-3,190). The estimate includes both for passenger vehicles from the MSRP you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Nebraska Department of Revenue and county treasurer.",
       "Nebraska charges 5.5% state sales tax; local city and county sales taxes bring the total to between 5.5% and 7.5%, at the rate where you live. Some places also add a wheel tax or other local fees.",
-      "Trade-in deductions are not permitted on private-party sales.",
+      "A trade-in is deducted in a private sale only when the traded vehicle is a motor vehicle, motorboat, or ATV/UTV, traded at the time of the sale.",
       "The estimate includes a full year of the Motor Vehicle Tax and Fee for passenger vehicles. The tax starts at $25 to $1,900 and ends after the 13th year; the fee is $5, $20, or $30 before age reductions. Motorcycles are shown without them, and other local fees are not included. Your county treasurer gives the exact amount.",
-      "Nebraska’s annual alternative fuel fee is $150 for an electric vehicle and $75 for a plug-in hybrid or a motorcycle (Neb. Rev. Stat. 60-3,191)."
+      "Nebraska’s annual alternative fuel fee is $150 for an electric vehicle and $75 for a plug-in hybrid or a motorcycle (Neb. Rev. Stat. 60-3,191).",
+      "Registration shown is $28.70 for a car with new plates ($15 plus $5.50 in fees and $8.20 for two plates) and $15.60 for a motorcycle ($6 plus $5.50 and one $4.10 plate). If you move plates from another vehicle, the plate fee is not charged."
     ],
     "faqs": [
       {
@@ -5426,11 +5431,11 @@
       },
       {
         "question": "Can I deduct my trade-in on a private car purchase in Nebraska?",
-        "answer": "No. Under Nebraska tax law, trade-in deductions are restricted to purchases from licensed motor vehicle dealers. Private party sales are taxed on the full purchase price."
+        "answer": "Yes, if the vehicle you trade is a motor vehicle, motorboat, or ATV/UTV and the trade happens at the time of the sale. The Department of Revenue’s instructions to county treasurers allow that trade-in allowance between individuals; the tax is figured on the price less the trade-in."
       },
       {
         "question": "How much does a vehicle title and registration cost in Nebraska?",
-        "answer": "The certificate of title fee is $10.00, plus $7.00 to note a lien. Standard passenger registration includes a $15.00 base fee plus $8.20 for two license plates ($23.20 total), plus the annual Motor Vehicle Tax and Fee, which the estimate includes."
+        "answer": "The certificate of title fee is $10.00, plus $7.00 to note a lien. Standard passenger registration is $28.70 with new plates: the $15.00 base fee, $5.50 in fees on every registration, and $8.20 for two plates. A motorcycle is $15.60. The annual Motor Vehicle Tax and Fee is added, and the estimate includes it."
       },
       {
         "question": "What is the Nebraska Motor Vehicle Tax?",
@@ -5449,7 +5454,7 @@
         "answer": "Apply for the title within 30 days of the purchase at the county treasurer, with the $10 title fee. Sales tax paid within 30 days of the purchase owes no penalty or interest. The seller gives you a bill of sale or DOR Form 6, and every owner on the title must sign it over."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://dmv.nebraska.gov/dvr/title/transfer-ownership",
       "https://dmv.nebraska.gov/dvr/title/out-state-titles",
@@ -5461,7 +5466,8 @@
       "https://nebraskalegislature.gov/laws/statutes.php?statute=60-3,191"
     ],
     "localTaxMinRate": 0,
-    "localTaxMaxRate": 0.02
+    "localTaxMaxRate": 0.02,
+    "tradeInNote": "In a sale between individuals, Nebraska deducts a trade-in only when the vehicle traded is a motor vehicle, motorboat, or ATV/UTV, traded at the time of the sale (Department of Revenue instructions for county treasurers)."
   },
   "idaho": {
     "label": "Idaho",

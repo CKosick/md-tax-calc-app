@@ -174,9 +174,9 @@ describe('Vehicle Tax by State Comparison Engine & Verification', () => {
     expect(dataset.stats.highestTitleFeeState.label).toBe('Wisconsin');
     expect(dataset.stats.highestTitleFeeState.feeDisplay).toBe('$214.50');
 
-    // Cheapest state
-    expect(dataset.stats.cheapestState.label).toBe('Hawaii');
-    expect(dataset.stats.cheapestState.totalDisplay).toBe('$56.00');
+    // Cheapest state: the standard 2015 vehicle is 12 model years old, so Mississippi charges no casual sales tax
+    expect(dataset.stats.cheapestState.label).toBe('Mississippi');
+    expect(dataset.stats.cheapestState.totalDisplay).toBe('$38.00');
   });
 
   it('CSV generator outputs correct headers and all 51 state rows', () => {

@@ -48,4 +48,12 @@ Working notes from the official-source re-check for guide batch 13. Items marked
 
 ## `lastVerified`
 
-Unchanged (September 2026) for all three. Each state has a finding above that changes the estimate and waits on a ruling.
+Held at September 2026 in fdeca1a while the findings above waited on a ruling; moved to November 2026 for all three once the rulings were applied (2026-11-15).
+
+## Rulings applied (Cliff, 2026-11-15)
+
+1. **Mississippi, older vehicles:** no casual sales tax on a vehicle 10 or more model years old, counted from the model year with the current model year as year 1 (new `taxExemptFromModelYear` field, year 10). The copy says the age is figured from the model year while the regulation uses the date of manufacture. Guide and calculator notes updated. Side effect: the comparison page's standard vehicle (2015, $25,000) is 12 model years old, so Mississippi becomes the cheapest state there ($38: $9 title plus $29 registration), ahead of Hawaii ($56).
+2. **New Mexico, passenger registration:** the $4.50 from the MVD Fee Manual added: $76 for the first five years and $62.25 after, for the modeled class over 3,000 lbs. Lighter classes stated as totals ($54.75 / $44.75 and $39.75 / $32.25).
+3. **New Mexico, motorcycles:** $15 -> $23.50. **January note:** this supersedes the $15 in the January wave-2 instruction. The January New Mexico commit leaves $23.50 alone and only sets the EV and plug-in hybrid motorcycle outcomes to excluded, with the approved clarification line unchanged.
+4. **Nebraska, registration:** car $28.70 with new plates ($15 + $5.50 + two $4.10 plates); motorcycle $15.60 ($6 under 60-3,153 + $5.50 + one plate).
+5. **Nebraska, private trade-ins:** deductible, with the DOR conditions in the form notice, FAQ, disclaimer, and private-sale guide: the traded vehicle is a motor vehicle, motorboat, or ATV/UTV, traded at the time of the sale.

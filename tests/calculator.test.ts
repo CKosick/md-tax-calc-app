@@ -766,20 +766,20 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     expect(res.totalFirstYearCost).toBe(1027.25);
   });
 
-  it('6. New Mexico (NM) worked invariant: $15,000 purchase price yields $600.00 tax (4% MVET) and $662.75 total', () => {
+  it('6. New Mexico (NM) worked invariant: $15,000 purchase price yields $600.00 tax (4% MVET) and $667.25 total', () => {
     const res = calculateVehicleCosts(allRules['new-mexico'], { ...std1Yr, state: 'new-mexico' }, 2026);
     expect(res.exciseTax).toBe(600.00);
     expect(res.titleFee).toBe(5.00);
-    expect(res.registrationTotal).toBe(57.75);
-    expect(res.totalFirstYearCost).toBe(662.75);
+    expect(res.registrationTotal).toBe(62.25); // $56.25 + $2 admin + $2 insurance enforcement + $0.50 beautification + $1.50 tire
+    expect(res.totalFirstYearCost).toBe(667.25);
   });
 
-  it('7. Nebraska (NE) worked invariant: $15,000 purchase price yields $825.00 tax (5.5%) and $1,037.20 total', () => {
+  it('7. Nebraska (NE) worked invariant: $15,000 purchase price yields $825.00 tax (5.5%) and $1,042.70 total', () => {
     const res = calculateVehicleCosts(allRules.nebraska, { ...std1Yr, state: 'nebraska' }, 2026);
     expect(res.exciseTax).toBe(825.00);
     expect(res.titleFee).toBe(10.00);
-    expect(res.registrationTotal).toBe(202.20); // $23.20 + $165 tax + $14 fee on the $30,000 default, 8th year
-    expect(res.totalFirstYearCost).toBe(1037.20);
+    expect(res.registrationTotal).toBe(207.70); // $28.70 + $165 tax + $14 fee on the $30,000 default, 8th year
+    expect(res.totalFirstYearCost).toBe(1042.70);
   });
 
   it('8. Idaho (ID) worked invariant: $15,000 purchase price yields $900.00 tax and $959.00 total', () => {

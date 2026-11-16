@@ -15,7 +15,7 @@ const calc = (rule: StateRule, extra: Partial<CalculatorInputs> = {}) =>
 const copy = (rule: StateRule) =>
   [rule.localTaxNote ?? '', rule.tradeInNote ?? '', ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
 
-describe('Mississippi re-check (November 2026, ten-year exemption for ruling)', () => {
+describe('Mississippi re-check and ruling (November 2026)', () => {
   it('5% casual sales tax, $9 title, $29 car and $22 motorcycle registration', () => {
     const b = calc(ms);
     expect(b.exciseTax).toBe(750);
@@ -31,9 +31,15 @@ describe('Mississippi re-check (November 2026, ten-year exemption for ruling)', 
     expect(copy(ms)).toContain('The law raises them each July for inflation, and the county figure may be higher');
   });
 
-  it('keeps the figures that wait on a ruling, and the verified date, as they were', () => {
-    expect(calc(ms, { vehicleYear: 2010 }).exciseTax).toBe(750);
-    expect(ms.lastVerified).toBe('September 2026');
+  it('no casual sales tax at 10 or more model years old, the current model year counting as year 1', () => {
+    expect(calc(ms, { vehicleYear: 2018 }).exciseTax).toBe(750); // year 9
+    const b = calc(ms, { vehicleYear: 2017 }); // year 10
+    expect(b.exciseTax).toBe(0);
+    expect(b.itemizedList[0].description).toContain('No casual sales tax on a vehicle 10 or more model years old');
+    expect(calc(ms, { vehicleYear: 2017, vehicleType: 'motorcycle' }).exciseTax).toBe(0);
+    expect(calc(ms, { vehicleYear: 2017 }).totalFirstYearCost).toBe(38);
+    expect(copy(ms)).toContain('the estimate uses the model year, counting the current model year as year 1');
+    expect(ms.lastVerified).toBe('November 2026');
   });
 
   it('deadline, family, and out-of-state answers are the verified ones', () => {
@@ -42,13 +48,15 @@ describe('Mississippi re-check (November 2026, ten-year exemption for ruling)', 
   });
 });
 
-describe('New Mexico re-check (November 2026, registration fees for ruling)', () => {
-  it('4% MVET with the trade-in deducted; the registration figures wait on a ruling', () => {
+describe('New Mexico re-check and rulings (November 2026)', () => {
+  it('4% MVET with the trade-in deducted; registration $76, then $62.25; motorcycle $23.50', () => {
     expect(calc(nm).exciseTax).toBe(600);
     expect(calc(nm, { tradeInValue: 5000 }).exciseTax).toBe(400);
-    expect(calc(nm, { vehicleYear: 2024 }).registrationTotal).toBe(71.5);
-    expect(calc(nm, { vehicleType: 'motorcycle' }).registrationTotal).toBe(15);
-    expect(nm.lastVerified).toBe('September 2026');
+    expect(calc(nm, { vehicleYear: 2024 }).registrationTotal).toBe(76);
+    expect(calc(nm, { vehicleYear: 2020 }).registrationTotal).toBe(62.25);
+    expect(calc(nm, { vehicleType: 'motorcycle' }).registrationTotal).toBe(23.5);
+    expect(copy(nm)).toContain('a $2 administrative fee, a $2 insurance enforcement fee, a $0.50 beautification fee, and a $1.50 tire recycling fee');
+    expect(nm.lastVerified).toBe('November 2026');
   });
 
   it('the January 2027 EV and plug-in hybrid fees stay out of the live estimate', () => {
@@ -64,7 +72,7 @@ describe('New Mexico re-check (November 2026, registration fees for ruling)', ()
   });
 });
 
-describe('Nebraska re-check (November 2026, registration fees and trade-ins for ruling)', () => {
+describe('Nebraska re-check and rulings (November 2026)', () => {
   it('5.5% state tax plus the 0% to 2.0% local range; $10 title and $7 lien', () => {
     const b = calc(ne);
     expect(b.exciseTax).toBe(825);
@@ -82,10 +90,19 @@ describe('Nebraska re-check (November 2026, registration fees and trade-ins for 
     expect(ne.registration.motorcycleFuelFees).toEqual({ ev: { outcome: 'charged', amount: 75 }, phev: { outcome: 'charged', amount: 75 } });
   });
 
-  it('keeps the figures that wait on a ruling, and the verified date, as they were', () => {
-    expect(ne.tradeInDeductible).toBe(false);
-    expect(ne.registration.motorcycle).toEqual({ 1: 14.2 });
-    expect(ne.lastVerified).toBe('September 2026');
+  it('registration: car $28.70 with new plates, motorcycle $15.60; verified November 2026', () => {
+    expect(calc(ne, { vehicleType: 'motorcycle' }).registrationTotal).toBe(15.6);
+    const car = calc(ne, { vehicleYear: 2010, listPrice: 30000 });
+    expect(car.registrationTotal).toBe(Math.round((28.7 + (car.annualValueTax ?? 0)) * 100) / 100);
+    expect(copy(ne)).toContain('$28.70 for a car with new plates');
+    expect(ne.lastVerified).toBe('November 2026');
+  });
+
+  it('private trade-ins of a motor vehicle, motorboat, or ATV/UTV at the time of sale are deducted', () => {
+    expect(ne.tradeInDeductible).toBe(true);
+    expect(calc(ne, { tradeInValue: 5000 }).exciseTax).toBe(550);
+    expect(ne.tradeInNote).toContain('motor vehicle, motorboat, or ATV/UTV, traded at the time of the sale');
+    expect(copy(ne)).not.toMatch(/dealers only|restricted to purchases from licensed motor vehicle dealers|not permitted on private-party/i);
   });
 
   it('gift, deadline, and out-of-state answers are the verified ones', () => {

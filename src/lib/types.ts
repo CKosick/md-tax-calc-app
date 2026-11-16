@@ -215,6 +215,11 @@ export interface StateRule {
    * registration: $10 plus 5%, Iowa Code 321.105A). Not added when the price is $0 (a gift).
    */
   flatTaxAddOn?: { amount: number; label: string };
+  /**
+   * No state tax from this model year of age on, counting the model year as year 1
+   * (Mississippi casual sales tax: none at 10 or more model years old). label explains the $0.
+   */
+  taxExemptFromModelYear?: { year: number; label: string };
   /** Flat tax in place of the rate for older, low-priced vehicles (Minnesota: $10). */
   olderVehicleFlatTax?: { minAge: number; maxPrice: number; tax: number };
   luxuryTaxThreshold?: number | null;
