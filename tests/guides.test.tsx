@@ -74,10 +74,13 @@ const GUIDE_STATES = {
   kansas: { label: 'Kansas', agency: 'Kansas Department of Revenue', hosts: ['www.ksrevenue.gov', 'ksrevisor.gov'] },
   mississippi: { label: 'Mississippi', agency: 'Mississippi Department of Revenue', hosts: ['www.dor.ms.gov', 'www.sos.ms.gov'] },
   'new-mexico': { label: 'New Mexico', agency: 'New Mexico MVD', hosts: ['www.mvd.newmexico.gov'] },
-  nebraska: { label: 'Nebraska', agency: 'Nebraska DMV and Department of Revenue', hosts: ['dmv.nebraska.gov', 'revenue.nebraska.gov', 'nebraskalegislature.gov'] }
+  nebraska: { label: 'Nebraska', agency: 'Nebraska DMV and Department of Revenue', hosts: ['dmv.nebraska.gov', 'revenue.nebraska.gov', 'nebraskalegislature.gov'] },
+  idaho: { label: 'Idaho', agency: 'Idaho Transportation Department and State Tax Commission', hosts: ['itd.idaho.gov', 'apps.itd.idaho.gov', 'tax.idaho.gov'] },
+  'west-virginia': { label: 'West Virginia', agency: 'West Virginia DMV', hosts: ['dmv.wv.gov', 'webapps.transportation.wv.gov', 'code.wvlegislature.gov'] },
+  hawaii: { label: 'Hawaii', agency: 'Hawaii counties and Department of Taxation', hosts: ['data.capitol.hawaii.gov', 'www.honolulu.gov', 'www.vrl.hawaiicounty.gov', 'files.hawaii.gov'] }
 } as const;
 // Guides re-checked in November 2026 carry that date; the rest October 2026
-const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska'].includes(stateKey) ? 'November 2026' : 'October 2026');
+const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska', 'idaho', 'west-virginia', 'hawaii'].includes(stateKey) ? 'November 2026' : 'October 2026');
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
   `how-to-gift-a-car-in-${state}`,
@@ -462,6 +465,38 @@ describe('Batch 13 guides (Mississippi, New Mexico, Nebraska)', () => {
   });
 });
 
+describe('Batch 14 guides (Idaho, West Virginia, Hawaii)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified Idaho, West Virginia, and Hawaii key facts', () => {
+    const [idSale, idGift, idMove] = topics('idaho').map(text);
+    for (const fact of ['30 days', '$20 late-filing penalty', '6% sales tax', 'no trade-in allowances', '$14', '$32.75', '$69', '$57', '$45', '$1.25 EMS', '$3 State Police', '$3.75', '$140', '$75', 'VIN inspection']) expect(idSale).toContain(fact);
+    for (const fact of ['ST-133GT', 'ST-133', 'siblings', 'Taking over payments', 'foster children']) expect(idGift).toContain(fact);
+    for (const fact of ['90 days', 'more than 90 days before moving', 'Use Tax Exemption Certificate', 'Ada County']) expect(idMove).toContain(fact);
+
+    const [wvSale, wvGift, wvMove] = topics('west-virginia').map(text);
+    for (const fact of ['6%', '$30', '11-15-3c', '50% of the NADA Clean Loan value', 'two years old or newer', 'DMV-1-TR', '$15', '$10', '$51.50', '$16', '$200', '$100', 'within 10 days', 'July 1, 2017']) expect(wvSale).toContain(fact);
+    for (const fact of ['DMV-5-TR', 'parent and child', 'spouses', '17A-3-4', '6% of the lien amount', 'DMV-185-TR']) expect(wvGift).toContain(fact);
+    for (const fact of ['30 days', 'titled in your name in another state', '10 days', 'does not give credit', 'Leased vehicles']) expect(wvMove).toContain(fact);
+
+    const [hiSale, hiGift, hiMove] = topics('hawaii').map(text);
+    for (const fact of ['no sales tax or General Excise Tax', '30 days', '$10', '$50 penalty', 'safety inspection', 'Notice of Transfer', '$46', '1.75¢ a pound', 'HRS 249-33', '$20', 'beautification fee $10']) expect(hiSale).toContain(fact);
+    for (const fact of ['no sales tax', '$50']) expect(hiGift).toContain(fact);
+    for (const fact of ['three months', '4.5% use tax', 'landed value', 'Form G-27', 'bill of lading']) expect(hiMove).toContain(fact);
+  });
+
+  it('West Virginia guides leave the private trade-in rule for the ruling; Hawaii guides give no county weight tax rate', () => {
+    for (const t of topics('west-virginia').map(text)) expect(t).not.toMatch(/trade-in|traded/i);
+    for (const t of topics('hawaii').map(text)) expect(t).not.toMatch(/7\.0¢|1\.25¢/);
+  });
+
+  it('batch 14 guides are dated November 2026; no em dashes', () => {
+    for (const state of ['idaho', 'west-virginia', 'hawaii']) {
+      for (const guide of getGuidesForState(state)) expect(guide.lastVerified).toBe('November 2026');
+      for (const t of topics(state).map(text)) expect(t).not.toContain('—');
+    }
+  });
+});
+
 describe('Guide links and discovery', () => {
   // Renders every guide state's calculator page; slow under load, so it gets a longer timeout
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', { timeout: 60000 }, async () => {
@@ -505,6 +540,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('Nevada, Iowa, Kansas, Mississippi, New Mexico, and Nebraska.');
+    expect(String(metadata.description)).toContain('Mississippi, New Mexico, Nebraska, Idaho, West Virginia, and Hawaii.');
   });
 });

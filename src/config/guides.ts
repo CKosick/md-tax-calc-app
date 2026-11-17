@@ -426,6 +426,34 @@ const NE_SOURCES = {
   fuelFee: { label: 'Neb. Rev. Stat. 60-3,191: Alternative fuel fee', url: 'https://nebraskalegislature.gov/laws/statutes.php?statute=60-3,191' }
 };
 
+const ID_ITD = 'https://itd.idaho.gov';
+const ID_SOURCES = {
+  titles: { label: 'Idaho Transportation Department: Vehicle Titles', url: `${ID_ITD}/dmv/registrations-plates-titles/vehicle-titles/` },
+  registrations: { label: 'Idaho Transportation Department: Vehicle Registrations', url: `${ID_ITD}/dmv/registrations-plates-titles/vehicle-registrations/` },
+  factSheet: { label: 'ITD Fact Sheet: Registering Vehicles in Idaho', url: `${ID_ITD}/wp-content/uploads/2025/07/Registration-Fact-Sheet_DMV.pdf` },
+  countyFees: { label: 'ITD: County Registration and Title Fees', url: 'https://apps.itd.idaho.gov/Apps/Fund/Title/CountyTitleAdminFee.pdf' },
+  privateSales: { label: 'Idaho State Tax Commission: Motor Vehicles, Private Parties and Nondealer Retailers', url: 'https://tax.idaho.gov/taxes/sales-use/transportation/motor-vehicles/nondealers/types-of-sales/' }
+};
+
+const WV_DMV = 'https://dmv.wv.gov';
+const WV_SOURCES = {
+  titles: { label: 'West Virginia DMV: Titles', url: `${WV_DMV}/titles` },
+  registrations: { label: 'West Virginia DMV: Registrations', url: `${WV_DMV}/vehicle-services/vehicles/registrations` },
+  feeBrochure: { label: 'West Virginia DMV: Motor Vehicle Registration Fees brochure', url: 'https://webapps.transportation.wv.gov/TWS/WVDOTDocumentStorageMigration/PDF/Webapps/DMV/DMVFormSearch/Registration-Fees-Brochure.pdf' },
+  newResidents: { label: 'West Virginia DMV: New Residents', url: `${WV_DMV}/new-residents` },
+  salesTax: { label: 'W. Va. Code 11-15-3c: Consumers sales tax on motor vehicle sales', url: 'https://code.wvlegislature.gov/11-15-3C/' },
+  titleTax: { label: 'W. Va. Code 17A-3-4: Certificate of title and gifts', url: 'https://code.wvlegislature.gov/17A-3-4/' }
+};
+
+const HI_SOURCES = {
+  stateFee: { label: 'HRS 249-31: State registration fee', url: 'https://data.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0249/HRS_0249-0031.htm' },
+  weightTax: { label: 'HRS 249-33: State vehicle weight tax', url: 'https://data.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0249/HRS_0249-0033.htm' },
+  honoluluDealer: { label: 'City and County of Honolulu, Customer Services: Dealer Resources (2026 fee notices)', url: 'https://www.honolulu.gov/csd/dealer-resources/' },
+  honoluluFees: { label: 'City and County of Honolulu: Vehicle Weight-Tax Waiver guidance (lists the registration fees)', url: 'https://www.honolulu.gov/csd/wp-content/uploads/sites/6/2023/07/Guidelines-for-Completing-CS-LMVR-50A-form-7.18.23.pdf' },
+  hawaiiCounty: { label: 'County of Hawaii: New Vehicle Registration', url: 'https://www.vrl.hawaiicounty.gov/motor-vehicle-registration/new-vehicle-registration' },
+  useTax: { label: 'Hawaii Department of Taxation: An Introduction to the Use Tax (2025)', url: 'https://files.hawaii.gov/tax/legal/brochures/Use_brochure-25.pdf' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -8753,6 +8781,655 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [NE_SOURCES.outOfState, NE_SOURCES.nonResident, NE_SOURCES.treasurer, NE_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-idaho',
+    stateKey: 'idaho',
+    title: 'How to Title a Private Car Sale in Idaho',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Idaho',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Idaho: 30 days, the 6% sales tax on the full price, the $14 title plus county fees, and registration by age.',
+    cardDescription: '30 days, 6% on the full price, the title, and fees.',
+    intro: [
+      'In Idaho you title a car bought from a private seller at a county assessor’s motor vehicle office within 30 days. You pay 6% sales tax on the full price; private sales get no trade-in allowance.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Idaho Transportation Department and State Tax Commission',
+    steps: [
+      {
+        title: 'Get the signed title and a bill of sale',
+        body: [
+          'The seller signs the title over to you, releasing any lien. The seller writes the total price on a bill of sale, and both of you sign it; you need the original as proof of the price.'
+        ]
+      },
+      {
+        title: 'Complete the odometer disclosure',
+        body: [
+          'A vehicle newer than 2010 and under 16,000 lbs needs an odometer disclosure. A vehicle coming from another state, or never titled in Idaho, also needs a VIN inspection by an officer, a DMV employee, or a licensed Idaho dealer.'
+        ]
+      },
+      {
+        title: 'File within 30 days',
+        body: [
+          'Take the documents to a county assessor’s motor vehicle office within 30 days of the transfer. After that, ITD adds a $20 late-filing penalty.'
+        ]
+      },
+      {
+        title: 'Pay the sales tax and title fee',
+        body: [
+          'The county collects 6% sales tax on the total price when you apply for the title. The state title fee is $14, and most counties add a title administration fee, for totals from $14 to $32.75.'
+        ]
+      },
+      {
+        title: 'Register the vehicle',
+        body: [
+          'Passenger registration is $69 for a vehicle one or two years old, $57 for three to six years, and $45 for seven or more, plus a $1.25 EMS fee, a $3 State Police fee, $3.75 for each new plate, and your county’s administrative fee. An electric vehicle adds $140 a year and a plug-in hybrid $75.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you, with any lien released',
+      'The original bill of sale, signed by both of you, showing the price',
+      'An odometer disclosure, if required',
+      'A VIN inspection, for a vehicle from another state',
+      'Payment for the sales tax, title, and registration'
+    ],
+    calculatorNote:
+      'The calculator shows 6% of the price, the $14 state title fee, and the $45 registration for a vehicle seven or more years old. A newer vehicle pays $57 or $69, and the county and per-registration fees are extra.',
+    faqs: [
+      {
+        question: 'Can I deduct a trade-in on a private sale?',
+        answer: 'No. The Tax Commission says there are no trade-in allowances in private party sales; a trade-in only counts when a retailer or dealer takes it for resale.'
+      },
+      {
+        question: 'Why does my county’s title fee differ?',
+        answer: 'Counties add their own title administration fee to the $14 state fee, from nothing up to $18.75.'
+      },
+      {
+        question: 'What if the seller cannot give me a released title?',
+        answer: 'A bill of sale can be used, but it takes extra steps through the Conditional Title Statement of Facts process.'
+      }
+    ],
+    sources: [ID_SOURCES.titles, ID_SOURCES.privateSales, ID_SOURCES.factSheet, ID_SOURCES.countyFees, ID_SOURCES.registrations]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-idaho',
+    stateKey: 'idaho',
+    title: 'How to Gift a Car in Idaho',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Idaho',
+    metaDescription:
+      'How to gift a car in Idaho: a gift is tax-free with Form ST-133GT when nothing is given back and no loan is owed, and family sales between close relatives are exempt with Form ST-133.',
+    cardDescription: 'The gift and family exemptions, forms, and fees.',
+    intro: [
+      'A gift of a vehicle is exempt from Idaho sales and use tax when nothing is given in return and no debt or loan comes with it. A sale between close relatives can also be exempt.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Idaho Transportation Department and State Tax Commission',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs the title over to you. Any loan on the vehicle must be paid off; a gift does not qualify if either of you owes money on it.'
+        ]
+      },
+      {
+        title: 'Check that it is an exempt gift',
+        body: [
+          'The giver must receive nothing of value for it, your relationship must support a gift, and you must not take over any of the giver’s debts. Taking over payments makes it a sale.'
+        ]
+      },
+      {
+        title: 'Complete Form ST-133GT',
+        body: [
+          'Both of you sign the Use Tax Exemption Certificate, Gift Transfer Affidavit (Form ST-133GT). Bring it when you title the vehicle.'
+        ]
+      },
+      {
+        title: 'For a family sale, use Form ST-133',
+        body: [
+          'A sale is exempt only between a parent and child, a grandparent and grandchild, or siblings, and only if the family member paid sales or use tax when they bought the vehicle. Cousins, aunts, uncles, and foster children do not qualify.'
+        ]
+      },
+      {
+        title: 'Title within 30 days',
+        body: [
+          'At a county assessor’s motor vehicle office, pay the $14 title fee plus any county title fee, and the registration. A $20 penalty applies after 30 days.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'Form ST-133GT for a gift, or Form ST-133 for a family sale',
+      'An odometer disclosure, if required',
+      'Proof of insurance',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for an exempt gift or family sale. The calculator then shows no tax, the $14 state title fee, and the registration.',
+    faqs: [
+      {
+        question: 'Is a gift from my aunt tax-free?',
+        answer: 'It can be, if it meets the gift conditions and you file Form ST-133GT. The family sale exemption does not cover aunts, but a true gift does not depend on the relationship being parent, child, grandparent, or sibling.'
+      },
+      {
+        question: 'Does the giver have to have paid tax?',
+        answer: 'For a family sale, yes. For a gift, the Tax Commission says the giver must have paid sales or use tax when they bought the vehicle; buying a vehicle to give it away does not avoid the tax.'
+      },
+      {
+        question: 'What if I take over the loan?',
+        answer: 'Then it is not a gift. Tax is due on the amount of the debt you take over.'
+      }
+    ],
+    sources: [ID_SOURCES.privateSales, ID_SOURCES.titles, ID_SOURCES.factSheet]
+  },
+  {
+    slug: 'titling-a-car-in-idaho-after-moving-from-another-state',
+    stateKey: 'idaho',
+    title: 'Titling a Car in Idaho After Moving From Another State',
+    shortTitle: 'Title a car after moving to Idaho',
+    metaTitle: 'Titling Your Car After Moving to Idaho',
+    metaDescription:
+      'New to Idaho? Title and register your car within 90 days. A car you owned more than 90 days before moving owes no use tax. Bring your title and get a VIN inspection.',
+    cardDescription: '90 days, the use tax exemption, and the fees.',
+    intro: [
+      'As a new Idaho resident, you title and register your vehicle within 90 days of moving. A vehicle you owned more than 90 days before moving owes no Idaho use tax.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Idaho Transportation Department and State Tax Commission',
+    steps: [
+      {
+        title: 'Plan for 90 days',
+        body: [
+          'ITD gives new residents 90 days from moving to title and register. You become a resident after 90 continuous days, or sooner if you declare it.'
+        ]
+      },
+      {
+        title: 'Check whether use tax applies',
+        body: [
+          'A vehicle you owned more than 90 days before moving is exempt; bring the Use Tax Exemption Certificate for new residents. A vehicle owned less than 90 days is presumed bought for use in Idaho, and tax properly paid to the other state counts against the Idaho tax.'
+        ]
+      },
+      {
+        title: 'Get a VIN inspection',
+        body: [
+          'A vehicle coming from another state needs a VIN inspection by a law officer, a DMV employee, a military police officer, or a licensed Idaho dealer.'
+        ]
+      },
+      {
+        title: 'Title the vehicle',
+        body: [
+          'Bring your out-of-state title to a county assessor’s motor vehicle office. The vehicle must be titled in Idaho before it can be registered. The title is $14 plus any county title fee.'
+        ]
+      },
+      {
+        title: 'Register the vehicle',
+        body: [
+          'Registration is $69, $57, or $45 by age, plus the EMS and State Police fees, plate fees, and your county’s fees. Some Ada County vehicles also pay a highway district fee.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title',
+      'The Use Tax Exemption Certificate for new residents, if eligible',
+      'A VIN inspection',
+      'An odometer disclosure, if required',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price if the vehicle is exempt from use tax. The calculator then shows the $14 state title fee and the $45 registration for a vehicle seven or more years old.',
+    faqs: [
+      {
+        question: 'Do I pay use tax on the car I moved with?',
+        answer: 'Not if you owned it more than 90 days before moving to Idaho.'
+      },
+      {
+        question: 'I am in the military. Do I owe use tax?',
+        answer: 'Not if you owned the vehicle before receiving orders to Idaho, or for three months before moving here.'
+      },
+      {
+        question: 'Can I title by mail if I am temporarily out of state?',
+        answer: 'Idaho residents temporarily in another state, such as students or military members, may request titles and registrations by mail.'
+      }
+    ],
+    sources: [ID_SOURCES.factSheet, ID_SOURCES.privateSales, ID_SOURCES.titles, ID_SOURCES.countyFees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-west-virginia',
+    stateKey: 'west-virginia',
+    title: 'How to Title a Private Car Sale in West Virginia',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in West Virginia',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in West Virginia: the 6% sales tax, the NADA book value rules, the $15 title, registration, and the 10-day inspection.',
+    cardDescription: 'The 6% tax, book value rules, title, and inspection.',
+    intro: [
+      'West Virginia charges 6% sales tax when you title a car bought from a private seller, or $30 if the price is under $500. The DMV may tax a low price or a newer car on its NADA book value instead.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'West Virginia DMV',
+    steps: [
+      {
+        title: 'Check the title before you pay',
+        body: [
+          'Buy only from a seller whose name is printed on the title and who can hand it to you at the sale. Make sure the VIN on the vehicle matches the title and the odometer reads no less than the title shows.'
+        ]
+      },
+      {
+        title: 'Have both of you sign the title',
+        body: [
+          'Both the seller and the buyer sign the back of a West Virginia title. The seller records the exact mileage in the assignment section.'
+        ]
+      },
+      {
+        title: 'Know how the tax is figured',
+        body: [
+          'The tax is 6% of the price (W. Va. Code 11-15-3c), or $30 if the price is under $500. If you paid less than 50% of the NADA Clean Loan value, bring a notarized bill of sale signed by both of you, with copies of both driver’s licenses, or the DMV taxes the book value. A vehicle two years old or newer is taxed on its book value whatever you paid.'
+        ]
+      },
+      {
+        title: 'Apply for the title',
+        body: [
+          'Submit the signed title with the Application for Certificate of Title (DMV-1-TR) by mail, at a DMV Regional Office, or through a private license service. Pay the $15 title fee and $10 if a lien is recorded.'
+        ]
+      },
+      {
+        title: 'Register and inspect',
+        body: [
+          'A car registers for $51.50 a year and a motorcycle $16; an electric vehicle adds $200 and a hybrid $100. A vehicle without a valid inspection sticker must be inspected within 10 days.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by you and the seller, with the mileage',
+      'Form DMV-1-TR',
+      'A notarized bill of sale and copies of both licenses, if the price is below half the book value',
+      'Your proof of insurance',
+      'Payment for the tax, title, lien fee if any, and registration'
+    ],
+    calculatorNote:
+      'The calculator applies 6% to the price you enter, with the $30 minimum, and adds the $15 title and the $51.50 registration. If the DMV will use the book value, enter that instead.',
+    faqs: [
+      {
+        question: 'Is the tax 5% or 6%?',
+        answer: '6%. West Virginia raised the sales tax on vehicle purchases from 5% to 6% on July 1, 2017, and it applies to sales between individuals (W. Va. Code 11-15-3c).'
+      },
+      {
+        question: 'Do I need a personal property tax receipt?',
+        answer: 'The DMV asks for one when you renew or transfer a registration. The county assessor sets the tax and the sheriff collects it.'
+      },
+      {
+        question: 'Can I drive it home without a sticker?',
+        answer: 'A vehicle bought in West Virginia without a valid inspection sticker must be inspected within 10 days.'
+      }
+    ],
+    sources: [WV_SOURCES.titles, WV_SOURCES.salesTax, WV_SOURCES.registrations, WV_SOURCES.feeBrochure]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-west-virginia',
+    stateKey: 'west-virginia',
+    title: 'How to Gift a Car in West Virginia',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in West Virginia',
+    metaDescription:
+      'How to gift a car in West Virginia: both people sign the no-consideration affidavit (DMV-5-TR), except between parents and children or spouses. A lien on the new title is taxed at 6%.',
+    cardDescription: 'The gift affidavit, the family exception, and liens.',
+    intro: [
+      'When a vehicle changes hands in West Virginia with nothing paid, both people sign an Affidavit of Transfer of Ownership Without Consideration. Without it, the DMV taxes the full book value.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'West Virginia DMV',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs the title over to you and records the mileage. Do not write a price on the title.'
+        ]
+      },
+      {
+        title: 'Sign the gift affidavit',
+        body: [
+          'Both of you sign the Affidavit of Transfer of Ownership Without Consideration (Form DMV-5-TR) and submit it with the title. A title that shows a price and also comes with a gift affidavit is rejected.'
+        ]
+      },
+      {
+        title: 'Know the family exception',
+        body: [
+          'No affidavit is needed for a vehicle titled in West Virginia that passes between a parent and child or between spouses (W. Va. Code 17A-3-4).'
+        ]
+      },
+      {
+        title: 'Watch for a lien',
+        body: [
+          'If a lien will be recorded on your new title, the transfer is taxed at 6% of the lien amount.'
+        ]
+      },
+      {
+        title: 'Title and register',
+        body: [
+          'Pay the $15 title fee and the registration. The DMV can revoke licenses and registrations for false gift claims.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you, with no price written in',
+      'Form DMV-5-TR, signed by both of you (not needed between parent and child or spouses)',
+      'Form DMV-1-TR',
+      'Your proof of insurance',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for a gift with the affidavit or a parent, child, or spouse transfer. The calculator then shows no tax, the $15 title, and the $51.50 registration.',
+    faqs: [
+      {
+        question: 'Do I need the affidavit for a gift from my brother?',
+        answer: 'Yes. The exception covers only parents and children and spouses. Other relatives need the affidavit, or the DMV taxes the book value.'
+      },
+      {
+        question: 'What if the owner has died?',
+        answer: 'With no will or administrator, a legal heir can sign for the owner with a Legal Heir Affidavit (DMV-185-TR) and a certified death certificate. With a will, attach the court’s letters of appointment.'
+      },
+      {
+        question: 'Can I put a price and an affidavit on the same title?',
+        answer: 'No. The DMV rejects applications that show a purchase price and a conflicting gift affidavit.'
+      }
+    ],
+    sources: [WV_SOURCES.titles, WV_SOURCES.titleTax, WV_SOURCES.registrations]
+  },
+  {
+    slug: 'titling-a-car-in-west-virginia-after-moving-from-another-state',
+    stateKey: 'west-virginia',
+    title: 'Titling a Car in West Virginia After Moving From Another State',
+    shortTitle: 'Title a car after moving to West Virginia',
+    metaTitle: 'Titling Your Car After Moving to West Virginia',
+    metaDescription:
+      'New to West Virginia? Title and register your car within 30 days. A car already titled in your name in another state owes no 6% tax. Inspect it within 10 days.',
+    cardDescription: '30 days, no tax on your titled car, and inspection.',
+    intro: [
+      'As a new West Virginia resident, you title and register your vehicle within 30 days of establishing residency. A vehicle already titled in your name in another state owes no titling tax.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'West Virginia DMV',
+    steps: [
+      {
+        title: 'Plan for 30 days',
+        body: [
+          'New residents must title and register their vehicles within 30 days of establishing residency.'
+        ]
+      },
+      {
+        title: 'Check the tax exemption',
+        body: [
+          'The 6% tax does not apply if you were not a West Virginia resident when you got the vehicle and it is titled in your name in another state. Your out-of-state title with an out-of-state address is the proof, however long you have had it.'
+        ]
+      },
+      {
+        title: 'Bring your documents',
+        body: [
+          'Bring your out-of-state title, the Application for Certificate of Title (DMV-1-TR), and an odometer disclosure. If a lender holds the title, bring a letter from the lender with the vehicle details and its mailing address.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $15, $10 more for a lien, and registration is $51.50 for a car.'
+        ]
+      },
+      {
+        title: 'Get a West Virginia inspection',
+        body: [
+          'You have 10 days from titling to get a West Virginia inspection. A sticker from a reciprocal state, such as New York or Texas, is valid until it expires.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title in your name, or your lender’s letter',
+      'Form DMV-1-TR',
+      'An odometer disclosure',
+      'Your proof of insurance',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for a vehicle already titled in your name. The calculator then shows no tax, the $15 title, and the $51.50 registration.',
+    faqs: [
+      {
+        question: 'Do I pay the 6% tax on the car I moved with?',
+        answer: 'No, if it is titled in your name in another state and you were not a West Virginia resident when you got it.'
+      },
+      {
+        question: 'Does the exemption cover a leased vehicle?',
+        answer: 'No. Leased vehicles are taxed differently.'
+      },
+      {
+        question: 'I bought a car out of state right before moving. Does tax paid there count?',
+        answer: 'The DMV says West Virginia does not give credit for sales tax paid to another state. If the vehicle is titled in your name before you move, the new resident exemption may apply instead.'
+      }
+    ],
+    sources: [WV_SOURCES.newResidents, WV_SOURCES.titles, WV_SOURCES.registrations]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-hawaii',
+    stateKey: 'hawaii',
+    title: 'How to Title a Private Car Sale in Hawaii',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Hawaii',
+    metaDescription:
+      'Step-by-step guide to transferring a car bought from a private seller in Hawaii: no tax on a casual sale, 30 days, the $10 transfer fee, the safety check, and county registration.',
+    cardDescription: 'No tax, 30 days, the transfer fee, and county fees.',
+    intro: [
+      'Hawaii charges no sales tax or General Excise Tax on a car bought from a private individual. You transfer it at your county within 30 days and pay the transfer fee and the registration, which depends on weight and county.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Hawaii counties and Department of Taxation',
+    steps: [
+      {
+        title: 'Get the signed title and registration',
+        body: [
+          'The seller signs the certificate of title over to you. The seller must also send the county a Notice of Transfer within 10 days of signing.'
+        ]
+      },
+      {
+        title: 'Get a current safety inspection',
+        body: [
+          'The county needs a current Hawaii safety inspection certificate to complete the transfer. If its records show an expired inspection, you must show a current one.'
+        ]
+      },
+      {
+        title: 'Transfer within 30 days',
+        body: [
+          'In Honolulu the transfer fee is $10 if you complete it within 30 days of the seller’s transfer date, and a $50 penalty is added after that. If the registration expires within 45 days, you renew it at the same time.'
+        ]
+      },
+      {
+        title: 'Pay the registration',
+        body: [
+          'The state fee is $46 and the state weight tax is 1.75¢ a pound up to 4,000 lbs (HRS 249-33), about $61 for a 3,500 lb car. Your county adds its own registration fee and weight tax; Honolulu’s county fee is $20 and its beautification fee $10.'
+        ]
+      },
+      {
+        title: 'Keep proof of insurance',
+        body: [
+          'Bring your Hawaii insurance identification card for the safety inspection and the transfer.'
+        ]
+      }
+    ],
+    checklist: [
+      'The certificate of title, signed over to you',
+      'The current certificate of registration',
+      'A current Hawaii safety inspection certificate',
+      'Your Hawaii insurance identification card',
+      'Payment for the transfer fee and registration'
+    ],
+    calculatorNote:
+      'There is no tax to calculate. The calculator shows the $10 transfer fee and only the $46 state registration fee; add the state weight tax and your county’s fees and weight tax.',
+    faqs: [
+      {
+        question: 'Is there tax on a private car sale in Hawaii?',
+        answer: 'No. A casual sale between individuals is not subject to the General Excise Tax or use tax.'
+      },
+      {
+        question: 'Why does registration differ by island?',
+        answer: 'Each county sets its own registration fee and weight tax rate and collects them with the state fee and state weight tax.'
+      },
+      {
+        question: 'What does the seller have to do?',
+        answer: 'File a Notice of Transfer with the county within 10 days of signing the title over. Honolulu can fine a seller who does not.'
+      }
+    ],
+    sources: [HI_SOURCES.stateFee, HI_SOURCES.weightTax, HI_SOURCES.honoluluFees, HI_SOURCES.honoluluDealer, HI_SOURCES.useTax]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-hawaii',
+    stateKey: 'hawaii',
+    title: 'How to Gift a Car in Hawaii',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Hawaii',
+    metaDescription:
+      'How to gift a car in Hawaii: there is no tax on a private transfer, so you pay only the transfer fee and registration. Bring a current safety inspection and transfer within 30 days.',
+    cardDescription: 'No tax, the transfer, the safety check, and fees.',
+    intro: [
+      'Hawaii has no sales tax on a private vehicle transfer, so a gift owes only the transfer fee and registration.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Hawaii counties and Department of Taxation',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs the certificate of title over to you and files a Notice of Transfer with the county within 10 days.'
+        ]
+      },
+      {
+        title: 'Get a current safety inspection',
+        body: [
+          'The transfer needs a current Hawaii safety inspection certificate.'
+        ]
+      },
+      {
+        title: 'Transfer within 30 days',
+        body: [
+          'In Honolulu the transfer fee is $10 within 30 days of the transfer date, plus a $50 penalty after that.'
+        ]
+      },
+      {
+        title: 'Pay the registration',
+        body: [
+          'Registration includes the $46 state fee, the state weight tax, and your county’s registration fee and weight tax.'
+        ]
+      },
+      {
+        title: 'Keep your records',
+        body: [
+          'Keep the validated registration and your insurance card in the vehicle.'
+        ]
+      }
+    ],
+    checklist: [
+      'The certificate of title, signed over to you',
+      'The current certificate of registration',
+      'A current Hawaii safety inspection certificate',
+      'Your Hawaii insurance identification card',
+      'Payment for the transfer fee and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price. The calculator shows the $10 transfer fee and the $46 state registration fee; county fees and weight taxes are extra.',
+    faqs: [
+      {
+        question: 'Is a gifted car taxed in Hawaii?',
+        answer: 'No. Hawaii does not tax private vehicle transfers.'
+      },
+      {
+        question: 'Is there a penalty for transferring late?',
+        answer: 'In Honolulu, yes: $50 on top of the $10 fee after 30 days.'
+      },
+      {
+        question: 'Do I need a new safety check?',
+        answer: 'You need a current one. If the county’s records show it has expired, bring proof of a current inspection.'
+      }
+    ],
+    sources: [HI_SOURCES.honoluluFees, HI_SOURCES.stateFee, HI_SOURCES.weightTax]
+  },
+  {
+    slug: 'titling-a-car-in-hawaii-after-moving-from-another-state',
+    stateKey: 'hawaii',
+    title: 'Titling a Car in Hawaii After Moving From Another State',
+    shortTitle: 'Title a car after moving to Hawaii',
+    metaTitle: 'Titling Your Car After Moving to Hawaii',
+    metaDescription:
+      'Moving to Hawaii with your car? A car you used out of state owes no use tax, but newer models need Form G-27. Get a safety check, then register with your county.',
+    cardDescription: 'Use tax, Form G-27, the safety check, and county fees.',
+    intro: [
+      'A car you bought and used outside Hawaii before moving usually owes no Hawaii use tax. You get a safety inspection and register it with your county.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Hawaii counties and Department of Taxation',
+    steps: [
+      {
+        title: 'Check whether use tax applies',
+        body: [
+          'A personal car you acquired outside Hawaii while not a resident, and actually used outside Hawaii, is exempt. A car acquired less than three months before you shipped it is presumed bought for use in Hawaii.',
+          'A car bought from an out-of-state dealer for use here owes 4.5% use tax on its landed value, less sales tax paid to the other state. A used car bought from an individual owes none.'
+        ]
+      },
+      {
+        title: 'File Form G-27 if your county asks',
+        body: [
+          'For a car of the current, previous, or next model year, the county needs a Form G-27 from the Department of Taxation showing use tax was paid or is not due.'
+        ]
+      },
+      {
+        title: 'Get a safety inspection',
+        body: [
+          'When the car arrives, take it and your Hawaii insurance card to an official safety inspection station. Defects other than registration must be fixed.'
+        ]
+      },
+      {
+        title: 'Gather your documents',
+        body: [
+          'Bring your out-of-state title or registration, the county’s application for registration, the shipping receipt or bill of lading, and a certified weight if the county does not have one.'
+        ]
+      },
+      {
+        title: 'Pay the registration',
+        body: [
+          'You pay the $46 state fee, the state weight tax, and your county’s registration fee and weight tax.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title or registration',
+      'The county’s application for registration',
+      'The shipping receipt or bill of lading',
+      'A Hawaii safety inspection certificate and insurance card',
+      'Form G-27, for a newer model year'
+    ],
+    calculatorNote:
+      'Enter $0 as the price if no use tax is due. The calculator shows the $10 transfer fee and the $46 state registration fee; county fees and weight taxes are extra.',
+    faqs: [
+      {
+        question: 'Do I owe use tax on the car I shipped?',
+        answer: 'Not if you got it outside Hawaii while not a resident and used it there first. A car acquired less than three months before shipping is presumed bought for use in Hawaii.'
+      },
+      {
+        question: 'What is the use tax rate on a car from a dealer?',
+        answer: '4.5% of the landed value, with credit for sales tax paid to the other state up to 4.5%.'
+      },
+      {
+        question: 'Why do I need the shipping receipt?',
+        answer: 'Counties use it to show when the car arrived in Hawaii.'
+      }
+    ],
+    sources: [HI_SOURCES.useTax, HI_SOURCES.hawaiiCounty, HI_SOURCES.stateFee, HI_SOURCES.weightTax]
   }
 ];
 
