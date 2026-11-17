@@ -52,6 +52,8 @@ const STATUTE_LABELS: { host: RegExp; label: (url: URL) => string | undefined }[
   { host: /^legislature\.vermont\.gov$/, label: (u) => cite(u.pathname, /\/statutes\/section\/(\d+)\/\d+\/0*(\d+)$/, (m) => `${m[1]} V.S.A. ${m[2]}`) },
   { host: /(^|\.)legis\.iowa\.gov$/, label: (u) => cite(u.pathname, /\/docs\/code\/(?:\d{4}\/)?(\d+[A-Z]?)(?:\.(\d+[A-Z]?))?\.pdf$/i, (m) => (m[2] ? `Iowa Code ${m[1]}.${m[2]}` : `Iowa Code chapter ${m[1]}`)) },
   { host: /(^|\.)leg\.state\.nv\.us$/, label: (u) => cite(u.pathname, /\/(nrs|nac)-(\d+[A-Z]?)\.html$/i, (m) => `${m[1].toUpperCase()} Chapter ${m[2]}`) },
+  { host: /^code\.wvlegislature\.gov$/, label: (u) => cite(u.pathname, /^\/(\d+[A-Z]?-\d+[A-Z]?-\d+[A-Z]?)\/?$/i, (m) => `W. Va. Code ${m[1].replace(/([A-Z])$/, (c) => c.toLowerCase())}`) },
+  { host: /(^|\.)capitol\.hawaii\.gov$/, label: (u) => cite(u.pathname, /HRS_0*(\d+)-0*(\d+(?:\.\d+)?)\.htm$/i, (m) => `HRS ${m[1]}-${m[2]}`) },
   { host: /^alison\.legislature\.state\.al\.us$/, label: (u) => cite(u.searchParams.get('section'), /^([\d-]+)$/, (m) => `Ala. Code ${m[1]}`) },
   // Kentucky statute links carry only a document id, so the cited ones are listed here
   { host: /^apps\.legislature\.ky\.gov$/, label: (u) => KY_STATUTE_IDS[u.searchParams.get('id') ?? ''] }

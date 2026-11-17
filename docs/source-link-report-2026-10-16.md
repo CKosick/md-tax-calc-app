@@ -6,9 +6,9 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 279 across 51 jurisdictions
+- Source links configured now: 290 across 51 jurisdictions
 - Hidden on the site (dead or unreachable): 2
-- Working but only an agency homepage, not a specific page: 13
+- Working but only an agency homepage, not a specific page: 10
 - States showing no source link ("Official source links ... are being updated"): 0
 - States with some links hidden: 1
 - States re-verified since the check: Alabama (November 2026), Arizona (October 2026), Arkansas (October 2026), California (October 2026), Colorado (November 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Illinois (October 2026), Indiana (October 2026), Iowa (November 2026), Kansas (November 2026), Kentucky (November 2026), Louisiana (October 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Mississippi (November 2026), Missouri (October 2026), Nebraska (November 2026), Nevada (November 2026), New Jersey (October 2026), New Mexico (November 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Oregon (November 2026), Pennsylvania (October 2026), South Carolina (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026), Wisconsin (October 2026)
@@ -56,6 +56,9 @@ All other states keep their September 2026 verified date until their rates are r
 | Mississippi | 2026-11-15 | DOR homepage replaced with the DOR titles, registration, and motor vehicle FAQ pages, the business tax FAQ, and the Part IV sales tax regulation; title $9 and car registration $29 confirmed, motorcycle $15 -> $22 ($8 privilege tax), 30-business-day deadline, family exemptions, and no credit for tax paid to another state stated; EV and hybrid fees unchanged. Ruling applied 2026-11-15: no casual sales tax at 10 or more model years old (model year = year 1); verified date moved to November 2026. |
 | New Mexico | 2026-11-15 | MVD homepage and the dead taxes-fees page replaced with the MVD buying, registration, and title pages, Vehicle Procedures Manual chapter 6, and the MVD Fee Manual (revised August 24, 2026); MVET, trade-in, 80% NADA rule, gift affidavit, 30-day and 90-day penalties, and the moving-in exemption stated. Rulings applied 2026-11-15: passenger registration $76 / $62.25 with the $4.50 in fees, motorcycle $15 -> $23.50; verified date moved to November 2026. |
 | Nebraska | 2026-11-15 | Dead DMV titling link and the DOR homepage replaced with the DMV transfer, out-of-state title, and fee pages, the DOR county treasurer instructions, and the July 2026 rate table; local range 0.5% to 2.5% -> 0% to 2.0%, lien $0 -> $7, alternative fuel fees confirmed, gift, credit, and 30-day rules stated. Rulings applied 2026-11-15: car $23.20 -> $28.70, motorcycle $14.20 -> $15.60, private trade-ins of a motor vehicle, motorboat, or ATV/UTV at the time of sale deducted; verified date moved to November 2026. |
+| Idaho | 2026-11-16 | ITD and Tax Commission homepages replaced with the ITD title and registration pages, the registration fact sheet, the county fee table, and the Tax Commission private-party page; 6% tax, no private trade-ins, $14 title, EV $140 and plug-in hybrid $75 confirmed; 30-day deadline and $20 penalty, family and gift exemptions, use tax credit, and the 90-day new resident rules stated. Age-tier registration, the per-registration and county fees, and the $25 motorcycle total wait on a ruling, so the verified date stays September 2026. |
+| West Virginia | 2026-11-16 | DOT homepage replaced with the DMV title, registration, and new resident pages, the registration fee brochure, and W. Va. Code 11-15-3c and 17A-3-4; tax 5% -> 6% with a $30 minimum (11-15-3c, from July 1, 2017), motorcycle $25 -> $16, book value rules, gift affidavit, new resident exemption, and inspection rules stated. The private trade-in rule waits on a ruling, so the verified date stays September 2026. |
+| Hawaii | 2026-11-16 | DOT homepage and the Honolulu inquiry app replaced with HRS 249-31 and 249-33, Honolulu CSD pages, the Hawaii County new registration page, and the DOTAX use tax brochure; $46 state fee and state weight tax confirmed, unverified county weight tax rates removed from the copy, transfer, use tax, and new resident rules stated. Registration modeled as the state fee only waits on a ruling, so the verified date stays September 2026. |
 
 ## Priority: states with no working source link
 
@@ -73,8 +76,6 @@ All other states keep their September 2026 verified date until their rates are r
 | State | URL | Note |
 |---|---|---|
 | Alaska | https://dmv.alaska.gov | Agency homepage |
-| Hawaii | https://hidot.hawaii.gov | Agency homepage |
-| Hawaii | https://mvinquiry.hnl.info | Lookup tool homepage |
 | Maine | https://www.maine.gov/revenue | Agency homepage |
 | Montana | https://mvdmt.gov | Agency homepage |
 | New Hampshire | https://www.nh.gov/safety/divisions/dmv | Redirects to the DMV homepage |
@@ -82,7 +83,6 @@ All other states keep their September 2026 verified date until their rates are r
 | Rhode Island | https://dmv.ri.gov | Agency homepage |
 | Rhode Island | https://tax.ri.gov | Agency homepage |
 | Vermont | https://dmv.vermont.gov | Agency homepage |
-| West Virginia | https://transportation.wv.gov/dmv | Redirects to the DMV homepage |
 | Wyoming | https://revenue.wyo.gov | Agency homepage |
 | Wyoming | https://www.dot.state.wy.us | Agency homepage |
 

@@ -790,12 +790,12 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     expect(res.totalFirstYearCost).toBe(959.00);
   });
 
-  it('9. West Virginia (WV) worked invariant: $15,000 purchase price yields $750.00 tax (5.0% privilege tax) and $816.50 total', () => {
+  it('9. West Virginia (WV) worked invariant: $15,000 purchase price yields $900.00 tax (6% sales tax, W. Va. Code 11-15-3c) and $966.50 total', () => {
     const res = calculateVehicleCosts(allRules['west-virginia'], { ...std1Yr, state: 'west-virginia' }, 2026);
-    expect(res.exciseTax).toBe(750.00);
+    expect(res.exciseTax).toBe(900.00);
     expect(res.titleFee).toBe(15.00);
     expect(res.registrationTotal).toBe(51.50);
-    expect(res.totalFirstYearCost).toBe(816.50);
+    expect(res.totalFirstYearCost).toBe(966.50);
   });
 
   it('Batch 4 trade-in deductibility verification (AR, KS, NM allow; IA, MS, NE, ID, WV do not)', () => {
@@ -838,7 +838,7 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     }, 2026);
     expect(wvTrade.tradeInDeducted).toBe(0);
     expect(wvTrade.tradeInIgnored).toBe(true);
-    expect(wvTrade.exciseTax).toBe(750.00);
+    expect(wvTrade.exciseTax).toBe(900.00);
   });
 });
 

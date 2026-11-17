@@ -20,16 +20,6 @@
       "finding": "Agency homepage"
     },
     {
-      "state": "hawaii",
-      "url": "https://hidot.hawaii.gov",
-      "finding": "Agency homepage"
-    },
-    {
-      "state": "hawaii",
-      "url": "https://mvinquiry.hnl.info",
-      "finding": "Lookup tool homepage"
-    },
-    {
       "state": "maine",
       "url": "https://www.maine.gov/revenue",
       "finding": "Agency homepage"
@@ -63,11 +53,6 @@
       "state": "vermont",
       "url": "https://dmv.vermont.gov",
       "finding": "Agency homepage"
-    },
-    {
-      "state": "west-virginia",
-      "url": "https://transportation.wv.gov/dmv",
-      "finding": "Redirects to the DMV homepage"
     },
     {
       "state": "wyoming",
@@ -265,6 +250,21 @@
       "state": "nebraska",
       "on": "2026-11-15",
       "note": "Dead DMV titling link and the DOR homepage replaced with the DMV transfer, out-of-state title, and fee pages, the DOR county treasurer instructions, and the July 2026 rate table; local range 0.5% to 2.5% -> 0% to 2.0%, lien $0 -> $7, alternative fuel fees confirmed, gift, credit, and 30-day rules stated. Rulings applied 2026-11-15: car $23.20 -> $28.70, motorcycle $14.20 -> $15.60, private trade-ins of a motor vehicle, motorboat, or ATV/UTV at the time of sale deducted; verified date moved to November 2026."
+    },
+    {
+      "state": "idaho",
+      "on": "2026-11-16",
+      "note": "ITD and Tax Commission homepages replaced with the ITD title and registration pages, the registration fact sheet, the county fee table, and the Tax Commission private-party page; 6% tax, no private trade-ins, $14 title, EV $140 and plug-in hybrid $75 confirmed; 30-day deadline and $20 penalty, family and gift exemptions, use tax credit, and the 90-day new resident rules stated. Age-tier registration, the per-registration and county fees, and the $25 motorcycle total wait on a ruling, so the verified date stays September 2026."
+    },
+    {
+      "state": "west-virginia",
+      "on": "2026-11-16",
+      "note": "DOT homepage replaced with the DMV title, registration, and new resident pages, the registration fee brochure, and W. Va. Code 11-15-3c and 17A-3-4; tax 5% -> 6% with a $30 minimum (11-15-3c, from July 1, 2017), motorcycle $25 -> $16, book value rules, gift affidavit, new resident exemption, and inspection rules stated. The private trade-in rule waits on a ruling, so the verified date stays September 2026."
+    },
+    {
+      "state": "hawaii",
+      "on": "2026-11-16",
+      "note": "DOT homepage and the Honolulu inquiry app replaced with HRS 249-31 and 249-33, Honolulu CSD pages, the Hawaii County new registration page, and the DOTAX use tax brochure; $46 state fee and state weight tax confirmed, unverified county weight tax rates removed from the copy, transfer, use tax, and new resident rules stated. Registration modeled as the state fee only waits on a ruling, so the verified date stays September 2026."
     }
   ]
 }

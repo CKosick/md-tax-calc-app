@@ -5536,27 +5536,30 @@
       },
       {
         "question": "Do I pay Idaho vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Idaho, the state generally assesses its applicable vehicle sales or use tax (6.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Idaho motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. Idaho presumes a vehicle a resident buys out of state is for use in Idaho, so 6% use tax is due when you title it. Tax you properly paid to the other state counts against it if you have the receipt. A vehicle from another state also needs a VIN inspection."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Idaho?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Idaho DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A sale is exempt only between a parent and child, a grandparent and grandchild, or siblings, and only if the family member paid sales or use tax when they bought the vehicle (Form ST-133). A gift is exempt when nothing is given back, no debt is taken over, and no loan is owed on the vehicle (Form ST-133GT, signed by both). Cousins, aunts, and uncles do not qualify for the family sale exemption."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Idaho?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Idaho's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Idaho motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "File at a county assessor’s motor vehicle office within 30 days of the transfer, or ITD adds a $20 late-filing penalty. New residents have 90 days from moving to title and register."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://itd.idaho.gov/",
-      "https://tax.idaho.gov/"
+      "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-titles/",
+      "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-registrations/",
+      "https://itd.idaho.gov/wp-content/uploads/2025/07/Registration-Fact-Sheet_DMV.pdf",
+      "https://apps.itd.idaho.gov/Apps/Fund/Title/CountyTitleAdminFee.pdf",
+      "https://tax.idaho.gov/taxes/sales-use/transportation/motor-vehicles/nondealers/types-of-sales/"
     ]
   },
   "west-virginia": {
     "label": "West Virginia",
     "slug": "west-virginia-private-sale-tax-calculator",
-    "exciseTaxRate": 0.05,
+    "exciseTaxRate": 0.06,
     "taxBase": "price",
     "titleFee": 15,
     "lienFilingFee": 10,
@@ -5574,7 +5577,7 @@
         }
       },
       "motorcycle": {
-        "1": 25
+        "1": 16
       },
       "evSurchargeAnnual": 200,
       "phevSurchargeAnnual": 100,
@@ -5587,25 +5590,26 @@
         }
       }
     },
-    "localTaxNote": "West Virginia levies the 5% Motor Vehicle Privilege Tax uniformly statewide; no local, county, or city sales taxes apply to titled vehicles.",
+    "localTaxNote": "West Virginia charges a 6% sales tax on vehicles titled in the state (W. Va. Code 11-15-3c), collected by the DMV; no local, county, or city sales taxes apply to titled vehicles.",
     "notes": [
-      "West Virginia imposes a 5.0% Motor Vehicle Privilege Tax on vehicle titling under W. Va. Code § 17A-3-4.",
+      "West Virginia charges a 6% sales tax on motor vehicle sales, including sales between individuals, from July 1, 2017 (W. Va. Code 11-15-3c); the DMV charges $30 when the net price is under $500.",
       "Certificate of title fee is $15.00; lien recordation fee is $10.00.",
-      "Annual registration fee for Class A passenger vehicles is $51.50.",
+      "Annual registration for Class A passenger vehicles is $51.50 and for a motorcycle $16 (DMV registration fee brochure).",
       "Trade-in deduction proviso under § 17A-3-4 applies only to vehicles traded to licensed dealers; private-party sales are taxed on full purchase price.",
       "Electric vehicles pay an annual $200 surcharge ($100 for plug-in hybrids)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with West Virginia DMV.",
-      "West Virginia charges a uniform 5% Motor Vehicle Privilege Tax statewide under W. Va. Code § 17A-3-4; no local sales taxes apply.",
+      "West Virginia charges 6% sales tax on vehicles titled in the state (W. Va. Code 11-15-3c), or $30 when the net price is under $500; no local sales taxes apply.",
       "Trade-in deductions are restricted to licensed dealer purchases and do not apply to private party sales.",
       "County personal property tax is not included. It is assessed by the County Assessor and collected by the County Sheriff. The DMV asks for a personal property tax receipt when you transfer a registration or renew, or an assessor’s affidavit when you renew.",
-      "West Virginia’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the DMV."
+      "West Virginia’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the DMV.",
+      "The DMV taxes a private sale priced below 50% of the NADA Clean Loan value on that value unless you bring a notarized bill of sale signed by both of you, and taxes a vehicle two years old or newer on its NADA Clean Loan value whatever you paid. The estimate uses the price you enter."
     ],
     "faqs": [
       {
-        "question": "What is the vehicle privilege tax in West Virginia?",
-        "answer": "West Virginia levies a 5.0% Motor Vehicle Privilege Tax on the purchase price of vehicles under W. Va. Code § 17A-3-4, collected by the DMV at the time of titling."
+        "question": "What is the vehicle sales tax in West Virginia?",
+        "answer": "West Virginia charges a 6% sales tax on motor vehicles, including sales between individuals, under W. Va. Code 11-15-3c (raised from 5% on July 1, 2017). The DMV collects it when you title the vehicle, and charges $30 when the net price is under $500."
       },
       {
         "question": "Can I deduct my trade-in on a private vehicle sale in West Virginia?",
@@ -5621,22 +5625,27 @@
       },
       {
         "question": "Do I pay West Virginia vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into West Virginia, the state generally assesses its applicable vehicle sales or use tax (5.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the West Virginia motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. The 6% tax is due when you title the vehicle in West Virginia, and the DMV says it does not give credit for sales tax paid to another state. A vehicle without a valid West Virginia inspection sticker must be inspected within 10 days of titling."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in West Virginia?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the West Virginia DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "For a transfer with nothing paid, both people sign an Affidavit of Transfer of Ownership Without Consideration (DMV-5-TR). It is not needed between a parent and child or spouses for a vehicle already titled in West Virginia (W. Va. Code 17A-3-4). Without the affidavit, the DMV taxes the vehicle’s full book value, and if a lien is recorded on the new title, tax is 6% of the lien amount."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in West Virginia?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond West Virginia's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the West Virginia motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "We found no fixed day count for a private buyer in the DMV’s pages or the code, so title and register before you drive. A vehicle without a valid inspection sticker must be inspected within 10 days. New residents have 30 days from establishing residency."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://transportation.wv.gov/dmv",
-      "https://dmv.wv.gov/vehicle-services/vehicles/registrations"
-    ]
+      "https://dmv.wv.gov/titles",
+      "https://dmv.wv.gov/vehicle-services/vehicles/registrations",
+      "https://webapps.transportation.wv.gov/TWS/WVDOTDocumentStorageMigration/PDF/Webapps/DMV/DMVFormSearch/Registration-Fees-Brochure.pdf",
+      "https://dmv.wv.gov/new-residents",
+      "https://code.wvlegislature.gov/11-15-3C/",
+      "https://code.wvlegislature.gov/17A-3-4/"
+    ],
+    "minExciseTax": 30
   },
   "hawaii": {
     "label": "Hawaii",
@@ -5668,19 +5677,19 @@
         }
       }
     },
-    "localTaxNote": "Hawaii has no state sales tax or General Excise Tax (GET) on casual motor vehicle sales between private individuals. However, counties (Honolulu, Maui, Hawaii, Kauai) assess state (1.75¢/lb) and county (up to 7.0¢/lb) annual vehicle weight taxes at registration.",
+    "localTaxNote": "Hawaii has no sales tax or General Excise Tax (GET) on casual motor vehicle sales between private individuals. At registration the county collects the state weight tax (1.75¢ a pound up to 4,000 lbs, HRS 249-33) and its own registration fee and weight tax, which vary by county.",
     "notes": [
       "Private party casual vehicle sales between individuals are exempt from Hawaii General Excise Tax (GET) under HRS Chapter 237.",
       "Certificate of ownership (title) transfer fee is $10.00.",
       "Base state passenger vehicle registration fee is $46.00.",
-      "Counties levy weight taxes (e.g., Honolulu charges 7.0¢ per pound county tax plus 1.75¢ per pound state tax) collected annually at registration.",
+      "Counties collect the state weight tax (1.75¢ a pound up to 4,000 lbs, 2¢ to 7,000 lbs, HRS 249-33) and their own registration fees and weight taxes, which differ by county (Honolulu: $20 county fee, $10 beautification fee from June 1, 2026, and a county weight tax).",
       "Buyers must transfer title and registration within 30 days to avoid a $50 late transfer penalty.",
       "A valid Hawaii vehicle safety inspection certificate is required to complete the registration transfer."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Hawaii Department of Transportation and your local county DMV.",
       "Hawaii does not levy sales tax or General Excise Tax on casual private vehicle sales.",
-      "Annual registration costs vary based on vehicle weight and county of residence.",
+      "The estimate shows the $46 state registration fee only. Every county also collects the state weight tax (1.75¢ a pound up to 4,000 lbs) and its own registration fee and weight tax, so your total will be higher.",
       "Hawaii’s road usage rules for electric vehicles cover three or more wheels, and its sources do not settle whether the $50 surcharge applies to a two-wheeled motorcycle, so the estimate leaves it out for one. Confirm with your county."
     ],
     "faqs": [
@@ -5690,11 +5699,11 @@
       },
       {
         "question": "What fees do I pay when transferring a car title in Hawaii?",
-        "answer": "The certificate of title transfer fee is $10.00. You will also pay the base annual registration fee ($46.00 state base) plus county registration fees and state/county weight taxes based on the vehicle's curb weight."
+        "answer": "The transfer fee is $10, or $60 with the $50 penalty if you transfer more than 30 days after the seller’s transfer date (Honolulu). Registration adds the $46 state fee, the state weight tax, and your county’s registration fee and weight tax."
       },
       {
         "question": "What is the vehicle weight tax in Hawaii?",
-        "answer": "Hawaii imposes both a state weight tax (1.75¢ per pound for passenger cars up to 4,000 lbs) and a county weight tax (such as 7.0¢ per pound in the City and County of Honolulu), assessed annually upon registration."
+        "answer": "The state weight tax is 1.75¢ a pound of net weight up to 4,000 lbs, 2¢ to 7,000 lbs, and 2.25¢ to 10,000 lbs (HRS 249-33), about $61 for a 3,500 lb car. Each county adds its own weight tax at its own rate, collected with the registration."
       },
       {
         "question": "How long do I have to transfer a title in Hawaii?",
@@ -5702,7 +5711,7 @@
       },
       {
         "question": "Do I pay Hawaii vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "Because Hawaii does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Hawaii. Standard certificate of title fees and registration tag fees still apply upon titling."
+        "answer": "Not on a casual sale. A used car bought from an individual out of state for personal use owes no Hawaii use tax, but you file Form G-27 to certify that to the county. A vehicle bought from an out-of-state dealer owes 4.5% use tax on its landed value, less sales tax paid to the other state."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Hawaii?",
@@ -5711,8 +5720,12 @@
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://hidot.hawaii.gov",
-      "https://mvinquiry.hnl.info"
+      "https://data.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0249/HRS_0249-0031.htm",
+      "https://data.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0249/HRS_0249-0033.htm",
+      "https://www.honolulu.gov/csd/dealer-resources/",
+      "https://www.honolulu.gov/csd/wp-content/uploads/sites/6/2023/07/Guidelines-for-Completing-CS-LMVR-50A-form-7.18.23.pdf",
+      "https://www.vrl.hawaiicounty.gov/motor-vehicle-registration/new-vehicle-registration",
+      "https://files.hawaii.gov/tax/legal/brochures/Use_brochure-25.pdf"
     ]
   },
   "new-hampshire": {
