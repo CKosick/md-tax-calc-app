@@ -45,4 +45,12 @@ Working notes from the official-source re-check for guide batch 14. Items marked
 
 ## `lastVerified`
 
-Unchanged (September 2026) for all three. Each has a finding above that changes the estimate and waits on a ruling.
+Held at September 2026 in 7db448c while the findings above waited on a ruling; moved to November 2026 for all three once the rulings were applied (2026-11-17). Hawaii's date rests on the county omission being disclosed on the page, as with Nevada.
+
+## Rulings applied (Cliff, 2026-11-17)
+
+1. **Idaho, registration by age:** $69 for one or two model years old, $57 for three to six, $45 for seven or more, counting the current model year as year 1 (`feesByRegistrationYear`).
+2. **Idaho, extra fees:** the $1.25 EMS fee, $3 State Police fee, and $3.75 new plate fee added to every registration: $77, $65, $53. The county administrative fee ($3 to $14) and county title fee ($0 to $18.75 over the $14 state fee) stated as ranges in the copy and left out of the totals.
+3. **Idaho, motorcycles:** $19 plus the $6 safety program fee = $25, plus the same statewide $8 = $33. Item 2 says the statewide amounts go on every registration, so the motorcycle carries them too; if the $25 was meant as the full motorcycle total, it is a one-line change.
+4. **West Virginia, private trade-ins:** deductible, with the conditions in the form notice, FAQ, disclaimer, notes, and private-sale guide: titled in West Virginia in the buyer's name, with the titling tax paid on it.
+5. **Hawaii, registration:** $46 state fee plus the state weight tax at 1.75 cents a pound on an assumed 3,500 lbs ($61.25) = $107.25, the assumption stated in the copy. County registration fee and county weight tax disclosed as varying by county, naming Honolulu's $20 county fee; no county rate added, no county picker. **Residual:** the Hawaii motorcycle figure ($35, carried over from the original build) has no source found in this re-check and was not part of the ruling; unchanged.

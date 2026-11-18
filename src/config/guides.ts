@@ -8837,7 +8837,7 @@ export const GUIDES: Guide[] = [
       'Payment for the sales tax, title, and registration'
     ],
     calculatorNote:
-      'The calculator shows 6% of the price, the $14 state title fee, and the $45 registration for a vehicle seven or more years old. A newer vehicle pays $57 or $69, and the county and per-registration fees are extra.',
+      'The calculator shows 6% of the price, the $14 state title fee, and the registration for the vehicle’s age with the EMS, State Police, and plate fees: $77, $65, or $53. Your county’s administrative fee ($3 to $14) and title fee ($0 to $18.75) are extra.',
     faqs: [
       {
         question: 'Can I deduct a trade-in on a private sale?',
@@ -8969,7 +8969,7 @@ export const GUIDES: Guide[] = [
       {
         title: 'Register the vehicle',
         body: [
-          'Registration is $69, $57, or $45 by age, plus the EMS and State Police fees, plate fees, and your county’s fees. Some Ada County vehicles also pay a highway district fee.'
+          'Registration is $69, $57, or $45 by age, plus the $1.25 EMS fee, the $3 State Police fee, $3.75 for a new plate, and your county’s administrative fee of $3 to $14. Some Ada County vehicles also pay a highway district fee.'
         ]
       }
     ],
@@ -8981,7 +8981,7 @@ export const GUIDES: Guide[] = [
       'Payment for the title and registration'
     ],
     calculatorNote:
-      'Enter $0 as the price if the vehicle is exempt from use tax. The calculator then shows the $14 state title fee and the $45 registration for a vehicle seven or more years old.',
+      'Enter $0 as the price if the vehicle is exempt from use tax. The calculator then shows the $14 state title fee and the registration for the vehicle’s age with the statewide fees; county fees are extra.',
     faqs: [
       {
         question: 'Do I pay use tax on the car I moved with?',
@@ -9029,7 +9029,8 @@ export const GUIDES: Guide[] = [
       {
         title: 'Know how the tax is figured',
         body: [
-          'The tax is 6% of the price (W. Va. Code 11-15-3c), or $30 if the price is under $500. If you paid less than 50% of the NADA Clean Loan value, bring a notarized bill of sale signed by both of you, with copies of both driver’s licenses, or the DMV taxes the book value. A vehicle two years old or newer is taxed on its book value whatever you paid.'
+          'The tax is 6% of the price (W. Va. Code 11-15-3c), or $30 if the price is under $500. If you paid less than 50% of the NADA Clean Loan value, bring a notarized bill of sale signed by both of you, with copies of both driver’s licenses, or the DMV taxes the book value. A vehicle two years old or newer is taxed on its book value whatever you paid.',
+          'A vehicle you trade toward the purchase reduces the taxable price if it is titled in West Virginia in your name and the titling tax was paid on it (W. Va. Code 11-15-3c).'
         ]
       },
       {
@@ -9053,7 +9054,7 @@ export const GUIDES: Guide[] = [
       'Payment for the tax, title, lien fee if any, and registration'
     ],
     calculatorNote:
-      'The calculator applies 6% to the price you enter, with the $30 minimum, and adds the $15 title and the $51.50 registration. If the DMV will use the book value, enter that instead.',
+      'The calculator applies 6% to the price you enter less any qualifying trade-in, with the $30 minimum, and adds the $15 title and the $51.50 registration. If the DMV will use the book value, enter that instead.',
     faqs: [
       {
         question: 'Is the tax 5% or 6%?',
@@ -9269,7 +9270,7 @@ export const GUIDES: Guide[] = [
       'Payment for the transfer fee and registration'
     ],
     calculatorNote:
-      'There is no tax to calculate. The calculator shows the $10 transfer fee and only the $46 state registration fee; add the state weight tax and your county’s fees and weight tax.',
+      'There is no tax to calculate. The calculator shows the $10 transfer fee and $107.25 registration: the $46 state fee plus the state weight tax on an assumed 3,500 lbs. Add your county’s registration fee and weight tax, which vary by county ($20 county fee in Honolulu).',
     faqs: [
       {
         question: 'Is there tax on a private car sale in Hawaii?',
@@ -9341,7 +9342,7 @@ export const GUIDES: Guide[] = [
       'Payment for the transfer fee and registration'
     ],
     calculatorNote:
-      'Enter $0 as the price. The calculator shows the $10 transfer fee and the $46 state registration fee; county fees and weight taxes are extra.',
+      'Enter $0 as the price. The calculator shows the $10 transfer fee and the $107.25 state registration and weight tax for an assumed 3,500 lbs; county fees and weight taxes are extra.',
     faqs: [
       {
         question: 'Is a gifted car taxed in Hawaii?',
@@ -9414,7 +9415,7 @@ export const GUIDES: Guide[] = [
       'Form G-27, for a newer model year'
     ],
     calculatorNote:
-      'Enter $0 as the price if no use tax is due. The calculator shows the $10 transfer fee and the $46 state registration fee; county fees and weight taxes are extra.',
+      'Enter $0 as the price if no use tax is due. The calculator shows the $10 transfer fee and the $107.25 state registration and weight tax for an assumed 3,500 lbs; county fees and weight taxes are extra.',
     faqs: [
       {
         question: 'Do I owe use tax on the car I shipped?',

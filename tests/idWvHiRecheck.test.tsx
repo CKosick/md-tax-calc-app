@@ -15,7 +15,7 @@ const calc = (rule: StateRule, extra: Partial<CalculatorInputs> = {}) =>
 const copy = (rule: StateRule) =>
   [rule.localTaxNote ?? '', rule.tradeInNote ?? '', ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
 
-describe('Idaho re-check (November 2026, registration items for ruling)', () => {
+describe('Idaho re-check and rulings (November 2026)', () => {
   it('6% tax, no private trade-ins, $14 title, EV $140 and plug-in hybrid $75', () => {
     expect(calc(id).exciseTax).toBe(900);
     expect(calc(id, { tradeInValue: 5000 }).exciseTax).toBe(900);
@@ -24,10 +24,15 @@ describe('Idaho re-check (November 2026, registration items for ruling)', () => 
     expect(id.registration.phevSurchargeAnnual).toBe(75);
   });
 
-  it('keeps the figures that wait on a ruling, and the verified date, as they were', () => {
-    expect(calc(id, { vehicleYear: 2026 }).registrationTotal).toBe(45);
-    expect(calc(id, { vehicleType: 'motorcycle' }).registrationTotal).toBe(19);
-    expect(id.lastVerified).toBe('September 2026');
+  it('registration by model year plus $8 in statewide fees: $77, $65, $53; motorcycle $33', () => {
+    for (const [vehicleYear, fee] of [[2026, 77], [2025, 77], [2024, 65], [2021, 65], [2020, 53], [2010, 53]]) {
+      expect(calc(id, { vehicleYear }).registrationTotal, String(vehicleYear)).toBe(fee);
+    }
+    expect(calc(id, { vehicleType: 'motorcycle' }).registrationTotal).toBe(33);
+    expect(calc(id, { vehicleYear: 2026, fuelType: 'ev' }).registrationTotal).toBe(217);
+    const text = copy(id);
+    for (const fact of ['$1.25 EMS fee', '$3 State Police fee', '$3.75 new plate fee', '$3 to $14', '$0 to $18.75', '$14 to $32.75']) expect(text).toContain(fact);
+    expect(id.lastVerified).toBe('November 2026');
   });
 
   it('deadline, family, and out-of-state answers are the verified ones', () => {
@@ -36,7 +41,7 @@ describe('Idaho re-check (November 2026, registration items for ruling)', () => 
   });
 });
 
-describe('West Virginia re-check (November 2026, private trade-ins for ruling)', () => {
+describe('West Virginia re-check and ruling (November 2026)', () => {
   it('6% sales tax (W. Va. Code 11-15-3c), $30 under a $500 price, $15 title, $10 lien', () => {
     expect(calc(wv).exciseTax).toBe(900);
     expect(calc(wv, { purchasePrice: 300 }).exciseTax).toBe(30);
@@ -53,9 +58,12 @@ describe('West Virginia re-check (November 2026, private trade-ins for ruling)',
     expect(wv.registration.phevSurchargeAnnual).toBe(100);
   });
 
-  it('keeps the trade-in rule that waits on a ruling, and the verified date, as they were', () => {
-    expect(wv.tradeInDeductible).toBe(false);
-    expect(wv.lastVerified).toBe('September 2026');
+  it('private trade-ins titled in West Virginia in the buyer’s name, tax paid, are deducted', () => {
+    expect(wv.tradeInDeductible).toBe(true);
+    expect(calc(wv, { tradeInValue: 5000 }).exciseTax).toBe(600);
+    expect(wv.tradeInNote).toContain('titled in West Virginia in your name and the titling tax was paid on it');
+    expect(copy(wv)).not.toMatch(/restricted to licensed dealer|applies only when purchasing from a licensed/i);
+    expect(wv.lastVerified).toBe('November 2026');
   });
 
   it('book value, gift, deadline, and out-of-state answers are the verified ones', () => {
@@ -69,19 +77,22 @@ describe('West Virginia re-check (November 2026, private trade-ins for ruling)',
   });
 });
 
-describe('Hawaii re-check (November 2026, county registration for ruling)', () => {
-  it('no tax on a casual sale; $10 transfer; registration still the $46 state fee pending the ruling', () => {
+describe('Hawaii re-check and ruling (November 2026)', () => {
+  it('no tax on a casual sale; $10 transfer; registration is the $46 state fee plus state weight tax on 3,500 lbs', () => {
     expect(calc(hi).exciseTax).toBe(0);
     expect(calc(hi).titleFee).toBe(10);
-    expect(calc(hi).registrationTotal).toBe(46);
-    expect(hi.lastVerified).toBe('September 2026');
+    expect(calc(hi).registrationTotal).toBe(107.25);
+    expect(calc(hi, { weightClass: 'over3700lbs' }).registrationTotal).toBe(107.25);
+    expect(hi.lastVerified).toBe('November 2026');
   });
 
   it('copy gives the verified state weight tax and no longer states unverified county rates', () => {
     const text = copy(hi);
     expect(text).toContain('1.75¢ a pound');
     expect(text).toContain('HRS 249-33');
-    expect(text).toContain('The estimate shows the $46 state registration fee only');
+    expect(text).toContain('on an assumed 3,500 lbs (about $61)');
+    expect(text).toContain('not included and vary by county');
+    expect(text).toContain('the county registration fee is $20');
     expect(text).not.toMatch(/7\.0¢|up to 7\.0/);
   });
 

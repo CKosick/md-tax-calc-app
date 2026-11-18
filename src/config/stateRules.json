@@ -5483,14 +5483,14 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 45
+          "1": 53
         },
         "over3700lbs": {
-          "1": 45
+          "1": 53
         }
       },
       "motorcycle": {
-        "1": 19
+        "1": 33
       },
       "evSurchargeAnnual": 140,
       "phevSurchargeAnnual": 75,
@@ -5501,20 +5501,40 @@
         "phev": {
           "outcome": "silent"
         }
+      },
+      "feesByRegistrationYear": {
+        "passenger": [
+          {
+            "maxYear": 2,
+            "fee": 77
+          },
+          {
+            "maxYear": 6,
+            "fee": 65
+          },
+          {
+            "fee": 53
+          }
+        ],
+        "motorcycle": [
+          {
+            "fee": 33
+          }
+        ]
       }
     },
     "localTaxNote": "Idaho does not levy local sales tax on motor vehicles, but counties assess minor administrative and highway district registration fees.",
     "notes": [
       "Idaho imposes a 6.0% state sales/use tax on private party vehicle purchases under Idaho Code § 63-3619.",
-      "Certificate of title fee is $14.00 under Idaho Transportation Department fee schedule.",
-      "Passenger car registration is age-based: $69 (1–2 yrs), $57 (3–6 yrs), $45 (7+ yrs). For our 2019 test vehicle, base fee is $45.00.",
+      "Certificate of title fee is $14.00 (state); counties add a title administration fee of $0 to $18.75 (ITD county fee table), which the estimate leaves out.",
+      "Passenger registration is $69 for a vehicle one or two model years old, $57 for three to six, and $45 for seven or more (the current model year counts as year 1), plus a $1.25 EMS fee, a $3 State Police fee, and $3.75 for a new plate: $77, $65, or $53. A motorcycle is $19 plus the $6 Motorcycle Safety Program fee and the same $8: $33.",
       "Idaho does not allow trade-in deductions on private-party vehicle sales; trade-in credit only applies to licensed dealers.",
       "Electric vehicles pay an additional $140/yr road surcharge ($75 for plug-in hybrids)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Idaho Transportation Department (ITD) and Idaho State Tax Commission.",
       "Idaho charges 6.0% sales tax on the full purchase price; private trade-ins are not deductible.",
-      "Registration fees scale by vehicle age: $69 (1–2 yrs), $57 (3–6 yrs), $45 (7+ yrs).",
+      "Registration shown is the age tier ($69 for one or two model years old, $57 for three to six, $45 for seven or more, counting the current model year as year 1) plus the $1.25 EMS fee, $3 State Police fee, and $3.75 new plate fee. A motorcycle is $25 ($19 plus the $6 safety program fee) plus the same fees. Not included: your county’s administrative fee ($3 to $14) and county title fee ($0 to $18.75 over the $14 state title fee), and Ada County Highway District fees.",
       "Idaho’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with your county DMV office."
     ],
     "faqs": [
@@ -5528,11 +5548,11 @@
       },
       {
         "question": "How much is an Idaho vehicle title fee?",
-        "answer": "The Idaho statutory certificate of title fee is $14.00. Lien filing is recorded on the application without separate additional state filing fees."
+        "answer": "The state certificate of title fee is $14.00. Counties add a title administration fee of $0 to $18.75, so the total is $14 to $32.75 depending on your county. No separate state lien filing fee applies."
       },
       {
         "question": "How do Idaho registration fees work?",
-        "answer": "Idaho passenger registration fees are determined by vehicle age: $69.00 annually for vehicles 1 to 2 years old, $57.00 for vehicles 3 to 6 years old, and $45.00 for vehicles 7 years or older."
+        "answer": "Passenger registration is $69 for a vehicle one or two model years old, $57 for three to six, and $45 for seven or more, plus a $1.25 EMS fee, a $3 State Police fee, $3.75 for a new plate, and your county’s administrative fee of $3 to $14. A motorcycle is $19 plus a $6 safety program fee."
       },
       {
         "question": "Do I pay Idaho vehicle tax if I buy a car from an out-of-state private seller?",
@@ -5547,7 +5567,7 @@
         "answer": "File at a county assessor’s motor vehicle office within 30 days of the transfer, or ITD adds a $20 late-filing penalty. New residents have 90 days from moving to title and register."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-titles/",
       "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-registrations/",
@@ -5563,7 +5583,7 @@
     "taxBase": "price",
     "titleFee": 15,
     "lienFilingFee": 10,
-    "tradeInDeductible": false,
+    "tradeInDeductible": true,
     "registration": {
       "terms": [
         1
@@ -5595,13 +5615,13 @@
       "West Virginia charges a 6% sales tax on motor vehicle sales, including sales between individuals, from July 1, 2017 (W. Va. Code 11-15-3c); the DMV charges $30 when the net price is under $500.",
       "Certificate of title fee is $15.00; lien recordation fee is $10.00.",
       "Annual registration for Class A passenger vehicles is $51.50 and for a motorcycle $16 (DMV registration fee brochure).",
-      "Trade-in deduction proviso under § 17A-3-4 applies only to vehicles traded to licensed dealers; private-party sales are taxed on full purchase price.",
+      "A vehicle exchanged toward the purchase, on which the tax was paid, is deducted from the price (W. Va. Code 11-15-3c). The DMV requires the trade-in to be titled in West Virginia in the buyer’s name.",
       "Electric vehicles pay an annual $200 surcharge ($100 for plug-in hybrids)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with West Virginia DMV.",
       "West Virginia charges 6% sales tax on vehicles titled in the state (W. Va. Code 11-15-3c), or $30 when the net price is under $500; no local sales taxes apply.",
-      "Trade-in deductions are restricted to licensed dealer purchases and do not apply to private party sales.",
+      "A trade-in is deducted only when the traded vehicle is titled in West Virginia in your name and the titling tax was paid on it.",
       "County personal property tax is not included. It is assessed by the County Assessor and collected by the County Sheriff. The DMV asks for a personal property tax receipt when you transfer a registration or renew, or an assessor’s affidavit when you renew.",
       "West Virginia’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the DMV.",
       "The DMV taxes a private sale priced below 50% of the NADA Clean Loan value on that value unless you bring a notarized bill of sale signed by both of you, and taxes a vehicle two years old or newer on its NADA Clean Loan value whatever you paid. The estimate uses the price you enter."
@@ -5613,7 +5633,7 @@
       },
       {
         "question": "Can I deduct my trade-in on a private vehicle sale in West Virginia?",
-        "answer": "No. Under W. Va. Code § 17A-3-4 and W. Va. Code R. § 110-15-65, the trade-in allowance deduction applies only when purchasing from a licensed motor vehicle dealer; private-party sales pay tax on the full purchase price."
+        "answer": "Yes, if the vehicle you trade is titled in West Virginia in your name and the titling tax was paid on it. W. Va. Code 11-15-3c deducts the value of other vehicles exchanged toward the purchase, new or used, and the DMV requires the trade-in to be in the same name as the vehicle you are titling."
       },
       {
         "question": "How much does a vehicle title cost in West Virginia?",
@@ -5636,7 +5656,7 @@
         "answer": "We found no fixed day count for a private buyer in the DMV’s pages or the code, so title and register before you drive. A vehicle without a valid inspection sticker must be inspected within 10 days. New residents have 30 days from establishing residency."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://dmv.wv.gov/titles",
       "https://dmv.wv.gov/vehicle-services/vehicles/registrations",
@@ -5645,7 +5665,8 @@
       "https://code.wvlegislature.gov/11-15-3C/",
       "https://code.wvlegislature.gov/17A-3-4/"
     ],
-    "minExciseTax": 30
+    "minExciseTax": 30,
+    "tradeInNote": "A trade-in counts on a private sale when the traded vehicle is titled in West Virginia in your name and the titling tax was paid on it (W. Va. Code 11-15-3c; WV DMV)."
   },
   "hawaii": {
     "label": "Hawaii",
@@ -5661,10 +5682,10 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 46
+          "1": 107.25
         },
         "over3700lbs": {
-          "1": 46
+          "1": 107.25
         }
       },
       "motorcycle": {
@@ -5681,7 +5702,7 @@
     "notes": [
       "Private party casual vehicle sales between individuals are exempt from Hawaii General Excise Tax (GET) under HRS Chapter 237.",
       "Certificate of ownership (title) transfer fee is $10.00.",
-      "Base state passenger vehicle registration fee is $46.00.",
+      "Registration shown is the $46 state registration fee (HRS 249-31) plus the state weight tax of 1.75¢ a pound on an assumed 3,500 lbs ($61.25, HRS 249-33): $107.25.",
       "Counties collect the state weight tax (1.75¢ a pound up to 4,000 lbs, 2¢ to 7,000 lbs, HRS 249-33) and their own registration fees and weight taxes, which differ by county (Honolulu: $20 county fee, $10 beautification fee from June 1, 2026, and a county weight tax).",
       "Buyers must transfer title and registration within 30 days to avoid a $50 late transfer penalty.",
       "A valid Hawaii vehicle safety inspection certificate is required to complete the registration transfer."
@@ -5689,7 +5710,7 @@
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Hawaii Department of Transportation and your local county DMV.",
       "Hawaii does not levy sales tax or General Excise Tax on casual private vehicle sales.",
-      "The estimate shows the $46 state registration fee only. Every county also collects the state weight tax (1.75¢ a pound up to 4,000 lbs) and its own registration fee and weight tax, so your total will be higher.",
+      "Registration shown is the $46 state registration fee plus the state weight tax at 1.75¢ a pound on an assumed 3,500 lbs (about $61). Your county’s registration fee and county weight tax are not included and vary by county; in Honolulu the county registration fee is $20, plus a $10 beautification fee.",
       "Hawaii’s road usage rules for electric vehicles cover three or more wheels, and its sources do not settle whether the $50 surcharge applies to a two-wheeled motorcycle, so the estimate leaves it out for one. Confirm with your county."
     ],
     "faqs": [
@@ -5699,7 +5720,7 @@
       },
       {
         "question": "What fees do I pay when transferring a car title in Hawaii?",
-        "answer": "The transfer fee is $10, or $60 with the $50 penalty if you transfer more than 30 days after the seller’s transfer date (Honolulu). Registration adds the $46 state fee, the state weight tax, and your county’s registration fee and weight tax."
+        "answer": "The transfer fee is $10, or $60 with the $50 penalty if you transfer more than 30 days after the seller’s transfer date (Honolulu). Registration adds the $46 state fee and the state weight tax, which the estimate includes for an assumed 3,500 lbs, plus your county’s registration fee and weight tax, which vary by county ($20 county fee in Honolulu)."
       },
       {
         "question": "What is the vehicle weight tax in Hawaii?",
@@ -5718,7 +5739,7 @@
         "answer": "In Hawaii, private vehicle transfers are not subject to a statewide vehicle sales tax. When transferring title between family members, you only pay standard title transfer fees and registration charges."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://data.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0249/HRS_0249-0031.htm",
       "https://data.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0249/HRS_0249-0033.htm",

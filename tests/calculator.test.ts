@@ -782,12 +782,12 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     expect(res.totalFirstYearCost).toBe(1042.70);
   });
 
-  it('8. Idaho (ID) worked invariant: $15,000 purchase price yields $900.00 tax and $959.00 total', () => {
+  it('8. Idaho (ID) worked invariant: $15,000 purchase price yields $900.00 tax and $967.00 total', () => {
     const res = calculateVehicleCosts(allRules.idaho, { ...std1Yr, state: 'idaho' }, 2026);
     expect(res.exciseTax).toBe(900.00);
     expect(res.titleFee).toBe(14.00);
-    expect(res.registrationTotal).toBe(45.00);
-    expect(res.totalFirstYearCost).toBe(959.00);
+    expect(res.registrationTotal).toBe(53.00); // $45 (7+ model years) + $1.25 EMS + $3 ISP + $3.75 plate
+    expect(res.totalFirstYearCost).toBe(967.00);
   });
 
   it('9. West Virginia (WV) worked invariant: $15,000 purchase price yields $900.00 tax (6% sales tax, W. Va. Code 11-15-3c) and $966.50 total', () => {
@@ -798,7 +798,7 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     expect(res.totalFirstYearCost).toBe(966.50);
   });
 
-  it('Batch 4 trade-in deductibility verification (AR, KS, NM allow; IA, MS, NE, ID, WV do not)', () => {
+  it('Batch 4 trade-in deductibility verification (AR, KS, NM, WV allow; MS and ID do not)', () => {
     // Arkansas: allows trade-in (sale in lieu of trade-in)
     const arTrade = calculateVehicleCosts(allRules.arkansas, {
       ...std1Yr,
@@ -829,16 +829,16 @@ describe('Batch 4 Worked Acceptance Tests (IA, NV, AR, MS, KS, NM, NE, ID, WV)',
     expect(nmTrade.tradeInDeducted).toBe(5000);
     expect(nmTrade.exciseTax).toBe(400.00); // $10,000 * 4%
 
-    // West Virginia: does NOT allow trade-in on private sales (dealer proviso only)
+    // West Virginia: a trade-in titled in WV in the buyer's name, tax paid, is deducted (W. Va. Code 11-15-3c)
     const wvTrade = calculateVehicleCosts(allRules['west-virginia'], {
       ...std1Yr,
       state: 'west-virginia',
       purchasePrice: 15000,
       tradeInValue: 5000
     }, 2026);
-    expect(wvTrade.tradeInDeducted).toBe(0);
-    expect(wvTrade.tradeInIgnored).toBe(true);
-    expect(wvTrade.exciseTax).toBe(900.00);
+    expect(wvTrade.tradeInDeducted).toBe(5000);
+    expect(wvTrade.tradeInIgnored).toBe(false);
+    expect(wvTrade.exciseTax).toBe(600.00); // $10,000 * 6%
   });
 });
 
@@ -860,13 +860,13 @@ describe('Batch 5 Worked Acceptance Tests (HI, NH, ME, MT, RI, SD, ND, AK, VT, W
     registrationTerm: 2
   };
 
-  it('Hawaii: exact worked test ($15,000 -> $56.00, 0% casual sales GET exemption)', () => {
+  it('Hawaii: exact worked test ($15,000 -> $117.25, 0% casual sales GET exemption)', () => {
     const rule = allRules.hawaii;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'hawaii' }, 2026);
     expect(res.exciseTax).toBe(0.00);
     expect(res.titleFee).toBe(10.00);
-    expect(res.registrationTotal).toBe(46.00);
-    expect(res.totalFirstYearCost).toBe(56.00);
+    expect(res.registrationTotal).toBe(107.25); // $46 state fee + 1.75 cents x 3,500 lbs state weight tax
+    expect(res.totalFirstYearCost).toBe(117.25);
   });
 
   it('New Hampshire: exact worked test ($15,000 -> $173.00, 0% state sales tax)', () => {

@@ -484,9 +484,12 @@ describe('Batch 14 guides (Idaho, West Virginia, Hawaii)', () => {
     for (const fact of ['three months', '4.5% use tax', 'landed value', 'Form G-27', 'bill of lading']) expect(hiMove).toContain(fact);
   });
 
-  it('West Virginia guides leave the private trade-in rule for the ruling; Hawaii guides give no county weight tax rate', () => {
-    for (const t of topics('west-virginia').map(text)) expect(t).not.toMatch(/trade-in|traded/i);
+  it('West Virginia gives the trade-in rule; Hawaii gives the state amounts and no county weight tax rate; Idaho gives the age tiers', () => {
+    expect(text('how-to-title-a-private-car-sale-in-west-virginia')).toContain('titled in West Virginia in your name and the titling tax was paid on it');
     for (const t of topics('hawaii').map(text)) expect(t).not.toMatch(/7\.0¢|1\.25¢/);
+    for (const slug of topics('hawaii')) expect(text(slug)).toMatch(/\$107\.25|1\.75¢ a pound/);
+    expect(text('how-to-title-a-private-car-sale-in-idaho')).toContain('$77, $65, or $53');
+    for (const t of topics('idaho').map(text)) expect(t).not.toContain('uses the $45');
   });
 
   it('batch 14 guides are dated November 2026; no em dashes', () => {
