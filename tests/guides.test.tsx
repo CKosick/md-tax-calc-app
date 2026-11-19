@@ -77,10 +77,13 @@ const GUIDE_STATES = {
   nebraska: { label: 'Nebraska', agency: 'Nebraska DMV and Department of Revenue', hosts: ['dmv.nebraska.gov', 'revenue.nebraska.gov', 'nebraskalegislature.gov'] },
   idaho: { label: 'Idaho', agency: 'Idaho Transportation Department and State Tax Commission', hosts: ['itd.idaho.gov', 'apps.itd.idaho.gov', 'tax.idaho.gov'] },
   'west-virginia': { label: 'West Virginia', agency: 'West Virginia DMV', hosts: ['dmv.wv.gov', 'webapps.transportation.wv.gov', 'code.wvlegislature.gov'] },
-  hawaii: { label: 'Hawaii', agency: 'Hawaii counties and Department of Taxation', hosts: ['data.capitol.hawaii.gov', 'www.honolulu.gov', 'www.vrl.hawaiicounty.gov', 'files.hawaii.gov'] }
+  hawaii: { label: 'Hawaii', agency: 'Hawaii counties and Department of Taxation', hosts: ['data.capitol.hawaii.gov', 'www.honolulu.gov', 'www.vrl.hawaiicounty.gov', 'files.hawaii.gov'] },
+  'new-hampshire': { label: 'New Hampshire', agency: 'New Hampshire DMV', hosts: ['www.dmv.nh.gov', 'gc.nh.gov'] },
+  maine: { label: 'Maine', agency: 'Maine Bureau of Motor Vehicles', hosts: ['www.maine.gov', 'legislature.maine.gov'] },
+  'rhode-island': { label: 'Rhode Island', agency: 'Rhode Island DMV and Division of Taxation', hosts: ['dmv.ri.gov', 'tax.ri.gov'] }
 } as const;
 // Guides re-checked in November 2026 carry that date; the rest October 2026
-const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska', 'idaho', 'west-virginia', 'hawaii'].includes(stateKey) ? 'November 2026' : 'October 2026');
+const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska', 'idaho', 'west-virginia', 'hawaii', 'new-hampshire', 'maine', 'rhode-island'].includes(stateKey) ? 'November 2026' : 'October 2026');
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
   `how-to-gift-a-car-in-${state}`,
@@ -500,6 +503,37 @@ describe('Batch 14 guides (Idaho, West Virginia, Hawaii)', () => {
   });
 });
 
+describe('Batch 15 guides (New Hampshire, Maine, Rhode Island)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified New Hampshire, Maine, and Rhode Island key facts', () => {
+    const [nhSale, nhGift, nhMove] = topics('new-hampshire').map(text);
+    for (const fact of ['no sales tax', '18 mills', '3 mills', '$5 minimum', 'rounded to the dollar', '$35', '$42', '$48', '$66', '$8 plate fee', '$100', '$50', '20-day temporary plate', 'RSA 261:57', '1999 or older', 'suspended']) expect(nhSale).toContain(fact);
+    for (const fact of ['no sales tax', '$35', 'death certificate']) expect(nhGift).toContain(fact);
+    for (const fact of ['60 days', 'RSA 261:45', 'establishing residency']) expect(nhMove).toContain(fact);
+
+    const [meSale, meGift, meMove] = topics('maine').map(text);
+    for (const fact of ['24 mills', '4 mills', '$5 minimum', '5.5%', '36 M.R.S. 1765', '$33', '25 years old', '$35', '$21', 'BMV branch']) expect(meSale).toContain(fact);
+    for (const fact of ['true gift', 'loan balance', 'spouses']) expect(meGift).toContain(fact);
+    for (const fact of ['30 days', 'use tax form', 'out-of-state registration']) expect(meMove).toContain(fact);
+
+    const [riSale, riGift, riMove] = topics('rhode-island').map(text);
+    for (const fact of ['7%', 'NADA Clean Retail book value or the sale price, whichever is greater', 'Cars of Particular Interest', '20th of the month', 'C-REF-SU', 'TR-1', 'T-334', 'VIN check', '$53.50', '$103.50', '$200', '$100', 'no trade-in deduction']) expect(riSale).toContain(fact);
+    for (const fact of ['step-sibling', 'notarized', 'SU 87-65']) expect(riGift).toContain(fact);
+    for (const fact of ['30 days', 'T-333-1', 'SU-NR-1', 'five days']) expect(riMove).toContain(fact);
+  });
+
+  it('New Hampshire guides say nothing on motorcycle EV fees while the written inquiry is open', () => {
+    for (const t of topics('new-hampshire').map(text)) expect(t).not.toMatch(/GVWR|gross vehicle weight rating/i);
+  });
+
+  it('batch 15 guides are dated November 2026; no em dashes', () => {
+    for (const state of ['new-hampshire', 'maine', 'rhode-island']) {
+      for (const guide of getGuidesForState(state)) expect(guide.lastVerified).toBe('November 2026');
+      for (const t of topics(state).map(text)) expect(t).not.toContain('—');
+    }
+  });
+});
+
 describe('Guide links and discovery', () => {
   // Renders every guide state's calculator page; slow under load, so it gets a longer timeout
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', { timeout: 60000 }, async () => {
@@ -543,6 +577,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('Mississippi, New Mexico, Nebraska, Idaho, West Virginia, and Hawaii.');
+    expect(String(metadata.description)).toContain('Idaho, West Virginia, Hawaii, New Hampshire, Maine, and Rhode Island.');
   });
 });

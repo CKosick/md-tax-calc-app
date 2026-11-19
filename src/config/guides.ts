@@ -454,6 +454,37 @@ const HI_SOURCES = {
   useTax: { label: 'Hawaii Department of Taxation: An Introduction to the Use Tax (2025)', url: 'https://files.hawaii.gov/tax/legal/brochures/Use_brochure-25.pdf' }
 };
 
+const NH_DMV = 'https://www.dmv.nh.gov/vehicles-boats-and-titles';
+const NH_SOURCES = {
+  registrations: { label: 'NH DMV: Vehicle Registrations', url: `${NH_DMV}/vehicle-registrations` },
+  temporaryPlates: { label: 'NH DMV: Temporary Plates', url: `${NH_DMV}/temporary-plates` },
+  newResident: { label: 'NH DMV: New Resident to New Hampshire', url: `${NH_DMV}/vehicle-registrations/new-resident-new-hampshire` },
+  exempt: { label: 'NH DMV: Exempt Vehicles (title)', url: `${NH_DMV}/exempt-vehicles` },
+  inspections: { label: 'NH DMV: Inspections & Emissions', url: `${NH_DMV}/inspections-emissions` },
+  titleFees: { label: 'RSA 261:20: Title fees', url: 'https://gc.nh.gov/rsa/html/XXI/261/261-20.htm' },
+  registrationFees: { label: 'RSA 261:141: Registration fees', url: 'https://gc.nh.gov/rsa/html/XXI/261/261-141.htm' },
+  permitFee: { label: 'RSA 261:153: Municipal permit fees', url: 'https://gc.nh.gov/rsa/html/XXI/261/261-153.htm' }
+};
+
+const ME_BMV = 'https://www.maine.gov/sos/bmv/vehicles';
+const ME_SOURCES = {
+  register: { label: 'Maine BMV: Register a Passenger Vehicle', url: `${ME_BMV}/register-a-passenger-vehicle` },
+  fees: { label: 'Maine BMV: Registration Fees', url: `${ME_BMV}/registration-fees` },
+  excise: { label: '36 M.R.S. 1482: Excise tax rates', url: 'https://legislature.maine.gov/statutes/36/title36sec1482.html' },
+  useTax: { label: '36 M.R.S. 1764: Use tax on casual sales of vehicles', url: 'https://legislature.maine.gov/statutes/36/title36sec1764.html' },
+  tradeIn: { label: '36 M.R.S. 1765: Trade-in credit', url: 'https://legislature.maine.gov/statutes/36/title36sec1765.html' }
+};
+
+const RI_DMV = 'https://dmv.ri.gov/registrations-plates-titles';
+const RI_SOURCES = {
+  salesTax: { label: 'RI DMV: Sales Tax', url: `${RI_DMV}/sales-tax` },
+  newRegistration: { label: 'RI DMV: New Registration', url: `${RI_DMV}/registration/new-registration` },
+  fees: { label: 'RI DMV: Registration & Title Fees', url: `${RI_DMV}/registration/registration-title-fees` },
+  weightTable: { label: 'RI DMV: Registration by weight and EV fees', url: 'https://dmv.ri.gov/media/561/download' },
+  moving: { label: 'RI DMV: Moving into RI from Out of State', url: `${RI_DMV}/registration/moving-ri-out-state` },
+  casualSales: { label: 'RI Division of Taxation: Casual Sales of Cars in RI', url: 'https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-04/Casual%20Car%20Sales%20in%20RI%20one%20pager%2004-08-2025.pdf' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -9431,6 +9462,654 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [HI_SOURCES.useTax, HI_SOURCES.hawaiiCounty, HI_SOURCES.stateFee, HI_SOURCES.weightTax]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-new-hampshire',
+    stateKey: 'new-hampshire',
+    title: 'How to Title a Private Car Sale in New Hampshire',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in New Hampshire',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in New Hampshire: no sales tax, the town permit fee by list price and age, the $35 title, state registration, and plates.',
+    cardDescription: 'No sales tax, the town permit fee, the title, and plates.',
+    intro: [
+      'New Hampshire has no sales tax on vehicles. You register a car bought from a private seller in two parts: the town or city permit fee first, then the state title and registration.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'New Hampshire DMV',
+    steps: [
+      {
+        title: 'Get the assigned title',
+        body: [
+          'The seller signs the title over to you. A vehicle of model year 1999 or older is not titled in New Hampshire, so for one of those you need a bill of sale and proof of the VIN instead.'
+        ]
+      },
+      {
+        title: 'Start at your town or city clerk',
+        body: [
+          'Every registration begins at the clerk where you live, who confirms your residency and collects the municipal permit fee. Many clerks can also do the state part for a small extra fee.'
+        ]
+      },
+      {
+        title: 'Pay the municipal permit fee',
+        body: [
+          'The fee is 18 mills on each dollar of the maker’s list price for a current model year vehicle, then 15, 12, 9, and 6 mills, and 3 mills from the fifth preceding model year on, with a $5 minimum and rounded to the dollar (RSA 261:153).'
+        ]
+      },
+      {
+        title: 'Pay the title and state registration',
+        body: [
+          'The title is $35 (RSA 261:20). State registration is $42 up to 3,000 lbs, $48 from 3,001 to 5,000 lbs, and $66 from 5,001 to 8,000 lbs, plus an $8 plate fee the first time you order plates. A battery electric vehicle adds $100 a year and a plug-in hybrid $50.'
+        ]
+      },
+      {
+        title: 'Drive legally in the meantime',
+        body: [
+          'To drive before you register, get a 20-day temporary plate from the DMV for $20 (RSA 261:57), with a copy of the signed title or bill of sale and your license. The state inspection program has been suspended since February 2026; you are still responsible for a safe vehicle.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you (or a bill of sale for model year 1999 or older)',
+      'Proof of residency for your town or city clerk',
+      'Your driver’s license',
+      'Payment for the municipal permit fee, title, registration, and plates',
+      'The temporary plate application, if you need to drive first'
+    ],
+    calculatorNote:
+      'There is no sales tax. The calculator shows the $35 title, the $48 registration and $8 plate fee, and a year of the town permit fee from the list price you enter. It shows the title at every age, though a vehicle of model year 1999 or older is not titled.',
+    faqs: [
+      {
+        question: 'Is there sales tax on a used car in New Hampshire?',
+        answer: 'No. New Hampshire has no sales tax on vehicles bought from anyone.'
+      },
+      {
+        question: 'Why does my town charge so much the first year?',
+        answer: 'The permit fee is figured on the maker’s list price at 18 mills for a current model year vehicle and drops each year to 3 mills from the fifth preceding model year on.'
+      },
+      {
+        question: 'Can I move my old plates to the new car?',
+        answer: 'Yes, with your current registration. Transfer credit applies only if the primary owner’s name stays the same on both registrations.'
+      }
+    ],
+    sources: [NH_SOURCES.registrations, NH_SOURCES.permitFee, NH_SOURCES.titleFees, NH_SOURCES.registrationFees, NH_SOURCES.temporaryPlates, NH_SOURCES.exempt, NH_SOURCES.inspections]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-new-hampshire',
+    stateKey: 'new-hampshire',
+    title: 'How to Gift a Car in New Hampshire',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in New Hampshire',
+    metaDescription:
+      'How to gift a car in New Hampshire: there is no sales tax on any transfer, so the new owner pays the town permit fee, the $35 title, and the state registration.',
+    cardDescription: 'No tax, the town permit fee, the title, and plates.',
+    intro: [
+      'New Hampshire has no sales tax on vehicles, so a gift costs the same as any transfer: the town or city permit fee, the title, and the state registration.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'New Hampshire DMV',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs the title over to you. For a vehicle of model year 1999 or older, which is not titled, use a bill of sale and proof of the VIN.'
+        ]
+      },
+      {
+        title: 'Go to your town or city clerk',
+        body: [
+          'The clerk confirms your residency and collects the municipal permit fee, figured from the maker’s list price and the model year.'
+        ]
+      },
+      {
+        title: 'Pay the title fee',
+        body: [
+          'The title for a vehicle of model year 2000 or newer is $35.'
+        ]
+      },
+      {
+        title: 'Register with the state',
+        body: [
+          'Pay the state registration by weight, plus $8 if you need new plates. The clerk may handle this for a small fee.'
+        ]
+      },
+      {
+        title: 'Keep it safe on the road',
+        body: [
+          'The state inspection program is suspended, but you are responsible for keeping the vehicle safe to drive.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'Proof of residency',
+      'Your driver’s license',
+      'Payment for the permit fee, title, and registration',
+      'A bill of sale and proof of the VIN, for a vehicle of model year 1999 or older'
+    ],
+    calculatorNote:
+      'Enter $0 as the price. The calculator shows the $35 title, the registration and plate fee, and the town permit fee from the list price you enter.',
+    faqs: [
+      {
+        question: 'Is a gifted car taxed in New Hampshire?',
+        answer: 'No. New Hampshire has no sales tax on any vehicle transfer.'
+      },
+      {
+        question: 'Does the town permit fee still apply?',
+        answer: 'Yes. Every registration pays the municipal permit fee, whether the vehicle was bought or given.'
+      },
+      {
+        question: 'What if my spouse died and the car was in both names?',
+        answer: 'Bring the title or lienholder information and a copy of the death certificate to your town or city clerk to transfer the registration.'
+      }
+    ],
+    sources: [NH_SOURCES.registrations, NH_SOURCES.permitFee, NH_SOURCES.titleFees]
+  },
+  {
+    slug: 'titling-a-car-in-new-hampshire-after-moving-from-another-state',
+    stateKey: 'new-hampshire',
+    title: 'Titling a Car in New Hampshire After Moving From Another State',
+    shortTitle: 'Title a car after moving to New Hampshire',
+    metaTitle: 'Titling Your Car After Moving to New Hampshire',
+    metaDescription:
+      'New to New Hampshire? Register your car within 60 days of establishing residency, starting at your town or city clerk. No sales tax; you pay the permit fee, title, and registration.',
+    cardDescription: '60 days, the town clerk, and the fees.',
+    intro: [
+      'As a new New Hampshire resident, you register your vehicle within 60 days of establishing residency (RSA 261:45). There is no sales tax.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'New Hampshire DMV',
+    steps: [
+      {
+        title: 'Plan for 60 days',
+        body: [
+          'You have 60 days from establishing residency to register any vehicle you own and use in New Hampshire, and 60 days to get a New Hampshire license if you drive here.'
+        ]
+      },
+      {
+        title: 'Start at your town or city clerk',
+        body: [
+          'Bring proof of residency and your out-of-state title. If a lender holds the title or the vehicle is leased, see the DMV’s temporary plate page for the 60-day plate process.'
+        ]
+      },
+      {
+        title: 'Pay the municipal permit fee',
+        body: [
+          'The town or city figures it from the maker’s list price and the model year, from 18 mills down to 3 mills.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $35 for a vehicle of model year 2000 or newer. Registration goes by weight, from $42 to $66, plus $8 for your first New Hampshire plates.'
+        ]
+      },
+      {
+        title: 'Know the inspection status',
+        body: [
+          'The state inspection program has been suspended since February 2026, so no inspection sticker is required for now.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title, or your lender’s information',
+      'Proof of New Hampshire residency',
+      'Your driver’s license',
+      'Payment for the permit fee, title, registration, and plates',
+      'Your current out-of-state registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price. The calculator shows the $35 title, the registration and plate fee, and the town permit fee from the list price you enter.',
+    faqs: [
+      {
+        question: 'Do I pay tax on the car I moved with?',
+        answer: 'No sales tax. You pay the town permit fee, the title, and the registration like any New Hampshire owner.'
+      },
+      {
+        question: 'What counts as establishing residency?',
+        answer: 'Making a New Hampshire town your principal place of physical presence, shown by things like buying or leasing a home, registering to vote, or enrolling children in school.'
+      },
+      {
+        question: 'Do I need a New Hampshire license too?',
+        answer: 'Yes, within 60 days if you drive in New Hampshire.'
+      }
+    ],
+    sources: [NH_SOURCES.newResident, NH_SOURCES.registrations, NH_SOURCES.permitFee, NH_SOURCES.inspections]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-maine',
+    stateKey: 'maine',
+    title: 'How to Title a Private Car Sale in Maine',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Maine',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Maine: the town excise tax, 5.5% sales tax with a trade-in credit, the $33 title, and the $35 registration.',
+    cardDescription: 'The excise tax, 5.5% sales tax, the title, and fees.',
+    intro: [
+      'In Maine you pay the excise tax at your town office first, then register the car there or at a BMV branch. A private sale also owes 5.5% sales tax on the price.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Maine Bureau of Motor Vehicles',
+    steps: [
+      {
+        title: 'Get the signed title and bill of sale',
+        body: [
+          'For a vehicle model 25 years old or newer, the seller signs the title over to you. Get a signed bill of sale for any vehicle.'
+        ]
+      },
+      {
+        title: 'Pay the excise tax at your town office',
+        body: [
+          'The excise tax is 24 mills on each dollar of the maker’s list price for the current model year, then 17½, 13½, 10, and 6½ mills, and 4 mills from the sixth year on, with a $5 minimum (36 M.R.S. 1482).'
+        ]
+      },
+      {
+        title: 'Pay the 5.5% sales tax',
+        body: [
+          'A private sale owes Maine’s 5.5% sales tax on the purchase price when you register (36 M.R.S. 1764). If you traded a vehicle toward the purchase, tax is only on the difference (36 M.R.S. 1765).'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title application is $33 for vehicle models 25 years old and newer. Registration is $35 a year for a car or pickup, and $21 for a motorcycle.'
+        ]
+      },
+      {
+        title: 'Register at the town or a BMV branch',
+        body: [
+          'If your town does not issue registrations, take your excise tax receipt and the white and yellow copies of your registration application to a BMV branch.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you, for a model 25 years old or newer',
+      'A signed bill of sale',
+      'Proof of insurance',
+      'Your excise tax receipt and the white and yellow copies of the registration application',
+      'Payment for the sales tax, title, and registration'
+    ],
+    calculatorNote:
+      'The calculator shows 5.5% of the price less any trade-in, the $33 title, the $35 registration, and a year of the town excise tax from the list price you enter. It shows the title at every age, though a vehicle over 25 years old does not need one.',
+    faqs: [
+      {
+        question: 'Do I pay both excise tax and sales tax?',
+        answer: 'Yes. The excise tax goes to your town every year you register; the 5.5% sales tax is paid once on the purchase.'
+      },
+      {
+        question: 'Does a trade-in lower the sales tax?',
+        answer: 'Yes. When a vehicle is traded toward another, Maine taxes only the difference between the price and the trade-in allowance.'
+      },
+      {
+        question: 'Can I get vanity plates?',
+        answer: 'Yes, at a BMV branch for an extra $25.'
+      }
+    ],
+    sources: [ME_SOURCES.register, ME_SOURCES.excise, ME_SOURCES.useTax, ME_SOURCES.tradeIn, ME_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-maine',
+    stateKey: 'maine',
+    title: 'How to Gift a Car in Maine',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Maine',
+    metaDescription:
+      'How to gift a car in Maine: a true gift with nothing paid is not subject to sales tax, but taking over the loan counts as payment. The town excise tax and registration still apply.',
+    cardDescription: 'When a gift is tax-free, the excise tax, and fees.',
+    intro: [
+      'A true gift of a vehicle, with nothing paid for it, is not subject to Maine sales tax. You still pay the town excise tax and the registration.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Maine Bureau of Motor Vehicles',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'For a vehicle model 25 years old or newer, the giver signs the title over to you.'
+        ]
+      },
+      {
+        title: 'Make sure it is a true gift',
+        body: [
+          'Maine Revenue Services says a true gift requires no payment in cash, property, or services. If you take over the loan balance, that is payment, and the transfer is a taxable sale. A transfer between family members or spouses for any payment is also taxable.'
+        ]
+      },
+      {
+        title: 'Pay the excise tax',
+        body: [
+          'Pay the excise tax at your town office, figured from the maker’s list price and the model year.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title application is $33 for a model 25 years old or newer, and registration is $35 a year.'
+        ]
+      },
+      {
+        title: 'Register',
+        body: [
+          'Register at your town office or, if it does not issue registrations, at a BMV branch.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over to you',
+      'Proof of insurance',
+      'Your excise tax receipt',
+      'The registration application copies',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for a true gift. The calculator then shows no sales tax, the $33 title, the $35 registration, and the town excise tax.',
+    faqs: [
+      {
+        question: 'Is a car from my father a gift?',
+        answer: 'Yes, if you pay nothing for it. If you take over his loan, the loan balance counts as the price.'
+      },
+      {
+        question: 'Is a sale between spouses taxed?',
+        answer: 'Yes, if anything is paid. Maine Revenue Services says being family members or spouses does not change a taxable sale.'
+      },
+      {
+        question: 'Do I still owe excise tax?',
+        answer: 'Yes. The town excise tax is due every year you register, however you got the vehicle.'
+      }
+    ],
+    sources: [ME_SOURCES.register, ME_SOURCES.useTax, ME_SOURCES.excise]
+  },
+  {
+    slug: 'titling-a-car-in-maine-after-moving-from-another-state',
+    stateKey: 'maine',
+    title: 'Titling a Car in Maine After Moving From Another State',
+    shortTitle: 'Title a car after moving to Maine',
+    metaTitle: 'Titling Your Car After Moving to Maine',
+    metaDescription:
+      'New to Maine? Convert your registration and title within 30 days. Pay the town excise tax, then show your out-of-state registration with a Maine use tax form to skip sales tax.',
+    cardDescription: '30 days, the excise tax, and the use tax form.',
+    intro: [
+      'As a new Maine resident, you have 30 days after establishing residency to convert your registration and title. You pay the town excise tax, but a vehicle you already registered in another state does not owe Maine sales tax.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Maine Bureau of Motor Vehicles',
+    steps: [
+      {
+        title: 'Plan for 30 days',
+        body: [
+          'The BMV gives new residents 30 days after establishing residency to convert their registrations and titles.'
+        ]
+      },
+      {
+        title: 'Pay the excise tax at your town office',
+        body: [
+          'Your town figures the excise tax from the maker’s list price and the model year.'
+        ]
+      },
+      {
+        title: 'Prove the sales tax exemption',
+        body: [
+          'Bring your out-of-state registration and a Maine use tax form to show the vehicle is exempt from sales tax.'
+        ]
+      },
+      {
+        title: 'Bring your title and lien details',
+        body: [
+          'Bring your out-of-state title for a model 25 years old or newer, and the name and address of any lienholder.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title application is $33, and registration is $35 a year for a car or pickup.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title and registration',
+      'Lienholder name and address, if any',
+      'A Maine use tax form',
+      'Proof of insurance',
+      'Your excise tax receipt and registration application copies'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for a vehicle you already registered out of state. The calculator then shows the $33 title, the $35 registration, and the town excise tax.',
+    faqs: [
+      {
+        question: 'Do I pay Maine sales tax on the car I moved with?',
+        answer: 'Not if you show its out-of-state registration with a Maine use tax form.'
+      },
+      {
+        question: 'Do I pay excise tax right away?',
+        answer: 'Yes. The excise tax is paid at your town office before you register.'
+      },
+      {
+        question: 'What if my town does not do registrations?',
+        answer: 'Pay the excise tax at the town office, then register at a BMV branch.'
+      }
+    ],
+    sources: [ME_SOURCES.register, ME_SOURCES.excise, ME_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-rhode-island',
+    stateKey: 'rhode-island',
+    title: 'How to Title a Private Car Sale in Rhode Island',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Rhode Island',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Rhode Island: 7% sales tax on the NADA value or price, due by the 20th of the next month, the $53.50 title, and registration.',
+    cardDescription: '7% on NADA or price, the due date, title, and fees.',
+    intro: [
+      'Rhode Island charges 7% sales tax on a car bought from a private seller. For a vehicle 7 years old or less, the DMV taxes the NADA Clean Retail book value or the sale price, whichever is greater.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Rhode Island DMV and Division of Taxation',
+    steps: [
+      {
+        title: 'Get the signed title and a bill of sale',
+        body: [
+          'For a vehicle of model year 2001 or newer, the seller signs the back of the title. Get a bill of sale for every sale.'
+        ]
+      },
+      {
+        title: 'Know how the tax is figured',
+        body: [
+          'A vehicle 7 years old or less is taxed at 7% of the NADA Clean Retail book value or the sale price, whichever is greater. A vehicle 8 to 29 years old is taxed on the sale price unless it is on the Cars of Particular Interest list. A private sale gets no trade-in deduction.'
+        ]
+      },
+      {
+        title: 'Pay the tax by the 20th of next month',
+        body: [
+          'Sales tax is due by the 20th of the month after the sale, even if the vehicle is not registered yet, or interest and penalties are added. You can pay at the DMV when you register or earlier at the Division of Taxation. You have 30 days after paying to dispute the value (Form C-REF-SU).'
+        ]
+      },
+      {
+        title: 'Complete the registration paperwork',
+        body: [
+          'Bring the Application for Registration (TR-1), the Sales Tax Form (T-334), Rhode Island insurance, the vehicle’s gross vehicle weight rating, and your license. A title or registration from another state needs a VIN check first.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $53.50, and a lien adds a $53.50 security lien statement. A passenger vehicle to 4,000 lbs registers for two years at $103.50. A battery electric vehicle adds $200 a year, a plug-in hybrid $100, and another hybrid $50.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the seller (model year 2001 or newer)',
+      'A bill of sale',
+      'Forms TR-1 and T-334',
+      'Rhode Island insurance and your license',
+      'Payment for the sales tax, title, and registration'
+    ],
+    calculatorNote:
+      'The calculator applies 7% to the price you enter; for a vehicle 7 years old or less, enter the NADA Clean Retail value if it is higher. It adds the $53.50 title and the $103.50 two-year registration.',
+    faqs: [
+      {
+        question: 'What if the NADA value is too high for my car?',
+        answer: 'You have 30 days from paying the tax to ask the Division of Taxation for a redetermination of the value on Form C-REF-SU.'
+      },
+      {
+        question: 'Can I deduct a trade-in on a private sale?',
+        answer: 'No. The DMV lists the trade-in allowance only for dealer sales.'
+      },
+      {
+        question: 'Why is my registration more than the weight fee?',
+        answer: 'Every registration adds a $3.50 surcharge and a $20 a year DOT surcharge to the weight fee.'
+      }
+    ],
+    sources: [RI_SOURCES.salesTax, RI_SOURCES.casualSales, RI_SOURCES.newRegistration, RI_SOURCES.fees, RI_SOURCES.weightTable]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-rhode-island',
+    stateKey: 'rhode-island',
+    title: 'How to Gift a Car in Rhode Island',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Rhode Island',
+    metaDescription:
+      'How to gift a car in Rhode Island: no sales tax with a signed gift letter from immediate family, or a notarized letter and gift affidavit from anyone else. Then pay the title and registration.',
+    cardDescription: 'Gift letters, the affidavit, and fees.',
+    intro: [
+      'A gifted vehicle owes no Rhode Island sales tax, unless taxes are already outstanding on it. What you need depends on whether the giver is immediate family.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Rhode Island DMV and Division of Taxation',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The person giving the vehicle signs the back of the title.'
+        ]
+      },
+      {
+        title: 'Get a gift letter from immediate family',
+        body: [
+          'From a parent, step-parent, sibling, step-sibling, spouse, child, or step-child, a signed letter of gift is enough.'
+        ]
+      },
+      {
+        title: 'From anyone else, notarize and add the affidavit',
+        body: [
+          'From anyone else, the gift letter must be notarized and you must also sign the Affidavit of Gift of Motor Vehicle (SU 87-65). The affidavit alone is not a gift letter.'
+        ]
+      },
+      {
+        title: 'Complete the registration paperwork',
+        body: [
+          'Bring the title, Rhode Island insurance, the gross vehicle weight rating, your license, and the gift letter. A title from another state needs a VIN check.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $53.50, and two years of registration for a passenger vehicle to 4,000 lbs is $103.50.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the giver',
+      'A gift letter (notarized, with the SU 87-65 affidavit, if not immediate family)',
+      'Rhode Island insurance',
+      'Your license',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price. The calculator then shows no sales tax, the $53.50 title, and the $103.50 two-year registration.',
+    faqs: [
+      {
+        question: 'Is a gift from my aunt taxed?',
+        answer: 'No, but you need a notarized gift letter and the Affidavit of Gift of Motor Vehicle, since an aunt is not immediate family.'
+      },
+      {
+        question: 'Who counts as immediate family?',
+        answer: 'A parent, step-parent, sibling, step-sibling, spouse, child, or step-child.'
+      },
+      {
+        question: 'Can I take the giver’s plates?',
+        answer: 'The DMV has a separate plate gift letter for a plate transfer.'
+      }
+    ],
+    sources: [RI_SOURCES.salesTax, RI_SOURCES.newRegistration, RI_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-rhode-island-after-moving-from-another-state',
+    stateKey: 'rhode-island',
+    title: 'Titling a Car in Rhode Island After Moving From Another State',
+    shortTitle: 'Title a car after moving to Rhode Island',
+    metaTitle: 'Titling Your Car After Moving to Rhode Island',
+    metaDescription:
+      'New to Rhode Island? Title and register your car within 30 days of moving, with a VIN check and the sales tax exemption forms, then get it inspected within five days.',
+    cardDescription: '30 days, the VIN check, exemption forms, and inspection.',
+    intro: [
+      'As a new Rhode Island resident, you must get a new title and registration within 30 days of moving. You sign sales tax exemption forms for a vehicle you already own.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Rhode Island DMV and Division of Taxation',
+    steps: [
+      {
+        title: 'Plan for 30 days',
+        body: [
+          'Within 30 days of moving to Rhode Island you must obtain a new title and registration.'
+        ]
+      },
+      {
+        title: 'Get a VIN check',
+        body: [
+          'A vehicle titled or registered in another state needs a VIN check at a police station before you register. Ask which forms of payment they accept.'
+        ]
+      },
+      {
+        title: 'Sign the exemption forms',
+        body: [
+          'Complete the Tax Exempt Certificate (T-333-1) and the Transferring In From Out-of-State affidavit (SU-NR-1).'
+        ]
+      },
+      {
+        title: 'Register and pay',
+        body: [
+          'Bring your title (required for model year 2001 or newer), the Application for Registration (TR-1), and Rhode Island insurance. The title is $53.50 and two years of registration for a passenger vehicle to 4,000 lbs is $103.50.'
+        ]
+      },
+      {
+        title: 'Get inspected within five days',
+        body: [
+          'New residents must have their vehicles inspected within five days of registering.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title (model year 2001 or newer)',
+      'Forms TR-1, T-333-1, and SU-NR-1',
+      'A completed VIN check',
+      'Rhode Island insurance',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for a vehicle you already own. The calculator then shows the $53.50 title and the $103.50 two-year registration.',
+    faqs: [
+      {
+        question: 'Do I pay sales tax on the car I moved with?',
+        answer: 'You sign the Tax Exempt Certificate and the out-of-state transfer affidavit to claim the exemption.'
+      },
+      {
+        question: 'What if my lender has the title?',
+        answer: 'Use the DMV’s Title Request for Lienholder or Leasing Company form. If the lender sent the title to the DMV, pick it up from the Research Office at the Cranston DMV first.'
+      },
+      {
+        question: 'How soon do I need an inspection?',
+        answer: 'Within five days of registering.'
+      }
+    ],
+    sources: [RI_SOURCES.moving, RI_SOURCES.newRegistration, RI_SOURCES.fees]
   }
 ];
 
