@@ -32,6 +32,8 @@ describe('Idaho re-check and rulings (November 2026)', () => {
     expect(calc(id, { vehicleYear: 2026, fuelType: 'ev' }).registrationTotal).toBe(217);
     const text = copy(id);
     for (const fact of ['$1.25 EMS fee', '$3 State Police fee', '$3.75 new plate fee', '$3 to $14', '$0 to $18.75', '$14 to $32.75']) expect(text).toContain(fact);
+    expect(text).toContain('A motorcycle is $33: the $19 fee, the $6 Motorcycle Safety Program fee, and the same $8 in statewide fees');
+    expect(text).not.toContain('$19 plus a $6 safety program fee.');
     expect(id.lastVerified).toBe('November 2026');
   });
 
