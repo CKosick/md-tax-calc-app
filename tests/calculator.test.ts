@@ -869,13 +869,13 @@ describe('Batch 5 Worked Acceptance Tests (HI, NH, ME, MT, RI, SD, ND, AK, VT, W
     expect(res.totalFirstYearCost).toBe(117.25);
   });
 
-  it('New Hampshire: exact worked test ($15,000 -> $173.00, 0% state sales tax)', () => {
+  it('New Hampshire: exact worked test ($15,000 -> $181.00, 0% state sales tax)', () => {
     const rule = allRules['new-hampshire'];
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'new-hampshire' }, 2026);
     expect(res.exciseTax).toBe(0.00);
     expect(res.titleFee).toBe(35.00);
-    expect(res.registrationTotal).toBe(138.00); // $48 + $90 permit fee on the $30,000 default
-    expect(res.totalFirstYearCost).toBe(173.00);
+    expect(res.registrationTotal).toBe(146.00); // $48 + $8 plate fee + $90 permit fee on the $30,000 default
+    expect(res.totalFirstYearCost).toBe(181.00);
   });
 
   it('Maine: exact worked test ($15,000 -> $1,013.00, 5.5% tax)', () => {
@@ -896,13 +896,13 @@ describe('Batch 5 Worked Acceptance Tests (HI, NH, ME, MT, RI, SD, ND, AK, VT, W
     expect(res.totalFirstYearCost).toBe(99.00);
   });
 
-  it('Rhode Island: exact worked test ($15,000 -> $1,162.50, 7.0% tax, 2yr reg)', () => {
+  it('Rhode Island: exact worked test ($15,000 -> $1,207.00, 7.0% tax, 2yr reg)', () => {
     const rule = allRules['rhode-island'];
     const res = calculateVehicleCosts(rule, { ...std2Yr, state: 'rhode-island' }, 2026);
     expect(res.exciseTax).toBe(1050.00); // 7.0% of 15000
-    expect(res.titleFee).toBe(52.50);
-    expect(res.registrationTotal).toBe(60.00);
-    expect(res.totalFirstYearCost).toBe(1162.50);
+    expect(res.titleFee).toBe(53.50); // includes the $3.50 technology surcharge
+    expect(res.registrationTotal).toBe(103.50); // $60 + $3.50 + $40 DOT surcharge for two years
+    expect(res.totalFirstYearCost).toBe(1207.00);
   });
 
   it('South Dakota: exact worked test ($15,000 -> $652.00, 4.0% motor vehicle excise tax)', () => {

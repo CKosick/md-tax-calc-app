@@ -22,7 +22,7 @@ import stateRulesData from '../src/config/stateRules.json';
 import { StateRulesConfig } from '../src/lib/types';
 
 const rules = stateRulesData as StateRulesConfig;
-const RECHECKED = ['maryland', 'virginia', 'pennsylvania', 'texas', 'california', 'florida', 'new-york', 'illinois', 'ohio', 'michigan', 'minnesota', 'oklahoma', 'arkansas', 'connecticut', 'louisiana', 'utah', 'georgia', 'north-carolina', 'new-jersey', 'washington', 'arizona', 'tennessee', 'massachusetts', 'indiana', 'missouri', 'wisconsin', 'colorado', 'south-carolina', 'alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska', 'idaho', 'west-virginia', 'hawaii'];
+const RECHECKED = ['maryland', 'virginia', 'pennsylvania', 'texas', 'california', 'florida', 'new-york', 'illinois', 'ohio', 'michigan', 'minnesota', 'oklahoma', 'arkansas', 'connecticut', 'louisiana', 'utah', 'georgia', 'north-carolina', 'new-jersey', 'washington', 'arizona', 'tennessee', 'massachusetts', 'indiana', 'missouri', 'wisconsin', 'colorado', 'south-carolina', 'alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska', 'idaho', 'west-virginia', 'hawaii', 'new-hampshire', 'maine', 'rhode-island'];
 const GENERIC = /vary significantly by state|deadlines for private vehicle purchases vary by jurisdiction|many states offer reciprocal tax credit/i;
 
 afterEach(() => cleanup());
@@ -45,9 +45,9 @@ describe('Generic FAQ answers are hidden on states not yet re-checked', () => {
       hidden += rule.faqs.length - published.length;
       if (!RECHECKED.includes(key)) expect(published.length).toBeGreaterThanOrEqual(4);
     }
-    // 8 states x 3 + 3 states x 1 (deadline only);
-    // Maryland's, Texas's, California's, Florida's, New York's, Illinois's, Ohio's, Michigan's, Minnesota's, Oklahoma's, Arkansas's, Connecticut's, Louisiana's, Utah's, Georgia's, North Carolina's, New Jersey's, Washington's, Arizona's, Tennessee's, Massachusetts's, Indiana's, Missouri's, Wisconsin's, Colorado's, South Carolina's, Alabama's, Kentucky's, Oregon's, Nevada's, Iowa's, Kansas's, Mississippi's, New Mexico's, Nebraska's, Idaho's, and West Virginia's were replaced with verified answers
-    expect(hidden).toBe(8 * 3 + 3 * 1);
+    // 6 states x 3 + 2 states x 1 (deadline only);
+    // Maryland's, Texas's, California's, Florida's, New York's, Illinois's, Ohio's, Michigan's, Minnesota's, Oklahoma's, Arkansas's, Connecticut's, Louisiana's, Utah's, Georgia's, North Carolina's, New Jersey's, Washington's, Arizona's, Tennessee's, Massachusetts's, Indiana's, Missouri's, Wisconsin's, Colorado's, South Carolina's, Alabama's, Kentucky's, Oregon's, Nevada's, Iowa's, Kansas's, Mississippi's, New Mexico's, Nebraska's, Idaho's, West Virginia's, New Hampshire's, Maine's, and Rhode Island's were replaced with verified answers
+    expect(hidden).toBe(6 * 3 + 2 * 1);
   });
 
   it('Maryland’s gift, deadline, and out-of-state answers are the verified ones', () => {

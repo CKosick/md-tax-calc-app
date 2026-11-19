@@ -5763,14 +5763,14 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 48
+          "1": 56
         },
         "over3700lbs": {
-          "1": 48
+          "1": 56
         }
       },
       "motorcycle": {
-        "1": 24
+        "1": 30
       },
       "evSurchargeAnnual": 100,
       "listPriceAnnualTax": {
@@ -5784,7 +5784,8 @@
           0.006,
           0.003
         ],
-        "minAmount": 5
+        "minAmount": 5,
+        "roundToDollar": true
       },
       "phevSurchargeAnnual": 50,
       "motorcycleFuelFees": {
@@ -5800,14 +5801,14 @@
     "notes": [
       "New Hampshire does not impose a state sales tax on motor vehicle purchases.",
       "Certificate of title fee is $35.00 under RSA 261:20 (required for vehicles model year 2000 and newer).",
-      "State passenger vehicle registration fee is $48.00 under RSA 261:141.",
+      "State passenger vehicle registration is $48.00 for the middle weight class under RSA 261:141, plus the DMV’s $8 plate fee for first-time plates: $56. A motorcycle is $30 (RSA 261:141, III(o)).",
       "Municipal permit fees are paid to your town or city clerk: $18, $15, $12, $9, $6, then $3 per $1,000 of the maker’s list price by model year (RSA 261:153). The estimate includes it for passenger vehicles from the list price you enter ($30,000 if blank).",
       "Electric vehicles pay an additional $100 annual state registration surcharge ($50 for plug-in hybrids). The fee goes by GVWR from January 1, 2027. The form has no GVWR question, so the estimate stays at the 3,001 to 8,000 lb class."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with New Hampshire DMV and your local town/city clerk.",
       "New Hampshire has no state vehicle sales tax. The estimate includes a full year of the municipal permit fee, which has a $5 minimum, for passenger vehicles, but not the $3 reclamation fee or a municipal transportation fee of up to $5, and motorcycles are shown without the permit fee. Your town or city clerk gives the exact amount.",
-      "Registration shown is the $48 fee for vehicles of 3,001 to 5,000 lbs. Up to 3,000 lbs is $42, and 5,001 to 8,000 lbs is $66.",
+      "Registration shown is the $48 state fee for vehicles of 3,001 to 5,000 lbs plus the $8 plate fee for first-time plates ($56). Up to 3,000 lbs the state fee is $42, and 5,001 to 8,000 lbs is $66. A motorcycle is $30. The municipal permit fee is rounded to the nearest dollar (RSA 261:153).",
       "Battery electric vehicles pay $100 a year, and plug-in hybrids pay $50. From January 1, 2027, the battery electric fee goes by gross vehicle weight rating: $0 up to 1,000 lbs, $50 from 1,001 to 3,000 lbs, $100 from 3,001 to 8,000 lbs, and $150 over 8,000 lbs (RSA 261:141-c). Plug-in hybrids stay at $50. The estimate uses $100.",
       "New Hampshire’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the Division of Motor Vehicles."
     ],
@@ -5830,22 +5831,28 @@
       },
       {
         "question": "Do I pay New Hampshire vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "Because New Hampshire does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in New Hampshire. Standard certificate of title fees and registration tag fees still apply upon titling. The yearly municipal permit fee also applies at registration."
+        "answer": "No. New Hampshire has no sales tax on vehicles, wherever you buy them. You pay the town or city permit fee, the $35 title fee, and the state registration. Bring the properly assigned title to your town or city clerk."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in New Hampshire?",
-        "answer": "In New Hampshire, private vehicle transfers are not subject to a statewide vehicle sales tax. When transferring title between family members, you only pay standard title transfer fees and registration charges. The yearly municipal permit fee also applies at registration."
+        "answer": "No sales tax applies to any vehicle transfer in New Hampshire. The new owner pays the town or city permit fee, the $35 title fee for a vehicle of model year 2000 or newer, and the state registration."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in New Hampshire?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond New Hampshire's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the New Hampshire motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Start at your town or city clerk with the signed title. To drive before registering, you can get a 20-day temporary plate for $20 from the DMV (RSA 261:57). New residents must register within 60 days of establishing residency (RSA 261:45)."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://www.nh.gov/safety/divisions/dmv",
+      "https://www.dmv.nh.gov/vehicles-boats-and-titles/vehicle-registrations",
+      "https://www.dmv.nh.gov/vehicles-boats-and-titles/temporary-plates",
+      "https://www.dmv.nh.gov/vehicles-boats-and-titles/vehicle-registrations/new-resident-new-hampshire",
+      "https://www.dmv.nh.gov/vehicles-boats-and-titles/exempt-vehicles",
+      "https://gc.nh.gov/rsa/html/XXI/261/261-20.htm",
+      "https://gc.nh.gov/rsa/html/XXI/261/261-141.htm",
       "https://gc.nh.gov/rsa/html/XXI/261/261-153.htm",
-      "https://gc.nh.gov/rsa/html/XXI/261/261-141-c.htm"
+      "https://gc.nh.gov/rsa/html/XXI/261/261-141-c.htm",
+      "https://gc.nh.gov/rsa/html/XXI/261/261-45.htm"
     ]
   },
   "maine": {
@@ -5918,22 +5925,26 @@
       },
       {
         "question": "Do I pay Maine vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Maine, the state generally assesses its applicable vehicle sales or use tax (5.50%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Maine motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. A Maine resident pays the 5.5% use tax on a vehicle bought in a casual sale when registering it (36 M.R.S. 1764), along with the town excise tax. A new resident bringing a vehicle already registered in another state shows that registration with a Maine use tax form to prove the exemption."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Maine?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Maine DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A true gift, with nothing paid in cash, property, or services, is not taxed. A transfer between family members or spouses for any payment is a taxable casual sale, and taking over the loan balance counts as payment (Maine Revenue Services Bulletin 42). The town excise tax and registration still apply."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Maine?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Maine's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Maine motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "We found no fixed day count for a private buyer, so register before you drive: pay the excise tax at your town office first, then register there or at a BMV branch. New residents have 30 days after establishing residency to convert their registration and title."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://www.maine.gov/revenue",
-      "https://www.maine.gov/sos/bmv",
-      "https://legislature.maine.gov/statutes/36/title36sec1482.html"
+      "https://www.maine.gov/sos/bmv/vehicles/register-a-passenger-vehicle",
+      "https://www.maine.gov/sos/bmv/vehicles/registration-fees",
+      "https://legislature.maine.gov/statutes/36/title36sec1482.html",
+      "https://legislature.maine.gov/statutes/36/title36sec1764.html",
+      "https://legislature.maine.gov/statutes/36/title36sec1765.html",
+      "https://legislature.maine.gov/statutes/29-A/title29-Asec501.html",
+      "https://legislature.maine.gov/statutes/29-A/title29-Asec515.html"
     ],
     "taxLineName": "Sales Tax"
   },
@@ -6028,8 +6039,8 @@
     "slug": "rhode-island-private-sale-tax-calculator",
     "exciseTaxRate": 0.07,
     "taxBase": "price",
-    "titleFee": 52.5,
-    "lienFilingFee": 0,
+    "titleFee": 53.5,
+    "lienFilingFee": 53.5,
     "tradeInDeductible": false,
     "registration": {
       "terms": [
@@ -6037,29 +6048,40 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "2": 60
+          "2": 103.5
         },
         "over3700lbs": {
-          "2": 60
+          "2": 103.5
         }
       },
       "motorcycle": {
-        "2": 32.5
+        "2": 47.5
       },
-      "evSurchargeAnnual": 0
+      "evSurchargeAnnual": 200,
+      "phevSurchargeAnnual": 100,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "silent"
+        },
+        "phev": {
+          "outcome": "silent"
+        }
+      }
     },
-    "localTaxNote": "Rhode Island does not levy local sales taxes. Vehicles 7 years old or newer are taxed on the greater of purchase price or NADA Clean Retail book value per R.I. Gen. Laws § 44-18-20.",
+    "localTaxNote": "Rhode Island does not levy local sales taxes. On a private sale, the DMV taxes a vehicle 7 years old or less at 7% of the NADA Clean Retail book value or the sale price, whichever is greater; 8 to 29 years old, the sale price.",
     "notes": [
       "Rhode Island imposes a 7.0% sales/use tax on casual vehicle purchases under R.I. Gen. Laws § 44-18-20.",
-      "For vehicles 7 years old or newer, tax is calculated on the greater of purchase price or NADA Clean Retail value.",
-      "Certificate of title fee is $52.50 under R.I. Gen. Laws § 31-3.1-6.",
-      "Passenger vehicle registration is issued for a 2-year biennial period ($60.00 for standard passenger weight class).",
-      "Trade-in deduction under § 44-18-30(23) applies exclusively to sales by licensed dealers; private party sales pay tax on the full taxable amount."
+      "Private party: a vehicle 7 years old or less is taxed on the greater of NADA Clean Retail book value or the sale price; 8 to 29 years old on the sale price unless it is on the Cars of Particular Interest list; 30 years and older and CPI vehicles on the greater of book value or price (DMV Sales Tax page).",
+      "Certificate of title fee is $53.50, including the $3.50 technology surcharge; a security lien statement is also $53.50 (DMV fee table).",
+      "Passenger registration to 4,000 lbs is $30 a year plus the $3.50 surcharge and the $20 a year DOT surcharge: $103.50 for the two-year registration. A motorcycle renewal is $47.50 for two years (DMV fee and weight tables).",
+      "The DMV lists the trade-in allowance only for dealer sales; a private party sale has none."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Rhode Island Division of Motor Vehicles (DMV) and Division of Taxation.",
-      "Rhode Island applies a 7.0% state sales tax. Vehicles 7 years old or newer are assessed on the higher of purchase price or NADA retail value.",
-      "Trade-in credits are not allowed for private party transactions."
+      "Rhode Island applies a 7% sales tax. On a private sale of a vehicle 7 years old or less, the DMV taxes the greater of the NADA Clean Retail book value or the sale price; the estimate uses the price you enter.",
+      "Trade-in credits are not allowed for private party transactions.",
+      "Registration shown is two years for a passenger vehicle to 4,000 lbs: $60 plus the $3.50 surcharge and $40 in DOT surcharges ($103.50). Battery electric vehicles add $200 a year and plug-in hybrids $100, and other hybrids, including mild hybrids, add $50 a year, which the estimate does not include (§ 39-18.1-4, from January 1, 2026).",
+      "Rhode Island’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the Division of Motor Vehicles."
     ],
     "faqs": [
       {
@@ -6068,33 +6090,37 @@
       },
       {
         "question": "How does Rhode Island calculate tax on used cars?",
-        "answer": "For vehicles 7 model years old or newer, the Rhode Island DMV calculates sales tax on either the purchase price or the NADA Clean Retail book value, whichever is higher."
+        "answer": "On a private sale, a vehicle 7 years old or less is taxed at 7% of the NADA Clean Retail book value or the sale price, whichever is greater. A vehicle 8 to 29 years old is taxed on the sale price unless it is on the Cars of Particular Interest list. If you think the value is too high, you have 30 days after paying to ask for a redetermination (Form C-REF-SU)."
       },
       {
         "question": "Can I deduct my trade-in on a private vehicle sale in Rhode Island?",
-        "answer": "No. Under R.I. Gen. Laws § 44-18-30(23), the trade-in allowance deduction is strictly limited to purchases made from licensed motor vehicle dealers. Private transactions are taxed on the full purchase price or book value."
+        "answer": "No. The DMV lists the trade-in allowance only for purchases from a dealer. A private sale is taxed on the price or the book value without a trade-in deduction."
       },
       {
         "question": "How much are title and registration fees in Rhode Island?",
-        "answer": "The certificate of title fee is $52.50 under R.I. Gen. Laws § 31-3.1-6. Standard passenger vehicle registration is $60.00, which covers a two-year biennial registration period."
+        "answer": "The title fee is $53.50, and a security lien statement is also $53.50. A passenger vehicle to 4,000 lbs registers for two years at $103.50: $30 a year, a $3.50 surcharge, and a $20 a year DOT surcharge. Electric vehicles add $200 a year and plug-in hybrids $100."
       },
       {
         "question": "Do I pay Rhode Island vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Rhode Island, the state generally assesses its applicable vehicle sales or use tax (7.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Rhode Island motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. The 7% tax applies under the same private sale rules, and a vehicle titled or registered in another state needs a VIN check before you register. A new resident bringing a vehicle already owned signs a sales tax exemption certificate and affidavit instead."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Rhode Island?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Rhode Island DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A gift is not taxed. From immediate family (parent, step-parent, sibling, step-sibling, spouse, child, or step-child) you need a signed gift letter. From anyone else you need a notarized gift letter and the Affidavit of Gift of Motor Vehicle (SU 87-65)."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Rhode Island?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Rhode Island's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Rhode Island motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Sales tax is due by the 20th of the month after the sale, even if the vehicle is not yet registered, or interest and penalties are added. Register before you drive. New residents must title and register within 30 days of moving and have the vehicle inspected within five days of registering."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
-      "https://dmv.ri.gov",
-      "https://tax.ri.gov"
+      "https://dmv.ri.gov/registrations-plates-titles/sales-tax",
+      "https://dmv.ri.gov/registrations-plates-titles/registration/new-registration",
+      "https://dmv.ri.gov/registrations-plates-titles/registration/registration-title-fees",
+      "https://dmv.ri.gov/media/561/download",
+      "https://dmv.ri.gov/registrations-plates-titles/registration/moving-ri-out-state",
+      "https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-04/Casual%20Car%20Sales%20in%20RI%20one%20pager%2004-08-2025.pdf"
     ]
   },
   "south-dakota": {

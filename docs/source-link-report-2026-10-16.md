@@ -6,12 +6,12 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 290 across 51 jurisdictions
+- Source links configured now: 304 across 51 jurisdictions
 - Hidden on the site (dead or unreachable): 2
-- Working but only an agency homepage, not a specific page: 10
+- Working but only an agency homepage, not a specific page: 6
 - States showing no source link ("Official source links ... are being updated"): 0
 - States with some links hidden: 1
-- States re-verified since the check: Alabama (November 2026), Arizona (October 2026), Arkansas (October 2026), California (October 2026), Colorado (November 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Hawaii (November 2026), Idaho (November 2026), Illinois (October 2026), Indiana (October 2026), Iowa (November 2026), Kansas (November 2026), Kentucky (November 2026), Louisiana (October 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Mississippi (November 2026), Missouri (October 2026), Nebraska (November 2026), Nevada (November 2026), New Jersey (October 2026), New Mexico (November 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Oregon (November 2026), Pennsylvania (October 2026), South Carolina (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026), West Virginia (November 2026), Wisconsin (October 2026)
+- States re-verified since the check: Alabama (November 2026), Arizona (October 2026), Arkansas (October 2026), California (October 2026), Colorado (November 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Hawaii (November 2026), Idaho (November 2026), Illinois (October 2026), Indiana (October 2026), Iowa (November 2026), Kansas (November 2026), Kentucky (November 2026), Louisiana (October 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Mississippi (November 2026), Missouri (October 2026), Nebraska (November 2026), Nevada (November 2026), New Jersey (October 2026), New Mexico (November 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Oregon (November 2026), Pennsylvania (October 2026), Rhode Island (November 2026), South Carolina (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026), West Virginia (November 2026), Wisconsin (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
 
@@ -59,6 +59,9 @@ All other states keep their September 2026 verified date until their rates are r
 | Idaho | 2026-11-16 | ITD and Tax Commission homepages replaced with the ITD title and registration pages, the registration fact sheet, the county fee table, and the Tax Commission private-party page; 6% tax, no private trade-ins, $14 title, EV $140 and plug-in hybrid $75 confirmed; 30-day deadline and $20 penalty, family and gift exemptions, use tax credit, and the 90-day new resident rules stated. Rulings applied 2026-11-17: age tiers $69/$57/$45 plus $8 in statewide fees ($77/$65/$53), motorcycle $33 ($25 plus the same fees), county fees stated as ranges and left out; verified date moved to November 2026. |
 | West Virginia | 2026-11-16 | DOT homepage replaced with the DMV title, registration, and new resident pages, the registration fee brochure, and W. Va. Code 11-15-3c and 17A-3-4; tax 5% -> 6% with a $30 minimum (11-15-3c, from July 1, 2017), motorcycle $25 -> $16, book value rules, gift affidavit, new resident exemption, and inspection rules stated. Ruling applied 2026-11-17: private trade-ins titled in West Virginia in the buyer’s name, tax paid, are deducted; verified date moved to November 2026. |
 | Hawaii | 2026-11-16 | DOT homepage and the Honolulu inquiry app replaced with HRS 249-31 and 249-33, Honolulu CSD pages, the Hawaii County new registration page, and the DOTAX use tax brochure; $46 state fee and state weight tax confirmed, unverified county weight tax rates removed from the copy, transfer, use tax, and new resident rules stated. Ruling applied 2026-11-17: registration $46 + state weight tax on an assumed 3,500 lbs = $107.25, county fees and weight tax disclosed, not included; verified date moved to November 2026. |
+| New Hampshire | 2026-11-18 | DMV homepage replaced with the DMV registration, temporary plate, new resident, and exempt vehicle pages and RSA 261:20, 261:141, and 261:45; permit fee schedule confirmed and rounded to the dollar, registration $48 + $8 plate fee = $56, motorcycle $24 -> $30, $35 title, 20-day plate, 60-day new resident rule, and the suspended inspection program stated. The age-based title exemption and the $20 security interest fee wait on a ruling, so the verified date stays September 2026. |
+| Maine | 2026-11-18 | Maine Revenue and BMV homepages replaced with the BMV registration and fee pages and 36 M.R.S. 1764 and 1765 and 29-A M.R.S. 501 and 515; excise schedule, 5.5% tax, trade-in credit, $35 registration, $21 motorcycle, and $33 title confirmed; gift, deadline, and new resident answers stated. The title exemption for vehicles over 25 years old waits on a ruling, so the verified date stays September 2026. |
+| Rhode Island | 2026-11-18 | DMV and Taxation homepages replaced with the DMV sales tax, new registration, fee, weight table, and new resident pages and the Taxation casual sales summary; title $52.50 -> $53.50, lien $0 -> $53.50, registration $60 -> $103.50 with the surcharges, motorcycle $32.50 -> $47.50, EV +$200 and plug-in hybrid +$100 a year from January 1, 2026; NADA rule, gift letters, sales tax due date, and new resident rules stated; verified date moved to November 2026. |
 
 ## Priority: states with no working source link
 
@@ -76,12 +79,8 @@ All other states keep their September 2026 verified date until their rates are r
 | State | URL | Note |
 |---|---|---|
 | Alaska | https://dmv.alaska.gov | Agency homepage |
-| Maine | https://www.maine.gov/revenue | Agency homepage |
 | Montana | https://mvdmt.gov | Agency homepage |
-| New Hampshire | https://www.nh.gov/safety/divisions/dmv | Redirects to the DMV homepage |
 | North Dakota | https://www.dot.nd.gov | Agency homepage |
-| Rhode Island | https://dmv.ri.gov | Agency homepage |
-| Rhode Island | https://tax.ri.gov | Agency homepage |
 | Vermont | https://dmv.vermont.gov | Agency homepage |
 | Wyoming | https://revenue.wyo.gov | Agency homepage |
 | Wyoming | https://www.dot.state.wy.us | Agency homepage |

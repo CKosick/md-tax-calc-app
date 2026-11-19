@@ -28,13 +28,13 @@ afterEach(() => cleanup());
 
 const EXCLUDED_EV = ['virginia', 'texas', 'ohio', 'north-carolina', 'michigan', 'wisconsin', 'oregon', 'utah', 'montana', 'south-dakota', 'vermont', 'wyoming', 'arkansas', 'new-jersey', 'tennessee'];
 const EXCLUDED_PHEV = ['ohio', 'michigan', 'wisconsin', 'utah', 'montana', 'vermont', 'wyoming', 'kansas', 'arkansas', 'tennessee'];
-const SILENT_EV = ['maryland', 'california', 'illinois', 'georgia', 'missouri', 'colorado', 'minnesota', 'south-carolina', 'alabama', 'louisiana', 'mississippi', 'idaho', 'west-virginia', 'hawaii', 'new-hampshire'];
-const SILENT_PHEV = ['maryland', 'missouri', 'colorado', 'minnesota', 'south-carolina', 'alabama', 'louisiana', 'mississippi', 'idaho', 'west-virginia', 'new-hampshire', 'north-dakota', 'washington'];
+const SILENT_EV = ['maryland', 'california', 'illinois', 'georgia', 'missouri', 'colorado', 'minnesota', 'south-carolina', 'alabama', 'louisiana', 'mississippi', 'idaho', 'west-virginia', 'hawaii', 'new-hampshire', 'rhode-island'];
+const SILENT_PHEV = ['maryland', 'missouri', 'colorado', 'minnesota', 'south-carolina', 'alabama', 'louisiana', 'mississippi', 'idaho', 'west-virginia', 'new-hampshire', 'north-dakota', 'washington', 'rhode-island'];
 
 describe('Motorcycle EV and plug-in hybrid fees (Option D)', () => {
   it('every state with an EV or plug-in hybrid fee rules on motorcycles for each fee it has', () => {
     const feeStates = Object.keys(rules).filter((k) => rules[k].registration.evSurchargeAnnual || rules[k].registration.phevSurchargeAnnual);
-    expect(feeStates).toHaveLength(38);
+    expect(feeStates).toHaveLength(39);
     for (const k of feeStates) {
       const reg = rules[k].registration;
       if (reg.evSurchargeAnnual) expect(reg.motorcycleFuelFees?.ev, `${k} EV`).toBeDefined();

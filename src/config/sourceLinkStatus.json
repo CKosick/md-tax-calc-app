@@ -20,33 +20,13 @@
       "finding": "Agency homepage"
     },
     {
-      "state": "maine",
-      "url": "https://www.maine.gov/revenue",
-      "finding": "Agency homepage"
-    },
-    {
       "state": "montana",
       "url": "https://mvdmt.gov",
       "finding": "Agency homepage"
     },
     {
-      "state": "new-hampshire",
-      "url": "https://www.nh.gov/safety/divisions/dmv",
-      "finding": "Redirects to the DMV homepage"
-    },
-    {
       "state": "north-dakota",
       "url": "https://www.dot.nd.gov",
-      "finding": "Agency homepage"
-    },
-    {
-      "state": "rhode-island",
-      "url": "https://dmv.ri.gov",
-      "finding": "Agency homepage"
-    },
-    {
-      "state": "rhode-island",
-      "url": "https://tax.ri.gov",
       "finding": "Agency homepage"
     },
     {
@@ -265,6 +245,21 @@
       "state": "hawaii",
       "on": "2026-11-16",
       "note": "DOT homepage and the Honolulu inquiry app replaced with HRS 249-31 and 249-33, Honolulu CSD pages, the Hawaii County new registration page, and the DOTAX use tax brochure; $46 state fee and state weight tax confirmed, unverified county weight tax rates removed from the copy, transfer, use tax, and new resident rules stated. Ruling applied 2026-11-17: registration $46 + state weight tax on an assumed 3,500 lbs = $107.25, county fees and weight tax disclosed, not included; verified date moved to November 2026."
+    },
+    {
+      "state": "new-hampshire",
+      "on": "2026-11-18",
+      "note": "DMV homepage replaced with the DMV registration, temporary plate, new resident, and exempt vehicle pages and RSA 261:20, 261:141, and 261:45; permit fee schedule confirmed and rounded to the dollar, registration $48 + $8 plate fee = $56, motorcycle $24 -> $30, $35 title, 20-day plate, 60-day new resident rule, and the suspended inspection program stated. The age-based title exemption and the $20 security interest fee wait on a ruling, so the verified date stays September 2026."
+    },
+    {
+      "state": "maine",
+      "on": "2026-11-18",
+      "note": "Maine Revenue and BMV homepages replaced with the BMV registration and fee pages and 36 M.R.S. 1764 and 1765 and 29-A M.R.S. 501 and 515; excise schedule, 5.5% tax, trade-in credit, $35 registration, $21 motorcycle, and $33 title confirmed; gift, deadline, and new resident answers stated. The title exemption for vehicles over 25 years old waits on a ruling, so the verified date stays September 2026."
+    },
+    {
+      "state": "rhode-island",
+      "on": "2026-11-18",
+      "note": "DMV and Taxation homepages replaced with the DMV sales tax, new registration, fee, weight table, and new resident pages and the Taxation casual sales summary; title $52.50 -> $53.50, lien $0 -> $53.50, registration $60 -> $103.50 with the surcharges, motorcycle $32.50 -> $47.50, EV +$200 and plug-in hybrid +$100 a year from January 1, 2026; NADA rule, gift letters, sales tax due date, and new resident rules stated; verified date moved to November 2026."
     }
   ]
 }
