@@ -34,7 +34,7 @@ const SILENT_PHEV = ['maryland', 'missouri', 'colorado', 'minnesota', 'south-car
 describe('Motorcycle EV and plug-in hybrid fees (Option D)', () => {
   it('every state with an EV or plug-in hybrid fee rules on motorcycles for each fee it has', () => {
     const feeStates = Object.keys(rules).filter((k) => rules[k].registration.evSurchargeAnnual || rules[k].registration.phevSurchargeAnnual);
-    expect(feeStates).toHaveLength(39);
+    expect(feeStates).toHaveLength(40);
     for (const k of feeStates) {
       const reg = rules[k].registration;
       if (reg.evSurchargeAnnual) expect(reg.motorcycleFuelFees?.ev, `${k} EV`).toBeDefined();

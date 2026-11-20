@@ -322,26 +322,41 @@
       "motorcycle": {
         "1": 15,
         "2": 30
+      },
+      "evSurchargeAnnual": 110,
+      "phevSurchargeAnnual": 85,
+      "motorcycleFuelFees": {
+        "ev": {
+          "outcome": "charged",
+          "amount": 15
+        },
+        "phev": {
+          "outcome": "charged",
+          "amount": 15
+        }
       }
     },
     "notes": [
-      "Delaware has no general sales tax; it assesses a 5.25% Motor Vehicle Document Fee upon titling.",
-      "Delaware permits trade-in credit deductions on both dealer and private vehicle purchases (via Form MV347).",
-      "Title fee is $35 without a lien and $55 with a lien ($35 title + $20 lien fee)."
+      "Delaware has no general sales tax. It charges a 5.25% motor vehicle document fee when the vehicle is titled (30 Del. C. 3002), the rate the DMV lists since October 1, 2025.",
+      "The DMV figures the fee on the purchase price or the NADA average trade-in value, whichever is higher, with an $8 minimum. Without a price on the bill of sale or title, it uses the NADA value; the owner may submit a Delaware dealer appraisal instead.",
+      "Trade-in credit is allowed only for a Delaware-titled vehicle and cannot exceed the document fee paid on it (2 Del. Admin. Code 2266). A vehicle sold privately within 60 days before or after the new one is titled can be credited on Form MV347.",
+      "Title $35, or $55 with a lien (21 Del. C. 2305 and 2335). Registration $40 a year for a passenger vehicle and $15 a year for a motorcycle (21 Del. C. 2151).",
+      "Alternative fuel fees (21 Del. C. 2151A), paid each year with the registration, for a vehicle of 6,000 lbs or less: $110 for an electric vehicle, $85 for a plug-in hybrid, and $60 for a non-plug-in hybrid. An electric or hybrid motorcycle adds $15 a year."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with the Delaware DMV.",
-      "Delaware charges a 5.25% Motor Vehicle Document Fee (minimum $8.00) based on net purchase price or NADA average trade-in value.",
-      "Trade-in credit is permitted in Delaware: you may deduct the value of your trade-in vehicle from the purchase price before the 5.25% document fee is calculated."
+      "Delaware charges a 5.25% motor vehicle document fee (minimum $8.00) on the purchase price or the NADA average trade-in value, whichever is higher. The calculator applies 5.25% to the price you enter, so enter the NADA value if it is higher.",
+      "Trade-in credit applies only to a Delaware-titled trade-in, up to the document fee paid on it. The calculator deducts the full trade-in value you enter.",
+      "Delaware adds $110 a year for an electric vehicle and $85 a year for a plug-in hybrid of 6,000 lbs or less; heavier vehicles pay more. A non-plug-in hybrid pays $60 a year, which the form does not ask about. An electric or hybrid motorcycle adds $15 a year (21 Del. C. 2151A)."
     ],
     "faqs": [
       {
         "question": "What is the vehicle tax rate in Delaware?",
-        "answer": "Delaware does not have a general sales tax. Instead, the Delaware DMV assesses a 5.25% Motor Vehicle Document Fee on the vehicle's purchase price or NADA average trade-in value, whichever is higher (minimum $8.00)."
+        "answer": "Delaware does not have a general sales tax. The Delaware DMV charges a 5.25% motor vehicle document fee on the purchase price or the NADA average trade-in value, whichever is higher, with an $8.00 minimum."
       },
       {
         "question": "Does a trade-in reduce the vehicle document fee in Delaware?",
-        "answer": "Yes! Delaware law allows you to deduct the value of your trade-in vehicle from the purchase price before calculating the 5.25% document fee. For private sales, buyers can claim this credit using Delaware DMV Form MV347 if completed within 60 days."
+        "answer": "Yes, for a Delaware-titled vehicle. The trade-in value comes off the purchase price before the 5.25% fee is figured, but the credit cannot exceed the document fee paid on the traded vehicle. If you sold your old vehicle privately within 60 days before or after titling the new one, claim the credit on Form MV347."
       },
       {
         "question": "How much is a title certificate in Delaware?",
@@ -349,25 +364,30 @@
       },
       {
         "question": "What are registration fees in Delaware?",
-        "answer": "Delaware passenger vehicle registration is $40.00 per year ($80.00 for a 2-year registration). Motorcycle registration is $15.00 per year ($30.00 for 2 years)."
+        "answer": "Delaware passenger vehicle registration is $40.00 a year ($80.00 for two years). Motorcycle registration is $15.00 a year. An electric vehicle adds $110 a year and a plug-in hybrid $85 a year (6,000 lbs or less)."
       },
       {
         "question": "Do I pay Delaware vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Delaware, the state generally assesses its applicable vehicle sales or use tax (5.25%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Delaware motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. You pay the 5.25% document fee when you title the vehicle in Delaware, on the price or the NADA average trade-in value, whichever is higher. A sales tax or similar levy paid to another state is credited only if you titled and registered the vehicle there and paid it within 90 days before registering in Delaware."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Delaware?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Delaware DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A gift from immediate family (a spouse, parent, child, sibling, or grandparent, including step and in-law relations) owes no document fee when a Delaware title is transferred (2 Del. Admin. Code 2266). Any other gift pays 5.25% of the NADA average trade-in value, or of a Delaware dealer appraisal."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Delaware?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Delaware's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Delaware motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Within 30 days of the purchase. A title transferred later costs a $35 late fee, and the vehicle may not be driven until the title is in your name. New residents register within 60 days of moving to Delaware."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://dmv.de.gov/VehicleServices/titles/index.shtml?dc=veh_title_fees",
+      "https://dmv.de.gov/Common/DMVFees/index.shtml",
+      "https://dmv.de.gov/VehicleServices/titles/index.shtml?dc=ve_title_transfer",
+      "https://dmv.de.gov/VehicleServices/titles/index.shtml?dc=ve_title_credit",
+      "https://dmv.de.gov/VehicleServices/titles/index.shtml?dc=ve_title_outstate",
       "https://delcode.delaware.gov/title30/c030/index.html",
+      "https://delcode.delaware.gov/title21/c021/sc04/index.html",
+      "https://regulations.delaware.gov/AdminCode/title2/2266",
       "https://dmv.de.gov/forms/veh_serv_forms/pdfs/mv347.pdf"
     ]
   },
@@ -5970,14 +5990,14 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 87
+          "1": 50
         },
         "over3700lbs": {
-          "1": 87
+          "1": 50
         }
       },
       "motorcycle": {
-        "1": 53
+        "1": 91.25
       },
       "evSurchargeAnnual": 130,
       "phevSurchargeAnnual": 70,
@@ -5988,21 +6008,44 @@
         "phev": {
           "outcome": "excluded"
         }
+      },
+      "feesByRegistrationYear": {
+        "passenger": [
+          {
+            "maxYear": 5,
+            "fee": 239
+          },
+          {
+            "maxYear": 11,
+            "fee": 109
+          },
+          {
+            "fee": 50
+          }
+        ],
+        "motorcycle": [
+          {
+            "fee": 91.25
+          }
+        ]
       }
     },
-    "localTaxNote": "Montana has no state sales tax. Light vehicle registration fees are flat and age-based ($217 for 0–4 yrs; $87 for 5–10 yrs; $28 for 11+ yrs). Under MCA 61-3-315, an annual $825 luxury surcharge applies to vehicles with MSRP over $150,000.",
+    "localTaxNote": "Montana has no sales tax. Counties can add a local option vehicle tax of up to 0.7% of the depreciated value, or a flat fee, paid with the registration (MCA 61-3-537). It is not included.",
     "notes": [
       "Montana does not impose a state sales tax or vehicle use tax.",
-      "Certificate of title fee is $12.00 ($10 statutory fee + $2 electronic administration fee under MCA 61-3-203).",
-      "Standard annual registration fee is age-based under MCA 61-3-321: $87.00 for vehicles 5–10 years old (such as a 2019 model in 2026).",
-      "Vehicles 11 years old or older qualify for permanent registration.",
-      "Under MCA 61-3-315, luxury light vehicles with an MSRP exceeding $150,000 pay an additional $825 annual luxury fee."
+      "Title $12 for a light vehicle (MCA 61-3-203); filing a lien $8 (MCA 61-3-103).",
+      "Registration rate by age (MCA 61-3-321(2)), with age figured as the registration year minus the model year: $217 for 4 years or less, $87 for 5 through 10 years, and $28 for 11 years or more. The estimate adds the $10 Highway Patrol fee (61-3-321(20)) and the $12 plate fee (61-3-321(13)), since the seller keeps the plates.",
+      "A light vehicle 11 years old or older can be permanently registered for $87.50 plus five times the county option tax and other fees (MCA 61-3-562). A permanent registration ends when the vehicle is sold, so the buyer registers it again.",
+      "A light vehicle 10 years old or less with an MSRP over $150,000 pays $825 more each year (MCA 61-3-321(2)(b)).",
+      "Motorcycles register once: $53.25, a $16 safety fee, the $10 Highway Patrol fee, and the $12 plate fee (MCA 61-3-321; MVD fee table)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Montana Motor Vehicle Division (MVD) and your county treasurer.",
-      "Montana has 0% state sales tax. Registration fees follow a statutory age-based schedule.",
+      "Montana has 0% state sales tax. Registration follows a statutory schedule by vehicle age.",
       "Counties can add a local option vehicle tax if voters approve it, up to 0.7% of the vehicle’s value or a flat fee, paid with the registration fee (MCA 61-3-537). It is not included.",
-      "Montana adds a yearly fee by unladen weight (MCA 61-3-572). The estimate uses the class under 6,000 lbs: $130 for an electric vehicle with at least a 20 kWh battery and $70 for a plug-in hybrid with at least a 5 kWh battery. From 6,000 to 10,000 lbs the fees are $190 and $100. The law covers vehicles with at least four wheels, so motorcycles do not pay them."
+      "Montana adds a yearly fee by unladen weight (MCA 61-3-572). The estimate uses the class under 6,000 lbs: $130 for an electric vehicle with at least a 20 kWh battery and $70 for a plug-in hybrid with at least a 5 kWh battery. From 6,000 to 10,000 lbs the fees are $190 and $100. The law covers vehicles with at least four wheels, so motorcycles do not pay them.",
+      "The Motor Vehicle Division adds a 3% administrative fee to the fees it collects (MCA 61-3-111). The estimate does not include it.",
+      "A $9 state parks and fishing access fee is added to each light vehicle registration unless you opt out (MCA 61-3-321(19)). It is not included."
     ],
     "faqs": [
       {
@@ -6011,32 +6054,39 @@
       },
       {
         "question": "How are registration fees calculated in Montana?",
-        "answer": "Under MCA 61-3-321, Montana light vehicle registration fees are based on vehicle age: $217 for vehicles 0–4 years old, $87 for vehicles 5–10 years old, and $28 for vehicles 11 years and older."
+        "answer": "Under MCA 61-3-321, the light vehicle registration rate depends on age: $217 for a vehicle 4 years old or less, $87 for 5 through 10 years, and $28 for 11 years or more, with age figured as the registration year minus the model year. A $10 Highway Patrol fee, a $12 fee for new plates, any county option tax, and a 3% administrative fee are added."
       },
       {
         "question": "Can I permanently register my car in Montana?",
-        "answer": "Yes. Vehicles that are 11 model years old or older qualify for permanent registration, allowing owners to pay a one-time fee and never renew registration tags again."
+        "answer": "Yes, for a light vehicle 11 years old or older. You pay an $87.50 registration fee plus five times the county option tax and other fees once, and do not renew while you own the vehicle (MCA 61-3-562). It does not transfer to a buyer, who registers the vehicle again."
       },
       {
         "question": "What is the Montana luxury vehicle tax?",
-        "answer": "Under MCA 61-3-315, light vehicles 10 years old or newer with a manufacturer's suggested retail price (MSRP) exceeding $150,000 pay an annual $825 luxury surcharge in addition to standard registration fees."
+        "answer": "Under MCA 61-3-321(2)(b), a light vehicle 10 years old or less with a manufacturer's suggested retail price over $150,000 pays $825 a year on top of the regular registration fee."
       },
       {
         "question": "Do I pay Montana vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "Because Montana does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Montana. Standard certificate of title fees and registration tag fees still apply upon titling."
+        "answer": "No. Montana has no sales or use tax, so a vehicle bought from an out-of-state private seller owes no state tax. You pay the title fee, the registration fees, and any county option tax."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Montana?",
-        "answer": "In Montana, private vehicle transfers are not subject to a statewide vehicle sales tax. When transferring title between family members, you only pay standard title transfer fees and registration charges."
+        "answer": "No. Montana has no sales tax, so a transfer between family members owes no tax. You pay the title fee and the registration fees."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Montana?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Montana's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Montana motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Within 40 days of the sale date (MVD). If you need to drive before then, a county treasurer can issue a 40-day temporary registration permit. New residents title and register within 60 days of establishing residency."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://mvdmt.gov",
+      "https://mvdmt.gov/vehicle-registration/light-vehicle-registration-and-fees/",
+      "https://mvdmt.gov/vehicle-registration/motorcycle-and-quadricycle-registration-and-fees/",
+      "https://mvdmt.gov/you-got-a-new-vehicle/",
+      "https://mvdmt.gov/tips-for-buying-a-vehicle/",
+      "https://mca.legmt.gov/bills/mca/title_0610/chapter_0030/part_0030/section_0210/0610-0030-0030-0210.html",
+      "https://mca.legmt.gov/bills/mca/title_0610/chapter_0030/part_0050/section_0620/0610-0030-0050-0620.html",
+      "https://mca.legmt.gov/bills/mca/title_0610/chapter_0030/part_0020/section_0030/0610-0030-0020-0030.html",
+      "https://mca.legmt.gov/bills/mca/title_0610/chapter_0030/part_0010/section_0110/0610-0030-0010-0110.html",
       "https://mca.legmt.gov/bills/mca/title_0610/chapter_0030/part_0050/section_0370/0610-0030-0050-0370.html",
       "https://mca.legmt.gov/bills/mca/title_0610/chapter_0030/part_0050/section_0720/0610-0030-0050-0720.html",
       "https://mca.legmt.gov/bills/mca/title_0610/chapter_0030/part_0050/section_0710/0610-0030-0050-0710.html"
@@ -6145,10 +6195,10 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 42
+          "1": 72
         },
         "over3700lbs": {
-          "1": 42
+          "1": 108
         }
       },
       "motorcycle": {
@@ -6160,21 +6210,25 @@
           "outcome": "excluded",
           "baseAnnual": 24
         }
-      }
+      },
+      "passengerWeightSplitLbs": 4000
     },
     "localTaxNote": "South Dakota's 4% Motor Vehicle Excise Tax is collected at the state level in lieu of general sales tax; no local city or county sales taxes apply to vehicle purchases.",
     "notes": [
-      "South Dakota levies a 4.0% Motor Vehicle Excise Tax on vehicle purchases under SDCL § 32-5B-1.",
-      "Trade-in deduction is permitted for private party transactions under SDCL § 32-5B-4 when documented with a bill of sale.",
-      "Certificate of title fee is $10.00; lien notation fee is $10.00.",
-      "Annual registration fee is based on vehicle weight under SDCL § 32-5-6 ($42.00 for standard passenger vehicles).",
-      "Vehicles 11 years old or older with a purchase price of $2,500 or less are exempt from motor vehicle excise tax under SDCL § 32-5B-2(1)."
+      "South Dakota levies a 4% motor vehicle excise tax on the purchase price, in place of sales tax (SDCL 32-5B-1).",
+      "A trade-in comes off the price on a private sale as well as a dealer sale (SDCL 32-5B-4(3)). Without a bill of sale, the tax is figured on the retail value in a dealer guide.",
+      "Title $10 and lien notation $10 (DOR). DOR also lists a $2 technology fee, in effect since July 1, 2025.",
+      "Registration for a car, pickup, or van is by shipping weight (SDCL 32-5-6): $36 to 2,000 lbs, $72 from 2,001 to 4,000 lbs, $108 from 4,001 to 6,000 lbs, and $144 above. A vehicle 10 model years old or more pays 70% (SDCL 32-5-30).",
+      "A vehicle 11 or more model years old sold for $2,500 or less before trade-in owes no excise tax (SDCL 32-5B-2(12))."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with South Dakota Department of Revenue and county treasurer.",
       "South Dakota charges a 4% Motor Vehicle Excise Tax in lieu of sales tax. Private trade-in deductions are authorized by statute.",
-      "Older vehicles (11+ years old) priced at $2,500 or less are fully exempt from excise tax.",
-      "South Dakota’s annual electric vehicle fee is $100 (SDCL 32-5-188, raised from $50 by 2026 House Bill 1227, in effect since July 1, 2026). It does not apply to an electric motorcycle licensed under SDCL 32-5-9, whose registration is the top motorcycle fee, $24, and the estimate uses that."
+      "Older vehicles (11 or more model years old) sold for $2,500 or less are exempt from the excise tax (SDCL 32-5B-2(12)). The calculator still shows the tax for them.",
+      "South Dakota’s annual electric vehicle fee is $100 (SDCL 32-5-188, raised from $50 by 2026 House Bill 1227, in effect since July 1, 2026). It does not apply to an electric motorcycle licensed under SDCL 32-5-9, whose registration is the top motorcycle fee, $24, and the estimate uses that.",
+      "Registration uses the rate for vehicles under 10 model years old: $72 to 4,000 lbs and $108 from 4,001 to 6,000 lbs. A vehicle 10 or more model years old pays 70% of that (SDCL 32-5-30), which the estimate does not apply. The first registration is prorated by month to your renewal month.",
+      "The motorcycle estimate uses $18, the fee under 350 cc; 350 to 1,000 cc pays $21 and over 1,000 cc pays $24 (SDCL 32-5-9).",
+      "Small statewide fees (the $2 technology fee, $1 solid waste and $1 Highway Patrol fees, and plate and mailing fees) and county wheel taxes are not included."
     ],
     "faqs": [
       {
@@ -6183,32 +6237,40 @@
       },
       {
         "question": "Can I claim a trade-in deduction on a private vehicle sale in South Dakota?",
-        "answer": "Yes. Under SDCL § 32-5B-4, South Dakota allows a trade-in credit on private party transactions when documented with a bill of sale showing the trade-in allowance."
+        "answer": "Yes. Under SDCL 32-5B-4(3), the trade-in value comes off the price on a sale by a private party as well as a dealer. The buyer and seller submit the state bill of sale to the county treasurer."
       },
       {
         "question": "Are any vehicles exempt from excise tax in South Dakota?",
-        "answer": "Yes. Under SDCL § 32-5B-2(1), any motor vehicle 11 model years old or older with a purchase price of $2,500 or less is completely exempt from the 4% excise tax."
+        "answer": "Yes. Under SDCL 32-5B-2(12), a motor vehicle 11 or more model years old that is sold for $2,500 or less before trade-in is exempt from the 4% excise tax. Transfers without payment between spouses, between a parent and child, and between siblings are also exempt (32-5B-2(4))."
       },
       {
         "question": "How much does it cost to title and register a car in South Dakota?",
-        "answer": "The title fee is $10.00 (plus $10.00 for lien notation if applicable). Standard annual passenger vehicle registration is weight-based under SDCL § 32-5-6 and averages $42.00."
+        "answer": "The title fee is $10.00, plus $10.00 for a lien notation. Annual registration for a car, pickup, or van is by shipping weight under SDCL 32-5-6: $72 from 2,001 to 4,000 lbs and $108 from 4,001 to 6,000 lbs, or 70% of that for a vehicle 10 model years old or more."
       },
       {
         "question": "Do I pay South Dakota vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into South Dakota, the state generally assesses its applicable vehicle sales or use tax (4.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the South Dakota motor vehicle agency to verify documentation requirements."
+        "answer": "You pay the 4% excise tax when you title the vehicle in South Dakota unless you already paid tax on it. If you paid sales, use, or excise tax to another state that is at least South Dakota's amount, no tax is owed; bring a bill of sale, receipt, or other proof (SDCL 32-5B-11). Without proof, the tax is figured on the retail value on the day the vehicle entered the state."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in South Dakota?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the South Dakota DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A vehicle transferred without payment between spouses, between a parent and child, or between siblings is exempt from the 4% excise tax (SDCL 32-5B-2(4)). Any other gift is taxed on the vehicle's retail value in a dealer guide (SDCL 32-5B-4(4))."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in South Dakota?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond South Dakota's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the South Dakota motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Within 45 days of the purchase date. After 45 days, interest of 1% a month (at least $5 for the first month) is added; after 60 days, a one-time penalty of 10% of the tax (at least $10) applies. The late title application fee is $1 a week, up to $50 (DOR)."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://dor.sd.gov/individuals/motor-vehicle",
+      "https://dor.sd.gov/individuals/motor-vehicle/all-vehicles-title-fees-registration/",
+      "https://dor.sd.gov/media/qoolm3x4/non-commercial-vehicle-license-fee.pdf",
+      "https://dor.sd.gov/media/5u1mrs31/motorcycle-fee-schedule.pdf",
+      "https://sdlegislature.gov/Statutes/32-5B-1",
+      "https://sdlegislature.gov/Statutes/32-5B-2",
+      "https://sdlegislature.gov/Statutes/32-5B-4",
+      "https://sdlegislature.gov/Statutes/32-5B-11",
+      "https://sdlegislature.gov/Statutes/32-5-6",
+      "https://sdlegislature.gov/Statutes/32-5-30",
       "https://sdlegislature.gov/Statutes/32-5-188",
       "https://sdlegislature.gov/Statutes/2-14-16",
       "https://sdlegislature.gov/Statutes/32-5-9"

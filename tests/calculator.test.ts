@@ -887,13 +887,13 @@ describe('Batch 5 Worked Acceptance Tests (HI, NH, ME, MT, RI, SD, ND, AK, VT, W
     expect(res.totalFirstYearCost).toBe(1013.00);
   });
 
-  it('Montana: exact worked test ($15,000 -> $99.00, 0% sales tax, $87 age-based 5-10yr reg)', () => {
+  it('Montana: exact worked test ($15,000 -> $121.00, 0% sales tax, $87 age-based 5-10yr rate plus $10 and $12 fees)', () => {
     const rule = allRules.montana;
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'montana' }, 2026);
     expect(res.exciseTax).toBe(0.00);
     expect(res.titleFee).toBe(12.00);
-    expect(res.registrationTotal).toBe(87.00);
-    expect(res.totalFirstYearCost).toBe(99.00);
+    expect(res.registrationTotal).toBe(109.00); // $87 rate + $10 Highway Patrol fee + $12 plate fee
+    expect(res.totalFirstYearCost).toBe(121.00);
   });
 
   it('Rhode Island: exact worked test ($15,000 -> $1,207.00, 7.0% tax, 2yr reg)', () => {
@@ -905,13 +905,13 @@ describe('Batch 5 Worked Acceptance Tests (HI, NH, ME, MT, RI, SD, ND, AK, VT, W
     expect(res.totalFirstYearCost).toBe(1207.00);
   });
 
-  it('South Dakota: exact worked test ($15,000 -> $652.00, 4.0% motor vehicle excise tax)', () => {
+  it('South Dakota: exact worked test ($15,000 -> $682.00, 4.0% motor vehicle excise tax)', () => {
     const rule = allRules['south-dakota'];
     const res = calculateVehicleCosts(rule, { ...std1Yr, state: 'south-dakota' }, 2026);
     expect(res.exciseTax).toBe(600.00); // 4.0% of 15000
     expect(res.titleFee).toBe(10.00);
-    expect(res.registrationTotal).toBe(42.00);
-    expect(res.totalFirstYearCost).toBe(652.00);
+    expect(res.registrationTotal).toBe(72.00); // SDCL 32-5-6, 2,001 to 4,000 lbs
+    expect(res.totalFirstYearCost).toBe(682.00);
   });
 
   it('North Dakota: exact worked test ($15,000 -> $836.00, 5.0% motor vehicle excise tax)', () => {

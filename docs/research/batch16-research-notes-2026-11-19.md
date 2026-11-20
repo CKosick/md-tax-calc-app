@@ -1,0 +1,60 @@
+# Batch 16 research notes (MT, DE, SD), 2026-11-19
+
+Working notes from the official-source re-check for guide batch 16. Items marked **For ruling** were not changed. Items marked **not primary** rest on a search summary.
+
+## Montana (MCA Title 61, MVD)
+
+- No state sales or use tax on vehicles.
+- Registration rate (MCA 61-3-321(2)(a)) for light vehicles and trucks of 1 ton or less: $217 if 4 or less years old, $87 for 5 through 10 years, $28 for 11 or more. MVD "Light Vehicle Registration and Fees": age is "the calendar year for which the registration fee is due" minus the model year (a 2011 car registered in 2018 is 7 and pays $87). **Config flat $87 -> age tiers** (`feesByRegistrationYear`: registration years 1 to 5, 6 to 11, 12 and up).
+- Fees the statute says "must be collected" on every registration, added under the precedent of the Idaho, Nebraska, and New Hampshire rulings: $10 Highway Patrol salary and retention fee (61-3-321(20)) and the $12 fee for a new set of plates (61-3-321(13)(a)). The MVD buying page says the seller removes the plates and the buyer buys new ones. **Car registration now $239, $109, or $50.**
+- Motorcycles (61-3-321(8); MVD motorcycle fee table): one-time permanent registration $53.25, plus the $16 safety fee, the $10 Highway Patrol fee, and the $12 plate fee. **Config $53 -> $91.25.**
+- Permanent registration (61-3-562): a light vehicle 11 years old or older may be permanently registered for $87.50 plus five times the county option tax, the EV fee if any, and other fees. It is cancelled when the vehicle is sold; the new owner titles and registers again (562(5)). Disclosed, not modeled; the calculator uses the $28 annual rate for these ages.
+- Luxury fee: $825 a year for a light vehicle 10 years old or less with an MSRP over $150,000 (**61-3-321(2)(b)**). The copy cited 61-3-315, **repealed in 2019** (Sec. 26, Ch. 335, L. 2019); citation fixed.
+- Title $12 for a light vehicle (61-3-203(1)(b), until June 30, 2028; $7 after). The old note called it "$10 + $2 electronic fee"; reworded. Lien filing $8 (61-3-103). Confirmed.
+- EV fees (61-3-572; classes in 61-3-571): class 1 (under 6,000 lbs unladen) $130 electric, **$70 plug-in hybrid (confirmed, not reopened)**; class 2 $190 and $100. Four wheels required, so motorcycles excluded. Unchanged.
+- County option tax (61-3-537): up to 0.7% of the depreciated value, or a flat fee, with voter approval. Disclosed, not added.
+- **For ruling:** 61-3-111 says the MVD "shall charge, impose, and collect a 3% administrative fee on all fees and donations charged under ... this title." The MVD pages show it on the registration rate and say the motorcycle fees "will include the 3% Administrative Fee when transaction is conducted." Adding it would raise every Montana fee line (title, lien, registration, EV fee) by 3%. How the MVD rounds it is not published. Disclosed, not added.
+- Disclosed, not added: the $9 state parks and fishing access fee (61-3-321(19)), charged unless the owner opts out, and the $1 brain injury donation (opt-out, MVD).
+- Deadlines: the buyer has 40 days from the sale date to transfer ownership (MVD "You Got a New Vehicle"); a 40-day temporary registration permit is available from a county treasurer (MVD buying tips). New residents title and register within 60 days of establishing residency (MVD "Vehicle Registration").
+- No tax on gifts, family transfers, or vehicles bought out of state.
+- Sources: MVD homepage (homepage-only flag) replaced with the MVD light vehicle and motorcycle fee pages, the new vehicle and buying tips pages, and MCA 61-3-321, 61-3-562, 61-3-203, and 61-3-111. The MCA label rule now reads every part of chapter 3 ("MCA 61-3-321"), not only part 5.
+
+## Delaware (30 Del. C. ch. 30, 21 Del. C. chs. 21 and 23, 2 Del. Admin. Code 2266, DMV)
+
+- **Rate: the brief's "4.25%" is out of date.** The DMV fee page, the title transfer page, and the out-of-state page all give a 5.25% document fee, marked "Updated fees effective October 1, 2025". 30 Del. C. 3002(c)(3) now reads "$5.25 per each additional $100", amended by 85 Del. Laws c. 40. The config already had 5.25%; unchanged.
+- Value basis (DMV fee page): "5.25% of purchase price or NADA book value, whichever is greater ... Minimum document fee is $8.00." The transfer page says "the sale price or current NADA average trade-in value of the vehicle, whichever is higher". The regulation (2266 section 8.0) assesses on the NADA average trade-in value when a non-dealer bill of sale shows less, and allows a Delaware dealer appraisal instead. NADA wording kept as the DMV uses it. The calculator applies 5.25% to the price entered; the copy says to enter the NADA value if it is higher.
+- **For ruling:** the statute's computation (3002(c)) is not a flat percentage: $8 under $400, $13.75 from $400 to $500, then $5.25 for each additional $100 "or any fraction thereof, rounded to the nearest dollar." That works out to about $12.50 less than a flat 5.25% (for $15,000: $13.75 + 145 x $5.25 = $775.00, against $787.50 at 5.25%). The DMV pages state a flat 5.25%. The primary sources disagree, so the estimate is unchanged.
+- Trade-in (3001(5); 2266 section 4.0; DMV "Vehicle Credit"): trade-in allowance comes off the gross price. The credit applies only to a vehicle currently titled in Delaware, with two exceptions, and "may not exceed the actual document fees paid on the trade-in vehicle". A vehicle sold privately within 60 days before or after the new one is titled can be credited on Form MV347 (within 30 days after the sale if sold later). Config `tradeInDeductible` unchanged; the cap is disclosed.
+- Title $35 (21 Del. C. 2305); lien $20 (2335; DMV: title with lien $55). Registration $40 a year for a passenger vehicle, $15 for a motorcycle (21 Del. C. 2151; DMV fee page). Confirmed.
+- **EV fees (21 Del. C. 2151A, "in addition to the registration fee under 2151"; DMV fee page, effective October 1, 2025):** at 6,000 lbs or less, $110 a year for an electric vehicle, $85 for a plug-in hybrid, $60 for a non-plug-in hybrid; heavier classes pay more. An electric, hybrid, or other-fuel motorcycle pays $15 a year more (2151A(5)). **Config had none; now +$110 and +$85 a year, motorcycles +$15 (charged).** The $60 hybrid fee is disclosed (no form choice).
+- Gifts (2266 section 2.1): no document fee on a gift from immediate family (spouse, parent, child, sibling, grandparent, including step and in-laws); only for the transfer of a Delaware title. Other gifts are assessed on the NADA average trade-in value or a dealer appraisal (section 7.0).
+- Deadline: "Failure to transfer a title within 30 days of purchase will result in a $35.00 late fee," and the vehicle may not be operated until the new title is issued (DMV title transfer page). New residents register within 60 days (21 Del. C. 2102).
+- Out of state (3002(a)(4); DMV fee page note): a vehicle bought and registered outside Delaware is exempt if a sales tax, transfer tax, or similar levy was paid to that state within 90 days before registering in Delaware. A Delaware resident buying from an out-of-state dealer gets no credit for taxes paid there. Otherwise the fee is figured on the NADA value.
+- Sources: the DMV title fee link (`?dc=veh_title_fees`) now loads a page that says "This content does not exist"; replaced with the DMV fee, title transfer, vehicle credit, and out-of-state purchase pages, 21 Del. C. ch. 21 subchapter IV, and 2 Del. Admin. Code 2266. The DMV title pages share one path, so they get labels from their `dc` parameter.
+
+## South Dakota (SDCL 32-5, 32-5B, DOR)
+
+- Excise tax 4% of the purchase price, in lieu of sales tax (SDCL 32-5B-1). Confirmed.
+- Trade-in (32-5B-4(3)): on a used vehicle sold by anyone other than a dealer, "the credit or trade-in value shall be deducted from the total consideration". The buyer and seller submit the state bill of sale; without it, the tax is on the retail value in a dealer guide. Confirmed; private trade-ins stay.
+- Exemptions (32-5B-2): a vehicle 11 or more model years old sold for $2,500 or less before trade-in is **subdivision (12)**, not (1) as the copy said; citation fixed. Transfers without consideration between spouses, parent and child, and siblings are (4) ("siblings" defined in 32-5B-18). Other gifts are taxed on the retail value (32-5B-4(4)).
+- **For ruling:** the $2,500 / 11-year exemption is disclosed but not modeled; the calculator still shows the 4% for such a sale. Modeling it needs a price-capped age exemption in the engine.
+- Credit (32-5B-11): no tax is owed if the applicant already paid sales, use, or excise tax to this or another state in an amount the same or more; proof required, or the tax is on the retail value on the day the vehicle entered the state.
+- Title $10, lien notation $10 (DOR "All Vehicles - Title, Fees & Registration"). Confirmed.
+- **Registration: config $42 was not supported.** 32-5-6 sets noncommercial automobile, pickup, and van fees by manufacturer's shipping weight: $36 to 2,000 lbs, $72 from 2,001 to 4,000, $108 from 4,001 to 6,000, $144 above. The DOR non-commercial fee schedule matches (12 months, 0 to 9 years). **Config $42 -> $72 (to 4,000 lbs) and $108 (4,001 to 6,000 lbs), weight label split 4,000.**
+- **For ruling:** 32-5-30 sets the fee at 70% for a noncommercial vehicle 10 or more years old by model year on January 1 (DOR schedule: $50.40 and $75.60). The engine cannot combine the weight split with an age rate, so the estimate uses the 0 to 9 year rate and the copy discloses the 70%.
+- **For ruling:** motorcycle fees by displacement (32-5-9; DOR motorcycle schedule): $18 under 350 cc, $21 for 350 to 1,000 cc, $24 over 1,000 cc (70% at 10+ years). The form has no engine size; the config's $18 is the lowest tier. Disclosed. An electric motorcycle pays the top fee, $24, and no EV fee (32-5-188; already modeled).
+- **For ruling (small):** DOR also lists a $2 technology fee on title and on registration (from July 1, 2025), a $1 solid waste fee, a $1 Highway Patrol fee, a $12 plate mailing fee, and a $2.50 registration mailing fee, plus county wheel taxes. No statute was read for these; disclosed, not added.
+- EV fee $100 a year (32-5-188, SL 2026 ch 132). Confirmed against the statute and the DOR fee table.
+- Registrations are staggered by the first letter of the last name (32-5-2.2) and prorated by month (32-5-2.4); the estimate shows the 12-month fee.
+- Deadline (DOR): title within 45 days of the purchase date. Interest of 1% a month (at least $5 the first month) after 45 days; a one-time 10% penalty (at least $10) after 60 days; the late title application fee is $1 a week past 45 days, up to $50.
+- Sources: the DOR motor vehicle landing page replaced with the DOR title, fees and registration page, its non-commercial and motorcycle fee schedules, and SDCL 32-5B-1, 32-5B-2, 32-5B-4, 32-5B-11, 32-5-6, and 32-5-30.
+
+## `lastVerified`
+
+- Montana, Delaware, and South Dakota: held at September 2026. Each has an open item for ruling (the Montana administrative fee, the Delaware fee schedule, and the South Dakota age rate, motorcycle tier, small fees, and old-vehicle exemption).
+
+## Search summaries used (not primary)
+
+- The 3% administrative fee's basis was found by search and then read in MCA 61-3-111 (primary).
+- The Delaware gift rule was found by search and then read in the 2 Del. Admin. Code 2266 PDF (primary).
+- SDCL 32-5-30 was found by search and then read on the Legislature site (primary).

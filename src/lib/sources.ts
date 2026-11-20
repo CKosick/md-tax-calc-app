@@ -25,6 +25,13 @@ const KY_STATUTE_IDS: Record<string, string> = {
   '57802': 'KRS 186A.130'
 };
 
+/** Delaware DMV title page names, by the dc query parameter. */
+const DE_DMV_PAGES: Record<string, string> = {
+  ve_title_transfer: 'transfer a Delaware title',
+  ve_title_credit: 'vehicle credit',
+  ve_title_outstate: 'vehicles purchased out of state'
+};
+
 /**
  * Statute and code links get the citation as their page name, since their URLs end in codes
  * like "02003" or a query string: https://www.azleg.gov/ars/28/02003.htm -> "A.R.S. 28-2003".
@@ -47,7 +54,9 @@ const STATUTE_LABELS: { host: RegExp; label: (url: URL) => string | undefined }[
   { host: /^legislature\.maine\.gov$/, label: (u) => cite(u.pathname, /title(\d+(?:-[A-Z])?)sec(\d+)\.html$/i, (m) => `${m[1]} M.R.S. ${m[2]}`) },
   { host: /^(www\.)?gc\.nh\.gov$/, label: (u) => cite(u.pathname, /\/(\d+[A-Z]?)-(\d+(?:-[a-z])?)\.htm$/i, (m) => `RSA ${m[1]}:${m[2]}`) },
   { host: /^law\.lis\.virginia\.gov$/, label: (u) => cite(u.pathname, /section([\d.:-]+)\/?$/i, (m) => `Va. Code ${m[1]}`) },
-  { host: /^mca\.legmt\.gov$/, label: (u) => cite(u.pathname, /\/0610-0030-0050-0(\d\d)0\.html$/, (m) => `MCA 61-3-5${m[1]}`) },
+  { host: /^mca\.legmt\.gov$/, label: (u) => cite(u.pathname, /\/0610-0030-00(\d)0-0(\d\d)0\.html$/, (m) => `MCA 61-3-${m[1]}${m[2]}`) },
+  // Delaware DMV title pages share one path and differ only in the dc query parameter
+  { host: /^dmv\.de\.gov$/, label: (u) => DE_DMV_PAGES[u.searchParams.get('dc') ?? ''] },
   { host: /^(www\.)?wyoleg\.gov$/, label: (u) => cite(u.pathname, /compress\/title(\d+)\.pdf$/i, (m) => `Wyo. Stat. Title ${m[1]}`) ?? cite(u.pathname, /\/(\d{4})\/Enroll\/HB0*(\d+)\.pdf$/i, (m) => `${m[1]} Wyo. HB ${m[2]}`) },
   { host: /^sdlegislature\.gov$/, label: (u) => cite(u.pathname, /\/Statutes\/([\d-]+)$/i, (m) => `SDCL ${m[1]}`) },
   { host: /^legislature\.vermont\.gov$/, label: (u) => cite(u.pathname, /\/statutes\/section\/(\d+)\/\d+\/0*(\d+)$/, (m) => `${m[1]} V.S.A. ${m[2]}`) },

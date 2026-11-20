@@ -6,9 +6,9 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 304 across 51 jurisdictions
+- Source links configured now: 324 across 51 jurisdictions
 - Hidden on the site (dead or unreachable): 2
-- Working but only an agency homepage, not a specific page: 6
+- Working but only an agency homepage, not a specific page: 5
 - States showing no source link ("Official source links ... are being updated"): 0
 - States with some links hidden: 1
 - States re-verified since the check: Alabama (November 2026), Arizona (October 2026), Arkansas (October 2026), California (October 2026), Colorado (November 2026), Connecticut (October 2026), Florida (October 2026), Georgia (October 2026), Hawaii (November 2026), Idaho (November 2026), Illinois (October 2026), Indiana (October 2026), Iowa (November 2026), Kansas (November 2026), Kentucky (November 2026), Louisiana (October 2026), Maine (November 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Mississippi (November 2026), Missouri (October 2026), Nebraska (November 2026), Nevada (November 2026), New Hampshire (November 2026), New Jersey (October 2026), New Mexico (November 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Oregon (November 2026), Pennsylvania (October 2026), Rhode Island (November 2026), South Carolina (October 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026), West Virginia (November 2026), Wisconsin (October 2026)
@@ -62,6 +62,9 @@ All other states keep their September 2026 verified date until their rates are r
 | New Hampshire | 2026-11-18 | DMV homepage replaced with the DMV registration, temporary plate, new resident, and exempt vehicle pages and RSA 261:20, 261:141, and 261:45; permit fee schedule confirmed and rounded to the dollar, registration $48 + $8 plate fee = $56, motorcycle $24 -> $30, $35 title, 20-day plate, 60-day new resident rule, and the suspended inspection program stated. Rulings applied 2026-11-19: no title fee for model year 1999 or older, $20 security interest fee for financed purchases; verified date moved to November 2026. |
 | Maine | 2026-11-18 | Maine Revenue and BMV homepages replaced with the BMV registration and fee pages and 36 M.R.S. 1764 and 1765 and 29-A M.R.S. 501 and 515; excise schedule, 5.5% tax, trade-in credit, $35 registration, $21 motorcycle, and $33 title confirmed; gift, deadline, and new resident answers stated. Ruling applied 2026-11-19: $33 title fee only for vehicles 25 model years old or newer; verified date moved to November 2026. |
 | Rhode Island | 2026-11-18 | DMV and Taxation homepages replaced with the DMV sales tax, new registration, fee, weight table, and new resident pages and the Taxation casual sales summary; title $52.50 -> $53.50, lien $0 -> $53.50, registration $60 -> $103.50 with the surcharges, motorcycle $32.50 -> $47.50, EV +$200 and plug-in hybrid +$100 a year from January 1, 2026; NADA rule, gift letters, sales tax due date, and new resident rules stated; verified date moved to November 2026. |
+| Delaware | 2026-11-19 | Dead DMV title fee link (the page now says the content does not exist) replaced with the DMV fee, title transfer, vehicle credit, and out-of-state purchase pages, 21 Del. C. ch. 21 subch. IV (2151 and 2151A), and 2 Del. Admin. Code 2266; 5.25% document fee on the price or NADA average trade-in value with an $8 minimum, $35 title, $20 lien, and $40 and $15 registration confirmed; EV +$110 and plug-in hybrid +$85 a year added (2151A, from October 1, 2025), electric and hybrid motorcycles +$15; gift, trade-in, deadline, and out-of-state answers stated. |
+| Montana | 2026-11-19 | MVD homepage replaced with the MVD light vehicle and motorcycle fee pages, the new vehicle and buying tips pages, and MCA 61-3-321, 61-3-562, 61-3-203, and 61-3-111; registration now by age ($217, $87, or $28 plus the $10 Highway Patrol fee and $12 plate fee), motorcycle $53 -> $91.25 (one-time fee, safety, Highway Patrol, and plate fees); luxury fee cited to 61-3-321(2)(b) (61-3-315 was repealed in 2019); $70 plug-in hybrid fee confirmed; deadline, permanent registration, and out-of-state answers stated. |
+| South Dakota | 2026-11-19 | DOR motor vehicle landing page replaced with the DOR title, fees and registration page and its non-commercial and motorcycle fee schedules, plus SDCL 32-5B-1, 32-5B-2, 32-5B-4, 32-5B-11, 32-5-6, and 32-5-30; 4% excise, private trade-in credit, $10 title and lien, and $100 EV fee confirmed; registration $42 -> $72 to 4,000 lbs and $108 from 4,001 to 6,000 lbs (32-5-6); exemption cited to 32-5B-2(12); gift, deadline, and out-of-state answers stated. |
 
 ## Priority: states with no working source link
 
@@ -79,7 +82,6 @@ All other states keep their September 2026 verified date until their rates are r
 | State | URL | Note |
 |---|---|---|
 | Alaska | https://dmv.alaska.gov | Agency homepage |
-| Montana | https://mvdmt.gov | Agency homepage |
 | North Dakota | https://www.dot.nd.gov | Agency homepage |
 | Vermont | https://dmv.vermont.gov | Agency homepage |
 | Wyoming | https://revenue.wyo.gov | Agency homepage |
