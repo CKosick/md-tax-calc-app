@@ -80,10 +80,13 @@ const GUIDE_STATES = {
   hawaii: { label: 'Hawaii', agency: 'Hawaii counties and Department of Taxation', hosts: ['data.capitol.hawaii.gov', 'www.honolulu.gov', 'www.vrl.hawaiicounty.gov', 'files.hawaii.gov'] },
   'new-hampshire': { label: 'New Hampshire', agency: 'New Hampshire DMV', hosts: ['www.dmv.nh.gov', 'gc.nh.gov'] },
   maine: { label: 'Maine', agency: 'Maine Bureau of Motor Vehicles', hosts: ['www.maine.gov', 'legislature.maine.gov'] },
-  'rhode-island': { label: 'Rhode Island', agency: 'Rhode Island DMV and Division of Taxation', hosts: ['dmv.ri.gov', 'tax.ri.gov'] }
+  'rhode-island': { label: 'Rhode Island', agency: 'Rhode Island DMV and Division of Taxation', hosts: ['dmv.ri.gov', 'tax.ri.gov'] },
+  montana: { label: 'Montana', agency: 'Montana Motor Vehicle Division', hosts: ['mvdmt.gov', 'mca.legmt.gov'] },
+  delaware: { label: 'Delaware', agency: 'Delaware DMV', hosts: ['dmv.de.gov', 'delcode.delaware.gov', 'regulations.delaware.gov'] },
+  'south-dakota': { label: 'South Dakota', agency: 'South Dakota Department of Revenue', hosts: ['dor.sd.gov', 'sdlegislature.gov'] }
 } as const;
 // Guides re-checked in November 2026 carry that date; the rest October 2026
-const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska', 'idaho', 'west-virginia', 'hawaii', 'new-hampshire', 'maine', 'rhode-island'].includes(stateKey) ? 'November 2026' : 'October 2026');
+const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska', 'idaho', 'west-virginia', 'hawaii', 'new-hampshire', 'maine', 'rhode-island', 'montana', 'delaware', 'south-dakota'].includes(stateKey) ? 'November 2026' : 'October 2026');
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
   `how-to-gift-a-car-in-${state}`,
@@ -538,6 +541,41 @@ describe('Batch 15 guides (New Hampshire, Maine, Rhode Island)', () => {
   });
 });
 
+describe('Batch 16 guides (Montana, Delaware, South Dakota)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified Montana, Delaware, and South Dakota key facts', () => {
+    const [mtSale, mtGift, mtMove] = topics('montana').map(text);
+    for (const fact of ['no sales tax', '40 days', '40-day temporary registration permit', 'MV37A', 'MV24', '$12', '$8', '$217', '$87', '$28', '$10 Highway Patrol fee', '3% administrative fee', '$130', '$70', 'MCA 61-3-562']) expect(mtSale).toContain(fact);
+    for (const fact of ['no tax', '$825', 'MCA 61-3-562']) expect(mtGift).toContain(fact);
+    for (const fact of ['60 days', 'establishing residency', '$87.50', 'gainfully employed']) expect(mtMove).toContain(fact);
+
+    const [deSale, deGift, deMove] = topics('delaware').map(text);
+    for (const fact of ['5.25%', 'NADA average trade-in value, whichever is higher', '$8 minimum', 'within 30 days', '$35 late fee', 'do not need a notary', 'Seller\u2019s Report of Sale', 'MV347', 'Delaware-titled', '$55', '$40 a year', '$110', '$85', '$60']) expect(deSale).toContain(fact);
+    for (const fact of ['grandparent', 'step and in-law', 'only to the transfer of a Delaware title', 'appraisal', 'inheritance']) expect(deGift).toContain(fact);
+    for (const fact of ['60 days', '90 days', '21 Del. C. 2102', 'VIN', '5-day temporary tag']) expect(deMove).toContain(fact);
+
+    const [sdSale, sdGift, sdMove] = topics('south-dakota').map(text);
+    for (const fact of ['4%', 'trade-in', '45 days', '1% a month', '10% penalty', '$1 a week, up to $50', 'SDCL 32-5B-2(12)', '$10', '$2 technology fee', '$72', '$108', '70%', '$100 a year', '$100 administrative fee']) expect(sdSale).toContain(fact);
+    for (const fact of ['spouses', 'a parent and child', 'siblings', '32-5B-18', 'retail value', '32-5B-2(2)', '32-5B-2(3)']) expect(sdGift).toContain(fact);
+    for (const fact of ['SDCL 32-5B-11', 'affidavit of a licensed dealer', 'day the vehicle entered the state', '32-5B-2(14)']) expect(sdMove).toContain(fact);
+  });
+
+  it('calculator notes match the engine: Montana fees by age, the Delaware NADA input, and the South Dakota rate the estimate uses', () => {
+    expect(text('how-to-title-a-private-car-sale-in-montana')).toContain('($239, $109, or $50)');
+    expect(text('how-to-title-a-private-car-sale-in-delaware')).toContain('enter the NADA average trade-in value if it is higher');
+    expect(text('how-to-title-a-private-car-sale-in-south-dakota')).toContain('does not apply the $2,500 exemption for older vehicles or the 70% rate');
+    for (const t of topics('delaware').map(text)) expect(t).not.toContain('4.25%');
+    for (const t of topics('south-dakota').map(text)) expect(t).not.toContain('$42');
+  });
+
+  it('batch 16 guides are dated November 2026; no em dashes', () => {
+    for (const state of ['montana', 'delaware', 'south-dakota']) {
+      for (const guide of getGuidesForState(state)) expect(guide.lastVerified).toBe('November 2026');
+      for (const t of topics(state).map(text)) expect(t).not.toContain('\u2014');
+    }
+  });
+});
+
 describe('Guide links and discovery', () => {
   // Renders every guide state's calculator page; slow under load, so it gets a longer timeout
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', { timeout: 60000 }, async () => {
@@ -581,6 +619,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('Idaho, West Virginia, Hawaii, New Hampshire, Maine, and Rhode Island.');
+    expect(String(metadata.description)).toContain('New Hampshire, Maine, Rhode Island, Montana, Delaware, and South Dakota.');
   });
 });

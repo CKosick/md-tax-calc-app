@@ -485,6 +485,36 @@ const RI_SOURCES = {
   casualSales: { label: 'RI Division of Taxation: Casual Sales of Cars in RI', url: 'https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-04/Casual%20Car%20Sales%20in%20RI%20one%20pager%2004-08-2025.pdf' }
 };
 
+const MT_MVD = 'https://mvdmt.gov';
+const MCA_61_3 = 'https://mca.legmt.gov/bills/mca/title_0610/chapter_0030';
+const MT_SOURCES = {
+  newVehicle: { label: 'Montana MVD: You Got a New Vehicle', url: `${MT_MVD}/you-got-a-new-vehicle/` },
+  buying: { label: 'Montana MVD: Tips for Buying a Vehicle', url: `${MT_MVD}/tips-for-buying-a-vehicle/` },
+  registration: { label: 'Montana MVD: Vehicle Registration', url: `${MT_MVD}/vehicle-registration/` },
+  lightFees: { label: 'Montana MVD: Light Vehicle Registration and Fees', url: `${MT_MVD}/vehicle-registration/light-vehicle-registration-and-fees/` },
+  fees: { label: 'MCA 61-3-321: Registration fees', url: `${MCA_61_3}/part_0030/section_0210/0610-0030-0030-0210.html` },
+  permanent: { label: 'MCA 61-3-562: Permanent registration', url: `${MCA_61_3}/part_0050/section_0620/0610-0030-0050-0620.html` }
+};
+
+const DE_TITLES = 'https://dmv.de.gov/VehicleServices/titles/index.shtml';
+const DE_SOURCES = {
+  transfer: { label: 'Delaware DMV: Transfer a Delaware Vehicle Title', url: `${DE_TITLES}?dc=ve_title_transfer` },
+  credit: { label: 'Delaware DMV: Vehicle Credit', url: `${DE_TITLES}?dc=ve_title_credit` },
+  outOfState: { label: 'Delaware DMV: Vehicles Purchased from Out of State', url: `${DE_TITLES}?dc=ve_title_outstate` },
+  fees: { label: 'Delaware DMV: Fees', url: 'https://dmv.de.gov/Common/DMVFees/index.shtml' },
+  documentFee: { label: '30 Del. C. ch. 30: Motor vehicle document fee', url: 'https://delcode.delaware.gov/title30/c030/index.html' },
+  regulation: { label: '2 Del. Admin. Code 2266: Vehicle Document Fees', url: 'https://regulations.delaware.gov/AdminCode/title2/2266' }
+};
+
+const SD_SOURCES = {
+  titleFees: { label: 'SD DOR: All Vehicles - Title, Fees & Registration', url: 'https://dor.sd.gov/individuals/motor-vehicle/all-vehicles-title-fees-registration/' },
+  licenseFees: { label: 'SD DOR: Non-Commercial Vehicle License Fees', url: 'https://dor.sd.gov/media/qoolm3x4/non-commercial-vehicle-license-fee.pdf' },
+  excise: { label: 'SDCL 32-5B-1: Motor vehicle excise tax', url: 'https://sdlegislature.gov/Statutes/32-5B-1' },
+  exempt: { label: 'SDCL 32-5B-2: Exempt vehicles', url: 'https://sdlegislature.gov/Statutes/32-5B-2' },
+  purchasePrice: { label: 'SDCL 32-5B-4: Purchase price defined', url: 'https://sdlegislature.gov/Statutes/32-5B-4' },
+  credit: { label: 'SDCL 32-5B-11: Credit for taxes paid', url: 'https://sdlegislature.gov/Statutes/32-5B-11' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -10110,6 +10140,655 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [RI_SOURCES.moving, RI_SOURCES.newRegistration, RI_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-montana',
+    stateKey: 'montana',
+    title: 'How to Title a Private Car Sale in Montana',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Montana',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Montana: no sales tax, 40 days to transfer, the $12 title, new plates, and registration by vehicle age.',
+    cardDescription: 'No sales tax, 40 days, new plates, and fees by age.',
+    intro: [
+      'Montana has no sales tax, so a car bought from a private seller owes no state tax. You pay the title fee and registration fees that depend on the vehicle’s age.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Montana Motor Vehicle Division',
+    steps: [
+      {
+        title: 'Get the signed title and a record of the sale',
+        body: [
+          'The seller signs the title over to you. If the title shows a lien, get a Release of Security Interest or Lien (MV37A) from the seller. Keep a record of the sale; the MVD Bill of Sale (MV24) works.'
+        ]
+      },
+      {
+        title: 'Leave the plates with the seller',
+        body: [
+          'The seller removes the license plates, and you buy new plates when you register. If you need to drive before then, a county treasurer can issue a 40-day temporary registration permit.'
+        ]
+      },
+      {
+        title: 'Transfer within 40 days',
+        body: [
+          'You have 40 days from the sale date to transfer ownership. Title and register at the County Treasurer’s office in the county where you live, and ask whether you need an appointment.'
+        ]
+      },
+      {
+        title: 'Pay the title fee',
+        body: [
+          'Montana charges no sales or use tax on the sale. The title is $12, and filing a lien is $8.'
+        ]
+      },
+      {
+        title: 'Pay the registration by age',
+        body: [
+          'The rate is $217 for a vehicle 4 years old or less, $87 for 5 through 10 years, and $28 for 11 years or more, with age figured as the registration year minus the model year. Add the $10 Highway Patrol fee, $12 for new plates, any county option tax, and a 3% administrative fee. An electric vehicle adds $130 a year and a plug-in hybrid $70 (under 6,000 lbs).'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over by the seller',
+      'A lien release (MV37A), if the title shows a lien',
+      'A bill of sale or other record of the sale',
+      'Proof of insurance',
+      'Payment for the title and registration fees'
+    ],
+    calculatorNote:
+      'The calculator shows no tax, the $12 title, and the registration by age with the $10 Highway Patrol and $12 plate fees ($239, $109, or $50). It leaves out the county option tax and the 3% administrative fee.',
+    faqs: [
+      {
+        question: 'Can I keep the seller’s plates?',
+        answer: 'No. The seller removes the plates, and you buy new ones at the County Treasurer’s office.'
+      },
+      {
+        question: 'What if the seller had permanently registered the car?',
+        answer: 'A permanent registration ends when the vehicle is sold, so you register it again (MCA 61-3-562). If it is 11 years old or older, you can choose permanent registration yourself.'
+      },
+      {
+        question: 'What is the county option tax?',
+        answer: 'A county can add a tax of up to 0.7% of the vehicle’s depreciated value, or a flat fee, if its voters approved it. It is paid with the registration.'
+      }
+    ],
+    sources: [MT_SOURCES.newVehicle, MT_SOURCES.buying, MT_SOURCES.lightFees, MT_SOURCES.fees]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-montana',
+    stateKey: 'montana',
+    title: 'How to Gift a Car in Montana',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Montana',
+    metaDescription:
+      'How to gift a car in Montana: no sales tax on any gift, 40 days to transfer the title, the $12 title fee, and registration fees by the vehicle’s age.',
+    cardDescription: 'No tax, the title transfer, and fees by age.',
+    intro: [
+      'Montana has no sales tax, so a gifted vehicle owes no tax, whoever gives it. You pay the same title and registration fees as on a sale.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Montana Motor Vehicle Division',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs the title over to you, the same way a seller would.'
+        ]
+      },
+      {
+        title: 'Clear any lien',
+        body: [
+          'If the title shows a lien, the giver needs a Release of Security Interest or Lien (MV37A) before the transfer.'
+        ]
+      },
+      {
+        title: 'Transfer within 40 days',
+        body: [
+          'Title and register at the County Treasurer’s office in the county where you live within 40 days.'
+        ]
+      },
+      {
+        title: 'Pay the title fee',
+        body: [
+          'The title is $12. No tax is due on a gift.'
+        ]
+      },
+      {
+        title: 'Pay the registration by age',
+        body: [
+          'The rate is $217 for a vehicle 4 years old or less, $87 for 5 through 10 years, and $28 for 11 years or more, plus the $10 Highway Patrol fee, $12 for new plates, any county option tax, and a 3% administrative fee.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over by the giver',
+      'A lien release, if the title shows a lien',
+      'Proof of insurance',
+      'Your identification',
+      'Payment for the title and registration fees'
+    ],
+    calculatorNote:
+      'Enter $0 as the price. The calculator then shows no tax, the $12 title, and the registration by age with the $10 Highway Patrol and $12 plate fees.',
+    faqs: [
+      {
+        question: 'Is a gift from a friend taxed?',
+        answer: 'No. Montana has no sales tax on any vehicle transfer, so it does not matter who gives the vehicle.'
+      },
+      {
+        question: 'Does the giver’s permanent registration carry over?',
+        answer: 'No. A permanent registration ends when ownership changes, so you register the vehicle again (MCA 61-3-562).'
+      },
+      {
+        question: 'Do I pay the luxury fee?',
+        answer: 'Only for a light vehicle 10 years old or less with a manufacturer’s suggested retail price over $150,000: $825 a year (MCA 61-3-321).'
+      }
+    ],
+    sources: [MT_SOURCES.newVehicle, MT_SOURCES.lightFees, MT_SOURCES.permanent]
+  },
+  {
+    slug: 'titling-a-car-in-montana-after-moving-from-another-state',
+    stateKey: 'montana',
+    title: 'Titling a Car in Montana After Moving From Another State',
+    shortTitle: 'Title a car after moving to Montana',
+    metaTitle: 'Titling Your Car After Moving to Montana',
+    metaDescription:
+      'New to Montana? Title and register your car within 60 days of establishing residency. No sales or use tax applies; you pay the title fee and registration by age.',
+    cardDescription: '60 days, no tax, and registration by age.',
+    intro: [
+      'New Montana residents must title and register their vehicles within 60 days of establishing residency. No sales or use tax is due on a vehicle you bring with you.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Montana Motor Vehicle Division',
+    steps: [
+      {
+        title: 'Plan for 60 days',
+        body: [
+          'Apply for a Montana title and register your vehicle within 60 days of establishing residency.'
+        ]
+      },
+      {
+        title: 'Gather your title',
+        body: [
+          'Bring your out-of-state title. If a lender holds it, ask your County Treasurer’s office how to have it sent.'
+        ]
+      },
+      {
+        title: 'Visit your County Treasurer',
+        body: [
+          'Register in the county where you live. Check whether the office takes appointments.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $12. Registration is $217 for a vehicle 4 years old or less, $87 for 5 through 10 years, or $28 for 11 years or more, plus the $10 Highway Patrol fee, $12 for Montana plates, any county option tax, and a 3% administrative fee.'
+        ]
+      },
+      {
+        title: 'Consider permanent registration',
+        body: [
+          'A light vehicle 11 years old or older can be permanently registered for $87.50 plus five times the county option tax and other fees, with no renewals while you own it (MCA 61-3-562).'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title',
+      'Lender information, if the title is held by a lender',
+      'Proof of Montana insurance',
+      'Your identification',
+      'Payment for the title and registration fees'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for a vehicle you already own. The calculator then shows no tax, the $12 title, and the registration by age with the $10 Highway Patrol and $12 plate fees.',
+    faqs: [
+      {
+        question: 'Do I pay tax on the car I moved with?',
+        answer: 'No. Montana has no sales or use tax.'
+      },
+      {
+        question: 'I work in Montana but live elsewhere. Do I register here?',
+        answer: 'A nonresident who is gainfully employed in Montana presents the current out-of-state registration at the County Treasurer’s office and pays the Montana fees (MCA 61-3-701 through 704).'
+      },
+      {
+        question: 'Is the military treated differently?',
+        answer: 'Nonresident military personnel stationed in Montana may keep their home registration unless they are gainfully employed in Montana outside their military duties.'
+      }
+    ],
+    sources: [MT_SOURCES.registration, MT_SOURCES.lightFees, MT_SOURCES.permanent]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-delaware',
+    stateKey: 'delaware',
+    title: 'How to Title a Private Car Sale in Delaware',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Delaware',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Delaware: the 5.25% document fee on the price or NADA value, 30 days to transfer, the $35 title, and registration.',
+    cardDescription: '5.25% on price or NADA, 30 days, title, and fees.',
+    intro: [
+      'Delaware has no sales tax, but it charges a 5.25% document fee when you title a car. The fee is figured on the sale price or the NADA average trade-in value, whichever is higher.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Delaware DMV',
+    steps: [
+      {
+        title: 'Have the seller assign the title',
+        body: [
+          'The seller completes the assignment on the back of the title: your name and address, the date of sale, the price, and the odometer reading. If owners are joined by "AND", all must sign; with "AND/OR", one can. You sign too. Delaware titles do not need a notary.'
+        ]
+      },
+      {
+        title: 'Complete the purchaser’s application',
+        body: [
+          'Fill in the Purchaser’s Application on the back of the title exactly as you want the new title to read, with your license number and date of birth. If you financed the car, complete the lien section. The seller sends the DMV a Seller’s Report of Sale.'
+        ]
+      },
+      {
+        title: 'Title within 30 days',
+        body: [
+          'Transfer the title within 30 days of the purchase, or pay a $35 late fee. The car may not be driven until the new title is in your name. Bring proof of Delaware liability insurance and a Delaware license or two proofs of residency.'
+        ]
+      },
+      {
+        title: 'Know how the document fee is figured',
+        body: [
+          'The fee is 5.25% of the sale price or the current NADA average trade-in value, whichever is higher, with an $8 minimum. You may submit an appraisal from a licensed Delaware dealer. A Delaware-titled trade-in, or a car you sold privately within 60 days (Form MV347), reduces the price.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $35, or $55 with a lien. Registration is $40 a year. An electric vehicle adds $110 a year, a plug-in hybrid $85, and a non-plug-in hybrid $60 (6,000 lbs or less).'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, assigned by the seller',
+      'The purchaser’s application, completed on the title',
+      'Proof of Delaware liability insurance',
+      'A Delaware license or two proofs of residency',
+      'Form MV347, if claiming credit for a car you sold',
+      'Payment for the document fee, title, and registration'
+    ],
+    calculatorNote:
+      'The calculator applies 5.25% to the price you enter, less any trade-in (minimum $8); enter the NADA average trade-in value if it is higher. It adds the $35 title and the registration.',
+    faqs: [
+      {
+        question: 'What if the title shows no price?',
+        answer: 'Without a bill of sale or a price on the title, the DMV figures the fee on the current NADA average trade-in value. You may submit a licensed Delaware dealer’s appraisal instead.'
+      },
+      {
+        question: 'Does any trade-in count?',
+        answer: 'Only a vehicle titled in Delaware, with two exceptions: one you registered in Delaware before and paid the fee on, or one taxed in another state within 90 days before you register here. The credit cannot exceed the document fee paid on the traded vehicle (2 Del. Admin. Code 2266).'
+      },
+      {
+        question: 'When must I claim credit for a car I sold?',
+        answer: 'If you sell it before titling the new car, file Form MV347 with the title work. If you sell it within 60 days after, the DMV must receive the form within 30 days of that sale.'
+      }
+    ],
+    sources: [DE_SOURCES.transfer, DE_SOURCES.fees, DE_SOURCES.credit, DE_SOURCES.documentFee]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-delaware',
+    stateKey: 'delaware',
+    title: 'How to Gift a Car in Delaware',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Delaware',
+    metaDescription:
+      'How to gift a car in Delaware: no document fee on a gift from immediate family when a Delaware title is transferred; other gifts pay 5.25% of the NADA value. Then the title and registration.',
+    cardDescription: 'The family exemption, NADA value, and fees.',
+    intro: [
+      'A gift from immediate family owes no Delaware document fee when a Delaware title is transferred. Any other gift pays 5.25% of the NADA average trade-in value.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Delaware DMV',
+    steps: [
+      {
+        title: 'Check who is giving the car',
+        body: [
+          'Immediate family is a spouse, parent, child, sibling, or grandparent, including step and in-law relations (2 Del. Admin. Code 2266). The exemption applies only to the transfer of a Delaware title.'
+        ]
+      },
+      {
+        title: 'Complete the title',
+        body: [
+          'The giver completes the assignment on the back of the title, and you complete the Purchaser’s Application, the same as for a sale.'
+        ]
+      },
+      {
+        title: 'For other gifts, expect the NADA value',
+        body: [
+          'A gift that does not qualify pays 5.25% of the current NADA average trade-in value. You may submit an appraisal from a licensed Delaware dealer instead.'
+        ]
+      },
+      {
+        title: 'Title within 30 days',
+        body: [
+          'Transfer the title within 30 days, with proof of Delaware liability insurance and a Delaware license or two proofs of residency, or pay a $35 late fee.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $35, or $55 with a lien. Registration is $40 a year.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, assigned by the giver',
+      'The purchaser’s application, completed on the title',
+      'Proof of Delaware liability insurance',
+      'A Delaware license or two proofs of residency',
+      'Payment for the title, registration, and any document fee'
+    ],
+    calculatorNote:
+      'For a gift from immediate family, enter $0 as the price; the calculator then shows no document fee, the $35 title, and the registration. For any other gift, enter the NADA average trade-in value.',
+    faqs: [
+      {
+        question: 'Is a gift from my aunt exempt?',
+        answer: 'No. An aunt is not on the list of immediate family, so the fee is 5.25% of the NADA average trade-in value, or of a Delaware dealer’s appraisal.'
+      },
+      {
+        question: 'Does the exemption cover a car titled in another state?',
+        answer: 'No. It applies only to the transfer of a Delaware title.'
+      },
+      {
+        question: 'Is an inherited car taxed?',
+        answer: 'A transfer by inheritance or bequest owes no document fee. Buying a car from an estate does (2 Del. Admin. Code 2266).'
+      }
+    ],
+    sources: [DE_SOURCES.regulation, DE_SOURCES.transfer, DE_SOURCES.fees]
+  },
+  {
+    slug: 'titling-a-car-in-delaware-after-moving-from-another-state',
+    stateKey: 'delaware',
+    title: 'Titling a Car in Delaware After Moving From Another State',
+    shortTitle: 'Title a car after moving to Delaware',
+    metaTitle: 'Titling Your Car After Moving to Delaware',
+    metaDescription:
+      'New to Delaware? Register within 60 days. The 5.25% document fee applies on the NADA value unless you paid tax in another state within the last 90 days. Then the title and registration.',
+    cardDescription: '60 days, the 90-day rule, and fees.',
+    intro: [
+      'New Delaware residents must register their vehicles within 60 days of moving. The 5.25% document fee is charged on the vehicle’s value unless you paid tax on it in another state within the last 90 days.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Delaware DMV',
+    steps: [
+      {
+        title: 'Plan for 60 days',
+        body: [
+          'Register your vehicle within 60 days of taking up residence in Delaware (21 Del. C. 2102).'
+        ]
+      },
+      {
+        title: 'Check the 90-day rule',
+        body: [
+          'If you paid sales tax, a transfer tax, or a similar levy to another state on the vehicle within 90 days before registering in Delaware, no document fee is due. Otherwise the fee is 5.25% of the current NADA average trade-in value, or of a licensed Delaware dealer’s appraisal.'
+        ]
+      },
+      {
+        title: 'Get the VIN verified or inspected',
+        body: [
+          'For a vehicle coming from another state, the DMV verifies the VIN of one seven model years old or newer at a DMV inspection lane, and inspects older ones at a lane, before it issues a Delaware title.'
+        ]
+      },
+      {
+        title: 'Bring your documents',
+        body: [
+          'Bring the out-of-state title, proof of Delaware liability insurance, and your Delaware license or another accepted proof of residency. All owners sign the Delaware application.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $35, or $55 with a lien. Registration is $40 a year. An electric vehicle adds $110 a year and a plug-in hybrid $85.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title',
+      'Proof of tax paid in the last 90 days, if any',
+      'Proof of Delaware liability insurance',
+      'Your Delaware license or other proof of residency',
+      'Payment for the title, registration, and any document fee'
+    ],
+    calculatorNote:
+      'If you paid tax in another state within 90 days, enter $0 as the price. Otherwise enter the NADA average trade-in value, and the calculator applies 5.25% and adds the $35 title and the registration.',
+    faqs: [
+      {
+        question: 'I bought my car years ago. Do I pay the document fee?',
+        answer: 'Yes, unless tax was paid on it in another state within 90 days before you register in Delaware. The fee is figured on the current NADA average trade-in value.'
+      },
+      {
+        question: 'I am in the military. Do I register here?',
+        answer: 'Military members and their families whose vehicles are registered in their home state do not have to register in Delaware. A member stationed here who registers can skip the document fee by showing orders within 90 days of relocating.'
+      },
+      {
+        question: 'What if my out-of-state registration has expired?',
+        answer: 'The DMV issues a 5-day temporary tag for $20 so you can drive the vehicle to Delaware.'
+      }
+    ],
+    sources: [DE_SOURCES.outOfState, DE_SOURCES.fees, DE_SOURCES.documentFee]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-south-dakota',
+    stateKey: 'south-dakota',
+    title: 'How to Title a Private Car Sale in South Dakota',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in South Dakota',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in South Dakota: the 4% excise tax with trade-in credit, 45 days to title, the $10 title, and registration by weight.',
+    cardDescription: '4% excise, 45 days, title, and weight fees.',
+    intro: [
+      'South Dakota charges a 4% motor vehicle excise tax on a car bought from a private seller, in place of sales tax. A trade-in comes off the price.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'South Dakota Department of Revenue',
+    steps: [
+      {
+        title: 'Get the signed title and the state bill of sale',
+        body: [
+          'The seller signs the title over to you. The buyer and seller submit the state-approved bill of sale to the county treasurer; without it, the tax is figured on the retail value in a dealer guide (SDCL 32-5B-4).'
+        ]
+      },
+      {
+        title: 'Title within 45 days',
+        body: [
+          'Apply at the county treasurer’s office in the county where you live within 45 days of the purchase date. Fees run from the purchase date. After 45 days, interest of 1% a month (at least $5 for the first month) is added; after 60 days, a 10% penalty (at least $10) applies; and the late title fee is $1 a week, up to $50.'
+        ]
+      },
+      {
+        title: 'Pay the 4% excise tax',
+        body: [
+          'The tax is 4% of the price less any trade-in. A vehicle 11 or more model years old sold for $2,500 or less before trade-in owes none (SDCL 32-5B-2(12)).'
+        ]
+      },
+      {
+        title: 'Pay the title fee',
+        body: [
+          'The title is $10, and noting a lien is $10. DOR also lists a $2 technology fee.'
+        ]
+      },
+      {
+        title: 'Register by weight',
+        body: [
+          'A car, pickup, or van registers by shipping weight: $72 a year from 2,001 to 4,000 lbs and $108 from 4,001 to 6,000 lbs, or 70% of that for a vehicle 10 model years old or more. The first registration is prorated to your renewal month, set by the first letter of your last name. An electric vehicle adds $100 a year.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the seller',
+      'The state bill of sale, signed by both of you',
+      'A South Dakota driver license or ID',
+      'Lien information, if you financed the car',
+      'Payment for the tax, title, and registration'
+    ],
+    calculatorNote:
+      'The calculator applies 4% to the price less any trade-in and adds the $10 title and the registration for a vehicle under 10 model years old ($72 or $108). It does not apply the $2,500 exemption for older vehicles or the 70% rate.',
+    faqs: [
+      {
+        question: 'Can I deduct a trade-in on a private sale?',
+        answer: 'Yes. The trade-in value comes off the price whether the seller is a dealer or a private party (SDCL 32-5B-4).'
+      },
+      {
+        question: 'What if I have no South Dakota license or address?',
+        answer: 'Without a South Dakota driver license or ID, or a physical South Dakota address, you pay a $100 administrative fee on top of the title fee.'
+      },
+      {
+        question: 'When do I renew?',
+        answer: 'Each year in the month set by the first letter of your last name; for example, A and B renew in January.'
+      }
+    ],
+    sources: [SD_SOURCES.titleFees, SD_SOURCES.licenseFees, SD_SOURCES.excise, SD_SOURCES.purchasePrice]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-south-dakota',
+    stateKey: 'south-dakota',
+    title: 'How to Gift a Car in South Dakota',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in South Dakota',
+    metaDescription:
+      'How to gift a car in South Dakota: no excise tax between spouses, a parent and child, or siblings when nothing is paid. Other gifts are taxed at 4% of the retail value.',
+    cardDescription: 'Family exemptions, retail value, and fees.',
+    intro: [
+      'A vehicle given without payment between spouses, between a parent and child, or between siblings owes no South Dakota excise tax. Any other gift is taxed on the vehicle’s retail value.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'South Dakota Department of Revenue',
+    steps: [
+      {
+        title: 'Check who is giving the car',
+        body: [
+          'The exemption covers transfers without payment between spouses, between a parent and child, and between siblings, including brothers and sisters by blood, marriage, or adoption (SDCL 32-5B-2(4) and 32-5B-18).'
+        ]
+      },
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs the title over to you.'
+        ]
+      },
+      {
+        title: 'For other gifts, expect the retail value',
+        body: [
+          'A gift outside the family exemption is taxed at 4% of the retail value in a dealer guide approved by the Secretary of Revenue (SDCL 32-5B-4(4)).'
+        ]
+      },
+      {
+        title: 'Title within 45 days',
+        body: [
+          'Apply at the county treasurer’s office in the county where you live within 45 days, or interest and penalties are added.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $10. A car, pickup, or van registers by shipping weight: $72 a year from 2,001 to 4,000 lbs and $108 from 4,001 to 6,000 lbs, or 70% of that for a vehicle 10 model years old or more.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the giver',
+      'The motor vehicle purchaser’s certificate',
+      'A South Dakota driver license or ID',
+      'The title and registration application (Form 1001)',
+      'Payment for the title, registration, and any tax'
+    ],
+    calculatorNote:
+      'For an exempt family gift, enter $0 as the price; the calculator shows no tax, the $10 title, and the registration. For any other gift, enter the retail value.',
+    faqs: [
+      {
+        question: 'Is a gift from my aunt taxed?',
+        answer: 'Yes. An aunt is not in the exemption, so the tax is 4% of the retail value.'
+      },
+      {
+        question: 'Is an inherited vehicle taxed?',
+        answer: 'No. A vehicle acquired by inheritance or bequest is exempt (SDCL 32-5B-2(2)).'
+      },
+      {
+        question: 'Can I take a co-owner off the title?',
+        answer: 'Yes, without tax, if the vehicle was titled jointly and is transferred without payment to one or more of the owners (SDCL 32-5B-2(3)).'
+      }
+    ],
+    sources: [SD_SOURCES.exempt, SD_SOURCES.purchasePrice, SD_SOURCES.titleFees]
+  },
+  {
+    slug: 'titling-a-car-in-south-dakota-after-moving-from-another-state',
+    stateKey: 'south-dakota',
+    title: 'Titling a Car in South Dakota After Moving From Another State',
+    shortTitle: 'Title a car after moving to South Dakota',
+    metaTitle: 'Titling Your Car After Moving to South Dakota',
+    metaDescription:
+      'New to South Dakota? No excise tax is owed on a car you already paid sales, use, or excise tax on in another state, with proof. Then pay the title and registration.',
+    cardDescription: 'Credit for tax paid, proof, and fees.',
+    intro: [
+      'New South Dakota residents owe no excise tax on a vehicle they already paid sales, use, or excise tax on in another state, if the tax paid was at least South Dakota’s amount (SDCL 32-5B-11).',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'South Dakota Department of Revenue',
+    steps: [
+      {
+        title: 'Bring proof of tax paid',
+        body: [
+          'The county treasurer asks for an affidavit of a licensed dealer, a bill of sale, a receipt, or other evidence that you paid the tax. Without proof, the 4% tax is figured on the retail value on the day the vehicle entered the state.'
+        ]
+      },
+      {
+        title: 'Get your South Dakota license or address set',
+        body: [
+          'Without a South Dakota driver license or ID, or a physical South Dakota address, you pay a $100 administrative fee on top of the title fee.'
+        ]
+      },
+      {
+        title: 'Visit your county treasurer',
+        body: [
+          'Title and register at the county treasurer’s office in the county where you live.'
+        ]
+      },
+      {
+        title: 'Pay the title fee',
+        body: [
+          'The title is $10, and noting a lien is $10. DOR also lists a $2 technology fee.'
+        ]
+      },
+      {
+        title: 'Register by weight and renewal month',
+        body: [
+          'A car, pickup, or van registers by shipping weight: $72 a year from 2,001 to 4,000 lbs and $108 from 4,001 to 6,000 lbs, or 70% of that for a vehicle 10 model years old or more, prorated to the month set by the first letter of your last name.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title',
+      'Proof of sales, use, or excise tax paid',
+      'A South Dakota driver license or ID',
+      'Lien information, if a lender holds the title',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'With proof of tax paid, enter $0 as the price; the calculator shows no tax, the $10 title, and the registration. Without proof, enter the retail value.',
+    faqs: [
+      {
+        question: 'Do I pay tax on a car I bought years ago?',
+        answer: 'Not if you can show you paid sales, use, or excise tax on it to another state in at least the amount South Dakota would charge (SDCL 32-5B-11).'
+      },
+      {
+        question: 'What counts as proof?',
+        answer: 'An affidavit of a licensed dealer, a bill of sale, a receipt, or other tangible evidence that you paid the tax.'
+      },
+      {
+        question: 'I moved back to South Dakota. Do I pay again?',
+        answer: 'No, if you paid South Dakota excise tax on the vehicle before and the department’s records or other proof show it (SDCL 32-5B-2(14)).'
+      }
+    ],
+    sources: [SD_SOURCES.credit, SD_SOURCES.titleFees, SD_SOURCES.exempt]
   }
 ];
 
