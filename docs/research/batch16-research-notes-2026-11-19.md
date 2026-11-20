@@ -51,10 +51,20 @@ Working notes from the official-source re-check for guide batch 16. Items marked
 
 ## `lastVerified`
 
-- Montana, Delaware, and South Dakota: held at September 2026. Each has an open item for ruling (the Montana administrative fee, the Delaware fee schedule, and the South Dakota age rate, motorcycle tier, small fees, and old-vehicle exemption).
+- Montana, Delaware, and South Dakota: held at September 2026 in b269f97 while the items for ruling were open; moved to November 2026 once the rulings below were applied (2026-11-20).
 
 ## Search summaries used (not primary)
 
 - The 3% administrative fee's basis was found by search and then read in MCA 61-3-111 (primary).
 - The Delaware gift rule was found by search and then read in the 2 Del. Admin. Code 2266 PDF (primary).
 - SDCL 32-5-30 was found by search and then read on the Legislature site (primary).
+
+## Rulings applied (Cliff, 2026-11-20)
+
+1. **Montana, 3% administrative fee (MCA 61-3-111):** applied to the title and the registration figures: title $12.36; car registration ($217, $87, or $28 plus the $10 Highway Patrol and $12 plate fees) x 1.03 = $246.17, $112.27, or $51.50; motorcycle $91.25 x 1.03 = $93.99. Each is rounded to the cent. The copy says the 3% is included and that the MVD does not publish its rounding, so the county treasurer's total may differ by a few cents. The ruling named the registration tiers, motorcycle, and title; the EV fees ($130, $70) and the $8 lien fee are shown without the 3%, and the copy says so.
+2. **Delaware, document fee:** no change. The calculator keeps the flat 5.25% the DMV pages state. The statute's step schedule (30 Del. C. 3002(c): $13.75 at $400 to $500, then $5.25 per $100 or fraction, rounded), which runs about $12.50 lower ($775.00 against $787.50 on $15,000), is recorded here as a disagreement between the DMV and the statute and stays out of the copy.
+3. **South Dakota, older-vehicle registration (SDCL 32-5-30):** new `registration.olderVehicleRate` (`fromRegistrationYear` 11, multiplier 0.7), counting the model year as year 1 like the batch 15 title cutoff. It applies to the base fee after the weight tier (or the motorcycle fee, including the $24 electric motorcycle fee), not to the EV fee or the flat fees: $72 -> $50.40 and $108 -> $75.60 at 10 or more model years old. The breakdown line names the 70% rate.
+4. **South Dakota, motorcycle:** $18 -> $21 (the 350 to 1,000 cc tier, SDCL 32-5-9); the copy gives all three tiers ($18, $21, $24).
+5. **South Dakota, small fees:** new `registration.flatFeesAnnual` ($4 a year: the $2 technology fee, $1 solid waste fee, and $1 Highway Patrol fee from the DOR fee table), added to every registration and named in the breakdown. Plate and registration mailing fees stay out of the total and are disclosed as varying with how the buyer registers.
+6. **South Dakota, old-vehicle tax exemption (SDCL 32-5B-2(12)):** `taxExemptFromModelYear` (the Mississippi field) gains an optional `maxPrice`; South Dakota uses year 12 (11 or more model years old) and $2,500, tested against the price before trade-in. Both conditions are stated in the copy. Mississippi has no ceiling and is unchanged.
+7. Montana, Delaware, and South Dakota moved to November 2026. The guides' calculator notes were updated to match (Montana $12.36 title and 3%-inclusive registration; South Dakota exemption, 70% rate, and $4 in fees).

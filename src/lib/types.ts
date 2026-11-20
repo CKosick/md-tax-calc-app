@@ -50,6 +50,13 @@ export interface StateRegistrationRules {
    */
   recentModelYearExtra?: { withinYears: number; annualFee: number };
   /**
+   * Reduced base registration from a model year of age on, counting the model year as year 1, applied
+   * after the weight or engine tier and before EV fees (South Dakota: 70% at 10 or more model years old).
+   */
+  olderVehicleRate?: { fromRegistrationYear: number; multiplier: number; label: string };
+  /** Flat state fees added to every registration, per year of the term (South Dakota: $2 + $1 + $1). */
+  flatFeesAnnual?: { amount: number; label: string };
+  /**
    * Passenger fee chart by vehicle weight (New York). When present it replaces the weight
    * classes: the form asks for the weight in lbs and the first tier whose maxLbs is at or above
    * it applies (a tier without maxLbs covers everything heavier). Fees are for termYears.
@@ -218,8 +225,9 @@ export interface StateRule {
   /**
    * No state tax from this model year of age on, counting the model year as year 1
    * (Mississippi casual sales tax: none at 10 or more model years old). label explains the $0.
+   * maxPrice adds a price ceiling before trade-in (South Dakota: $2,500 at 11 or more model years old).
    */
-  taxExemptFromModelYear?: { year: number; label: string };
+  taxExemptFromModelYear?: { year: number; label: string; maxPrice?: number };
   /**
    * No title fee for older vehicles the state does not title: a fixed model year and older
    * (New Hampshire: 1999), or from a model year of age on, counting the model year as year 1

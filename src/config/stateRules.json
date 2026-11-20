@@ -379,7 +379,7 @@
         "answer": "Within 30 days of the purchase. A title transferred later costs a $35 late fee, and the vehicle may not be driven until the title is in your name. New residents register within 60 days of moving to Delaware."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://dmv.de.gov/Common/DMVFees/index.shtml",
       "https://dmv.de.gov/VehicleServices/titles/index.shtml?dc=ve_title_transfer",
@@ -5981,7 +5981,7 @@
     "slug": "montana-private-sale-tax-calculator",
     "exciseTaxRate": 0,
     "taxBase": "price",
-    "titleFee": 12,
+    "titleFee": 12.36,
     "lienFilingFee": 8,
     "tradeInDeductible": false,
     "registration": {
@@ -5990,14 +5990,14 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 50
+          "1": 51.5
         },
         "over3700lbs": {
-          "1": 50
+          "1": 51.5
         }
       },
       "motorcycle": {
-        "1": 91.25
+        "1": 93.99
       },
       "evSurchargeAnnual": 130,
       "phevSurchargeAnnual": 70,
@@ -6013,19 +6013,19 @@
         "passenger": [
           {
             "maxYear": 5,
-            "fee": 239
+            "fee": 246.17
           },
           {
             "maxYear": 11,
-            "fee": 109
+            "fee": 112.27
           },
           {
-            "fee": 50
+            "fee": 51.5
           }
         ],
         "motorcycle": [
           {
-            "fee": 91.25
+            "fee": 93.99
           }
         ]
       }
@@ -6033,18 +6033,19 @@
     "localTaxNote": "Montana has no sales tax. Counties can add a local option vehicle tax of up to 0.7% of the depreciated value, or a flat fee, paid with the registration (MCA 61-3-537). It is not included.",
     "notes": [
       "Montana does not impose a state sales tax or vehicle use tax.",
-      "Title $12 for a light vehicle (MCA 61-3-203); filing a lien $8 (MCA 61-3-103).",
-      "Registration rate by age (MCA 61-3-321(2)), with age figured as the registration year minus the model year: $217 for 4 years or less, $87 for 5 through 10 years, and $28 for 11 years or more. The estimate adds the $10 Highway Patrol fee (61-3-321(20)) and the $12 plate fee (61-3-321(13)), since the seller keeps the plates.",
+      "Title $12 for a light vehicle (MCA 61-3-203), or $12.36 with the 3% administrative fee; filing a lien $8 (MCA 61-3-103).",
+      "Registration rate by age (MCA 61-3-321(2)), with age figured as the registration year minus the model year: $217 for 4 years or less, $87 for 5 through 10 years, and $28 for 11 years or more. The estimate adds the $10 Highway Patrol fee (61-3-321(20)) and the $12 plate fee (61-3-321(13)), since the seller keeps the plates, then the 3% administrative fee: $246.17, $112.27, or $51.50.",
+      "The Motor Vehicle Division charges a 3% administrative fee on the fees it collects (MCA 61-3-111). It is included in the title, registration, and motorcycle figures. The MVD does not publish how it rounds the 3%, so the county treasurer's total may differ by a few cents.",
       "A light vehicle 11 years old or older can be permanently registered for $87.50 plus five times the county option tax and other fees (MCA 61-3-562). A permanent registration ends when the vehicle is sold, so the buyer registers it again.",
       "A light vehicle 10 years old or less with an MSRP over $150,000 pays $825 more each year (MCA 61-3-321(2)(b)).",
-      "Motorcycles register once: $53.25, a $16 safety fee, the $10 Highway Patrol fee, and the $12 plate fee (MCA 61-3-321; MVD fee table)."
+      "Motorcycles register once: $53.25, a $16 safety fee, the $10 Highway Patrol fee, and the $12 plate fee, $93.99 with the 3% administrative fee (MCA 61-3-321; MVD fee table)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Montana Motor Vehicle Division (MVD) and your county treasurer.",
       "Montana has 0% state sales tax. Registration follows a statutory schedule by vehicle age.",
       "Counties can add a local option vehicle tax if voters approve it, up to 0.7% of the vehicle’s value or a flat fee, paid with the registration fee (MCA 61-3-537). It is not included.",
       "Montana adds a yearly fee by unladen weight (MCA 61-3-572). The estimate uses the class under 6,000 lbs: $130 for an electric vehicle with at least a 20 kWh battery and $70 for a plug-in hybrid with at least a 5 kWh battery. From 6,000 to 10,000 lbs the fees are $190 and $100. The law covers vehicles with at least four wheels, so motorcycles do not pay them.",
-      "The Motor Vehicle Division adds a 3% administrative fee to the fees it collects (MCA 61-3-111). The estimate does not include it.",
+      "The title, registration, and motorcycle fees include the 3% administrative fee (MCA 61-3-111); the EV fees and the lien fee are shown without it. The MVD does not publish its rounding, so the county treasurer's total may differ by a few cents.",
       "A $9 state parks and fishing access fee is added to each light vehicle registration unless you opt out (MCA 61-3-321(19)). It is not included."
     ],
     "faqs": [
@@ -6054,7 +6055,7 @@
       },
       {
         "question": "How are registration fees calculated in Montana?",
-        "answer": "Under MCA 61-3-321, the light vehicle registration rate depends on age: $217 for a vehicle 4 years old or less, $87 for 5 through 10 years, and $28 for 11 years or more, with age figured as the registration year minus the model year. A $10 Highway Patrol fee, a $12 fee for new plates, any county option tax, and a 3% administrative fee are added."
+        "answer": "Under MCA 61-3-321, the light vehicle registration rate depends on age: $217 for a vehicle 4 years old or less, $87 for 5 through 10 years, and $28 for 11 years or more, with age figured as the registration year minus the model year. A $10 Highway Patrol fee and a $12 fee for new plates are added, then a 3% administrative fee (MCA 61-3-111): $246.17, $112.27, or $51.50 in all, plus any county option tax."
       },
       {
         "question": "Can I permanently register my car in Montana?",
@@ -6077,7 +6078,7 @@
         "answer": "Within 40 days of the sale date (MVD). If you need to drive before then, a county treasurer can issue a 40-day temporary registration permit. New residents title and register within 60 days of establishing residency."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://mvdmt.gov/vehicle-registration/light-vehicle-registration-and-fees/",
       "https://mvdmt.gov/vehicle-registration/motorcycle-and-quadricycle-registration-and-fees/",
@@ -6202,7 +6203,7 @@
         }
       },
       "motorcycle": {
-        "1": 18
+        "1": 21
       },
       "evSurchargeAnnual": 100,
       "motorcycleFuelFees": {
@@ -6211,24 +6212,34 @@
           "baseAnnual": 24
         }
       },
-      "passengerWeightSplitLbs": 4000
+      "passengerWeightSplitLbs": 4000,
+      "olderVehicleRate": {
+        "fromRegistrationYear": 11,
+        "multiplier": 0.7,
+        "label": "70% for 10 or more model years old (SDCL 32-5-30)"
+      },
+      "flatFeesAnnual": {
+        "amount": 4,
+        "label": "$2 technology, $1 solid waste, and $1 Highway Patrol fees"
+      }
     },
     "localTaxNote": "South Dakota's 4% Motor Vehicle Excise Tax is collected at the state level in lieu of general sales tax; no local city or county sales taxes apply to vehicle purchases.",
     "notes": [
       "South Dakota levies a 4% motor vehicle excise tax on the purchase price, in place of sales tax (SDCL 32-5B-1).",
       "A trade-in comes off the price on a private sale as well as a dealer sale (SDCL 32-5B-4(3)). Without a bill of sale, the tax is figured on the retail value in a dealer guide.",
-      "Title $10 and lien notation $10 (DOR). DOR also lists a $2 technology fee, in effect since July 1, 2025.",
-      "Registration for a car, pickup, or van is by shipping weight (SDCL 32-5-6): $36 to 2,000 lbs, $72 from 2,001 to 4,000 lbs, $108 from 4,001 to 6,000 lbs, and $144 above. A vehicle 10 model years old or more pays 70% (SDCL 32-5-30).",
-      "A vehicle 11 or more model years old sold for $2,500 or less before trade-in owes no excise tax (SDCL 32-5B-2(12))."
+      "Title $10 and lien notation $10 (DOR).",
+      "Registration for a car, pickup, or van is by shipping weight (SDCL 32-5-6): $36 to 2,000 lbs, $72 from 2,001 to 4,000 lbs, $108 from 4,001 to 6,000 lbs, and $144 above. A vehicle 10 or more model years old pays 70% (SDCL 32-5-30).",
+      "DOR adds a $2 technology fee, a $1 solid waste fee, and a $1 Highway Patrol fee to each registration; the estimate includes them.",
+      "A vehicle 11 or more model years old sold for $2,500 or less before trade-in owes no excise tax (SDCL 32-5B-2(12)); both conditions must be met."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with South Dakota Department of Revenue and county treasurer.",
       "South Dakota charges a 4% Motor Vehicle Excise Tax in lieu of sales tax. Private trade-in deductions are authorized by statute.",
-      "Older vehicles (11 or more model years old) sold for $2,500 or less are exempt from the excise tax (SDCL 32-5B-2(12)). The calculator still shows the tax for them.",
+      "A vehicle 11 or more model years old that sells for $2,500 or less before trade-in owes no excise tax (SDCL 32-5B-2(12)). The calculator applies it when both conditions are met.",
       "South Dakota’s annual electric vehicle fee is $100 (SDCL 32-5-188, raised from $50 by 2026 House Bill 1227, in effect since July 1, 2026). It does not apply to an electric motorcycle licensed under SDCL 32-5-9, whose registration is the top motorcycle fee, $24, and the estimate uses that.",
-      "Registration uses the rate for vehicles under 10 model years old: $72 to 4,000 lbs and $108 from 4,001 to 6,000 lbs. A vehicle 10 or more model years old pays 70% of that (SDCL 32-5-30), which the estimate does not apply. The first registration is prorated by month to your renewal month.",
-      "The motorcycle estimate uses $18, the fee under 350 cc; 350 to 1,000 cc pays $21 and over 1,000 cc pays $24 (SDCL 32-5-9).",
-      "Small statewide fees (the $2 technology fee, $1 solid waste and $1 Highway Patrol fees, and plate and mailing fees) and county wheel taxes are not included."
+      "Registration for a car, pickup, or van is $72 to 4,000 lbs and $108 from 4,001 to 6,000 lbs. A vehicle 10 or more model years old pays 70% of that (SDCL 32-5-30), and the estimate applies it. The first registration is prorated by month to your renewal month.",
+      "Motorcycle registration depends on engine size (SDCL 32-5-9): $18 under 350 cc, $21 for 350 to 1,000 cc, and $24 over 1,000 cc. The estimate uses $21. A motorcycle 10 or more model years old pays 70%.",
+      "The estimate includes DOR's $2 technology fee, $1 solid waste fee, and $1 Highway Patrol fee. Plate and registration mailing fees vary with how you register and are not included, nor are county wheel taxes."
     ],
     "faqs": [
       {
@@ -6241,11 +6252,11 @@
       },
       {
         "question": "Are any vehicles exempt from excise tax in South Dakota?",
-        "answer": "Yes. Under SDCL 32-5B-2(12), a motor vehicle 11 or more model years old that is sold for $2,500 or less before trade-in is exempt from the 4% excise tax. Transfers without payment between spouses, between a parent and child, and between siblings are also exempt (32-5B-2(4))."
+        "answer": "Yes. Under SDCL 32-5B-2(12), a motor vehicle that is 11 or more model years old and is sold for $2,500 or less before trade-in is exempt from the 4% excise tax; both conditions must be met. Transfers without payment between spouses, between a parent and child, and between siblings are also exempt (32-5B-2(4))."
       },
       {
         "question": "How much does it cost to title and register a car in South Dakota?",
-        "answer": "The title fee is $10.00, plus $10.00 for a lien notation. Annual registration for a car, pickup, or van is by shipping weight under SDCL 32-5-6: $72 from 2,001 to 4,000 lbs and $108 from 4,001 to 6,000 lbs, or 70% of that for a vehicle 10 model years old or more."
+        "answer": "The title fee is $10.00, plus $10.00 for a lien notation. Annual registration for a car, pickup, or van is by shipping weight under SDCL 32-5-6: $72 from 2,001 to 4,000 lbs and $108 from 4,001 to 6,000 lbs, or 70% of that for a vehicle 10 model years old or more. DOR adds $2 technology, $1 solid waste, and $1 Highway Patrol fees."
       },
       {
         "question": "Do I pay South Dakota vehicle tax if I buy a car from an out-of-state private seller?",
@@ -6260,7 +6271,7 @@
         "answer": "Within 45 days of the purchase date. After 45 days, interest of 1% a month (at least $5 for the first month) is added; after 60 days, a one-time penalty of 10% of the tax (at least $10) applies. The late title application fee is $1 a week, up to $50 (DOR)."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://dor.sd.gov/individuals/motor-vehicle/all-vehicles-title-fees-registration/",
       "https://dor.sd.gov/media/qoolm3x4/non-commercial-vehicle-license-fee.pdf",
@@ -6274,7 +6285,12 @@
       "https://sdlegislature.gov/Statutes/32-5-188",
       "https://sdlegislature.gov/Statutes/2-14-16",
       "https://sdlegislature.gov/Statutes/32-5-9"
-    ]
+    ],
+    "taxExemptFromModelYear": {
+      "year": 12,
+      "maxPrice": 2500,
+      "label": "No excise tax on a vehicle 11 or more model years old sold for $2,500 or less before trade-in (SDCL 32-5B-2(12))"
+    }
   },
   "north-dakota": {
     "label": "North Dakota",

@@ -81,8 +81,8 @@ describe('Motorcycle EV and plug-in hybrid fees (Option D)', () => {
   });
 
   it('uses the base fee a state sets for an electric motorcycle', () => {
-    expect(moto('south-dakota', 'gasoline').registrationTotal).toBe(18);
-    expect(moto('south-dakota', 'ev').registrationTotal).toBe(24);
+    expect(moto('south-dakota', 'gasoline').registrationTotal).toBe(25); // $21 middle tier + $4 DOR fees
+    expect(moto('south-dakota', 'ev').registrationTotal).toBe(28); // $24 top fee + $4 DOR fees
     // Kansas: $16 and $30 plus the $12.25 in fees and surcharges every registration pays
     expect(moto('kansas', 'gasoline').registrationTotal).toBe(28.25);
     expect(moto('kansas', 'ev').registrationTotal).toBe(42.25);

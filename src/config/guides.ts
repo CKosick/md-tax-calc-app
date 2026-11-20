@@ -10196,7 +10196,7 @@ export const GUIDES: Guide[] = [
       'Payment for the title and registration fees'
     ],
     calculatorNote:
-      'The calculator shows no tax, the $12 title, and the registration by age with the $10 Highway Patrol and $12 plate fees ($239, $109, or $50). It leaves out the county option tax and the 3% administrative fee.',
+      'The calculator shows no tax, the $12.36 title, and the registration by age with the $10 Highway Patrol and $12 plate fees and the 3% administrative fee ($246.17, $112.27, or $51.50). It leaves out the county option tax; the MVD does not publish how it rounds the 3%, so its total may differ by a few cents.',
     faqs: [
       {
         question: 'Can I keep the seller’s plates?',
@@ -10268,7 +10268,7 @@ export const GUIDES: Guide[] = [
       'Payment for the title and registration fees'
     ],
     calculatorNote:
-      'Enter $0 as the price. The calculator then shows no tax, the $12 title, and the registration by age with the $10 Highway Patrol and $12 plate fees.',
+      'Enter $0 as the price. The calculator then shows no tax, the $12.36 title, and the registration by age with the $10 Highway Patrol and $12 plate fees, all including the 3% administrative fee.',
     faqs: [
       {
         question: 'Is a gift from a friend taxed?',
@@ -10340,7 +10340,7 @@ export const GUIDES: Guide[] = [
       'Payment for the title and registration fees'
     ],
     calculatorNote:
-      'Enter $0 as the price for a vehicle you already own. The calculator then shows no tax, the $12 title, and the registration by age with the $10 Highway Patrol and $12 plate fees.',
+      'Enter $0 as the price for a vehicle you already own. The calculator then shows no tax, the $12.36 title, and the registration by age with the $10 Highway Patrol and $12 plate fees, all including the 3% administrative fee.',
     faqs: [
       {
         question: 'Do I pay tax on the car I moved with?',
@@ -10605,13 +10605,13 @@ export const GUIDES: Guide[] = [
       {
         title: 'Pay the 4% excise tax',
         body: [
-          'The tax is 4% of the price less any trade-in. A vehicle 11 or more model years old sold for $2,500 or less before trade-in owes none (SDCL 32-5B-2(12)).'
+          'The tax is 4% of the price less any trade-in. A vehicle that is both 11 or more model years old and sold for $2,500 or less before trade-in owes none (SDCL 32-5B-2(12)).'
         ]
       },
       {
         title: 'Pay the title fee',
         body: [
-          'The title is $10, and noting a lien is $10. DOR also lists a $2 technology fee.'
+          'The title is $10, and noting a lien is $10. DOR adds a $2 technology fee, a $1 solid waste fee, and a $1 Highway Patrol fee to the registration.'
         ]
       },
       {
@@ -10629,7 +10629,7 @@ export const GUIDES: Guide[] = [
       'Payment for the tax, title, and registration'
     ],
     calculatorNote:
-      'The calculator applies 4% to the price less any trade-in and adds the $10 title and the registration for a vehicle under 10 model years old ($72 or $108). It does not apply the $2,500 exemption for older vehicles or the 70% rate.',
+      'The calculator applies 4% to the price less any trade-in, or no tax for a vehicle 11 or more model years old sold for $2,500 or less. It adds the $10 title and the registration by weight ($72 or $108, or 70% of that at 10 or more model years old) plus the $4 in DOR fees.',
     faqs: [
       {
         question: 'Can I deduct a trade-in on a private sale?',
@@ -10755,7 +10755,7 @@ export const GUIDES: Guide[] = [
       {
         title: 'Pay the title fee',
         body: [
-          'The title is $10, and noting a lien is $10. DOR also lists a $2 technology fee.'
+          'The title is $10, and noting a lien is $10. DOR adds a $2 technology fee, a $1 solid waste fee, and a $1 Highway Patrol fee to the registration.'
         ]
       },
       {

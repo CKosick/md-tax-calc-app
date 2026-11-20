@@ -216,7 +216,13 @@ export function calculateVehicleCosts(
   // No state tax once the vehicle reaches a given model year of age (Mississippi casual sales tax:
   // 10 or more model years old). The model year counts as year 1, as in the registration rules.
   const ageExempt = rule.taxExemptFromModelYear;
-  if (ageExempt && !rule.flatTaxTable && vehicleAge + 1 >= ageExempt.year) {
+  // A price ceiling narrows it further (South Dakota: 11 or more model years old and $2,500 or less before trade-in)
+  if (
+    ageExempt &&
+    !rule.flatTaxTable &&
+    vehicleAge + 1 >= ageExempt.year &&
+    (ageExempt.maxPrice === undefined || price <= ageExempt.maxPrice)
+  ) {
     exciseTax = 0;
     extraTaxParts.length = 0;
     specialTaxDetail = ageExempt.label;
@@ -348,6 +354,18 @@ export function calculateVehicleCosts(
     evSurcharge = carFuelFee * term;
   }
 
+  // Reduced rate for older vehicles, applied to the base fee after the weight or engine tier
+  // (South Dakota: 70% at 10 or more model years old, SDCL 32-5-30). Not applied to EV fees.
+  const olderRate = rule.registration.olderVehicleRate;
+  const olderRateApplied = Boolean(olderRate && registrationYear >= olderRate.fromRegistrationYear);
+  if (olderRate && olderRateApplied) {
+    baseRegistrationFee = Math.round(baseRegistrationFee * olderRate.multiplier * 100) / 100;
+  }
+
+  // Flat state fees collected with every registration (South Dakota: technology, solid waste, Highway Patrol)
+  const flatFees = rule.registration.flatFeesAnnual;
+  const flatRegistrationFees = flatFees ? flatFees.amount * term : 0;
+
   // Value-based registration fees (California): estimated from the purchase price, which becomes
   // the vehicle's value for these fees when a registered vehicle is transferred. Skipped at $0.
   let vehicleLicenseFee = 0;
@@ -369,7 +387,7 @@ export function calculateVehicleCosts(
   }
 
   const registrationTotal =
-    Math.round((baseRegistrationFee + evSurcharge + vehicleLicenseFee + transportationImprovementFee + annualValueTax) * 100) / 100;
+    Math.round((baseRegistrationFee + evSurcharge + vehicleLicenseFee + transportationImprovementFee + annualValueTax + flatRegistrationFees) * 100) / 100;
 
   // 5. Local Tax & Total First-Year Out-Of-Pocket Cost
   // A chosen locality (Pennsylvania) fixes the local rate, so the result is one total, not a range
@@ -545,9 +563,10 @@ export function calculateVehicleCosts(
       amount: registrationTotal,
       description:
         [
-          vehicleLicenseFee > 0 || transportationImprovementFee > 0 || evSurcharge > 0 || annualValueTax > 0
-            ? `Base tag fee ($${baseRegistrationFee.toFixed(2)})`
+          vehicleLicenseFee > 0 || transportationImprovementFee > 0 || evSurcharge > 0 || annualValueTax > 0 || flatRegistrationFees > 0
+            ? `Base tag fee ($${baseRegistrationFee.toFixed(2)}${olderRateApplied && olderRate ? `, ${olderRate.label}` : ''})`
             : `${rule.label} license plates and tag registration`,
+          flatRegistrationFees > 0 && flatFees ? `${flatFees.label} ($${flatRegistrationFees.toFixed(2)})` : '',
           evSurcharge > 0 ? `EV/PHEV surcharge ($${evSurcharge.toFixed(2)})` : '',
           vehicleLicenseFee > 0
             ? `vehicle license fee ($${vehicleLicenseFee.toFixed(2)}, ${ratePercent(valueFees?.licenseFeeRate ?? 0)}% of price)`

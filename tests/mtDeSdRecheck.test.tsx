@@ -10,34 +10,36 @@ const rules = stateRulesData as StateRulesConfig;
 const mt = rules.montana as StateRule;
 const de = rules.delaware as StateRule;
 const sd = rules['south-dakota'] as StateRule;
+const mississippi = rules.mississippi as StateRule;
 const calc = (rule: StateRule, extra: Partial<CalculatorInputs> = {}) =>
   calculateVehicleCosts(rule, { ...getDefaultInputs(rule, 2026), purchasePrice: 15000, ...extra }, 2026);
 const copy = (rule: StateRule) =>
   [rule.localTaxNote ?? '', rule.tradeInNote ?? '', ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
 
-describe('Montana re-check (November 2026, administrative fee for ruling)', () => {
-  it('no tax; $12 title; $8 lien; registration by age (MCA 61-3-321) plus the $10 Highway Patrol and $12 plate fees', () => {
+describe('Montana re-check and ruling (November 2026)', () => {
+  it('no tax; title, registration by age (MCA 61-3-321), and motorcycle include the 3% administrative fee (MCA 61-3-111); lien $8', () => {
     expect(calc(mt).exciseTax).toBe(0);
-    expect(calc(mt).titleFee).toBe(12);
+    expect(calc(mt).titleFee).toBe(12.36);
     expect(calc(mt, { isFinanced: true }).lienFilingFee).toBe(8);
-    expect(calc(mt, { vehicleYear: 2022 }).registrationTotal).toBe(239); // age 4: $217
-    expect(calc(mt, { vehicleYear: 2021 }).registrationTotal).toBe(109); // age 5: $87
-    expect(calc(mt, { vehicleYear: 2016 }).registrationTotal).toBe(109); // age 10: $87
-    expect(calc(mt, { vehicleYear: 2015 }).registrationTotal).toBe(50); // age 11: $28
+    expect(calc(mt, { vehicleYear: 2022 }).registrationTotal).toBe(246.17); // age 4: ($217 + $10 + $12) x 1.03
+    expect(calc(mt, { vehicleYear: 2021 }).registrationTotal).toBe(112.27); // age 5: ($87 + $10 + $12) x 1.03
+    expect(calc(mt, { vehicleYear: 2016 }).registrationTotal).toBe(112.27); // age 10
+    expect(calc(mt, { vehicleYear: 2015 }).registrationTotal).toBe(51.5); // age 11: ($28 + $10 + $12) x 1.03
   });
 
-  it('motorcycle $91.25 once (fee, safety, Highway Patrol, plate); EV $130 and plug-in hybrid $70 on cars only', () => {
-    expect(calc(mt, { vehicleType: 'motorcycle' }).registrationTotal).toBe(91.25);
-    expect(calc(mt, { vehicleType: 'motorcycle', fuelType: 'ev' }).registrationTotal).toBe(91.25);
-    expect(calc(mt, { vehicleYear: 2021, fuelType: 'ev' }).registrationTotal).toBe(239);
-    expect(calc(mt, { vehicleYear: 2021, fuelType: 'phev' }).registrationTotal).toBe(179);
+  it('motorcycle $93.99 once; EV $130 and plug-in hybrid $70 on cars only, shown without the 3%', () => {
+    expect(calc(mt, { vehicleType: 'motorcycle' }).registrationTotal).toBe(93.99); // $91.25 x 1.03
+    expect(calc(mt, { vehicleType: 'motorcycle', fuelType: 'ev' }).registrationTotal).toBe(93.99);
+    expect(calc(mt, { vehicleYear: 2021, fuelType: 'ev' }).registrationTotal).toBe(242.27);
+    expect(calc(mt, { vehicleYear: 2021, fuelType: 'phev' }).registrationTotal).toBe(182.27);
   });
 
-  it('discloses the county option tax, the 3% administrative fee, the opt-out parks fee, and permanent registration', () => {
+  it('says the 3% is included and the rounding may differ; discloses county option tax, parks fee, and permanent registration; verified November 2026', () => {
     const text = copy(mt);
-    for (const fact of ['MCA 61-3-537', '(MCA 61-3-111)', 'MCA 61-3-321(19)', '$87.50', 'does not transfer to a buyer', 'MCA 61-3-321(2)(b)', 'Within 40 days', '40-day temporary registration permit', 'within 60 days']) expect(text).toContain(fact);
+    for (const fact of ['include the 3% administrative fee (MCA 61-3-111)', 'may differ by a few cents', '$246.17, $112.27, or $51.50', 'MCA 61-3-537', 'MCA 61-3-321(19)', '$87.50', 'does not transfer to a buyer', 'MCA 61-3-321(2)(b)', 'Within 40 days', '40-day temporary registration permit', 'within 60 days']) expect(text).toContain(fact);
     expect(text).not.toContain('61-3-315');
-    expect(mt.lastVerified).toBe('September 2026');
+    expect(text).not.toContain('The estimate does not include it');
+    expect(mt.lastVerified).toBe('November 2026');
   });
 
   it('MCA links outside part 5 get citations too', () => {
@@ -47,9 +49,9 @@ describe('Montana re-check (November 2026, administrative fee for ruling)', () =
   });
 });
 
-describe('Delaware re-check (November 2026, fee schedule for ruling)', () => {
-  it('5.25% document fee with trade-in credit and $8 minimum; $35 title; $20 lien; $40 and $15 registration', () => {
-    expect(calc(de).exciseTax).toBe(787.5);
+describe('Delaware re-check and ruling (November 2026)', () => {
+  it('flat 5.25% document fee kept per the DMV, with trade-in credit and $8 minimum; $35 title; $20 lien; $40 and $15 registration', () => {
+    expect(calc(de).exciseTax).toBe(787.5); // not the statute's $775 step schedule
     expect(calc(de, { tradeInValue: 5000 }).exciseTax).toBe(525);
     expect(calc(de, { purchasePrice: 100 }).exciseTax).toBe(8);
     expect(calc(de).titleFee).toBe(35);
@@ -67,39 +69,60 @@ describe('Delaware re-check (November 2026, fee schedule for ruling)', () => {
     expect(copy(de)).toContain('non-plug-in hybrid pays $60 a year');
   });
 
-  it('keeps the DMV’s NADA wording and the verified answers; verified date held', () => {
+  it('keeps the DMV’s NADA wording and the verified answers; the step schedule stays out of the copy; verified November 2026', () => {
     const text = copy(de);
     for (const fact of ['NADA average trade-in value, whichever is higher', 'Delaware-titled', 'MV347', '2 Del. Admin. Code 2266', 'grandparent', 'Within 30 days', '$35 late fee', 'within 60 days', 'within 90 days']) expect(text).toContain(fact);
     expect(text).not.toContain('4.25%');
-    expect(de.lastVerified).toBe('September 2026');
+    expect(text).not.toContain('$13.75');
+    expect(de.lastVerified).toBe('November 2026');
     expect(labelForSource('https://dmv.de.gov/VehicleServices/titles/index.shtml?dc=ve_title_credit')).toBe('dmv.de.gov: vehicle credit');
     expect(labelForSource('https://delcode.delaware.gov/title21/c021/sc04/index.html')).toBe('delcode.delaware.gov: Del. Code Title 21, Chapter 21');
   });
 });
 
-describe('South Dakota re-check (November 2026, items for ruling)', () => {
-  it('4% excise with private trade-in credit; $10 title and lien; registration by weight (SDCL 32-5-6)', () => {
+describe('South Dakota re-check and rulings (November 2026)', () => {
+  it('4% excise with private trade-in credit; $10 title and lien; registration by weight (SDCL 32-5-6) plus $4 in DOR fees', () => {
     expect(calc(sd).exciseTax).toBe(600);
     expect(calc(sd, { tradeInValue: 5000 }).exciseTax).toBe(400);
     expect(calc(sd).titleFee).toBe(10);
     expect(calc(sd, { isFinanced: true }).lienFilingFee).toBe(10);
-    expect(calc(sd, { weightClass: 'under3700lbs' }).registrationTotal).toBe(72);
-    expect(calc(sd, { weightClass: 'over3700lbs' }).registrationTotal).toBe(108);
+    expect(calc(sd, { weightClass: 'under3700lbs', vehicleYear: 2020 }).registrationTotal).toBe(76);
+    expect(calc(sd, { weightClass: 'over3700lbs', vehicleYear: 2020 }).registrationTotal).toBe(112);
     expect(sd.registration.passengerWeightSplitLbs).toBe(4000);
   });
 
-  it('EV $100 a year (SDCL 32-5-188); an electric motorcycle pays the $24 top motorcycle fee instead', () => {
-    expect(calc(sd, { weightClass: 'under3700lbs', fuelType: 'ev' }).registrationTotal).toBe(172);
-    expect(calc(sd, { vehicleType: 'motorcycle' }).registrationTotal).toBe(18);
-    expect(calc(sd, { vehicleType: 'motorcycle', fuelType: 'ev' }).registrationTotal).toBe(24);
+  it('70% of the weight fee at 10 or more model years old (SDCL 32-5-30), applied after the tier; the $4 in fees and the EV fee are not reduced', () => {
+    expect(calc(sd, { weightClass: 'under3700lbs', vehicleYear: 2017 }).registrationTotal).toBe(76); // age 9
+    expect(calc(sd, { weightClass: 'under3700lbs', vehicleYear: 2016 }).registrationTotal).toBe(54.4); // age 10: $50.40 + $4
+    expect(calc(sd, { weightClass: 'over3700lbs', vehicleYear: 2016 }).registrationTotal).toBe(79.6); // $75.60 + $4
+    expect(calc(sd, { weightClass: 'under3700lbs', vehicleYear: 2016, fuelType: 'ev' }).registrationTotal).toBe(154.4);
+    const line = calc(sd, { vehicleYear: 2016 }).itemizedList.find((i) => i.id === 'registration-fee')?.description;
+    expect(line).toContain('70% for 10 or more model years old (SDCL 32-5-30)');
+    expect(line).toContain('$2 technology, $1 solid waste, and $1 Highway Patrol fees ($4.00)');
   });
 
-  it('cites 32-5B-2(12) for the old-vehicle exemption and states the verified answers; verified date held', () => {
+  it('motorcycle $21 (middle engine tier), 70% when older; an electric motorcycle pays the $24 top fee and no EV fee', () => {
+    expect(calc(sd, { vehicleType: 'motorcycle', vehicleYear: 2020 }).registrationTotal).toBe(25);
+    expect(calc(sd, { vehicleType: 'motorcycle', vehicleYear: 2016 }).registrationTotal).toBe(18.7); // $14.70 + $4
+    expect(calc(sd, { vehicleType: 'motorcycle', vehicleYear: 2020, fuelType: 'ev' }).registrationTotal).toBe(28);
+    expect(calc(sd, { vehicleType: 'motorcycle', vehicleYear: 2016, fuelType: 'ev' }).registrationTotal).toBe(20.8); // $16.80 + $4
+    expect(calc(sd, { weightClass: 'under3700lbs', vehicleYear: 2020, fuelType: 'ev' }).registrationTotal).toBe(176);
+  });
+
+  it('no excise tax only when the vehicle is 11 or more model years old and sold for $2,500 or less before trade-in (SDCL 32-5B-2(12))', () => {
+    expect(calc(sd, { vehicleYear: 2015, purchasePrice: 2500 }).exciseTax).toBe(0); // age 11, at the ceiling
+    expect(calc(sd, { vehicleYear: 2015, purchasePrice: 2500, tradeInValue: 1000 }).exciseTax).toBe(0);
+    expect(calc(sd, { vehicleYear: 2015, purchasePrice: 2600, tradeInValue: 500 }).exciseTax).toBe(84); // before trade-in counts
+    expect(calc(sd, { vehicleYear: 2016, purchasePrice: 2000 }).exciseTax).toBe(80); // age 10
+    expect(calc(mississippi, { vehicleYear: 2017, purchasePrice: 15000 }).exciseTax).toBe(0); // Mississippi unchanged: no ceiling
+  });
+
+  it('states both exemption conditions, the engine tiers, and the mailing fees left out; verified November 2026', () => {
     const text = copy(sd);
-    for (const fact of ['SDCL 32-5B-2(12)', '32-5B-2(4)', 'SDCL 32-5B-11', 'SDCL 32-5-30', 'Within 45 days', '$1 a week, up to $50', 'SDCL 32-5-9']) expect(text).toContain(fact);
-    expect(text).not.toContain('32-5B-2(1),');
+    for (const fact of ['SDCL 32-5B-2(12)', 'both conditions', '$18 under 350 cc', '$21 for 350 to 1,000 cc', '$24 over 1,000 cc', 'The estimate uses $21', 'SDCL 32-5-30', 'mailing fees vary with how you register', '32-5B-2(4)', 'SDCL 32-5B-11', 'Within 45 days', '$1 a week, up to $50']) expect(text).toContain(fact);
     expect(text).not.toContain('averages $42');
-    expect(sd.lastVerified).toBe('September 2026');
+    expect(text).not.toContain('The calculator still shows the tax');
+    expect(sd.lastVerified).toBe('November 2026');
   });
 });
 
