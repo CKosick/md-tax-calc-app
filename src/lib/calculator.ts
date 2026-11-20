@@ -224,7 +224,14 @@ export function calculateVehicleCosts(
   const extraTaxDetail = extraTaxParts.length > 0 ? ` (includes ${extraTaxParts.join(' and ')})` : '';
 
   // 2. Title Certificate Fee
-  const titleFee = rule.titleFee;
+  // No title for older vehicles (New Hampshire: model year 1999 or older; Maine: over 25 model years old)
+  const titleExempt = rule.titleExempt;
+  const titleExemptApplied = Boolean(
+    titleExempt &&
+      ((titleExempt.throughModelYear !== undefined && inputs.vehicleYear <= titleExempt.throughModelYear) ||
+        (titleExempt.fromRegistrationYear !== undefined && vehicleAge + 1 >= titleExempt.fromRegistrationYear))
+  );
+  const titleFee = titleExemptApplied ? 0 : rule.titleFee;
 
   // 3. Lien Filing Fee (only applied if financed)
   const lienFilingFee = inputs.isFinanced ? rule.lienFilingFee : 0;
@@ -520,7 +527,9 @@ export function calculateVehicleCosts(
       id: 'title-fee',
       label: 'Certificate of Title Fee',
       amount: titleFee,
-      description: 'Standard state certificate of title issuance'
+      description: titleExemptApplied
+        ? `No title for this model year in ${rule.label}`
+        : 'Standard state certificate of title issuance'
     },
     {
       id: 'lien-filing-fee',

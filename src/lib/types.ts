@@ -220,6 +220,12 @@ export interface StateRule {
    * (Mississippi casual sales tax: none at 10 or more model years old). label explains the $0.
    */
   taxExemptFromModelYear?: { year: number; label: string };
+  /**
+   * No title fee for older vehicles the state does not title: a fixed model year and older
+   * (New Hampshire: 1999), or from a model year of age on, counting the model year as year 1
+   * (Maine: 26, so vehicles 25 model years old or newer pay).
+   */
+  titleExempt?: { throughModelYear?: number; fromRegistrationYear?: number };
   /** Flat tax in place of the rate for older, low-priced vehicles (Minnesota: $10). */
   olderVehicleFlatTax?: { minAge: number; maxPrice: number; tax: number };
   luxuryTaxThreshold?: number | null;

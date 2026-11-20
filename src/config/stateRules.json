@@ -5755,7 +5755,7 @@
     "exciseTaxRate": 0,
     "taxBase": "price",
     "titleFee": 35,
-    "lienFilingFee": 0,
+    "lienFilingFee": 20,
     "tradeInDeductible": false,
     "registration": {
       "terms": [
@@ -5800,7 +5800,7 @@
     "localTaxNote": "New Hampshire has no state vehicle sales tax. However, under RSA 261:153, local town or city clerks collect an annual Municipal Permit Fee (personal property tax) based on vehicle MSRP and age ($18 down to $3 per $1,000) prior to state registration. The estimate includes it.",
     "notes": [
       "New Hampshire does not impose a state sales tax on motor vehicle purchases.",
-      "Certificate of title fee is $35.00 under RSA 261:20 (required for vehicles model year 2000 and newer).",
+      "Certificate of title fee is $35.00 under RSA 261:20 for vehicles of model year 2000 and newer; vehicles of model year 1999 or older are not titled (RSA 261:3) and pay no title fee. Filing a security interest (lien) is $20.00 (RSA 261:20).",
       "State passenger vehicle registration is $48.00 for the middle weight class under RSA 261:141, plus the DMV’s $8 plate fee for first-time plates: $56. A motorcycle is $30 (RSA 261:141, III(o)).",
       "Municipal permit fees are paid to your town or city clerk: $18, $15, $12, $9, $6, then $3 per $1,000 of the maker’s list price by model year (RSA 261:153). The estimate includes it for passenger vehicles from the list price you enter ($30,000 if blank).",
       "Electric vehicles pay an additional $100 annual state registration surcharge ($50 for plug-in hybrids). The fee goes by GVWR from January 1, 2027. The form has no GVWR question, so the estimate stays at the 3,001 to 8,000 lb class."
@@ -5810,7 +5810,8 @@
       "New Hampshire has no state vehicle sales tax. The estimate includes a full year of the municipal permit fee, which has a $5 minimum, for passenger vehicles, but not the $3 reclamation fee or a municipal transportation fee of up to $5, and motorcycles are shown without the permit fee. Your town or city clerk gives the exact amount.",
       "Registration shown is the $48 state fee for vehicles of 3,001 to 5,000 lbs plus the $8 plate fee for first-time plates ($56). Up to 3,000 lbs the state fee is $42, and 5,001 to 8,000 lbs is $66. A motorcycle is $30. The municipal permit fee is rounded to the nearest dollar (RSA 261:153).",
       "Battery electric vehicles pay $100 a year, and plug-in hybrids pay $50. From January 1, 2027, the battery electric fee goes by gross vehicle weight rating: $0 up to 1,000 lbs, $50 from 1,001 to 3,000 lbs, $100 from 3,001 to 8,000 lbs, and $150 over 8,000 lbs (RSA 261:141-c). Plug-in hybrids stay at $50. The estimate uses $100.",
-      "New Hampshire’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the Division of Motor Vehicles."
+      "New Hampshire’s sources do not say whether its electric vehicle and plug-in hybrid fees apply to motorcycles, so the estimate leaves them out for a motorcycle. Confirm with the Division of Motor Vehicles.",
+      "The $35 title fee applies to vehicles of model year 2000 and newer; New Hampshire does not title vehicles of model year 1999 or older (RSA 261:3). A financed purchase adds the $20 security interest filing fee (RSA 261:20)."
     ],
     "faqs": [
       {
@@ -5819,7 +5820,7 @@
       },
       {
         "question": "How much does a title transfer cost in New Hampshire?",
-        "answer": "The state certificate of title fee in New Hampshire is $35.00 under RSA 261:20. Vehicles model year 1999 and older are title-exempt and require only a bill of sale and prior registration."
+        "answer": "The certificate of title fee is $35.00 under RSA 261:20 for vehicles of model year 2000 and newer, plus $20.00 to file a security interest if the purchase is financed. Vehicles of model year 1999 and older are not titled; they need only a bill of sale and proof of the VIN."
       },
       {
         "question": "What is the New Hampshire town clerk permit fee?",
@@ -5842,7 +5843,7 @@
         "answer": "Start at your town or city clerk with the signed title. To drive before registering, you can get a 20-day temporary plate for $20 from the DMV (RSA 261:57). New residents must register within 60 days of establishing residency (RSA 261:45)."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://www.dmv.nh.gov/vehicles-boats-and-titles/vehicle-registrations",
       "https://www.dmv.nh.gov/vehicles-boats-and-titles/temporary-plates",
@@ -5853,7 +5854,10 @@
       "https://gc.nh.gov/rsa/html/XXI/261/261-153.htm",
       "https://gc.nh.gov/rsa/html/XXI/261/261-141-c.htm",
       "https://gc.nh.gov/rsa/html/XXI/261/261-45.htm"
-    ]
+    ],
+    "titleExempt": {
+      "throughModelYear": 1999
+    }
   },
   "maine": {
     "label": "Maine",
@@ -5897,14 +5901,15 @@
     "notes": [
       "Maine levies a 5.5% sales/use tax on casual motor vehicle sales under 36 M.R.S. § 1764 & § 1811.",
       "Trade-in deduction is permitted under 36 M.R.S. § 1765 when trading in property of the same category (car for car).",
-      "Certificate of title fee is $33.00.",
+      "Certificate of title fee is $33.00 for vehicles 25 model years old or newer (counting the current model year as year 1); older vehicles pay no title fee (BMV).",
       "Annual passenger vehicle registration fee is $35.00.",
       "Local municipal excise tax must be paid to your city or town office before registering with the Bureau of Motor Vehicles (BMV). The estimate includes a full year of it for passenger vehicles from the list price you enter ($30,000 if blank)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Maine Bureau of Motor Vehicles (BMV) and Maine Revenue Services.",
       "Maine charges a 5.5% state sales tax on private vehicle sales; local municipal excise tax is paid annually at your town office. The excise is 24, 17.5, 13.5, 10, 6.5, then 4 mills on the list price by model year, with a $5 minimum. Motorcycles are shown without it. A credit for excise paid on a vehicle you transferred, or registering late in a registration year, can lower it (36 M.R.S. § 1482).",
-      "Trade-in allowance reduces the taxable purchase base when exchanging comparable vehicles."
+      "Trade-in allowance reduces the taxable purchase base when exchanging comparable vehicles.",
+      "The $33 title fee applies to vehicles 25 model years old or newer; older vehicles are not titled and pay no title fee. The estimate counts the current model year as year 1."
     ],
     "faqs": [
       {
@@ -5921,7 +5926,7 @@
       },
       {
         "question": "How much does it cost to title and register a car in Maine?",
-        "answer": "The state certificate of title fee is $33.00 and the standard annual passenger registration fee is $35.00, paid to the Bureau of Motor Vehicles (BMV) after paying municipal excise tax."
+        "answer": "The state certificate of title fee is $33.00 for vehicles 25 model years old or newer (older vehicles pay none), and the standard annual passenger registration fee is $35.00, paid to the Bureau of Motor Vehicles (BMV) after paying municipal excise tax."
       },
       {
         "question": "Do I pay Maine vehicle tax if I buy a car from an out-of-state private seller?",
@@ -5936,7 +5941,7 @@
         "answer": "We found no fixed day count for a private buyer, so register before you drive: pay the excise tax at your town office first, then register there or at a BMV branch. New residents have 30 days after establishing residency to convert their registration and title."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://www.maine.gov/sos/bmv/vehicles/register-a-passenger-vehicle",
       "https://www.maine.gov/sos/bmv/vehicles/registration-fees",
@@ -5946,7 +5951,10 @@
       "https://legislature.maine.gov/statutes/29-A/title29-Asec501.html",
       "https://legislature.maine.gov/statutes/29-A/title29-Asec515.html"
     ],
-    "taxLineName": "Sales Tax"
+    "taxLineName": "Sales Tax",
+    "titleExempt": {
+      "fromRegistrationYear": 26
+    }
   },
   "montana": {
     "label": "Montana",

@@ -42,4 +42,10 @@ Working notes from the official-source re-check for guide batch 15. Items marked
 ## `lastVerified`
 
 - Rhode Island: November 2026 (every figure checked; no open finding).
-- New Hampshire and Maine: unchanged (September 2026): the age-based title exemptions (and New Hampshire's $20 security interest fee) wait on a ruling.
+- New Hampshire and Maine: held at September 2026 in 41e5a0d while the age-based title exemptions (and New Hampshire's $20 security interest fee) waited on a ruling; moved to November 2026 once the rulings were applied (2026-11-19).
+
+## Rulings applied (Cliff, 2026-11-19)
+
+1. **New Hampshire, title exemption:** no $35 title fee for vehicles of model year 1999 or older (RSA 261:3), via a new `titleExempt.throughModelYear` field (1999); the breakdown line says no title is issued for that model year. Copy, FAQ, disclaimer, and the private-sale guide's calculator note match.
+2. **New Hampshire, lien fee:** $20 security interest filing fee for financed purchases (RSA 261:20, I(e)), replacing $0.
+3. **Maine, title age cutoff:** $33 title fee only for vehicles 25 model years old or newer, counting the current model year as year 1 (`titleExempt.fromRegistrationYear` 26); older vehicles pay none. Copy, FAQ, disclaimer, and the guide's calculator note match.

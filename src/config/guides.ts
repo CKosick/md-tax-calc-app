@@ -9500,7 +9500,7 @@ export const GUIDES: Guide[] = [
       {
         title: 'Pay the title and state registration',
         body: [
-          'The title is $35 (RSA 261:20). State registration is $42 up to 3,000 lbs, $48 from 3,001 to 5,000 lbs, and $66 from 5,001 to 8,000 lbs, plus an $8 plate fee the first time you order plates. A battery electric vehicle adds $100 a year and a plug-in hybrid $50.'
+          'The title is $35 (RSA 261:20), plus $20 to file a security interest if you finance. State registration is $42 up to 3,000 lbs, $48 from 3,001 to 5,000 lbs, and $66 from 5,001 to 8,000 lbs, plus an $8 plate fee the first time you order plates. A battery electric vehicle adds $100 a year and a plug-in hybrid $50.'
         ]
       },
       {
@@ -9518,7 +9518,7 @@ export const GUIDES: Guide[] = [
       'The temporary plate application, if you need to drive first'
     ],
     calculatorNote:
-      'There is no sales tax. The calculator shows the $35 title, the $48 registration and $8 plate fee, and a year of the town permit fee from the list price you enter. It shows the title at every age, though a vehicle of model year 1999 or older is not titled.',
+      'There is no sales tax. The calculator shows the $35 title (none for model year 1999 or older), $20 more if financed, the $48 registration and $8 plate fee, and a year of the town permit fee from the list price you enter.',
     faqs: [
       {
         question: 'Is there sales tax on a used car in New Hampshire?',
@@ -9734,7 +9734,7 @@ export const GUIDES: Guide[] = [
       'Payment for the sales tax, title, and registration'
     ],
     calculatorNote:
-      'The calculator shows 5.5% of the price less any trade-in, the $33 title, the $35 registration, and a year of the town excise tax from the list price you enter. It shows the title at every age, though a vehicle over 25 years old does not need one.',
+      'The calculator shows 5.5% of the price less any trade-in, the $33 title (none for a vehicle over 25 model years old), the $35 registration, and a year of the town excise tax from the list price you enter.',
     faqs: [
       {
         question: 'Do I pay both excise tax and sales tax?',

@@ -15,7 +15,7 @@ const calc = (rule: StateRule, extra: Partial<CalculatorInputs> = {}) =>
 const copy = (rule: StateRule) =>
   [rule.localTaxNote ?? '', rule.tradeInNote ?? '', ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
 
-describe('New Hampshire re-check (November 2026, title items for ruling)', () => {
+describe('New Hampshire re-check and rulings (November 2026)', () => {
   it('no tax; $35 title; $48 + $8 plate = $56 registration; motorcycle $30', () => {
     const b = calc(nh, { vehicleYear: 2010 });
     expect(b.exciseTax).toBe(0);
@@ -31,10 +31,15 @@ describe('New Hampshire re-check (November 2026, title items for ruling)', () =>
     expect(nh.registration.listPriceAnnualTax?.roundToDollar).toBe(true);
   });
 
-  it('keeps the title items that wait on a ruling, and the verified date, as they were', () => {
-    expect(calc(nh, { vehicleYear: 1998 }).titleFee).toBe(35);
-    expect(nh.lienFilingFee).toBe(0);
-    expect(nh.lastVerified).toBe('September 2026');
+  it('no title fee for model year 1999 or older (RSA 261:3); $20 security interest fee when financed', () => {
+    expect(calc(nh, { vehicleYear: 2000 }).titleFee).toBe(35);
+    const old = calc(nh, { vehicleYear: 1999 });
+    expect(old.titleFee).toBe(0);
+    expect(old.itemizedList.find((i) => i.id === 'title-fee')?.description).toContain('No title for this model year');
+    expect(calc(nh, { vehicleYear: 1990, vehicleType: 'motorcycle' }).titleFee).toBe(0);
+    expect(calc(nh, { isFinanced: true }).lienFilingFee).toBe(20);
+    expect(copy(nh)).toContain('model year 1999 or older (RSA 261:3)');
+    expect(nh.lastVerified).toBe('November 2026');
   });
 
   it('deadline, gift, and out-of-state answers are the verified ones; RSA links get citations', () => {
@@ -45,7 +50,7 @@ describe('New Hampshire re-check (November 2026, title items for ruling)', () =>
   });
 });
 
-describe('Maine re-check (November 2026, title item for ruling)', () => {
+describe('Maine re-check and ruling (November 2026)', () => {
   it('5.5% tax with the trade-in credit; $33 title; $35 registration plus the excise; motorcycle $21', () => {
     expect(calc(me).exciseTax).toBe(825);
     expect(calc(me, { tradeInValue: 5000 }).exciseTax).toBe(550);
@@ -54,9 +59,12 @@ describe('Maine re-check (November 2026, title item for ruling)', () => {
     expect(calc(me, { vehicleType: 'motorcycle' }).registrationTotal).toBe(21);
   });
 
-  it('keeps the title exemption that waits on a ruling, and the verified date, as they were', () => {
-    expect(calc(me, { vehicleYear: 1995 }).titleFee).toBe(33);
-    expect(me.lastVerified).toBe('September 2026');
+  it('$33 title only for vehicles 25 model years old or newer (current model year = year 1)', () => {
+    expect(calc(me, { vehicleYear: 2002 }).titleFee).toBe(33); // year 25
+    expect(calc(me, { vehicleYear: 2001 }).titleFee).toBe(0); // year 26
+    expect(calc(me, { vehicleYear: 1995 }).titleFee).toBe(0);
+    expect(copy(me)).toContain('25 model years old or newer');
+    expect(me.lastVerified).toBe('November 2026');
   });
 
   it('deadline, gift, and out-of-state answers are the verified ones; 29-A links get citations', () => {

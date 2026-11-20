@@ -522,7 +522,11 @@ describe('Batch 15 guides (New Hampshire, Maine, Rhode Island)', () => {
     for (const fact of ['30 days', 'T-333-1', 'SU-NR-1', 'five days']) expect(riMove).toContain(fact);
   });
 
-  it('New Hampshire guides say nothing on motorcycle EV fees while the written inquiry is open', () => {
+  it('calculator notes match the title rulings; New Hampshire guides say nothing on motorcycle EV fees while the written inquiry is open', () => {
+    expect(text('how-to-title-a-private-car-sale-in-new-hampshire')).toContain('none for model year 1999 or older');
+    expect(text('how-to-title-a-private-car-sale-in-new-hampshire')).toContain('$20 to file a security interest');
+    expect(text('how-to-title-a-private-car-sale-in-maine')).toContain('none for a vehicle over 25 model years old');
+    for (const state of ['new-hampshire', 'maine']) for (const t of topics(state).map(text)) expect(t).not.toContain('shows the title at every age');
     for (const t of topics('new-hampshire').map(text)) expect(t).not.toMatch(/GVWR|gross vehicle weight rating/i);
   });
 
