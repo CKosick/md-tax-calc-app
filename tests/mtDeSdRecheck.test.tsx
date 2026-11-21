@@ -17,28 +17,32 @@ const copy = (rule: StateRule) =>
   [rule.localTaxNote ?? '', rule.tradeInNote ?? '', ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
 
 describe('Montana re-check and ruling (November 2026)', () => {
-  it('no tax; title, registration by age (MCA 61-3-321), and motorcycle include the 3% administrative fee (MCA 61-3-111); lien $8', () => {
+  it('no tax; every MVD fee includes the 3% administrative fee (MCA 61-3-111): title, lien, registration by age, motorcycle', () => {
     expect(calc(mt).exciseTax).toBe(0);
     expect(calc(mt).titleFee).toBe(12.36);
-    expect(calc(mt, { isFinanced: true }).lienFilingFee).toBe(8);
+    expect(calc(mt, { isFinanced: true }).lienFilingFee).toBe(8.24); // $8 x 1.03
     expect(calc(mt, { vehicleYear: 2022 }).registrationTotal).toBe(246.17); // age 4: ($217 + $10 + $12) x 1.03
     expect(calc(mt, { vehicleYear: 2021 }).registrationTotal).toBe(112.27); // age 5: ($87 + $10 + $12) x 1.03
     expect(calc(mt, { vehicleYear: 2016 }).registrationTotal).toBe(112.27); // age 10
     expect(calc(mt, { vehicleYear: 2015 }).registrationTotal).toBe(51.5); // age 11: ($28 + $10 + $12) x 1.03
   });
 
-  it('motorcycle $93.99 once; EV $130 and plug-in hybrid $70 on cars only, shown without the 3%', () => {
+  it('motorcycle $93.99 once; EV $133.90 and plug-in hybrid $72.10 ($130 and $70 plus 3%) on cars only', () => {
     expect(calc(mt, { vehicleType: 'motorcycle' }).registrationTotal).toBe(93.99); // $91.25 x 1.03
     expect(calc(mt, { vehicleType: 'motorcycle', fuelType: 'ev' }).registrationTotal).toBe(93.99);
-    expect(calc(mt, { vehicleYear: 2021, fuelType: 'ev' }).registrationTotal).toBe(242.27);
-    expect(calc(mt, { vehicleYear: 2021, fuelType: 'phev' }).registrationTotal).toBe(182.27);
+    expect(calc(mt, { vehicleYear: 2021, fuelType: 'ev' }).registrationTotal).toBe(246.17); // $112.27 + $133.90
+    expect(calc(mt, { vehicleYear: 2021, fuelType: 'phev' }).registrationTotal).toBe(184.37); // $112.27 + $72.10
+    expect(calc(mt, { vehicleYear: 2021, fuelType: 'ev' }).evSurcharge).toBe(133.9);
+    expect(calc(mt, { vehicleYear: 2021, fuelType: 'phev' }).evSurcharge).toBe(72.1);
   });
 
   it('says the 3% is included and the rounding may differ; discloses county option tax, parks fee, and permanent registration; verified November 2026', () => {
     const text = copy(mt);
-    for (const fact of ['include the 3% administrative fee (MCA 61-3-111)', 'may differ by a few cents', '$246.17, $112.27, or $51.50', 'MCA 61-3-537', 'MCA 61-3-321(19)', '$87.50', 'does not transfer to a buyer', 'MCA 61-3-321(2)(b)', 'Within 40 days', '40-day temporary registration permit', 'within 60 days']) expect(text).toContain(fact);
+    for (const fact of ['includes the 3% administrative fee (MCA 61-3-111)', 'may differ by a few cents', '$246.17, $112.27, or $51.50', 'MCA 61-3-537', 'MCA 61-3-321(19)', '$87.50', 'does not transfer to a buyer', 'MCA 61-3-321(2)(b)', 'Within 40 days', '40-day temporary registration permit', 'within 60 days']) expect(text).toContain(fact);
     expect(text).not.toContain('61-3-315');
     expect(text).not.toContain('The estimate does not include it');
+    expect(text).not.toContain('shown without it');
+    for (const fact of ['$133.90 and $72.10', 'title, lien, registration, motorcycle, and EV fees']) expect(text).toContain(fact);
     expect(mt.lastVerified).toBe('November 2026');
   });
 

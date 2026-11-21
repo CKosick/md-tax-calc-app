@@ -563,6 +563,8 @@ describe('Batch 16 guides (Montana, Delaware, South Dakota)', () => {
   it('calculator notes match the engine: Montana fees by age, the Delaware NADA input, and the South Dakota rate the estimate uses', () => {
     expect(text('how-to-title-a-private-car-sale-in-montana')).toContain('($246.17, $112.27, or $51.50)');
     for (const t of topics('montana').map(text)) expect(t).toContain('$12.36 title');
+    expect(text('how-to-title-a-private-car-sale-in-montana')).toContain('$8.24 lien fee');
+    expect(text('how-to-title-a-private-car-sale-in-montana')).toContain('adds $133.90 and a plug-in hybrid $72.10');
     expect(text('how-to-title-a-private-car-sale-in-delaware')).toContain('enter the NADA average trade-in value if it is higher');
     expect(text('how-to-title-a-private-car-sale-in-south-dakota')).toContain('or no tax for a vehicle 11 or more model years old sold for $2,500 or less');
     expect(text('how-to-title-a-private-car-sale-in-south-dakota')).toContain('70% of that at 10 or more model years old) plus the $4 in DOR fees');

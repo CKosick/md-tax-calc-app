@@ -10178,13 +10178,13 @@ export const GUIDES: Guide[] = [
       {
         title: 'Pay the title fee',
         body: [
-          'Montana charges no sales or use tax on the sale. The title is $12, and filing a lien is $8.'
+          'Montana charges no sales or use tax on the sale. The title is $12, and filing a lien is $8, plus the 3% administrative fee on each.'
         ]
       },
       {
         title: 'Pay the registration by age',
         body: [
-          'The rate is $217 for a vehicle 4 years old or less, $87 for 5 through 10 years, and $28 for 11 years or more, with age figured as the registration year minus the model year. Add the $10 Highway Patrol fee, $12 for new plates, any county option tax, and a 3% administrative fee. An electric vehicle adds $130 a year and a plug-in hybrid $70 (under 6,000 lbs).'
+          'The rate is $217 for a vehicle 4 years old or less, $87 for 5 through 10 years, and $28 for 11 years or more, with age figured as the registration year minus the model year. Add the $10 Highway Patrol fee, $12 for new plates, any county option tax, and a 3% administrative fee. An electric vehicle adds $130 a year and a plug-in hybrid $70 (under 6,000 lbs), also plus 3%.'
         ]
       }
     ],
@@ -10196,7 +10196,7 @@ export const GUIDES: Guide[] = [
       'Payment for the title and registration fees'
     ],
     calculatorNote:
-      'The calculator shows no tax, the $12.36 title, and the registration by age with the $10 Highway Patrol and $12 plate fees and the 3% administrative fee ($246.17, $112.27, or $51.50). It leaves out the county option tax; the MVD does not publish how it rounds the 3%, so its total may differ by a few cents.',
+      'The calculator shows no tax, the $12.36 title, the $8.24 lien fee if you finance, and the registration by age with the $10 Highway Patrol and $12 plate fees, all with the 3% administrative fee ($246.17, $112.27, or $51.50). An electric vehicle adds $133.90 and a plug-in hybrid $72.10. It leaves out the county option tax; the MVD does not publish how it rounds the 3%, so its total may differ by a few cents.',
     faqs: [
       {
         question: 'Can I keep the seller’s plates?',

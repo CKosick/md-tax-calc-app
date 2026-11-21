@@ -34,7 +34,7 @@ describe('Car EV and plug-in hybrid fee re-check, November 2026', () => {
     ['wyoming', 100, 50],
     ['nebraska', 150, 75],
     ['south-dakota', 100, 0],
-    ['montana', 130, 70],
+    ['montana', 133.9, 72.1], // $130 and $70 plus the 3% administrative fee (MCA 61-3-111)
     ['vermont', 87, 44.5]
   ])('%s charges a car the source amount', (state, ev, phev) => {
     expect(calc(state, { fuelType: 'ev' }).evSurcharge).toBe(ev);

@@ -5982,7 +5982,7 @@
     "exciseTaxRate": 0,
     "taxBase": "price",
     "titleFee": 12.36,
-    "lienFilingFee": 8,
+    "lienFilingFee": 8.24,
     "tradeInDeductible": false,
     "registration": {
       "terms": [
@@ -5999,8 +5999,8 @@
       "motorcycle": {
         "1": 93.99
       },
-      "evSurchargeAnnual": 130,
-      "phevSurchargeAnnual": 70,
+      "evSurchargeAnnual": 133.9,
+      "phevSurchargeAnnual": 72.1,
       "motorcycleFuelFees": {
         "ev": {
           "outcome": "excluded"
@@ -6033,9 +6033,9 @@
     "localTaxNote": "Montana has no sales tax. Counties can add a local option vehicle tax of up to 0.7% of the depreciated value, or a flat fee, paid with the registration (MCA 61-3-537). It is not included.",
     "notes": [
       "Montana does not impose a state sales tax or vehicle use tax.",
-      "Title $12 for a light vehicle (MCA 61-3-203), or $12.36 with the 3% administrative fee; filing a lien $8 (MCA 61-3-103).",
+      "Title $12 for a light vehicle (MCA 61-3-203) and filing a lien $8 (MCA 61-3-103); $12.36 and $8.24 with the 3% administrative fee.",
       "Registration rate by age (MCA 61-3-321(2)), with age figured as the registration year minus the model year: $217 for 4 years or less, $87 for 5 through 10 years, and $28 for 11 years or more. The estimate adds the $10 Highway Patrol fee (61-3-321(20)) and the $12 plate fee (61-3-321(13)), since the seller keeps the plates, then the 3% administrative fee: $246.17, $112.27, or $51.50.",
-      "The Motor Vehicle Division charges a 3% administrative fee on the fees it collects (MCA 61-3-111). It is included in the title, registration, and motorcycle figures. The MVD does not publish how it rounds the 3%, so the county treasurer's total may differ by a few cents.",
+      "The Motor Vehicle Division charges a 3% administrative fee on every fee it collects (MCA 61-3-111). It is included in each Montana fee in the estimate: title, lien, registration, motorcycle, and EV fees. The MVD does not publish how it rounds the 3%, so the county treasurer's total may differ by a few cents.",
       "A light vehicle 11 years old or older can be permanently registered for $87.50 plus five times the county option tax and other fees (MCA 61-3-562). A permanent registration ends when the vehicle is sold, so the buyer registers it again.",
       "A light vehicle 10 years old or less with an MSRP over $150,000 pays $825 more each year (MCA 61-3-321(2)(b)).",
       "Motorcycles register once: $53.25, a $16 safety fee, the $10 Highway Patrol fee, and the $12 plate fee, $93.99 with the 3% administrative fee (MCA 61-3-321; MVD fee table)."
@@ -6044,8 +6044,8 @@
       "Estimates only — not tax or legal advice. Verify with Montana Motor Vehicle Division (MVD) and your county treasurer.",
       "Montana has 0% state sales tax. Registration follows a statutory schedule by vehicle age.",
       "Counties can add a local option vehicle tax if voters approve it, up to 0.7% of the vehicle’s value or a flat fee, paid with the registration fee (MCA 61-3-537). It is not included.",
-      "Montana adds a yearly fee by unladen weight (MCA 61-3-572). The estimate uses the class under 6,000 lbs: $130 for an electric vehicle with at least a 20 kWh battery and $70 for a plug-in hybrid with at least a 5 kWh battery. From 6,000 to 10,000 lbs the fees are $190 and $100. The law covers vehicles with at least four wheels, so motorcycles do not pay them.",
-      "The title, registration, and motorcycle fees include the 3% administrative fee (MCA 61-3-111); the EV fees and the lien fee are shown without it. The MVD does not publish its rounding, so the county treasurer's total may differ by a few cents.",
+      "Montana adds a yearly fee by unladen weight (MCA 61-3-572). The estimate uses the class under 6,000 lbs: $130 for an electric vehicle with at least a 20 kWh battery and $70 for a plug-in hybrid with at least a 5 kWh battery, or $133.90 and $72.10 with the 3% administrative fee. From 6,000 to 10,000 lbs the fees are $190 and $100. The law covers vehicles with at least four wheels, so motorcycles do not pay them.",
+      "Every Montana fee in the estimate (title, lien, registration, motorcycle, and EV fees) includes the 3% administrative fee (MCA 61-3-111). The MVD does not publish its rounding, so the county treasurer's total may differ by a few cents.",
       "A $9 state parks and fishing access fee is added to each light vehicle registration unless you opt out (MCA 61-3-321(19)). It is not included."
     ],
     "faqs": [
