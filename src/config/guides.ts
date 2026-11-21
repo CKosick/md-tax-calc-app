@@ -515,6 +515,35 @@ const SD_SOURCES = {
   credit: { label: 'SDCL 32-5B-11: Credit for taxes paid', url: 'https://sdlegislature.gov/Statutes/32-5B-11' }
 };
 
+const ND_MVD = 'https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services';
+const ND_SOURCES = {
+  whatToBring: { label: 'NDDOT: What to Bring to Your Motor Vehicle Appointment', url: 'https://www.dot.nd.gov/motor-vehicle/what-to-bring' },
+  manual: { label: 'NDDOT: Motor Vehicle Registration Manual', url: `${ND_MVD}/registration-manual.pdf` },
+  feeSchedule: { label: 'NDDOT: 2026 Passenger Fee Schedule', url: `${ND_MVD}/mvd-2-passenger-fee-2026.pdf` },
+  excise: { label: 'N.D.C.C. chapter 57-40.3: Motor vehicle excise tax', url: 'https://ndlegis.gov/cencode/t57c40-3.pdf' },
+  title: { label: 'N.D.C.C. chapter 39-05: Titles', url: 'https://ndlegis.gov/cencode/t39c05.pdf' }
+};
+
+const AK_DMV = 'https://dmv.alaska.gov/vehicle-services';
+const AK_SOURCES = {
+  newVehicle: { label: 'Alaska DMV: New Vehicle (title transfer)', url: `${AK_DMV}/new-vehicle/` },
+  selling: { label: 'Alaska DMV: Selling a Vehicle in Alaska', url: `${AK_DMV}/selling-a-vehicle-in-alaska/` },
+  registration: { label: 'Alaska DMV: General Vehicle Registration', url: `${AK_DMV}/general-vehicle-registration/` },
+  transfer: { label: 'Alaska DMV: Transfer My Vehicle From Another State', url: `${AK_DMV}/transfer-my-vehicle-from-another-state/` },
+  seniors: { label: 'Alaska DMV: Registration for Seniors', url: `${AK_DMV}/registration-for-seniors/` },
+  mvrt: { label: 'Alaska DMV: 2026 Registration Fees and Biennial MVRT', url: 'https://dmv.alaska.gov/media/lknb3cwi/2026-mvrt-by-location.pdf' }
+};
+
+const DC_DMV = 'https://dmv.dc.gov';
+const DC_SOURCES = {
+  fees: { label: 'DC DMV: Vehicle Title and Excise Tax Fees', url: `${DC_DMV}/book/dmv-fees/vehicle-title-and-excise-tax-fees` },
+  registrationFees: { label: 'DC DMV: Vehicle Registration Fees', url: `${DC_DMV}/book/dmv-fees/vehicle-registration-fees` },
+  exemptions: { label: 'DC DMV: Excise Tax Exemption Categories', url: `${DC_DMV}/sites/default/files/dc/sites/dmv/publication/attachments/Amended_Excise_Tax_Exemption_Categories_2.5.25.pdf` },
+  register: { label: 'DC DMV: Registration of a New or Used Vehicle', url: `${DC_DMV}/service/registration-new-or-used-vehicle` },
+  newResident: { label: 'DC DMV: Vehicle Registration and Inspection', url: `${DC_DMV}/service/vehicle-registration-and-inspection` },
+  titles: { label: 'DC DMV: Vehicle Titles', url: `${DC_DMV}/service/dmv-vehicle-titles` }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -10789,6 +10818,655 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [SD_SOURCES.credit, SD_SOURCES.titleFees, SD_SOURCES.exempt]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-north-dakota',
+    stateKey: 'north-dakota',
+    title: 'How to Title a Private Car Sale in North Dakota',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in North Dakota',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in North Dakota: the 5% excise tax, 30 days to apply, the $5 title, and registration by weight and year first registered.',
+    cardDescription: '5% excise, 30 days, $5 title, and registration.',
+    intro: [
+      'North Dakota charges a 5% motor vehicle excise tax on a car bought from a private seller, paid when you apply for the title.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'North Dakota Department of Transportation',
+    steps: [
+      {
+        title: 'Get the title and the seller’s disclosures',
+        body: [
+          'The seller signs the title over to you and completes the odometer disclosure (2011 and newer vehicles). For a vehicle less than nine model years old, the seller also completes the Damage Disclosure (SFN 18609).'
+        ]
+      },
+      {
+        title: 'Apply within 30 days',
+        body: [
+          'The seller must give you the signed title within 30 days of the sale. Take it to the Motor Vehicle Division with the $5 transfer fee within 30 days of receiving it, or your registration can be suspended or revoked (N.D.C.C. 39-05-17).'
+        ]
+      },
+      {
+        title: 'Pay the 5% excise tax',
+        body: [
+          'The tax is 5% of the purchase price (N.D.C.C. 57-40.3-02). A gift is taxed on the average NADA value unless it is between a husband and wife, parent and child, grandparent and grandchild, or brothers and sisters.'
+        ]
+      },
+      {
+        title: 'Pay the title fee',
+        body: [
+          'The title is $5. Bring a current photo ID; the Motor Vehicle Division takes cash, checks, and major cards.'
+        ]
+      },
+      {
+        title: 'Register by weight and year first registered',
+        body: [
+          'Passenger registration depends on weight and the year the vehicle was first registered. From 3,200 to 4,499 lbs it is $93 a year in years 1 to 6, $81 in years 7 to 9, $69 in years 10 to 12, and $57 after that. An electric vehicle adds $120 a year and a plug-in hybrid $50. A first registration partway through the year is prorated by month.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over by the seller',
+      'The odometer disclosure (2011 and newer vehicles)',
+      'The Damage Disclosure (SFN 18609), if under nine model years old',
+      'A current photo ID',
+      'Payment for the tax, title, and registration'
+    ],
+    calculatorNote:
+      'The calculator applies 5% to the price and adds the $5 title and the registration for 3,200 to 4,499 lbs by year first registered ($93, $81, $69, or $57), counting the model year as the first year.',
+    faqs: [
+      {
+        question: 'What if my car weighs under 3,200 lbs?',
+        answer: 'Registration is $73 in years 1 to 6, $65 in years 7 to 9, $57 in years 10 to 12, and $49 after that. Heavier classes pay more.'
+      },
+      {
+        question: 'What does a motorcycle cost to register?',
+        answer: '$25 a year, which includes the $10 motorcycle safety education fee. An electric motorcycle adds a $20 road use fee.'
+      },
+      {
+        question: 'My old car was totaled. Does the insurance payment help?',
+        answer: 'Yes. The insurance settlement plus your deductible counts as a trade-in credit on replacement vehicles. Submit a notarized statement from the insurer with the title application, within three years (N.D.C.C. 57-40.3-01).'
+      }
+    ],
+    sources: [ND_SOURCES.whatToBring, ND_SOURCES.manual, ND_SOURCES.feeSchedule, ND_SOURCES.excise, ND_SOURCES.title]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-north-dakota',
+    stateKey: 'north-dakota',
+    title: 'How to Gift a Car in North Dakota',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in North Dakota',
+    metaDescription:
+      'How to gift a car in North Dakota: no excise tax between spouses, parent and child, grandparent and grandchild, or siblings. Other gifts pay 5% of the NADA value.',
+    cardDescription: 'Family exemptions, NADA value, and fees.',
+    intro: [
+      'A gift between a husband and wife, parent and child, grandparent and grandchild, or brothers and sisters owes no North Dakota excise tax. Other gifts are taxed at 5% of the average value in the NADA used car guide.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'North Dakota Department of Transportation',
+    steps: [
+      {
+        title: 'Check who is giving the car',
+        body: [
+          'The exemption covers a gift between a husband and wife, parent and child, grandparent and grandchild, or brothers and sisters, including a transfer into a trust between those relatives (N.D.C.C. 57-40.3-04).'
+        ]
+      },
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs the title over to you and completes the odometer disclosure, and the Damage Disclosure (SFN 18609) for a vehicle under nine model years old.'
+        ]
+      },
+      {
+        title: 'For other gifts, expect the NADA value',
+        body: [
+          'A gift outside the family exemption is taxed at 5% of the average value of similar vehicles in the NADA used car guide.'
+        ]
+      },
+      {
+        title: 'Apply within 30 days',
+        body: [
+          'Take the title to the Motor Vehicle Division with the $5 transfer fee within 30 days of receiving it.'
+        ]
+      },
+      {
+        title: 'Pay the registration',
+        body: [
+          'Passenger registration depends on weight and the year first registered: $93, $81, $69, or $57 a year for 3,200 to 4,499 lbs.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over by the giver',
+      'The odometer disclosure (2011 and newer vehicles)',
+      'The Damage Disclosure, if under nine model years old',
+      'A current photo ID',
+      'Payment for the title, registration, and any tax'
+    ],
+    calculatorNote:
+      'For an exempt family gift, enter $0 as the price; the calculator then shows no tax, the $5 title, and the registration. For any other gift, enter the NADA average value.',
+    faqs: [
+      {
+        question: 'Is a gift from my cousin taxed?',
+        answer: 'Yes. A cousin is not in the exemption, so the tax is 5% of the NADA average value.'
+      },
+      {
+        question: 'Is an inherited car taxed?',
+        answer: 'No. A vehicle acquired by inheritance or bequest is exempt. Buying a car from an estate is taxed.'
+      },
+      {
+        question: 'Can I take a co-owner off the title without tax?',
+        answer: 'Yes, if the vehicle was titled in joint names and is transferred without payment to one or more of the joint owners (N.D.C.C. 57-40.3-04).'
+      }
+    ],
+    sources: [ND_SOURCES.excise, ND_SOURCES.manual, ND_SOURCES.whatToBring]
+  },
+  {
+    slug: 'titling-a-car-in-north-dakota-after-moving-from-another-state',
+    stateKey: 'north-dakota',
+    title: 'Titling a Car in North Dakota After Moving From Another State',
+    shortTitle: 'Title a car after moving to North Dakota',
+    metaTitle: 'Titling Your Car After Moving to North Dakota',
+    metaDescription:
+      'New to North Dakota? Title and register your car once you are a resident. Tax paid to another state is credited; first-time titles add a $1.50 fee.',
+    cardDescription: 'Residency, tax credit, and fees.',
+    intro: [
+      'Once you are a North Dakota resident, your vehicle needs North Dakota plates. Sales or excise tax you paid on it in another state is credited against the 5% tax.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'North Dakota Department of Transportation',
+    steps: [
+      {
+        title: 'Know when you are a resident',
+        body: [
+          'For registration, you are a resident if you work in North Dakota and live here for that job, or if you stay in the state for 90 consecutive days. Students and some daily commuters are not counted (N.D.C.C. 39-04-18).'
+        ]
+      },
+      {
+        title: 'Bring your out-of-state title',
+        body: [
+          'Complete the Application for Certificate of Title and Registration (SFN 2872) and submit it with your out-of-state title. A lien on the title carries over to the North Dakota title unless ownership changes.'
+        ]
+      },
+      {
+        title: 'Show the tax you paid',
+        body: [
+          'The 5% excise tax applies to a vehicle bought for use in North Dakota; one titled here within 30 days of purchase is presumed to be. Tax paid to another state is credited, and none is due if it was 5% or more, if that state gives a similar credit. Bring proof of the tax paid.'
+        ]
+      },
+      {
+        title: 'Pay the title fees',
+        body: [
+          'The title is $5, plus a $1.50 abandoned motor vehicle disposal fee on a first North Dakota title (not motorcycles).'
+        ]
+      },
+      {
+        title: 'Register by weight and year first registered',
+        body: [
+          'From 3,200 to 4,499 lbs registration is $93, $81, $69, or $57 a year depending on the year first registered, prorated by month for a first registration.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title',
+      'Application for Certificate of Title and Registration (SFN 2872)',
+      'Proof of tax paid in another state, if any',
+      'A current photo ID',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price if you owe no tax on a vehicle you already own. The calculator then shows the $5 title and the registration by year first registered; the $1.50 first-title fee is not included.',
+    faqs: [
+      {
+        question: 'I moved from Montana. Is tax I paid there credited?',
+        answer: 'The NDDOT lists no reciprocity for Alaska, Delaware, Georgia, Montana, New Hampshire, and Oregon, so no credit is given for those states.'
+      },
+      {
+        question: 'Do I need a damage disclosure?',
+        answer: 'Not for moving a title into North Dakota with no change of owner.'
+      },
+      {
+        question: 'I am in the military and lease my car. Do I pay the tax?',
+        answer: 'A vehicle leased and registered in another state by a nonresident member of the armed services stationed in North Dakota is exempt; you pay only the registration fees (N.D.C.C. 57-40.3-07).'
+      }
+    ],
+    sources: [ND_SOURCES.manual, ND_SOURCES.excise, ND_SOURCES.whatToBring]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-alaska',
+    stateKey: 'alaska',
+    title: 'How to Title a Private Car Sale in Alaska',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Alaska',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Alaska: no state sales tax, 30 days to title, the $15 title, the two-year registration, and local registration taxes.',
+    cardDescription: 'No state tax, 30 days, $15 title, and registration.',
+    intro: [
+      'Alaska has no state sales tax. You pay the $15 title fee and the two-year registration, and some cities and boroughs add a registration tax collected with it.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Alaska DMV',
+    steps: [
+      {
+        title: 'Get the title signed over',
+        body: [
+          'The seller signs and assigns the title to you. With "AND" between owners’ names, all must sign; with "OR", one can. The odometer reading goes on the title for a vehicle under 12,000 lbs and less than 20 years old.'
+        ]
+      },
+      {
+        title: 'Keep a bill of sale',
+        body: [
+          'A bill of sale does not transfer ownership in Alaska, but it records the date and price. The seller reports the sale to the DMV.'
+        ]
+      },
+      {
+        title: 'Title within 30 days',
+        body: [
+          'Apply for a title in your name within 30 days of the purchase, at a DMV or partner office or by mail to DMV headquarters in Anchorage, with the Vehicle Transaction Application (Form V1).'
+        ]
+      },
+      {
+        title: 'Pay the title fee',
+        body: [
+          'The title is $15, and recording a lien is $15.'
+        ]
+      },
+      {
+        title: 'Pay the registration',
+        body: [
+          'Registration is $100 for two years ($60 for a motorcycle). A vehicle keeps its expiration month after a sale; if its registration expired less than a year ago, you pay the full two-year fee from the original expiration month. Where a city or borough levies a registration tax, it is added ($16 to $300 on the 2026 chart), and registering in person adds $10.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed and assigned by the seller',
+      'Vehicle Transaction Application (Form V1)',
+      'A lien release, if the title shows a satisfied lien',
+      'Your lender’s name and address, if you financed',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'The calculator shows no tax, the $15 title, and the $100 two-year registration. It leaves out any local registration tax ($16 to $300 where levied) and the $10 in-person fee, and a vehicle that keeps its current registration may owe a different amount at transfer.',
+    faqs: [
+      {
+        question: 'Do the plates come with the car?',
+        answer: 'Usually. A seller with personalized or specialty plates removes them, and you get a new set at no extra charge.'
+      },
+      {
+        question: 'The seller is 65 and paid no registration. Does that carry over?',
+        answer: 'No. When a senior-exempt vehicle is sold, the new owner pays the full registration fees.'
+      },
+      {
+        question: 'What if the title is lost?',
+        answer: 'The owner shown on the DMV records must get a duplicate title before ownership can be transferred. For a title from another state, the owner applies to that state.'
+      }
+    ],
+    sources: [AK_SOURCES.newVehicle, AK_SOURCES.selling, AK_SOURCES.registration, AK_SOURCES.mvrt]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-alaska',
+    stateKey: 'alaska',
+    title: 'How to Gift a Car in Alaska',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Alaska',
+    metaDescription:
+      'How to gift a car in Alaska: no state sales tax on any gift. Transfer the title within 30 days for $15 and pay the registration, plus any local registration tax.',
+    cardDescription: 'No state tax, the title transfer, and fees.',
+    intro: [
+      'Alaska has no state sales tax, so a gifted vehicle owes no state tax. You transfer the title the same way as a sale.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Alaska DMV',
+    steps: [
+      {
+        title: 'Have the giver sign the title',
+        body: [
+          'The giver signs and assigns the title to you, with every owner signing if the names are joined by "AND".'
+        ]
+      },
+      {
+        title: 'Record the odometer reading',
+        body: [
+          'For a vehicle under 12,000 lbs and less than 20 years old, the odometer reading at the transfer goes on the title.'
+        ]
+      },
+      {
+        title: 'Title within 30 days',
+        body: [
+          'Apply for a title in your name within 30 days with the Vehicle Transaction Application (Form V1).'
+        ]
+      },
+      {
+        title: 'Pay the title fee',
+        body: [
+          'The title is $15. No state tax is due on a gift.'
+        ]
+      },
+      {
+        title: 'Pay the registration',
+        body: [
+          'Registration is $100 for two years ($60 for a motorcycle), plus any city or borough registration tax where you live.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed by the giver',
+      'Vehicle Transaction Application (Form V1)',
+      'A lien release, if the title shows a satisfied lien',
+      'Proof of insurance',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price. The calculator then shows no tax, the $15 title, and the $100 two-year registration.',
+    faqs: [
+      {
+        question: 'Is a gift from a friend taxed?',
+        answer: 'No state tax applies to any vehicle transfer in Alaska.'
+      },
+      {
+        question: 'Does the giver’s senior exemption carry over?',
+        answer: 'No. The new owner pays the full registration fees.'
+      },
+      {
+        question: 'Is the local registration tax charged again?',
+        answer: 'Not during the current registration period. It is collected when a registration is issued or renewed, not when the owner changes.'
+      }
+    ],
+    sources: [AK_SOURCES.newVehicle, AK_SOURCES.seniors, AK_SOURCES.mvrt]
+  },
+  {
+    slug: 'titling-a-car-in-alaska-after-moving-from-another-state',
+    stateKey: 'alaska',
+    title: 'Titling a Car in Alaska After Moving From Another State',
+    shortTitle: 'Title a car after moving to Alaska',
+    metaTitle: 'Titling Your Car After Moving to Alaska',
+    metaDescription:
+      'New to Alaska? Register within 10 days of starting work or establishing residency. Bring your out-of-state title and Form V1; the title is $15 and registration $100 for two years.',
+    cardDescription: '10 days, Form V1, and fees.',
+    intro: [
+      'If you start working in Alaska or take steps to become a resident, you must register your vehicle within 10 days. A nonresident visitor may drive on a valid out-of-state registration for up to 60 days.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Alaska DMV',
+    steps: [
+      {
+        title: 'Plan for 10 days',
+        body: [
+          'Register within 10 days of starting work or taking action to establish residency in Alaska (AS 28.10.121).'
+        ]
+      },
+      {
+        title: 'Bring your out-of-state title',
+        body: [
+          'If the title is already in your name, you do not need to sign it. If a lender holds the title out of state, the DMV issues a registration only and waives the title and lien fees.'
+        ]
+      },
+      {
+        title: 'Complete Form V1',
+        body: [
+          'The Vehicle Transaction Application (Form V1) covers both the title and the registration.'
+        ]
+      },
+      {
+        title: 'Pay the title fees',
+        body: [
+          'The title is $15, and recording a lien for the first time is $15.'
+        ]
+      },
+      {
+        title: 'Pay the registration',
+        body: [
+          'Registration is $100 for two years ($60 for a motorcycle), plus any city or borough registration tax where you live; registering in person adds $10.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title, or current registration if a lender holds the title',
+      'Vehicle Transaction Application (Form V1)',
+      'Lender information, if any',
+      'Proof of insurance',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for a vehicle you already own. The calculator then shows the $15 title and the $100 two-year registration.',
+    faqs: [
+      {
+        question: 'Do I pay tax on the car I brought?',
+        answer: 'No state tax. Alaska has no statewide sales or use tax.'
+      },
+      {
+        question: 'Can I apply by mail?',
+        answer: 'Yes. Mail the documents and fees to DMV headquarters in Anchorage, payable to the State of Alaska; do not send cash.'
+      },
+      {
+        question: 'What insurance do I need?',
+        answer: 'At least $50,000 per person and $100,000 per accident for bodily injury and $25,000 for property damage.'
+      }
+    ],
+    sources: [AK_SOURCES.transfer, AK_SOURCES.registration, AK_SOURCES.mvrt]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-district-of-columbia',
+    stateKey: 'district-of-columbia',
+    title: 'How to Title a Private Car Sale in the District of Columbia',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in DC',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in DC: excise tax on the NADA fair market value by weight and MPG, the $30 title, inspection, and registration.',
+    cardDescription: 'Excise on NADA value, title, inspection, and fees.',
+    intro: [
+      'DC charges an excise tax on the vehicle’s fair market value when you title it, at a rate set by weight and city fuel economy. The value comes from the NADA Business Guide for the Eastern Region.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'DC DMV',
+    steps: [
+      {
+        title: 'Get the title and a bill of sale',
+        body: [
+          'The seller signs the title over to you with the odometer certification on the back. Get a bill of sale.'
+        ]
+      },
+      {
+        title: 'Have your DC credential and insurance',
+        body: [
+          'The primary owner must be a DC resident with a DC driver license or ID card, and you need proof of DC insurance showing your name, the VIN, and your DC address.'
+        ]
+      },
+      {
+        title: 'Know how the excise tax is figured',
+        body: [
+          'The DMV multiplies the NADA Eastern Region fair market value by a rate set by weight and EPA city MPG: for 3,499 lbs or less, 9.0% at 20 MPG or less, 5.0% at 21 to 25, 3.1% at 26 to 30, 2.2% at 31 to 39, 1.5% at 40 or more, and 1.0% for an electric vehicle. Heavier classes pay one or two points more. A trade-in does not reduce it.'
+        ]
+      },
+      {
+        title: 'Pass DC inspection',
+        body: [
+          'The vehicle must pass DC inspection before it is fully registered. If you need to drive it to inspection, the DMV issues a 45-day temporary registration once you pay the title fees and excise tax.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $30, plus $20 to record a lien. Registration is $70 a year for 3,499 lbs or less, $175 for 3,500 to 4,999 lbs, and $300 for 5,000 to 5,999 lbs. The $35 two-year inspection fee is collected with registration, and card payments add 2.5%.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over with the odometer certification',
+      'A bill of sale',
+      'Certificate of Title/Temporary Tag Application',
+      'Proof of DC insurance',
+      'Your DC driver license or ID card',
+      'The lien contract, if financed'
+    ],
+    calculatorNote:
+      'The calculator applies 5.0% (3,499 lbs or less, 21 to 25 city MPG) to the fair market value you enter and adds the $30 title and the registration for the weight class you pick ($70 or $175 a year).',
+    faqs: [
+      {
+        question: 'My car gets 35 MPG in the city. What rate applies?',
+        answer: '2.2% of the fair market value if it weighs 3,499 lbs or less, 3.2% from 3,500 to 4,999 lbs, and 4.2% at 5,000 lbs or more.'
+      },
+      {
+        question: 'Are electric vehicles taxed?',
+        answer: 'Yes, since February 17, 2025: 1.0%, 2.0%, or 3.0% by weight. A brand new battery electric vehicle under 5,000 lbs registers for $40 for its first two years.'
+      },
+      {
+        question: 'Does a trade-in lower the excise tax?',
+        answer: 'No. The tax is on the full fair market value.'
+      }
+    ],
+    sources: [DC_SOURCES.fees, DC_SOURCES.registrationFees, DC_SOURCES.titles, DC_SOURCES.register]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-district-of-columbia',
+    stateKey: 'district-of-columbia',
+    title: 'How to Gift a Car in the District of Columbia',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in DC',
+    metaDescription:
+      'How to gift a car in DC: no excise tax between spouses, domestic partners, or parent and child, but only for a vehicle already titled in DC. Other gifts pay excise on fair market value.',
+    cardDescription: 'Family exemptions, DC title rule, and fees.',
+    intro: [
+      'A gift between spouses, domestic partners, or a parent and child owes no DC excise tax, but only if the vehicle already has a DC title. Other gifts pay the excise tax on fair market value.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'DC DMV',
+    steps: [
+      {
+        title: 'Check who is giving the car',
+        body: [
+          'The exemption covers gifts between spouses, between domestic partners, and between a parent and child (D.C. Code 50-2201.03(j)(1)).'
+        ]
+      },
+      {
+        title: 'Check the title',
+        body: [
+          'The exemption applies only if the vehicle already has a DC title. A vehicle titled in another state pays the excise tax when it is titled in DC.'
+        ]
+      },
+      {
+        title: 'Prove a domestic partnership',
+        body: [
+          'Bring a Certificate of Domestic Partnership from the Department of Health, or show a relationship recognized under D.C. Code 32-702(i).'
+        ]
+      },
+      {
+        title: 'Sign the title over',
+        body: [
+          'The giver signs the back of the title as seller and you sign as buyer, with the odometer certification.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'The title is $30. Registration is $70 a year for 3,499 lbs or less or $175 for 3,500 to 4,999 lbs.'
+        ]
+      }
+    ],
+    checklist: [
+      'The DC title, signed by the giver',
+      'Proof of the relationship',
+      'Certificate of Title/Temporary Tag Application',
+      'Proof of DC insurance',
+      'Your DC driver license or ID card'
+    ],
+    calculatorNote:
+      'For an exempt family gift, enter $0 as the value; the calculator then shows no excise tax, the $30 title, and the registration. For any other gift, enter the fair market value.',
+    faqs: [
+      {
+        question: 'Is a gift from my grandparent exempt?',
+        answer: 'No. Only spouses, domestic partners, and parent and child are listed, so the excise tax is due on the fair market value.'
+      },
+      {
+        question: 'Is a car I receive in a divorce taxed?',
+        answer: 'No, if the new ownership is set by a divorce or separation decree, court order, or a written agreement signed by both people.'
+      },
+      {
+        question: 'What if a co-owner dies?',
+        answer: 'No excise tax is due when the title is issued to the surviving owner.'
+      }
+    ],
+    sources: [DC_SOURCES.exemptions, DC_SOURCES.fees, DC_SOURCES.titles]
+  },
+  {
+    slug: 'titling-a-car-in-district-of-columbia-after-moving-from-another-state',
+    stateKey: 'district-of-columbia',
+    title: 'Titling a Car in the District of Columbia After Moving From Another State',
+    shortTitle: 'Title a car after moving to DC',
+    metaTitle: 'Titling Your Car After Moving to DC',
+    metaDescription:
+      'New to DC? Register within 60 days, after getting a DC license. A vehicle you titled elsewhere before moving owes no excise tax. Then inspection, the $30 title, and registration.',
+    cardDescription: '60 days, no excise on your car, and inspection.',
+    intro: [
+      'New DC residents have 60 calendar days from the day they begin living in DC to register their vehicles. A vehicle you registered or titled in another state before moving owes no excise tax.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'DC DMV',
+    steps: [
+      {
+        title: 'Get your DC license first',
+        body: [
+          'Convert your out-of-state driver license to a DC license or ID card before you register.'
+        ]
+      },
+      {
+        title: 'Get your title to the DMV',
+        body: [
+          'DC DMV must receive the title. If a lender holds it, send the lienholder the DMV’s out-of-state title request form.'
+        ]
+      },
+      {
+        title: 'Pass DC inspection',
+        body: [
+          'All vehicles registered in DC need a DC inspection sticker. You can drive to inspection on your current out-of-state tags; with expired tags, get a temporary DC registration first.'
+        ]
+      },
+      {
+        title: 'Have DC insurance',
+        body: [
+          'Your proof of insurance must show your name, coverage dates, the VIN, and your DC address.'
+        ]
+      },
+      {
+        title: 'Pay the title and registration',
+        body: [
+          'No excise tax is due on a vehicle you owned before moving. The title is $30, and registration is $70 a year for 3,499 lbs or less or $175 for 3,500 to 4,999 lbs.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your DC driver license or ID card',
+      'Your out-of-state title, or the lienholder’s copy sent to DC DMV',
+      'A passed DC inspection',
+      'Proof of DC insurance',
+      'Payment for the title and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the value for a vehicle you owned before moving. The calculator then shows no excise tax, the $30 title, and the registration for the weight class you pick.',
+    faqs: [
+      {
+        question: 'I am a student. Do I have to register here?',
+        answer: 'Students, diplomats, active military members, part-time residents, members of Congress, and presidential appointees who keep their home registration apply for a reciprocity permit instead.'
+      },
+      {
+        question: 'If the car is not in my name yet, is it still exempt?',
+        answer: 'No. If the title is not already in your name, excise tax is due because it is a change of ownership.'
+      },
+      {
+        question: 'How much is the inspection?',
+        answer: 'The $35 two-year inspection fee for a private vehicle is collected with registration, not at the inspection station.'
+      }
+    ],
+    sources: [DC_SOURCES.register, DC_SOURCES.newResident, DC_SOURCES.exemptions]
   }
 ];
 

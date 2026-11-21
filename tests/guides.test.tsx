@@ -83,10 +83,13 @@ const GUIDE_STATES = {
   'rhode-island': { label: 'Rhode Island', agency: 'Rhode Island DMV and Division of Taxation', hosts: ['dmv.ri.gov', 'tax.ri.gov'] },
   montana: { label: 'Montana', agency: 'Montana Motor Vehicle Division', hosts: ['mvdmt.gov', 'mca.legmt.gov'] },
   delaware: { label: 'Delaware', agency: 'Delaware DMV', hosts: ['dmv.de.gov', 'delcode.delaware.gov', 'regulations.delaware.gov'] },
-  'south-dakota': { label: 'South Dakota', agency: 'South Dakota Department of Revenue', hosts: ['dor.sd.gov', 'sdlegislature.gov'] }
+  'south-dakota': { label: 'South Dakota', agency: 'South Dakota Department of Revenue', hosts: ['dor.sd.gov', 'sdlegislature.gov'] },
+  'north-dakota': { label: 'North Dakota', agency: 'North Dakota Department of Transportation', hosts: ['www.dot.nd.gov', 'ndlegis.gov'] },
+  alaska: { label: 'Alaska', agency: 'Alaska DMV', hosts: ['dmv.alaska.gov'] },
+  'district-of-columbia': { label: 'District of Columbia', agency: 'DC DMV', hosts: ['dmv.dc.gov'] }
 } as const;
 // Guides re-checked in November 2026 carry that date; the rest October 2026
-const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska', 'idaho', 'west-virginia', 'hawaii', 'new-hampshire', 'maine', 'rhode-island', 'montana', 'delaware', 'south-dakota'].includes(stateKey) ? 'November 2026' : 'October 2026');
+const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska', 'idaho', 'west-virginia', 'hawaii', 'new-hampshire', 'maine', 'rhode-island', 'montana', 'delaware', 'south-dakota', 'north-dakota', 'alaska', 'district-of-columbia'].includes(stateKey) ? 'November 2026' : 'October 2026');
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
   `how-to-gift-a-car-in-${state}`,
@@ -580,6 +583,41 @@ describe('Batch 16 guides (Montana, Delaware, South Dakota)', () => {
   });
 });
 
+describe('Batch 17 guides (North Dakota, Alaska, District of Columbia)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified North Dakota, Alaska, and District of Columbia key facts', () => {
+    const [ndSale, ndGift, ndMove] = topics('north-dakota').map(text);
+    for (const fact of ['5%', 'within 30 days of receiving it', '39-05-17', 'SFN 18609', '$5', '$93', '$81', '$69', '$57', '$120', '$50', 'prorated by month', '$25', '$10 motorcycle safety education fee', 'notarized statement']) expect(ndSale).toContain(fact);
+    for (const fact of ['grandparent and grandchild', 'brothers and sisters', 'NADA used car guide', 'estate', 'joint owners']) expect(ndGift).toContain(fact);
+    for (const fact of ['90 consecutive days', 'SFN 2872', 'within 30 days of purchase', '$1.50', 'Alaska, Delaware, Georgia, Montana, New Hampshire, and Oregon']) expect(ndMove).toContain(fact);
+
+    const [akSale, akGift, akMove] = topics('alaska').map(text);
+    for (const fact of ['no state sales tax', 'within 30 days', 'Form V1', '$15', '$100 for two years', '$60', 'expiration month', '$16 to $300', 'adds $10', '12,000 lbs']) expect(akSale).toContain(fact);
+    for (const fact of ['No state tax', 'senior exemption', 'not when the owner changes']) expect(akGift).toContain(fact);
+    for (const fact of ['within 10 days', 'up to 60 days', 'AS 28.10.121', 'registration only', '$25,000']) expect(akMove).toContain(fact);
+
+    const [dcSale, dcGift, dcMove] = topics('district-of-columbia').map(text);
+    for (const fact of ['NADA Business Guide for the Eastern Region', '9.0%', '5.0%', '1.0%', '45-day temporary registration', '$30', '$20', '$70', '$175', '$300', '$35 two-year inspection fee', '2.5%', '$40']) expect(dcSale).toContain(fact);
+    for (const fact of ['already has a DC title', 'domestic partners', 'Certificate of Domestic Partnership', 'divorce', 'surviving owner']) expect(dcGift).toContain(fact);
+    for (const fact of ['60 calendar days', 'owes no excise tax', 'reciprocity permit', 'out-of-state title request form', 'change of ownership']) expect(dcMove).toContain(fact);
+  });
+
+  it('calculator notes match the engine and the open rulings; settled North Dakota EV items are not reopened', () => {
+    expect(text('how-to-title-a-private-car-sale-in-north-dakota')).toContain('($93, $81, $69, or $57)');
+    expect(text('how-to-title-a-private-car-sale-in-alaska')).toContain('leaves out any local registration tax ($16 to $300 where levied)');
+    expect(text('how-to-title-a-private-car-sale-in-district-of-columbia')).toContain('applies 5.0% (3,499 lbs or less, 21 to 25 city MPG)');
+    for (const t of topics('north-dakota').map(text)) expect(t).not.toMatch(/trade-in (credit|deduction) on a private sale|plug-in hybrid motorcycle/i);
+    for (const t of topics('district-of-columbia').map(text)) expect(t).not.toMatch(/$26|$115|$72/);
+  });
+
+  it('batch 17 guides are dated November 2026; no em dashes', () => {
+    for (const state of ['north-dakota', 'alaska', 'district-of-columbia']) {
+      for (const guide of getGuidesForState(state)) expect(guide.lastVerified).toBe('November 2026');
+      for (const t of topics(state).map(text)) expect(t).not.toContain('—');
+    }
+  });
+});
+
 describe('Guide links and discovery', () => {
   // Renders every guide state's calculator page; slow under load, so it gets a longer timeout
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', { timeout: 60000 }, async () => {
@@ -623,6 +661,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('New Hampshire, Maine, Rhode Island, Montana, Delaware, and South Dakota.');
+    expect(String(metadata.description)).toContain('Montana, Delaware, South Dakota, North Dakota, Alaska, and District of Columbia.');
   });
 });

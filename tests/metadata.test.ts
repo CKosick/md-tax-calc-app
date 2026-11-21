@@ -90,7 +90,7 @@ describe('Metadata, SEO, Sitemap & Robots Validation', () => {
     const entries = sitemap();
 
     // 6 static pages + 51 state calculators + guides index + 129 guides (three each for 43 states)
-    expect(entries).toHaveLength(196);
+    expect(entries).toHaveLength(205);
 
     const urls = entries.map((e) => e.url);
     expect(urls).toContain('https://cartaxhub.com');
