@@ -397,7 +397,7 @@
     "exciseTaxRate": 0.05,
     "minExciseTax": null,
     "taxBase": "fairMarketValue",
-    "titleFee": 26,
+    "titleFee": 30,
     "lienFilingFee": 20,
     "tradeInDeductible": false,
     "registration": {
@@ -407,32 +407,37 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 72,
-          "2": 144
+          "1": 70,
+          "2": 140
         },
         "over3700lbs": {
-          "1": 115,
-          "2": 230
+          "1": 175,
+          "2": 350
         }
       },
       "motorcycle": {
         "1": 52,
         "2": 104
-      }
+      },
+      "passengerWeightSplitLbs": 3500
     },
     "notes": [
-      "DC excise tax is assessed on vehicle Fair Market Value (NADA Eastern Region) at rates from 1.0% to 11.0% based on weight and EPA city MPG under the 2025 Act.",
-      "Trade-ins on private-party sales do not reduce the DC Fair Market Value tax base."
+      "DC excise tax is a percentage of the vehicle's fair market value, as defined by the current NADA Business Guide for the Eastern Region (DMV; 18 DCMR 401.16), set by unladen weight and EPA city MPG under the Motor Excise Tax Amendment Act of 2024 (D.C. Code 50-2201.03), effective February 17, 2025.",
+      "Rates: 3,499 lbs or less, 9.0% at 20 MPG or less, 5.0% at 21 to 25, 3.1% at 26 to 30, 2.2% at 31 to 39, 1.5% at 40 or more, 1.0% electric; 3,500 to 4,999 lbs, 10.0%, 6.0%, 4.1%, 3.2%, 2.5%, 2.0%; 5,000 lbs or more, 11.0%, 7.0%, 5.1%, 4.2%, 3.5%, 3.0%. The estimate uses 5.0%.",
+      "Title $30; lien recordation $20 (DMV fee page).",
+      "Registration from March 30, 2026 (DMV): Class I (3,499 lbs or less) $70 a year, Class II (3,500 to 4,999 lbs) $175, Class III (5,000 to 5,999 lbs) $300; motorcycles $52. A brand new battery electric vehicle under 5,000 lbs pays $40 for its first two years of registration.",
+      "Trade-ins do not reduce the fair market value the tax is figured on."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with the DC DMV.",
-      "DC calculates vehicle excise tax based on Fair Market Value (NADA Eastern Region) and EPA city MPG tiers ranging from 1.0% to 11.0%. The baseline 5.0% tier is for a vehicle of 3,499 lbs or less with 21 to 25 city MPG.",
-      "District of Columbia taxes full Fair Market Value — private party trade-in values do not reduce excise tax."
+      "DC figures the excise tax on fair market value (NADA Eastern Region) at a rate set by weight and EPA city MPG, from 1.0% to 11.0%. The estimate uses 5.0%, the rate for a vehicle of 3,499 lbs or less with 21 to 25 city MPG. Households that received the DC Earned Income Tax Credit may elect the weight-only rates (6%, 7%, 8%).",
+      "District of Columbia taxes full Fair Market Value; private party trade-in values do not reduce excise tax.",
+      "DC collects the $35 two-year inspection fee with registration, and a brand new battery electric vehicle pays a $40 registration for its first two years. Neither is in the estimate. Card payments add a 2.5% service fee."
     ],
     "faqs": [
       {
         "question": "How is vehicle excise tax calculated in Washington DC?",
-        "answer": "Under DC DMV regulations and the 2025 Motor Excise Tax Amendment Act, excise tax is calculated by multiplying the vehicle's Fair Market Value (NADA Eastern Region Guide) by a percentage determined by unladen weight and EPA city MPG (ranging from 1.0% to 11.0%). Standard passenger vehicles generally fall into the 3.1% to 6.0% range (5.0% average baseline)."
+        "answer": "Under D.C. Code 50-2201.03 and the Motor Excise Tax Amendment Act of 2024, the DMV multiplies the vehicle's fair market value (the current NADA Business Guide for the Eastern Region) by a rate set by unladen weight and EPA city MPG. For 3,499 lbs or less the rates run from 9.0% at 20 MPG or less to 1.5% at 40 MPG or more, and 1.0% for an electric vehicle; heavier classes pay one or two points more."
       },
       {
         "question": "Does a trade-in reduce vehicle excise tax in DC?",
@@ -440,31 +445,34 @@
       },
       {
         "question": "How much is a title certificate in the District of Columbia?",
-        "answer": "The DC DMV certificate of title fee is $26.00. If the vehicle is financed, a $20.00 lien recordation fee applies."
+        "answer": "The DC DMV title fee is $30.00. If the vehicle is financed, a $20.00 lien recordation fee applies."
       },
       {
         "question": "How much are vehicle registration fees in DC?",
-        "answer": "DC vehicle registration is weight-based: Class I (3,499 lbs or less) is $72.00 per year ($144.00 for 2 years); Class II (3,500 lbs and over) is $115.00 per year ($230.00 for 2 years). Motorcycle registration is $52.00 per year ($104.00 for 2 years)."
+        "answer": "From March 30, 2026, DC registration is weight-based: Class I (3,499 lbs or less) is $70.00 a year, Class II (3,500 to 4,999 lbs) is $175.00, and Class III (5,000 to 5,999 lbs) is $300.00. Motorcycle registration is $52.00 a year."
       },
       {
         "question": "Do I pay District of Columbia vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into District of Columbia, the state generally assesses its applicable vehicle sales or use tax (5.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the District of Columbia motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. When you title a vehicle in DC that is not already in your name, you owe the excise tax on its fair market value, since it is a change of ownership (DMV). The DMV's exemption list includes no credit for tax paid to another state on a vehicle bought as a DC resident. An out-of-state buyer of a used vehicle from a DC owner can get a five-day temporary tag."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in District of Columbia?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the District of Columbia DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A gift between spouses, between domestic partners, or between a parent and child is exempt, but only if the vehicle already has a DC title (D.C. Code 50-2201.03(j)(1); DMV exemption list). Other family transfers pay the excise tax on fair market value. A transfer to a surviving co-owner or under a divorce decree or agreement is also exempt."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in District of Columbia?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond District of Columbia's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the District of Columbia motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "All vehicles housed and operated in DC must be registered there. If you move to DC, you have 60 calendar days from the date you begin living there to register, after converting to a DC license or ID. If the vehicle must be inspected first, the DMV issues a 45-day temporary registration once you pay the title fees and excise tax."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://dmv.dc.gov/service/vehicle-excise-tax",
-      "https://dmv.dc.gov/service/vehicle-registration-fees",
-      "https://dmv.dc.gov/node/155452",
-      "https://dmv.dc.gov/book/dmv-fees/vehicle-title-and-excise-tax-fees"
+      "https://dmv.dc.gov/book/dmv-fees/vehicle-title-and-excise-tax-fees",
+      "https://dmv.dc.gov/book/dmv-fees/vehicle-registration-fees",
+      "https://dmv.dc.gov/sites/default/files/dc/sites/dmv/publication/attachments/Amended_Excise_Tax_Exemption_Categories_2.5.25.pdf",
+      "https://dmv.dc.gov/service/registration-new-or-used-vehicle",
+      "https://dmv.dc.gov/service/vehicle-registration-and-inspection",
+      "https://dmv.dc.gov/book/dmv-fees/dmv-fees-3",
+      "https://code.dccouncil.gov/us/dc/council/code/sections/50-2201.03"
     ]
   },
   "california": {
@@ -6306,14 +6314,14 @@
       ],
       "passenger": {
         "under3700lbs": {
-          "1": 81
+          "1": 57
         },
         "over3700lbs": {
-          "1": 81
+          "1": 57
         }
       },
       "motorcycle": {
-        "1": 20
+        "1": 25
       },
       "evSurchargeAnnual": 120,
       "phevSurchargeAnnual": 50,
@@ -6325,25 +6333,51 @@
         "phev": {
           "outcome": "silent"
         }
+      },
+      "feesByRegistrationYear": {
+        "passenger": [
+          {
+            "maxYear": 6,
+            "fee": 93
+          },
+          {
+            "maxYear": 9,
+            "fee": 81
+          },
+          {
+            "maxYear": 12,
+            "fee": 69
+          },
+          {
+            "fee": 57
+          }
+        ],
+        "motorcycle": [
+          {
+            "fee": 25
+          }
+        ]
       }
     },
     "localTaxNote": "North Dakota's 5% Motor Vehicle Excise Tax is a uniform state levy in lieu of local sales taxes; no city or county taxes apply to vehicle purchases.",
     "notes": [
-      "North Dakota imposes a 5.0% Motor Vehicle Excise Tax under N.D.C.C. § 57-40.3-02.",
-      "Certificate of title fee is $5.00 under N.D.C.C. § 39-05-05.",
-      "Annual registration fee is weight- and age-based under N.D.C.C. § 39-04-19 ($81.00 for a 7-year-old vehicle in the 3,200–4,499 lb class).",
-      "Trade-in deduction is restricted to transactions involving licensed dealers; private party purchases pay tax on the full purchase price.",
-      "Electric vehicles pay an additional $120 annual road use fee ($50 for plug-in hybrids)."
+      "North Dakota imposes a 5% motor vehicle excise tax on the purchase price (N.D.C.C. 57-40.3-02), paid to the Motor Vehicle Division when applying for title.",
+      "Certificate of title fee $5 (N.D.C.C. 39-05-05). A vehicle titled in North Dakota for the first time also pays a $1.50 abandoned motor vehicle disposal fee (NDDOT registration manual; not charged on motorcycles).",
+      "Passenger registration (N.D.C.C. 39-04-19(2)(a); NDDOT 2026 fee schedule) is by weight and the year the vehicle was first registered, not its model year. For 3,200 to 4,499 lbs: $93 in years 1 to 6, $81 in years 7 to 9, $69 in years 10 to 12, and $57 after that. The estimate uses this class and counts the model year as the first year registered.",
+      "Motorcycle registration $25: the $15 fee (39-04-19(2)(c)) plus the $10 motorcycle safety education fee (N.D.C.C. 39-28-01). An electric motorcycle adds a $20 road use fee (39-04-19.2(1)(c)).",
+      "Electric vehicles pay an additional $120 road use fee each year and plug-in hybrids $50 (N.D.C.C. 39-04-19.2).",
+      "Gifts between a husband and wife, parent and child, grandparent and grandchild, or brothers and sisters are exempt (57-40.3-04(5)(c)). Other gifts are taxed on the average value in the NADA used car guide (57-40.3-01; NDDOT manual)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with North Dakota Department of Transportation (NDDOT).",
-      "North Dakota charges a 5% Motor Vehicle Excise Tax statewide. Trade-in deductions are limited to dealer sales.",
-      "An electric motorcycle pays a $20 road use fee each year in place of the $120 electric vehicle fee (N.D.C.C. 39-04-19.2), as the NDDOT confirmed in writing on November 9, 2026. The sources do not say whether the $50 plug-in hybrid fee applies to motorcycles, so the estimate leaves it out for a motorcycle."
+      "North Dakota charges a 5% motor vehicle excise tax statewide. Trade-in deductions are limited to dealer sales.",
+      "An electric motorcycle pays a $20 road use fee each year in place of the $120 electric vehicle fee (N.D.C.C. 39-04-19.2), as the NDDOT confirmed in writing on November 9, 2026. The sources do not say whether the $50 plug-in hybrid fee applies to motorcycles, so the estimate leaves it out for a motorcycle.",
+      "Registration depends on weight and the year first registered. The estimate uses the 3,200 to 4,499 lb class ($93, $81, $69, or $57); lighter cars pay less ($73 to $49) and heavier ones more. A vehicle first registered partway through the year pays a monthly prorated fee (N.D.C.C. 39-04-21)."
     ],
     "faqs": [
       {
         "question": "What is the sales tax on a private car purchase in North Dakota?",
-        "answer": "North Dakota levies a 5.0% Motor Vehicle Excise Tax on the purchase price of vehicles under N.D.C.C. § 57-40.3-02, paid to NDDOT when registering the vehicle."
+        "answer": "North Dakota levies a 5% motor vehicle excise tax on the purchase price under N.D.C.C. 57-40.3-02, paid to the NDDOT Motor Vehicle Division when you apply for the title."
       },
       {
         "question": "Can I deduct my trade-in on a private vehicle purchase in North Dakota?",
@@ -6351,30 +6385,34 @@
       },
       {
         "question": "How much is a title transfer in North Dakota?",
-        "answer": "The certificate of title fee in North Dakota is $5.00 under N.D.C.C. § 39-05-05, one of the lowest in the nation."
+        "answer": "The certificate of title fee is $5.00 under N.D.C.C. 39-05-05. A vehicle being titled in North Dakota for the first time also pays a $1.50 abandoned motor vehicle disposal fee."
       },
       {
         "question": "How are North Dakota registration fees calculated?",
-        "answer": "Under N.D.C.C. § 39-04-19, registration fees depend on the vehicle's unladen weight and age. For a passenger vehicle weighing between 3,200 and 4,499 lbs in its 7th year, annual registration is $81.00."
+        "answer": "Under N.D.C.C. 39-04-19, passenger registration depends on weight and the year the vehicle was first registered. For 3,200 to 4,499 lbs it is $93 a year in years 1 to 6, $81 in years 7 to 9, $69 in years 10 to 12, and $57 after that. A motorcycle is $25, including the $10 safety education fee."
       },
       {
         "question": "Do I pay North Dakota vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into North Dakota, the state generally assesses its applicable vehicle sales or use tax (5.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the North Dakota motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. The 5% excise tax applies to a vehicle bought outside North Dakota for use here (57-40.3-02). Tax paid to another state is credited, and if it was 5% or more no North Dakota tax is due, but only if that state gives a similar credit for North Dakota's tax (57-40.3-09). The NDDOT lists no reciprocity for Alaska, Delaware, Georgia, Montana, New Hampshire, and Oregon. Bring proof of the tax paid."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in North Dakota?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the North Dakota DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A gift between a husband and wife, parent and child, grandparent and grandchild, or brothers and sisters is exempt from the 5% excise tax (N.D.C.C. 57-40.3-04). A gift to anyone else is taxed on the average value of similar vehicles in the NADA used car guide."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in North Dakota?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond North Dakota's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the North Dakota motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "The seller must give you the signed title within 30 days of the sale, and you must take it to the NDDOT with the $5 transfer fee and apply for a new title within 30 days of receiving it (N.D.C.C. 39-05-17). Otherwise the registration may be suspended or revoked."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://www.dot.nd.gov",
+      "https://www.dot.nd.gov/motor-vehicle/what-to-bring",
+      "https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services/registration-manual.pdf",
+      "https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services/mvd-2-passenger-fee-2026.pdf",
+      "https://ndlegis.gov/cencode/t57c40-3.pdf",
       "https://ndlegis.gov/cencode/t39c04.pdf",
-      "https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services/mvd-2-passenger-fee-2026.pdf"
+      "https://ndlegis.gov/cencode/t39c05.pdf",
+      "https://ndlegis.gov/cencode/t39c28.pdf"
     ]
   },
   "alaska": {
@@ -6402,18 +6440,18 @@
       },
       "evSurchargeAnnual": 0
     },
-    "localTaxNote": "Alaska has no statewide sales tax. However, local boroughs and municipalities may levy local sales tax (up to 7.5%) or a biennial Motor Vehicle Registration Tax (MVRT) under AS 28.10.431 ranging from $19 to $150.",
+    "localTaxNote": "Alaska has no statewide sales tax. However, local boroughs and municipalities may levy local sales tax (up to 7.5%). Some also levy a biennial motor vehicle registration tax under AS 28.10.431, collected by the DMV with the registration: on the state's 2026 chart it runs from $16 to $300 for a noncommercial car, pickup, or van, by location and model year (motorcycles $4 to $40). It is not included in the estimate.",
     "notes": [
       "Alaska does not impose a statewide sales or use tax on motor vehicle sales.",
-      "Certificate of title fee is $15.00 under AS 28.10.421.",
-      "Passenger vehicles are registered biennially (every 2 years) for $100.00 ($50/year equivalent).",
-      "Many boroughs (Anchorage, Mat-Su, Kenai Peninsula) levy an age-based local Motor Vehicle Registration Tax (MVRT).",
-      "Seniors age 65 or older may be exempt from the state registration fee for one vehicle."
+      "Title $15 and lien recording $15 (AS 28.10.441; DMV).",
+      "Passenger vehicles, pickups, and vans register every two years for $100, and motorcycles for $60 (AS 28.10.421(b)). Registration done in person at a DMV office adds $10 (AS 28.10.421(a)(2)).",
+      "A registered vehicle keeps its biennial expiration date when it changes owners (AS 28.10.108(d)). The motor vehicle registration tax is collected only when a registration is issued or renewed, not again on a change of owner during the period (DMV 2026 chart notes).",
+      "Seniors age 65 or older may be exempt from registration fees and taxes for one vehicle; the exemption does not pass to a buyer (DMV)."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Alaska DMV and your local municipality/borough.",
-      "Alaska has 0% state sales tax, but local borough sales taxes or registration taxes (MVRT) may apply.",
-      "Standard registration fee covers a 2-year biennial registration period."
+      "Alaska has 0% state sales tax, but local borough sales taxes or the municipal motor vehicle registration tax may apply. The registration tax runs from $16 to $300 for two years where it is levied (2026 DMV chart) and is not in the estimate.",
+      "The estimate shows the full $100 two-year registration ($60 for a motorcycle). A vehicle keeps its expiration month after a sale, so what you pay at transfer may differ. An in-person transaction adds $10."
     ],
     "faqs": [
       {
@@ -6422,33 +6460,38 @@
       },
       {
         "question": "How much does it cost to title and register a car in Alaska?",
-        "answer": "The certificate of title fee is $15.00 under AS 28.10.421. Standard passenger vehicle registration is $100.00, which covers a two-year biennial registration cycle."
+        "answer": "The certificate of title fee is $15 and recording a lien is $15 (AS 28.10.441). Passenger vehicle registration is $100 for a two-year period, or $60 for a motorcycle (AS 28.10.421); registering in person at a DMV office adds $10."
       },
       {
         "question": "What is the Alaska Motor Vehicle Registration Tax (MVRT)?",
-        "answer": "Under AS 28.10.431, boroughs such as Anchorage and Fairbanks levy an optional local Motor Vehicle Registration Tax (MVRT) based on vehicle age, collected biennially alongside state registration fees."
+        "answer": "Under AS 28.10.431, a municipality or borough can levy a motor vehicle registration tax based on the vehicle's age, collected by the DMV with the two-year registration. Areas on the 2026 DMV chart include Anchorage, the Mat-Su and Kenai Peninsula boroughs, Kodiak, Juneau, Ketchikan, and Bethel; the tax for a noncommercial car runs from $16 to $300. It is not collected again when a vehicle changes owners during the registration period."
       },
       {
         "question": "Can senior citizens get exempt from registration fees in Alaska?",
-        "answer": "Yes. Alaska residents aged 65 and older may receive an exemption from the state registration fee for one personal passenger vehicle."
+        "answer": "Yes. An Alaska resident 65 or older may be exempt from fees and taxes when registering one passenger vehicle, motorhome, van, pickup, motorcycle, or trailer titled in their name. If the vehicle is sold, the new owner pays the full registration fees."
       },
       {
         "question": "Do I pay Alaska vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "Because Alaska does not levy a statewide vehicle sales or excise tax on private-party transactions, you will not owe state sales tax when titling an out-of-state private purchase in Alaska. Standard certificate of title fees and registration tag fees still apply upon titling."
+        "answer": "No state tax. Alaska has no statewide sales or use tax, so a vehicle bought from an out-of-state private seller owes no state tax. You title it in Alaska within 30 days ($15) and pay the registration and any municipal registration tax where you live."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Alaska?",
-        "answer": "In Alaska, private vehicle transfers are not subject to a statewide vehicle sales tax. When transferring title between family members, you only pay standard title transfer fees and registration charges."
+        "answer": "Alaska has no statewide sales tax, so a family transfer owes no state tax. You pay the $15 title fee and the registration fees. A senior's registration exemption does not pass to the new owner."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Alaska?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Alaska's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Alaska motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Within 30 days of the sale, apply for a title in your name (AS 28.10.321; DMV). If you move to Alaska or start working here, register your vehicle within 10 days; a nonresident may drive on a valid out-of-state registration for up to 60 days (AS 28.10.121)."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://dmv.alaska.gov",
-      "https://dmv.alaska.gov/media/lknb3cwi/2026-mvrt-by-location.pdf"
+      "https://dmv.alaska.gov/vehicle-services/general-vehicle-registration/",
+      "https://dmv.alaska.gov/vehicle-services/titles/",
+      "https://dmv.alaska.gov/vehicle-services/new-vehicle/",
+      "https://dmv.alaska.gov/vehicle-services/transfer-my-vehicle-from-another-state/",
+      "https://dmv.alaska.gov/vehicle-services/registration-for-seniors/",
+      "https://dmv.alaska.gov/media/lknb3cwi/2026-mvrt-by-location.pdf",
+      "https://www.akleg.gov/statutesPDF/Title-28.pdf"
     ]
   },
   "vermont": {

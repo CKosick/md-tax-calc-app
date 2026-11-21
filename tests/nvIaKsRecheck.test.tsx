@@ -143,7 +143,7 @@ describe('Kansas re-check and rulings (November 2026)', () => {
 describe('Source link status after batch 12', () => {
   it('no hidden or homepage-only links remain for the three states, and each has a repair note', () => {
     for (const state of ['nevada', 'iowa', 'kansas']) {
-      expect(sourceLinkStatus.hidden.some((h) => h.state === state)).toBe(false);
+      expect((sourceLinkStatus.hidden as { state: string; url: string; finding: string }[]).some((h) => h.state === state)).toBe(false);
       expect(sourceLinkStatus.homepageOnly.some((h) => h.state === state)).toBe(false);
       expect(sourceLinkStatus.repaired.some((r) => r.state === state && r.on === '2026-11-13')).toBe(true);
     }

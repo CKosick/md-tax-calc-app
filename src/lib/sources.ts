@@ -2,7 +2,7 @@ import sourceLinkStatus from '@/config/sourceLinkStatus.json';
 import { StateRule } from './types';
 
 /** Source URLs confirmed dead or unreachable in the last link check (see sourceLinkStatus.json). */
-const HIDDEN_SOURCES = new Set(sourceLinkStatus.hidden.map((entry) => entry.url));
+const HIDDEN_SOURCES = new Set((sourceLinkStatus.hidden as { state: string; url: string; finding: string }[]).map((entry) => entry.url));
 
 export interface SourceLink {
   url: string;
@@ -50,7 +50,8 @@ const STATUTE_LABELS: { host: RegExp; label: (url: URL) => string | undefined }[
   { host: /(^|\.)nebraskalegislature\.gov$/, label: (u) => cite(u.searchParams.get('statute'), /^([\d-]+,[\d,]+)$/, (m) => `Neb. Rev. Stat. ${m[1]}`) },
   { host: /^ksrevisor\.gov$/, label: (u) => cite(u.pathname, /\/ch(\d+)\/\d+_0*(\d+)_0*(\d+)\.html$/i, (m) => `K.S.A. ${Number(m[1])}-${m[2]}${m[3].padStart(2, '0')}`) },
   { host: /(^|\.)nmlegis\.gov$/, label: (u) => cite(u.pathname, /\/final\/SB0*(\d+)\.pdf$/i, (m) => `N.M. Laws 2026, SB ${m[1]}`) },
-  { host: /^ndlegis\.gov$/, label: (u) => cite(u.pathname, /\/t(\d+)c0*(\d+)\.pdf$/i, (m) => `N.D.C.C. Chapter ${m[1]}-${m[2].padStart(2, '0')}`) },
+  { host: /^ndlegis\.gov$/, label: (u) => cite(u.pathname, /\/t(\d+)c0*(\d+)(?:-(\d+))?\.pdf$/i, (m) => `N.D.C.C. Chapter ${m[1]}-${m[2].padStart(2, '0')}${m[3] ? `.${m[3]}` : ''}`) },
+  { host: /^code\.dccouncil\.gov$/, label: (u) => cite(u.pathname, /\/sections\/([\d.-]+)$/, (m) => `D.C. Code ${m[1]}`) },
   { host: /^legislature\.maine\.gov$/, label: (u) => cite(u.pathname, /title(\d+(?:-[A-Z])?)sec(\d+)\.html$/i, (m) => `${m[1]} M.R.S. ${m[2]}`) },
   { host: /^(www\.)?gc\.nh\.gov$/, label: (u) => cite(u.pathname, /\/(\d+[A-Z]?)-(\d+(?:-[a-z])?)\.htm$/i, (m) => `RSA ${m[1]}:${m[2]}`) },
   { host: /^law\.lis\.virginia\.gov$/, label: (u) => cite(u.pathname, /section([\d.:-]+)\/?$/i, (m) => `Va. Code ${m[1]}`) },

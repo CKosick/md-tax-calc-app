@@ -133,7 +133,7 @@ describe('South Dakota re-check and rulings (November 2026)', () => {
 describe('Sources after batch 16', () => {
   it('no hidden or homepage-only links remain for the three states, and each has a repair note', () => {
     for (const [key, rule] of [['montana', mt], ['delaware', de], ['south-dakota', sd]] as const) {
-      expect(sourceLinkStatus.hidden.some((h) => h.state === key)).toBe(false);
+      expect((sourceLinkStatus.hidden as { state: string; url: string; finding: string }[]).some((h) => h.state === key)).toBe(false);
       expect(sourceLinkStatus.homepageOnly.some((h) => h.state === key)).toBe(false);
       expect(sourceLinkStatus.repaired.some((r) => r.state === key && r.on === '2026-11-19')).toBe(true);
       expect(getVisibleSources(rule)).toHaveLength(rule.sources.length);

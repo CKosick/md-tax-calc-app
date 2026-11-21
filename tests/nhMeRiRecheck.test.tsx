@@ -102,7 +102,7 @@ describe('Rhode Island re-check (November 2026)', () => {
 describe('Sources after batch 15', () => {
   it('no hidden or homepage-only links remain for the three states, and each has a repair note', () => {
     for (const [key, rule] of [['new-hampshire', nh], ['maine', me], ['rhode-island', ri]] as const) {
-      expect(sourceLinkStatus.hidden.some((h) => h.state === key)).toBe(false);
+      expect((sourceLinkStatus.hidden as { state: string; url: string; finding: string }[]).some((h) => h.state === key)).toBe(false);
       expect(sourceLinkStatus.homepageOnly.some((h) => h.state === key)).toBe(false);
       expect(sourceLinkStatus.repaired.some((r) => r.state === key && r.on === '2026-11-18')).toBe(true);
       expect(getVisibleSources(rule)).toHaveLength(rule.sources.length);

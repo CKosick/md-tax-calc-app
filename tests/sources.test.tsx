@@ -10,7 +10,7 @@ import sourceLinkStatus from '../src/config/sourceLinkStatus.json';
 import { StateRule, StateRulesConfig } from '../src/lib/types';
 
 const rules = stateRulesData as StateRulesConfig;
-const hidden = new Set(sourceLinkStatus.hidden.map((h) => h.url));
+const hidden = new Set((sourceLinkStatus.hidden as { state: string; url: string; finding: string }[]).map((h) => h.url));
 
 afterEach(() => cleanup());
 
@@ -46,11 +46,11 @@ describe('Per-state last verified dates', () => {
 
 describe('Known-dead source links are hidden', () => {
   it('every hidden entry matches a real state source, and Maryland has none hidden', () => {
-    for (const entry of sourceLinkStatus.hidden) {
+    for (const entry of (sourceLinkStatus.hidden as { state: string; url: string; finding: string }[])) {
       expect(rules[entry.state]?.sources).toContain(entry.url);
       expect(entry.finding.length).toBeGreaterThan(0);
     }
-    expect(sourceLinkStatus.hidden.some((h) => h.state === 'maryland')).toBe(false);
+    expect((sourceLinkStatus.hidden as { state: string; url: string; finding: string }[]).some((h) => h.state === 'maryland')).toBe(false);
   });
 
   it('getVisibleSources drops hidden links and keeps the rest in order', () => {
@@ -74,9 +74,8 @@ describe('Known-dead source links are hidden', () => {
   });
 
   it('a state with only dead links shows a plain "being updated" note and no links', () => {
-    // No real state is left in this situation, so hide Louisiana's links for the test
-    const deadUrl = sourceLinkStatus.hidden[0].url;
-    const rule = { ...(rules.louisiana as StateRule), lastVerified: 'September 2026', sources: [deadUrl] };
+    // No real state is left in this situation (and no link is hidden since batch 17), so give Louisiana no links for the test
+    const rule = { ...(rules.louisiana as StateRule), lastVerified: 'September 2026', sources: [] };
     const breakdown = calculateVehicleCosts(rule, getDefaultInputs(rule, 2026), 2026);
     const { container } = render(<CostSummaryCard breakdown={breakdown} rule={rule} purchasePrice={15000} />);
     expect(container.querySelectorAll('#state-sources a')).toHaveLength(0);

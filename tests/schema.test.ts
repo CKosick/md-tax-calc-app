@@ -183,7 +183,7 @@ describe('State Rules Schema & Config Validation', () => {
     const dc = allRules['district-of-columbia'];
     expect(dc.label).toBe('District of Columbia');
     expect(dc.exciseTaxRate).toBe(0.05);
-    expect(dc.titleFee).toBe(26);
+    expect(dc.titleFee).toBe(30);
     expect(dc.lienFilingFee).toBe(20);
     expect(dc.taxBase).toBe('fairMarketValue');
   });

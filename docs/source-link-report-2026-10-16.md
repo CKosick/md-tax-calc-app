@@ -6,11 +6,11 @@ Every state source URL in `src/config/stateRules.json` was checked. This report 
 
 ## Summary
 
-- Source links configured now: 324 across 51 jurisdictions
-- Hidden on the site (dead or unreachable): 2
-- Working but only an agency homepage, not a specific page: 5
+- Source links configured now: 336 across 51 jurisdictions
+- Hidden on the site (dead or unreachable): 0
+- Working but only an agency homepage, not a specific page: 3
 - States showing no source link ("Official source links ... are being updated"): 0
-- States with some links hidden: 1
+- States with some links hidden: 0
 - States re-verified since the check: Alabama (November 2026), Arizona (October 2026), Arkansas (October 2026), California (October 2026), Colorado (November 2026), Connecticut (October 2026), Delaware (November 2026), Florida (October 2026), Georgia (October 2026), Hawaii (November 2026), Idaho (November 2026), Illinois (October 2026), Indiana (October 2026), Iowa (November 2026), Kansas (November 2026), Kentucky (November 2026), Louisiana (October 2026), Maine (November 2026), Maryland (October 2026), Massachusetts (October 2026), Michigan (October 2026), Minnesota (October 2026), Mississippi (November 2026), Missouri (October 2026), Montana (November 2026), Nebraska (November 2026), Nevada (November 2026), New Hampshire (November 2026), New Jersey (October 2026), New Mexico (November 2026), New York (October 2026), North Carolina (October 2026), Ohio (October 2026), Oklahoma (October 2026), Oregon (November 2026), Pennsylvania (October 2026), Rhode Island (November 2026), South Carolina (October 2026), South Dakota (November 2026), Tennessee (October 2026), Texas (October 2026), Utah (October 2026), Virginia (October 2026), Washington (October 2026), West Virginia (November 2026), Wisconsin (October 2026)
 
 All other states keep their September 2026 verified date until their rates are re-checked in a repair batch.
@@ -65,6 +65,9 @@ All other states keep their September 2026 verified date until their rates are r
 | Delaware | 2026-11-19 | Dead DMV title fee link (the page now says the content does not exist) replaced with the DMV fee, title transfer, vehicle credit, and out-of-state purchase pages, 21 Del. C. ch. 21 subch. IV (2151 and 2151A), and 2 Del. Admin. Code 2266; 5.25% document fee on the price or NADA average trade-in value with an $8 minimum, $35 title, $20 lien, and $40 and $15 registration confirmed; EV +$110 and plug-in hybrid +$85 a year added (2151A, from October 1, 2025), electric and hybrid motorcycles +$15; gift, trade-in, deadline, and out-of-state answers stated. Ruling 2026-11-20: flat 5.25% kept per the DMV; the statutory step schedule is recorded in the research notes; verified date moved to November 2026. |
 | Montana | 2026-11-19 | MVD homepage replaced with the MVD light vehicle and motorcycle fee pages, the new vehicle and buying tips pages, and MCA 61-3-321, 61-3-562, 61-3-203, and 61-3-111; registration now by age ($217, $87, or $28 plus the $10 Highway Patrol fee and $12 plate fee), motorcycle $53 -> $91.25 (one-time fee, safety, Highway Patrol, and plate fees); luxury fee cited to 61-3-321(2)(b) (61-3-315 was repealed in 2019); $70 plug-in hybrid fee confirmed; deadline, permanent registration, and out-of-state answers stated. Ruling applied 2026-11-20: 3% administrative fee (MCA 61-3-111) included in every MVD fee: title ($12.36), lien ($8.24), registration ($246.17, $112.27, $51.50), motorcycle ($93.99), and EV fees ($133.90, $72.10); verified date moved to November 2026. |
 | South Dakota | 2026-11-19 | DOR motor vehicle landing page replaced with the DOR title, fees and registration page and its non-commercial and motorcycle fee schedules, plus SDCL 32-5B-1, 32-5B-2, 32-5B-4, 32-5B-11, 32-5-6, and 32-5-30; 4% excise, private trade-in credit, $10 title and lien, and $100 EV fee confirmed; registration $42 -> $72 to 4,000 lbs and $108 from 4,001 to 6,000 lbs (32-5-6); exemption cited to 32-5B-2(12); gift, deadline, and out-of-state answers stated. Rulings applied 2026-11-20: 70% registration at 10 or more model years old (32-5-30), motorcycle $21, $4 in DOR fees added, no excise tax at 11 or more model years old and $2,500 or less (32-5B-2(12)); verified date moved to November 2026. |
+| North Dakota | 2026-11-20 | NDDOT homepage replaced with the NDDOT what-to-bring page and registration manual, the 2026 passenger fee schedule, and N.D.C.C. chapters 57-40.3, 39-04, 39-05, and 39-28; 5% excise, $5 title, and EV $120, plug-in hybrid $50, and electric motorcycle $20 fees confirmed; registration now by year first registered ($93, $81, $69, $57 for 3,200 to 4,499 lbs) instead of a flat $81; motorcycle $20 -> $25 ($15 fee plus $10 safety education fee); gift, credit, and deadline answers stated. |
+| Alaska | 2026-11-20 | DMV homepage replaced with the DMV registration, title, new vehicle, out-of-state transfer, and senior pages and AS Title 28; $100 two-year registration, $60 motorcycle, $15 title, and $15 lien confirmed; municipal registration tax disclosed with the 2026 chart range ($16 to $300 for a noncommercial car); deadline, nonresident, and senior answers stated. |
+| District of Columbia | 2026-11-20 | Dead DMV excise tax and registration fee links replaced with the DMV fee pages, exemption list, registration and inspection pages, and D.C. Code 50-2201.03; NADA Eastern Region wording kept; title $26 -> $30; registration $72/$115 -> $70/$175 (rates from March 30, 2026), weight split at 3,500 lbs; excise rate table by weight and MPG stated; gift exemptions, new resident 60 days, and temporary registration answers stated. |
 
 ## Priority: states with no working source link
 
@@ -74,15 +77,11 @@ All other states keep their September 2026 verified date until their rates are r
 
 | State | URL | What the browser showed |
 |---|---|---|
-| District of Columbia | https://dmv.dc.gov/service/vehicle-excise-tax | Page not found |
-| District of Columbia | https://dmv.dc.gov/service/vehicle-registration-fees | Page not found |
 
 ## Working, but homepage only (replace with a specific page when convenient)
 
 | State | URL | Note |
 |---|---|---|
-| Alaska | https://dmv.alaska.gov | Agency homepage |
-| North Dakota | https://www.dot.nd.gov | Agency homepage |
 | Vermont | https://dmv.vermont.gov | Agency homepage |
 | Wyoming | https://revenue.wyo.gov | Agency homepage |
 | Wyoming | https://www.dot.state.wy.us | Agency homepage |

@@ -158,9 +158,9 @@ describe('Phase 2 Mid-Atlantic 5-State Worked Acceptance Tests', () => {
   it('District of Columbia: exact worked test ($15,000 -> $920.00)', () => {
     const result = calculateVehicleCosts(dcRule, { ...standardVehicle, state: 'district-of-columbia' }, 2026);
     expect(result.exciseTax).toBe(750.00); // 5.0% baseline FMV
-    expect(result.titleFee).toBe(26.00);
+    expect(result.titleFee).toBe(30.00); // DMV fee page
     expect(result.lienFilingFee).toBe(0.00);
-    expect(result.registrationTotal).toBe(144.00); // 2-year Class I $72/yr
+    expect(result.registrationTotal).toBe(140.00); // 2-year Class I $70/yr (from March 30, 2026)
     expect(result.totalFirstYearCost).toBe(920.00);
   });
 

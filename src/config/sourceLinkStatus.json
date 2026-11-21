@@ -1,29 +1,8 @@
 {
   "checkedOn": "2026-10-16",
   "method": "Each state source URL was requested with curl, then every non-200 or suspect result was opened in a real browser and judged by the page shown (403s and timeouts from scripts are often bot blocking, so they were not treated as dead without a browser check).",
-  "hidden": [
-    {
-      "state": "district-of-columbia",
-      "url": "https://dmv.dc.gov/service/vehicle-excise-tax",
-      "finding": "Page not found"
-    },
-    {
-      "state": "district-of-columbia",
-      "url": "https://dmv.dc.gov/service/vehicle-registration-fees",
-      "finding": "Page not found"
-    }
-  ],
+  "hidden": [],
   "homepageOnly": [
-    {
-      "state": "alaska",
-      "url": "https://dmv.alaska.gov",
-      "finding": "Agency homepage"
-    },
-    {
-      "state": "north-dakota",
-      "url": "https://www.dot.nd.gov",
-      "finding": "Agency homepage"
-    },
     {
       "state": "vermont",
       "url": "https://dmv.vermont.gov",
@@ -270,6 +249,21 @@
       "state": "south-dakota",
       "on": "2026-11-19",
       "note": "DOR motor vehicle landing page replaced with the DOR title, fees and registration page and its non-commercial and motorcycle fee schedules, plus SDCL 32-5B-1, 32-5B-2, 32-5B-4, 32-5B-11, 32-5-6, and 32-5-30; 4% excise, private trade-in credit, $10 title and lien, and $100 EV fee confirmed; registration $42 -> $72 to 4,000 lbs and $108 from 4,001 to 6,000 lbs (32-5-6); exemption cited to 32-5B-2(12); gift, deadline, and out-of-state answers stated. Rulings applied 2026-11-20: 70% registration at 10 or more model years old (32-5-30), motorcycle $21, $4 in DOR fees added, no excise tax at 11 or more model years old and $2,500 or less (32-5B-2(12)); verified date moved to November 2026."
+    },
+    {
+      "state": "north-dakota",
+      "on": "2026-11-20",
+      "note": "NDDOT homepage replaced with the NDDOT what-to-bring page and registration manual, the 2026 passenger fee schedule, and N.D.C.C. chapters 57-40.3, 39-04, 39-05, and 39-28; 5% excise, $5 title, and EV $120, plug-in hybrid $50, and electric motorcycle $20 fees confirmed; registration now by year first registered ($93, $81, $69, $57 for 3,200 to 4,499 lbs) instead of a flat $81; motorcycle $20 -> $25 ($15 fee plus $10 safety education fee); gift, credit, and deadline answers stated."
+    },
+    {
+      "state": "alaska",
+      "on": "2026-11-20",
+      "note": "DMV homepage replaced with the DMV registration, title, new vehicle, out-of-state transfer, and senior pages and AS Title 28; $100 two-year registration, $60 motorcycle, $15 title, and $15 lien confirmed; municipal registration tax disclosed with the 2026 chart range ($16 to $300 for a noncommercial car); deadline, nonresident, and senior answers stated."
+    },
+    {
+      "state": "district-of-columbia",
+      "on": "2026-11-20",
+      "note": "Dead DMV excise tax and registration fee links replaced with the DMV fee pages, exemption list, registration and inspection pages, and D.C. Code 50-2201.03; NADA Eastern Region wording kept; title $26 -> $30; registration $72/$115 -> $70/$175 (rates from March 30, 2026), weight split at 3,500 lbs; excise rate table by weight and MPG stated; gift exemptions, new resident 60 days, and temporary registration answers stated."
     }
   ]
 }

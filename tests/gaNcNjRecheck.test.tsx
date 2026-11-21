@@ -119,7 +119,7 @@ describe('New Jersey re-check', () => {
 describe('Batch 7 source repair', () => {
   it('no hidden links remain for the three states, each has a repaired entry and verified sources', () => {
     for (const key of ['georgia', 'north-carolina', 'new-jersey']) {
-      expect(sourceLinkStatus.hidden.some((h) => h.state === key)).toBe(false);
+      expect((sourceLinkStatus.hidden as { state: string; url: string; finding: string }[]).some((h) => h.state === key)).toBe(false);
       expect(sourceLinkStatus.repaired.some((r) => r.state === key)).toBe(true);
       expect(rules[key].lastVerified).toBe('October 2026');
       expect(rules[key].sources.length).toBeGreaterThanOrEqual(5);

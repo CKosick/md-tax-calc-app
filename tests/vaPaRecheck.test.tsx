@@ -54,15 +54,10 @@ describe('Virginia re-check (October 2026)', () => {
     expect(container.textContent).not.toContain('3,700 lbs');
     cleanup();
 
-    // A two-tier state whose fees differ by weight and that has no configured split
-    const twoTier = Object.values(rules).find(
-      (r) =>
-        r !== va &&
-        !r.registration.passengerWeightSplitLbs &&
-        r.registration.passenger.under3700lbs &&
-        !r.registration.passenger.under3500lbs &&
-        JSON.stringify(r.registration.passenger.under3700lbs) !== JSON.stringify(r.registration.passenger.over3700lbs)
-    ) as StateRule;
+    // Every real two-tier state now sets its own split (DC moved to 3,500 lbs in batch 17), so the
+    // default label is checked on a copy of DC's rule with the split removed
+    const dc = rules['district-of-columbia'] as StateRule;
+    const twoTier = { ...dc, registration: { ...dc.registration, passengerWeightSplitLbs: undefined } } as StateRule;
     const other = render(<Calculator initialRule={twoTier} />);
     expect(other.container.textContent).toContain('≤ 3,700 lbs');
   });
@@ -107,7 +102,7 @@ describe('Virginia and Pennsylvania sources and dates', () => {
       expect(rule.lastVerified).toBe('October 2026');
       expect(getVisibleSources(rule).map((s) => s.url)).toEqual(rule.sources);
     }
-    const listed = [...sourceLinkStatus.hidden, ...sourceLinkStatus.homepageOnly].map((e) => e.state);
+    const listed = [...(sourceLinkStatus.hidden as { state: string; url: string; finding: string }[]), ...sourceLinkStatus.homepageOnly].map((e) => e.state);
     expect(listed).not.toContain('virginia');
     expect(listed).not.toContain('pennsylvania');
     expect(sourceLinkStatus.repaired.map((r) => r.state)).toEqual(expect.arrayContaining(['virginia', 'pennsylvania']));

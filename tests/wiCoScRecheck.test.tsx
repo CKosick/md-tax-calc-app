@@ -113,7 +113,7 @@ describe('South Carolina re-check', () => {
 describe('Batch 10 source repair', () => {
   it('no hidden links remain for the three states, each has a repaired entry and verified sources', () => {
     for (const key of ['wisconsin', 'colorado', 'south-carolina']) {
-      expect(sourceLinkStatus.hidden.some((h) => h.state === key)).toBe(false);
+      expect((sourceLinkStatus.hidden as { state: string; url: string; finding: string }[]).some((h) => h.state === key)).toBe(false);
       expect(sourceLinkStatus.repaired.some((r) => r.state === key)).toBe(true);
       // Colorado's local range was re-verified separately in November 2026
       expect(rules[key].lastVerified).toBe(key === 'colorado' ? 'November 2026' : 'October 2026');
