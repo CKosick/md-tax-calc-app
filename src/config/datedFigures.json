@@ -145,5 +145,12 @@
     "staleOn": "2027-04-01",
     "contains": "5.5% to 7.5%",
     "alsoCheck": "localTaxMaxRate and the Nebraska private-sale guide"
+  },
+  {
+    "state": "wyoming",
+    "figure": "County sales tax range 4% to 7% (DOR master rate chart effective October 1, 2026; updated as rates change)",
+    "staleOn": "2027-04-01",
+    "contains": "4% to 7%",
+    "alsoCheck": "localTaxMinRate, localTaxMaxRate, and the Wyoming private-sale guide"
   }
 ]

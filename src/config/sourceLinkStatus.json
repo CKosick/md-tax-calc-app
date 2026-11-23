@@ -7,16 +7,6 @@
       "state": "vermont",
       "url": "https://dmv.vermont.gov",
       "finding": "Agency homepage"
-    },
-    {
-      "state": "wyoming",
-      "url": "https://revenue.wyo.gov",
-      "finding": "Agency homepage"
-    },
-    {
-      "state": "wyoming",
-      "url": "https://www.dot.state.wy.us",
-      "finding": "Agency homepage"
     }
   ],
   "repaired": [
@@ -264,6 +254,11 @@
       "state": "district-of-columbia",
       "on": "2026-11-20",
       "note": "Dead DMV excise tax and registration fee links replaced with the DMV fee pages, exemption list, registration and inspection pages, and D.C. Code 50-2201.03; NADA Eastern Region wording kept; title $26 -> $30; registration $72/$115 -> $70/$175 (rates from March 30, 2026), weight split at 3,500 lbs; excise rate table by weight and MPG stated; gift exemptions, new resident 60 days, and temporary registration answers stated. Ruling 2026-11-22: $35 inspection fee stays disclosed, not added; verified date moved to November 2026."
+    },
+    {
+      "state": "wyoming",
+      "on": "2026-11-22",
+      "note": "DOR and WYDOT homepages replaced with the DOR Excise Tax Division rate chart page, the WYDOT titles and registration page, the Laramie County clerk title fee page, Wyoming Statutes Title 39, and 2026 SF 79; county registration fee schedule, $30 state fee, $15 title, $20 lien, and the $100 and $50 EV decals confirmed; motorcycle $15 -> $25 (31-3-101(a)(ii)(D)); local range 1% to 2% -> 0% to 3% (county totals 4% to 7%, DOR chart October 1, 2026); EV decal motorcycle exclusion cited (39-17-301(a)(l), (xxxviii)); family exemption, gift, credit, and deadline answers stated."
     }
   ]
 }

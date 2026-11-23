@@ -6607,7 +6607,7 @@
         }
       },
       "motorcycle": {
-        "1": 15
+        "1": 25
       },
       "evSurchargeAnnual": 100,
       "phevSurchargeAnnual": 50,
@@ -6634,25 +6634,25 @@
         }
       }
     },
-    "localTaxNote": "Wyoming state sales/use tax is 4.0%. All 23 Wyoming counties impose a 1.0% to 2.0% local optional tax, making total sales tax between 5.0% and 6.0%. Under Wyo. Stat. § 31-3-101, an annual county registration fee also applies at registration, based on the factory price and the year of service. The estimate includes it.",
+    "localTaxNote": "Wyoming state sales/use tax is 4.0%, and the county treasurer collects it at the rate of the county where the owner lives. On the Department of Revenue rate chart effective October 1, 2026, county rates run from 4% to 7%: Park and Sublette counties add nothing, most add 1% or 2%, and Teton County adds 3%. Under Wyo. Stat. § 31-3-101, an annual county registration fee also applies at registration, based on the factory price and the year of service. The estimate includes it.",
     "notes": [
-      "Wyoming levies a 4.0% state sales/use tax on motor vehicle sales under Wyo. Stat. § 39-15-103.",
-      "All counties impose a 1.0% to 2.0% optional local sales tax, bringing the effective tax to 5.0%–6.0%.",
-      "State certificate of title fee is $15.00 under Wyo. Stat. § 31-3-102.",
-      "State flat passenger registration fee is $30.00 under Wyo. Stat. § 31-3-101.",
+      "Wyoming levies a 4.0% state sales/use tax on motor vehicle sales under Wyo. Stat. § 39-15-103, collected by the county treasurer before the first Wyoming registration (39-15-107(b)).",
+      "Counties may add a general purpose, specific purpose, or economic development option tax. On the DOR chart effective October 1, 2026, the county total is 4% (Park, Sublette), 5% (most counties), 5.25% (Goshen), 6%, or 7% (Teton).",
+      "State certificate of title fee is $15.00 under Wyo. Stat. § 31-3-102(a)(vii); a new lien is $20 at the county clerk (Laramie County Clerk fee table).",
+      "State registration fee (Wyo. Stat. § 31-3-101(a)(ii)): $30 for a passenger car and $25 for a motorcycle.",
       "Trade-in deduction under Wyo. Stat. § 39-15-101 applies exclusively to dealer transactions; private sales pay tax on full purchase price.",
-      "The annual county registration fee is 3% of 60%, 50%, 40%, 30%, 20%, then 15% of the factory price by year of service, with a $5 minimum. The estimate includes it for passenger vehicles from the MSRP you enter ($30,000 if blank)."
+      "The annual county registration fee (31-3-101(a)(i)) is 3% of 60%, 50%, 40%, 30%, 20%, then 15% of the factory price plus special equipment by year of service, with a $5 minimum. \"Factory price\" is the MSRP of the make, model, and trim when new, from a nationally recognized price guide (31-1-101); the county clerk sets it on the title. The estimate uses the MSRP you enter ($30,000 if blank), for passenger vehicles only."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Wyoming Department of Revenue and your County Clerk/Treasurer.",
-      "Wyoming charges 4% state tax plus 1% to 2% county optional tax. The estimate includes a full year of the county registration fee for passenger vehicles; motorcycles are shown without it.",
+      "Wyoming charges 4% state tax plus 0% to 3% county option tax (4% to 7% in all, DOR chart effective October 1, 2026). The estimate includes a full year of the county registration fee for passenger vehicles, figured from the MSRP you enter ($30,000 if blank); the county clerk uses the factory price from a national price guide. Motorcycles are shown without the county fee.",
       "Trade-in deductions are not available for private party sales.",
-      "Wyoming’s annual electric vehicle decal is $100 for an all-electric vehicle and $50 for a plug-in hybrid, since July 1, 2026 (W.S. 31-3-102). Motorcycles do not pay it."
+      "Wyoming’s annual electric vehicle decal is $100 for an all-electric vehicle and $50 for a plug-in hybrid, since July 1, 2026 (W.S. 31-3-102(a)(xxiii) and (xxiv)). Motorcycles do not pay it: both vehicle definitions exclude a motorcycle (W.S. 39-17-301(a)(l) and (xxxviii))."
     ],
     "faqs": [
       {
         "question": "What is the sales tax rate on a private car purchase in Wyoming?",
-        "answer": "Wyoming imposes a 4.0% state sales and use tax under Wyo. Stat. § 39-15-103, plus a 1.0% to 2.0% county local option tax levied by every Wyoming county, resulting in a total sales tax rate between 5.0% and 6.0%."
+        "answer": "Wyoming imposes a 4.0% state sales and use tax under Wyo. Stat. § 39-15-103. The county treasurer collects it, with any county option tax, at the rate of the county where you live: 4% to 7% in all on the Department of Revenue chart effective October 1, 2026 (4% in Park and Sublette counties, 7% in Teton County)."
       },
       {
         "question": "Can I deduct my trade-in on a private vehicle sale in Wyoming?",
@@ -6660,7 +6660,7 @@
       },
       {
         "question": "How are vehicle registration fees calculated in Wyoming?",
-        "answer": "Wyoming vehicle registration consists of two fees: a flat state registration fee ($30.00 for passenger vehicles under Wyo. Stat. § 31-3-101) and an annual county registration fee of 3% of 60%, 50%, 40%, 30%, 20%, then 15% of the factory price by year of service, with a $5 minimum. The calculator includes both for passenger vehicles."
+        "answer": "Wyoming registration has two parts (Wyo. Stat. § 31-3-101): a state fee ($30 for a passenger car, $25 for a motorcycle) and an annual county fee of 3% of 60%, 50%, 40%, 30%, 20%, then 15% of the factory price by year of service, with a $5 minimum. The factory price is the vehicle’s MSRP when new, set by the county clerk from a national price guide. The calculator includes both for passenger vehicles, using the MSRP you enter."
       },
       {
         "question": "How much does a title transfer cost in Wyoming?",
@@ -6668,26 +6668,29 @@
       },
       {
         "question": "Do I pay Wyoming vehicle tax if I buy a car from an out-of-state private seller?",
-        "answer": "When bringing an out-of-state private vehicle into Wyoming, the state generally assesses its applicable vehicle sales or use tax (4.00%) upon titling and registration. If you previously paid sales tax in another jurisdiction, many states offer reciprocal tax credit with official proof of payment, though private-sale reciprocity rules vary by statute. Contact the Wyoming motor vehicle agency to verify documentation requirements."
+        "answer": "Yes. The county treasurer collects Wyoming sales or use tax before the first Wyoming registration, at the rate of your county of residence (39-15-107(b)). Sales tax you legally paid to another state on the purchase is credited, up to the Wyoming tax (W.S. 39-15-109(d)(v), as revised by 2026 SF 79); bring proof of the tax paid."
       },
       {
         "question": "Is a vehicle transfer between family members taxable in Wyoming?",
-        "answer": "Rules for vehicle transfers or gifts between family members vary significantly by state. In many states, bona fide gifts or transfers between immediate family members (such as spouses, parents, or children) may qualify for tax exemption or reduced fees if accompanied by a sworn gift affidavit or certification, whereas transfers between other relatives or involving debt assumption may remain taxable. Contact the Wyoming DMV or Department of Revenue to verify eligibility and required documentation before titling."
+        "answer": "A sale or gift between immediate family members (a parent, child, spouse, sibling, stepparent, stepchild, stepsibling, grandparent, or grandchild) is exempt if the seller or giver paid sales or use tax when they got the vehicle (W.S. 39-15-105(a)(xi)). Other gifts are taxed on the vehicle’s fair market value, collected from the person receiving it before the first registration (39-15-107(b))."
       },
       {
         "question": "How long do I have to title and register a private vehicle purchase in Wyoming?",
-        "answer": "Titling and registration deadlines for private vehicle purchases vary by jurisdiction, typically ranging between 10 to 30 days from the date of purchase. Delaying beyond Wyoming's statutory filing deadline can incur late titling penalty fees and restricts legal operation on public roadways. Check with the Wyoming motor vehicle agency or your local county title office for the exact filing window and penalty schedule."
+        "answer": "Register within 45 days of a private purchase; you may drive the vehicle during those 45 days with the title properly signed over to you (W.S. 31-2-201(a)(ii)(D)). A new resident registers upon becoming a resident, and someone working in Wyoming must register right away unless they buy a temporary worker permit (31-2-201(a)(iii), (iv), (j))."
       }
     ],
     "lastVerified": "September 2026",
     "sources": [
-      "https://revenue.wyo.gov",
-      "https://www.dot.state.wy.us",
-      "https://www.wyoleg.gov/statutes/compress/title31.pdf",
+      "https://excise-tax-div.wyo.gov/sales-use-tax-rate-charts",
+      "https://www.dot.state.wy.us/home/titles_plates_registration.html",
       "https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Treasurer/Vehicle-Registration",
-      "https://wyoleg.gov/2026/Enroll/HB0145.pdf"
+      "https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Clerk/Motor-Vehicle-Titles",
+      "https://www.wyoleg.gov/statutes/compress/title31.pdf",
+      "https://www.wyoleg.gov/statutes/compress/title39.pdf",
+      "https://wyoleg.gov/2026/Enroll/HB0145.pdf",
+      "https://www.wyoleg.gov/2026/Enroll/SF0079.pdf"
     ],
-    "localTaxMinRate": 0.01,
-    "localTaxMaxRate": 0.02
+    "localTaxMinRate": 0,
+    "localTaxMaxRate": 0.03
   }
 }

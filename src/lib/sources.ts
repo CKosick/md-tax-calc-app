@@ -58,7 +58,7 @@ const STATUTE_LABELS: { host: RegExp; label: (url: URL) => string | undefined }[
   { host: /^mca\.legmt\.gov$/, label: (u) => cite(u.pathname, /\/0610-0030-00(\d)0-0(\d\d)0\.html$/, (m) => `MCA 61-3-${m[1]}${m[2]}`) },
   // Delaware DMV title pages share one path and differ only in the dc query parameter
   { host: /^dmv\.de\.gov$/, label: (u) => DE_DMV_PAGES[u.searchParams.get('dc') ?? ''] },
-  { host: /^(www\.)?wyoleg\.gov$/, label: (u) => cite(u.pathname, /compress\/title(\d+)\.pdf$/i, (m) => `Wyo. Stat. Title ${m[1]}`) ?? cite(u.pathname, /\/(\d{4})\/Enroll\/HB0*(\d+)\.pdf$/i, (m) => `${m[1]} Wyo. HB ${m[2]}`) },
+  { host: /^(www\.)?wyoleg\.gov$/, label: (u) => cite(u.pathname, /compress\/title(\d+)\.pdf$/i, (m) => `Wyo. Stat. Title ${m[1]}`) ?? cite(u.pathname, /\/(\d{4})\/Enroll\/(HB|SF)0*(\d+)\.pdf$/i, (m) => `${m[1]} Wyo. ${m[2].toUpperCase()} ${m[3]}`) },
   { host: /^sdlegislature\.gov$/, label: (u) => cite(u.pathname, /\/Statutes\/([\d-]+)$/i, (m) => `SDCL ${m[1]}`) },
   { host: /^legislature\.vermont\.gov$/, label: (u) => cite(u.pathname, /\/statutes\/section\/(\d+)\/\d+\/0*(\d+)$/, (m) => `${m[1]} V.S.A. ${m[2]}`) },
   { host: /(^|\.)legis\.iowa\.gov$/, label: (u) => cite(u.pathname, /\/docs\/code\/(?:\d{4}\/)?(\d+[A-Z]?)(?:\.(\d+[A-Z]?))?\.pdf$/i, (m) => (m[2] ? `Iowa Code ${m[1]}.${m[2]}` : `Iowa Code chapter ${m[1]}`)) },
