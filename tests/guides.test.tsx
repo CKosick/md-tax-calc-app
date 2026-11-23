@@ -86,10 +86,11 @@ const GUIDE_STATES = {
   'south-dakota': { label: 'South Dakota', agency: 'South Dakota Department of Revenue', hosts: ['dor.sd.gov', 'sdlegislature.gov'] },
   'north-dakota': { label: 'North Dakota', agency: 'North Dakota Department of Transportation', hosts: ['www.dot.nd.gov', 'ndlegis.gov'] },
   alaska: { label: 'Alaska', agency: 'Alaska DMV', hosts: ['dmv.alaska.gov'] },
-  'district-of-columbia': { label: 'District of Columbia', agency: 'DC DMV', hosts: ['dmv.dc.gov'] }
+  'district-of-columbia': { label: 'District of Columbia', agency: 'DC DMV', hosts: ['dmv.dc.gov'] },
+  wyoming: { label: 'Wyoming', agency: 'Wyoming county clerks and treasurers', hosts: ['www.dot.state.wy.us', 'www.laramiecountywy.gov', 'excise-tax-div.wyo.gov', 'www.wyoleg.gov'] }
 } as const;
 // Guides re-checked in November 2026 carry that date; the rest October 2026
-const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska', 'idaho', 'west-virginia', 'hawaii', 'new-hampshire', 'maine', 'rhode-island', 'montana', 'delaware', 'south-dakota', 'north-dakota', 'alaska', 'district-of-columbia'].includes(stateKey) ? 'November 2026' : 'October 2026');
+const guideDate = (stateKey: string) => (['alabama', 'kentucky', 'oregon', 'nevada', 'iowa', 'kansas', 'mississippi', 'new-mexico', 'nebraska', 'idaho', 'west-virginia', 'hawaii', 'new-hampshire', 'maine', 'rhode-island', 'montana', 'delaware', 'south-dakota', 'north-dakota', 'alaska', 'district-of-columbia', 'wyoming'].includes(stateKey) ? 'November 2026' : 'October 2026');
 const topics = (state: string) => [
   `how-to-title-a-private-car-sale-in-${state}`,
   `how-to-gift-a-car-in-${state}`,
@@ -620,6 +621,27 @@ describe('Batch 17 guides (North Dakota, Alaska, District of Columbia)', () => {
   });
 });
 
+describe('Batch 18 guides (Wyoming)', () => {
+  const text = (slug: string) => allStrings(GUIDES.find((g) => g.slug === slug)).join(' ');
+  it('keeps the verified Wyoming key facts', () => {
+    const [wySale, wyGift, wyMove] = topics('wyoming').map(text);
+    for (const fact of ['4% to 7%', 'Park and Sublette', 'Teton', 'within 45 days', '31-2-201(a)(ii)(D)', '$15', '$20', 'national price guide', '3% of 60%', '15% from the sixth year', '$5', '$30', '$25', '$100', '$50', 'removes the license plates', '39-15-105(a)(xi)', '$4']) expect(wySale).toContain(fact);
+    for (const fact of ['stepsibling', 'paid sales or use tax', 'fair market value', '39-15-107(b)', 'does not cover grandparents']) expect(wyGift).toContain(fact);
+    for (const fact of ['upon becoming a resident', '$50 a month for up to 180 days', 'VIN inspection $10', 'registered in another state before moving', 'reduced for the part of the year']) expect(wyMove).toContain(fact);
+  });
+
+  it('calculator notes match the engine; the guides stay silent on the open trade-in ruling', () => {
+    expect(text('how-to-title-a-private-car-sale-in-wyoming')).toContain('county registration fee from the MSRP you enter ($30,000 if blank)');
+    expect(text('how-to-title-a-private-car-sale-in-wyoming')).toContain('calculator shows motorcycles without the county fee');
+    for (const t of topics('wyoming').map(text)) expect(t).not.toMatch(/trade-in/i);
+  });
+
+  it('batch 18 guides are dated November 2026; no em dashes', () => {
+    for (const guide of getGuidesForState('wyoming')) expect(guide.lastVerified).toBe('November 2026');
+    for (const t of topics('wyoming').map(text)) expect(t).not.toContain('—');
+  });
+});
+
 describe('Guide links and discovery', () => {
   // Renders every guide state's calculator page; slow under load, so it gets a longer timeout
   it('each guide state’s calculator page links to its own three guides; other states show no guides block', { timeout: 60000 }, async () => {
@@ -632,7 +654,8 @@ describe('Guide links and discovery', () => {
       cleanup();
     }
 
-    const mi = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'wyoming-private-sale-tax-calculator' }) }));
+    // Vermont is the last state without guides (held until after the January wave 2)
+    const mi = render(await CalculatorSlugPage({ params: Promise.resolve({ slug: 'vermont-private-sale-tax-calculator' }) }));
     expect(mi.container.querySelector('#state-guides')).toBeNull();
   });
 
@@ -663,6 +686,6 @@ describe('Guides index metadata', () => {
     const { metadata } = await import('../src/app/guides/page');
     const states = [...new Set(GUIDES.map((g) => g.stateKey))].map((k) => Object.keys(GUIDE_STATES).includes(k) && GUIDE_STATES[k as keyof typeof GUIDE_STATES].label);
     for (const label of states) expect(String(metadata.description)).toContain(String(label));
-    expect(String(metadata.description)).toContain('Montana, Delaware, South Dakota, North Dakota, Alaska, and District of Columbia.');
+    expect(String(metadata.description)).toContain('North Dakota, Alaska, District of Columbia, and Wyoming.');
   });
 });

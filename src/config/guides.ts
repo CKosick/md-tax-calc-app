@@ -544,6 +544,15 @@ const DC_SOURCES = {
   titles: { label: 'DC DMV: Vehicle Titles', url: `${DC_DMV}/service/dmv-vehicle-titles` }
 };
 
+const WY_SOURCES = {
+  titles: { label: 'WYDOT: Titles, Plates and Registration', url: 'https://www.dot.state.wy.us/home/titles_plates_registration.html' },
+  treasurer: { label: 'Laramie County Treasurer: Vehicle Registration', url: 'https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Treasurer/Vehicle-Registration' },
+  clerk: { label: 'Laramie County Clerk: Motor Vehicle Titles', url: 'https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Clerk/Motor-Vehicle-Titles' },
+  rates: { label: 'Wyoming DOR: Sales and Use Tax Rate Charts', url: 'https://excise-tax-div.wyo.gov/sales-use-tax-rate-charts' },
+  title31: { label: 'Wyoming Statutes Title 31: Motor Vehicles', url: 'https://www.wyoleg.gov/statutes/compress/title31.pdf' },
+  title39: { label: 'Wyoming Statutes Title 39: Taxation and Revenue', url: 'https://www.wyoleg.gov/statutes/compress/title39.pdf' }
+};
+
 export const GUIDES: Guide[] = [
   {
     slug: 'how-to-title-a-private-car-sale-in-maryland',
@@ -11467,6 +11476,222 @@ export const GUIDES: Guide[] = [
       }
     ],
     sources: [DC_SOURCES.register, DC_SOURCES.newResident, DC_SOURCES.exemptions]
+  },
+  {
+    slug: 'how-to-title-a-private-car-sale-in-wyoming',
+    stateKey: 'wyoming',
+    title: 'How to Title a Private Car Sale in Wyoming',
+    shortTitle: 'Title a private car sale',
+    metaTitle: 'Titling a Private Car Sale in Wyoming',
+    metaDescription:
+      'Step-by-step guide to titling a car bought from a private seller in Wyoming: 4% to 7% sales tax by county, 45 days to register, the $15 title, and the county fee based on factory price.',
+    cardDescription: 'Sales tax by county, 45 days, title, and fees.',
+    intro: [
+      'Wyoming collects sales tax on a car bought from a private seller when you register it: the 4% state rate plus your county’s option tax, 4% to 7% in all. You also pay a yearly county registration fee based on the vehicle’s factory price and age.',
+      'Here is the order to do it in, what it costs, and what to bring.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Wyoming county clerks and treasurers',
+    steps: [
+      {
+        title: 'Get the signed title',
+        body: [
+          'The seller signs the title over to you. The sale ends the seller’s registration, and the seller removes the license plates (W.S. 31-2-214).'
+        ]
+      },
+      {
+        title: 'Title it at the county clerk',
+        body: [
+          'Title the vehicle at the county clerk in your county seat: $15, plus $20 to file a lien. The clerk sets the vehicle’s factory price on the title from a national price guide.'
+        ]
+      },
+      {
+        title: 'Register within 45 days',
+        body: [
+          'Register at the county treasurer within 45 days of the purchase. You may drive the vehicle during those 45 days with the title properly signed over to you (W.S. 31-2-201(a)(ii)(D)).'
+        ]
+      },
+      {
+        title: 'Pay the sales tax',
+        body: [
+          'The county treasurer collects the tax before the first registration, at the rate of the county where you live, on the price you declare on the Department of Revenue affidavit. On the October 1, 2026 rate chart that is 4% in Park and Sublette counties, 5% in most counties, and up to 7% in Teton County.'
+        ]
+      },
+      {
+        title: 'Pay the registration fees',
+        body: [
+          'The county fee is 3% of 60% of the factory price in the first year of service, then 50%, 40%, 30%, 20%, and 15% from the sixth year on, at least $5. The state fee is $30 for a car and $25 for a motorcycle. An all-electric vehicle adds a $100 decal and a plug-in hybrid $50.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over by the seller',
+      'The Title Application and VIN Inspection Form',
+      'The Department of Revenue sales price affidavit',
+      'Your driver’s license or other ID showing your county of residence',
+      'Payment for the tax, title, and registration'
+    ],
+    calculatorNote:
+      'The calculator applies 4% plus the county range (0% to 3%) to the price and adds the $15 title, the $30 state fee, and the county registration fee from the MSRP you enter ($30,000 if blank).',
+    faqs: [
+      {
+        question: 'How much is the county fee on an older car?',
+        answer: 'From the sixth year of service on, it is 3% of 15% of the factory price: $135 a year for a car that listed at $30,000 new, and never less than $5.'
+      },
+      {
+        question: 'I am buying from my brother. Does that change anything?',
+        answer: 'A sale between immediate family members owes no sales tax if your brother paid sales or use tax when he got the vehicle (W.S. 39-15-105(a)(xi)). A transfer to a spouse, child, brother, sister, or parent can also be re-registered for $4 for the rest of the registration year, keeping the plates.'
+      },
+      {
+        question: 'Does a motorcycle pay the county fee?',
+        answer: 'Yes. The county fee applies to every vehicle, and the state fee for a motorcycle is $25. The calculator shows motorcycles without the county fee.'
+      }
+    ],
+    sources: [WY_SOURCES.clerk, WY_SOURCES.treasurer, WY_SOURCES.rates, WY_SOURCES.title31, WY_SOURCES.title39]
+  },
+  {
+    slug: 'how-to-gift-a-car-in-wyoming',
+    stateKey: 'wyoming',
+    title: 'How to Gift a Car in Wyoming',
+    shortTitle: 'Gift a car',
+    metaTitle: 'How to Gift a Car in Wyoming',
+    metaDescription:
+      'How to gift a car in Wyoming: no sales tax between immediate family if the giver paid tax on the vehicle. Other gifts are taxed on fair market value before the first registration.',
+    cardDescription: 'Family exemption, fair market value, and fees.',
+    intro: [
+      'A gift between immediate family members owes no Wyoming sales tax if the giver paid sales or use tax on the vehicle. Any other gift is taxed on its fair market value, collected from you before the first registration.',
+      'Here is how to transfer the title.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Wyoming county clerks and treasurers',
+    steps: [
+      {
+        title: 'Check who is giving the car',
+        body: [
+          'Immediate family is a parent, child, spouse, sibling, stepparent, stepchild, stepsibling, grandparent, or grandchild (W.S. 39-15-105(a)(xi)).'
+        ]
+      },
+      {
+        title: 'Check that the giver paid tax',
+        body: [
+          'The family exemption applies only if the giver paid sales or use tax when they bought or received the vehicle.'
+        ]
+      },
+      {
+        title: 'For other gifts, expect fair market value',
+        body: [
+          'A gift outside the exemption is taxed on the vehicle’s fair market value at the time of the gift, at your county’s rate, before the first registration (W.S. 39-15-107(b)).'
+        ]
+      },
+      {
+        title: 'Title it at the county clerk',
+        body: [
+          'The giver signs the title over to you, and you title it at the county clerk for $15.'
+        ]
+      },
+      {
+        title: 'Register at the county treasurer',
+        body: [
+          'A transfer to a spouse, child, brother, sister, or parent can be re-registered for $4 for the rest of the registration year, keeping the plates. Otherwise you pay the county fee and the $30 state fee.'
+        ]
+      }
+    ],
+    checklist: [
+      'The title, signed over by the giver',
+      'The Title Application and VIN Inspection Form',
+      'Proof the giver paid sales or use tax, for a family gift',
+      'Your driver’s license or other ID showing your county of residence',
+      'Payment for the title, registration, and any tax'
+    ],
+    calculatorNote:
+      'For an exempt family gift, enter $0 as the price. The calculator still shows a full year of registration; a transfer to a spouse, child, brother, sister, or parent re-registers for $4 for the rest of the year.',
+    faqs: [
+      {
+        question: 'Is a gift from my grandparent taxed?',
+        answer: 'No, if your grandparent paid sales or use tax on the vehicle. The $4 re-registration does not cover grandparents, so you pay the regular registration fees.'
+      },
+      {
+        question: 'What value is taxed on a gift from a friend?',
+        answer: 'The vehicle’s fair market value at the time of the gift.'
+      },
+      {
+        question: 'My parent bought the car in a state with no sales tax. Is my gift exempt?',
+        answer: 'Only if your parent paid sales or use tax on it; otherwise the gift is taxed on its fair market value.'
+      }
+    ],
+    sources: [WY_SOURCES.title39, WY_SOURCES.title31, WY_SOURCES.clerk]
+  },
+  {
+    slug: 'titling-a-car-in-wyoming-after-moving-from-another-state',
+    stateKey: 'wyoming',
+    title: 'Titling a Car in Wyoming After Moving From Another State',
+    shortTitle: 'Title a car after moving to Wyoming',
+    metaTitle: 'Titling Your Car After Moving to Wyoming',
+    metaDescription:
+      'New to Wyoming? Register when you become a resident. A vehicle you registered in another state owes no Wyoming sales tax. You pay the title, a VIN inspection, and registration.',
+    cardDescription: 'Residency, no tax, VIN inspection, and fees.',
+    intro: [
+      'New residents register their vehicles when they become Wyoming residents. A vehicle you registered in another state before moving owes no Wyoming sales tax.',
+      'Here is what to bring and what you pay.'
+    ],
+    lastVerified: 'November 2026',
+    agency: 'Wyoming county clerks and treasurers',
+    steps: [
+      {
+        title: 'Know when to register',
+        body: [
+          'Register upon becoming a resident. If you work in Wyoming but live elsewhere, register right away, or buy a temporary worker permit at $50 a month for up to 180 days (W.S. 31-2-201).'
+        ]
+      },
+      {
+        title: 'Title it at the county clerk',
+        body: [
+          'Bring your out-of-state title and the Title Application and VIN Inspection Form to the county clerk. The title is $15 and the VIN inspection $10.'
+        ]
+      },
+      {
+        title: 'Skip the sales tax on your own vehicle',
+        body: [
+          'No sales tax is collected on a vehicle you registered in another state before moving (W.S. 39-15-107(b)). A vehicle you bought without registering it elsewhere is taxed, with credit for sales tax you paid to another state.'
+        ]
+      },
+      {
+        title: 'Pay the registration fees',
+        body: [
+          'Register at the county treasurer: the county fee, based on the factory price and year of service, and the $30 state fee ($25 for a motorcycle). The first year’s fees are reduced for the part of the year before the vehicle first ran in Wyoming.'
+        ]
+      },
+      {
+        title: 'Add the electric vehicle decal',
+        body: [
+          'An all-electric vehicle adds a $100 decal each year and a plug-in hybrid $50. Motorcycles do not pay it.'
+        ]
+      }
+    ],
+    checklist: [
+      'Your out-of-state title',
+      'The Title Application and VIN Inspection Form',
+      'Proof of the out-of-state registration',
+      'Your driver’s license or other ID showing your county of residence',
+      'Payment for the title, inspection, and registration'
+    ],
+    calculatorNote:
+      'Enter $0 as the price for a vehicle you registered before moving. The calculator then shows the $15 title, the $30 state fee, and the county registration fee from the MSRP you enter; the $10 VIN inspection is not included.',
+    faqs: [
+      {
+        question: 'Which county’s rate applies?',
+        answer: 'The county of your principal residence, as shown on your driver’s license or other government ID.'
+      },
+      {
+        question: 'Where do I go?',
+        answer: 'The county clerk handles the title and the county treasurer the registration, both in your county seat.'
+      },
+      {
+        question: 'I bought the car just before moving. Is it taxed?',
+        answer: 'If you did not register it in another state first, yes, but sales tax you legally paid to another state is credited, up to the Wyoming tax.'
+      }
+    ],
+    sources: [WY_SOURCES.titles, WY_SOURCES.treasurer, WY_SOURCES.clerk, WY_SOURCES.title31]
   }
 ];
 
