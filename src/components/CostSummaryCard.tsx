@@ -93,7 +93,7 @@ export function CostSummaryCard({
   };
 
   return (
-    <div id="calculator-results" className="space-y-6 lg:sticky lg:top-8">
+    <div id="calculator-results" className="space-y-6 lg:sticky lg:top-8 print:static">
       {/* Primary Card */}
       <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-xl backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/90 sm:p-8">
         {/* Subtle decorative glow */}
@@ -138,7 +138,7 @@ export function CostSummaryCard({
             <button
               type="button"
               onClick={handleShare}
-              className="inline-flex min-h-[44px] shrink-0 items-center justify-center gap-1.5 rounded-xl border border-indigo-300/30 bg-white/10 px-3.5 py-2.5 text-xs font-bold text-white shadow-xs backdrop-blur-sm transition-all hover:bg-white/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-indigo-300 cursor-pointer"
+              className="print:hidden inline-flex min-h-[44px] shrink-0 items-center justify-center gap-1.5 rounded-xl border border-indigo-300/30 bg-white/10 px-3.5 py-2.5 text-xs font-bold text-white shadow-xs backdrop-blur-sm transition-all hover:bg-white/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-indigo-300 cursor-pointer"
             >
               {copied ? (
                 <>
@@ -316,11 +316,13 @@ export function CostSummaryCard({
 
         {/* Email me this estimate (only when Resend is configured on the server) */}
         {emailEnabled && (
+          <div className="print:hidden">
           <EmailEstimate
             rule={rule}
             purchasePrice={purchasePrice}
             inputs={inputs}
           />
+          </div>
         )}
 
         {/* Informational VEIP Section (Maryland only if veipFee > 0) */}
@@ -454,6 +456,7 @@ export function CostSummaryCard({
       {/* Monetization Slot - Below Results */}
       <PartnerSlot
         position="below-results"
+        className="print:hidden"
         hrefs={partnerHrefs}
         isFinanced={inputs?.isFinanced}
         stateSlug={rule.slug}

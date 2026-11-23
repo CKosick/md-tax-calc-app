@@ -1,6 +1,7 @@
 import { CalculatorInputs, CostBreakdown, StateRule } from './types';
 import { RATES_VERIFIED_YEAR } from './constants';
 import { ratePercent } from './formatters';
+import { getEffectiveTerm, getHorsepowerTier } from './shareParams';
 
 /**
  * Annual registration by original list price (Michigan brackets, Minnesota fixed + rate), reduced
@@ -243,7 +244,8 @@ export function calculateVehicleCosts(
   const lienFilingFee = inputs.isFinanced ? rule.lienFilingFee : 0;
 
   // 4. Registration & Tag Fee
-  const term = inputs.registrationTerm;
+  // A motorcycle uses its own registration period where the state sets one
+  const term = getEffectiveTerm(rule, inputs);
   let baseRegistrationFee = 0;
 
   // The registration year counts the model year as year 1 (Oklahoma, Michigan, Minnesota)
@@ -281,6 +283,9 @@ export function calculateVehicleCosts(
     } else if (typeof motoRule === 'number') {
       baseRegistrationFee = term === 1 ? motoRule / 2 : motoRule;
     }
+  } else if (rule.registration.horsepowerTiers) {
+    // Taxable horsepower states (Missouri): the chosen tier, or the electric tier for an EV
+    baseRegistrationFee = Math.round((getHorsepowerTier(rule, inputs)?.fee ?? 0) * term * 100) / 100;
   } else if (rule.registration.passengerWeightChart) {
     // Weight chart states (New York): look up the entered weight, or the chart's default
     const chart = rule.registration.passengerWeightChart;

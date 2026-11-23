@@ -86,7 +86,7 @@ export function PartnerDisclosure() {
   return (
     <p
       id="partner-disclosure"
-      className="-mt-3 text-center text-xs font-medium text-slate-500 dark:text-slate-400"
+      className="-mt-3 text-center text-xs font-medium text-slate-500 dark:text-slate-400 print:hidden"
     >
       We may earn a commission if you use partner links. It doesn&apos;t change your estimate.
     </p>

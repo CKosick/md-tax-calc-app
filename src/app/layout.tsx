@@ -121,7 +121,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 selection:bg-indigo-500 selection:text-white dark:bg-slate-950 dark:text-slate-100">
         {/* Navigation Bar */}
-        <header className="border-b border-slate-200/80 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/80">
+        <header className="print:hidden border-b border-slate-200/80 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/80">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
             <Link href="/" className="flex items-center gap-2.5">
               <Image
@@ -167,7 +167,7 @@ export default function RootLayout({
         <div className="flex-1">{children}</div>
 
         {/* Footer */}
-        <footer className="border-t border-slate-200 bg-white pt-8 pb-[calc(5rem+env(safe-area-inset-bottom,0.75rem))] text-center text-xs text-slate-500 dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400 lg:py-8">
+        <footer className="print:hidden border-t border-slate-200 bg-white pt-8 pb-[calc(5rem+env(safe-area-inset-bottom,0.75rem))] text-center text-xs text-slate-500 dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400 lg:py-8">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap items-center justify-center gap-x-1 text-xs font-medium text-slate-600 dark:text-slate-400">
               <Link href="/calculator/maryland-private-sale-tax-calculator" className="inline-flex min-h-[44px] items-center px-2 hover:text-indigo-600">Maryland</Link>

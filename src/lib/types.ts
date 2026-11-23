@@ -22,6 +22,14 @@ export type MotorcycleFuelFee =
 
 export interface StateRegistrationRules {
   terms: number[];
+  /** Registration periods for a motorcycle when they differ from a car's (Massachusetts [1], Wisconsin [2]). */
+  motorcycleTerms?: number[];
+  /**
+   * Passenger registration by taxable horsepower (Missouri). Fees are per year and include any
+   * per-year processing fee; the form offers a selector, defaultTierId is used when none is chosen,
+   * and evTierId (if set) applies to an electric vehicle regardless of the selection.
+   */
+  horsepowerTiers?: { tiers: { id: string; label: string; fee: number }[]; defaultTierId: string; evTierId?: string };
   passenger: {
     under3500lbs?: number | Record<string, number>;
     '3501to3700lbs'?: number | Record<string, number>;
@@ -314,6 +322,8 @@ export interface CalculatorInputs {
   listPrice?: number;
   /** True when the buyer has a plate of their own to transfer (states with newPlateFees). */
   hasPlateToTransfer?: boolean;
+  /** Chosen taxable horsepower tier id (states with horsepowerTiers). */
+  horsepowerTier?: string;
 }
 
 export interface ItemizedCostItem {

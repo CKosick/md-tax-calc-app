@@ -24,3 +24,24 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Printing an estimate: plain light page, no backgrounds or shadows to waste ink */
+@media print {
+  @page {
+    margin: 0.6in;
+  }
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    color-scheme: light;
+  }
+  body {
+    background: #ffffff !important;
+  }
+  #calculator-results,
+  #calculator-results * {
+    box-shadow: none !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

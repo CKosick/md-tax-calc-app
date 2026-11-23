@@ -2138,8 +2138,11 @@
         }
       },
       "motorcycle": {
-        "2": 40
-      }
+        "1": 20
+      },
+      "motorcycleTerms": [
+        1
+      ]
     },
     "localTaxNote": "Massachusetts has no local sales tax on vehicles. Your city or town bills a separate motor vehicle excise every year: $25 per $1,000 of a value set from the original list price, not the price you paid. It is not included here.",
     "notes": [
@@ -2153,7 +2156,7 @@
       "The estimate uses the price you enter. Massachusetts taxes the clean trade-in value instead when it is higher than the price, so the tax at the RMV can be more.",
       "The yearly motor vehicle excise billed by your city or town is not included. It is $25 per $1,000 of value, where the value is a share of the manufacturer’s list price (90% in the model year, then 60%, 40%, 25%, and 10% from the fifth year on), with a $5 minimum.",
       "Gifts recorded on Form MVU-24 have a $25 gift transfer fee, which is not included.",
-      "A motorcycle is $20 a year, shown here as $40 for the two-year view."
+      "A motorcycle registers for one year at $20 (RMV fee table: renewed annually), so the estimate shows a one-year term for a motorcycle."
     ],
     "faqs": [
       {
@@ -2578,6 +2581,47 @@
         "phev": {
           "outcome": "silent"
         }
+      },
+      "horsepowerTiers": {
+        "tiers": [
+          {
+            "id": "under-12",
+            "label": "Under 12 hp, or electric ($18.25 + $9 processing)",
+            "fee": 27.25
+          },
+          {
+            "id": "12-23",
+            "label": "12 to 23 hp ($21.25 + $9 processing)",
+            "fee": 30.25
+          },
+          {
+            "id": "24-35",
+            "label": "24 to 35 hp ($24.25 + $9 processing)",
+            "fee": 33.25
+          },
+          {
+            "id": "36-47",
+            "label": "36 to 47 hp ($33.25 + $9 processing)",
+            "fee": 42.25
+          },
+          {
+            "id": "48-59",
+            "label": "48 to 59 hp ($39.25 + $9 processing)",
+            "fee": 48.25
+          },
+          {
+            "id": "60-71",
+            "label": "60 to 71 hp ($45.25 + $9 processing)",
+            "fee": 54.25
+          },
+          {
+            "id": "72-plus",
+            "label": "72 hp and up ($51.25 + $9 processing)",
+            "fee": 60.25
+          }
+        ],
+        "defaultTierId": "24-35",
+        "evTierId": "under-12"
       }
     },
     "localTaxNote": "Missouri adds the local sales tax of the city or county where you live, not where you bought the car: 1.0% to 7.263% on the October to December 2026 motor vehicle chart.",
@@ -2585,7 +2629,7 @@
       "The state rate is 4.225%, plus the local rate where you live, on the purchase price less any trade-in allowance.",
       "If you sell a vehicle within 180 days before or after the purchase, the sale price is credited against the price of the vehicle you buy. Bring the bill of sale or Notice of Sale (Form 5049).",
       "The title is $8.50 plus a $9 processing fee. Title within 30 days: the penalty is $25 on the 31st day, $25 more for each 30 days after, up to $200.",
-      "Registration is set by taxable horsepower. Shown is the 24 to 35 horsepower fee, $24.25 plus the $9 processing fee; the range is $18.25 (under 12 horsepower or electric) to $51.25 (72 horsepower and up). A motorcycle is $8.75 plus $9.",
+      "Registration is set by taxable horsepower (DOR fee table), from $18.25 (under 12 horsepower or electric) to $51.25 (72 horsepower and up), plus the $9 processing fee. Pick your vehicle's taxable horsepower, shown on the title; the estimate uses the 24 to 35 horsepower fee ($24.25 + $9) until you do. An electric vehicle registers at the lowest rate. A motorcycle is $8.75 plus $9.",
       "Electric vehicles pay the yearly alternative fuel decal, $150 for 2026 and later, and plug-in hybrids pay half, $75. These are worked out from the statutory schedule ($75 and $37.50 in 2021, up 20% of that a year for five years)."
     ],
     "disclaimers": [
@@ -2607,7 +2651,7 @@
       },
       {
         "question": "How much does titling and registration cost in Missouri?",
-        "answer": "The title is $8.50 plus a $9 processing fee. Registration is set by taxable horsepower, from $18.25 to $51.25 a year plus $9 processing; a typical 24 to 35 horsepower car is $33.25. Electric vehicles also pay the $150 alternative fuel decal and plug-in hybrids $75."
+        "answer": "The title is $8.50 plus a $9 processing fee. Registration is set by taxable horsepower, shown on the title: from $18.25 (under 12 horsepower or electric) to $51.25 (72 horsepower and up) a year, plus $9 processing; a 24 to 35 horsepower car is $33.25. Pick the horsepower on the form. An electric vehicle registers at the lowest rate and also pays the $150 alternative fuel decal; plug-in hybrids pay $75."
       },
       {
         "question": "How long do I have to title a car in Missouri after a private purchase?",
@@ -2657,7 +2701,7 @@
         }
       },
       "motorcycle": {
-        "1": 23
+        "2": 23
       },
       "evSurchargeAnnual": 175,
       "phevSurchargeAnnual": 75,
@@ -2668,7 +2712,10 @@
         "phev": {
           "outcome": "excluded"
         }
-      }
+      },
+      "motorcycleTerms": [
+        2
+      ]
     },
     "localTaxNote": "Wisconsin adds the county tax where the vehicle is kept: 0.5% in most counties, none in Waukesha and Winnebago, and 0.9% in Milwaukee County, plus the 2% City of Milwaukee tax inside the city. Local wheel taxes are not included.",
     "notes": [

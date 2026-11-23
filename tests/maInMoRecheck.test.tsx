@@ -35,7 +35,7 @@ describe('Massachusetts re-check', () => {
     expect(b.registrationTotal).toBe(60);
     expect(b.totalFirstYearCost).toBe(1072.5);
     expect(calc(ma, { tradeInValue: 5000 }).exciseTax).toBe(937.5);
-    expect(calc(ma, { vehicleType: 'motorcycle' }).registrationTotal).toBe(40);
+    expect(calc(ma, { vehicleType: 'motorcycle' }).registrationTotal).toBe(20); // one-year term (RMV: renewed annually)
   });
 
   it('copy covers the book value rule, the exemptions, the deadlines, and the excise', () => {
@@ -79,7 +79,7 @@ describe('Missouri re-check', () => {
 
   it('motorcycle $17.75, EV decal $150 and plug-in hybrid $75, the 180-day credit through the trade-in field', () => {
     expect(calc(mo, { vehicleType: 'motorcycle' }).registrationTotal).toBe(17.75);
-    expect(calc(mo, { fuelType: 'ev' }).registrationTotal).toBe(183.25);
+    expect(calc(mo, { fuelType: 'ev' }).registrationTotal).toBe(177.25); // under-12-hp-or-electric tier $27.25 + $150 decal (DOR fee table)
     expect(calc(mo, { fuelType: 'phev' }).registrationTotal).toBe(108.25);
     expect(calc(mo, { tradeInValue: 5000 }).exciseTax).toBe(422.5);
   });

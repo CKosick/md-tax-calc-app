@@ -177,7 +177,7 @@ function CalculatorView({
       {!embedded && (
       <>
       {/* Breadcrumb Navigation */}
-      <nav aria-label="Breadcrumb" className="mb-2 sm:mb-4 flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+      <nav aria-label="Breadcrumb" className="print:hidden mb-2 sm:mb-4 flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
         <Link href="/" className="inline-flex min-h-[44px] items-center hover:text-indigo-600 dark:hover:text-indigo-400">
           Home
         </Link>
@@ -203,14 +203,18 @@ function CalculatorView({
         <p className="mt-2 sm:mt-3 max-w-3xl text-sm lg:text-base leading-relaxed text-slate-600 dark:text-slate-300">
           Estimate your first-year out-of-pocket costs for a private vehicle sale in {initialRule.label}. Includes {taxPhrase}, {formatDollars(initialRule.titleFee)} certificate of title fee, {formatTermPhrase(getOfferedTerms(initialRule))} tag registration, and state-specific regulations.
         </p>
+        {/* Print only: where the printed estimate came from */}
+        <p className="hidden print:block mt-2 text-xs text-slate-600">
+          Printed estimate from cartaxhub.com/calculator/{initialRule.slug}, based on the details entered on the form. Not tax or legal advice.
+        </p>
       </header>
       </>
       )}
 
       {/* Main Grid: Inputs on Left, Sticky Hero Summary on Right (Desktop two-column layout kept as is) */}
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start print:block">
         {/* Left Column: Form & Desktop Disclaimers */}
-        <div className="space-y-8 lg:col-span-7">
+        <div className="space-y-8 lg:col-span-7 print:hidden">
           <VehicleInputForm
             inputs={inputs}
             onChange={setInputs}
@@ -235,6 +239,7 @@ function CalculatorView({
           {/* Monetization Slot - Above Results ("check the VIN before you pay") */}
           <PartnerSlot
             position="above-results"
+            className="print:hidden"
             hrefs={partnerHrefs}
             isFinanced={inputs.isFinanced}
             stateSlug={initialRule.slug}
@@ -252,7 +257,7 @@ function CalculatorView({
           />
 
           {/* Mobile Disclaimers: rendered below results on mobile so user sees results first */}
-          <div className="block lg:hidden">
+          <div className="block lg:hidden print:block">
             <Disclaimers
               disclaimers={initialRule.disclaimers}
               bookValueApplies={breakdown.bookValueApplies}
@@ -263,6 +268,7 @@ function CalculatorView({
 
           <PartnerSlot
             position="sidebar"
+            className="print:hidden"
             hrefs={partnerHrefs}
             isFinanced={inputs.isFinanced}
             stateSlug={initialRule.slug}
@@ -272,9 +278,12 @@ function CalculatorView({
 
       {!embedded && (
       <>
-      {/* Pre-purchase checklist: deadline, documents, counter fees, and family rules from verified data */}
+      {/* Pre-purchase checklist: deadline, documents, counter fees, and family rules from verified data.
+          It prints with the estimate (ruled 2026-11-25), so it sits outside the print:hidden block below. */}
       <PrePurchaseChecklist rule={initialRule} breakdown={breakdown} guides={checklistGuides} />
 
+      {/* Below-results sections stay off a printed estimate */}
+      <div className="print:hidden">
       {/* FAQ Section with long-tail query H2s */}
       <FaqSection faqs={getPublishedFaqs(initialRule)} stateLabel={initialRule.label} />
 
@@ -385,6 +394,7 @@ function CalculatorView({
             <span>Adjust details</span>
           </button>
         </div>
+      </div>
       </div>
       </>
       )}

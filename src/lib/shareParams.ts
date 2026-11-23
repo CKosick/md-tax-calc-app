@@ -19,11 +19,27 @@ export function parseBookValue(value: string | null): number | undefined {
 }
 
 /** The registration terms a state offers (1, 2, or 3 years), sorted; 2-year if none are configured. */
-export function getOfferedTerms(rule: StateRule): RegistrationTerm[] {
-  const offered = [...new Set(rule.registration.terms)]
+export function getOfferedTerms(rule: StateRule, vehicleType?: CalculatorInputs['vehicleType']): RegistrationTerm[] {
+  // A motorcycle can register for its own period (Massachusetts: 1 year; Wisconsin: 2 years)
+  const source = vehicleType === 'motorcycle' && rule.registration.motorcycleTerms ? rule.registration.motorcycleTerms : rule.registration.terms;
+  const offered = [...new Set(source)]
     .filter((t): t is RegistrationTerm => t === 1 || t === 2 || t === 3)
     .sort((a, b) => a - b);
   return offered.length > 0 ? offered : [2];
+}
+
+/**
+ * The registration term the estimate uses: the one chosen, when the vehicle type offers it,
+ * otherwise that type's default (2-year where offered, else its only term). This keeps a
+ * motorcycle on its own period when the state registers it differently from a car.
+ */
+export function getEffectiveTerm(rule: StateRule, inputs: Pick<CalculatorInputs, 'vehicleType' | 'registrationTerm'>): RegistrationTerm {
+  // Only a motorcycle in a state with its own motorcycle period is moved; every other estimate
+  // keeps the chosen term exactly as before
+  if (inputs.vehicleType !== 'motorcycle' || !rule.registration.motorcycleTerms) return inputs.registrationTerm;
+  const offered = getOfferedTerms(rule, inputs.vehicleType);
+  if (offered.includes(inputs.registrationTerm)) return inputs.registrationTerm;
+  return offered.includes(2) ? 2 : offered[0];
 }
 
 /** The state's own default registration term: 2-year where offered, otherwise its only term. */
@@ -75,6 +91,9 @@ export function inputsFromSearchParams(
       ? (Number(params.get('term')) as RegistrationTerm)
       : getDefaultTerm(rule),
     isFinanced: params.get('financed') === 'true',
+    ...(rule.registration.horsepowerTiers?.tiers.some((t) => t.id === params.get('hp'))
+      ? { horsepowerTier: params.get('hp') as string }
+      : {}),
     tradeInValue: params.has('tradeIn') ? Math.max(0, Number(params.get('tradeIn')) || 0) : defaults.tradeInValue,
     bookValue: parseBookValue(params.get('book')) ?? defaults.bookValue,
     presumptiveValue: parseBookValue(params.get('spv')) ?? defaults.presumptiveValue,
@@ -111,6 +130,9 @@ export function buildShareSearchParams(
   params.set('fuel', inputs.fuelType);
   params.set('term', String(inputs.registrationTerm));
   params.set('financed', String(inputs.isFinanced));
+  if (rule.registration.horsepowerTiers && inputs.horsepowerTier) {
+    params.set('hp', inputs.horsepowerTier);
+  }
   if (rule.bookValueAssessment && inputs.bookValue && inputs.bookValue > 0) {
     params.set('book', String(inputs.bookValue));
   }
@@ -136,4 +158,12 @@ export function buildShareSearchParams(
     params.set('tradeIn', String(inputs.tradeInValue));
   }
   return params;
+}
+
+/** The horsepower tier the estimate uses: the electric tier for an EV where the state has one, else the chosen or default tier. */
+export function getHorsepowerTier(rule: StateRule, inputs: Pick<CalculatorInputs, 'fuelType' | 'horsepowerTier'>) {
+  const spec = rule.registration.horsepowerTiers;
+  if (!spec) return undefined;
+  const id = inputs.fuelType === 'ev' && spec.evTierId ? spec.evTierId : inputs.horsepowerTier ?? spec.defaultTierId;
+  return spec.tiers.find((t) => t.id === id) ?? spec.tiers.find((t) => t.id === spec.defaultTierId);
 }

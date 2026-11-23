@@ -63,7 +63,7 @@ describe('Facts moved out of notes are on the rendered page', () => {
     ['kansas', 'within 120 days before or after the sale'],
     ['maine', '24, 17.5, 13.5, 10, 6.5, then 4 mills'],
     ['massachusetts', '90% in the model year'],
-    ['massachusetts', 'shown here as $40 for the two-year view'],
+    ['massachusetts', 'registers for one year at $20'],
     ['nebraska', 'ends after the 13th year'],
     ['nevada', 'the minimum tax is $16'],
     ['new-hampshire', 'which has a $5 minimum'],

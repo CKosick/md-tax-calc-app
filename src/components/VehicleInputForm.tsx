@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { CalculatorInputs, StateRule, FuelType, RegistrationTerm } from '@/lib/types';
 import { getCalculationYear, getModelYearPresets } from '@/lib/constants';
 import { formatVehicleAge, ratePercent } from '@/lib/formatters';
-import { getOfferedTerms } from '@/lib/shareParams';
+import { getEffectiveTerm, getHorsepowerTier, getOfferedTerms } from '@/lib/shareParams';
 
 const TERM_LABELS: Record<RegistrationTerm, string> = {
   1: '1-Year Term (Annual)',
@@ -89,7 +89,8 @@ export function VehicleInputForm({
       : plateFees?.plateFee ?? 0;
   const feeNotByWeight = Boolean(listPriceReg || rule.registration.feesByRegistrationYear);
   // Only the registration terms the state offers (1, 2, or 3 years per its config)
-  const offeredTerms = getOfferedTerms(rule);
+  const offeredTerms = getOfferedTerms(rule, inputs.vehicleType);
+  const effectiveTerm = getEffectiveTerm(rule, inputs);
   // Maryland book value rule applies to vehicles under the configured age limit
   const bookValueAgeLimit = rule.bookValueAssessment?.maxVehicleAge;
   const inBookValueWindow = bookValueAgeLimit !== undefined && vehicleAge < bookValueAgeLimit;
@@ -459,6 +460,40 @@ export function VehicleInputForm({
           </div>
         )}
 
+        {/* Taxable horsepower (passenger cars in horsepower states, e.g. Missouri) */}
+        {inputs.vehicleType === 'passenger' && rule.registration.horsepowerTiers && (
+          <div>
+            <div className="flex items-center justify-between">
+              <label
+                htmlFor="horsepower-select"
+                className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300"
+              >
+                Taxable Horsepower
+              </label>
+              <span className="text-xs text-slate-500 dark:text-slate-400">Sets the registration fee</span>
+            </div>
+            <select
+              id="horsepower-select"
+              value={getHorsepowerTier(rule, inputs)?.id ?? ''}
+              disabled={inputs.fuelType === 'ev' && Boolean(rule.registration.horsepowerTiers.evTierId)}
+              onChange={(e) => updateField('horsepowerTier', e.target.value)}
+              aria-describedby="horsepower-help"
+              className="mt-2 block w-full min-h-[44px] rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base sm:text-sm font-bold text-slate-900 shadow-xs focus:border-indigo-500 focus:outline-none focus:ring-3 focus:ring-indigo-500/10 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-500 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:disabled:bg-slate-800"
+            >
+              {rule.registration.horsepowerTiers.tiers.map((tier) => (
+                <option key={tier.id} value={tier.id}>
+                  {tier.label}
+                </option>
+              ))}
+            </select>
+            <p id="horsepower-help" className="mt-1.5 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+              {inputs.fuelType === 'ev' && rule.registration.horsepowerTiers.evTierId
+                ? `An electric vehicle registers at the lowest ${rule.label} rate.`
+                : `The taxable horsepower is on the ${rule.label} title or title application.`}
+            </p>
+          </div>
+        )}
+
         {/* Vehicle weight in lbs (passenger cars in weight chart states, e.g. New York) */}
         {inputs.vehicleType === 'passenger' && weightChart && (
           <div>
@@ -700,7 +735,7 @@ export function VehicleInputForm({
                   id={`term-${term}-year`}
                   onClick={() => updateField('registrationTerm', term)}
                   className={`flex min-h-[44px] items-center justify-center rounded-xl py-2.5 text-xs font-bold transition-all cursor-pointer ${
-                    inputs.registrationTerm === term
+                    effectiveTerm === term
                       ? 'bg-white text-indigo-600 shadow-sm dark:bg-slate-900 dark:text-indigo-400'
                       : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                   }`}
