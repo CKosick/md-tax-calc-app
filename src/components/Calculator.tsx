@@ -16,6 +16,7 @@ import { Disclaimers } from './Disclaimers';
 import { FaqSection } from './FaqSection';
 import { PartnerDisclosure, PartnerSlot, getVisiblePartnerSlots } from './PartnerSlot';
 import { PartnerHrefs } from '@/lib/partnerLinks';
+import { ChecklistGuides, PrePurchaseChecklist } from './PrePurchaseChecklist';
 
 interface CalculatorProps {
   initialRule: StateRule;
@@ -35,6 +36,8 @@ interface CalculatorProps {
    * the server). Passed in so the full stateRules.json stays out of the browser bundle.
    */
   allStates?: StateOption[];
+  /** The state's private-sale and gift guides, used by the pre-purchase checklist. */
+  checklistGuides?: ChecklistGuides;
 }
 
 export interface GuideLink {
@@ -102,7 +105,8 @@ function CalculatorView({
   calculationYear,
   embedded = false,
   guides = [],
-  allStates = []
+  allStates = [],
+  checklistGuides
 }: CalculatorViewProps) {
   const [inputs, setInputs] = useState<CalculatorInputs>(initialInputs);
 
@@ -268,6 +272,9 @@ function CalculatorView({
 
       {!embedded && (
       <>
+      {/* Pre-purchase checklist: deadline, documents, counter fees, and family rules from verified data */}
+      <PrePurchaseChecklist rule={initialRule} breakdown={breakdown} guides={checklistGuides} />
+
       {/* FAQ Section with long-tail query H2s */}
       <FaqSection faqs={getPublishedFaqs(initialRule)} stateLabel={initialRule.label} />
 

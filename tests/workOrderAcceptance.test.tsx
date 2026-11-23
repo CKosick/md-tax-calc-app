@@ -251,7 +251,8 @@ describe('Work Order Acceptance Tests', () => {
     it('MD calculator form defaults to under3500lbs light tier so untouched form shows $120.50/yr ($241.00 for 2-yr)', () => {
       render(<Calculator initialRule={mdRule} />);
       // Untouched form registration fee line should show $241.00 (2-year term default), not the stale $251.00
-      expect(screen.getByText('$241.00')).toBeDefined();
+      // Shown in the results card and again in the pre-purchase checklist's counter fees
+      expect(screen.getAllByText('$241.00').length).toBeGreaterThanOrEqual(1);
       expect(screen.queryByText('$251.00')).toBeNull();
     });
   });

@@ -186,7 +186,8 @@ describe('UI Component Unit Tests', () => {
 
     expect(screen.getAllByText(/Form RUT-50/i).length).toBeGreaterThanOrEqual(1);
     expect(screen.getAllByText(/\$1,166\.00/i).length).toBeGreaterThanOrEqual(1); // $850 tax + $165 title + $151 tags
-    expect(screen.getByText(/\$850\.00/i)).toBeDefined();
+    // Shown in the results card and again in the pre-purchase checklist's counter fees
+    expect(screen.getAllByText(/\$850\.00/i).length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders CalculatorHubPage with proper currency formatting and no .00 double-decimal bugs', () => {

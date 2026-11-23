@@ -76,11 +76,19 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
   }
 
   const stateKey = Object.keys(rules).find((key) => rules[key].slug === rule.slug) ?? '';
-  const guideLinks = getGuidesForState(stateKey).map((guide) => ({
+  const stateGuides = getGuidesForState(stateKey);
+  const guideLinks = stateGuides.map((guide) => ({
     href: `/guides/${guide.slug}`,
     title: guide.title,
     description: guide.cardDescription
   }));
+  // The checklist uses the private-sale guide's verified checklist and links the gift guide
+  const privateSaleGuide = stateGuides.find((g) => g.slug.startsWith('how-to-title-a-private-car-sale-in-'));
+  const giftGuide = stateGuides.find((g) => g.slug.startsWith('how-to-gift-a-car-in-'));
+  const checklistGuides = {
+    ...(privateSaleGuide ? { privateSale: { href: `/guides/${privateSaleGuide.slug}`, title: privateSaleGuide.title, checklist: privateSaleGuide.checklist } } : {}),
+    ...(giftGuide ? { gift: { href: `/guides/${giftGuide.slug}`, title: giftGuide.title } } : {})
+  };
 
   // JSON-LD Breadcrumb Schema
   const breadcrumbSchema = {
@@ -154,7 +162,7 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
       />
 
       <main className="min-h-screen bg-slate-50/50 dark:bg-slate-950">
-        <Calculator initialRule={{ ...rule, faqs: getPublishedFaqs(rule) }} partnerHrefs={resolvePartnerHrefs()} guides={guideLinks} allStates={getStateOptions()} emailEnabled={isEmailEstimateEnabled()} />
+        <Calculator initialRule={{ ...rule, faqs: getPublishedFaqs(rule) }} partnerHrefs={resolvePartnerHrefs()} guides={guideLinks} checklistGuides={checklistGuides} allStates={getStateOptions()} emailEnabled={isEmailEstimateEnabled()} />
       </main>
     </>
   );
