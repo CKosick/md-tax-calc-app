@@ -139,6 +139,8 @@ export interface StateRegistrationRules {
     minAmount?: number;
     /** Whole dollars (Iowa Code 321.110). */
     roundToDollar?: boolean;
+    /** Also charged on motorcycles, from the same list price input (Wyoming county fee, W.S. 31-3-101(a)(i)). */
+    appliesToMotorcycles?: boolean;
   };
   valueBasedFees?: {
     /** Annual license fee as a share of value (California VLF: 0.0065). */

@@ -11514,7 +11514,7 @@ export const GUIDES: Guide[] = [
       {
         title: 'Pay the sales tax',
         body: [
-          'The county treasurer collects the tax before the first registration, at the rate of the county where you live, on the price you declare on the Department of Revenue affidavit. On the October 1, 2026 rate chart that is 4% in Park and Sublette counties, 5% in most counties, and up to 7% in Teton County.'
+          'The county treasurer collects the tax before the first registration, at the rate of the county where you live, on the price you declare on the Department of Revenue affidavit. On the October 1, 2026 rate chart that is 4% in Park and Sublette counties, 5% in most counties, and up to 7% in Teton County. A trade-in made in the same transaction comes off the price, on a private sale as well as a dealer sale (W.S. 39-15-105(a)(ix)(A)).'
         ]
       },
       {
@@ -11532,7 +11532,7 @@ export const GUIDES: Guide[] = [
       'Payment for the tax, title, and registration'
     ],
     calculatorNote:
-      'The calculator applies 4% plus the county range (0% to 3%) to the price and adds the $15 title, the $30 state fee, and the county registration fee from the MSRP you enter ($30,000 if blank).',
+      'The calculator applies 4% plus the county range (0% to 3%) to the price less any trade-in and adds the $15 title, the state fee ($30 for a car, $25 for a motorcycle), and the county registration fee from the MSRP you enter ($30,000 if blank).',
     faqs: [
       {
         question: 'How much is the county fee on an older car?',
@@ -11544,7 +11544,7 @@ export const GUIDES: Guide[] = [
       },
       {
         question: 'Does a motorcycle pay the county fee?',
-        answer: 'Yes. The county fee applies to every vehicle, and the state fee for a motorcycle is $25. The calculator shows motorcycles without the county fee.'
+        answer: 'Yes. The county fee applies to every vehicle, and the state fee for a motorcycle is $25. The calculator includes the county fee for a motorcycle too, from the MSRP you enter.'
       }
     ],
     sources: [WY_SOURCES.clerk, WY_SOURCES.treasurer, WY_SOURCES.rates, WY_SOURCES.title31, WY_SOURCES.title39]

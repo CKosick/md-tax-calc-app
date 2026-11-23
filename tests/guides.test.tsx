@@ -630,10 +630,12 @@ describe('Batch 18 guides (Wyoming)', () => {
     for (const fact of ['upon becoming a resident', '$50 a month for up to 180 days', 'VIN inspection $10', 'registered in another state before moving', 'reduced for the part of the year']) expect(wyMove).toContain(fact);
   });
 
-  it('calculator notes match the engine; the guides stay silent on the open trade-in ruling', () => {
+  it('calculator notes match the engine and the trade-in and motorcycle rulings', () => {
     expect(text('how-to-title-a-private-car-sale-in-wyoming')).toContain('county registration fee from the MSRP you enter ($30,000 if blank)');
-    expect(text('how-to-title-a-private-car-sale-in-wyoming')).toContain('calculator shows motorcycles without the county fee');
-    for (const t of topics('wyoming').map(text)) expect(t).not.toMatch(/trade-in/i);
+    expect(text('how-to-title-a-private-car-sale-in-wyoming')).toContain('includes the county fee for a motorcycle too');
+    expect(text('how-to-title-a-private-car-sale-in-wyoming')).toContain('on a private sale as well as a dealer sale (W.S. 39-15-105(a)(ix)(A))');
+    expect(text('how-to-title-a-private-car-sale-in-wyoming')).toContain('to the price less any trade-in');
+    for (const t of topics('wyoming').map(text)) expect(t).not.toMatch(/without the county fee|dealer sales only|not available for private/i);
   });
 
   it('batch 18 guides are dated November 2026; no em dashes', () => {

@@ -142,9 +142,10 @@ describe('Maine municipal excise tax (36 M.R.S. 1482)', () => {
 });
 
 describe('All six states', () => {
-  it('leave motorcycles out, and show the MSRP input that sets the tax', () => {
+  it('leave motorcycles out (except Wyoming, whose county fee reaches every vehicle), and show the MSRP input that sets the tax', () => {
     for (const key of SIX) {
-      expect(calc(key, { vehicleType: 'motorcycle' }).annualValueTax).toBe(0);
+      if (key === 'wyoming') expect(calc(key, { vehicleType: 'motorcycle' }).annualValueTax).toBeGreaterThan(0);
+      else expect(calc(key, { vehicleType: 'motorcycle' }).annualValueTax).toBe(0);
       const { container } = render(<Calculator initialRule={rule(key)} />);
       const input = container.querySelector('#list-price-input') as HTMLInputElement;
       expect(input).not.toBeNull();

@@ -492,8 +492,10 @@ export function VehicleInputForm({
           </div>
         )}
 
-        {/* Original list price (passenger cars in list price states, e.g. Michigan, Minnesota) */}
-        {inputs.vehicleType === 'passenger' && (listPriceReg || annualTax) && (
+        {/* Original list price (passenger cars in list price states, e.g. Michigan, Minnesota; also
+            motorcycles where the yearly tax reaches them, e.g. the Wyoming county fee) */}
+        {((inputs.vehicleType === 'passenger' && (listPriceReg || annualTax)) ||
+          (inputs.vehicleType === 'motorcycle' && annualTax?.appliesToMotorcycles)) && (
           <div>
             <div className="flex items-center justify-between">
               <label

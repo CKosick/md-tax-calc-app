@@ -381,7 +381,10 @@ export function calculateVehicleCosts(
 
   // Yearly list-price tax paid with the registration (Indiana excise, Colorado specific ownership tax)
   let annualValueTax = 0;
-  if (annualTaxSpec && inputs.vehicleType === 'passenger') {
+  if (
+    annualTaxSpec &&
+    (inputs.vehicleType === 'passenger' || (inputs.vehicleType === 'motorcycle' && annualTaxSpec.appliesToMotorcycles))
+  ) {
     listPriceUsed = hasEnteredListPrice ? enteredListPrice : annualTaxSpec.defaultListPrice;
     annualValueTax = Math.round(listPriceAnnualTaxFor(annualTaxSpec, listPriceUsed, registrationYear) * term * 100) / 100;
   }

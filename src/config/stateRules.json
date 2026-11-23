@@ -6593,7 +6593,7 @@
     "taxBase": "price",
     "titleFee": 15,
     "lienFilingFee": 20,
-    "tradeInDeductible": false,
+    "tradeInDeductible": true,
     "registration": {
       "terms": [
         1
@@ -6623,7 +6623,8 @@
           0.2,
           0.15
         ],
-        "minAmount": 5
+        "minAmount": 5,
+        "appliesToMotorcycles": true
       },
       "motorcycleFuelFees": {
         "ev": {
@@ -6640,13 +6641,13 @@
       "Counties may add a general purpose, specific purpose, or economic development option tax. On the DOR chart effective October 1, 2026, the county total is 4% (Park, Sublette), 5% (most counties), 5.25% (Goshen), 6%, or 7% (Teton).",
       "State certificate of title fee is $15.00 under Wyo. Stat. § 31-3-102(a)(vii); a new lien is $20 at the county clerk (Laramie County Clerk fee table).",
       "State registration fee (Wyo. Stat. § 31-3-101(a)(ii)): $30 for a passenger car and $25 for a motorcycle.",
-      "Trade-in deduction under Wyo. Stat. § 39-15-101 applies exclusively to dealer transactions; private sales pay tax on full purchase price.",
-      "The annual county registration fee (31-3-101(a)(i)) is 3% of 60%, 50%, 40%, 30%, 20%, then 15% of the factory price plus special equipment by year of service, with a $5 minimum. \"Factory price\" is the MSRP of the make, model, and trim when new, from a nationally recognized price guide (31-1-101); the county clerk sets it on the title. The estimate uses the MSRP you enter ($30,000 if blank), for passenger vehicles only."
+      "Trade-ins: the trade-in value is excluded from the sales price when the trade and the purchase occur in one transaction (W.S. 39-15-105(a)(ix)(A)), whether the seller is a dealer or a private party.",
+      "The annual county registration fee (31-3-101(a)(i)) is 3% of 60%, 50%, 40%, 30%, 20%, then 15% of the factory price plus special equipment by year of service, with a $5 minimum, and applies to every vehicle. \"Factory price\" is the MSRP of the make, model, and trim when new, from a nationally recognized price guide (31-1-101); the county clerk sets it on the title. The estimate uses the MSRP you enter ($30,000 if blank), for cars and motorcycles."
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with Wyoming Department of Revenue and your County Clerk/Treasurer.",
-      "Wyoming charges 4% state tax plus 0% to 3% county option tax (4% to 7% in all, DOR chart effective October 1, 2026). The estimate includes a full year of the county registration fee for passenger vehicles, figured from the MSRP you enter ($30,000 if blank); the county clerk uses the factory price from a national price guide. Motorcycles are shown without the county fee.",
-      "Trade-in deductions are not available for private party sales.",
+      "Wyoming charges 4% state tax plus 0% to 3% county option tax (4% to 7% in all, DOR chart effective October 1, 2026). The estimate includes a full year of the county registration fee for cars and motorcycles, figured from the MSRP you enter ($30,000 if blank); the county clerk uses the factory price from a national price guide.",
+      "A trade-in made in the same transaction reduces the taxable price on a private sale as well as a dealer sale (W.S. 39-15-105(a)(ix)(A)).",
       "Wyoming’s annual electric vehicle decal is $100 for an all-electric vehicle and $50 for a plug-in hybrid, since July 1, 2026 (W.S. 31-3-102(a)(xxiii) and (xxiv)). Motorcycles do not pay it: both vehicle definitions exclude a motorcycle (W.S. 39-17-301(a)(l) and (xxxviii))."
     ],
     "faqs": [
@@ -6656,11 +6657,11 @@
       },
       {
         "question": "Can I deduct my trade-in on a private vehicle sale in Wyoming?",
-        "answer": "No. Under Wyo. Stat. § 39-15-101, trade-in allowances only reduce the taxable sales price when purchasing from a licensed motor vehicle dealer. Private sales pay sales tax on the full purchase price."
+        "answer": "Yes. Wyoming excludes the trade-in value from the sales price when the trade and the purchase happen in one transaction (W.S. 39-15-105(a)(ix)(A)), with no limit to dealer sales. The tax is figured on the price less the trade-in."
       },
       {
         "question": "How are vehicle registration fees calculated in Wyoming?",
-        "answer": "Wyoming registration has two parts (Wyo. Stat. § 31-3-101): a state fee ($30 for a passenger car, $25 for a motorcycle) and an annual county fee of 3% of 60%, 50%, 40%, 30%, 20%, then 15% of the factory price by year of service, with a $5 minimum. The factory price is the vehicle’s MSRP when new, set by the county clerk from a national price guide. The calculator includes both for passenger vehicles, using the MSRP you enter."
+        "answer": "Wyoming registration has two parts (Wyo. Stat. § 31-3-101): a state fee ($30 for a passenger car, $25 for a motorcycle) and an annual county fee of 3% of 60%, 50%, 40%, 30%, 20%, then 15% of the factory price by year of service, with a $5 minimum. The factory price is the vehicle’s MSRP when new, set by the county clerk from a national price guide. The calculator includes both for cars and motorcycles, using the MSRP you enter."
       },
       {
         "question": "How much does a title transfer cost in Wyoming?",
@@ -6679,7 +6680,7 @@
         "answer": "Register within 45 days of a private purchase; you may drive the vehicle during those 45 days with the title properly signed over to you (W.S. 31-2-201(a)(ii)(D)). A new resident registers upon becoming a resident, and someone working in Wyoming must register right away unless they buy a temporary worker permit (31-2-201(a)(iii), (iv), (j))."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://excise-tax-div.wyo.gov/sales-use-tax-rate-charts",
       "https://www.dot.state.wy.us/home/titles_plates_registration.html",
@@ -6691,6 +6692,7 @@
       "https://www.wyoleg.gov/2026/Enroll/SF0079.pdf"
     ],
     "localTaxMinRate": 0,
-    "localTaxMaxRate": 0.03
+    "localTaxMaxRate": 0.03,
+    "tradeInNote": "Wyoming leaves the trade-in value out of the taxable price when the trade and the purchase happen in one transaction, on a private sale as well as a dealer sale (W.S. 39-15-105(a)(ix)(A))."
   }
 }

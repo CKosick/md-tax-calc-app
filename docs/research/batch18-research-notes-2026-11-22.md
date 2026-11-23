@@ -43,7 +43,7 @@ Working notes from the official-source re-check for guide batch 18. Items marked
 
 ## `lastVerified`
 
-- Held at September 2026: the private trade-in, the motorcycle county fee, and the family-transfer registration fee are open for ruling.
+- Held at September 2026 in 8fcbd5a while the private trade-in, the motorcycle county fee, and the family-transfer registration fee were open; moved to November 2026 once the rulings below were applied (2026-11-22).
 
 ## Sources
 
@@ -52,3 +52,10 @@ Working notes from the official-source re-check for guide batch 18. Items marked
 ## Search summaries used (not primary)
 
 - The DOR presentation, the gift and county-of-residence rules, and the other-state credit were found by search and then read in the presentation PDF, W.S. 39-15-105 and 39-15-107, and 2026 SF 79 (primary).
+
+## Rulings applied (Cliff, 2026-11-22)
+
+1. **Private trade-ins:** deductible. 39-15-105(a)(ix)(A) excludes the trade-in value whenever the trade and the purchase happen in one transaction, with no limit to dealer sales, and nothing in 39-15-101 adds one. `tradeInDeductible` set to true with a `tradeInNote` citing (a)(ix)(A) (the form now shows "Wyoming: Deductible" and the note); the dealer-only note, disclaimer, and FAQ were replaced, and the private-sale guide's tax step and calculator note say the trade-in comes off the price. $15,000 less a $5,000 trade-in now shows $400 in state tax instead of $600.
+2. **County fee on motorcycles:** the 31-3-101(a)(i) county registration fee now applies to motorcycles too, from the same MSRP input (or the $30,000 default). New `listPriceAnnualTax.appliesToMotorcycles` flag (Wyoming only); the engine and the form honor it, so the MSRP input appears for a Wyoming motorcycle. The copy that said motorcycles are shown without the fee (notes, disclaimer, FAQ, guide FAQ) now says the estimate includes it for cars and motorcycles. A 2021 motorcycle at the $30,000 default now shows $25 + $135 = $160.
+3. **Family re-registration:** no change. The $4 re-registration for a transfer to a spouse, child, brother, sister, or parent (31-3-102(a)(xii); 31-2-214(b)) stays explained in the gift guide and out of the estimate, which shows a full year of registration.
+4. Wyoming moved to November 2026.
