@@ -45,9 +45,16 @@ Working notes from the official-source re-check for guide batch 17. Items marked
 
 ## `lastVerified`
 
-- North Dakota, Alaska, and the District of Columbia: held at September 2026. Each has an open item for ruling (the North Dakota private trade-in, the Alaska registration at transfer, and the DC inspection fee).
+- North Dakota, Alaska, and the District of Columbia: held at September 2026 in 8aad866 while the items for ruling were open; moved to November 2026 once the rulings below were applied (2026-11-22).
 
 ## Search summaries used (not primary)
 
 - The North Dakota motorcycle safety fee was found by search and then read in N.D.C.C. 39-28-01 and the NDDOT manual (primary).
 - The DC 60-day residency rule was found by search and then read on the DMV's "Registration of a New or Used Vehicle" page (primary). A DMV Chinese-language page still says 30 days; the English service page governs.
+
+## Rulings applied (Cliff, 2026-11-22)
+
+1. **North Dakota, private trade-ins:** deductible. The excise statute (57-40.3-01(5)) and the NDDOT registration manual figure the tax on the full purchase price less any trade-in allowance, with no limit to dealer sales, and no source supports the dealer-only claim. `tradeInDeductible` set to true with a sourced `tradeInNote` (the form now shows "North Dakota: Deductible" and the note); the dealer-only disclaimer and FAQ (which cited "NDDOT administrative rules and Form SFN 2872") were replaced with the deductible rule, and the private-sale guide's tax step and calculator note say the trade-in comes off the price. $15,000 less a $5,000 trade-in now shows $500 in tax instead of $750.
+2. **Alaska, registration on a sale:** no change. The estimate keeps the full $100 two-year registration ($60 motorcycle) with the existing disclosure that a registration keeps its expiration date when the vehicle changes owners, so the amount at transfer may differ.
+3. **District of Columbia, inspection fee:** no change. The $35 two-year inspection fee stays disclosed and out of the total, since whether it is due depends on the vehicle's inspection standing.
+4. North Dakota, Alaska, and the District of Columbia moved to November 2026.

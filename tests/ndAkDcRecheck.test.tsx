@@ -15,7 +15,7 @@ const calc = (rule: StateRule, extra: Partial<CalculatorInputs> = {}) =>
 const copy = (rule: StateRule) =>
   [rule.localTaxNote ?? '', rule.tradeInNote ?? '', ...rule.disclaimers, ...rule.faqs.map((f) => `${f.question} ${f.answer}`)].join(' ');
 
-describe('North Dakota re-check (November 2026, private trade-in for ruling)', () => {
+describe('North Dakota re-check and ruling (November 2026)', () => {
   it('5% excise; $5 title; registration by year first registered for 3,200 to 4,499 lbs (N.D.C.C. 39-04-19)', () => {
     expect(calc(nd).exciseTax).toBe(750);
     expect(calc(nd).titleFee).toBe(5);
@@ -39,17 +39,20 @@ describe('North Dakota re-check (November 2026, private trade-in for ruling)', (
     expect(calc(nd, { vehicleYear: 2021, fuelType: 'phev' }).registrationTotal).toBe(143);
   });
 
-  it('keeps the private trade-in rule pending the ruling; states the verified gift, credit, and deadline answers; date held', () => {
-    expect(calc(nd, { tradeInValue: 5000 }).exciseTax).toBe(750);
+  it('private trade-ins are deductible (57-40.3-01(5)); states the verified gift, credit, and deadline answers; verified November 2026', () => {
+    expect(calc(nd, { tradeInValue: 5000 }).exciseTax).toBe(500); // 5% of $15,000 - $5,000
+    expect(nd.tradeInDeductible).toBe(true);
+    expect(copy(nd)).toContain('on a private sale as well as a dealer sale');
+    expect(copy(nd)).not.toMatch(/limited to dealer|restricted to transactions with licensed|SFN 2872/);
     const text = copy(nd);
     for (const fact of ['grandparent and grandchild', 'NADA used car guide', '57-40.3-09', 'Alaska, Delaware, Georgia, Montana, New Hampshire, and Oregon', 'within 30 days of receiving it', '39-05-17', 'year first registered', '$1.50 abandoned motor vehicle disposal fee']) expect(text).toContain(fact);
-    expect(nd.lastVerified).toBe('September 2026');
+    expect(nd.lastVerified).toBe('November 2026');
     expect(labelForSource('https://ndlegis.gov/cencode/t57c40-3.pdf')).toBe('ndlegis.gov: N.D.C.C. Chapter 57-40.3');
     expect(labelForSource('https://ndlegis.gov/cencode/t39c05.pdf')).toBe('ndlegis.gov: N.D.C.C. Chapter 39-05');
   });
 });
 
-describe('Alaska re-check (November 2026, registration at transfer for ruling)', () => {
+describe('Alaska re-check and ruling (November 2026)', () => {
   it('no state tax; $15 title and lien; $100 two-year registration and $60 motorcycle (AS 28.10.421)', () => {
     expect(calc(ak).exciseTax).toBe(0);
     expect(calc(ak).titleFee).toBe(15);
@@ -65,14 +68,14 @@ describe('Alaska re-check (November 2026, registration at transfer for ruling)',
     expect(calc(ak, { vehicleYear: 2026 }).registrationTotal).toBe(100);
   });
 
-  it('states the verified deadline, nonresident, in-person fee, and senior answers; date held', () => {
+  it('states the verified deadline, nonresident, in-person fee, and senior answers; full $100 kept with the transfer disclosure; verified November 2026', () => {
     const text = copy(ak);
     for (const fact of ['Within 30 days', 'AS 28.10.321', 'within 10 days', 'up to 60 days', 'AS 28.10.121', 'adds $10', 'keeps its expiration month', '65 or older']) expect(text).toContain(fact);
-    expect(ak.lastVerified).toBe('September 2026');
+    expect(ak.lastVerified).toBe('November 2026');
   });
 });
 
-describe('District of Columbia re-check (November 2026, inspection fee for ruling)', () => {
+describe('District of Columbia re-check and ruling (November 2026)', () => {
   it('5.0% of fair market value; $30 title; $20 lien; registration $70 and $175 a year from March 30, 2026; motorcycle $52', () => {
     expect(calc(dc).exciseTax).toBe(750);
     expect(calc(dc, { tradeInValue: 5000 }).exciseTax).toBe(750);
@@ -85,12 +88,13 @@ describe('District of Columbia re-check (November 2026, inspection fee for rulin
     expect(dc.registration.passengerWeightSplitLbs).toBe(3500);
   });
 
-  it('keeps the DMV’s NADA wording and states the weight and MPG table, gift exemptions, and deadlines; date held', () => {
+  it('keeps the DMV’s NADA wording and states the weight and MPG table, gift exemptions, and deadlines; inspection fee disclosed, not added; verified November 2026', () => {
     const text = copy(dc);
     for (const fact of ['NADA Eastern Region', '3,499 lbs or less with 21 to 25 city MPG', 'from 1.0% to 11.0%', 'already has a DC title', 'domestic partners', '60 calendar days', '45-day temporary registration', 'five-day temporary tag', '$35 two-year inspection fee', '$40 registration']) expect(text).toContain(fact);
     expect(text).not.toContain('$26');
     expect(text).not.toContain('$115');
-    expect(dc.lastVerified).toBe('September 2026');
+    expect(dc.lastVerified).toBe('November 2026');
+    expect(calc(dc, { registrationTerm: 2, weightClass: 'under3700lbs' }).registrationTotal).toBe(140); // no $35 inspection fee added
     expect(labelForSource('https://code.dccouncil.gov/us/dc/council/code/sections/50-2201.03')).toBe('code.dccouncil.gov: D.C. Code 50-2201.03');
   });
 });

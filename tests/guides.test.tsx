@@ -606,7 +606,9 @@ describe('Batch 17 guides (North Dakota, Alaska, District of Columbia)', () => {
     expect(text('how-to-title-a-private-car-sale-in-north-dakota')).toContain('($93, $81, $69, or $57)');
     expect(text('how-to-title-a-private-car-sale-in-alaska')).toContain('leaves out any local registration tax ($16 to $300 where levied)');
     expect(text('how-to-title-a-private-car-sale-in-district-of-columbia')).toContain('applies 5.0% (3,499 lbs or less, 21 to 25 city MPG)');
-    for (const t of topics('north-dakota').map(text)) expect(t).not.toMatch(/trade-in (credit|deduction) on a private sale|plug-in hybrid motorcycle/i);
+    expect(text('how-to-title-a-private-car-sale-in-north-dakota')).toContain('less any trade-in allowance, on a private sale as well as a dealer sale');
+    expect(text('how-to-title-a-private-car-sale-in-north-dakota')).toContain('applies 5% to the price less any trade-in');
+    for (const t of topics('north-dakota').map(text)) expect(t).not.toMatch(/dealer sales only|plug-in hybrid motorcycle/i);
     for (const t of topics('district-of-columbia').map(text)) expect(t).not.toMatch(/$26|$115|$72/);
   });
 

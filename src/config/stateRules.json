@@ -464,7 +464,7 @@
         "answer": "All vehicles housed and operated in DC must be registered there. If you move to DC, you have 60 calendar days from the date you begin living there to register, after converting to a DC license or ID. If the vehicle must be inspected first, the DMV issues a 45-day temporary registration once you pay the title fees and excise tax."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://dmv.dc.gov/book/dmv-fees/vehicle-title-and-excise-tax-fees",
       "https://dmv.dc.gov/book/dmv-fees/vehicle-registration-fees",
@@ -6307,7 +6307,7 @@
     "taxBase": "price",
     "titleFee": 5,
     "lienFilingFee": 0,
-    "tradeInDeductible": false,
+    "tradeInDeductible": true,
     "registration": {
       "terms": [
         1
@@ -6361,7 +6361,7 @@
     },
     "localTaxNote": "North Dakota's 5% Motor Vehicle Excise Tax is a uniform state levy in lieu of local sales taxes; no city or county taxes apply to vehicle purchases.",
     "notes": [
-      "North Dakota imposes a 5% motor vehicle excise tax on the purchase price (N.D.C.C. 57-40.3-02), paid to the Motor Vehicle Division when applying for title.",
+      "North Dakota imposes a 5% motor vehicle excise tax on the purchase price less any trade-in allowance (N.D.C.C. 57-40.3-01(5) and 57-40.3-02), paid to the Motor Vehicle Division when applying for title.",
       "Certificate of title fee $5 (N.D.C.C. 39-05-05). A vehicle titled in North Dakota for the first time also pays a $1.50 abandoned motor vehicle disposal fee (NDDOT registration manual; not charged on motorcycles).",
       "Passenger registration (N.D.C.C. 39-04-19(2)(a); NDDOT 2026 fee schedule) is by weight and the year the vehicle was first registered, not its model year. For 3,200 to 4,499 lbs: $93 in years 1 to 6, $81 in years 7 to 9, $69 in years 10 to 12, and $57 after that. The estimate uses this class and counts the model year as the first year registered.",
       "Motorcycle registration $25: the $15 fee (39-04-19(2)(c)) plus the $10 motorcycle safety education fee (N.D.C.C. 39-28-01). An electric motorcycle adds a $20 road use fee (39-04-19.2(1)(c)).",
@@ -6370,7 +6370,7 @@
     ],
     "disclaimers": [
       "Estimates only — not tax or legal advice. Verify with North Dakota Department of Transportation (NDDOT).",
-      "North Dakota charges a 5% motor vehicle excise tax statewide. Trade-in deductions are limited to dealer sales.",
+      "North Dakota charges a 5% motor vehicle excise tax statewide, figured on the purchase price less any trade-in allowance, whether the seller is a dealer or a private party.",
       "An electric motorcycle pays a $20 road use fee each year in place of the $120 electric vehicle fee (N.D.C.C. 39-04-19.2), as the NDDOT confirmed in writing on November 9, 2026. The sources do not say whether the $50 plug-in hybrid fee applies to motorcycles, so the estimate leaves it out for a motorcycle.",
       "Registration depends on weight and the year first registered. The estimate uses the 3,200 to 4,499 lb class ($93, $81, $69, or $57); lighter cars pay less ($73 to $49) and heavier ones more. A vehicle first registered partway through the year pays a monthly prorated fee (N.D.C.C. 39-04-21)."
     ],
@@ -6381,7 +6381,7 @@
       },
       {
         "question": "Can I deduct my trade-in on a private vehicle purchase in North Dakota?",
-        "answer": "No. Under NDDOT administrative rules and Form SFN 2872, trade-in deductions are restricted to transactions with licensed dealerships. Private purchases are taxed on the full purchase price."
+        "answer": "Yes. North Dakota figures the 5% excise tax on the full purchase price less any trade-in allowance, with no limit to dealer sales (N.D.C.C. 57-40.3-01(5); NDDOT registration manual). The traded vehicle must be identified by year, make, and VIN on the title application."
       },
       {
         "question": "How much is a title transfer in North Dakota?",
@@ -6404,7 +6404,7 @@
         "answer": "The seller must give you the signed title within 30 days of the sale, and you must take it to the NDDOT with the $5 transfer fee and apply for a new title within 30 days of receiving it (N.D.C.C. 39-05-17). Otherwise the registration may be suspended or revoked."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://www.dot.nd.gov/motor-vehicle/what-to-bring",
       "https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services/registration-manual.pdf",
@@ -6413,7 +6413,8 @@
       "https://ndlegis.gov/cencode/t39c04.pdf",
       "https://ndlegis.gov/cencode/t39c05.pdf",
       "https://ndlegis.gov/cencode/t39c28.pdf"
-    ]
+    ],
+    "tradeInNote": "North Dakota deducts the trade-in allowance from the purchase price before the 5% excise tax, on a private sale as well as a dealer sale. Identify the traded vehicle by year, make, and VIN (N.D.C.C. 57-40.3-01(5); NDDOT registration manual)."
   },
   "alaska": {
     "label": "Alaska",
@@ -6483,7 +6484,7 @@
         "answer": "Within 30 days of the sale, apply for a title in your name (AS 28.10.321; DMV). If you move to Alaska or start working here, register your vehicle within 10 days; a nonresident may drive on a valid out-of-state registration for up to 60 days (AS 28.10.121)."
       }
     ],
-    "lastVerified": "September 2026",
+    "lastVerified": "November 2026",
     "sources": [
       "https://dmv.alaska.gov/vehicle-services/general-vehicle-registration/",
       "https://dmv.alaska.gov/vehicle-services/titles/",

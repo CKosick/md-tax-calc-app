@@ -950,7 +950,7 @@ describe('Batch 5 Worked Acceptance Tests (HI, NH, ME, MT, RI, SD, ND, AK, VT, W
     expect(res.totalFirstYearCost).toBe(780.00);
   });
 
-  it('Batch 5 trade-in deductibility verification (ME, SD, VT allow; RI, ND, WY do not)', () => {
+  it('Batch 5 trade-in deductibility verification (ME, SD, VT, ND allow; RI, WY do not)', () => {
     // Maine: allows trade-in on same property category
     const meTrade = calculateVehicleCosts(allRules.maine, {
       ...std1Yr,
@@ -992,16 +992,15 @@ describe('Batch 5 Worked Acceptance Tests (HI, NH, ME, MT, RI, SD, ND, AK, VT, W
     expect(riTrade.tradeInIgnored).toBe(true);
     expect(riTrade.exciseTax).toBe(1050.00);
 
-    // North Dakota: dealer only
+    // North Dakota: private trade-ins deductible (N.D.C.C. 57-40.3-01(5); batch 17 ruling)
     const ndTrade = calculateVehicleCosts(allRules['north-dakota'], {
       ...std1Yr,
       state: 'north-dakota',
       purchasePrice: 15000,
       tradeInValue: 5000
     }, 2026);
-    expect(ndTrade.tradeInDeducted).toBe(0);
-    expect(ndTrade.tradeInIgnored).toBe(true);
-    expect(ndTrade.exciseTax).toBe(750.00);
+    expect(ndTrade.tradeInDeducted).toBe(5000);
+    expect(ndTrade.exciseTax).toBe(500.00); // $10,000 * 5.0%
 
     // Wyoming: dealer only
     const wyTrade = calculateVehicleCosts(allRules.wyoming, {

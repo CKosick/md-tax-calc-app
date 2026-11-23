@@ -10850,7 +10850,7 @@ export const GUIDES: Guide[] = [
       {
         title: 'Pay the 5% excise tax',
         body: [
-          'The tax is 5% of the purchase price (N.D.C.C. 57-40.3-02). A gift is taxed on the average NADA value unless it is between a husband and wife, parent and child, grandparent and grandchild, or brothers and sisters.'
+          'The tax is 5% of the purchase price less any trade-in allowance, on a private sale as well as a dealer sale; identify the traded vehicle by year, make, and VIN (N.D.C.C. 57-40.3-01 and 57-40.3-02). A gift is taxed on the average NADA value unless it is between a husband and wife, parent and child, grandparent and grandchild, or brothers and sisters.'
         ]
       },
       {
@@ -10874,7 +10874,7 @@ export const GUIDES: Guide[] = [
       'Payment for the tax, title, and registration'
     ],
     calculatorNote:
-      'The calculator applies 5% to the price and adds the $5 title and the registration for 3,200 to 4,499 lbs by year first registered ($93, $81, $69, or $57), counting the model year as the first year.',
+      'The calculator applies 5% to the price less any trade-in and adds the $5 title and the registration for 3,200 to 4,499 lbs by year first registered ($93, $81, $69, or $57), counting the model year as the first year.',
     faqs: [
       {
         question: 'What if my car weighs under 3,200 lbs?',
