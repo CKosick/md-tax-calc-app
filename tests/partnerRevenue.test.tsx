@@ -251,7 +251,7 @@ describe('Affiliate disclosure line on results', () => {
   });
 });
 
-describe('VIN check slot (EpicVIN, above results)', () => {
+describe('VIN check slot (EpicVIN, below the estimate since 2026-11-25; slot id still above-results)', () => {
   const REFERRAL = 'https://epicvin.com?a_aid=oihxljfdeecka';
   const vinHrefs = resolvePartnerHrefs(slots, { NEXT_PUBLIC_PARTNER_VIN_CHECK_URL: REFERRAL });
   const allHrefs = resolvePartnerHrefs(slots, {
@@ -290,12 +290,13 @@ describe('VIN check slot (EpicVIN, above results)', () => {
     expect(vinLink()).toBeNull();
   });
 
-  it('renders above the results for non-financed and financed visitors', () => {
+  it('renders below the estimate for non-financed and financed visitors', () => {
     render(<Calculator initialRule={mdRule} partnerHrefs={vinHrefs} />);
     const results = document.getElementById('calculator-results')!;
-    const before = vinLink()!;
-    expect(before.compareDocumentPosition(results) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    expect(new URL(before.getAttribute('href')!).searchParams.get('a_aid')).toBe('oihxljfdeecka');
+    const after = vinLink()!;
+    expect(after.compareDocumentPosition(results) & Node.DOCUMENT_POSITION_PRECEDING).toBeTruthy();
+    expect(results.contains(after)).toBe(false);
+    expect(new URL(after.getAttribute('href')!).searchParams.get('a_aid')).toBe('oihxljfdeecka');
 
     fireEvent.click(document.getElementById('financed-yes')!);
     expect(vinLink()).not.toBeNull();
@@ -313,7 +314,10 @@ describe('VIN check slot (EpicVIN, above results)', () => {
     expect(screen.getAllByRole('link', { name: /check the vin|compare quotes|check auto loan rates/i })).toHaveLength(3);
     const disclosures = document.querySelectorAll('#partner-disclosure');
     expect(disclosures).toHaveLength(1);
-    const results = document.getElementById('calculator-results')!;
-    expect(disclosures[0].compareDocumentPosition(results) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    const vin = vinLink()!;
+    expect(disclosures[0].compareDocumentPosition(vin) & Node.DOCUMENT_POSITION_PRECEDING).toBeTruthy();
+    // Nothing else sits between the VIN card and its disclosure
+    const vinCard = vin.closest('.print\\:hidden')!;
+    expect(vinCard.nextElementSibling).toBe(disclosures[0]);
   });
 });

@@ -116,7 +116,7 @@ function CalculatorView({
 
   const hasVisiblePartner =
     getVisiblePartnerSlots({ hrefs: partnerHrefs, isFinanced: inputs.isFinanced }).length > 0;
-  // The disclosure sits under the first offer in reading order: the VIN check when shown, else below the results
+  // The disclosure shows once: after the VIN check (now below the estimate) when shown, else inside the results block
   const hasVisibleAboveResults =
     getVisiblePartnerSlots({ position: 'above-results', hrefs: partnerHrefs, isFinanced: inputs.isFinanced }).length > 0;
 
@@ -236,16 +236,6 @@ function CalculatorView({
 
         {/* Right Column: Hero Cost Summary Card + Mobile Disclaimers + Sidebar Monetization */}
         <div className="space-y-6 lg:col-span-5">
-          {/* Monetization Slot - Above Results ("check the VIN before you pay") */}
-          <PartnerSlot
-            position="above-results"
-            className="print:hidden"
-            hrefs={partnerHrefs}
-            isFinanced={inputs.isFinanced}
-            stateSlug={initialRule.slug}
-          />
-          {hasVisibleAboveResults && <PartnerDisclosure />}
-
           <CostSummaryCard
             breakdown={breakdown}
             rule={initialRule}
@@ -255,6 +245,16 @@ function CalculatorView({
             showPartnerDisclosure={hasVisiblePartner && !hasVisibleAboveResults}
             emailEnabled={emailEnabled}
           />
+
+          {/* VIN check offer ("above-results" slot id kept): sits below the estimate so the result is the first thing in this column (ruled 2026-11-25) */}
+          <PartnerSlot
+            position="above-results"
+            className="print:hidden"
+            hrefs={partnerHrefs}
+            isFinanced={inputs.isFinanced}
+            stateSlug={initialRule.slug}
+          />
+          {hasVisibleAboveResults && <PartnerDisclosure />}
 
           {/* Mobile Disclaimers: rendered below results on mobile so user sees results first */}
           <div className="block lg:hidden print:block">
@@ -378,8 +378,15 @@ function CalculatorView({
             <span className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
               Estimated taxes &amp; fees
             </span>
-            <span className="block truncate text-base font-extrabold text-slate-900 underline decoration-slate-300 underline-offset-4 dark:text-white dark:decoration-slate-600 sm:text-lg">
+            <span className="block truncate text-base font-extrabold text-slate-900 dark:text-white sm:text-lg">
               {stickyTotalFormatted}
+            </span>
+            {/* Visible label for the jump the whole button already makes (ruled 2026-11-25) */}
+            <span id="sticky-see-breakdown" aria-hidden="true" className="mt-0.5 inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 dark:text-indigo-300">
+              See breakdown
+              <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
             </span>
           </button>
           <button

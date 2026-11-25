@@ -122,8 +122,9 @@ export function CostSummaryCard({
 
         {/* Hero Number Display / Summary Card */}
         <div className="my-6 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 p-5 sm:p-6 text-white shadow-lg shadow-indigo-950/20 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950">
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-            <div>
+          {/* The row wraps: when the total and the Save / Share button don't fit side by side (the lg two-column layout), the button drops under the total instead of overflowing the card */}
+          <div id="results-hero-row" className="flex flex-col sm:flex-row sm:flex-wrap sm:items-start sm:justify-between gap-3">
+            <div className="min-w-0">
               <span className="text-xs font-medium uppercase tracking-wider text-indigo-300">
                 Estimated taxes &amp; fees
               </span>
